@@ -1,0 +1,19 @@
+= ForeverStyleGuide
+
+### Installation
+
+Install the gem locally from:
+
+Add to your Gemfile:
+```
+# inside your group :development block
+gem install forever_style_guide
+
+```
+
+Add to your config/routes.rb:
+```
+mount ForeverStyleGuide::Engine => "/style-guide" unless Rails.env.production?
+```
+
+Fire up the app and visit: <app url>/style-guide
