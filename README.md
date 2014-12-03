@@ -1,5 +1,3 @@
-= ForeverStyleGuide
-
 ### Installation
 
 Install the gem locally from:
