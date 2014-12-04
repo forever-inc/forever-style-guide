@@ -1,5 +1,7 @@
 # Forever Style Guide
 
+Built on top of https://github.com/pivotalexperimental/style-guide
+
 This gem adds a live style guide for Forever branded apps.  Its long term goals include:
 * A live style guide of the core HTML/CSS used across Forever apps
 * A typography and iconography library for getting and using the right assets

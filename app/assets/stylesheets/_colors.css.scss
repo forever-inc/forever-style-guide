@@ -1,0 +1,75 @@
+/* =colors
+---------------------------------------------------------------------------- */
+
+// Forever colors
+$forever_blue: #3782c3;
+$forever_brand_blue: #00a4e4;
+$forever_green: #7ac143;
+$forever_purple: #731472;
+$forever_red: #bf3030;
+$forever_orange: #ED773A;
+
+// B&W
+$white: #FFFFFF;
+$black: #000000;
+$almost_white: #FAFAFA;
+
+$lightest_gray: #f6f6f6;
+$lighter_gray: #E7E7E7;
+$light_gray: #CCCCCC;
+$medium_gray: #888888;
+$dark_gray: #666666;
+$darker_gray: #333333;
+$blue_gray: #e2eaee;
+
+// App background beige
+$main_bg: #ebeae6;
+
+// blues
+$blue: #3782c3;
+$dark_blue: #2977BD;
+$progress_blue: #71afcf;
+$testimonial_blue: #5FBDE1;
+
+//greens
+$light_green: #ecfcdf;
+
+// utilities
+$post_it_note: #fcf9ee;
+$pale_gold: #f8e49d;
+
+// semantic colors
+$header_links: $medium_gray;
+$header_gradient: $blue_gray;
+$footer_text: $medium_gray;
+$front_bg: $light_gray;
+$shadow: $medium_gray;
+$linen_border: #e0ddd5;
+$placeholder_bg: #a5e8f9;
+
+// alerts
+$info_bg: #bce8f1;
+$info_border: #93c6df;
+$success_bg: #dff0d8;
+$success_border: #9dd171;
+$error_bg: #f2dede;
+$error_border: #f46055;
+$error_text: #a94442;
+
+// misc
+$red_gradient_top: #da474b;
+$red_gradient_bottom: #9e0b0f;
+$scrollbar_thumb_bg: #bbbbbb;
+$horizontal_rule: #d6d4cf;
+$coachmark_aqua: #6dcff6;
+$hover_green: #5BB812;
+
+// action bar
+$action_bar_border: #464646;
+$action_bar_hover_bg: $darker_gray;
+$action_bar_multiselect_border: #649f36;
+$action_bar_multiselect_hover_bg: #599a25;
+
+// collections
+$collection_bg: #945393;
+$collection_border: #6b376a;
