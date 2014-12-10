@@ -13,15 +13,16 @@ This gem adds a live style guide for Forever branded apps.  Its long term goals 
 
 ### Installation
 
-Add to your Gemfile:
+Add to your Gemfile development group:
 ```
 # inside your group :development block
 gem 'forever_style_guide', git: 'git@github.com:forever-inc/forever-style-guide.git'
 
 ```
 
-Add to your config/routes.rb:
+Add to the bottom of your config/routes.rb:
 ```
+# recommend keeping at the bottom of routes so as not to conflict with any other routes
 mount ForeverStyleGuide::Engine => "/style-guide" unless Rails.env.production?
 ```
 
