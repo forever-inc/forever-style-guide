@@ -1,0 +1,55 @@
+<!--<!DOCTYPE html>-->
+<!--<html>-->
+<!--<head>-->
+  <!--<title>ForeverStyleGuide</title>-->
+  <!--<%= stylesheet_link_tag    "forever_style_guide/application", media: "all" %>-->
+  <!--<%= javascript_include_tag "forever_style_guide/application" %>-->
+  <!--<%= csrf_meta_tags %>-->
+<!--</head>-->
+<!--<body>-->
+
+<!--<%= yield %>-->
+
+<!--</body>-->
+<!--</html>-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Forever Style Guide</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
+
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= stylesheet_link_tag    "style_guide/application", :media => "all" %>
+  <%= csrf_meta_tags %>
+</head>
+<body class="style-guide">
+  <div class="style-guide-bar">
+    <div class="style-guide-bar-container">
+      <label class="style-guide-navigation-button" for="style-guide-checkbox">&#x2630;</label>
+      <%= link_to "forever_style_guide_path", class: "brand" do %>
+        <%= image_tag("forever_style_guide/logo-160.png", alt: "Forever Logo") %>
+      <% end %>
+      <input id="style-guide-checkbox" type="checkbox" />
+      <div class="style-guide-bar-sections">
+        <% @sections.each_with_index do |section, index| %>
+          <div class="style-guide-bar-section <%= (section == @current_section) ? 'active'.html_safe : '' %>">
+            <a href="<%= style_path(section.id) %>"><%= section.title %></a>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <%= yield %>
+  </div>
+  <%= javascript_include_tag "application" %>
+  <%= javascript_include_tag "style_guide/application" %>
+</body>
+</html>
