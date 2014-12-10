@@ -39,7 +39,7 @@
       <div class="style-guide-bar-sections">
         <% @sections.each_with_index do |section, index| %>
           <div class="style-guide-bar-section <%= (section == @current_section) ? 'active'.html_safe : '' %>">
-            <a href="<%= style_path(section.id) %>"><%= section.title %></a>
+            <%= link_to section.title, section.id %>
           </div>
         <% end %>
       </div>
