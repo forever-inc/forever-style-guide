@@ -1,0 +1,52 @@
+/* =font sizes
+   ---------------------------------------------------------------------------- */
+$tiny_font: 12px;
+$small_font: 14px;
+$medium_small_font: 18px;
+$medium_font: 24px;
+$large_font: 40px;
+$larger_font: 64px;
+
+
+/* font widths */
+%regular-font {
+  font-family: proxima_nova_regular, Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+}
+%thin-font {
+  font-family: proxima_nova_thin, Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+}
+%light-font {
+  font-family: proxima_nova_light, Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+}
+%bold-font {
+  font-family: proxima_nova_bold, Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+}
+%italic-font {
+  font-family: proxima_nova_regular_italic, Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+}
+%bold-italic-font {
+  font-family: proxima_nova_bold_italic, Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+}
+%semibold-font {
+  font-family: proxima_nova_semibold, Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+}
+
+/* font styles */
+%tiny-text {
+  font-size: $tiny_font;
+}
+%small-text {
+  font-size: $small_font;
+  @extend %regular-font;
+}
+%medium-small-text {
+  font-size: $medium_small_font;
+  @extend %regular-font;
+}
+%medium-text {
+  font-size: $medium_font;
+  @extend %light-font;
+}
+%large-text {
+  font-size: $large_font;
+}

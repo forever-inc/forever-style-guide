@@ -1,0 +1,75 @@
+%spacer {
+  margin-top: 20px;
+}
+
+%circle {
+  border-radius: 50%;
+}
+
+%horizontally-centered {
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+}
+
+%vertically-centered {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: normal;
+}
+
+@mixin drop_shadow($h_shadow: 1px, $v_shadow: 1px, $blur: 4px, $spread: 0px, $color: $shadow) {
+  -moz-box-shadow:    $h_shadow $v_shadow $blur $spread $color;
+  -webkit-box-shadow: $h_shadow $v_shadow $blur $spread $color;
+  box-shadow:         $h_shadow $v_shadow $blur $spread $color;
+}
+
+@mixin text_shadow($color: $darker_gray) {
+  text-shadow: 1px 1px 1px $color;
+}
+
+@mixin outer_glow($h_shadow: 0, $v_shadow: 0, $blur: 2px, $spread: 0, $color: $shadow) {
+  -moz-box-shadow: $h_shadow $v_shadow $blur $spread $color;
+  -webkit-box-shadow: $h_shadow $v_shadow $blur $spread $color;
+  box-shadow: $h_shadow $v_shadow $blur $spread $color;
+}
+
+@mixin gradient {
+  background-color: $white;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(80%, $white), color-stop(100%, $lighter_gray));
+  background-image: -webkit-linear-gradient( $white 80%, $lighter_gray 100% );
+  background-image: linear-gradient( $white 80%, $lighter_gray 100%);
+}
+
+@mixin transition($transition-property, $transition-time, $method) {
+  -webkit-transition: $transition-property $transition-time $method;
+  -moz-transition: $transition-property $transition-time $method;
+  -ms-transition: $transition-property $transition-time $method;
+  -o-transition: $transition-property $transition-time $method;
+  transition: $transition-property $transition-time $method;
+}
+
+@mixin button($color: $forever_green) {
+  @extend %regular-font;
+  padding: 18px 30px;
+  font-size: 16px;
+  border-radius: 2px;
+  color: white;
+  display: block;
+  margin: 10px auto;
+  background-color: $color;
+  text-align: center;
+  text-transform: uppercase;
+  box-shadow: none;
+  border: none;
+  text-shadow: none;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+@mixin link_visited_hover_active {
+  &:link, &:visited, &:hover, &:active {
+    @content;
+  }
+}
