@@ -1,0 +1,31 @@
+@import "forever_style_guide/globals/all";
+
+.avatar {
+  padding: 1px;
+  margin-right: 3px;
+  background: $white;
+  border-radius: 50%;
+  border: 4px solid $almost_white;
+  @include drop_shadow();
+
+  &.avatar-extra-large {
+    height: 250px;
+    width: 250px;
+  }
+  &.avatar-large {
+    height: 200px;
+    width: 200px;
+  }
+  &.avatar-medium {
+    height: 100px;
+    width: 100px;
+  }
+  &.avatar-small {
+    height: 70px;
+    width: 70px;
+  }
+  &.avatar-icon {
+    height: 40px;
+    width: 40px;
+  }
+}
