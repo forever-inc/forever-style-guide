@@ -1,12 +1,28 @@
 @import "forever_style_guide/globals/colors";
 
 .branding-color-swatches {
-  display: inline-block;
-  width: 100px;
-  height: 100px;
-  color: $white;
 
-  .primary {
-    background-color: $forever_green;
+  .branding-color-swatch {
+    color: $white;
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    padding: 5px;
   }
+}
+
+.primary {
+  background-color: $forever_green;
+}
+.secondary {
+  background-color: $forever_blue;
+}
+.accent {
+  background-color: $forever_purple;
+}
+.warning {
+  background-color: $forever_orange;
+}
+.error {
+  background-color: $forever_red;
 }
