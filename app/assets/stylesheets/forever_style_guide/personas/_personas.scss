@@ -1,0 +1,51 @@
+@import "forever_style_guide/globals/all";
+
+$sophia_color: #9dd171;
+
+.style-guide-persona-block {
+  position: relative;
+  color: $white;
+  &.sophia {
+    background-color: $sophia_color
+  }
+
+  .style-guide-persona-header {
+    padding:20px;
+  }
+
+  .style-guide-persona-header-content {
+    display: inline-block;
+    width: 345px;
+    padding-left: 20px;
+    vertical-align: top;
+    margin-left: 20px;
+  }
+}
+
+.style-guide-persona-title {
+  font-size: $medium_font;
+}
+
+.quote-bubble {
+  position: relative;
+  background-color: $white;
+  padding:10px;
+  border-radius: 10px;
+  color: $darker_gray;
+  margin: 0;
+  font-size: $medium_small_font;
+
+  &:after {
+    position: absolute;
+    display: block;
+    content: "";
+    border-color: transparent $white transparent transparent;
+    border-style: solid;
+    border-width: 20px 40px;
+    height: 0;
+    width: 0;
+    position:absolute;
+    top: 20px;
+    left: -70px;
+  }
+}
