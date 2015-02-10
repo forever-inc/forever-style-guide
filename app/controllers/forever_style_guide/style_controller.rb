@@ -1,11 +1,7 @@
 module ForeverStyleGuide
-  class StyleController < StyleGuide::StyleController
-    layout "forever_style_guide/application"
-
-    def index
-      render "forever_style_guide/index"
-    end
-
+  class StyleController < ForeverStyleGuide::ApplicationController
+    before_filter :load_sections
+    
     def show
       @current_section = @sections.detect { |section| section.id == params[:id] }
     end

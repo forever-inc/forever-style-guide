@@ -1,0 +1,10 @@
+<div class="style-guide-sidebar">
+  <% section.partials.each do |partial| %>
+  <div class="style-guide-sidebar-partial">
+    <a href="#<%= partial.id %>">
+      <i>&rsaquo;</i>
+      <%= partial.title %>
+    </a>
+  </div>
+  <% end %>
+</div>

@@ -1,0 +1,30 @@
+<div class="style-guide-partial" id="<%= partial.id %>">
+  <div class="style-guide-partial-title">
+    <%= partial.title %>
+  </div>
+
+  <% if partial.description %>
+    <div class="style-guide-partial-description">
+      <%= partial.description.html_safe %>
+    </div>
+  <% end %>
+
+  <div class="style-guide-partial-rendered">
+    <%= partial.render %>
+  </div>
+
+  <% if partial.identifiers.any? %>
+    <div class="style-guide-partial-identifiers">
+      <% partial.identifiers.each do |identifier_name| %>
+        &nbsp;<code><%= identifier_name %></code>
+      <% end %>
+    </div>
+  <% end %>
+
+  <input id="style-guide-toggle-<%= partial.id %>" type="checkbox" />
+  <label for="style-guide-toggle-<%= partial.id %>">
+    <pre class="style-guide-partial-source prettyprint linenums"><%= escape_for_display(partial.render) %></pre>
+    <div class="style-guide-toggle show">Show source code</div>
+    <div class="style-guide-toggle hide">Hide source code</div>
+  </label>
+</div>

@@ -4,7 +4,7 @@ module ForeverStyleGuide
   class Config < StyleGuide::Config
 
     def self.bootstrap_glob
-      ForeverStyleGuide::Engine.root.join("app", "views", "forever_style_guide", "*")
+      ForeverStyleGuide::Engine.root.join("app", "views", "forever_style_guide", "content", "*")
     end
 
     def sections
