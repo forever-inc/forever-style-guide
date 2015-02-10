@@ -2,6 +2,9 @@ PATH
   remote: .
   specs:
     forever_style_guide (0.0.8)
+      bootstrap-sass
+      font-awesome-rails
+      jquery-rails
       rails (~> 4.1.1)
       sass-rails
       style-guide
@@ -36,17 +39,24 @@ GEM
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
     arel (5.0.1.20140414130214)
+    bootstrap-sass (3.3.1.0)
+      sass (~> 3.2)
     builder (3.2.2)
     erubis (2.7.0)
+    font-awesome-rails (4.2.0.0)
+      railties (>= 3.2, < 5.0)
     github-markdown (0.6.8)
     hike (1.2.3)
     i18n (0.6.11)
+    jquery-rails (3.1.2)
+      railties (>= 3.0, < 5.0)
+      thor (>= 0.14, < 2.0)
     json (1.8.1)
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
     mime-types (2.4.3)
     mini_portile (0.6.1)
-    minitest (5.4.3)
+    minitest (5.5.0)
     multi_json (1.10.1)
     nokogiri (1.6.5)
       mini_portile (~> 0.6.0)
@@ -99,5 +109,9 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bootstrap-sass
+  font-awesome-rails
   forever_style_guide!
+  jquery-rails
+  sass-rails
   sqlite3
