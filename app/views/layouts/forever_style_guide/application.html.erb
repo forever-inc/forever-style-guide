@@ -14,22 +14,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body class="style-guide">
-<div class="style-guide-bar">
-  <div class="style-guide-bar-container">
-    <label class="style-guide-navigation-button" for="style-guide-checkbox">&#x2630;</label>
-    <%= link_to forever_style_guide.root_path, class: "brand" do %>
-      <%= image_tag("forever_style_guide/logo-160.png", alt: "Forever Logo") %>
-    <% end %>
-    <input id="style-guide-checkbox" type="checkbox" />
-    <div class="style-guide-bar-sections">
-      <% @sections.each_with_index do |section, index| %>
-        <div class="style-guide-bar-section <%= (section == @current_section) ? 'active'.html_safe : '' %>">
-          <%= link_to section.title, forever_style_guide.root_path + section.id %>
-        </div>
-      <% end %>
-    </div>
-  </div>
-</div>
+<%= render partial: "layouts/forever_style_guide/navigation" %>
 
 <div class="container">
   <%= yield %>
