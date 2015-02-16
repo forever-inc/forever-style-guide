@@ -1,0 +1,31 @@
+<!-- Vanilla Bootstrap header with custom theme css -->
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <%= link_to "http://www.forever.com", class: "navbar-brand" do %>
+        <%= image_tag("forever_style_guide/logo-160.png", alt: "Forever Logo") %>
+      <% end %>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav navbar-left">
+        <li class="style-guide-bar-section active">
+          <%= link_to "Collect", "#" %>
+        </li>
+        <li class="style-guide-bar-section active">
+          <%= link_to "Curate", "#" %>
+        </li>
+        <li class="style-guide-bar-section active">
+          <%= link_to "Celebrate", "#" %>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div>
+</nav>

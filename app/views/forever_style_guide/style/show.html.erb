@@ -1,11 +1,11 @@
-<%= render :partial => "header", :locals => {:section => @current_section} %>
+<%= render partial: "header", locals: {section: @current_section} %>
 
 <div class="style-guide-content">
-  <%= render :partial => "sidebar", :locals => {:section => @current_section} %>
+  <%= render partial: "sidebar", locals: {section: @current_section} %>
 
   <div class="style-guide-partials">
     <% @current_section.partials.each do |partial| %>
-      <%= render :partial => "partial", :locals => {:partial => partial} %>
+      <%= render partial: "partial", locals: {partial: partial} %>
     <% end %>
   </div>
 </div>

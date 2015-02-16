@@ -4,7 +4,7 @@ module ForeverStyleGuide
   class Partial < StyleGuide::Partial
 
     def render
-      @render ||= app_view.render(:file => path)
+      @render ||= app_view.render(file: path)
     end
 
     def app_view
