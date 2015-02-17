@@ -27,3 +27,24 @@ mount ForeverStyleGuide::Engine => "/style-guide" unless Rails.env.production?
 ```
 
 Fire up the app and visit: <app url>/style-guide
+
+### Adding content to style guide
+
+All the content in the style guide can be found in *app/views/forever_style_guide/content*.  All content in the style guide is organized into *sections* which are simple folders in the content directory.  There are two ways to add content the the style guide, through auto-formatted partials and raw_html partials.
+
+#### Auto-Formatted Partials
+
+Any content intended to be used as css/html in an other applications should use this format.  Auto-formatted partials are the default format content in the style guide will be displayed as and display titles, descriptions, css classes and code previews automatically.
+All you need to do is add an auto-formatted partial is create a partial in a section directory:
+```
+_partial.erb
+```
+
+
+#### Raw-HTML Partials
+Raw-Html partials allow more customized styling than Auto-formatted partials, but do not do any sort of automatic headings, css class inspection, pre-formatted code previews or any of that other fun stuff.  Its mostly for adding static content examples to the style guide such as the voice & tone section.
+To create a raw-html partial all you need to do is add a partial with a .html. extension to a section directory:
+```
+partial.html.erb
+```
+

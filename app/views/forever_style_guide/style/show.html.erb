@@ -1,11 +1,18 @@
 <%= render partial: "header", locals: {section: @current_section} %>
 
-<div class="style-guide-content">
-  <%= render partial: "sidebar", locals: {section: @current_section} %>
-
-  <div class="style-guide-partials">
-    <% @current_section.partials.each do |partial| %>
-      <%= render partial: "partial", locals: {partial: partial} %>
-    <% end %>
+<div class="container style-guide-content">
+  <div class="row">
+    <div class="col-sm-3 col-offset-1">
+      <%= render partial: "sidebar", locals: {section: @current_section} %>
+    </div>
+    <div class="col-sm-8 style-guide-partials">
+      <% @current_section.partials.each do |partial| %>
+        <% if partial.raw_html? %>
+          <%= partial.render %>
+        <% else %>
+          <%= render partial: "partial", locals: {partial: partial} %>
+        <% end %>
+      <% end %>
+    </div>
   </div>
 </div>
