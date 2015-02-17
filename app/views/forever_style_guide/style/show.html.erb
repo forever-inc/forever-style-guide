@@ -5,7 +5,7 @@
     <div class="col-sm-3 col-offset-1">
       <%= render partial: "sidebar", locals: {section: @current_section} %>
     </div>
-    <div class="col-sm-8 style-guide-partials">
+    <div class="col-sm-8 style-guide-partials" data-spy="scroll" data-target=".style-guide-sidebar">
       <% @current_section.partials.each do |partial| %>
         <% if partial.raw_html? %>
           <%= partial.render %>

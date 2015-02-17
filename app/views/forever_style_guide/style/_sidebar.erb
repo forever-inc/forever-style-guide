@@ -1,10 +1,10 @@
-<div class="style-guide-sidebar" data-spy="affix" data-offset-top="10" data-offset-bottom="200">
+<ul class="style-guide-sidebar" data-spy="affix" data-offset-top="100" data-offset-bottom="200">
   <% section.partials.each do |partial| %>
-  <div class="style-guide-sidebar-partial">
+  <li class="style-guide-sidebar-partial">
     <a href="#<%= partial.id %>">
-      <i>&rsaquo;</i>
+      <i class="glyphicon glyphicon-chevron-right"></i>
       <%= partial.title %>
     </a>
-  </div>
+  </li>
   <% end %>
-</div>
+</ul>
