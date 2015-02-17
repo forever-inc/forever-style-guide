@@ -2,10 +2,10 @@
 
 <div class="container style-guide-content">
   <div class="row">
-    <div class="col-sm-3 col-offset-1">
+    <div class="col-sm-3 col-offset-1 style-guide-scrollspy">
       <%= render partial: "sidebar", locals: {section: @current_section} %>
     </div>
-    <div class="col-sm-8 style-guide-partials" data-spy="scroll" data-target=".style-guide-sidebar">
+    <div class="col-sm-8 style-guide-partials" >
       <% @current_section.partials.each do |partial| %>
         <% if partial.raw_html? %>
           <%= partial.render %>
