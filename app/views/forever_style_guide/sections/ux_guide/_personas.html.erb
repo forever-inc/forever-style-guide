@@ -8,8 +8,8 @@
   </div>
 
   <div class="style-guide-partial-content">
-    <%= render :partial => "forever_style_guide/content/ux_guide/personas/sophia" %>
-    <%= render :partial => "forever_style_guide/content/ux_guide/personas/jane" %>
-    <%= render :partial => "forever_style_guide/content/ux_guide/personas/ted" %>
+    <%= render partial: sections_path.join("ux_guide","personas","sophia").to_s %>
+    <%= render partial: sections_path.join("ux_guide","personas","jane").to_s %>
+    <%= render partial: sections_path.join("ux_guide","personas","ted").to_s %>
   </div>
 </div>

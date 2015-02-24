@@ -28,9 +28,9 @@ mount ForeverStyleGuide::Engine => "/style-guide" unless Rails.env.production?
 
 Fire up the app and visit: <app url>/style-guide
 
-### Adding content to style guide
+### Adding sections to style guide
 
-All the content in the style guide can be found in *app/views/forever_style_guide/content*.  All content in the style guide is organized into *sections* which are simple folders in the content directory.  There are two ways to add content the the style guide, through auto-formatted partials and raw_html partials.
+All the content in the style guide can be found in *app/views/forever_style_guide/sections*.  All content in the style guide is organized into *sections* which are simple folders in the sections directory.  There are two ways to add content to the section, through auto-formatted partials and raw_html partials.
 
 #### Auto-Formatted Partials
 
