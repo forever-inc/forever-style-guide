@@ -1,0 +1,19 @@
+<div class="style-guide-partial" id="best_practices">
+  <div class="style-guide-partial-title">CSS Best Practices</div>
+  <div class="style-guide-partial-description">
+    <p>Writing CSS is relatively easy, writing modular and reusable CSS can be very tricky.  When in doubt here are some best practices you should observe to improve the chances your CSS will be reusable.</p>
+    <p>You can learn about all these best practices and more from <%= link_to "here", "https://www.youtube.com/watch?v=HoQ-QEusyS0" %>.</p>
+
+    <h4>Avoid coupling HTML structure to CSS Selectors</h4>
+    <p>Its much more modular to have selectors tied to specific classes, or data-attributes for reusability.  Relying on HTML element structure can lead to unintended consequences during HTML or CSS refactoring.</p>
+    <p>Avoid using CSS selectors for non-CSS, try and use classes or data-attributes as selectors instead of semantic HTML tags whenever possible.  Even the accursed #id is preferable to tying styling to HTML structure.</p>
+
+    <h4>Single responsibility objects</h4>
+    <p>As much as possible try and define <em>objects</em> with your CSS that do one thing, and one thing well.  The responsibilities of that object should be entirely encapsulated by its definition.  That means the object is flexible enough to stand up on its own, and works the same way everywhere its used.</p>
+    <p>For instance, every module in this style guide is a stand alone object, but is flexible enough to still work in unique compositions with other objects.</p>
+
+    <h4>Limit specificity depth and nesting as much as possible</h4>
+    <p>As much as possible try and keep selectors flat and uniquely name spaced.  Your selectors should still communicate what the object is, as well as its relationship to parents/children objects and any state/modifiers on it.</p>
+    <p>Instead of writing a selector such as<code>.parent .child .active</code>, think more in terms of <code>.parent-child-is-active</code>.</p>
+  </div>
+</div>

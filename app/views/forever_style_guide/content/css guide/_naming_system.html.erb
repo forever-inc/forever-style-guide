@@ -1,0 +1,27 @@
+<div class="style-guide-partial" id="css">
+  <div class="style-guide-partial-title">We <%= fa_icon "heart" %> Modular & Scalable CSS</div>
+  <div class="style-guide-partial-description">
+    We try to write modular and scalable CSS for Forever, so we use SMACSS.
+    <%= link_to "https://smacss.com/" do %>
+      Learn more about SMACSS
+    <% end %>
+    <h4>Modules == Block == Object</h4>
+    <p>The majority of the CSS that we write should be <em>modules</em>, in BEM these are known as blocks and mean the same thing.  Basically these are visual components on the screen that serve a discreet purpose.</p>
+    <pre class="prettyprint">
+.object {
+.btn {}
+.avatar {}
+.photo {}</pre>
+  </div>
+  <pre class="style-guide-partial-source prettyprint linenums show">
+    .b-base_name {}
+    .l-layout_name {}
+    .module {}
+    .same_module {}
+    .module-submodule {}
+    .module-modifier {}
+    .module-is-state {}
+    .module.is-state {}
+    .module-submodule-is-state {}
+  </pre>
+</div>
