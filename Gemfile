@@ -12,6 +12,7 @@ gemspec
 gem 'sass-rails'
 gem 'jquery-rails'
 gem 'bootstrap-sass'
+gem 'compass-rails'
 gem 'font-awesome-rails'
 
 # To use debugger

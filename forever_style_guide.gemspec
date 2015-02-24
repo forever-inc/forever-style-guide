@@ -21,6 +21,7 @@ Gem::Specification.new do |s|
   s.add_dependency "style-guide"
 
   s.add_dependency "sass-rails"
+  s.add_dependency "compass-rails"
   s.add_dependency "jquery-rails"
   s.add_dependency "bootstrap-sass"
   s.add_dependency "font-awesome-rails"
