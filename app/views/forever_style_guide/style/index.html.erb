@@ -7,22 +7,27 @@
 </div>
 <div class="container style-guide-content">
   <div class="row">
-    <div class="col-sm-12">
-      <h3>This style guide is for...</h3>
+    <div class="col-sm-12 text-center">
+      <p class="lead">This style guide is for...</p>
     </div>
   </div>
   <div class="row">
-    <div class="col-sm-4">
-      <h4><%= fa_icon "code" %> Developers</h4>
+    <div class="col-sm-4 text-center">
+      <%= fa_stacked_icon "code inverse", base: "circle", class: "fa-3x feature-icon" %>
+      <h4>Developers</h4>
       <p>Add this style guide as a core module to your applications to make your application styling consistent with other Forever web apps, as well not waste time reimplementing common components and layouts.  You can also test your app's custom css changes against the 'pristine' style guide with the toggle at the top of the navigation.</p>
-      <%= link_to "Documentation", "https://github.com/forever-inc/forever-style-guide" %>
+      <%= link_to "https://github.com/forever-inc/forever-style-guide" do %>
+        <%= fa_icon "github-square", text: "Read Docs"  %>
+      <% end %>
     </div>
-    <div class="col-sm-4">
-      <h4><%= fa_icon "paint-brush" %> Designers</h4>
+    <div class="col-sm-4 text-center">
+      <%= fa_stacked_icon "paint-brush inverse", base: "circle", class: "fa-3x feature-icon" %>
+      <h4>Designers</h4>
       <p>Reference this as the bible of existing codified and current model of visual design and UX best practices for the Forever brand and products.  New relevant core design work is expected to be added and shared here so that other applications in the company can reference and leverage that work in their apps.</p>
     </div>
-    <div class="col-sm-4">
-      <h4><%= fa_icon "briefcase" %> Business</h4>
+    <div class="col-sm-4 text-center">
+      <%= fa_stacked_icon "briefcase inverse", base: "circle", class: "fa-3x feature-icon" %>
+      <h4>Business</h4>
       <p>This style guide is full of useful insights, visual materials and various assets that could be used in other business contexts to improve customer experience and project a consistent brand image.</p>
     </div>
   </div>
