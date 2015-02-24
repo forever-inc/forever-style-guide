@@ -1,0 +1,69 @@
+/* =colors
+---------------------------------------------------------------------------- */
+
+// map for all color declarations
+$colors: ();
+
+// pre-defined variations for easy consistent adjustments across future color variation tweaks
+$variations: (
+        light: (
+                function: lighten,
+                parameters: 15%
+        ),
+        dark: (
+                function: darken,
+                parameters: 10%
+        ),
+        fade: (
+                function: rgba,
+                parameters: .7
+        ),
+        gray: (
+                function: grayscale
+        ),
+        shade: (
+                function: mix,
+                parameters: white 80%
+        )
+);
+
+@function color-variation($color, $variation: false) {
+  // Correctly set $color variable:
+  @if map-has-key($colors, $color) {
+    // $color is in $colors, set variable = map-value
+    $color: map-get($colors, $color);
+  } @else {
+    @if type-of($color) != color {
+      // $color is not in $color and $color is not a color
+      @error "Invalid color name: `#{$color}`.";
+    }
+    // $color is a valid color - use it
+  }
+
+  @if $variation {
+    @if not map-has-key($variations, $variation) {
+      // variation is not in $variations
+      @error "Invalid $variation: `#{$variation}`.";
+    } @else {
+      // make it easier to deal with nested map
+      $this-variation: map-get($variations, $variation);
+      // $args = $function, $color
+      $args: join(map-get($this-variation, function), $color);
+      @if map-get($this-variation, parameters) {
+        // $args = $function, $colors, $parameters
+        $args: join($args, map-get($this-variation, parameters));
+      }
+      //@return $args;
+      @return call($args...);
+    }
+  }
+  // no $variation, just return $color
+  @return $color;
+}
+
+// declaration function that makes future changes to variations easier to manage
+@function color($id, $color, $variation: false) {
+  $color-variation: color-variation($color, $variation);
+  $colors: map-merge($colors, ($id: $color-variation)) !global; // adds color declaration to global $colors map
+  @return $color-variation;
+}

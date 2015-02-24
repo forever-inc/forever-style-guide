@@ -1,18 +1,40 @@
+@import "forever_style_guide/utils/color-utils";
+
 /* =colors
 ---------------------------------------------------------------------------- */
 
-// Forever colors
-$forever_green: #7ac143;
-$forever_blue: #00a4e4;
-$forever_purple: #731472;
-$forever_orange: #ED773A;
-$forever_red: #bf3030;
+// Core color declarations, this list is intended to be a limited set of unique branded colors
+$forever_green: color(forever_green, #7ac143);
+$forever_blue: color(forever_blue, #00a4e4);
+$forever_purple: color(forever_purple, #731472);
+$forever_orange: color(forever_orange, #ED773A);
+$forever_red: color(forever_red, #bf3030);
+$forever_beige: color(forever_beige, #ebeae6);
+$forever_grey: color(forever_grey, #434445);
 
-// B&W
+// Color variation declarations, colors comprised of variations on the core brand color declarations.
+
+$forever_green-light : color(forever_green_light, $forever_green, light);
+$forever_green-dark : color(forever_green_dark, $forever_green, dark);
+$forever_blue-light: color(forever_blue_light, $forever_blue, light);
+$forever_blue-dark: color(forever_blue_dark, $forever_blue, dark);
+$forever_purple-light: color(forever_purple_light, $forever_purple, light);
+$forever_purple-dark: color(forever_purple_dark, $forever_purple, dark);
+$forever_orange-light: color(forever_orange_light, $forever_orange, light);
+$forever_orange-dark: color(forever_orange_dark, $forever_orange, dark);
+$forever_red-light: color(forever_red_light, $forever_red, light);
+$forever_red-dark: color(forever_red_dark, $forever_red, dark);
+
+// Semantic color usages, this list comprises aliases for usages of declared colors.
+
+$color-primary : $forever_green;
+$color-background: $forever_beige;
+
+//// B&W
 $white: #FFFFFF;
 $black: #000000;
 $almost_white: #FAFAFA;
-
+//
 $lightest_gray: #f6f6f6;
 $lighter_gray: #E7E7E7;
 $light_gray: #CCCCCC;
@@ -21,22 +43,20 @@ $dark_gray: #666666;
 $darker_gray: #333333;
 $blue_gray: #e2eaee;
 
-// App background beige
-$main_bg: #ebeae6;
 
-// blues
-$blue: #3782c3;
-$dark_blue: #2977BD;
-$progress_blue: #71afcf;
-$testimonial_blue: #5FBDE1;
-
-//greens
-$light_green: #ecfcdf;
-
-// utilities
-$post_it_note: #fcf9ee;
-$pale_gold: #f8e49d;
-
+//// blues
+//$blue: #3782c3;
+//$dark_blue: #2977BD;
+//$progress_blue: #71afcf;
+//$testimonial_blue: #5FBDE1;
+//
+////greens
+//$light_green: #ecfcdf;
+//
+//// utilities
+//$post_it_note: #fcf9ee;
+//$pale_gold: #f8e49d;
+//
 // semantic colors
 $header_links: $medium_gray;
 $header_gradient: $blue_gray;
@@ -45,30 +65,30 @@ $front_bg: $light_gray;
 $shadow: $medium_gray;
 $linen_border: #e0ddd5;
 $placeholder_bg: #a5e8f9;
-
-// alerts
-$info_bg: #bce8f1;
-$info_border: #93c6df;
-$success_bg: #dff0d8;
-$success_border: #9dd171;
-$error_bg: #f2dede;
-$error_border: #f46055;
-$error_text: #a94442;
-
-// misc
-$red_gradient_top: #da474b;
-$red_gradient_bottom: #9e0b0f;
-$scrollbar_thumb_bg: #bbbbbb;
-$horizontal_rule: #d6d4cf;
-$coachmark_aqua: #6dcff6;
-$hover_green: #5BB812;
-
-// action bar
-$action_bar_border: #464646;
-$action_bar_hover_bg: $darker_gray;
-$action_bar_multiselect_border: #649f36;
-$action_bar_multiselect_hover_bg: #599a25;
-
-// collections
-$collection_bg: #945393;
-$collection_border: #6b376a;
+//
+//// alerts
+//$info_bg: #bce8f1;
+//$info_border: #93c6df;
+//$success_bg: #dff0d8;
+//$success_border: #9dd171;
+//$error_bg: #f2dede;
+//$error_border: #f46055;
+//$error_text: #a94442;
+//
+//// misc
+//$red_gradient_top: #da474b;
+//$red_gradient_bottom: #9e0b0f;
+//$scrollbar_thumb_bg: #bbbbbb;
+//$horizontal_rule: #d6d4cf;
+//$coachmark_aqua: #6dcff6;
+//$hover_green: #5BB812;
+//
+//// action bar
+//$action_bar_border: #464646;
+//$action_bar_hover_bg: $darker_gray;
+//$action_bar_multiselect_border: #649f36;
+//$action_bar_multiselect_hover_bg: #599a25;
+//
+//// collections
+//$collection_bg: #945393;
+//$collection_border: #6b376a;
