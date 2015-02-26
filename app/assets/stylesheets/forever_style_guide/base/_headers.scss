@@ -1,0 +1,32 @@
+@import "forever_style_guide/globals/all";
+
+/* Headers */
+h1 {
+  @extend %font-light;
+  @extend %font_size-600;
+}
+h2 {
+  @extend %font-light;
+  @extend %font_size-500;
+}
+h3 {
+  @extend %font-regular;
+  @extend %font_size-400;
+  color: $forever_purple;
+}
+h4 {
+  @extend %font-semibold;
+  @extend %font_size-300;
+}
+h5 {
+  @extend %font-bold;
+  @extend %font_size-200;
+}
+h6 {
+  @extend %font-bold;
+  @extend %font_size-100;
+}
+p {
+  @extend %font-regular;
+  @extend %font_size-200;
+}

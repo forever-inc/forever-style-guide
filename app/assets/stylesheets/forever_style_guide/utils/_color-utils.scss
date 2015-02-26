@@ -1,4 +1,6 @@
-/* =colors
+/* =colors-utils
+
+Sass functions and color related variables beyond standard color declarations
 ---------------------------------------------------------------------------- */
 
 // map for all color declarations
@@ -6,25 +8,25 @@ $colors: ();
 
 // pre-defined variations for easy consistent adjustments across future color variation tweaks
 $variations: (
-        light: (
-                function: lighten,
-                parameters: 15%
-        ),
-        dark: (
-                function: darken,
-                parameters: 10%
-        ),
-        fade: (
-                function: rgba,
-                parameters: .7
-        ),
-        gray: (
-                function: grayscale
-        ),
-        shade: (
-                function: mix,
-                parameters: white 80%
-        )
+  light: (
+    function: lighten,
+    parameters: 15%
+  ),
+  dark: (
+    function: darken,
+    parameters: 10%
+  ),
+  fade: (
+    function: rgba,
+    parameters: .7
+  ),
+  gray: (
+    function: grayscale
+  ),
+  shade: (
+    function: mix,
+    parameters: white 80%
+  )
 );
 
 @function color-variation($color, $variation: false) {

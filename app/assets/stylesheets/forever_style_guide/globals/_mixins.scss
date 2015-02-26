@@ -72,8 +72,8 @@
 //  transition: all 0.3s;
 //}
 //
-//@mixin link_visited_hover_active {
-//  &:link, &:visited, &:hover, &:active {
-//    @content;
-//  }
-//}
+@mixin link_visited_hover_active {
+  &:link, &:visited, &:hover, &:active {
+    @content;
+  }
+}

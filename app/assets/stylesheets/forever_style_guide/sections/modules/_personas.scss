@@ -23,17 +23,17 @@ $sophia_color: #9dd171;
 }
 
 .style-guide-persona-title {
-  font-size: $medium_font;
+  @extend %font_size-300;
 }
 
 .quote-bubble {
+  @extend %font_size-200;
   position: relative;
   background-color: $white;
   padding:10px;
   border-radius: 10px;
   color: $darker_gray;
   margin: 0;
-  font-size: $medium_small_font;
 
   &:after {
     position: absolute;
