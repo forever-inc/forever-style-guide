@@ -14,8 +14,8 @@ $forever_grey: color(forever_grey, #434445);
 
 // Color variation declarations, colors comprised of variations on the core brand color declarations.
 
-$forever_green-light : color(forever_green_light, $forever_green, light);
-$forever_green-dark : color(forever_green_dark, $forever_green, dark);
+$forever_green-light: color(forever_green_light, $forever_green, light);
+$forever_green-dark: color(forever_green_dark, $forever_green, dark);
 $forever_blue-light: color(forever_blue_light, $forever_blue, light);
 $forever_blue-dark: color(forever_blue_dark, $forever_blue, dark);
 $forever_purple-light: color(forever_purple_light, $forever_purple, light);
@@ -27,7 +27,9 @@ $forever_red-dark: color(forever_red_dark, $forever_red, dark);
 
 // Semantic color usages, this list comprises aliases for usages of declared colors.
 
-$color-primary : $forever_green;
+$color-primary: $forever_green;
+$color-secondary: $forever_blue;
+$color-accent: $forever_purple;
 $color-background: $forever_beige;
 
 //// B&W

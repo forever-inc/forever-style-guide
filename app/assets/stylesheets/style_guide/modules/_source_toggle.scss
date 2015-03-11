@@ -1,0 +1,98 @@
+// this is an all css based toggle switch that came with the pivotal style-guide gem.  Usually you would want javascript to do this.
+.style-guide-toggle {
+
+  .style-guide-toggle-source {
+    display: none;
+    white-space: pre;
+    word-wrap: normal;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 10px 10px 10px 14px;
+    background: #fff;
+    border-color: #ddd;
+    overflow-x: auto;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    -webkit-box-shadow: inset 40px 0 0 #f5f5f5, inset 41px 0 0 #ddd;
+    -moz-box-shadow: inset 40px 0 0 #f5f5f5, inset 41px 0 0 #ddd;
+    box-shadow: inset 40px 0 0 #f5f5f5, inset 41px 0 0 #ddd;
+    font-size: 12px;
+    font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
+
+    ol {
+      padding: 0;
+      margin: 0 0 0 33px; /* IE indents via margin-left */
+    }
+
+    li {
+      font-size: 12px;
+      margin: 0;
+      padding: 0 0 0 5px;
+      color: #888;
+      line-height: 20px;
+      text-shadow: 0 1px 0 #fff;
+    }
+
+    span {
+      cursor: text;
+    }
+
+    .com { color: #93a1a1; }
+    .lit { color: #195f91; }
+    .pun, .opn, .clo { color: #93a1a1; }
+    .fun { color: #dc322f; }
+    .str, .atv { color: #D14; }
+    .kwd, .prettyprint .tag { color: navy; }
+    .typ, .atn, .dec, .var { color: teal; }
+  }
+
+  // default unopened state
+  .style-guide-toggle-input {
+    -webkit-user-select: none;
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    user-select: none;
+    display: none;
+  }
+
+  .style-guide-toggle-label {
+    cursor: pointer;
+    height: 18px;
+    font-size: 11px;
+    font-weight: normal;
+    line-height: 18px;
+    opacity: 0.75;
+    width: 100%;
+  }
+
+  .style-guide-toggle-source {
+    display: none;
+  }
+
+  .style-guide-toggle-hide {
+    border: 1px solid #ddd;
+    background-color: #f5f5f5;
+    color: #888;
+    padding: 0 5px;
+    display: none;
+  }
+
+  .style-guide-toggle-show {
+    border: 1px solid #ddd;
+    background-color: #f5f5f5;
+    color: #888;
+    padding: 0 5px;
+    display: block;
+  }
+
+  // opened state
+  .style-guide-toggle-input:checked + .style-guide-toggle-label {
+    .style-guide-toggle-hide, .style-guide-toggle-source {
+      display: block;
+    }
+    .style-guide-toggle-show {
+      display: none;
+    }
+  }
+}

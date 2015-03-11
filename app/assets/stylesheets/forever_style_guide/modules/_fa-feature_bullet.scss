@@ -1,0 +1,41 @@
+// this module provides styling for the font-awesome-rails gem's stacked icon helpers: https://github.com/bokmann/font-awesome-rails#helpers
+
+@import "forever_style_guide/globals/colors";
+
+.fa-feature_bullet {
+
+  .fa-feature_bullet-icon {
+    color: $white;
+  }
+
+  &.fa-feature_bullet-primary .fa-feature_bullet-circle {
+    color: $color-primary;
+  }
+
+  &.fa-feature_bullet-secondary .fa-feature_bullet-circle {
+    color: $color-secondary;
+  }
+
+  &.fa-feature_bullet-accent .fa-feature_bullet-circle {
+    color: $color-accent;
+  }
+
+  // inverse will reverse the white and colored element on the stacked icon
+  &.fa-inverse {
+    .fa-feature_bullet-circle {
+      color: $white;
+    }
+
+    &.fa-feature_bullet-primary .fa-feature_bullet-icon {
+      color: $color-primary;
+    }
+
+    &.fa-feature_bullet-secondary .fa-feature_bullet-icon {
+      color: $color-secondary;
+    }
+
+    &.fa-feature_bullet-accent .fa-feature_bullet-icon {
+      color: $color-accent;
+    }
+  }
+}
