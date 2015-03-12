@@ -6,16 +6,6 @@
   transition: $transition-property $transition-time $method;
 }
 
-@mixin drop_shadow($h_shadow: 1px, $v_shadow: 1px, $blur: 4px, $spread: 0, $color: $shadow) {
-  -moz-box-shadow: $h_shadow $v_shadow $blur $spread $color;
-  -webkit-box-shadow: $h_shadow $v_shadow $blur $spread $color;
-  box-shadow: $h_shadow $v_shadow $blur $spread $color;
-}
-
-@mixin text_shadow($color: $darker_gray) {
-  text-shadow: 1px 1px 1px $color;
-}
-
 
 //%spacer {
 //  margin-top: 20px;

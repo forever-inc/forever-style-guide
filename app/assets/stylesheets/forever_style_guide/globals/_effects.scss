@@ -1,0 +1,13 @@
+@import "compass/css3/box-shadow";
+@import "compass/css3/text-shadow";
+@import "forever_style_guide/globals/colors";
+
+$shadow-color: rgba($gray-500, 0.6);
+
+%box-shadow {
+  @include box-shadow($shadow-color 0 2px 4px);
+}
+
+%text-shadow {
+  @include text-shadow($shadow-color 0 2px 4px);
+}

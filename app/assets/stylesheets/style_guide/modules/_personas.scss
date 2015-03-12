@@ -1,4 +1,5 @@
-@import "forever_style_guide/globals/all";
+@import "forever_style_guide/globals/fonts";
+@import "forever_style_guide/globals/colors";
 
 $sophia_color: #9dd171;
 
@@ -32,7 +33,7 @@ $sophia_color: #9dd171;
   background-color: $white;
   padding:10px;
   border-radius: 10px;
-  color: $darker_gray;
+  color: $gray-600;
   margin: 0;
 
   &:after {

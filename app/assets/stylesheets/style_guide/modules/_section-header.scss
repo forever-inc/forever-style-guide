@@ -1,8 +1,8 @@
 @import "forever_style_guide/globals/colors";
+@import "forever_style_guide/globals/effects";
 
 .style-guide-section-header {
   height: 210px;
-  color: $white;
 
   &.style-guide-section-header-primary {
     background-color: $color-primary;
@@ -14,5 +14,10 @@
 
   &.style-guide-section-header-accent {
     background-color: $color-accent;
+  }
+
+  .style-guide-section-header-title {
+    color: $white;
+    @extend %text-shadow;
   }
 }
