@@ -1,6 +1,3 @@
-@import "bootstrap-sprockets";
-@import "bootstrap";
-
 @import "forever_style_guide/globals/colors";
 @import "forever_style_guide/globals/fonts";
 
@@ -12,7 +9,6 @@ html, body {
 .nav-pills > li > a {
   border-radius: 0;
 }
-
 
 //
 //html {
