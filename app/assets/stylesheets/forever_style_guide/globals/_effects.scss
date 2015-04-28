@@ -1,8 +1,14 @@
 @import "compass/css3/box-shadow";
 @import "compass/css3/text-shadow";
+@import "compass/css3/images";
 @import "forever_style_guide/globals/colors";
 
 $shadow-color: rgba($gray-500, 0.6);
+
+%no-shadow {
+  @include box-shadow(none);
+  @include text-shadow(none);
+}
 
 %box-shadow {
   @include box-shadow($shadow-color 0 2px 4px);
@@ -10,4 +16,13 @@ $shadow-color: rgba($gray-500, 0.6);
 
 %text-shadow {
   @include text-shadow($shadow-color 0 2px 4px);
+}
+
+%gray-gradient {
+  @include background-image(linear-gradient($white, $gray-300));
+}
+
+%card-style {
+  @extend %box-shadow;
+  background-color: $color-card-bg;
 }

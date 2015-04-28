@@ -1,0 +1,6 @@
+@import "forever_style_guide/globals/effects";
+
+
+.card {
+  @extend %card-style;
+}
