@@ -1,14 +1,60 @@
 @import "forever_style_guide/globals/fonts";
 @import "forever_style_guide/globals/colors";
+@import "forever_style_guide/globals/effects";
 
 $sophia_color: #9dd171;
+
+.persona {
+  @extend %card-style;
+  color: $white;
+
+  .persona-header {
+    display: inline-block;
+
+    .persona-header-title {
+
+    }
+
+    .persona-header-quote {
+      @extend %font-size-200;
+      position: relative;
+      background-color: $white;
+      padding:10px;
+      border-radius: 10px;
+      color: $gray-600;
+      margin: 0;
+
+      &:after {
+        position: absolute;
+        display: block;
+        content: "";
+        border-color: transparent $white transparent transparent;
+        border-style: solid;
+        border-width: 20px 40px;
+        height: 0;
+        width: 0;
+        position: absolute;
+        top: 20px;
+        left: -70px;
+      }
+    }
+  }
+
+  .persona-body {
+
+  }
+
+  &.persona-sophia {
+    background-color: $sophia_color
+  }
+
+
+
+}
 
 .style-guide-persona-block {
   position: relative;
   color: $white;
-  &.sophia {
-    background-color: $sophia_color
-  }
 
   .style-guide-persona-header {
     padding:20px;
@@ -24,11 +70,11 @@ $sophia_color: #9dd171;
 }
 
 .style-guide-persona-title {
-  @extend %font_size-300;
+  @extend %font-size-300;
 }
 
 .quote-bubble {
-  @extend %font_size-200;
+  @extend %font-size-200;
   position: relative;
   background-color: $white;
   padding:10px;
@@ -45,7 +91,7 @@ $sophia_color: #9dd171;
     border-width: 20px 40px;
     height: 0;
     width: 0;
-    position:absolute;
+    position: absolute;
     top: 20px;
     left: -70px;
   }
