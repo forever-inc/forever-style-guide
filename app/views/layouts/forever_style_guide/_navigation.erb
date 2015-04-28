@@ -1,5 +1,5 @@
-<nav class="navbar navbar-default navbar-fixed-top">
-  <div class="container">
+<header class="style-guide-header">
+  <nav class="navbar navbar-default navbar-fixed-top">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
         <span class="sr-only">Toggle navigation</span>
@@ -8,14 +8,17 @@
         <span class="icon-bar"></span>
       </button>
       <%= link_to forever_style_guide_path, class: "navbar-brand" do %>
-        <%= image_tag("forever_style_guide/logo-160.png", alt: "Forever Logo") %>
+        <%= image_tag("forever_style_guide/logo-380.png", alt: "Forever Logo", class:"navbar-brand-logo") %>
       <% end %>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav navbar-left">
         <% @sections.each_with_index do |section, index| %>
-          <li class="style-guide-bar-section <%= (section == @current_section) ? 'active'.html_safe : '' %>">
-            <%= link_to section.title, forever_style_guide_path + section.id %>
+          <li class="nav-item <%= (section == @current_section) ? 'active'.html_safe : '' %>">
+            <%= link_to forever_style_guide_path + section.id, class:"nav-item-tab" do %>
+              <%= fa_icon(section.icon, class:"nav-item-icon") %>
+              <span class="nav-item-label"><%= section.title %></span>
+            <% end %>
           </li>
         <% end %>
       </ul>
@@ -29,5 +32,6 @@
         </form>
       </ul>
     </div><!--/.nav-collapse -->
-  </div>
-</nav>
+  </nav>
+</header>
+
