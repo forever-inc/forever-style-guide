@@ -1,0 +1,386 @@
+/* =header
+---------------------------------------------------------------------------- */
+@import "forever_style_guide/globals/all";
+
+$header_height: 60px;
+$header_link_icons: 24px;
+$header_link_icon_padding: 10px;
+$library_padding: 20px;
+
+//header {
+//  position: fixed;
+//  top: 0;
+//  height: $header_height;
+//  width: 100%;
+//  background: $color-card;
+//  z-index: 3;
+//  @extend %box-shadow;
+//
+//  .brand {
+//    float: left;
+//    height: $header_height;
+//  }
+//  a.logo {
+//    display: block;
+//    margin: 0 auto;
+//    padding: 15px 30px;
+//    width: 250px;
+//    height: $header_height;
+//    background: image-url('logo-380.png') no-repeat 50% 15px;
+//    background-size: 190px 30px;
+//
+//    img {
+//      display: none;
+//    }
+//  }
+//
+//  .icon-link {
+//    @include clearfix;
+//    display: block;
+//    height: $header_height;
+//    font-family: proxima_nova_light;
+//    outline: 0;
+//
+//    .fa {
+//      float: left;
+//      padding-top: 20px; // arbitrary number based on visual assessment
+//    }
+//    .fa:before {
+//      font-size: $header_link_icons;
+//    }
+//    .icon-label {
+//      float: left;
+//      margin-left: $header_link_icon_padding;
+//      padding-top: 22px; // arbitrary number based on visual assessment
+//      font-size: $font-size-400;
+//    }
+//  }
+//  .header-links {
+//    position: relative;
+//    z-index: 2;
+//    margin-right: $library_padding;
+//
+//    .icon-label {
+//      margin-right: $header_link_icon_padding;
+//    }
+//  }
+//  .header-links-main {
+//    a {
+//      border-bottom: 3px solid transparent;
+//
+//      &:link,
+//      &:visited,
+//      &:hover,
+//      &:active {
+//        padding: 0 20px;
+//      }
+//      &:hover {
+//        @extend %gray-gradient;
+//      }
+//    }
+//  }
+//  .area-home & .link-home,
+//  .area-library & .link-library,
+//  .header-links-main .active {
+//    a:link,
+//    a:visited,
+//    a:hover,
+//    a:active {
+//      @extend %gray-gradient;
+//      color: $gray-600;
+//      border-bottom-color: $forever_green;
+//      border-left: 1px solid $gray-200;
+//      border-right: 1px solid $gray-200;
+//    }
+//  }
+//  .header-links-right {
+//    .icon-link {
+//      position: relative;
+//      margin: 0;
+//      padding: 12px 20px;
+//      height: auto;
+//    }
+//    li:last-child .icon-link {
+//      // Keep clickable region, but align link with right edge
+//      margin-right: -20px;
+//    }
+//    .fa {
+//      float: none;
+//      display: block;
+//      padding: 0;
+//    }
+//    .fa:before {
+//      display: block;
+//      padding: 0;
+//      line-height: 1;
+//      text-align: center;
+//    }
+//    .icon-label {
+//      clear: left;
+//      margin: 0;
+//      padding: 0;
+//      @extend %font-size-default;
+//    }
+//    .inbox-badge {
+//      position: absolute;
+//      top: 1px;
+//      left: 40px;
+//      padding: 0;
+//      //@include circle_badge;
+//    }
+//    .account-link {
+//      padding: 10px;
+//      padding-top: 6px;
+//      text-align: center;
+//
+//      .avatar,
+//      .icon-label {
+//        cursor: pointer;
+//      }
+//    }
+//    .popover {
+//      top: 60px;
+//      left: -130px;
+//      width: 375px;
+//      max-width: none;
+//      padding: 0;
+//      background: $gray-600;
+//      color: $white;
+//
+//      .popover-content {
+//        padding: 3px 0 0;
+//
+//        .main {
+//          padding-top: 0;
+//          padding-bottom: 0;
+//        }
+//      }
+//      .arrow {
+//        left: auto;
+//        right: 55px;
+//      }
+//      .arrow:after {
+//        border-bottom-color: $gray-600;
+//      }
+//      p {
+//        font-size: $font-size-500;
+//        text-align: center;
+//        color: $white;
+//      }
+//      .account-actions {
+//        a {
+//          width: 46%;
+//          margin: 0 2% 10px;
+//          float: left;
+//          color: $white;
+//          background: $gray-600;
+//          border: 1px solid $white;
+//          border-radius: 2px;
+//          font-size: 16px;
+//
+//          &:hover {
+//            background: $black;
+//          }
+//
+//          .fa {
+//            display: inline-block;
+//            padding: 6px 5px;
+//          }
+//        }
+//      }
+//    }
+//  }
+//  .logged-out & .navbar-nav {
+//    margin: 0;
+//    margin-top: 8px;
+//    margin-right: 30px;
+//
+//    li {
+//      float: left;
+//      line-height: $header_height;
+//    }
+//    a {
+//      padding: 12px 30px;
+//      font-size: 18px; // would prefer variable but matching www styles
+//      text-transform: uppercase;
+//    }
+//    a.login {
+//      color: $gray-500;
+//      border: 0;
+//      @extend %no-shadow;
+//
+//      &:hover {
+//        background: transparent;
+//      }
+//    }
+//  }
+//  .navbar-nav {
+//    .btn.signup {
+//      @extend %no-shadow;
+//
+//      &:hover,
+//      &:active,
+//      &:focus {
+//        background: $button_primary_hover;
+//      }
+//    }
+//  }
+//}
+//.navbar {
+//  border-radius: 0;
+//  border: 0;
+//  margin-bottom: 0;
+//
+//  a:link,
+//  a:visited,
+//  a:hover,
+//  a:active {
+//    display: block;
+//    color: $gray-600;
+//  }
+//  a,
+//  div {
+//    &.icon-link:hover {
+//      background: transparent;
+//      color: $forever_blue;
+//    }
+//  }
+//  .navbar-primary {
+//    margin-left: 40px;
+//    padding-top: 18px;
+//    text-transform: uppercase;
+//    font-size: $font-size-400;
+//
+//    > li > a {
+//      &:link,
+//      &:visited,
+//      &:hover,
+//      &:active {
+//        background: transparent;
+//        margin: 0 4px;
+//        padding: 4px 12px;
+//      }
+//    }
+//    > .active {
+//      a:link,
+//      a:visited,
+//      a:hover,
+//      a:active {
+//        @extend %no-shadow;
+//        background: transparent;
+//        color: $white;
+//        background: $forever_blue;
+//        border-radius: 3px;
+//        letter-spacing: 1px;
+//      }
+//    }
+//  }
+//}
+
+header {
+
+}
+
+.navbar {
+  @extend %card-style;
+  height: $header_height;
+
+
+  .navbar-brand {
+    display: block;
+    margin: 0 auto;
+    padding: 15px 30px;
+    width: 250px;
+    height: $header_height;
+
+    .navbar-brand-logo {
+      max-width: 190px;
+      max-height: 30px;
+    }
+  }
+
+  //  .area-home & .link-home,
+  //  .area-library & .link-library,
+  //  .header-links-main .active {
+  //    a:link,
+  //    a:visited,
+  //    a:hover,
+  //    a:active {
+  //      @extend %gray-gradient;
+  //      color: $gray-600;
+  //      border-bottom-color: $forever_green;
+  //      border-left: 1px solid $gray-200;
+  //      border-right: 1px solid $gray-200;
+  //    }
+  //  }
+
+}
+
+.nav {
+
+  &.nav-pills {
+    @extend %card-style;
+
+    &.nav-stacked {
+
+    }
+  }
+
+  .nav-item {
+    @include clearfix;
+    @extend %font-size-300;
+    @extend %font-face-light;
+
+    .nav-item-tab {
+      height: $header_height;
+      padding-top: 20px;
+    }
+
+    .nav-item-icon {
+      @extend %font-size-500;
+      line-height: 20px;
+      vertical-align: bottom;
+    }
+
+    .nav-item-label {
+      line-height: 20px;
+    }
+
+    &:hover {
+      .nav-item-tab, .nav-item-list  {
+        color: $forever_blue;
+      }
+
+      .nav-item-list {
+        background-color: $color-nav-hover;
+        color: $forever_blue;
+      }
+    }
+
+    &.active {
+      .nav-item-tab {
+        background-color: $color-nav-active;
+        color: $gray-600;
+        border-bottom: 3px solid $forever_green;
+        border-left: 1px solid $gray-300;
+        border-right: 1px solid $gray-300;
+      }
+
+      .nav-item-list {
+        background-color: $color-nav-active;
+        color: $gray-600;
+        border-left: 3px solid $forever_green;
+        border-top: 1px solid $gray-300;
+        border-bottom: 1px solid $gray-300;
+      }
+
+      // neutralize hover on active nav selection
+      &:hover .nav-item-tab, .nav-item-list {
+        background-color: $color-nav-active;
+        color: $gray-600;
+      }
+
+    }
+
+  }
+}
