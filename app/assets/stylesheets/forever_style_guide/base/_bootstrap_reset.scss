@@ -1,3 +1,125 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+@import "forever_style_guide/globals/colors";
+@import "forever_style_guide/globals/fonts";
+
+html, body {
+  @extend %font-face-regular;
+  background-color: $color-background;
+}
+
+.nav-pills > li > a {
+  border-radius: 0;
+}
+
+
+//
+//html {
+//  position: relative;
+//  min-height: 100%;
+//}
+//$footer-height: 96px;
+//body {
+//  @extend %regular-font;
+//
+//  margin-bottom: $footer-height;
+//  @media(max-width: $screen-sm-max) {
+//    margin-bottom: $footer-height * 2;
+//  }
+//
+//  p {
+//    line-height: 1.4;
+//    font-size: 16px;
+//    color: $dark_gray;
+//  }
+//}
+//a {
+//  @include link_visited_hover_active {
+//    color: $forever_blue;
+//  }
+//}
+//strong {
+//  @extend %bold-font;
+//}
+//
+//// make all images responsive by default
+//img {
+//  @extend .img-responsive;
+//  margin: 0 auto;
+//}
+//.action-call {
+//  .col-lg-6 {
+//    padding: 0;
+//  }
+//}
+//// apply styles to HTML elements
+//// to make views framework-neutral
+//main {
+//  @extend .container;
+//  width: 100%;
+//  padding: 0 0 80px;
+//  background: white;
+//}
+//section {
+//  @extend .row;
+//  margin-top: 20px;
+//}
+//.jumbotron {
+//  padding: 30px 0;
+//  margin-bottom: 0;
+//  background-color: white;
+//  border-radius: 0 !important;
+//
+//  p {
+//    margin-bottom: 0;
+//  }
+//}
+//.center {
+//  text-align: center;
+//}
+//ul {
+//  padding-left: 0;
+//}
+//ol {
+//  list-style-position: inside;
+//  margin-left: 0;
+//  padding-left: 0;
+//
+//  ul, ol {
+//    list-style-position: outside;
+//  }
+//  ul {
+//    padding-left: 2.5em;
+//  }
+//}
+//hr {
+//  height: 1px;
+//  background-color: $light_gray;
+//  border: none;
+//  margin: 25px 0;
+//}
+//legend {
+//  border: none;
+//  color: $forever-purple;
+//  font-size: 24px;
+//}
+//// overflow
+//html {
+//  overflow-y: auto;
+//}
+//.modal {
+//  overflow-y: auto;
+//}
+//body {
+//  overflow-x: hidden;
+//}
+//.hero-narrow {
+//  height: 200px;
+//}
+//
+//// override bootstrap .row negative margins that were causing an overflow issue
+//div.row {
+//  margin-left: 0;
+//  margin-right: 0;
+//}

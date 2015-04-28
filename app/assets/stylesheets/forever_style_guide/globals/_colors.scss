@@ -4,41 +4,51 @@
 ---------------------------------------------------------------------------- */
 
 // Core color declarations, this list is intended to be a limited set of unique branded colors
-$forever_green: color(forever_green, #7ac143);
-$forever_blue: color(forever_blue, #00a4e4);
+$forever_green:  color(forever_green, #7ac143);
+$forever_blue:   color(forever_blue, #00a4e4);
 $forever_purple: color(forever_purple, #731472);
 $forever_orange: color(forever_orange, #ED773A);
-$forever_red: color(forever_red, #bf3030);
-$forever_beige: color(forever_beige, #ebeae6);
-$forever_grey: color(forever_grey, #434445);
+$forever_red:    color(forever_red, #bf3030);
+$forever_beige:  color(forever_beige, #ebeae6);
+$forever_grey:   color(forever_grey, #434445);
 
 // Color variation declarations, colors comprised of variations on the core brand color declarations.
 
-$forever_green-light: color(forever_green_light, $forever_green, light);
-$forever_green-dark: color(forever_green_dark, $forever_green, dark);
-$forever_blue-light: color(forever_blue_light, $forever_blue, light);
-$forever_blue-dark: color(forever_blue_dark, $forever_blue, dark);
-$forever_purple-light: color(forever_purple_light, $forever_purple, light);
-$forever_purple-dark: color(forever_purple_dark, $forever_purple, dark);
-$forever_orange-light: color(forever_orange_light, $forever_orange, light);
-$forever_orange-dark: color(forever_orange_dark, $forever_orange, dark);
-$forever_red-light: color(forever_red_light, $forever_red, light);
-$forever_red-dark: color(forever_red_dark, $forever_red, dark);
+$forever_green-light:   color(forever_green_light, $forever_green, light);
+$forever_green-dark:    color(forever_green_dark, $forever_green, dark);
+$forever_blue-light:    color(forever_blue_light, $forever_blue, light);
+$forever_blue-dark:     color(forever_blue_dark, $forever_blue, dark);
+$forever_purple-light:  color(forever_purple_light, $forever_purple, light);
+$forever_purple-dark:   color(forever_purple_dark, $forever_purple, dark);
+$forever_orange-light:  color(forever_orange_light, $forever_orange, light);
+$forever_orange-dark:   color(forever_orange_dark, $forever_orange, dark);
+$forever_red-light:     color(forever_red_light, $forever_red, light);
+$forever_red-dark:      color(forever_red_dark, $forever_red, dark);
+
+// B&W
+$white:     #FFFFFF;
+$black:     #000000;
+$gray-100:  #FAFAFA;
+$gray-200:  #f6f6f6;
+$gray-300:  #E7E7E7;
+$gray-400:  #CCCCCC;
+$gray-500:  #888888;
+$gray-600:  #666666;
+$gray-700:  #333333;
 
 // Semantic color usages, this list comprises aliases for usages of declared colors.
+$color-primary:     $forever_green;
+$color-secondary:   $forever_blue;
+$color-accent:      $forever_purple;
+$color-background:  $forever_beige;
+$color-card-bg:     $white;
 
-$color-primary: $forever_green;
-$color-secondary: $forever_blue;
-$color-accent: $forever_purple;
-$color-background: $forever_beige;
+// buttons
+$color-btn-bg:      $gray-100;
+$color-btn-primary: $forever_green;
+$color-btn-hover:   #68b130;
 
-//// B&W
-$white: #FFFFFF;
-$black: #000000;
-$gray-100: #FAFAFA;
-$gray-200: #f6f6f6;
-$gray-300: #E7E7E7;
-$gray-400: #CCCCCC;
-$gray-500: #888888;
-$gray-600: #666666;
-$gray-700: #333333;
+// navs
+$color-nav-bg:      $gray-100;
+$color-nav-active:  $gray-200;
+$color-nav-hover:   $gray-300;

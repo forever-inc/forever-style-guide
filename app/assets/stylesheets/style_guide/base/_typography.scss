@@ -1,0 +1,9 @@
+@import "forever_style_guide/globals/fonts";
+
+@each $id, $size in $font-sizes {
+  .font-size-#{$id} {
+    &:after {
+      content: "#{$size}";
+    }
+  };
+};

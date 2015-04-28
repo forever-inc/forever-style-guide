@@ -3,31 +3,30 @@
 
 /* Headers */
 h1 {
-  @extend %font-light;
-  @extend %font_size-600;
+  @extend %font-face-light;
+  @extend %font-size-700;
 }
 h2 {
-  @extend %font-light;
-  @extend %font_size-500;
+  @extend %font-face-light;
+  @extend %font-size-600;
 }
 h3 {
-  @extend %font-regular;
-  @extend %font_size-400;
-  color: $forever_purple;
+  @extend %font-face-regular;
+  @extend %font-size-500;
 }
 h4 {
-  @extend %font-semibold;
-  @extend %font_size-300;
+  @extend %font-face-semibold;
+  @extend %font-size-400;
 }
 h5 {
-  @extend %font-bold;
-  @extend %font_size-200;
+  @extend %font-face-semibold;
+  @extend %font-size-300;
 }
 h6 {
-  @extend %font-bold;
-  @extend %font_size-100;
+  @extend %font-face-semibold;
+  @extend %font-size-200;
 }
 p {
-  @extend %font-regular;
-  @extend %font_size-200;
+  @extend %font-face-regular;
+  @extend %font-size-200;
 }
