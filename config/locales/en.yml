@@ -1,0 +1,23 @@
+en:
+  style_guide:
+    branding:
+      colors: >
+        The brand colors must be used carefully, too many colors on the screen at once can easily unbalance a page visually.
+
+    components:
+      # controls
+      avatar: >
+        A simple and resizable component for representing a person.
+      header: >
+        Standard Forever main navigation element.
+        Built on top of [Bootstrap's navbar component](http://getbootstrap.com/components/#navbar).
+      panel: >
+        Handy default container for displaying related elements.
+        Built on top of [Bootstrap's panel component](http://getbootstrap.com/components/#panels).
+      popover: >
+        A great way to show contextual content under an icon or button.
+        Built on top of [Bootstrap's popover JS component](http://getbootstrap.com/javascript/#popovers).
+
+    visual_elements:
+      Typography: >
+        Dropdown in a button group.
