@@ -30,3 +30,12 @@ p {
   @extend %font-face-regular;
   @extend %font-size-200;
 }
+small {
+  @extend %font-face-regular;
+  @extend %font-size-100;
+}
+strong {
+  @extend %font-face-bold;
+  @extend %font-size-200;
+  color: $color-accent;
+}
