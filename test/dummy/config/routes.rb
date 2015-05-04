@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
 
-  mount ForeverStyleGuide::Engine => "/forever_style_guide"
+  mount ForeverStyleGuide::Engine => "/style_guide"
 end

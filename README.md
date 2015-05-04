@@ -23,10 +23,10 @@ gem 'forever_style_guide', git: 'git@github.com:forever-inc/forever-style-guide.
 Add to the bottom of your config/routes.rb:
 ```
 # recommend keeping at the bottom of routes so as not to conflict with any other routes
-mount ForeverStyleGuide::Engine => "/style-guide" unless Rails.env.production?
+mount ForeverStyleGuide::Engine => "/style_guide" unless Rails.env.production?
 ```
 
-Fire up the app and visit: <app url>/style-guide
+Fire up the app and visit: <app url>/style_guide
 
 ### Adding sections to style guide
 
