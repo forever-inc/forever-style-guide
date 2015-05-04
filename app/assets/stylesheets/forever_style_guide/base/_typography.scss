@@ -37,5 +37,8 @@ small {
 strong {
   @extend %font-face-bold;
   @extend %font-size-200;
-  color: $color-accent;
+  @extend %color-accent
+}
+.lead {
+  @extend %color-accent
 }
