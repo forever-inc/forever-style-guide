@@ -3,6 +3,10 @@ require 'pathname'
 module ForeverStyleGuide
   module ApplicationHelper
 
+    def style_guide_path
+      Rails.application.routes.named_routes[:forever_style_guide].path.spec.to_s
+    end
+
     def style_guide_root
       ForeverStyleGuide::Engine.root
     end

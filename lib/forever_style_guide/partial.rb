@@ -16,10 +16,12 @@ module ForeverStyleGuide
     end
 
     def render
-      @render ||= app_view.render(file: path)
+      @render ||= action_view.render(file: path)
     end
 
-    def app_view
+    private
+
+    def action_view
       ApplicationController.new.view_context
     end
 
