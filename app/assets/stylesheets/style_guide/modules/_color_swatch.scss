@@ -2,19 +2,30 @@
 @import "compass/utilities/color/contrast";
 
 .color_swatch {
+  position: relative;
   display: inline-block;
   width: 100px;
   height: 100px;
   margin: 5px 0px 0px 2px;
   padding: 5px;
-};
 
-@each $id, $color in $colors {
-  .color-#{$id} {
-    background-color: $color;
-    color: contrast-color($color, shade($color, 30%), tint($color, 30%), 30%);
-    &:after {
-      content: "#{$color}";
-    }
+  @each $id, $color in $colors {
+    &.color-#{$id} {
+      background-color: $color;
+      color: contrast-color($color, shade($color, 50%), tint($color, 50%), 50%);
+      &:before {
+        position: absolute;
+        top:0;
+        padding: 2px;
+        content: ".color-#{$id}";
+      }
+      &:after {
+        position: absolute;
+        bottom: 0;
+        padding: 2px;
+        content: "#{$color}";
+      }
+    };
   };
 };
+
