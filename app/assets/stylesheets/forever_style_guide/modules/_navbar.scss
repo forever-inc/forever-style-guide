@@ -1,6 +1,8 @@
 /* =header
 ---------------------------------------------------------------------------- */
 @import "forever_style_guide/globals/all";
+@import "bootstrap/variables";
+
 
 $header_height: 60px;
 $header_link_icons: 24px;
@@ -282,26 +284,23 @@ header {
 }
 
 .navbar {
+  min-height: $header_height;
   @extend %card-style;
-  height: $header_height;
 
-  .navbar-collapse {
-    @extend %font-size-400;
-    li {
-      text-transform: uppercase;
-    }
+  @media (min-width: $screen-sm-min) {
+    border-radius: 0;
   }
 
   .navbar-brand {
     display: block;
-    margin: 0 auto;
+    margin-left: -15px;
     padding: 15px 30px;
     width: 250px;
     height: $header_height;
 
     .navbar-brand-logo {
       max-width: 190px;
-      max-height: 30px;
+      max-height: 50px;
     }
   }
 
@@ -319,7 +318,28 @@ header {
   //      border-right: 1px solid $gray-200;
   //    }
   //  }
+}
 
+.navbar-default {
+  .navbar-toggle {
+    padding: 15px 10px 0;
+    border: 0;
+
+    &:hover,
+    &:active,
+    &:focus {
+      background-color: transparent;
+    }
+  }
+  .navbar-collapse {
+    border: 0;
+  }
+}
+
+.navbar-fixed-top {
+  .navbar-collapse {
+    max-height: none;
+  }
 }
 
 .nav {
@@ -334,8 +354,9 @@ header {
 
   .nav-item {
     @include clearfix;
-    @extend %font-size-300;
-    @extend %font-face-light;
+    @extend %font-size-400;
+    @extend %font-face-regular;
+    text-transform: uppercase;
 
     .nav-item-tab {
       height: $header_height;
@@ -358,35 +379,45 @@ header {
       }
 
       .nav-item-list {
-        background-color: $color-nav-hover;
         color: $forever_blue;
+        background-color: $color-nav-hover;
       }
     }
 
     &.active {
       .nav-item-tab {
-        background-color: $color-nav-active;
         color: $gray-600;
-        border-bottom: 3px solid $forever_green;
-        border-left: 1px solid $gray-300;
+        background-color: $color-nav-active;
         border-right: 1px solid $gray-300;
+        border-bottom: 1px solid $gray-300;
+        border-left: 3px solid $forever_green;
+
+        @media (min-width: $screen-sm-min) {
+          border-right: 1px solid $gray-300;
+          border-bottom: 3px solid $forever_green;
+          border-left: 1px solid $gray-300;
+        }
       }
 
       .nav-item-list {
-        background-color: $color-nav-active;
         color: $gray-600;
-        border-left: 3px solid $forever_green;
+        background-color: $color-nav-active;
         border-top: 1px solid $gray-300;
         border-bottom: 1px solid $gray-300;
+        border-left: 3px solid $forever_green;
       }
 
       // neutralize hover on active nav selection
       &:hover .nav-item-tab, .nav-item-list {
-        background-color: $color-nav-active;
         color: $gray-600;
+        background-color: $color-nav-active;
       }
-
     }
 
+    &.login {
+      a {
+        display: inline-block;
+      }
+    }
   }
 }

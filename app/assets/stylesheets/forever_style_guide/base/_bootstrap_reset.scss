@@ -8,7 +8,6 @@ html, body {
   line-height: 22px;
 }
 
-
 .nav-pills > li > a {
   border-radius: 0;
 }
@@ -42,11 +41,14 @@ html, body {
 //  @extend %bold-font;
 //}
 //
-//// make all images responsive by default
-//img {
-//  @extend .img-responsive;
-//  margin: 0 auto;
-//}
+
+// make all images responsive by default
+
+img {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
 //.action-call {
 //  .col-lg-6 {
 //    padding: 0;
