@@ -2,21 +2,28 @@
 @import "forever_style_guide/globals/effects";
 
 .style-guide-section-header {
-  height: 210px;
+  @extend %card-style;
 
   &.style-guide-section-header-primary {
-    background-color: $color-primary;
+    height: 300px;
+    @extend %background-primary;
   }
 
   &.style-guide-section-header-secondary {
-    background-color: $color-secondary;
+    height: 200px;
+    @extend %background-secondary;
+
+    .style-guide-section-header-title {
+      padding: 0;
+    }
   }
 
   &.style-guide-section-header-accent {
-    background-color: $color-accent;
+    @extend %background-accent;
   }
 
   .style-guide-section-header-title {
+    padding: 30px 0;
     color: $white;
     @extend %text-shadow;
   }

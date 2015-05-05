@@ -2,6 +2,17 @@
 @import "forever_style_guide/globals/fonts";
 
 /* Headers */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  @extend %color-text;
+}
+
 h1 {
   @extend %font-face-light;
   @extend %font-size-700;
@@ -37,8 +48,14 @@ small {
 strong {
   @extend %font-face-bold;
   @extend %font-size-200;
-  @extend %color-accent
+  @extend %color-accent;
 }
 .lead {
-  @extend %color-accent
+  @extend %color-accent;
+}
+a {
+  @extend %color-secondary;
+  &:hover {
+    @extend %color-secondary;
+  }
 }

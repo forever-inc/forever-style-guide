@@ -10,7 +10,7 @@ $forever_purple: color('purple', #731472);
 $forever_orange: color('orange', #ED773A);
 $forever_red:    color('red', #bf3030);
 $forever_beige:  color('beige', #ebeae6);
-$forever_grey:   color('gray', #434445);
+$forever_gray:   color('gray', #434445);
 
 // Color variation declarations, colors comprised of variations on the core brand color declarations.
 
@@ -43,6 +43,7 @@ $color-secondary:   color('secondary', $forever_blue);
 $color-accent:      color('accent', $forever_purple);
 $color-background:  color('background', $forever_beige);
 $color-card-bg:     $white;
+$color-text-default: color('text', $forever_gray);
 
 // buttons
 $color-btn-bg:      $gray-100;
@@ -59,6 +60,9 @@ $color-nav-hover:   $gray-300;
   /* @extend %color-#{$id} */
   %color-#{$id} {
     color: #{$color};
+  }
+  %background-#{$id} {
+    background-color: #{$color};
   }
   .color-#{$id} {
     color: #{$color};
