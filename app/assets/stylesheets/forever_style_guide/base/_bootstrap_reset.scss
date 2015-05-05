@@ -2,9 +2,12 @@
 @import "forever_style_guide/globals/fonts";
 
 html, body {
+  width: 100%;
   @extend %font-face-regular;
   background-color: $color-background;
+  line-height: 22px;
 }
+
 
 .nav-pills > li > a {
   border-radius: 0;
