@@ -12,16 +12,16 @@
         <%= image_tag("forever_style_guide/logo-160.png", alt: "Forever Logo") %>
       <% end %>
     </div>
-    <div id="navbar" class="navbar-collapse collapse">
+    <div class="navbar-collapse collapse">
       <ul class="nav navbar-nav navbar-left">
-        <li class="style-guide-bar-section active">
-          <%= link_to "Collect", "#" %>
+        <li class="nav-item active">
+          <%= link_to "Collect", "#", class: 'nav-item-tab' %>
         </li>
-        <li class="style-guide-bar-section">
-          <%= link_to "Curate", "#" %>
+        <li class="nav-item">
+          <%= link_to "Curate", "#", class: 'nav-item-tab' %>
         </li>
-        <li class="style-guide-bar-section">
-          <%= link_to "Celebrate", "#" %>
+        <li class="nav-item">
+          <%= link_to "Celebrate", "#", class: 'nav-item-tab' %>
         </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">

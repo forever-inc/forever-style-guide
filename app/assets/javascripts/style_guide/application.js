@@ -10,7 +10,7 @@
 // WARNING: THE FIRST BLANK LINE MARKS THE END OF WHAT'S TO BE PROCESSED, ANY BLANK LINE SHOULD
 // GO AFTER THE REQUIRES BELOW.
 //
+
 //= require style_guide/application
 //= require style_guide/identifiers
-//= require style_guide/partial
 //= require style_guide/prettify
