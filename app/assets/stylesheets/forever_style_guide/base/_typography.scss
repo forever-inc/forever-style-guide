@@ -40,11 +40,13 @@ h6 {
 p {
   @extend %font-face-regular;
   @extend %font-size-200;
+  line-height: 1.4;
 }
 small {
   @extend %font-face-regular;
   @extend %font-size-100;
 }
+b,
 strong {
   @extend %font-face-bold;
   @extend %font-size-200;
@@ -55,7 +57,10 @@ strong {
 }
 a {
   @extend %color-secondary;
-  &:hover {
+  &:hover
+  &:link,
+  &:visited,
+  &:active {
     @extend %color-secondary;
   }
 }
