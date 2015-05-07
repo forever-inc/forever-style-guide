@@ -4,16 +4,16 @@
 ---------------------------------------------------------------------------- */
 
 // Core color declarations, this list is intended to be a limited set of unique branded colors
-$forever_green:  color('green', #7ac143);
-$forever_blue:   color('blue', #00a4e4);
-$forever_purple: color('purple', #731472);
-$forever_orange: color('orange', #ED773A);
-$forever_red:    color('red', #bf3030);
-$forever_beige:  color('beige', #ebeae6);
-$forever_gray:   color('gray', #434445);
+$forever_green:         color('green', #7ac143);
+$forever_blue:          color('blue', #00a4e4);
+$forever_purple:        color('purple', #731472);
+$forever_orange:        color('orange', #ED773A);
+$forever_red:           color('red', #bf3030);
+$forever_beige:         color('beige', #ebeae6);
+$forever_gray:          color('gray', #434445);
+$forever_silver:        color('silver', #f6f7fb);
 
 // Color variation declarations, colors comprised of variations on the core brand color declarations.
-
 $forever_green-light:   color('green-light', $forever_green, light);
 $forever_green-dark:    color('green-dark', $forever_green, dark);
 $forever_blue-light:    color('blue-light', $forever_blue, light);
@@ -26,34 +26,47 @@ $forever_red-light:     color('red-light', $forever_red, light);
 $forever_red-dark:      color('red-dark', $forever_red, dark);
 
 // B&W
-$white:     color('white', #fff);
-$gray-100:  color('gray-100', #fafafa);
-$gray-200:  color('gray-200', #f6f6f6);
-$gray-300:  color('gray-300', #e7e7e7);
-$gray-400:  color('gray-400', #ccc);
-$gray-500:  color('gray-500', #888);
-$gray-600:  color('gray-600', #666);
-$gray-700:  color('gray-700', #333);
-$gray-800:  color('gray-800', #222);
-$black:     color('black', #000);
+$white:                 color('white', #fff);
+$gray-100:              color('gray-100', #fafafa);
+$gray-200:              color('gray-200', #f6f6f6);
+$gray-300:              color('gray-300', #e7e7e7);
+$gray-400:              color('gray-400', #ccc);
+$gray-500:              color('gray-500', #888);
+$gray-600:              color('gray-600', #666);
+$gray-700:              color('gray-700', #333);
+$gray-800:              color('gray-800', #222);
+$black:                 color('black', #000);
 
 // Semantic color usages, this list comprises aliases for usages of declared colors.
-$color-primary:     color('primary', $forever_green);
-$color-secondary:   color('secondary', $forever_blue);
-$color-accent:      color('accent', $forever_purple);
-$color-background:  color('background', $forever_beige);
-$color-card-bg:     $white;
-$color-text-default: color('text', $forever_gray);
+$color-primary:         color('primary', $forever_green);
+$color-secondary:       color('secondary', $forever_blue);
+$color-accent:          color('accent', $forever_purple);
+$color-warning:         color('warning', $forever_orange);
+$color-danger:          color('danger', $forever_red);
+$color-primary-dark:    color('primary-dark', $forever_green_dark);
+$color-secondary-dark:  color('secondary-dark', $forever_blue_dark);
+$color-accen-dark:      color('accent-dark', $forever_purple_dark);
+$color-warning-dark:    color('warning-dark', $forever_orange_dark);
+$color-danger-dark:     color('danger-dark', $forever_red_dark);
+$color-primary-light:   color('primary-light', $forever_green_light);
+$color-secondary-light: color('secondary-light', $forever_blue_light);
+$color-accen-light:     color('accent-light', $forever_purple_light);
+$color-warning-light:   color('warning-light', $forever_orange_light);
+$color-danger-light:    color('danger-light', $forever_red_light);
+$color-background:      color('background', $forever_beige);
+
+$color-card-bg:         $white;
+$color-text-default:    color('text', $forever_gray);
 
 // buttons
-$color-btn-bg:      $gray-100;
-$color-btn-primary: $forever_green;
-$color-btn-hover:   #68b130;
+$color-btn-bg:          $forever_silver;
+$color-btn-primary:     $forever_green;
+$color-btn-hover:       #68b130;
 
 // navs
-$color-nav-bg:      $gray-100;
-$color-nav-active:  $gray-200;
-$color-nav-hover:   $gray-300;
+$color-nav-bg:          $gray-100;
+$color-nav-active:      $gray-200;
+$color-nav-hover:       $gray-300;
 
 // color placeholder selectors (use @extends) */
 @each $id, $color in $colors {

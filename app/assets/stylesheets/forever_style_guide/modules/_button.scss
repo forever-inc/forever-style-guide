@@ -1,0 +1,207 @@
+@import "forever_style_guide/globals/effects";
+@import "forever_style_guide/globals/colors";
+@import "forever_style_guide/globals/fonts";
+
+.btn {
+  @extend %btn-style;
+  @extend %font-size-300;
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+  &.btn-default {
+    @extend %background-silver;
+    @extend %color-gray-600;
+    &:hover,
+    &:active {
+      background-color: $gray-100;
+    }
+  }
+
+  &.btn-primary,
+  &.btn-success {
+    @extend %background-primary;
+    &:hover,
+    &:active {
+      @extend %background-primary-dark;
+      text-decoration: none;
+    }
+  }
+
+  &.btn-secondary,
+  &.btn-info {
+    @extend %background-secondary;
+    &:hover,
+    &:active {
+      @extend %background-secondary-dark;
+    }
+  }
+
+  &.btn-accent {
+    @extend %background-accent;
+    &:hover,
+    &:active {
+      @extend %background-accent-dark;
+    }
+  }
+
+  &.btn-warning {
+    @extend %background-warning;
+    &:hover,
+    &:active {
+      @extend %background-warning-dark;
+    }
+  }
+
+  &.btn-danger {
+    @extend %background-danger;
+    &:hover,
+    &:active {
+      @extend %background-danger-dark;
+    }
+  }
+
+  &.btn-link {
+    box-shadow: none;
+    @extend %color-secondary;
+    &:hover,
+    &:active {
+      text-decoration: underline;
+      &:focus {
+        box-shadow: none;
+      }
+    }
+  }
+
+  &.btn-lg {
+    @extend %font-face-light;
+    @extend %font-size-400;
+    padding: 20px;
+
+    .fa {
+      @extend %font-size-600;
+
+      &:after {
+        padding-bottom: 2px;
+      }
+    }
+  }
+
+  &.btn-sm {
+    @extend %font-size-200;
+    padding-top: 8px;
+    padding-bottom: 8px;
+
+    .fa {
+      @extend %font-size-400;
+      padding-top: 4px;
+    }
+  }
+
+  &.btn-xs {
+    @extend %font-size-100;
+    padding-top: 5px;
+    padding-bottom: 5px;
+
+    .fa {
+      @extend %font-size-200;
+      padding-top: 4px;
+    }
+  }
+
+  &:hover,
+  &:focus {
+    @extend %color-white;
+    text-decoration: none;
+    outline: none;
+  }
+
+  &:active:focus {
+    outline: none;
+    @extend %inset-shadow;
+  }
+
+
+  &.btn-icon {
+    width: 42px;
+    height: 42px;
+    padding: 0;
+
+    .fa {
+      width: 100%;
+      text-align: center;
+    }
+
+    &.btn-lg {
+      width: 64px;
+      height: 64px;
+    }
+
+    &.btn-sm {
+      width: 37px;
+      height: 37px;
+
+    }
+
+    &.btn-xs {
+      width: 28px;
+      height: 28px;
+      padding-left: 1px;
+    }
+  }
+
+  &.btn-action {
+
+    .btn-action-label {
+      margin: 0;
+      padding-top: 2px;
+      vertical-align: top;
+    }
+    .btn-action-icon {
+      padding-left: 4px;
+      padding-right: 4px;
+    }
+
+    &.btn-lg {
+      .btn-action-label {
+        padding-top: 7px;
+      }
+      .btn-action-icon {
+        padding-left: 7px;
+        padding-right: 7px;
+      }
+    }
+
+    &.btn-sm {
+      .btn-action-label {
+        padding-top: 2px;
+      }
+      .btn-action-icon {
+        padding-left: 3px;
+        padding-right: 3px;
+      }
+    }
+
+    &.btn-xs {
+      .btn-action-label {
+        padding-top: 3px;
+        padding-right: 3px;
+      }
+    }
+  }
+
+  .fa {
+    @extend %font-size-500;
+  }
+}
+
+.btn-group {
+  .btn-icon .fa {
+    vertical-align: middle;
+  }
+  .btn:not(:first-child):not(:last-child):not(.dropdown-toggle) {
+    border-left: 1px solid $gray-400;
+    border-right: 1px solid $gray-400;
+    // compensating for bootstraps -1px offset
+    margin-right: 1px;
+  }
+}

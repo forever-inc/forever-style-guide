@@ -7,7 +7,7 @@
   background: $white;
   border-radius: 50%;
   border: 4px solid $gray-100;
-  @extend %box-shadow;
+  @extend %item-shadow;
 
   &.avatar-extra-large {
     height: 210px;
