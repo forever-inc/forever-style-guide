@@ -1,4 +1,3 @@
-
 @mixin clearfix {
   zoom: 1;
   &:before,
@@ -21,14 +20,22 @@
   transition: $transition-property $transition-time $method;
 }
 
+@mixin circle($diameter, $color) {
+  width: $diameter;
+  height: $diameter;
+  background-color: $color;
+  border-radius: 50%;
+}
 
+@mixin link_visited_hover_active {
+  &:link, &:visited, &:hover, &:active {
+    @content;
+  }
+}
 //%spacer {
 //  margin-top: 20px;
 //}
 //
-//%circle {
-//  border-radius: 50%;
-//}
 //
 //%horizontally-centered {
 //  display: inline-block;
@@ -77,8 +84,4 @@
 //  transition: all 0.3s;
 //}
 //
-@mixin link_visited_hover_active {
-  &:link, &:visited, &:hover, &:active {
-    @content;
-  }
-}
+
