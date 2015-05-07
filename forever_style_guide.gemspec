@@ -27,4 +27,7 @@ Gem::Specification.new do |s|
   s.add_dependency "font-awesome-rails"
 
   s.add_development_dependency "sqlite3"
+  s.add_development_dependency "guard-rails"
+  s.add_development_dependency "guard-livereload"
+  s.add_development_dependency "rack-livereload"
 end

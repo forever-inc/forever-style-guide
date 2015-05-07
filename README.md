@@ -11,7 +11,20 @@ This gem adds a live style guide for Forever branded apps.  Its long term goals 
 
 **Note:** this is currently a work in progress effort, I'm hoping to make this useful quickly but its still early.
 
-### Installation
+## Running Locally
+
+The style guide comes with an embedded 'dummy app' that will mount the style guide gem and nothing else.  Its the easiest way to get the style guide up and running:
+
+```
+cd forever-style-guide/test/dummy
+rails s -p 3005
+```
+
+You can now view the style guide @ [localhost:3005/style_guide](localhost:3005/style_guide)
+
+## Installation
+
+The style guide is an easy to install rails engine that will mount to your existing rails application.
 
 Add to your Gemfile development group:
 ```
@@ -21,12 +34,14 @@ gem 'forever_style_guide', git: 'git@github.com:forever-inc/forever-style-guide.
 ```
 
 Add to the bottom of your config/routes.rb:
-```
-# recommend keeping at the bottom of routes so as not to conflict with any other routes
-mount ForeverStyleGuide::Engine => "/style_guide" unless Rails.env.production?
-```
+   ```
+   # recommend keeping at the bottom of routes so as not to conflict with any other routes
+   mount ForeverStyleGuide::Engine => "/style_guide" unless Rails.env.production?
+   ```
 
 Fire up the app and visit: <app url>/style_guide
+
+## Style Guide Development
 
 ### Adding sections to style guide
 
@@ -48,3 +63,8 @@ To create a raw-html partial all you need to do is add a partial with a .html. e
 partial.html.erb
 ```
 
+### Live-reload
+Guard is available for live-reload capability in development mode.  Editing the styleguide will automatically reload the page for you.
+```
+bundle exec guard
+```

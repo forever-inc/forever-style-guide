@@ -15,5 +15,11 @@ gem 'bootstrap-sass'
 gem 'compass-rails'
 gem 'font-awesome-rails'
 
+group :development do
+  gem 'guard-rails'
+  gem 'guard-livereload'
+  gem 'rack-livereload'
+end
+
 # To use debugger
 # gem 'debugger'
