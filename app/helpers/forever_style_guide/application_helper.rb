@@ -12,7 +12,7 @@ module ForeverStyleGuide
     end
 
     def style_guide_version
-      VERSION
+      ForeverStyleGuide::VERSION
     end
 
     def sections_path
