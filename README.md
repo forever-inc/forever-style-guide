@@ -26,20 +26,44 @@ You can now view the style guide @ [localhost:3005/style_guide](localhost:3005/s
 
 The style guide is an easy to install rails engine that will mount to your existing rails application.
 
-Add to your Gemfile development group:
+- Add to your Gemfile:
 ```
-# inside your group :development block
+gem 'bootstrap-sass'
+gem 'compass-rails'
+gem "font-awesome-rails"
 gem 'forever_style_guide', git: 'git@github.com:forever-inc/forever-style-guide.git'
 
 ```
 
-Add to the bottom of your config/routes.rb:
-   ```
-   # recommend keeping at the bottom of routes so as not to conflict with any other routes
-   mount ForeverStyleGuide::Engine => "/style_guide" unless Rails.env.production?
-   ```
+- Add to your assets/stylesheets/application.scss
+```
+# recommend importing these before your other styles so you can override them if necessary
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import 'font-awesome';
+```
 
-Fire up the app and visit: <app url>/style_guide
+- Add to your assets/javascripts/application.js
+```
+//= require bootstrap-sprockets
+//= require bootstrap
+```
+
+- Add to your views/layouts/application.html.erb
+```
+# style guide css should be loaded *before* you load any of your own app's css
+<%= stylesheet_link_tag    'forever_style_guide/application', media: 'all' %>
+# style guide js should be loaded *after* you load any of your own app's js
+<%= javascript_include_tag "forever_style_guide/application" %>
+```
+
+- Add mount route to the bottom of your config/routes.rb:
+```
+# recommend keeping at the bottom of routes so as not to conflict with any other routes
+mount ForeverStyleGuide::Engine => "/style_guide" unless Rails.env.production?
+```
+
+- Fire up the app and visit: <app url>/style_guide
 
 ## Style Guide Development
 
@@ -61,6 +85,15 @@ Raw-Html partials allow more customized styling than Auto-formatted partials, bu
 To create a raw-html partial all you need to do is add a partial with a .html. extension to a section directory:
 ```
 partial.html.erb
+```
+
+### Developing with another Rails app
+To test edits to core style guide in another app before committing, you will need to install the gem locally:
+```
+rake install
+cd /path/to/other/repo
+bundle update
+bundle install
 ```
 
 ### Live-reload

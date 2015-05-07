@@ -30,4 +30,5 @@ Gem::Specification.new do |s|
   s.add_development_dependency "guard-rails"
   s.add_development_dependency "guard-livereload"
   s.add_development_dependency "rack-livereload"
+  s.add_development_dependency "thor"
 end

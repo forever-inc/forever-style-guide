@@ -9,17 +9,6 @@ gemspec
 # your gemspec. These might include edge Rails or gems from your path or
 # Git. Remember to move these dependencies to your gemspec before releasing
 # your gem to rubygems.org.
-gem 'sass-rails'
-gem 'jquery-rails'
-gem 'bootstrap-sass'
-gem 'compass-rails'
-gem 'font-awesome-rails'
-
-group :development do
-  gem 'guard-rails'
-  gem 'guard-livereload'
-  gem 'rack-livereload'
-end
 
 # To use debugger
 # gem 'debugger'
