@@ -16,3 +16,9 @@ html, body {
   padding-left: 15px;
   padding-right: 15px;
 }
+
+// make all images responsive by default
+img {
+  max-width: 100%;
+  margin: 0 auto;
+}

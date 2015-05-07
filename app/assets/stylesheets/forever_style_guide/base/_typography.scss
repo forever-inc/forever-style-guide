@@ -1,6 +1,10 @@
 @import "forever_style_guide/globals/colors";
 @import "forever_style_guide/globals/fonts";
 
+* {
+  @extend %font-face-regular;
+}
+
 /* Headers */
 
 h1,
