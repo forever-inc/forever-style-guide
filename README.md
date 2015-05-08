@@ -35,7 +35,7 @@ gem 'forever_style_guide', git: 'git@github.com:forever-inc/forever-style-guide.
 
 ```
 
-- Add to your assets/stylesheets/application.scss
+- Add to your assets/stylesheets/application.scss (If using application.css, this has to be .scss to use sass import)
 ```
 # recommend importing these before your other styles so you can override them if necessary
 @import "bootstrap-sprockets";

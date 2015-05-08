@@ -3,6 +3,7 @@
 @import "compass/css3/images";
 @import "compass/css3/transition";
 @import "forever_style_guide/globals/colors";
+@import "forever_style_guide/globals/fonts";
 
 $shadow-color: rgba($gray-500, 0.6);
 
@@ -38,14 +39,33 @@ $shadow-color: rgba($gray-500, 0.6);
 
 %btn-style {
   @extend %item-shadow;
+  @extend %font-size-300;
+  @extend %background-silver;
+  @extend %color-gray-600;
+  padding-top: 10px;
+  padding-bottom: 10px;
   display: inline-block;
   text-align: center;
   border: none;
   border-radius: 2px;
   text-shadow: none;
   font-size: 16px;
-  color: white;
-
   @include transition-property(background-color);
   @include transition-duration(0.3s);
+
+  &:hover,
+  &:active {
+    @extend %background-white;
+  }
+
+  &:active:focus {
+    @extend %inset-shadow;
+    outline: none;
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    outline: none;
+  }
 }

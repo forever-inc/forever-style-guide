@@ -2,76 +2,82 @@
 @import "forever_style_guide/globals/colors";
 @import "forever_style_guide/globals/fonts";
 
-.btn {
-  @extend %btn-style;
-  @extend %font-size-300;
-  padding-top: 10px;
-  padding-bottom: 10px;
-
-  &.btn-default {
+@mixin btn-color($color, $inverse: false) {
+  @if ($inverse) {
+    @extend %color-#{$color};
     @extend %background-silver;
-    @extend %color-gray-600;
     &:hover,
     &:active {
-      background-color: $gray-100;
+      @extend %color-#{$color}-dark;
+      @extend %background-white;
     }
-  }
-
-  &.btn-primary,
-  &.btn-success {
-    @extend %background-primary;
+  } @else {
+    @extend %color-white;
+    @extend %background-#{$color};
     &:hover,
     &:active {
-      @extend %background-primary-dark;
+      @extend %background-#{$color}-dark;
       text-decoration: none;
     }
   }
+}
 
+.btn,
+.btn-default {
+  @extend %btn-style;
+
+  &.btn-inverse {
+    @include btn-color('gray');
+  }
+
+  &.btn-default.disabled {
+    @extend %background-silver;
+  }
+  &.btn-primary,
+  &.btn-success {
+    @include btn-color('primary');
+    &.btn-inverse {
+      @include btn-color('primary', true);
+    }
+  }
   &.btn-secondary,
   &.btn-info {
-    @extend %background-secondary;
-    &:hover,
-    &:active {
-      @extend %background-secondary-dark;
+    @include btn-color('secondary');
+    &.btn-inverse {
+      @include btn-color('secondary', true);
     }
   }
-
   &.btn-accent {
-    @extend %background-accent;
-    &:hover,
-    &:active {
-      @extend %background-accent-dark;
+    @include btn-color('accent');
+    &.btn-inverse {
+      @include btn-color('accent', true);
     }
   }
-
   &.btn-warning {
-    @extend %background-warning;
-    &:hover,
-    &:active {
-      @extend %background-warning-dark;
+    @include btn-color('warning');
+    &.btn-inverse {
+      @include btn-color('warning', true);
     }
   }
-
   &.btn-danger {
-    @extend %background-danger;
-    &:hover,
-    &:active {
-      @extend %background-danger-dark;
+    @include btn-color('danger');
+    &.btn-inverse {
+      @include btn-color('danger', true);
     }
   }
-
   &.btn-link {
+    @include btn-color('secondary', true);
+    background: none;
     box-shadow: none;
-    @extend %color-secondary;
     &:hover,
     &:active {
+      background: none;
       text-decoration: underline;
       &:focus {
         box-shadow: none;
       }
     }
   }
-
   &.btn-lg {
     @extend %font-face-light;
     @extend %font-size-400;
@@ -85,7 +91,6 @@
       }
     }
   }
-
   &.btn-sm {
     @extend %font-size-200;
     padding-top: 8px;
@@ -96,7 +101,6 @@
       padding-top: 4px;
     }
   }
-
   &.btn-xs {
     @extend %font-size-100;
     padding-top: 5px;
@@ -108,40 +112,23 @@
     }
   }
 
-  &:hover,
-  &:focus {
-    @extend %color-white;
-    text-decoration: none;
-    outline: none;
-  }
-
-  &:active:focus {
-    outline: none;
-    @extend %inset-shadow;
-  }
-
-
   &.btn-icon {
     width: 42px;
     height: 42px;
     padding: 0;
-
     .fa {
       width: 100%;
       text-align: center;
     }
-
     &.btn-lg {
       width: 64px;
       height: 64px;
     }
-
     &.btn-sm {
       width: 37px;
       height: 37px;
 
     }
-
     &.btn-xs {
       width: 28px;
       height: 28px;
@@ -150,7 +137,6 @@
   }
 
   &.btn-action {
-
     .btn-action-label {
       margin: 0;
       padding-top: 2px;
@@ -160,7 +146,6 @@
       padding-left: 4px;
       padding-right: 4px;
     }
-
     &.btn-lg {
       .btn-action-label {
         padding-top: 7px;
@@ -170,7 +155,6 @@
         padding-right: 7px;
       }
     }
-
     &.btn-sm {
       .btn-action-label {
         padding-top: 2px;
@@ -180,7 +164,6 @@
         padding-right: 3px;
       }
     }
-
     &.btn-xs {
       .btn-action-label {
         padding-top: 3px;
@@ -188,7 +171,6 @@
       }
     }
   }
-
   .fa {
     @extend %font-size-500;
   }

@@ -14,7 +14,7 @@ $variations: (
   ),
   dark: (
     function: darken,
-    parameters: 5%
+    parameters: 8%
   ),
   fade: (
     function: rgba,
@@ -63,9 +63,16 @@ $variations: (
   @return $color;
 }
 
-// declaration function that makes future changes to variations easier to manage
-@function color($id, $color, $variation: false) {
-  $color-variation: color-variation($color, $variation);
-  $colors: map-merge($colors, ($id: $color-variation)) !global; // adds color declaration to global $colors map
-  @return $color-variation;
+// appends colors to master color list
+@function color($id, $color) {
+  $colors: map-merge($colors, ($id: $color)) !global; // adds color declaration to global $colors map
+  @return $color;
+}
+
+// generates dynamic of a provided color and registers them as unique colors
+@function colorify($id, $color) {
+  $base-color: color($id, $color);
+  $color-dark: color('#{$id}-dark',color-variation($color, 'dark'));
+  $color-light: color('#{$id}-light',color-variation($color, 'light'));
+  @return $base-color;
 }
