@@ -1,0 +1,31 @@
+/* =login & sign up buttons
+---------------------------------------------------------------------------- */
+@import "forever_style_guide/globals/all";
+@import "bootstrap/variables";
+
+
+.login {
+  display: inline-block;
+  float: left;
+
+  @media (min-width: $screen-sm-min) {
+    float: right;
+  }
+  .login-item {
+    float: left;
+    @extend %font-size-400;
+    @extend %font-face-regular;
+
+    &:first-child {
+      margin-right: 5px;
+    }
+  }
+  .btn-link {
+    @extend %color-gray-500;
+
+    &:hover {
+      @extend %color-secondary;
+      text-decoration: none;
+    }
+  }
+}
