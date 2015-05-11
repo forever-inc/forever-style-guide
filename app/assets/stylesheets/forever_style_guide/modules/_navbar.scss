@@ -356,12 +356,11 @@ header {
     @include clearfix;
     @extend %font-size-400;
     @extend %font-face-regular;
-    text-transform: uppercase;
 
     .nav-item-tab {
       height: $header_height;
       padding-top: 20px;
-      color: $gray-500;
+      @extend %color-gray-500;
     }
 
     .nav-item-icon {
@@ -376,18 +375,18 @@ header {
 
     &:hover {
       .nav-item-tab, .nav-item-list  {
-        color: $forever_blue;
+        @extend %color-secondary;
       }
 
       .nav-item-list {
-        color: $forever_blue;
+        @extend %color-secondary;
         background-color: $color-nav-hover;
       }
     }
 
     &.active {
       .nav-item-tab {
-        color: $gray-600;
+        @extend %color-gray-600;
         background-color: $color-nav-active;
         border-right: 1px solid $gray-300;
         border-bottom: 1px solid $gray-300;
@@ -401,7 +400,7 @@ header {
       }
 
       .nav-item-list {
-        color: $gray-600;
+        @extend %color-gray-600;
         background-color: $color-nav-active;
         border-top: 1px solid $gray-300;
         border-bottom: 1px solid $gray-300;
@@ -410,7 +409,7 @@ header {
 
       // neutralize hover on active nav selection
       &:hover .nav-item-tab, .nav-item-list {
-        color: $gray-600;
+        @extend %color-gray-600;
         background-color: $color-nav-active;
       }
     }
