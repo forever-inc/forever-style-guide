@@ -17,7 +17,7 @@
     @extend %color-white;
     }
   }
-  .footer_links {
+  .pages {
     margin-top: 20px;
     margin-bottom: 15px;
     @extend %font-size-400;
@@ -39,10 +39,10 @@
       text-decoration: none;
     }
   }
-  .contact_links {
+  .info {
     margin-top: 15px;
   }
-  .contact {
+  .info-number {
     @extend %font-size-500;
   }
 }
