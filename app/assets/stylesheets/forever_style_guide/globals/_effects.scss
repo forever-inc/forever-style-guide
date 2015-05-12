@@ -16,6 +16,10 @@ $shadow-color: rgba($gray-500, 0.6);
   @include box-shadow($shadow-color 0 2px 4px);
 }
 
+%footer-shadow {
+  @include box-shadow(lighten($shadow-color, 30%) 0 -1px 2px);
+}
+
 %text-shadow {
   @include text-shadow($shadow-color 0 1px 2px);
 }
