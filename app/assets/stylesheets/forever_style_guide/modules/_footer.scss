@@ -3,18 +3,18 @@
 @import "forever_style_guide/globals/all";
 @import "bootstrap/variables";
 
-.marketing_footer {
+.footer-marketing {
   /* You'll need these in your production footer, but they don't work in the component display in the style guide
   position: absolute;
   bottom: 0;*/
   padding: 20px;
-  color: $white;
+  @extend %color-white;
   text-align: center;
-  background-color: $black;
+  @extend %background-black;
 
   a {
     @include link_visited_hover_active {
-    color: $white;
+    @extend %color-white;
     }
   }
   .footer_links {
@@ -25,13 +25,13 @@
   }
   .social_media_icons {
     .fa-feature_bullet-circle {
-      color: $gray-600;
+      @extend %color-gray-600;
       text-shadow: none;
     }
     .fa-feature_bullet-social {
       &:hover {
         .fa-feature_bullet-circle {
-          color: $gray-500;
+          @extend %color-gray-500;
         }
       }
     }
