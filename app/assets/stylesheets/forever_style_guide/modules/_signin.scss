@@ -20,8 +20,9 @@
       margin-right: 5px;
     }
   }
-  .btn-link {
+  .btn.btn-link {
     @extend %color-gray-500;
+    @extend %background-white;
 
     &:hover {
       @extend %color-secondary;
