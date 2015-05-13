@@ -4,9 +4,9 @@
 .avatar {
   padding: 1px;
   margin-right: 3px;
-  background: $white;
+  @extend %color-white;
   border-radius: 50%;
-  border: 4px solid $gray-100;
+  border: 4px solid $color-gray-100;
   @extend %item-shadow;
 
   &.avatar-extra-large {

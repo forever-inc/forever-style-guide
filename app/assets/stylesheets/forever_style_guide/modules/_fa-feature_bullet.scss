@@ -6,8 +6,8 @@
 .fa-feature_bullet {
 
   .fa-feature_bullet-icon {
-    color: $white;
-    text-shadow: none;
+    @extend %color-white;
+    @extend %no-shadow;
   }
 
   .fa-feature_bullet-circle {
@@ -15,33 +15,33 @@
   }
 
   &.fa-feature_bullet-primary .fa-feature_bullet-circle {
-    color: $color-primary;
+    @extend %color-primary;
   }
 
   &.fa-feature_bullet-secondary .fa-feature_bullet-circle {
-    color: $color-secondary;
+    @extend %color-secondary;
   }
 
   &.fa-feature_bullet-accent .fa-feature_bullet-circle {
-    color: $color-accent;
+    @extend %color-accent;
   }
 
   // inverse will reverse the white and colored element on the stacked icon
   &.fa-inverse {
     .fa-feature_bullet-circle {
-      color: $white;
+      @extend %color-white;
     }
 
     &.fa-feature_bullet-primary .fa-feature_bullet-icon {
-      color: $color-primary;
+      @extend %color-primary;
     }
 
     &.fa-feature_bullet-secondary .fa-feature_bullet-icon {
-      color: $color-secondary;
+      @extend %color-secondary;
     }
 
     &.fa-feature_bullet-accent .fa-feature_bullet-icon {
-      color: $color-accent;
+      @extend %color-accent;
     }
   }
 }

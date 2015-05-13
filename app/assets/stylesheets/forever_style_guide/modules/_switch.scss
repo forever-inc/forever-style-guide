@@ -7,7 +7,7 @@ $toggle_height: 21px;
 $toggle_horizontal_padding: 10px;
 $toggle_vertical_padding: 2px;
 $toggle_circle_diameter: 13px;
-$toggle_no_background: $forever_gray;
+$toggle_no_background: $color-forever_gray;
 $toggle_yes_background: $color-primary;
 
 .switch {
@@ -19,7 +19,7 @@ $toggle_yes_background: $color-primary;
   padding: $toggle_vertical_padding 5px;
   border-radius: 10px;
   cursor: pointer;
-  color: $white !important;
+  color: $color-white !important;
   background: $toggle_no_background;
   font-size: $font-size-100;
   text-transform: uppercase;
@@ -42,7 +42,7 @@ $toggle_yes_background: $color-primary;
     height: $toggle_circle_diameter;
     margin-top: 2px;
     border-radius: 50%;
-    background: $white;
+    @extend %background-white;
   }
   &.switch-no, &.switch-off {
     text-align: left;
@@ -76,7 +76,7 @@ $toggle_yes_background: $color-primary;
   }
   &:link,
   &:hover {
-    color: $white;
+    @extend %color-white;
     text-decoration: none;
   }
   &.disabled {

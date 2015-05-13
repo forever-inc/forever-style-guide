@@ -6,7 +6,7 @@ $sophia_color: #9dd171;
 
 .persona {
   @extend %card-style;
-  color: $white;
+  @extend %color-white;
 
   .persona-header {
     display: inline-block;
@@ -18,17 +18,17 @@ $sophia_color: #9dd171;
     .persona-header-quote {
       @extend %font-size-200;
       position: relative;
-      background-color: $white;
+      @extend %background-white;
       padding:10px;
       border-radius: 10px;
-      color: $gray-600;
+      @extend %color-gray-600;
       margin: 0;
 
       &:after {
         position: absolute;
         display: block;
         content: "";
-        border-color: transparent $white transparent transparent;
+        border-color: transparent $color-white transparent transparent;
         border-style: solid;
         border-width: 20px 40px;
         height: 0;
@@ -54,7 +54,7 @@ $sophia_color: #9dd171;
 
 .style-guide-persona-block {
   position: relative;
-  color: $white;
+  @extend %color-white;
 
   .style-guide-persona-header {
     padding:20px;
@@ -76,17 +76,17 @@ $sophia_color: #9dd171;
 .quote-bubble {
   @extend %font-size-200;
   position: relative;
-  background-color: $white;
+  @extend %background-white;
   padding:10px;
   border-radius: 10px;
-  color: $gray-600;
+  @extend %color-gray-600;
   margin: 0;
 
   &:after {
     position: absolute;
     display: block;
     content: "";
-    border-color: transparent $white transparent transparent;
+    border-color: transparent $color-white transparent transparent;
     border-style: solid;
     border-width: 20px 40px;
     height: 0;

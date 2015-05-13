@@ -4,47 +4,47 @@
 ---------------------------------------------------------------------------- */
 
 // Core color declarations, this list is intended to be a limited set of unique branded colors
-$forever_green:         colorify('green', #7ac143);
-$forever_blue:          colorify('blue', #00a4e4);
-$forever_purple:        colorify('purple', #731472);
-$forever_orange:        colorify('orange', #ED773A);
-$forever_red:           colorify('red', #bf3030);
-$forever_beige:         colorify('beige', #ebeae6);
-$forever_gray:          colorify('gray', #434445);
-$forever_silver:        colorify('silver', #f6f7fb);
+$color-forever_green:         colorify('green', #7ac143);
+$color-forever_blue:          colorify('blue', #00a4e4);
+$color-forever_purple:        colorify('purple', #731472);
+$color-forever_orange:        colorify('orange', #ED773A);
+$color-forever_red:           colorify('red', #bf3030);
+$color-forever_beige:         colorify('beige', #ebeae6);
+$color-forever_gray:          colorify('gray', #434445);
+$color-forever_silver:        colorify('silver', #f6f7fb);
 
 // B&W, these colors just get registered they don't have dark/light variations
-$white:                 color('white', #fff);
-$gray-100:              color('gray-100', #fafafa);
-$gray-200:              color('gray-200', #f6f6f6);
-$gray-300:              color('gray-300', #e7e7e7);
-$gray-400:              color('gray-400', #ccc);
-$gray-500:              color('gray-500', #888);
-$gray-600:              color('gray-600', #666);
-$gray-700:              color('gray-700', #333);
-$gray-800:              color('gray-800', #222);
-$black:                 color('black', #000);
+$color-white:                 color('white', #fff);
+$color-gray-100:              color('gray-100', #fafafa);
+$color-gray-200:              color('gray-200', #f6f6f6);
+$color-gray-300:              color('gray-300', #e7e7e7);
+$color-gray-400:              color('gray-400', #ccc);
+$color-gray-500:              color('gray-500', #888);
+$color-gray-600:              color('gray-600', #666);
+$color-gray-700:              color('gray-700', #333);
+$color-gray-800:              color('gray-800', #222);
+$color-black:                 color('black', #000);
 
 // Semantic color usages, this list comprises aliases for usages of declared colors.
-$color-primary:         colorify('primary', $forever_green);
-$color-secondary:       colorify('secondary', $forever_blue);
-$color-accent:          colorify('accent', $forever_purple);
-$color-warning:         colorify('warning', $forever_orange);
-$color-danger:          colorify('danger', $forever_red);
-$color-background:      colorify('background', $forever_beige);
+$color-primary:         colorify('primary', $color-forever_green);
+$color-secondary:       colorify('secondary', $color-forever_blue);
+$color-accent:          colorify('accent', $color-forever_purple);
+$color-warning:         colorify('warning', $color-forever_orange);
+$color-danger:          colorify('danger', $color-forever_red);
+$color-background:      colorify('background', $color-forever_beige);
 
-$color-card-bg:         $white;
-$color-text-default:    color('text', $forever_gray);
+$color-card-bg:         $color-white;
+$color-text-default:    color('text', $color-forever_gray);
 
 // buttons
-$color-btn-bg:          $forever_silver;
-$color-btn-primary:     $forever_green;
+$color-btn-bg:          $color-forever_silver;
+$color-btn-primary:     $color-forever_green;
 $color-btn-hover:       #68b130;
 
 // navs
-$color-nav-bg:          $gray-100;
-$color-nav-active:      $gray-200;
-$color-nav-hover:       $gray-300;
+$color-nav-bg:          $color-gray-100;
+$color-nav-active:      $color-gray-200;
+$color-nav-hover:       $color-gray-300;
 
 
 @each $id, $color in $colors {
@@ -54,6 +54,9 @@ $color-nav-hover:       $gray-300;
   }
   %background-#{$id} {
     background-color: #{$color};
+  }
+  %border-#{$id} {
+    border: 1px solid #{$color};
   }
   .color-#{$id} {
     color: #{$color};

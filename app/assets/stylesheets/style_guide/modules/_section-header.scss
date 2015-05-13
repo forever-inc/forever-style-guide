@@ -24,7 +24,7 @@
 
   .style-guide-section-header-title {
     padding: 30px 0;
-    color: $white;
+    @extend %color-white;
     @extend %text-shadow;
   }
 }

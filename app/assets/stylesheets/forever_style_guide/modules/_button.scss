@@ -2,10 +2,16 @@
 @import "forever_style_guide/globals/colors";
 @import "forever_style_guide/globals/fonts";
 
+$btn-lg-size: 64px;
+$btn-size: 42px;
+$btn-sm-size: 37px;
+$btn-xs-size: 28px;
+
 @mixin btn-color($color, $inverse: false) {
   @if ($inverse) {
     @extend %color-#{$color};
     @extend %background-silver;
+    @extend %border-gray-300;
     &:hover,
     &:active {
       @extend %color-#{$color}-dark;
@@ -14,6 +20,7 @@
   } @else {
     @extend %color-white;
     @extend %background-#{$color};
+    @extend %border-#{$color}-dark;
     &:hover,
     &:active {
       @extend %background-#{$color}-dark;
@@ -22,16 +29,29 @@
   }
 }
 
-.btn,
-.btn-default {
+.btn {
   @extend %btn-style;
 
+  &:hover,
+  &:active {
+    @extend %background-white;
+  }
   &.btn-inverse {
     @include btn-color('gray');
   }
 
-  &.btn-default.disabled {
-    @extend %background-silver;
+  &.btn-default {
+    color: $color-gray-600;
+    &:hover,
+    &:active {
+      @extend %background-white;
+    }
+    &.disabled {
+      @extend %background-silver;
+    }
+    &.btn-inverse {
+      @include btn-color('gray');
+    }
   }
   &.btn-primary,
   &.btn-success {
@@ -68,6 +88,7 @@
   &.btn-link {
     @include btn-color('secondary', true);
     background: none;
+    border: none;
     box-shadow: none;
     &:hover,
     &:active {
@@ -113,25 +134,25 @@
   }
 
   &.btn-icon {
-    width: 42px;
-    height: 42px;
+    width: $btn-size;
+    height: $btn-size;
     padding: 0;
     .fa {
       width: 100%;
       text-align: center;
     }
     &.btn-lg {
-      width: 64px;
-      height: 64px;
+      width: $btn-lg-size;
+      height: $btn-lg-size;
     }
     &.btn-sm {
-      width: 37px;
-      height: 37px;
+      width: $btn-sm-size;
+      height: $btn-sm-size;
 
     }
     &.btn-xs {
-      width: 28px;
-      height: 28px;
+      width: $btn-xs-size;
+      height: $btn-xs-size;
       padding-left: 1px;
     }
   }
@@ -181,8 +202,8 @@
     vertical-align: middle;
   }
   .btn:not(:first-child):not(:last-child):not(.dropdown-toggle) {
-    border-left: 1px solid $gray-400;
-    border-right: 1px solid $gray-400;
+    border-left: 1px solid $color-gray-400;
+    border-right: 1px solid $color-gray-400;
     // compensating for bootstraps -1px offset
     margin-right: 1px;
   }
