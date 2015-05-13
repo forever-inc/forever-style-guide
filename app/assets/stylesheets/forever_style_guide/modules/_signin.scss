@@ -21,11 +21,11 @@
     }
   }
   .btn.btn-link {
-    @extend %color-gray-500;
-    @extend %background-white;
+    color: color('gray-500');
+    background-color: color('white');
 
     &:hover {
-      @extend %color-secondary;
+      color: color('secondary');
       text-decoration: none;
     }
   }

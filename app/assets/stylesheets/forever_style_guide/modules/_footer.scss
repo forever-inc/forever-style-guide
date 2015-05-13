@@ -8,13 +8,13 @@
   position: absolute;
   bottom: 0;*/
   padding: 20px;
-  @extend %color-white;
+  color: color('white');
   text-align: center;
-  @extend %background-black;
+  background-color: color('gray-800');
 
   a {
     @include link_visited_hover_active {
-    @extend %color-white;
+      color: color('white');
     }
   }
   .pages {
@@ -25,13 +25,13 @@
   }
   .social_media_icons {
     .fa-feature_bullet-circle {
-      @extend %color-gray-600;
+      color: color('white');
       text-shadow: none;
     }
     .fa-feature_bullet-social {
       &:hover {
         .fa-feature_bullet-circle {
-          @extend %color-gray-500;
+          color: color('gray-500');
         }
       }
     }

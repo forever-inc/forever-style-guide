@@ -9,21 +9,21 @@ $btn-xs-size: 28px;
 
 @mixin btn-color($color, $inverse: false) {
   @if ($inverse) {
-    @extend %color-#{$color};
-    @extend %background-silver;
-    @extend %border-gray-300;
+    color: color('#{$color}');
+    background-color: color('silver');
+    border: 1px solid color('gray-300');
     &:hover,
     &:active {
-      @extend %color-#{$color}-dark;
-      @extend %background-white;
+      background-color: color('#{$color}-dark');
+      color: color('white');
     }
   } @else {
-    @extend %color-white;
-    @extend %background-#{$color};
-    @extend %border-#{$color}-dark;
+    color: color('white');
+    background-color: color('#{$color}');
+    border: 1px solid color('#{$color}-dark');
     &:hover,
     &:active {
-      @extend %background-#{$color}-dark;
+      background-color: color('#{$color}-dark');
       text-decoration: none;
     }
   }
@@ -34,7 +34,7 @@ $btn-xs-size: 28px;
 
   &:hover,
   &:active {
-    @extend %background-white;
+    background-color: color('white');
   }
   &.btn-inverse {
     @include btn-color('gray');
@@ -44,10 +44,10 @@ $btn-xs-size: 28px;
     color: $color-gray-600;
     &:hover,
     &:active {
-      @extend %background-white;
+      background-color: color('white');
     }
     &.disabled {
-      @extend %background-silver;
+      background-color: color('silver');
     }
     &.btn-inverse {
       @include btn-color('gray');
@@ -202,8 +202,8 @@ $btn-xs-size: 28px;
     vertical-align: middle;
   }
   .btn:not(:first-child):not(:last-child):not(.dropdown-toggle) {
-    border-left: 1px solid $color-gray-400;
-    border-right: 1px solid $color-gray-400;
+    border-left: 1px solid color('gray-400');
+    border-right: 1px solid color('gray-400');
     // compensating for bootstraps -1px offset
     margin-right: 1px;
   }

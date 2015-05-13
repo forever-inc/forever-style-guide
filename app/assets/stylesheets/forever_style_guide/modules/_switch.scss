@@ -7,8 +7,8 @@ $toggle_height: 21px;
 $toggle_horizontal_padding: 10px;
 $toggle_vertical_padding: 2px;
 $toggle_circle_diameter: 13px;
-$toggle_no_background: $color-forever_gray;
-$toggle_yes_background: $color-primary;
+$toggle_no_background: color('gray');
+$toggle_yes_background: color('primary');
 
 .switch {
   display: inline-block;
@@ -42,7 +42,7 @@ $toggle_yes_background: $color-primary;
     height: $toggle_circle_diameter;
     margin-top: 2px;
     border-radius: 50%;
-    @extend %background-white;
+    background-color: color('white');
   }
   &.switch-no, &.switch-off {
     text-align: left;
@@ -76,7 +76,7 @@ $toggle_yes_background: $color-primary;
   }
   &:link,
   &:hover {
-    @extend %color-white;
+    color: color('white');
     text-decoration: none;
   }
   &.disabled {

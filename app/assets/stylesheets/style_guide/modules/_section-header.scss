@@ -6,12 +6,12 @@
 
   &.style-guide-section-header-primary {
     height: 300px;
-    @extend %background-primary;
+    background-color: color('primary');
   }
 
   &.style-guide-section-header-secondary {
     height: 200px;
-    @extend %background-secondary;
+    background-color: color('secondary');
 
     .style-guide-section-header-title {
       padding: 0;
@@ -19,12 +19,12 @@
   }
 
   &.style-guide-section-header-accent {
-    @extend %background-accent;
+    background-color: color('accent');
   }
 
   .style-guide-section-header-title {
     padding: 30px 0;
-    @extend %color-white;
+    color: color('white');
     @extend %text-shadow;
   }
 }

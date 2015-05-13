@@ -1,10 +1,12 @@
+@import "logger";
+
 /* =colors-utils
 
 Sass functions and color related variables beyond standard color declarations
 ---------------------------------------------------------------------------- */
 
 // map for all color declarations
-$colors: ();
+$colors: () !default;
 
 // pre-defined variations for easy consistent adjustments across future color variation tweaks
 $variations: (
@@ -29,18 +31,25 @@ $variations: (
   )
 );
 
-@function color-variation($color, $variation: false) {
-  // Correctly set $color variable:
-  @if map-has-key($colors, $color) {
-    // $color is in $colors, set variable = map-value
-    $color: map-get($colors, $color);
-  } @else {
-    @if type-of($color) != color {
-      // $color is not in $color and $color is not a color
-      @error "Invalid color name: `#{$color}`.";
-    }
-    // $color is a valid color - use it
+// appends colors to master color list
+@function set_color($id, $color) {
+  $colors: map-merge($colors, ($id: $color)) !global; // adds color declaration to global $colors map
+  $message: debug("New Color - #{$id}: #{$color}");
+  @return $color;
+}
+
+// retrieves a color from the master color list
+@function get_color($key) {
+  @if map-has-key($colors, $key) {
+    @return map-get($colors, $key);
   }
+  @warn "Unknown `#{$key}` in $colors.";
+  @return null;
+}
+
+@function color-variation($color, $variation: false) {
+  // get $color variable:
+  $color: get_color($color);
 
   @if $variation {
     @if not map-has-key($variations, $variation) {
@@ -63,16 +72,17 @@ $variations: (
   @return $color;
 }
 
-// appends colors to master color list
-@function color($id, $color) {
-  $colors: map-merge($colors, ($id: $color)) !global; // adds color declaration to global $colors map
-  @return $color;
+// alias for get_color
+@function color($key) {
+  $message: debug("Get Color - #{$key}");
+  @return get_color($key)
 }
 
 // generates dynamic of a provided color and registers them as unique colors
 @function colorify($id, $color) {
-  $base-color: color($id, $color);
-  $color-dark: color('#{$id}-dark',color-variation($color, 'dark'));
-  $color-light: color('#{$id}-light',color-variation($color, 'light'));
+  $base-color: set_color($id, $color);
+  @each $variation, $varation-args in $variations {
+    $variant-color: set_color('#{$id}-#{$variation}', color-variation($id, $variation));
+  }
   @return $base-color;
 }

@@ -14,7 +14,7 @@ h4,
 h5,
 h6,
 p {
-  @extend %color-text;
+  color: color('text');
 }
 
 h1 {
@@ -54,17 +54,17 @@ b,
 strong {
   @extend %font-face-bold;
   @extend %font-size-200;
-  @extend %color-accent;
+  color: color('text');
 }
 .lead {
-  @extend %color-accent;
+  color: color('text');
 }
 a {
-  @extend %color-secondary;
+  color: color('secondary');
   &:hover
   &:link,
   &:visited,
   &:active {
-    @extend %color-secondary;
+    color: color('secondary');
   }
 }

@@ -6,6 +6,7 @@
 @import "forever_style_guide/globals/fonts";
 
 $shadow-color: rgba($color-gray-500, 0.6);
+$color-card-bg: color('white');
 
 %no-shadow {
   @include box-shadow(none);
