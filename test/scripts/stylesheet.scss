@@ -1,0 +1,21 @@
+// These are global compass configuration options specific to panstoria-store
+$project-path: absolute-path("../../app/assets") !global;
+$fonts-dir: "fonts" !global;
+$compass-options: (fonts-dir: $fonts-dir);
+@import "compass/configuration";
+@include compass-configuration($compass-options);
+
+// bootstrap compass helpers
+@function twbs-font-path($path) {
+  @return font-url($path, true);
+}
+
+@function twbs-image-path($path) {
+  @return image-url($path, true);
+}
+
+$bootstrap-sass-asset-helper: true;
+
+@import "../../app/assets/stylesheets/forever_style_guide/globals/all";
+@import "../../app/assets/stylesheets/forever_style_guide/base/all";
+@import "../../app/assets/stylesheets/forever_style_guide/modules/all";
