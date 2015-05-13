@@ -1,0 +1,73 @@
+@import "forever_style_guide/globals/breakpoints";
+
+.hero {
+  height: 300px;
+  position: relative;
+  background-size: cover;
+
+  @media (min-width: $screen-xs) {
+    height: 400px;
+  }
+  @media (min-width: $screen-sm) {
+    height: 450px;
+  }
+  @media (min-width: $screen-md) {
+    height: 500px;
+  }
+  @media (min-width: $screen-lg) {
+    height: 650px;
+  }
+  @media (min-width: $screen-xl) {
+    height: 800px;
+  }
+  @media (min-width: $screen-xxl) {
+    height: 1000px;
+  }
+
+  &.hero-sm {
+    height: 200px;
+
+    @media (min-width: $screen-xs) {
+      height: 250px;
+    }
+    @media (min-width: $screen-sm) {
+      height: 300px;
+    }
+    @media (min-width: $screen-md) {
+      height: 350px;
+    }
+    @media (min-width: $screen-lg) {
+      height: 450px;
+    }
+    @media (min-width: $screen-xl) {
+      height: 500px;
+    }
+    @media (min-width: $screen-xxl) {
+      height: 600px;
+    }
+  }
+
+  &.hero-xs {
+    height: 100px;
+
+    @media (min-width: $screen-xs) {
+      height: 150px;
+    }
+    @media (min-width: $screen-sm) {
+      height: 200px;
+    }
+    @media (min-width: $screen-md) {
+      height: 250px;
+    }
+    @media (min-width: $screen-lg) {
+      height: 300px;
+    }
+    @media (min-width: $screen-xl) {
+      height: 350px;
+    }
+    @media (min-width: $screen-xxl) {
+      height: 400px;
+    }
+  }
+
+}
