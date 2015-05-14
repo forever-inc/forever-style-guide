@@ -101,6 +101,21 @@ $btn-xs-size: 28px;
       }
     }
   }
+  &.btn-sign_in {
+    color: color('gray-500');
+    background: none;
+    border: none;
+    box-shadow: none;
+    &:hover,
+    &:active, {
+      color: color('secondary');
+      background: none;
+      &:focus {
+        color: color('secondary');
+        box-shadow: none;
+      }
+    }
+  }
   &.btn-lg {
     @extend %font-face-light;
     @extend %font-size-400;
