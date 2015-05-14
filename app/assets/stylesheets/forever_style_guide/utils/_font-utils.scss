@@ -5,19 +5,33 @@ Sass functions and font related variables beyond standard font declarations
 ---------------------------------------------------------------------------- */
 
 // map for all font-face declarations
-$font-faces: ();
+$font-faces: () !default;
 
 // declaration function that makes future changes easier to manage
-@function fontface($id, $file) {
-  $font-faces: map-merge($font-faces, ($id: $file)) !global; // adds font-size declaration to global $font-sizes map
+@function set_fontface($id, $file, $style) {
+  $font-faces: map-merge($font-faces, ($id: ($file, $style))) !global; // adds font-size declaration to global $font-sizes map
   @return $id;
 }
 
 // map for all font-size declarations
-$font-sizes: ();
+$font-sizes: () !default;
 
 // declaration function that makes future changes easier to manage
-@function fontsize($weight, $size) {
+@function set_fontsize($weight, $size) {
   $font-sizes: map-merge($font-sizes, ($weight: $size)) !global; // adds font-size declaration to global $font-sizes map
   @return $size;
+}
+
+// retrieves a font-size from the master font-size list
+@function get_fontsize($key) {
+  @if map-has-key($font-sizes, $key) {
+    @return map-get($font-sizes, $key);
+  }
+  @warn "Unknown `#{$key}` in $font-sizes.";
+  @return null;
+}
+
+// alias for get_fontsize
+@function font-size($key) {
+  @return get_fontsize($key);
 }

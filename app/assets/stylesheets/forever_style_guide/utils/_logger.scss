@@ -3,13 +3,13 @@
 Sass debugging and inspection tools
 ---------------------------------------------------------------------------- */
 
-$debug: false;
+$verbose: false;
 
-@function debug($message) {
-  @if $debug {
+@function logger($message) {
+  @if $verbose {
     @debug $message;
   }
-  @return $debug;
+  @return $verbose;
 }
 
 @function inspect($list, $type: false, $root: true) {

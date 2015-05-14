@@ -103,11 +103,11 @@ $btn-xs-size: 28px;
   }
   &.btn-lg {
     @extend %font-face-light;
-    @extend %font-size-400;
+    font-size: font-size('large');
     padding: 20px;
 
     .fa {
-      @extend %font-size-600;
+      font-size: font-size(600);
 
       &:after {
         padding-bottom: 2px;
@@ -115,22 +115,22 @@ $btn-xs-size: 28px;
     }
   }
   &.btn-sm {
-    @extend %font-size-200;
+    font-size: font-size('default');
     padding-top: 8px;
     padding-bottom: 8px;
 
     .fa {
-      @extend %font-size-400;
+      font-size: font-size('large');
       padding-top: 4px;
     }
   }
   &.btn-xs {
-    @extend %font-size-100;
+    font-size: font-size('small');
     padding-top: 5px;
     padding-bottom: 5px;
 
     .fa {
-      @extend %font-size-200;
+      font-size: font-size('default');
       padding-top: 4px;
     }
   }
@@ -195,7 +195,7 @@ $btn-xs-size: 28px;
     }
   }
   .fa {
-    @extend %font-size-500;
+    font-size: font-size(500);
   }
 }
 

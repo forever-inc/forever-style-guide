@@ -1,7 +1,8 @@
 /* =footer
 ---------------------------------------------------------------------------- */
-@import "forever_style_guide/globals/all";
-@import "bootstrap/variables";
+@import "forever_style_guide/globals/colors";
+@import "forever_style_guide/globals/fonts";
+@import "forever_style_guide/globals/mixins";
 
 .footer-marketing {
   /* You'll need these in your production footer, but they don't work in the component display in the style guide
@@ -20,7 +21,7 @@
   .pages {
     margin-top: 20px;
     margin-bottom: 15px;
-    @extend %font-size-400;
+    font-size: font-size(400);
     text-transform: uppercase;
   }
   .social_media_icons {
@@ -43,6 +44,6 @@
     margin-top: 15px;
   }
   .info-number {
-    @extend %font-size-500;
+    font-size: font-size(500);
   }
 }

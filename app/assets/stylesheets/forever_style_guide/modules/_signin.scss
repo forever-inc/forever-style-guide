@@ -1,6 +1,8 @@
 /* =login & sign up buttons
 ---------------------------------------------------------------------------- */
-@import "forever_style_guide/globals/all";
+@import "forever_style_guide/globals/colors";
+@import "forever_style_guide/globals/fonts";
+@import "forever_style_guide/globals/breakpoints";
 
 .login {
   display: inline-block;
@@ -11,8 +13,8 @@
   }
   .login-item {
     float: left;
-    @extend %font-size-400;
     @extend %font-face-regular;
+    font-size: font-size(400);
 
     &:first-child {
       margin-right: 5px;

@@ -5,56 +5,35 @@
 
 /* =font faces
    ---------------------------------------------------------------------------- */
-$font-face-light:           fontface('proxima_nova-light', ProximaNova-Light);
-$font-face-regular:         fontface('proxima_nova-regular', ProximaNova-Reg);
-$font-face-semibold:        fontface('proxima_nova-semibold', ProximaNova-Sbold);
-$font-face-bold:            fontface('proxima_nova-bold', ProximaNova-Bold);
-$font-face-regular_italic:  fontface('proxima_nova-regular_italic', ProximaNova-RegIt);
-$font-face-bold_italic:     fontface('proxima_nova-bold_italic', ProximaNova-BoldIt);
+$font-face-light:           set_fontface('proxima_nova-light', ProximaNova-Light, 'light') !default;
+$font-face-regular:         set_fontface('proxima_nova-regular', ProximaNova-Reg, 'regular') !default;
+$font-face-semibold:        set_fontface('proxima_nova-semibold', ProximaNova-Sbold, 'semibold') !default;
+$font-face-bold:            set_fontface('proxima_nova-bold', ProximaNova-Bold, 'bold') !default;
+$font-face-regular_italic:  set_fontface('proxima_nova-regular_italic', ProximaNova-RegIt, 'italic') !default;
+$font-face-bold_italic:     set_fontface('proxima_nova-bold_italic', ProximaNova-BoldIt, 'bold-italic') !default;
 
 // font face placeholder selectors (use @extends)
-@each $id, $file in $font-faces {
-  /* @extend %font-#{$id} */
+@each $id, $font-data in $font-faces {
+  $file: nth($font-data, 1);
+  $style: nth($font-data, 2);
   @include font-face($id, font-files('#{$file}-webfont.woff', '#{$file}-webfont.ttf' ,'#{$file}-webfont.svg'),'#{$file}-webfont.eot');
-}
-%font-face-light {
-  font-family: #{$font-face-light}, Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
-}
-%font-face-regular {
-  font-family: #{$font-face-regular}, Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
-}
-%font-face-semibold {
-  font-family: #{$font-face-semibold}, Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
-}
-%font-face-bold {
-  font-family: #{$font-face-bold}, Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
-}
-%font-face-regular_italic {
-  font-family: #{$font-face-regular_italic}, Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
-}
-%font-face-bold_italic {
-  font-family: #{$font-face-bold_italic}, Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+  /* @extend %font-#{$id} */
+  %font-face-#{$style} {
+    font-family: #{$id}, Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+  }
 }
 
 /* =font sizes
    ---------------------------------------------------------------------------- */
-$font-size-100: fontsize(100, 12px);
-$font-size-200: fontsize(200, 14px);
-$font-size-300: fontsize(300, 16px);
-$font-size-400: fontsize(400, 18px);
-$font-size-500: fontsize(500, 24px);
-$font-size-600: fontsize(600, 36px);
-$font-size-700: fontsize(700, 48px);
-$font-size-800: fontsize(800, 64px);
+$font-size-100: set_fontsize(100, 12px) !default;
+$font-size-200: set_fontsize(200, 14px) !default;
+$font-size-300: set_fontsize(300, 16px) !default;
+$font-size-400: set_fontsize(400, 18px) !default;
+$font-size-500: set_fontsize(500, 24px) !default;
+$font-size-600: set_fontsize(600, 36px) !default;
+$font-size-700: set_fontsize(700, 48px) !default;
+$font-size-800: set_fontsize(800, 64px) !default;
 
-// font size placeholder selectors (use @extends) */
-@each $weight, $size in $font-sizes {
-  /* @extend %font-size-#{$weight} */
-  %font-size-#{$weight} {
-    font-size: #{$size};
-  }
-}
-
-%font-size-default {
-  font-size: $font-size-300
-}
+$font-size-default: set_fontsize('default', $font-size-200) !default;
+$font-size-small: set_fontsize('small', $font-size-100) !default;
+$font-size-large: set_fontsize('large', $font-size-400) !default;

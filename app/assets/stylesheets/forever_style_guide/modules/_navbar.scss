@@ -66,8 +66,8 @@ $library_padding: 20px;
 
   .nav-item {
     @include clearfix;
-    @extend %font-size-400;
     @extend %font-face-regular;
+    font-size: font-size(400);
 
     .nav-item-tab {
       height: $header_height;
@@ -76,7 +76,7 @@ $library_padding: 20px;
     }
 
     .nav-item-icon {
-      @extend %font-size-500;
+      font-size: font-size(500);
       line-height: 20px;
       vertical-align: bottom;
     }

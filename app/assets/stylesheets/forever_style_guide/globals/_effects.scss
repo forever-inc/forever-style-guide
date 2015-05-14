@@ -57,7 +57,7 @@ $color-card-bg: color('white');
   padding-bottom: 10px;
   display: inline-block;
   text-align: center;
-  @extend %font-size-300;
+  font-size: font-size('default');
 
   @include transition-property(background-color);
   @include transition-duration(0.3s);
