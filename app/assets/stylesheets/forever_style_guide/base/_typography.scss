@@ -57,7 +57,7 @@ strong {
   color: color('text');
 }
 .page-title {
-  @extend h2;
+  margin-top: 0;
   color: color('purple');
 }
 .lead {
