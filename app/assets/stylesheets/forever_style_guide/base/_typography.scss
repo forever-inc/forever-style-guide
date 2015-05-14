@@ -56,6 +56,10 @@ strong {
   @extend %font-size-200;
   color: color('text');
 }
+.page-title {
+  @extend h2;
+  color: color('purple');
+}
 .lead {
   color: color('text');
 }
