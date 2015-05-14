@@ -12,11 +12,11 @@ $sophia_color: #9dd171;
     display: inline-block;
 
     .persona-header-title {
-
+      font-size: font-size('large');
     }
 
     .persona-header-quote {
-      @extend %font-size-200;
+      font-size: font-size('default');
       position: relative;
       background-color: color('white');
       padding:10px;
@@ -70,11 +70,11 @@ $sophia_color: #9dd171;
 }
 
 .style-guide-persona-title {
-  @extend %font-size-300;
+  font-size: font-size('large');
 }
 
 .quote-bubble {
-  @extend %font-size-200;
+  font-size: font-size('default');
   position: relative;
   background-color: color('white');
   color: color('gray-600');

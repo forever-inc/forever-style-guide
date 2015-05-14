@@ -19,41 +19,41 @@ p {
 
 h1 {
   @extend %font-face-light;
-  @extend %font-size-700;
+  font-size: font-size(700);
 }
 h2 {
   @extend %font-face-light;
-  @extend %font-size-600;
+  font-size: font-size(600);
 }
 h3 {
   @extend %font-face-regular;
-  @extend %font-size-500;
+  font-size: font-size(500);
 }
 h4 {
   @extend %font-face-semibold;
-  @extend %font-size-400;
+  font-size: font-size(400);
 }
 h5 {
   @extend %font-face-semibold;
-  @extend %font-size-300;
+  font-size: font-size(300);
 }
 h6 {
   @extend %font-face-semibold;
-  @extend %font-size-200;
+  font-size: font-size('default');
 }
 p {
   @extend %font-face-regular;
-  @extend %font-size-200;
+  font-size: font-size('default');
   line-height: 1.6;
 }
 small {
   @extend %font-face-regular;
-  @extend %font-size-100;
+  font-size: font-size(100);
 }
 b,
 strong {
   @extend %font-face-bold;
-  @extend %font-size-200;
+  font-size: font-size('default');
   color: color('text');
 }
 .page-title {

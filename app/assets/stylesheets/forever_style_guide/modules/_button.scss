@@ -15,8 +15,9 @@ $btn-xs-size: 28px;
     &:hover,
     &:active,
     &:active:focus {
-      background-color: color('#{$color}-dark');
-      color: color('white');
+      border: 1px solid color('#{$color}-dark');
+      color: color('#{$color}-dark');
+      background-color: color('silver');
     }
   } @else {
     color: color('white');
@@ -45,7 +46,8 @@ $btn-xs-size: 28px;
   &.btn-default {
     color: $color-gray-600;
     &:hover,
-    &:active {
+    &:active,
+    &:focus {
       background-color: color('white');
     }
     &.disabled {
@@ -93,10 +95,14 @@ $btn-xs-size: 28px;
     border: none;
     box-shadow: none;
     &:hover,
-    &:active {
+    &:active,
+    &:focus {
+      border: none;
       background: none;
       text-decoration: underline;
       &:focus {
+        border: none;
+        background: none;
         box-shadow: none;
       }
     }
@@ -118,11 +124,11 @@ $btn-xs-size: 28px;
   }
   &.btn-lg {
     @extend %font-face-light;
-    @extend %font-size-400;
+    font-size: font-size('large');
     padding: 20px;
 
     .fa {
-      @extend %font-size-600;
+      font-size: font-size(600);
 
       &:after {
         padding-bottom: 2px;
@@ -130,22 +136,22 @@ $btn-xs-size: 28px;
     }
   }
   &.btn-sm {
-    @extend %font-size-200;
+    font-size: font-size('default');
     padding-top: 8px;
     padding-bottom: 8px;
 
     .fa {
-      @extend %font-size-400;
+      font-size: font-size('large');
       padding-top: 4px;
     }
   }
   &.btn-xs {
-    @extend %font-size-100;
+    font-size: font-size('small');
     padding-top: 5px;
     padding-bottom: 5px;
 
     .fa {
-      @extend %font-size-200;
+      font-size: font-size('default');
       padding-top: 4px;
     }
   }
@@ -210,7 +216,7 @@ $btn-xs-size: 28px;
     }
   }
   .fa {
-    @extend %font-size-500;
+    font-size: font-size(500);
   }
 }
 
