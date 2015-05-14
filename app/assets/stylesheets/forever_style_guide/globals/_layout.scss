@@ -1,0 +1,33 @@
+@import "forever_style_guide/globals/fonts";
+
+// Layout utility for applying padding to containers
+// TODO extend these into more robust modules ex. l-padded l-padded-horizontal etc etc
+.l-padded {
+  padding: 20px;
+
+  @media (min-width: $screen-md-min) {
+    padding: 40px;
+  }
+}
+
+.l-padded-thick {
+  padding: 40px;
+
+  @media (min-width: $screen-md-min) {
+    padding: 60px;
+  }
+}
+
+.l-padded-thin {
+  padding: 10px;
+
+  @media (min-width: $screen-md-min) {
+    padding: 20px;
+  }
+}
+
+// Layout utility for unpadded bootstrap columns ex. class="row no-gutter"
+.no-gutter > [class*='col-'] {
+  padding-right: 0;
+  padding-left: 0;
+}

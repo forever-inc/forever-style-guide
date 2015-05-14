@@ -23,8 +23,8 @@
 @mixin circle($diameter, $color) {
   width: $diameter;
   height: $diameter;
-  background-color: $color;
   border-radius: 50%;
+  background-color: $color;
 }
 
 @mixin link_visited_hover_active {

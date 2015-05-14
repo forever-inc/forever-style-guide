@@ -20,13 +20,4 @@
       margin-right: 5px;
     }
   }
-  .btn.btn-link {
-    color: color('gray-500');
-    background-color: color('white');
-
-    &:hover {
-      color: color('secondary');
-      text-decoration: none;
-    }
-  }
 }
