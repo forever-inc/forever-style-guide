@@ -15,8 +15,9 @@ $btn-xs-size: 28px;
     &:hover,
     &:active,
     &:active:focus {
-      background-color: color('#{$color}-dark');
-      color: color('white');
+      border: 1px solid color('#{$color}-dark');
+      color: color('#{$color}-dark');
+      background-color: color('silver');
     }
   } @else {
     color: color('white');
@@ -45,7 +46,8 @@ $btn-xs-size: 28px;
   &.btn-default {
     color: $color-gray-600;
     &:hover,
-    &:active {
+    &:active,
+    &:focus {
       background-color: color('white');
     }
     &.disabled {
@@ -93,10 +95,14 @@ $btn-xs-size: 28px;
     border: none;
     box-shadow: none;
     &:hover,
-    &:active {
+    &:active,
+    &:focus {
+      border: none;
       background: none;
       text-decoration: underline;
       &:focus {
+        border: none;
+        background: none;
         box-shadow: none;
       }
     }
