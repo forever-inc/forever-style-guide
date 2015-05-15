@@ -1,6 +1,5 @@
 /* =fonts
 ---------------------------------------------------------------------------- */
-
 @import "forever_style_guide/utils/font-utils";
 
 /* =font faces
@@ -35,5 +34,5 @@ $font-size-700: set_fontsize(700, 48px) !default;
 $font-size-800: set_fontsize(800, 64px) !default;
 
 $font-size-default: set_fontsize('default', $font-size-200) !default;
-$font-size-small: set_fontsize('small', $font-size-100) !default;
-$font-size-large: set_fontsize('large', $font-size-400) !default;
+$font-size-smallish: set_fontsize('small', $font-size-100) !default;
+$font-size-largeish: set_fontsize('large', $font-size-400) !default;
