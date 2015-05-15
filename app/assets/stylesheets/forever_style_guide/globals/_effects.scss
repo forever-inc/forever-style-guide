@@ -16,6 +16,7 @@ $color-card-bg: color('white');
 %card-shadow {
   @include box-shadow($shadow-color 0 2px 4px);
 }
+
 %footer-shadow {
   @include box-shadow(lighten($shadow-color, 30%) 0 -1px 2px);
 }
@@ -43,6 +44,7 @@ $color-card-bg: color('white');
 .card {
   @extend %card-style;
 }
+
 %item-style {
   background-color: $color-forever_silver;
   color: $color-gray-600;
