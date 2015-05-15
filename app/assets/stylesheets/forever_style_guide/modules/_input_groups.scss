@@ -49,8 +49,8 @@
 
     .btn {
       box-shadow: none;
-      padding-top: 6px;
-      padding-bottom: 6px;
+      padding-top: 5px;
+      padding-bottom: 5px;
       &:active:focus {
         @extend %inset-shadow;
       }
