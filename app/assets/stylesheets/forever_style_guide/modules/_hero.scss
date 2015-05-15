@@ -1,6 +1,8 @@
 @import "forever_style_guide/globals/breakpoints";
+@import "forever_style_guide/globals/effects";
 
 .hero {
+  @extend %card-shadow;
   height: 300px;
   position: relative;
   background-size: cover;
