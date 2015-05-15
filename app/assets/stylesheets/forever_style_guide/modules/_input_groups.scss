@@ -1,7 +1,5 @@
 @import "forever_style_guide/globals/colors";
 @import "forever_style_guide/globals/effects";
-@import "bootstrap/mixins/border-radius";
-@import "bootstrap/variables";
 
 .input-group {
   .input-group-addon {
@@ -17,7 +15,8 @@
   .input-group-btn:first-child > .dropdown-toggle,
   .input-group-btn:last-child > .btn:not(:last-child):not(.dropdown-toggle),
   .input-group-btn:last-child > .btn-group:not(:last-child) > .btn {
-    @include border-right-radius(0);
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
   }
   .input-group-addon:first-child {
     border-right: 0;
@@ -29,37 +28,39 @@
   .input-group-btn:last-child > .dropdown-toggle,
   .input-group-btn:first-child > .btn:not(:first-child),
   .input-group-btn:first-child > .btn-group:not(:first-child) > .btn {
-    @include border-left-radius(0);
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
   }
   .input-group-addon:last-child {
     border-left: 0;
   }
 
-
   .input-group-btn {
 
     .fa {
-      font-size: $font-size-base;
+      font-size: font-size('default');
     }
     &.input-sm .fa {
-      font-size: $font-size-small;
+      font-size: font-size('small');
     }
     &.input-lg .fa {
-      font-size: $font-size-large;
+      font-size: font-size('large');
     }
 
     .btn {
-      //box-shadow: none;
-      padding-top: 5px;
-      padding-bottom: 5px;
-      border: none;
+      box-shadow: none;
+      padding-top: 6px;
+      padding-bottom: 6px;
+      &:active:focus {
+        @extend %inset-shadow;
+      }
     }
   }
 
   &.input-group-sm .fa {
-    font-size: $font-size-small;
+    font-size: font-size('small');
   }
   &.input-group-lg .fa {
-    font-size: $font-size-large;
+    font-size: font-size('large');
   }
 }
