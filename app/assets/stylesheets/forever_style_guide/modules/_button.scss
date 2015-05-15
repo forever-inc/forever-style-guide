@@ -113,11 +113,14 @@ $btn-xs-size: 28px;
     border: none;
     box-shadow: none;
     &:hover,
-    &:active, {
+    &:active,
+    &:focus {
       color: color('secondary');
       background: none;
+      border: none;
       &:focus {
         color: color('secondary');
+        background: none;
         box-shadow: none;
       }
     }

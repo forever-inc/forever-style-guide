@@ -1,6 +1,5 @@
 /* =login & sign up buttons
 ---------------------------------------------------------------------------- */
-@import "forever_style_guide/globals/colors";
 @import "forever_style_guide/globals/fonts";
 @import "forever_style_guide/globals/breakpoints";
 
@@ -19,5 +18,8 @@
     &:first-child {
       margin-right: 5px;
     }
+  }
+  .btn {
+    font-size: font-size('large');
   }
 }
