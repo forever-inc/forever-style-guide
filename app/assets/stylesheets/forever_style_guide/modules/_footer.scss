@@ -5,10 +5,6 @@
 @import "forever_style_guide/globals/mixins";
 
 .footer-marketing {
-  /* You'll need these in your production footer, but they don't work in the component display in the style guide
-  position: absolute;
-  bottom: 0;*/
-  padding: 20px;
   color: color('white');
   text-align: center;
   background-color: color('gray-800');
@@ -19,12 +15,13 @@
     }
   }
   .pages {
-    margin-top: 20px;
     margin-bottom: 15px;
     font-size: font-size(400);
     text-transform: uppercase;
   }
   .social_media_icons {
+    font-size: font-size(200);
+
     .fa-feature_bullet-circle {
       color: color('gray-600');
       text-shadow: none;
