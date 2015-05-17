@@ -26,6 +26,19 @@
   }
 }
 
+// Create standard rhythm for vertical content spacing
+.l-section {
+  margin-top: 40px;
+}
+
+.l-section-close {
+  margin-top: 20px;
+}
+
+.l-section-far {
+  margin-top: 60px;
+}
+
 // Layout utility for unpadded bootstrap columns ex. class="row no-gutter"
 .no-gutter > [class*='col-'] {
   padding-right: 0;
