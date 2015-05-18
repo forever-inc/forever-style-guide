@@ -10,7 +10,7 @@ $btn-xs-size: 28px;
 @mixin btn-color($color, $inverse: false) {
   @if ($inverse) {
     color: color('#{$color}');
-    background-color: color('silver');
+    background-color: color('gray-100');
     border: 1px solid color('gray-300');
     &:hover,
     &:active,

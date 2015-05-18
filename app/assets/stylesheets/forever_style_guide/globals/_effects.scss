@@ -5,7 +5,7 @@
 @import "forever_style_guide/globals/colors";
 @import "forever_style_guide/globals/fonts";
 
-$shadow-color: rgba($color-gray-500, 0.6);
+$shadow-color: rgba(color('gray-500'), 0.6);
 $color-card-bg: color('white');
 
 %no-shadow {
@@ -34,7 +34,7 @@ $color-card-bg: color('white');
 }
 
 %gray-gradient {
-  @include background-image(linear-gradient($color-white, $color-gray-300));
+  @include background-image(linear-gradient(color('white'), color('gray-300')));
 }
 
 %card-style {
@@ -46,9 +46,9 @@ $color-card-bg: color('white');
 }
 
 %item-style {
-  background-color: $color-forever_silver;
-  color: $color-gray-600;
-  border: 1px solid $color-gray-400;
+  background-color: color('gray-100');
+  color: color('gray-600');
+  border: 1px solid color('gray-400');
   border-radius: 2px;
   text-shadow: none;
 }
@@ -68,13 +68,13 @@ $color-card-bg: color('white');
   &:active:focus {
     @extend %inset-shadow;
     outline: none;
-    background-color: $color-forever_silver;
+    background-color: color('color-silver');
   }
 
   &:hover,
   &:focus,
   &:active {
     outline: none;
-    border: 1px solid $color-gray-400;
+    border: 1px solid color('gray-400');
   }
 }
