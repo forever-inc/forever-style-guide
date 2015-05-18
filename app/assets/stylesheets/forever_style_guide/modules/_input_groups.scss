@@ -5,7 +5,6 @@
   .input-group-addon {
     @extend %item-style;
     @extend %no-shadow;
-    background-color: color('silver');
   }
 
   .input-group .form-control:first-child,

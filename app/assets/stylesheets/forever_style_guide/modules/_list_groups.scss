@@ -1,0 +1,57 @@
+@import "forever_style_guide/globals/colors";
+@import "forever_style_guide/globals/fonts";
+@import "forever_style_guide/globals/breakpoints";
+@import "forever_style_guide/globals/effects";
+
+
+/* list
+---------------------------------------------------------------------------- */
+
+.list-group-item {
+  @extend %item-style;
+  @extend %no-shadow;
+  //border: 1px solid #ddd;
+
+  // Round the first and last items
+  &:first-child {
+    border-bottom-left-radius: 2px;
+    border-top-left-radius: 2px;
+  }
+  &:last-child {
+    border-bottom-right-radius: 2px;
+    border-top-right-radius: 2px;
+  }
+
+  &.list-group-item-success,
+  &.list-group-item-primary {
+    color: color('primary');
+  }
+  &.list-group-item-secondary,
+  &.list-group-item-info {
+    color: color('secondary');
+  }
+  &.list-group-item-accent {
+    color: color('accent');
+  }
+  &.list-group-item-warning {
+    color: color('warning');
+  }
+  &.list-group-item-danger {
+    color: color('danger');
+  }
+}
+
+
+.list-benefit {
+  margin: 0.25em 20px 0 20px;
+  padding-left: 30px;
+
+  background: image-url("forever_style_guide/check.png") no-repeat 0 0;
+  list-style: none;
+  text-align: left;
+  font-size: font-size('default');
+
+  @media(max-width: $screen-xs-min) {
+    margin: 0;
+  }
+}
