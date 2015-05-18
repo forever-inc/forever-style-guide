@@ -68,7 +68,7 @@ $color-card-bg: color('white');
   &:active:focus {
     @extend %inset-shadow;
     outline: none;
-    background-color: color('color-silver');
+    background-color: color('silver');
   }
 
   &:hover,
