@@ -47,7 +47,7 @@ $color-card-bg: color('white');
   background-color: color('gray-100');
   color: color('gray-600');
   border: 1px solid color('gray-400');
-  border-radius: 2px;
+  border-radius: $border-radius-default;
   text-shadow: none;
 }
 
