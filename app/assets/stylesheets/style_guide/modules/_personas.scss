@@ -1,7 +1,3 @@
-@import "forever_style_guide/globals/fonts";
-@import "forever_style_guide/globals/colors";
-@import "forever_style_guide/globals/effects";
-
 $sophia_color: #9dd171;
 
 .persona {
@@ -28,7 +24,7 @@ $sophia_color: #9dd171;
         position: absolute;
         display: block;
         content: "";
-        border-color: transparent $color-white transparent transparent;
+        border-color: transparent color('white') transparent transparent;
         border-style: solid;
         border-width: 20px 40px;
         height: 0;

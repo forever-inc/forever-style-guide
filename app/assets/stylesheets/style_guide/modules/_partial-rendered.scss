@@ -1,7 +1,5 @@
-@import "forever_style_guide/globals/colors";
-
 .style-guide-partial-rendered {
   &.style-guide-partial-rendered-inverse {
-    background-color: $color-background;
+    background-color: color('background');
   }
 }
