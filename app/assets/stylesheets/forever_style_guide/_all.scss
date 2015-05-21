@@ -10,8 +10,8 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *  *= require_self
- *  *= require_tree .
  */
 
-
+@import "forever_style_guide/globals/all";
+@import "forever_style_guide/base/all";
+@import "forever_style_guide/modules/all";

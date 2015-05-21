@@ -1,7 +1,6 @@
 @import "bootstrap/variables";
 
 .popover {
-
   // Offset the popover to account for the popover arrow
   &.bottomleft    { margin-top: $popover-arrow-width; }
   &.bottomright   { margin-top: $popover-arrow-width; }
