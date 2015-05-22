@@ -3,3 +3,30 @@
 $border-radius-default:     2px !default;
 $border-radius-large:       4px !global;
 $border-radius-small:       2px !global;
+
+$padding-default-vertical:     10px !default;
+$padding-default-horizontal:   8px !default;
+
+$padding-large-vertical:    20px !global;
+$padding-large-horizontal:  15px !global;
+
+$padding-small-vertical:    8px !global;
+$padding-small-horizontal:  8px !global;
+
+$padding-xs-vertical:       6px !global;
+$padding-xs-horizontal:     6px !global;
+
+$btn-lg-size: 64px;
+$btn-size: 42px;
+$btn-sm-size: 35px;
+$btn-xs-size: 28px;
+
+$btn-padding-default-horizontal: $padding-default-horizontal * 1.5;
+$btn-padding-large-horizontal: $padding-large-horizontal * 1.5;
+$btn-padding-small-horizontal: $padding-small-horizontal * 1.5;
+$btn-padding-xs-horizontal: $padding-xs-horizontal * 1.5;
+
+$icon-lg-size: font-size(600);
+$icon-size: font-size(400);
+$icon-sm-size: font-size(300);
+$icon-xs-size: font-size(200);

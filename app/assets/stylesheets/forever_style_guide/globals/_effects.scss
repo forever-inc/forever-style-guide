@@ -54,8 +54,8 @@ $color-card-bg: color('white');
 %btn-style {
   @extend %item-style;
   @extend %item-shadow;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  height: $btn-size;
+  padding: $padding-default-vertical $btn-padding-default-horizontal;
   display: inline-block;
   text-align: center;
   font-size: font-size('default');

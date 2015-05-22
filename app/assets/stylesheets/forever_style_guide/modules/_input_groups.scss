@@ -1,7 +1,96 @@
+$radio-offset: 10px;
+
 .input-group {
+  .form-control {
+    font-size: font-size('default');
+  }
+
+  input {
+    height: $btn-size;
+    vertical-align: middle;
+  }
+  input[type='radio'],
+  input[type='checkbox'] {
+    height: $btn-size - $radio-offset;
+  }
+
   .input-group-addon {
     @extend %item-style;
+    font-size: font-size('default');
+    padding: 0 $btn-padding-small-horizontal;
     @extend %no-shadow;
+  }
+
+  &.input-group-lg {
+    .form-control {
+      font-size: font-size('large');
+    }
+    .input-group-addon {
+      font-size: font-size('large');
+      padding-left: $btn-padding-large-horizontal;
+      padding-right: $btn-padding-large-horizontal;
+    }
+    .fa,
+    .input-group-btn .fa {
+      font-size: $icon-size;
+    }
+    input {
+      height: $btn-lg-size;
+    }
+    input[type='radio'],
+    input[type='checkbox'] {
+      height: $btn-lg-size - $radio-offset;
+    }
+  }
+  &.input-group-sm {
+    .form-control {
+      font-size: font-size('small');
+    }
+    .input-group-addon {
+      font-size: font-size('small');
+      padding-left: $btn-padding-small-horizontal;
+      padding-right: $btn-padding-small-horizontal;
+    }
+    .fa,
+    .input-group-btn .fa {
+      font-size: $icon-xs-size;
+    }
+    input {
+      height: $btn-sm-size;
+    }
+    input[type='radio'],
+    input[type='checkbox'] {
+      height: $btn-sm-size - $radio-offset;
+    }
+  }
+  &.input-group-xs {
+    .form-control {
+      font-size: font-size('small');
+    }
+    .input-group-addon {
+      font-size: font-size('small');
+      padding-left: $btn-padding-xs-horizontal;
+      padding-right: $btn-padding-xs-horizontal;
+    }
+    .fa,
+    .input-group-btn {
+      .fa {
+        font-size: $icon-xs-size;
+
+      }
+      .btn {
+        height: $btn-xs-size;
+        border-radius: $border-radius-small;
+        font-size: font-size('small');
+      }
+    }
+    input {
+      height: $btn-xs-size;
+    }
+    input[type='radio'],
+    input[type='checkbox'] {
+      height: $btn-xs-size - $radio-offset;
+    }
   }
 
   .input-group .form-control:first-child,
@@ -32,15 +121,18 @@
   }
 
   .input-group-btn {
-
     .fa {
-      font-size: font-size('default');
+      font-size: $icon-size;
     }
-    &.input-sm .fa {
-      font-size: font-size('small');
+
+    &.input-lg.fa {
+        font-size: $icon-size;
     }
-    &.input-lg .fa {
-      font-size: font-size('large');
+    &.input-sm.fa {
+        font-size: $icon-xs-size;
+    }
+    &.input-xs.fa {
+        font-size: $icon-xs-size;
     }
 
     .btn {
@@ -52,12 +144,5 @@
         @extend %inset-shadow;
       }
     }
-  }
-
-  &.input-group-sm .fa {
-    font-size: font-size('small');
-  }
-  &.input-group-lg .fa {
-    font-size: font-size('large');
   }
 }

@@ -33,6 +33,7 @@ $font-size-600: set_fontsize(600, 36px) !default;
 $font-size-700: set_fontsize(700, 48px) !default;
 $font-size-800: set_fontsize(800, 64px) !default;
 
+$font-size-large: set_fontsize('large', $font-size-400) !global;
 $font-size-default: set_fontsize('default', $font-size-300) !default;
 $font-size-small: set_fontsize('small', $font-size-100) !global;
-$font-size-large: set_fontsize('large', $font-size-400) !global;
+
