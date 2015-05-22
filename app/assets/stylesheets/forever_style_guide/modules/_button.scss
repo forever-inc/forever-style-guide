@@ -176,9 +176,11 @@
     }
   }
 
+  // Because of Action buttons particular formatting, it requires some special positioning adjustments
   &.btn-action {
     .btn-action-label {
       margin: 0;
+      padding-top: 0px;
       vertical-align: top;
     }
     .btn-action-icon {
@@ -186,18 +188,26 @@
       padding-right: 4px;
     }
     &.btn-lg {
+      .btn-action-label {
+        padding-top: 6px;
+      }
       .btn-action-icon {
         padding-left: 7px;
         padding-right: 7px;
       }
     }
     &.btn-sm {
+      padding-top: 4px;
+      .btn-action-label {
+        padding-top: 4px;
+      }
       .btn-action-icon {
         padding-left: 3px;
         padding-right: 3px;
       }
     }
     &.btn-xs {
+      padding-top: 2px;
       .btn-action-label {
         padding-top: 3px;
         padding-right: 3px;
