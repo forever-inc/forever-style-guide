@@ -98,7 +98,8 @@
       }
     }
   }
-  &.btn-sign_in {
+  &.btn-sign_in,
+  &.btn-plain {
     color: color('gray-500');
     background: none;
     border: none;
@@ -106,13 +107,21 @@
     &:hover,
     &:active,
     &:focus {
-      color: color('secondary');
       background: none;
       border: none;
       &:focus {
-        color: color('secondary');
         background: none;
         box-shadow: none;
+      }
+    }
+  }
+  &.btn-sign_in {
+    &:hover,
+    &:active,
+    &:focus {
+      color: color('secondary');
+      &:focus {
+        color: color('secondary');
       }
     }
   }
@@ -122,6 +131,7 @@
     font-size: font-size('large');
     padding: $padding-large-horizontal $btn-padding-large-horizontal;
     border-radius: $border-radius-large;
+    line-height: 1.8;
 
     .fa {
       font-size: $icon-lg-size;
@@ -149,7 +159,6 @@
 
     .fa {
       font-size: $icon-xs-size;
-      padding-top: 4px;
     }
   }
 
@@ -160,19 +169,29 @@
     .fa {
       width: 100%;
       text-align: center;
+      line-height: 1.4;
     }
     &.btn-lg {
       width: $btn-lg-size;
       height: $btn-lg-size;
+      .fa {
+        line-height: 1.2;
+      }
     }
     &.btn-sm {
       width: $btn-sm-size;
       height: $btn-sm-size;
+      .fa {
+        line-height: 0.9;
+      }
     }
     &.btn-xs {
       width: $btn-xs-size;
       height: $btn-xs-size;
       padding-left: 1px;
+      .fa {
+        line-height: 1.5;
+      }
     }
   }
 
@@ -188,12 +207,10 @@
       padding-right: 4px;
     }
     &.btn-lg {
-      .btn-action-label {
-        padding-top: 6px;
-      }
       .btn-action-icon {
         padding-left: 7px;
         padding-right: 7px;
+        line-height: 0.9;
       }
     }
     &.btn-sm {
@@ -207,15 +224,21 @@
       }
     }
     &.btn-xs {
-      padding-top: 2px;
+      padding-top: 4px;
       .btn-action-label {
-        padding-top: 3px;
         padding-right: 3px;
+      }
+      .btn-action-icon {
+        line-height: 1.2;
       }
     }
   }
   .fa {
     font-size: $icon-size;
+  }
+
+  &.btn-no-padding {
+    padding: 0;
   }
 }
 
