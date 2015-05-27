@@ -20,31 +20,67 @@ p {
 h1 {
   @extend %font-face-light;
   font-size: font-size(700);
+
+  @media (max-width: $screen-sm-max) {
+    font-size: font-size(600);
+  }
+  @media (max-width: $screen-xs-max) {
+    font-size: font-size(500);
+  }
 }
 h2 {
   @extend %font-face-light;
   font-size: font-size(600);
+
+  @media (max-width: $screen-sm-max) {
+    font-size: font-size(500);
+  }
+  @media (max-width: $screen-xs-max) {
+    font-size: font-size(400);
+  }
 }
 h3 {
   @extend %font-face-regular;
   font-size: font-size(500);
+
+  @media (max-width: $screen-sm-max) {
+    font-size: font-size(400);
+  }
+  @media (max-width: $screen-xs-max) {
+    font-size: font-size(300);
+  }
 }
 h4 {
   @extend %font-face-semibold;
   font-size: font-size(400);
+  @media (max-width: $screen-sm-max) {
+    font-size: font-size(400);
+  }
+  @media (max-width: $screen-xs-max) {
+    font-size: font-size(300);
+  }
 }
 h5 {
   @extend %font-face-semibold;
   font-size: font-size(300);
+  @media (max-width: $screen-sm-max) {
+    font-size: font-size(200);
+  }
 }
 h6 {
   @extend %font-face-semibold;
   font-size: font-size('default');
+  @media (max-width: $screen-sm-max) {
+    font-size: font-size('small');
+  }
 }
 p {
   @extend %font-face-regular;
   font-size: font-size('default');
   line-height: 1.6;
+  @media (max-width: $screen-sm-max) {
+    font-size: font-size('small');
+  }
 }
 small {
   @extend %font-face-regular;
