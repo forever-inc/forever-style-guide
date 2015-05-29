@@ -253,3 +253,15 @@
     margin-right: 1px;
   }
 }
+// take the default user agent styling off of <button> elements
+.btn-reset {
+  border: 0;
+  background: none;
+
+  &:hover,
+  &:focus,
+  &:active {
+    outline: none;
+    cursor: arrow;
+  }
+}
