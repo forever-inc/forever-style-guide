@@ -31,6 +31,10 @@ $color-card-bg: color('white');
   @include box-shadow(inset 0 2px 3px $shadow-color );
 }
 
+%hero-gradient {
+  @include hero-gradient(0.5, 15%);
+}
+
 %gray-gradient {
   @include background-image(linear-gradient(color('white'), color('gray-300')));
 }
