@@ -262,6 +262,6 @@
   &:focus,
   &:active {
     outline: none;
-    cursor: arrow;
+    cursor: default!important;
   }
 }
