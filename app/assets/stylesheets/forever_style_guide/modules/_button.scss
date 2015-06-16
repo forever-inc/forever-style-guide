@@ -201,6 +201,9 @@
       margin: 0;
       padding-top: 0px;
       vertical-align: top;
+      &:hover {
+        cursor: pointer;
+      }
     }
     .btn-action-icon {
       padding-left: 4px;
