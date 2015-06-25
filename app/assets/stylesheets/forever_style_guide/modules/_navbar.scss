@@ -77,6 +77,13 @@ $library_padding: 20px;
       color: color(gray-500);
     }
 
+    .nav-item-list-is_first {
+      border-bottom: 1px solid color('gray-400');
+    }
+    .nav-item-list-is_last {
+      border-top: 1px solid color('gray-400');
+    }
+
     .nav-item-icon {
       font-size: font-size(500);
       line-height: 20px;
