@@ -80,3 +80,14 @@ $color-card-bg: color('white');
     border: 1px solid color('gray-400');
   }
 }
+
+%check-style {
+  @include center_with_flexbox(center, center);
+  @extend %item-shadow;
+  height: $btn-xs-size;
+  width: $btn-xs-size;
+  font-size: font-size('default');
+
+  @include transition-property(background-color, color);
+  @include transition-duration(0.3s);
+}
