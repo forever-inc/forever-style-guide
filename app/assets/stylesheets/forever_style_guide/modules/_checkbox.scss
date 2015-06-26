@@ -2,32 +2,34 @@
 // It's more tightly coupled to the markup than we'd prefer but it gives us a lot of cross-browser style control
 .checkbox, 
 .checkbox-inline {
-  input[type="checkbox"] {
-    opacity: 0;
-  }
-  .checkbox-visual {
-    margin-right: 15px;
-    float: left;
+  &.checkbox-branded {
+    input[type="checkbox"] {
+      opacity: 0;
+    }
+    .checkbox-visual {
+      margin-right: 15px;
+      float: left;
 
-    &:before {
-      @extend %check-style;
-      background-color: color('gray-200');
-      border-radius: $border-radius-default;
-      content: "\f00c";
-      color: color('gray-400');
-      font-family: fontawesome;
+      &:before {
+        @extend %check-style;
+        background-color: color('gray-200');
+        border-radius: $border-radius-default;
+        content: "\f00c";
+        color: color('gray-400');
+        font-family: fontawesome;
+      }
     }
-  }
-  input[type="checkbox"]:checked {
-    + .checkbox-visual:before {
-      color: color('white');
-      background-color: color('primary');
+    input[type="checkbox"]:checked {
+      + .checkbox-visual:before {
+        color: color('white');
+        background-color: color('primary');
+      }
     }
-  }
-  .checkbox-label {
-    display: block;
-    padding-left: 0;
-    padding-top: 10px;
-    line-height: $btn-xs-size;
+    .checkbox-label {
+      display: block;
+      padding-left: 0;
+      padding-top: 10px;
+      line-height: $btn-xs-size;
+    }
   }
 }
