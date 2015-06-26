@@ -7,6 +7,8 @@
   input[type="checkbox"],
   input[type="radio"] {
     opacity: 0;
+    width: 0;
+    height: 0;
   }
   .checkbox-visual,
   .radio-visual {
@@ -30,6 +32,17 @@
     display: block;
     padding-left: 0;
     line-height: $btn-xs-size;
+  }
+}
+
+.checkbox-inline.checkbox-branded,
+.radio-inline.radio-branded {
+  padding-left: 0;
+
+  .checkbox-label,
+  .radio-label {
+    display: inline-block;
+    margin-right: 25px;
   }
 }
 
