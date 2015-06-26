@@ -1,35 +1,56 @@
-// This technique hides the input and uses pseudo classes for consistent cross-browser display
-// It's more tightly coupled to the markup than we'd prefer but it gives us a lot of cross-browser style control
-.checkbox, 
-.checkbox-inline {
-  &.checkbox-branded {
-    input[type="checkbox"] {
-      opacity: 0;
-    }
-    .checkbox-visual {
-      margin-right: 15px;
-      float: left;
+// Styling checkboxes and radio buttons by hiding the input and using pseudo-classes
+// This technique is a bit more tightly coupled to the markup than we'd prefer but it gives us a lot of cross-browser style control
+.checkbox.checkbox-branded,
+.checkbox-inline.checkbox-branded,
+.radio.radio-branded,
+.radio-inline.radio-branded {
+  input[type="checkbox"],
+  input[type="radio"] {
+    opacity: 0;
+  }
+  .checkbox-visual,
+  .radio-visual {
+    margin-right: 15px;
+    float: left;
 
-      &:before {
-        @extend %check-style;
-        background-color: color('gray-200');
-        border-radius: $border-radius-default;
-        content: "\f00c";
-        color: color('gray-400');
-        font-family: fontawesome;
-      }
+    &:before {
+      @extend %check-style;
+      background-color: color('gray-200');
+      color: color('gray-400');
+      font-family: fontawesome;
     }
-    input[type="checkbox"]:checked {
-      + .checkbox-visual:before {
-        color: color('white');
-        background-color: color('primary');
-      }
-    }
-    .checkbox-label {
-      display: block;
-      padding-left: 0;
-      padding-top: 10px;
-      line-height: $btn-xs-size;
-    }
+  }
+  input[type="checkbox"]:checked + .checkbox-visual:before,
+  input[type="radio"]:checked + .radio-visual:before {
+    color: color('white');
+    background-color: color('primary');
+  }
+  .checkbox-label,
+  .radio-label {
+    display: block;
+    padding-left: 0;
+    line-height: $btn-xs-size;
+  }
+}
+
+.checkbox.checkbox-branded, 
+.checkbox-inline.checkbox-branded {
+  .checkbox-visual:before {
+    content: "\f00c";
+    border-radius: $border-radius-default;
+  }
+  input[type="checkbox"]:checked + .checkbox-visual:before {
+    background-color: color('primary');
+  }
+}
+.radio.radio-branded,
+.radio-inline.radio-branded {
+  .radio-visual:before {
+    content: "\f111";
+    padding-top: 1px; //shim for text alignment
+    @include circle($btn-xs-size, color('gray-200'));
+  }
+  input[type="radio"]:checked + .radio-visual:before {
+    background-color: color('secondary');
   }
 }
