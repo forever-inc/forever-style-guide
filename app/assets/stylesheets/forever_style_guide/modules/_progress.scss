@@ -1,0 +1,37 @@
+$progress-rounding: 10px;
+
+.progress {
+  height: 15px;
+  border-radius: $progress-rounding;
+  background-color: $color-background;
+}
+
+.progress-bar,
+.progress-bar-default {
+  line-height: 17px; // line height centers the label vertically
+  text-align: right;
+  background-color: $color-secondary;
+  border-top-right-radius: $progress-rounding;
+  border-bottom-right-radius: $progress-rounding;
+
+  .progress-label {
+    padding-right: 5px;
+  }
+}
+.progress-bar-success,
+.progress-bar-primary {
+  background-color: $color-primary;
+}
+.progress-bar-info,
+.progress-bar-secondary {
+  background-color: $color-secondary;
+}
+.progress-bar-accent {
+  background-color: $color-accent;
+}
+.progress-bar-warning {
+  background-color: $color-warning;
+}
+.progress-bar-danger {
+  background-color: $color-danger;
+}
