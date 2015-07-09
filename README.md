@@ -101,3 +101,29 @@ Guard is available for live-reload capability in development mode.  Editing the 
 ```
 bundle exec guard
 ```
+
+## Using the style guide gem with Heroku
+There’s a little bit of setup needed to use a gem from a private repo:
+
+- [Add a deploy key](https://developer.github.com/guides/managing-deploy-keys/#deploy-keys) to the style guide. 
+
+- Create a `GITHUB_DEPLOY_KEY` environment variable on Heroku using the private key you just created.
+    ```
+    heroku config:set GITHUB_DEPLOY_KEY="`cat ~/path/to/key`"
+    ```
+
+- Create a `GITHUB_HOST_HASH` environment variable with the identification keys for the hosts that you're going to connect to. These are the keys found in ~/.ssh/known_hosts.
+
+    Back up ~/.ssh/known_hosts, connect to each host manually via ssh, then do:
+    ```
+    heroku config:set GITHUB_HOST_HASH="`cat ~/.ssh/known_hosts`"
+    ```
+    (Afterwards restore your old known_hosts file.)
+
+- Set Heroku to use their Ruby buildpack, then add the [Git Deploy Keys buildpack](https://github.com/siassaj/heroku-buildpack-git-deploy-keys) to run before it.
+    ```
+    heroku buildpacks:set https://github.com/heroku/heroku-buildpack-ruby.git
+    heroku buildpacks:add --index 1 https://github.com/siassaj/heroku-buildpack-git-deploy-keys.git
+    ```
+    
+- Cross your fingers.
