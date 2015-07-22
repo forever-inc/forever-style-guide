@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    forever_style_guide (0.1.0)
+    forever_style_guide (0.1.1)
       bootstrap-sass
       compass-rails
       font-awesome-rails
@@ -172,7 +172,7 @@ GEM
     rb-fsevent (0.9.4)
     rb-inotify (0.9.5)
       ffi (>= 0.5.0)
-    sass (3.4.13)
+    sass (3.4.14)
     sass-rails (5.0.1)
       railties (>= 4.0.0, < 5.0)
       sass (~> 3.1)
