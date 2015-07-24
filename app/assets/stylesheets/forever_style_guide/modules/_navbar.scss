@@ -4,7 +4,7 @@ $color-nav-bg:  color('white');
 $color-nav-active: color('gray-100');
 $color-nav-hover: color('secondary');
 $header_height: 50px;
-$header_active_border_height: 3px;
+$header_active_border_height: 2px;
 
 %nav-item-stack {
   padding: 5px 10px 15px;
@@ -97,7 +97,9 @@ $header_active_border_height: 3px;
     .nav-item-list {
       height: $header_height;
       color: color('gray-500');
-      border: 1px solid transparent;
+    }
+    .nav-item-list {
+      border-left: $header_active_border_height solid transparent;
     }
 
     .nav-item-list-is_first {
@@ -123,6 +125,12 @@ $header_active_border_height: 3px;
         color: $color-nav-hover;
         background-color: $color-nav-active;
       }
+      .nav-item-tab {
+        border-bottom: $header_active_border_height solid $color-nav-hover;
+      }
+      .nav-item-list {
+        border-left: $header_active_border_height solid $color-nav-hover;
+      }
     }
 
     &.active {
@@ -136,7 +144,7 @@ $header_active_border_height: 3px;
 
         @media (min-width: $screen-sm-min) {
           border-right: 1px solid color('gray-300');
-          border-bottom: 3px solid color('primary');
+          border-bottom: $header_active_border_height solid color('primary');
           border-left: 1px solid color('gray-300');
         }
       }
@@ -146,7 +154,11 @@ $header_active_border_height: 3px;
         background-color: $color-nav-active;
         border-top: 1px solid color('gray-300');
         border-bottom: 1px solid color('gray-300');
-        border-left: 3px solid color('primary');
+        border-left: $header_active_border_height solid color('primary');
+      }
+
+      .dropdown-menu {
+        border-top: $header_active_border_height solid color('primary');
       }
 
       // neutralize hover on active nav selection
@@ -183,7 +195,7 @@ $header_active_border_height: 3px;
   }
 
   .dropdown-menu {
-    top: auto;
+    top: $header_height - $header_active_border_height;
     left: auto;
     border: 0;
     border-top: $header_active_border_height solid $color-nav-hover;
