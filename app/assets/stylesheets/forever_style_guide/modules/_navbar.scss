@@ -9,6 +9,20 @@ $header_link_icons: 24px;
 $header_link_icon_padding: 10px;
 $library_padding: 20px;
 
+%nav-item-stack {
+  padding: 5px 10px 15px;
+  text-align: center;
+
+  .nav-item-icon {
+    width: 100%;
+  }
+  .nav-item-label {
+    display: inherit;
+    font-size: font-size(100);
+    line-height: 1;
+  }
+}
+
 .navbar {
   height: $header_height;
   @extend %card-style;
@@ -28,6 +42,16 @@ $library_padding: 20px;
       max-width: 190px;
       max-height: 50px;
     }
+  }
+
+  .nav-item-stack {
+    @extend %nav-item-stack;
+  }
+}
+
+.navbar-stackable {
+  .nav-item-tab {
+    @extend %nav-item-stack;
   }
 }
 
@@ -62,7 +86,7 @@ $library_padding: 20px;
   .nav-item {
     @include clearfix;
     @extend %font-face-regular;
-    font-size: font-size(400);
+    font-size: font-size(300);
 
     .nav-item-tab {
       height: $header_height;
@@ -85,7 +109,7 @@ $library_padding: 20px;
     }
 
     .nav-item-icon {
-      font-size: font-size(500);
+      font-size: font-size(400);
       line-height: 20px;
       vertical-align: bottom;
     }
@@ -165,7 +189,7 @@ $library_padding: 20px;
   .dropdown-menu {
     top: auto;
     left: auto;
-    border-top: none;
+    border: none;
     background-color: color('gray-300');
 
     &.dropdown-menu-full {
