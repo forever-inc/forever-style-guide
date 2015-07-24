@@ -1,8 +1,8 @@
 /* =header
 ---------------------------------------------------------------------------- */
-$color-nav-bg:  color('gray-100');
-$color-nav-active: color('gray-200');
-$color-nav-hover: color('gray-300');
+$color-nav-bg:  color('white');
+$color-nav-active: color('gray-100');
+$color-nav-hover: color('secondary');
 $header_height: 50px;
 $header_active_border_height: 3px;
 $header_link_icons: 24px;
@@ -26,10 +26,8 @@ $library_padding: 20px;
 .navbar {
   height: $header_height;
   @extend %card-style;
-
-  @media (min-width: $screen-sm-min) {
-    border-radius: 0;
-  }
+  border: 0;
+  border-radius: 0;
 
   .navbar-brand {
     display: block;
@@ -91,10 +89,6 @@ $library_padding: 20px;
     .nav-item-tab {
       height: $header_height;
       color: color('gray-500');
-
-      &:hover {
-        background-color: color('gray-300');
-      }
     }
 
     .nav-item-list {
@@ -120,17 +114,19 @@ $library_padding: 20px;
 
     &:hover {
       .nav-item-tab, .nav-item-list  {
-        color: color('secondary');
+        color: $color-nav-hover;
+        background-color: $color-nav-bg;
       }
 
       .nav-item-list {
-        color: color('secondary');
-        background-color: $color-nav-hover;
+        color: $color-nav-hover;
+        background-color: $color-nav-bg;
       }
     }
 
     &.active {
       .nav-item-tab {
+        height: $header_height;
         color: color('gray-600');
         background-color: $color-nav-active;
         border-right: 1px solid color('gray-300');
@@ -155,7 +151,6 @@ $library_padding: 20px;
       // neutralize hover on active nav selection
       &:hover .nav-item-tab, .nav-item-list {
         color: color('gray-600');
-        background-color: $color-nav-active;
       }
     }
 
@@ -168,7 +163,6 @@ $library_padding: 20px;
 }
 
 .navbar-dropdown {
-
   .nav,
   .collapse
   .dropup,
@@ -189,8 +183,8 @@ $library_padding: 20px;
   .dropdown-menu {
     top: auto;
     left: auto;
-    border: none;
-    background-color: color('gray-300');
+    border: 0;
+    border-top: $header_active_border_height solid $color-nav-hover;
 
     &.dropdown-menu-full {
       left: 0;
@@ -214,9 +208,7 @@ $library_padding: 20px;
   // opens dropdown on hover instead of click
   @media (min-width: $screen-sm-min) {
     .nav li.dropdown:hover {
-      background-color: color('gray-300');
       & > ul.dropdown-menu {
-        background-color: color('gray-300');
         display: block;
       }
     }
