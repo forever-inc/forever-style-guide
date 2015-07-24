@@ -34,3 +34,8 @@
   border-radius: $border-radius-small;
   font-size: font-size('small');
 }
+
+label {
+  font-family: $font-face-regular;
+  font-weight: normal;
+}
