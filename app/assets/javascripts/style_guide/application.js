@@ -11,7 +11,6 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 //= require jquery
-//= require bootstrap-sprockets
 //= require bootstrap
 //= require style_guide/application
 //= require style_guide/identifiers
