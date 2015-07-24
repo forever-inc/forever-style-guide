@@ -3,13 +3,14 @@
 $color-nav-bg:  color('gray-100');
 $color-nav-active: color('gray-200');
 $color-nav-hover: color('gray-300');
-$header_height: 60px;
+$header_height: 50px;
+$header_active_border_height: 3px;
 $header_link_icons: 24px;
 $header_link_icon_padding: 10px;
 $library_padding: 20px;
 
 .navbar {
-  min-height: $header_height;
+  height: $header_height;
   @extend %card-style;
 
   @media (min-width: $screen-sm-min) {
@@ -19,7 +20,7 @@ $library_padding: 20px;
   .navbar-brand {
     display: block;
     margin-left: -15px;
-    padding: 15px 30px;
+    padding: 10px 30px;
     width: 250px;
     height: $header_height;
 
@@ -32,7 +33,7 @@ $library_padding: 20px;
 
 .navbar-default {
   .navbar-toggle {
-    padding: 15px 10px 0;
+    padding: 10px;
     border: 0;
 
     &:hover,
@@ -56,10 +57,6 @@ $library_padding: 20px;
 
   &.nav-pills {
     @extend %card-style;
-
-    &.nav-stacked {
-
-    }
   }
 
   .nav-item {
@@ -69,8 +66,11 @@ $library_padding: 20px;
 
     .nav-item-tab {
       height: $header_height;
-      padding-top: 20px;
-      color: color(gray-500);
+      color: color('gray-500');
+
+      &:hover {
+        background-color: color('gray-300');
+      }
     }
 
     .nav-item-list {
@@ -111,7 +111,7 @@ $library_padding: 20px;
         background-color: $color-nav-active;
         border-right: 1px solid color('gray-300');
         border-bottom: 1px solid color('gray-300');
-        border-left: 3px solid color('primary');
+        border-left: $header_active_border_height solid color('primary');
 
         @media (min-width: $screen-sm-min) {
           border-right: 1px solid color('gray-300');
@@ -138,6 +138,62 @@ $library_padding: 20px;
     &.login {
       a {
         display: inline-block;
+      }
+    }
+  }
+}
+
+.navbar-dropdown {
+
+  .nav,
+  .collapse
+  .dropup,
+  .dropdown {
+    position: static;
+    &.dropdown-left {
+      position: relative;
+      .dropdown-menu {
+        right: 0;
+      }
+    }
+  }
+
+  .container {
+    position: relative;
+  }
+
+  .dropdown-menu {
+    top: auto;
+    left: auto;
+    border-top: none;
+    background-color: color('gray-300');
+
+    &.dropdown-menu-full {
+      left: 0;
+      right: 0;
+    }
+    &.dropdown-menu-sm {
+      min-width: 160px;
+    }
+    &.dropdown-menu-md {
+      min-width: 320px;
+    }
+    &.dropdown-menu-lg {
+      min-width: 640px;
+    }
+
+    .dropdown-menu-content {
+      padding: 10px 30px;
+    }
+  }
+
+  // opens dropdown on hover instead of click
+  @media (min-width: $screen-sm-min) {
+    .nav li.dropdown:hover {
+      background-color: color('gray-300');
+      & > ul.dropdown-menu {
+        background-color: color('gray-300');
+        display: block;
       }
     }
   }
