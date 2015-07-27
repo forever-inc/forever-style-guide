@@ -7,7 +7,7 @@ $header_height: 50px;
 $header_active_border_height: 2px;
 
 %nav-item-stack {
-  padding: 5px 10px 15px;
+  padding: 5px 10px 0;
   text-align: center;
 
   .nav-item-icon {
@@ -21,10 +21,12 @@ $header_active_border_height: 2px;
 }
 
 .navbar {
-  height: $header_height;
   @extend %card-style;
+  height: $header_height;
   border: 0;
   border-radius: 0;
+  background-color: $color-nav-bg;
+  z-index: 200;
 
   .navbar-brand {
     display: block;
@@ -54,7 +56,12 @@ $header_active_border_height: 2px;
     }
   }
   .navbar-collapse {
-    border: 0;
+    @extend %card-style;
+    
+    @media (min-width: $screen-sm) {
+      @include box-shadow(none);
+      @include text-shadow(none);
+    }
   }
 
   // nuke bootstrap navbar a tag psuedo-selectors

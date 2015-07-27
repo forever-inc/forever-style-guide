@@ -2,12 +2,10 @@
   @extend %card-style;
 
   &.style-guide-section-header-primary {
-    height: 300px;
     background-color: color('primary');
   }
 
   &.style-guide-section-header-secondary {
-    height: 200px;
     background-color: color('secondary');
 
     .style-guide-section-header-title {
