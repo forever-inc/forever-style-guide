@@ -19,6 +19,10 @@ module ForeverStyleGuide
       Pathname.new(Config.sections_path)
     end
 
+    def demo_link(demo_name)
+      File.join(style_guide_path, "demo", demo_name)
+    end
+
     def escape_for_display(content)
       content.gsub(/\</, "&lt;").gsub(/\>/, "&gt;").html_safe
     end
