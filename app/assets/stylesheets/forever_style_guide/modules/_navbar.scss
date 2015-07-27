@@ -68,11 +68,17 @@ $header_active_border_height: 2px;
   .navbar-nav > .open > a {
     color: $color-nav-hover;
     background-color: $color-nav-active;
-    border: 1px solid transparent;
+    border: $header_active_border_height solid transparent;
+    @media (max-width: $screen-sm) {
+      border-left: $header_active_border_height solid $color-nav-hover;
+    }
     &:hover, &:active, &:focus {
       color: $color-nav-hover;
       background-color: $color-nav-active;
-      border: 1px solid transparent;
+      border: $header_active_border_height solid transparent;
+      @media (max-width: $screen-sm) {
+        border-left: $header_active_border_height solid $color-nav-hover;
+      }
     }
   }
 }
@@ -102,6 +108,7 @@ $header_active_border_height: 2px;
 
     .nav-item-tab,
     .nav-item-list {
+      border: $header_active_border_height solid transparent;
       height: $header_height;
       color: color('gray-500');
     }
@@ -131,12 +138,17 @@ $header_active_border_height: 2px;
       .nav-item-list {
         color: $color-nav-hover;
         background-color: $color-nav-active;
+
+        @media(max-width: $screen-sm) {
+          border-bottom: $header_active_border_height solid transparent;
+          border-left: $header_active_border_height solid $color-nav-hover;
+        }
       }
       .nav-item-tab {
-        border-bottom: $header_active_border_height solid $color-nav-hover;
-      }
-      .nav-item-list {
-        border-left: $header_active_border_height solid $color-nav-hover;
+        @media(min-width: $screen-sm) {
+          border-bottom: $header_active_border_height solid $color-nav-hover;
+          border-left: $header_active_border_height solid transparent;
+        }
       }
     }
 
