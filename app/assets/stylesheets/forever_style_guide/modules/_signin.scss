@@ -3,11 +3,8 @@
 
 .login {
   display: inline-block;
-  float: left;
+  float: right;
 
-  @media (min-width: $screen-sm-min) {
-    float: right;
-  }
   .login-item {
     float: left;
     @extend %font-face-regular;

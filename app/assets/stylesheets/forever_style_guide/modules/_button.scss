@@ -2,18 +2,17 @@
   @if ($inverse) {
     color: color('#{$color}');
     background-color: color('gray-100');
-    border: 1px solid color('gray-300');
+    border: none;
     &:hover,
     &:active,
     &:active:focus {
-      border: 1px solid color('#{$color}-dark');
       color: color('#{$color}-dark');
       background-color: color('silver');
     }
   } @else {
     color: color('white');
     background-color: color('#{$color}');
-    border: 1px solid color('#{$color}-dark');
+    border: none;
     &:hover,
     &:active,
     &:active:focus {

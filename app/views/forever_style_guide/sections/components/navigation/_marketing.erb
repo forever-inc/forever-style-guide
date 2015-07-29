@@ -14,20 +14,20 @@
   <div id="collapse-nav" class="navbar-collapse collapse">
     <ul class="nav navbar-nav navbar-left">
       <li class="nav-item active">
-        <%= link_to "Collect", "#", class: 'nav-item-tab' %>
+        <%= link_to "Products", "#", class: 'nav-item-tab' %>
       </li>
       <li class="nav-item">
-        <%= link_to "Curate", "#", class: 'nav-item-tab' %>
+        <%= link_to "Print Shop", "#", class: 'nav-item-tab' %>
       </li>
       <li class="nav-item">
-        <%= link_to "Celebrate", "#", class: 'nav-item-tab' %>
+        <%= link_to "Digital Art", "#", class: 'nav-item-tab' %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "Guarantee", "#", class: 'nav-item-tab' %>
       </li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
-      <li class="nav-item-stack">
-        <%= fa_stacked_icon("user inverse", base:"circle", class:"nav-item-icon") %>
-        <span class="nav-item-label">Account</span>
-      </li>
+      <%= render partial: "forever_style_guide/sections/components/sign_in" %>
     </ul>
   </div><!--/.nav-collapse -->
 </nav>
