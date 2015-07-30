@@ -1,0 +1,61 @@
+<!-- Forever Signed In Bootstrap header -->
+<nav class="navbar navbar-default navbar-dropdown">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapse-nav-signed_in" aria-expanded="false" aria-controls="navbar">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <%= link_to "http://www.forever.com", class: "navbar-brand" do %>
+      <%= image_tag("forever_style_guide/forever-logo.png", alt: "Forever Logo", class:"navbar-brand-logo") %>
+    <% end %>
+  </div>
+  <div id="collapse-nav-signed_in" class="navbar-collapse collapse">
+    <ul class="nav navbar-nav navbar-left">
+      <li class="nav-item nav-item-stackable">
+        <%= link_to "#" do %>
+          <%= fa_icon("th-large", class:"nav-item-icon") %>
+          <span class="nav-item-label">Library</span>
+        <% end %>
+      </li>
+      <li class="nav-item nav-item-stackable">
+        <%= link_to "#" do %>
+          <%= fa_icon("paint-brush", class:"nav-item-icon") %>
+          <span class="nav-item-label">Projects</span>
+        <% end %>
+      </li>
+      <li class="nav-item nav-item-stackable">
+        <%= link_to "#" do %>
+          <%= fa_icon("group", class:"nav-item-icon") %>
+          <span class="nav-item-label">People</span>
+        <% end %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "#" do %>
+          <span class="nav-item-label">More</span>
+        <% end %>
+      </li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li class="nav-item-stack">
+        <%= link_to "#", class: "nav-item-tab" do %>
+          <%= fa_icon("inbox", class:"nav-item-icon") %>
+          <span class="nav-item-label">Inbox</span>
+        <% end %>
+      </li>
+      <li class="nav-item-stack">
+        <%= link_to "#", class: "nav-item-tab" do %>
+          <%= fa_icon("shopping-cart", class:"nav-item-icon") %>
+          <span class="nav-item-label">Cart</span>
+        <% end %>
+      </li>
+      <li class="nav-item-stack">
+        <%= link_to "#", class: "nav-item-tab" do %>
+          <img class="avatar avatar-icon" src="/assets/style_guide/personas/ted_avatar.png" alt="Ted avatar">
+          <span class="nav-item-label">Account</span>
+        <% end %>
+      </li>
+    </ul>
+  </div><!--/.nav-collapse -->
+</nav>

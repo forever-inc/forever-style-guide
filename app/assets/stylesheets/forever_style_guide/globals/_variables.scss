@@ -1,20 +1,20 @@
 /* =variables
 ---------------------------------------------------------------------------- */
-$border-radius-default:     1px !default;
-$border-radius-large:       2px !global;
-$border-radius-small:       1px !global;
+$border-radius-large:         2px !global;
+$border-radius-small:         1px !global;
+$border-radius-default:       $border-radius-small !default;
 
-$padding-default-vertical:     10px !default;
-$padding-default-horizontal:   8px !default;
+$padding-default-vertical:    10px !default;
+$padding-default-horizontal:  8px !default;
 
-$padding-large-vertical:    20px !global;
-$padding-large-horizontal:  15px !global;
+$padding-large-vertical:      20px !global;
+$padding-large-horizontal:    15px !global;
 
-$padding-small-vertical:    8px !global;
-$padding-small-horizontal:  8px !global;
+$padding-small-vertical:      8px !global;
+$padding-small-horizontal:    8px !global;
 
-$padding-xs-vertical:       4px !global;
-$padding-xs-horizontal:     6px !global;
+$padding-xs-vertical:         4px !global;
+$padding-xs-horizontal:       6px !global;
 
 $btn-lg-size: 64px;
 $btn-size: 42px;
