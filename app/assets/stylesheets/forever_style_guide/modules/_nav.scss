@@ -7,11 +7,6 @@ $color-nav-hover: color('secondary');
 $header_height: 50px;
 $header_active_border_height: 2px;
 
-@mixin border_highlight($direction, $color: $color-nav-hover) {
-  border: none;
-  border-#{$direction}: $header_active_border_height solid $color;
-}
-
 .nav {
   &.nav-pills {
     @extend %card-style;
@@ -24,7 +19,7 @@ $header_active_border_height: 2px;
 
     .nav-item-tab,
     .nav-item-list {
-      border: none;
+      border: 0;
       height: $header_height;
       color: color('gray-500');
     }
