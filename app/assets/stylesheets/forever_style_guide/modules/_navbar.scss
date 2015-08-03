@@ -1,17 +1,14 @@
-/* =header
----------------------------------------------------------------------------- */
-$color-nav-bg:  color('white');
-$color-nav-active: color('gray-100');
-$color-nav-hover: color('secondary');
-$header_height: 50px;
-$header_active_border_height: 2px;
 
 %nav-item-stack {
+  display: inline-block;
   padding: 5px 10px 0;
   text-align: center;
 
+  .nav-item-tab {
+    padding: 5px 10px 0;
+  }
   .nav-item-icon {
-    width: 100%;
+    font-size: 20px;
   }
   .nav-item-label {
     display: inherit;
@@ -22,11 +19,9 @@ $header_active_border_height: 2px;
 
 .navbar {
   @extend %card-style;
-  height: $header_height;
-  border: none;
+  border: 0;
   border-radius: 0;
   background-color: $color-nav-bg;
-  z-index: 200;
 
   .navbar-brand {
     display: block;
@@ -44,16 +39,7 @@ $header_active_border_height: 2px;
   }
 
   .navbar-right {
-    padding-right: 15px;
-    .login {
-      padding-top: 3px;
-    }
-    .btn {
-      font-size: font-size(300);
-      padding: 7px 10px;
-      height: 35px;
-      margin-top: 5px;
-    }
+    text-align: right;
 
     @media (max-width: $screen-sm) {
       background-color: color('gray-100');
@@ -74,35 +60,30 @@ $header_active_border_height: 2px;
   }
   .navbar-collapse {
     @extend %card-style;
-    
+
     @media (min-width: $screen-sm) {
       @include box-shadow(none);
       @include text-shadow(none);
     }
   }
 
-  // nuke bootstrap navbar a tag psuedo-selectors
+   //nuke bootstrap navbar a tag psuedo-selectors
   .navbar-nav > .open > a {
     color: $color-nav-hover;
     background-color: $color-nav-active;
-    border: none;
-    @media (max-width: $screen-sm) {
-      border-left: $header_active_border_height solid $color-nav-hover;
-    }
-    &:hover, &:active, &:focus {
+    &:hover,
+    &:active,
+    &:focus {
       color: $color-nav-hover;
       background-color: $color-nav-active;
-      border: none;
-      @media (max-width: $screen-sm) {
-        border-left: $header_active_border_height solid $color-nav-hover;
-      }
     }
   }
-}
-
-.navbar-stackable {
-  .nav-item-tab {
-    @extend %nav-item-stack;
+  .navbar-nav > li > a {
+    &:hover,
+    &:active,
+    &:focus {
+      color: $color-nav-hover;
+    }
   }
 }
 
@@ -112,157 +93,16 @@ $header_active_border_height: 2px;
   }
 }
 
-.nav {
-
-  &.nav-pills {
-    @extend %card-style;
-  }
-
-  .nav-item {
-    @include clearfix;
-    @extend %font-face-regular;
-    font-size: font-size(300);
-
-    .nav-item-tab,
-    .nav-item-list {
-      border: none;
-      height: $header_height;
-      color: color('gray-500');
-    }
-    .nav-item-tab {
-      border-bottom: $header_active_border_height solid transparent;
-    }
-    .nav-item-list {
-      border-left: $header_active_border_height solid transparent;
-    }
-
-    .nav-item-list-is_first {
-      border-bottom: 1px solid color('gray-400');
-    }
-    .nav-item-list-is_last {
-      border-top: 1px solid color('gray-400');
-    }
-
-    .nav-item-icon {
-      font-size: font-size(400);
-      line-height: 20px;
-      vertical-align: bottom;
-    }
-
-    .nav-item-label {
-      line-height: 20px;
-    }
-
-    &:hover, &:focus {
-      .nav-item-tab,
-      .nav-item-list {
-        color: $color-nav-hover;
-        background-color: $color-nav-active;
-
-        @media(max-width: $screen-sm) {
-          border-bottom: none;
-          border-left: $header_active_border_height solid $color-nav-hover;
-        }
-      }
-      .nav-item-tab {
-        @media(min-width: $screen-sm) {
-          border-bottom: $header_active_border_height solid $color-nav-hover;
-          border-left: none;
-        }
-      }
-    }
-
-    &.active {
-      .nav-item-tab {
-        height: $header_height;
-        color: color('gray-600');
-        background-color: $color-nav-active;
-        border-right: 1px solid color('gray-300');
-        border-bottom: 1px solid color('gray-300');
-        border-left: $header_active_border_height solid color('primary');
-
-        @media (min-width: $screen-sm-min) {
-          border-right: 1px solid color('gray-300');
-          border-bottom: $header_active_border_height solid color('primary');
-          border-left: 1px solid color('gray-300');
-        }
-      }
-
-      .nav-item-list {
-        color: color('gray-600');
-        background-color: $color-nav-active;
-        border-top: 1px solid color('gray-300');
-        border-bottom: 1px solid color('gray-300');
-        border-left: $header_active_border_height solid color('primary');
-      }
-
-      .dropdown-menu {
-        border-top: $header_active_border_height solid color('primary');
-      }
-
-      // neutralize hover on active nav selection
-      &:hover .nav-item-tab, .nav-item-list {
-        color: color('gray-600');
-        background-color: $color-nav-active;
-      }
-    }
-
-    &.login {
-      a {
-        display: inline-block;
-      }
-    }
-  }
-}
-
 .navbar-dropdown {
   .nav,
   .collapse
   .dropup,
   .dropdown {
-    position: static;
+    position: inherit;
     &.dropdown-left {
       position: relative;
       .dropdown-menu {
         right: 0;
-      }
-    }
-  }
-
-  .container {
-    position: relative;
-  }
-
-  .dropdown-menu {
-    top: $header_height - $header_active_border_height;
-    left: auto;
-    border: none;
-    border-top: $header_active_border_height solid $color-nav-hover;
-
-    &.dropdown-menu-full {
-      left: 0;
-      right: 0;
-    }
-    &.dropdown-menu-sm {
-      min-width: 160px;
-    }
-    &.dropdown-menu-md {
-      min-width: 320px;
-    }
-    &.dropdown-menu-lg {
-      min-width: 640px;
-    }
-
-    .dropdown-menu-content {
-      padding: 10px 30px;
-    }
-  }
-
-   //opens dropdown on hover instead of click
-  @media (min-width: $screen-sm-min) {
-    .nav li.dropdown:hover {
-      & > ul.dropdown-menu {
-        display: block;
       }
     }
   }

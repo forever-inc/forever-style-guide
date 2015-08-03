@@ -35,7 +35,6 @@
   }
 }
 
-
 .list-benefit {
   margin: 0.25em 20px 0 20px;
   padding-left: 30px;
@@ -47,5 +46,17 @@
 
   @media(max-width: $screen-xs-min) {
     margin: 0;
+  }
+}
+
+.list-products {
+  .list-product-item {
+    margin: 10px 0px;
+  }
+  .list-product-img {
+    height: 30px;
+  }
+  .list-product-forever {
+    height: 25px;
   }
 }
