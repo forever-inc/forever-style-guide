@@ -18,3 +18,16 @@
     font-size: font-size('large');
   }
 }
+
+.navbar-right .login {
+  padding-top: 2px;
+  @media( max-width: $screen-md) {
+    padding-right: 10px
+  }
+}
+
+.nav-item.login {
+  a {
+    display: inline-block;
+  }
+}
