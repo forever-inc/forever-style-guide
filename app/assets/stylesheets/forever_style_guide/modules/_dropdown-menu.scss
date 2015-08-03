@@ -1,0 +1,52 @@
+// dropdown vanilla bootstrap styling
+.dropdown-menu {
+  top: $header_height - $header_active_border_height;
+  left: auto;
+  @include border_highlight("top");
+
+  @at-root #{&}-full {
+    left: 0;
+    right: 0;
+  }
+  @at-root #{&}-sm {
+    min-width: 160px;
+  }
+  @at-root #{&}-md {
+    min-width: 320px;
+  }
+  @at-root #{&}-lg {
+    min-width: 640px;
+  }
+  @at-root #{&}-content {
+    padding: 10px 30px;
+  }
+
+  @media(max-width: $screen-sm) {
+    @include border_highlight("left");
+  }
+}
+
+// navbar unactive open styles
+.navbar-nav .open .dropdown-menu {
+  @include border_highlight("top");
+  @media(max-width: $screen-sm) {
+    @include border_highlight("left");
+  }
+}
+
+// navbar active open styles
+.nav-item.active .dropdown-menu {
+  @include border_highlight("top", color("primary"));
+  @media(max-width: $screen-sm) {
+    @include border_highlight("left", color("primary"));
+  }
+}
+
+//opens dropdown on hover instead of click
+@media (min-width: $screen-sm-min) {
+  .nav li.dropdown:hover {
+    & > ul.dropdown-menu {
+      display: block;
+    }
+  }
+}

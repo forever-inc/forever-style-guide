@@ -1,0 +1,99 @@
+/* nav
+---------------------------------------------------------------------------- */
+
+$color-nav-bg:  color('white');
+$color-nav-active: color('gray-100');
+$color-nav-hover: color('secondary');
+$header_height: 50px;
+$header_active_border_height: 2px;
+
+@mixin border_highlight($direction, $color: $color-nav-hover) {
+  border: none;
+  border-#{$direction}: $header_active_border_height solid $color;
+}
+
+.nav {
+  &.nav-pills {
+    @extend %card-style;
+  }
+
+  .nav-item {
+    @include clearfix;
+    @extend %font-face-regular;
+    font-size: font-size(300);
+
+    .nav-item-tab,
+    .nav-item-list {
+      border: none;
+      height: $header_height;
+      color: color('gray-500');
+    }
+    .nav-item-tab {
+      @include border_highlight("bottom", transparent);
+      @media(max-width: $screen-sm) {
+        @include border_highlight("left", transparent);
+      }
+    }
+    .nav-item-list {
+      @include border_highlight("left", transparent);
+    }
+
+    .nav-item-icon {
+      font-size: font-size(400);
+      line-height: 20px;
+      vertical-align: bottom;
+    }
+
+    .nav-item-label {
+      line-height: 20px;
+    }
+
+    &:hover, &:focus {
+      .nav-item-tab,
+      .nav-item-list {
+        color: $color-nav-hover;
+        background-color: $color-nav-active;
+      }
+      .nav-item-tab {
+        @include border_highlight("bottom");
+        @media(max-width: $screen-sm) {
+          @include border_highlight("left");
+        }
+      }
+      .nav-item-list {
+        @include border_highlight("left");
+      }
+    }
+
+    @at-root #{&}.active {
+      .nav-item-tab {
+        height: $header_height;
+        color: color('gray-600');
+        background-color: $color-nav-active;
+        @include border_highlight("bottom", color("primary"));
+        border-right: 1px solid color('gray-300');
+        border-left: 1px solid color('gray-300');
+
+        @media (max-width: $screen-sm-min) {
+          @include border_highlight("left", color("primary"));
+          border-right: 1px solid color('gray-300');
+          border-bottom: 1px solid color('gray-300');
+        }
+      }
+
+      .nav-item-list {
+        color: color('gray-600');
+        background-color: $color-nav-active;
+        @include border_highlight("left", color("primary"));
+        border-top: 1px solid color('gray-300');
+        border-bottom: 1px solid color('gray-300');
+      }
+
+      // neutralize hover on active nav selection
+      &:hover .nav-item-tab, .nav-item-list {
+        color: color('gray-600');
+        background-color: $color-nav-active;
+      }
+    }
+  }
+}
