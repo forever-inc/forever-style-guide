@@ -20,7 +20,14 @@
 }
 
 .navbar-right .login {
-  padding-top: 2px;
+  .btn {
+    font-size: font-size(300);
+    padding: 7px 10px;
+    height: 35px;
+    margin-top: 5px;
+  }
+
+  padding: 2px 15px 0 0;
   @media( max-width: $screen-md) {
     padding-right: 10px
   }
