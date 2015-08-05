@@ -1,26 +1,31 @@
-/* =header
----------------------------------------------------------------------------- */
-$color-nav-bg:  color('gray-100');
-$color-nav-active: color('gray-200');
-$color-nav-hover: color('gray-300');
-$header_height: 60px;
-$header_link_icons: 24px;
-$header_link_icon_padding: 10px;
-$library_padding: 20px;
+
+%nav-item-stack {
+  display: inline-block;
+  padding: 5px 10px 0;
+  text-align: center;
+
+  .nav-item-tab {
+    padding: 5px 10px 0;
+  }
+  .nav-item-icon {
+    font-size: 20px;
+  }
+  .nav-item-label {
+    display: inherit;
+    font-size: font-size(100);
+    line-height: 1;
+  }
+}
 
 .navbar {
-  min-height: $header_height;
   @extend %card-style;
-
-  @media (min-width: $screen-sm-min) {
-    border-radius: 0;
-  }
+  border: 0;
+  border-radius: 0;
+  background-color: $color-nav-bg;
 
   .navbar-brand {
     display: block;
-    margin-left: -15px;
-    padding: 15px 30px;
-    width: 250px;
+    padding: 10px 30px 10px 15px;
     height: $header_height;
 
     .navbar-brand-logo {
@@ -28,11 +33,23 @@ $library_padding: 20px;
       max-height: 50px;
     }
   }
-}
 
-.navbar-default {
+  .nav-item-stack {
+    @extend %nav-item-stack;
+  }
+
+  .navbar-right {
+    text-align: right;
+
+    @media (max-width: $screen-sm) {
+      background-color: color('gray-100');
+      margin-bottom: 0;
+      padding-bottom: 8px;
+    }
+  }
+
   .navbar-toggle {
-    padding: 15px 10px 0;
+    padding: 10px;
     border: 0;
 
     &:hover,
@@ -42,7 +59,38 @@ $library_padding: 20px;
     }
   }
   .navbar-collapse {
-    border: 0;
+    @extend %card-style;
+
+    @media (min-width: $screen-sm) {
+      @include box-shadow(none);
+      @include text-shadow(none);
+    }
+  }
+
+  .navbar-nav {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+   //nuke bootstrap navbar a tag psuedo-selectors
+  .navbar-nav > .open > a {
+    color: $color-nav-hover;
+    background-color: $color-nav-active;
+    &:hover,
+    &:active,
+    &:focus {
+      color: $color-nav-hover;
+      background-color: $color-nav-active;
+    }
+  }
+  .navbar-nav > li > a {
+    padding-top: 15px;
+
+    &:hover,
+    &:active,
+    &:focus {
+      color: $color-nav-hover;
+    }
   }
 }
 
@@ -52,92 +100,16 @@ $library_padding: 20px;
   }
 }
 
-.nav {
-
-  &.nav-pills {
-    @extend %card-style;
-
-    &.nav-stacked {
-
-    }
-  }
-
-  .nav-item {
-    @include clearfix;
-    @extend %font-face-regular;
-    font-size: font-size(400);
-
-    .nav-item-tab {
-      height: $header_height;
-      padding-top: 20px;
-      color: color(gray-500);
-    }
-
-    .nav-item-list {
-      color: color(gray-500);
-    }
-
-    .nav-item-list-is_first {
-      border-bottom: 1px solid color('gray-400');
-    }
-    .nav-item-list-is_last {
-      border-top: 1px solid color('gray-400');
-    }
-
-    .nav-item-icon {
-      font-size: font-size(500);
-      line-height: 20px;
-      vertical-align: bottom;
-    }
-
-    .nav-item-label {
-      line-height: 20px;
-    }
-
-    &:hover {
-      .nav-item-tab, .nav-item-list  {
-        color: color('secondary');
-      }
-
-      .nav-item-list {
-        color: color('secondary');
-        background-color: $color-nav-hover;
-      }
-    }
-
-    &.active {
-      .nav-item-tab {
-        color: color('gray-600');
-        background-color: $color-nav-active;
-        border-right: 1px solid color('gray-300');
-        border-bottom: 1px solid color('gray-300');
-        border-left: 3px solid color('primary');
-
-        @media (min-width: $screen-sm-min) {
-          border-right: 1px solid color('gray-300');
-          border-bottom: 3px solid color('primary');
-          border-left: 1px solid color('gray-300');
-        }
-      }
-
-      .nav-item-list {
-        color: color('gray-600');
-        background-color: $color-nav-active;
-        border-top: 1px solid color('gray-300');
-        border-bottom: 1px solid color('gray-300');
-        border-left: 3px solid color('primary');
-      }
-
-      // neutralize hover on active nav selection
-      &:hover .nav-item-tab, .nav-item-list {
-        color: color('gray-600');
-        background-color: $color-nav-active;
-      }
-    }
-
-    &.login {
-      a {
-        display: inline-block;
+.navbar-dropdown {
+  .nav,
+  .collapse
+  .dropup,
+  .dropdown {
+    position: inherit;
+    &.dropdown-left {
+      position: relative;
+      .dropdown-menu {
+        right: 0;
       }
     }
   }

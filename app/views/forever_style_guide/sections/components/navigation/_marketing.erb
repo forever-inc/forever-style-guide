@@ -1,0 +1,61 @@
+<!-- Marketing Bootstrap header -->
+<nav class="navbar navbar-default navbar-dropdown">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapse-nav" aria-expanded="false" aria-controls="navbar">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <%= link_to "http://www.forever.com", class: "navbar-brand" do %>
+      <%= image_tag("forever_style_guide/forever-logo.png", alt: "Forever Logo", class:"navbar-brand-logo") %>
+    <% end %>
+  </div>
+  <div id="collapse-nav" class="navbar-collapse collapse">
+    <ul class="nav navbar-nav navbar-left">
+      <li class="dropdown nav-item"><a href="#" class="nav-item-tab dropdown-toggle" data-toggle="dropdown">Products</a>
+        <ul class="dropdown-menu dropdown-menu-sm">
+          <li class="dropdown-menu-content">
+            <ul class="list-unstyled list-products">
+              <li class="list-product-item">
+                <%= link_to "#" do %>
+                  <%= image_tag("forever_style_guide/forever-logo.png", alt: "Forever", class: "list-product-forever") %>
+                <% end %>
+              </li>
+              <li class="list-product-item">
+                <%= link_to "#" do %>
+                  <%= image_tag("forever_style_guide/artisan-logo.png", alt: "Forever Artisan", class: "list-product-img") %>
+                <% end %>
+              </li>
+              <li class="list-product-item">
+                <%= link_to "#" do %>
+                  <%= image_tag("forever_style_guide/historian-logo.png", alt: "Forever Historian", class: "list-product-img") %>
+                <% end %>
+              </li>
+              <li class="list-product-item">
+                <%= link_to "#" do %>
+                  <%= image_tag("forever_style_guide/valet-logo.png", alt: "Forever Valet", class: "list-product-img") %>
+                <% end %>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li class="nav-item">
+        <%= link_to "Guarantee", "#", class: 'nav-item-tab' %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "Print Shop", "#", class: 'nav-item-tab' %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "Digital Art", "#", class: 'nav-item-tab' %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "More", "#", class: 'nav-item-tab' %>
+      </li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <%= render partial: "forever_style_guide/sections/components/sign_in" %>
+    </ul>
+  </div><!--/.nav-collapse -->
+</nav>
