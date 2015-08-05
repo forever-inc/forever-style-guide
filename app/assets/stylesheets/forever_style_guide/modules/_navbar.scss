@@ -67,6 +67,11 @@
     }
   }
 
+  .navbar-nav {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
    //nuke bootstrap navbar a tag psuedo-selectors
   .navbar-nav > .open > a {
     color: $color-nav-hover;
@@ -79,6 +84,8 @@
     }
   }
   .navbar-nav > li > a {
+    padding-top: 15px;
+
     &:hover,
     &:active,
     &:focus {

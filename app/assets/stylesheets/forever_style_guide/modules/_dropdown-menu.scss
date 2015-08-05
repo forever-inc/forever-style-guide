@@ -29,18 +29,22 @@
 // navbar unactive open styles
 .navbar-nav .open .dropdown-menu {
   @include border_highlight("top");
+  border-bottom-left-radius: $border-radius-large;
 
   @media(max-width: $screen-sm) {
     @include border_highlight("left");
+    border-radius: 0;
   }
 }
 
 // navbar active open styles
 .nav-item.active .dropdown-menu {
   @include border_highlight("top", color("primary"));
+  border-bottom-left-radius: $border-radius-large;
 
   @media(max-width: $screen-sm) {
     @include border_highlight("left", color("primary"));
+    border-radius: 0;
   }
 }
 

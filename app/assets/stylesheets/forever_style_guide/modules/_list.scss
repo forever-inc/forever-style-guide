@@ -38,11 +38,10 @@
 .list-benefit {
   margin: 0.25em 20px 0 20px;
   padding-left: 30px;
-
-  background: image-url("forever_style_guide/check.png") no-repeat 0 0;
   list-style: none;
   text-align: left;
   font-size: font-size('default');
+  background: image-url("forever_style_guide/check.png") no-repeat 0 0;
 
   @media(max-width: $screen-xs-min) {
     margin: 0;
@@ -51,7 +50,8 @@
 
 .list-products {
   .list-product-item {
-    margin: 10px 0px;
+    padding-top: 10px;
+    padding-bottom: 10px;
   }
   .list-product-img {
     height: 30px;
