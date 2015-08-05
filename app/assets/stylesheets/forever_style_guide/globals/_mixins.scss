@@ -60,6 +60,6 @@
 }
 
 @mixin border_highlight($direction, $color: $color-nav-hover) {
-  border: none;
+  border: 0;
   border-#{$direction}: $header_active_border_height solid $color;
 }

@@ -29,6 +29,7 @@
 // navbar unactive open styles
 .navbar-nav .open .dropdown-menu {
   @include border_highlight("top");
+
   @media(max-width: $screen-sm) {
     @include border_highlight("left");
   }
@@ -37,6 +38,7 @@
 // navbar active open styles
 .nav-item.active .dropdown-menu {
   @include border_highlight("top", color("primary"));
+
   @media(max-width: $screen-sm) {
     @include border_highlight("left", color("primary"));
   }

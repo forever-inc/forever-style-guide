@@ -25,6 +25,7 @@ $header_active_border_height: 2px;
     }
     .nav-item-tab {
       @include border_highlight("bottom", transparent);
+
       @media(max-width: $screen-sm) {
         @include border_highlight("left", transparent);
       }
@@ -51,6 +52,7 @@ $header_active_border_height: 2px;
       }
       .nav-item-tab {
         @include border_highlight("bottom");
+
         @media(max-width: $screen-sm) {
           @include border_highlight("left");
         }

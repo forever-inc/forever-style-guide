@@ -18,23 +18,20 @@
     font-size: font-size('large');
   }
 }
-
 .navbar-right .login {
-  .btn {
-    font-size: font-size(300);
-    padding: 7px 10px;
-    height: 35px;
-    margin-top: 5px;
-  }
-
   padding: 2px 15px 0 0;
+
   @media( max-width: $screen-md) {
     padding-right: 10px
   }
-}
 
-.nav-item.login {
-  a {
-    display: inline-block;
+  .btn {
+    height: 35px;
+    padding: 7px 10px;
+    margin-top: 5px;
+    font-size: font-size(300);
   }
+}
+.nav-item.login a {
+  display: inline-block;
 }
