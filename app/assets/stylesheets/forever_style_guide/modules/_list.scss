@@ -63,6 +63,9 @@
     }
   }
   .list-group-link {
+    display: inline-block;
+    padding-top: 5px;
+    padding-bottom: 0;
     color: color('secondary');
     border: 0;
 
