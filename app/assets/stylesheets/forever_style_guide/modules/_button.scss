@@ -2,18 +2,17 @@
   @if ($inverse) {
     color: color('#{$color}');
     background-color: color('gray-100');
-    border: 1px solid color('gray-300');
+    border: 0;
     &:hover,
     &:active,
     &:active:focus {
-      border: 1px solid color('#{$color}-dark');
       color: color('#{$color}-dark');
       background-color: color('silver');
     }
   } @else {
     color: color('white');
     background-color: color('#{$color}');
-    border: 1px solid color('#{$color}-dark');
+    border: 0;
     &:hover,
     &:active,
     &:active:focus {
@@ -83,16 +82,16 @@
   &.btn-link {
     @include btn-color('secondary', true);
     background: none;
-    border: none;
+    border: 0;
     box-shadow: none;
     &:hover,
     &:active,
     &:focus {
-      border: none;
+      border: 0;
       background: none;
       text-decoration: underline;
       &:focus {
-        border: none;
+        border: 0;
         background: none;
         box-shadow: none;
       }
@@ -102,13 +101,13 @@
   &.btn-plain {
     color: color('gray-500');
     background: none;
-    border: none;
+    border: 0;
     box-shadow: none;
     &:hover,
     &:active,
     &:focus {
       background: none;
-      border: none;
+      border: 0;
       &:focus {
         background: none;
         box-shadow: none;
