@@ -57,7 +57,7 @@
     @include circle(24px, color('gray-200'));
 
     &:hover {
-      color: color('primary');
+      color: color('secondary');
       cursor: pointer;
       background-color: color('white');
     }
