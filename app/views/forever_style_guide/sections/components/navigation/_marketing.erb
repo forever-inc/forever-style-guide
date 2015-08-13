@@ -13,31 +13,63 @@
   </div>
   <div id="collapse-nav" class="navbar-collapse collapse">
     <ul class="nav navbar-nav navbar-left">
-      <li class="dropdown nav-item"><a href="#" class="nav-item-tab dropdown-toggle" data-toggle="dropdown">Products</a>
-        <ul class="dropdown-menu dropdown-menu-sm">
+      <li class="dropdown nav-item"><a href="#" class="nav-item-tab dropdown-toggle" data-toggle="dropdown">Products & Services</a>
+        <ul class="dropdown-menu dropdown-menu-full">
           <li class="dropdown-menu-content">
-            <ul class="list-unstyled list-products">
-              <li class="list-product-item">
+            <div class="row list-products">
+              <div class="col-sm-3 list-product">
                 <%= link_to "#" do %>
-                  <%= image_tag("forever_style_guide/forever-logo.png", alt: "Forever", class: "list-product-forever") %>
+                  <div>
+                    <div class="list-product-item">
+                      <%= image_tag("forever_style_guide/forever-logo.png", alt: "Forever Logo", class: "list-product-img") %>
+                    </div>
+                    <div class="caption well">
+                      <h4 class="list-product-title">Permanent Cloud Storage</h4>
+                      <p>Something something something something asafl aasfl;js aflkj fajsdf;asjdf sa;lfj sfja</p>
+                    </div>
+                  </div>
                 <% end %>
-              </li>
-              <li class="list-product-item">
+              </div>
+              <div class="col-sm-3 list-product">
                 <%= link_to "#" do %>
-                  <%= image_tag("forever_style_guide/artisan-logo.png", alt: "Forever Artisan", class: "list-product-img") %>
+                  <div>
+                    <div class="list-product-item">
+                      <%= image_tag("forever_style_guide/artisan-logo.png", alt: "Forever Artisan", class: "list-product-img") %>
+                    </div>
+                    <div class="caption well">
+                      <h4 class="list-product-title">Create & Print your Stories</h4>
+                      <p>Something something something something asafl aasfl;js aflkj fajsdf;asjdf sa;lfj sfja</p>
+                    </div>
+                  </div>
                 <% end %>
-              </li>
-              <li class="list-product-item">
+              </div>
+              <div class="col-sm-3 list-product">
                 <%= link_to "#" do %>
-                  <%= image_tag("forever_style_guide/historian-logo.png", alt: "Forever Historian", class: "list-product-img") %>
+                  <div>
+                    <div class="list-product-item">
+                      <%= image_tag("forever_style_guide/historian-logo.png", alt: "Forever Historian", class: "list-product-img") %>
+                    </div>
+                    <div class="caption well">
+                      <h4 class="list-product-title">Organize your photos</h4>
+                      <p>Something something something something asafl aasfl;js aflkj fajsdf;asjdf sa;lfj sfja</p>
+                    </div>
+                  </div>
                 <% end %>
-              </li>
-              <li class="list-product-item">
+              </div>
+              <div class="col-sm-3 list-product">
                 <%= link_to "#" do %>
-                  <%= image_tag("forever_style_guide/valet-logo.png", alt: "Forever Valet", class: "list-product-img") %>
+                  <div>
+                    <div class="list-product-item">
+                      <%= fa_stacked_icon "archive feature_bullet-icon", base: "circle feature_bullet-circle", class: "fa-2x fa-feature_bullet fa-feature_bullet-secondary" %>
+                    </div>
+                    <div class="caption well">
+                      <h4 class="list-product-title">Media Conversion Services</h4>
+                      <p>Something something something something asafl aasfl;js aflkj fajsdf;asjdf sa;lfj sfja</p>
+                    </div>
+                  </div>
                 <% end %>
-              </li>
-            </ul>
+              </div>
+            </div>
           </li>
         </ul>
       </li>
