@@ -4,16 +4,16 @@
 .list-group-item {
   @extend %item-style;
   @extend %no-shadow;
-  //border: 1px solid #ddd;
+  border-radius: 0;
 
   // Round the first and last items
   &:first-child {
-    border-bottom-left-radius: 2px;
-    border-top-left-radius: 2px;
+    border-top-right-radius: $border-radius-large;
+    border-top-left-radius: $border-radius-large;
   }
   &:last-child {
-    border-bottom-right-radius: 2px;
-    border-top-right-radius: 2px;
+    border-bottom-right-radius: $border-radius-large;
+    border-bottom-left-radius: $border-radius-large;
   }
 
   &.list-group-item-success,
@@ -38,9 +38,9 @@
 .list-benefit {
   margin: 0.25em 20px 0 20px;
   padding-left: 30px;
-  list-style: none;
   text-align: left;
   font-size: font-size('default');
+  list-style: none;
   background: image-url("forever_style_guide/check.png") no-repeat 0 0;
 
   @media(max-width: $screen-xs-min) {
@@ -48,6 +48,52 @@
   }
 }
 
+.list-group-toggle {
+  .badge {
+    @extend %check-style;
+    padding: 5px 0 0;
+    font-size: font-size('default');
+    color: color('gray-500');
+    @include circle(24px, color('gray-200'));
+
+    &:hover {
+      color: color('secondary');
+      cursor: pointer;
+      background-color: color('white');
+    }
+  }
+  .list-group-link {
+    display: inline-block;
+    padding-top: 5px;
+    padding-bottom: 0;
+    color: color('secondary');
+    border: 0;
+
+    &:hover,
+    &:active,
+    &:focus {
+      color: color('secondary');
+      border: 0;
+      background: none;
+    }
+  }
+  .list-group-item-child {
+    max-height: 0;
+    margin-top: 5px;
+    overflow: hidden;
+    @include transition-property(max-height, opacity);
+    @include transition-duration(0.3s);
+
+    &.is-open {
+      max-height: 300px; // may need adjusted given list length
+    }
+    .list-group-item {
+      padding-top: 10px;
+      padding-bottom: 10px;
+      border: 0;
+    }
+  }
+}
 .list-products {
   .list-product-item {
     padding-top: 10px;
