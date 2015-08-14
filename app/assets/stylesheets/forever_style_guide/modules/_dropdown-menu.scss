@@ -9,13 +9,16 @@
     right: 0;
   }
   @at-root #{&}-sm {
-    min-width: 160px;
+    width: 160px;
   }
   @at-root #{&}-md {
-    min-width: 320px;
+    width: 320px;
   }
   @at-root #{&}-lg {
-    min-width: 640px;
+    width: 640px;
+  }
+  @at-root #{&}-xl {
+    width: 800px;
   }
   @at-root #{&}-content {
     padding: 10px 30px;

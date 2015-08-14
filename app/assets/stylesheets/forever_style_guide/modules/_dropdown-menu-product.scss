@@ -1,0 +1,45 @@
+.dropdown-menu-products {
+  .dropdown-menu-product:not(:first-child) {
+    border-top: 0;
+    border-left: 1px solid color('gray-300');
+    @media (max-width: $screen-sm) {
+      border-top: 1px solid color('gray-300');
+      border-left: 0;
+    }
+  }
+}
+
+.dropdown-menu-product {
+  padding: 25px;
+
+  a:hover {
+    text-decoration: none;
+  }
+  .dropdown-menu-product-title,
+  .dropdown-menu-product-description {
+    color: color('text');
+  }
+  &:hover,
+  &:focus,
+  &:active {
+    .dropdown-menu-product-title {
+      color: color('secondary');
+      text-decoration: underline;
+    }
+  }
+}
+
+.dropdown-menu-product-item {
+  margin-bottom: 30px;
+  height: 60px;
+  text-align: center;
+}
+.dropdown-menu-product-img {
+  padding-top: 10px;
+  max-height: 60px;
+}
+
+.dropdown-menu-product-title,
+.dropdown-menu-product-description {
+  text-align: center;
+}
