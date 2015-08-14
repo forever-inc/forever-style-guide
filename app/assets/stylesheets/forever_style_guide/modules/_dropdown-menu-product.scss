@@ -12,6 +12,9 @@
 .dropdown-menu-product {
   padding: 25px;
 
+  a:hover {
+    text-decoration: none;
+  }
   .dropdown-menu-product-title,
   .dropdown-menu-product-description {
     color: color('text');
@@ -19,8 +22,7 @@
   &:hover,
   &:focus,
   &:active {
-    .dropdown-menu-product-title,
-    .dropdown-menu-product-description {
+    .dropdown-menu-product-title {
       color: color('secondary');
       text-decoration: underline;
     }
