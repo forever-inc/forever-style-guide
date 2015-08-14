@@ -11,6 +11,20 @@
 
 .dropdown-menu-product {
   padding: 25px;
+
+  .dropdown-menu-product-title,
+  .dropdown-menu-product-description {
+    color: color('text');
+  }
+  &:hover,
+  &:focus,
+  &:active {
+    .dropdown-menu-product-title,
+    .dropdown-menu-product-description {
+      color: color('secondary');
+      text-decoration: underline;
+    }
+  }
 }
 
 .dropdown-menu-product-item {
@@ -22,6 +36,8 @@
   padding-top: 10px;
   max-height: 60px;
 }
-.dropdown-menu-product-title {
+
+.dropdown-menu-product-title,
+.dropdown-menu-product-description {
   text-align: center;
 }

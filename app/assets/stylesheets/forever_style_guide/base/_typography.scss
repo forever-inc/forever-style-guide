@@ -89,22 +89,9 @@ strong {
 a {
   color: color('secondary');
   &:link,
-  &:visited {
-    color: color('secondary');
-  }
+  &:visited,
   &:hover,
   &:active {
     color: color('secondary');
-    p,
-    b,
-    strong,
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-      color: color('secondary');
-    }
   }
 }
