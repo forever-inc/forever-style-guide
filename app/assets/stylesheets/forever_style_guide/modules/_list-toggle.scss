@@ -1,26 +1,43 @@
-$badge-width: 24px;
-
 .list-group-toggle {
+  font-size: font-size('default');
+
   .badge {
     @extend %check-style;
     padding: 5px 0 0;
     font-size: font-size('default');
     color: color('gray-500');
-    @include circle($badge-width, color('gray-200'));
+    @include circle(24px, color('gray-200'));
+    @include transition-property(background-color, box-shadowr);
 
     &:hover {
       color: color('secondary');
       cursor: pointer;
       background-color: color('white');
     }
+    &.is-open,
+    &:focus,
+    &:active {
+      background-color: color('gray-300');
+      @include box-shadow(inset 0 1px 3px $shadow-color);
+    }
+  }
+  .list-group-item {
+    background-color:  color('gray-200');
   }
   .list-group-item.active {
+    background-color:  color('gray-100');
+    border-color: color('gray-400');
+    border-left: 4px solid color('primary');
 
-    > .list-group-link {
-      color: color('white');
+    .list-group-link-active {
+      display: inline-block;
+      padding-top: 5px;
+      color: color('gray-600');
     }
     .list-group-item-child {
-      margin-right: $badge-width + $padding-large-horizontal;
+      .list-group-item {
+        background-color:  color('gray-100');
+      }
     }
     .badge {
       color: color('gray-500');
@@ -61,18 +78,9 @@ $badge-width: 24px;
     margin-top: 5px;
   }
   .list-group-item {
-    padding-top: $padding-small-vertical;
-    padding-bottom: $padding-default-vertical;
     border: 0;
-
-    &.active {
-      background-color: color('blue-dark');
-      border-radius: $border-radius-large;
-      margin-right: $badge-width + $padding-large-horizontal;
-
-      .list-group-link {
-        color: color('white');
-      }
-    }
+  }
+  .list-group-item.active {
+    border: 0;
   }
 }
