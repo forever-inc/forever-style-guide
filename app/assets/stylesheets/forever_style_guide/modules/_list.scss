@@ -6,11 +6,17 @@
   border-radius: 0;
 
   &.active {
-    background-color: color('blue-dark');
+    background-color: color('secondary');
+    border-color: color('secondary');
 
     &:hover,
     &:focus {
-      background-color: color('blue-dark');
+      background-color: color('secondary-dark');
+      border-color: color('secondary-dark');
+    }
+
+    > .badge {
+      color: color('secondary');
     }
   }
 
