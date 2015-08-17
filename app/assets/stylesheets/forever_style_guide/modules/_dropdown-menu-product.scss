@@ -1,3 +1,7 @@
+$product-image-base-height: 50px;
+$product-image-lg-factor: 1.1;
+$product-image-sm-factor: 0.7;
+
 .dropdown-menu-products {
   .dropdown-menu-product:not(:first-child) {
     border-top: 0;
@@ -31,12 +35,33 @@
 
 .dropdown-menu-product-item {
   margin-bottom: 30px;
-  height: 60px;
+  height: $product-image-base-height;
   text-align: center;
+
+  @media(max-width: $screen-sm) {
+    height: $product-image-base-height * $product-image-lg-factor;
+  }
+  @media(max-width: $screen-lg ) and (min-width: $screen-sm) {
+    height: $product-image-base-height * $product-image-sm-factor;
+  }
+  @media(min-width: $screen-lg) {
+    height: $product-image-base-height * $product-image-lg-factor;
+  }
+
 }
 .dropdown-menu-product-img {
-  padding-top: 10px;
-  max-height: 60px;
+  max-height: $product-image-base-height;
+
+  @media(max-width: $screen-sm) {
+    max-height: $product-image-base-height * $product-image-lg-factor;
+  }
+  @media(max-width: $screen-lg ) and (min-width: $screen-sm) {
+    max-height: $product-image-base-height * $product-image-sm-factor;
+  }
+
+  @media(min-width: $screen-lg) {
+    max-height: $product-image-base-height * $product-image-lg-factor;
+  }
 }
 
 .dropdown-menu-product-title,
