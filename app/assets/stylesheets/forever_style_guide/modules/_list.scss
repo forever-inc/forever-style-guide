@@ -1,10 +1,24 @@
 /* list
 ---------------------------------------------------------------------------- */
-
 .list-group-item {
   @extend %item-style;
   @extend %no-shadow;
   border-radius: 0;
+
+  &.active {
+    background-color: color('secondary');
+    border-color: color('secondary');
+
+    &:hover,
+    &:focus {
+      background-color: color('secondary-dark');
+      border-color: color('secondary-dark');
+    }
+
+    > .badge {
+      color: color('secondary');
+    }
+  }
 
   // Round the first and last items
   &:first-child {
@@ -49,52 +63,5 @@
 
   @media(max-width: $screen-xs-min) {
     margin: 0;
-  }
-}
-
-.list-group-toggle {
-  .badge {
-    @extend %check-style;
-    padding: 5px 0 0;
-    font-size: font-size('default');
-    color: color('gray-500');
-    @include circle(24px, color('gray-200'));
-
-    &:hover {
-      color: color('secondary');
-      cursor: pointer;
-      background-color: color('white');
-    }
-  }
-  .list-group-link {
-    display: inline-block;
-    padding-top: 5px;
-    padding-bottom: 0;
-    color: color('secondary');
-    border: 0;
-
-    &:hover,
-    &:active,
-    &:focus {
-      color: color('secondary');
-      border: 0;
-      background: none;
-    }
-  }
-  .list-group-item-child {
-    max-height: 0;
-    margin-top: 5px;
-    overflow: hidden;
-    @include transition-property(max-height, opacity);
-    @include transition-duration(0.3s);
-
-    &.is-open {
-      max-height: 300px; // may need adjusted given list length
-    }
-    .list-group-item {
-      padding-top: 10px;
-      padding-bottom: 10px;
-      border: 0;
-    }
   }
 }
