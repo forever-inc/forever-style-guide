@@ -1,62 +1,4 @@
-/* list
----------------------------------------------------------------------------- */
 $badge-width: 24px;
-
-.list-group-item {
-  @extend %item-style;
-  @extend %no-shadow;
-  border-radius: 0;
-
-  &.active {
-    background-color: color('blue-dark');
-
-    &:hover,
-    &:focus {
-      background-color: color('blue-dark');
-    }
-  }
-
-  // Round the first and last items
-  &:first-child {
-    border-top-right-radius: $border-radius-large;
-    border-top-left-radius: $border-radius-large;
-  }
-  &:last-child {
-    border-bottom-right-radius: $border-radius-large;
-    border-bottom-left-radius: $border-radius-large;
-  }
-
-  &.list-group-item-success,
-  &.list-group-item-primary {
-    color: color('primary');
-  }
-  &.list-group-item-secondary,
-  &.list-group-item-info {
-    color: color('secondary');
-  }
-  &.list-group-item-accent {
-    color: color('accent');
-  }
-  &.list-group-item-warning {
-    color: color('warning');
-  }
-  &.list-group-item-danger {
-    color: color('danger');
-  }
-}
-
-.list-benefit {
-  margin: 0.25em 20px 0 20px;
-  padding-left: 30px;
-  text-align: left;
-  font-size: font-size('default');
-  list-style: none;
-  background: image-url("forever_style_guide/check.png") no-repeat 0 0;
-
-  @media(max-width: $screen-xs-min) {
-    margin: 0;
-  }
-}
 
 .list-group-toggle {
   .badge {
@@ -132,18 +74,5 @@ $badge-width: 24px;
         color: color('white');
       }
     }
-  }
-}
-
-.list-products {
-  .list-product-item {
-    padding-top: 10px;
-    padding-bottom: 10px;
-  }
-  .list-product-img {
-    height: 30px;
-  }
-  .list-product-forever {
-    height: 25px;
   }
 }
