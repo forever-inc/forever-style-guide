@@ -88,9 +88,9 @@ strong {
 }
 a {
   color: color('secondary');
-  &:hover
   &:link,
   &:visited,
+  &:hover,
   &:active {
     color: color('secondary');
   }
