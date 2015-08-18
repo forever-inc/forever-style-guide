@@ -41,13 +41,12 @@ $product-image-sm-factor: 0.7;
   @media(max-width: $screen-sm) {
     height: $product-image-base-height * $product-image-lg-factor;
   }
-  @media(max-width: $screen-lg ) and (min-width: $screen-sm) {
+  @media(max-width: $screen-lg) and (min-width: $screen-sm) {
     height: $product-image-base-height * $product-image-sm-factor;
   }
   @media(min-width: $screen-lg) {
     height: $product-image-base-height * $product-image-lg-factor;
   }
-
 }
 .dropdown-menu-product-img {
   max-height: $product-image-base-height;
@@ -55,10 +54,9 @@ $product-image-sm-factor: 0.7;
   @media(max-width: $screen-sm) {
     max-height: $product-image-base-height * $product-image-lg-factor;
   }
-  @media(max-width: $screen-lg ) and (min-width: $screen-sm) {
+  @media(max-width: $screen-lg) and (min-width: $screen-sm) {
     max-height: $product-image-base-height * $product-image-sm-factor;
   }
-
   @media(min-width: $screen-lg) {
     max-height: $product-image-base-height * $product-image-lg-factor;
   }

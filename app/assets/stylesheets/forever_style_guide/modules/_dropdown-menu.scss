@@ -2,7 +2,13 @@
 .dropdown-menu {
   top: $header_height - $header_active_border_height;
   left: auto;
+  display: block;
+  max-height: 0;
   @include border_highlight("top");
+  opacity: 0;
+  visibility: hidden;
+  overflow: hidden;
+  @include transition(opacity 0.3s ease-in-out, visibility 0.3s ease-in-out, max-height 0.3s ease-in-out);
 
   @at-root #{&}-full {
     left: 0;
@@ -25,6 +31,7 @@
   }
 
   @media(max-width: $screen-sm) {
+    display: none;
     @include border_highlight("left");
   }
 }
@@ -52,10 +59,24 @@
 }
 
 //opens dropdown on hover instead of click
-@media (min-width: $screen-sm-min) {
-  .nav li.dropdown:hover {
+@media (min-width: $screen-sm) {
+  .nav li.dropdown:hover,
+  .nav li.dropdown.open {
     & > ul.dropdown-menu {
-      display: block;
+      opacity: 1;
+      visibility: visible;
+      max-height: 500px;
+    }
+  }
+}
+
+// mobile friendly 'click to open' behavior
+@media (max-width: $screen-sm) {
+  .nav li.dropdown.open {
+    & > ul.dropdown-menu {
+      opacity: 1;
+      visibility: visible;
+      max-height: 100%;
     }
   }
 }
