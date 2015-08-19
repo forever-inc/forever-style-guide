@@ -82,6 +82,7 @@
     &:focus {
       color: $color-nav-hover;
       background-color: $color-nav-active;
+      border-color: color('secondary');
     }
   }
   .navbar-nav > li > a {
