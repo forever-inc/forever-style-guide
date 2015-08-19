@@ -38,23 +38,20 @@ $product-image-sm-factor: 0.7;
   height: $product-image-base-height;
   text-align: center;
 
-  @media(max-width: $screen-sm) {
-    height: $product-image-base-height * $product-image-lg-factor;
-  }
-  @media(max-width: $screen-lg) and (min-width: $screen-sm) {
+  @media(max-width: $screen-lg) {
     height: $product-image-base-height * $product-image-sm-factor;
+    text-align: left;
+    margin-bottom: 10px;
+  }
+  @media(min-width: $screen-sm) {
+    text-align: center;
   }
   @media(min-width: $screen-lg) {
     height: $product-image-base-height * $product-image-lg-factor;
   }
 }
 .dropdown-menu-product-img {
-  max-height: $product-image-base-height;
-
-  @media(max-width: $screen-sm) {
-    max-height: $product-image-base-height * $product-image-lg-factor;
-  }
-  @media(max-width: $screen-lg) and (min-width: $screen-sm) {
+  @media(max-width: $screen-lg) {
     max-height: $product-image-base-height * $product-image-sm-factor;
   }
   @media(min-width: $screen-lg) {
