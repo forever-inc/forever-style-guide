@@ -5,6 +5,7 @@
   display: block;
   max-height: 0;
   @include border_highlight("top");
+  @extend %card-shadow;
   opacity: 0;
   visibility: hidden;
   overflow: hidden;
@@ -30,8 +31,11 @@
     padding: 10px 30px;
   }
 
-  @media(max-width: $screen-sm) {
-    display: none;
+  @media(max-width: $grid-float-breakpoint) {
+    position: relative;
+    top: 0;
+    width: 100%;
+    //display: none;
     @include border_highlight("left");
   }
 }
@@ -41,7 +45,7 @@
   @include border_highlight("top");
   border-bottom-left-radius: $border-radius-large;
 
-  @media(max-width: $screen-sm) {
+  @media(max-width: $grid-float-breakpoint) {
     @include border_highlight("left");
     border-radius: 0;
   }
@@ -52,31 +56,33 @@
   @include border_highlight("top", color("primary"));
   border-bottom-left-radius: $border-radius-large;
 
-  @media(max-width: $screen-sm) {
+  @media(max-width: $grid-float-breakpoint) {
     @include border_highlight("left", color("primary"));
     border-radius: 0;
   }
 }
 
 //opens dropdown on hover instead of click
-@media (min-width: $screen-sm) {
+@media (min-width: $grid-float-breakpoint) {
   .nav li.dropdown:hover,
   .nav li.dropdown.open {
     & > ul.dropdown-menu {
       opacity: 1;
       visibility: visible;
       max-height: 500px;
+      @include box-shadow($shadow-color 0 2px 4px);
     }
   }
 }
 
 // mobile friendly 'click to open' behavior
-@media (max-width: $screen-sm) {
+@media (max-width: $grid-float-breakpoint) {
   .nav li.dropdown.open {
     & > ul.dropdown-menu {
       opacity: 1;
       visibility: visible;
-      max-height: 100%;
+      max-height: 500px;
+      @include box-shadow($shadow-color 0 2px 4px);
     }
   }
 }

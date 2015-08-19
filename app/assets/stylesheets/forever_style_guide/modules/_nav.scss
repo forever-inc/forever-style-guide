@@ -26,7 +26,7 @@ $header_active_border_height: 2px;
     .nav-item-tab {
       @include border_highlight("bottom", transparent);
 
-      @media(max-width: $screen-sm) {
+      @media(max-width: $grid-float-breakpoint) {
         @include border_highlight("left", transparent);
       }
     }
@@ -53,7 +53,7 @@ $header_active_border_height: 2px;
       .nav-item-tab {
         @include border_highlight("bottom");
 
-        @media(max-width: $screen-sm) {
+        @media(max-width: $grid-float-breakpoint) {
           @include border_highlight("left");
         }
       }
@@ -71,7 +71,7 @@ $header_active_border_height: 2px;
         border-right: 1px solid color('gray-300');
         border-left: 1px solid color('gray-300');
 
-        @media (max-width: $screen-sm-min) {
+        @media (max-width: $grid-float-breakpoint) {
           @include border_highlight("left", color("primary"));
           border-right: 1px solid color('gray-300');
           border-bottom: 1px solid color('gray-300');

@@ -4,38 +4,44 @@
 
 // Extra small screen / phone
 //** Deprecated `$screen-xs` as of v3.0.1
-$screen-xs:                  480px !default;
-$screen-xs-min:              $screen-xs !default;
-$screen-phone:               $screen-xs-min !default;
+$screen-xs:                  480px !global;
+$screen-xs-min:              $screen-xs !global;
+$screen-phone:               $screen-xs-min !global;
 
 // Small screen / tablet
-$screen-sm:                  768px !default;
-$screen-sm-min:              $screen-sm !default;
-$screen-tablet:              $screen-sm-min !default;
+$screen-sm:                  768px !global;
+$screen-sm-min:              $screen-sm !global;
+$screen-tablet:              $screen-sm-min !global;
 
 // Medium screen / desktop
-$screen-md:                  992px !default;
-$screen-md-min:              $screen-md !default;
-$screen-desktop:             $screen-md-min !default;
+$screen-md:                  992px !global;
+$screen-md-min:              $screen-md !global;
+$screen-desktop:             $screen-md-min !global;
 
 // Large screen / wide desktop
-$screen-lg:                  1200px !default;
-$screen-lg-min:              $screen-lg !default;
-$screen-lg-desktop:          $screen-lg-min !default;
+$screen-lg:                  1200px !global;
+$screen-lg-min:              $screen-lg !global;
+$screen-lg-desktop:          $screen-lg-min !global;
 
 // Extra Large screen / high res desktop
-$screen-xl:                  1400px !default;
-$screen-xl-min:              $screen-xl !default;
-$screen-xl-desktop:          $screen-xl-min !default;
+$screen-xl:                  1400px !global;
+$screen-xl-min:              $screen-xl !global;
+$screen-xl-desktop:          $screen-xl-min !global;
 
 // Extra Extra Large screen / Retina/Cinema display
-$screen-xxl:                  2000px !default;
-$screen-xxl-min:              $screen-xxl !default;
-$screen-xxl-desktop:          $screen-xxl-min !default;
+$screen-xxl:                  2000px !global;
+$screen-xxl-min:              $screen-xxl !global;
+$screen-xxl-desktop:          $screen-xxl-min !global;
 
 // So media queries don't overlap when required, provide a maximum
-$screen-xs-max:              ($screen-sm-min - 1) !default;
-$screen-sm-max:              ($screen-md-min - 1) !default;
-$screen-md-max:              ($screen-lg-min - 1) !default;
-$screen-lg-max:              ($screen-xl-min - 1) !default;
-$screen-xl-max:              ($screen-xxl-min - 1) !default;
+$screen-xs-max:              ($screen-sm-min - 1) !global;
+$screen-sm-max:              ($screen-md-min - 1) !global;
+$screen-md-max:              ($screen-lg-min - 1) !global;
+$screen-lg-max:              ($screen-xl-min - 1) !global;
+$screen-xl-max:              ($screen-xxl-min - 1) !global;
+
+
+//** Point at which the navbar becomes uncollapsed.
+$grid-float-breakpoint: $screen-md !global;
+//** Point at which the navbar begins collapsing.
+$grid-float-breakpoint-max: ($grid-float-breakpoint - 1) !global;
