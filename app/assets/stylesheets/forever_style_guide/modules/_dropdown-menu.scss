@@ -2,7 +2,15 @@
 .dropdown-menu {
   top: $header_height - $header_active_border_height;
   left: auto;
+  display: block;
+  padding: 0;
+  max-height: 0;
   @include border_highlight("top");
+  @extend %card-shadow;
+  opacity: 0;
+  visibility: hidden;
+  overflow: hidden;
+  @include transition(opacity 0.3s ease-in-out, visibility 0.3s ease-in-out, max-height 0.3s ease-in-out);
 
   @at-root #{&}-full {
     left: 0;
@@ -24,7 +32,10 @@
     padding: 10px 30px;
   }
 
-  @media(max-width: $screen-sm) {
+  @media(max-width: $grid-float-breakpoint) {
+    position: relative;
+    top: 0;
+    width: 100%;
     @include border_highlight("left");
   }
 }
@@ -34,7 +45,7 @@
   @include border_highlight("top");
   border-bottom-left-radius: $border-radius-large;
 
-  @media(max-width: $screen-sm) {
+  @media(max-width: $grid-float-breakpoint) {
     @include border_highlight("left");
     border-radius: 0;
   }
@@ -45,17 +56,33 @@
   @include border_highlight("top", color("primary"));
   border-bottom-left-radius: $border-radius-large;
 
-  @media(max-width: $screen-sm) {
+  @media(max-width: $grid-float-breakpoint) {
     @include border_highlight("left", color("primary"));
     border-radius: 0;
   }
 }
 
 //opens dropdown on hover instead of click
-@media (min-width: $screen-sm-min) {
-  .nav li.dropdown:hover {
+@media (min-width: $grid-float-breakpoint) {
+  .nav li.dropdown:hover,
+  .nav li.dropdown.open {
     & > ul.dropdown-menu {
-      display: block;
+      opacity: 1;
+      visibility: visible;
+      max-height: 500px;
+      @include box-shadow($shadow-color 0 2px 4px);
+    }
+  }
+}
+
+// mobile friendly 'click to open' behavior
+@media (max-width: $grid-float-breakpoint) {
+  .nav li.dropdown.open {
+    & > ul.dropdown-menu {
+      opacity: 1;
+      visibility: visible;
+      max-height: 500px;
+      @include box-shadow($shadow-color 0 2px 4px);
     }
   }
 }
