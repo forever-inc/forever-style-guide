@@ -16,7 +16,9 @@ $product-image-sm-factor: 0.7;
 .dropdown-menu-product {
   padding: 25px;
 
-  a:hover {
+  a:hover,
+  a:active,
+  a:focus {
     text-decoration: none;
   }
   .dropdown-menu-product-title,
