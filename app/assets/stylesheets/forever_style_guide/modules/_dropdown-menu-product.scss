@@ -61,6 +61,19 @@ $product-image-sm-factor: 0.7;
   }
 }
 
+.dropdown-menu-product-details {
+  height: 250px;
+  @media(min-width: $screen-lg) {
+    height: 220px;
+  }
+  @media(min-width: $screen-xl) {
+    height: 180px;
+  }
+  @media(min-width: $screen-xxl) {
+    height: 150px;
+  }
+}
+
 .dropdown-menu-product-title,
 .dropdown-menu-product-description {
   text-align: center;
