@@ -66,6 +66,9 @@
       @include box-shadow(none);
       @include text-shadow(none);
     }
+    @media (max-width: $grid-float-breakpoint) {
+      border-top: 0;
+    }
   }
 
   .navbar-nav {

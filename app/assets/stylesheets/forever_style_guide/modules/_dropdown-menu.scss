@@ -3,6 +3,7 @@
   top: $header_height - $header_active_border_height;
   left: auto;
   display: block;
+  padding: 0;
   max-height: 0;
   @include border_highlight("top");
   @extend %card-shadow;
