@@ -80,12 +80,12 @@
   .navbar-nav > .open > a {
     color: $color-nav-hover;
     background-color: $color-nav-active;
+    border-color: color('secondary');
     &:hover,
     &:active,
     &:focus {
       color: $color-nav-hover;
       background-color: $color-nav-active;
-      border-color: color('secondary');
     }
   }
   .navbar-nav > li > a {
