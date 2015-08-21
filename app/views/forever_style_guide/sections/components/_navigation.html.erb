@@ -1,0 +1,55 @@
+<div class="card style-guide-partial" id="navigation">
+  <h2 class="style-guide-partial-title">
+    Navigation
+  </h2>
+
+  <div class="style-guide-partial-description">
+    Built on top of <%= link_to "Bootstrap's navbar", "http://getbootstrap.com/components/#navbar" %> component.  Provides a stylish, responsive main app navigation.
+  </div>
+
+  <div class="style-guide-partial-content">
+    <label>Basic Navigation</label>
+    <p><%= link_to "Fullscreen Demo", demo_link('navigation') %></p>
+    <div class="style-guide-partial-rendered">
+      <%= render partial: "forever_style_guide/sections/components/navigation/basic" %>
+    </div>
+    <div class="style-guide-toggle">
+      <input id="style-guide-toggle-nav_basic" class="style-guide-toggle-input" type="checkbox" />
+      <label for="style-guide-toggle-nav_basic" class="style-guide-toggle-label">
+        <pre class="style-guide-toggle-source prettyprint linenums"><%= escape_erb_for_display("forever_style_guide/sections/components/navigation/_basic.erb") %></pre>
+        <div class="style-guide-toggle-show">Show source code</div>
+        <div class="style-guide-toggle-hide">Hide source code</div>
+      </label>
+    </div>
+    </br>
+    <label>Dropdown Navigation</label>
+    <div class="style-guide-partial-rendered">
+      <%= render partial: "forever_style_guide/sections/components/navigation/dropdown" %>
+    </div>
+    <div class="style-guide-toggle">
+      <input id="style-guide-toggle-nav_dropdown" class="style-guide-toggle-input" type="checkbox" />
+      <label for="style-guide-toggle-nav_dropdown" class="style-guide-toggle-label">
+        <pre class="style-guide-toggle-source prettyprint linenums"><%= escape_erb_for_display("forever_style_guide/sections/components/navigation/_dropdown.erb") %></pre>
+        <div class="style-guide-toggle-show">Show source code</div>
+        <div class="style-guide-toggle-hide">Hide source code</div>
+      </label>
+    </div>
+    </br>
+    <label>Stacked/Justified Navigation</label>
+    <div class="style-guide-partial-rendered">
+      <%= render partial: "forever_style_guide/sections/components/navigation/stacked" %>
+    </div>
+    <div class="style-guide-toggle">
+      <input id="style-guide-toggle-nav_stacked" class="style-guide-toggle-input" type="checkbox" />
+      <label for="style-guide-toggle-nav_stacked" class="style-guide-toggle-label">
+        <pre class="style-guide-toggle-source prettyprint linenums"><%= escape_erb_for_display("forever_style_guide/sections/components/navigation/_stacked.erb") %></pre>
+        <div class="style-guide-toggle-show">Show source code</div>
+        <div class="style-guide-toggle-hide">Hide source code</div>
+      </label>
+    </div>
+  </div>
+
+</div>
+
+
+

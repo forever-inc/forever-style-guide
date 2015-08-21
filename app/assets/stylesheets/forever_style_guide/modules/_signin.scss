@@ -3,11 +3,8 @@
 
 .login {
   display: inline-block;
-  float: left;
+  float: right;
 
-  @media (min-width: $screen-sm-min) {
-    float: right;
-  }
   .login-item {
     float: left;
     @extend %font-face-regular;
@@ -20,4 +17,21 @@
   .btn {
     font-size: font-size('large');
   }
+}
+.navbar-right .login {
+  padding: 2px 25px 0 0;
+
+  @media( max-width: $screen-md) {
+    padding-right: 10px
+  }
+
+  .btn {
+    height: 35px;
+    padding: 7px 10px;
+    margin-top: 5px;
+    font-size: font-size(300);
+  }
+}
+.nav-item.login a {
+  display: inline-block;
 }
