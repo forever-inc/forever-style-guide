@@ -17,8 +17,13 @@
   padding-bottom: $padding-default-vertical;
 
   &:first-child {
+    margin-top: 3px; //visual alignment for logos
+
     @media (min-width: $screen-md-min) {
       text-align: left;
+    }
+    @media (min-width: $screen-lg-min) {
+      margin-top: 5px
     }
   }
   &:last-child {
