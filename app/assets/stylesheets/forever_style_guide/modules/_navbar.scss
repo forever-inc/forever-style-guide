@@ -1,4 +1,5 @@
 
+
 %nav-item-stack {
   display: inline-block;
   padding: 5px 10px 0;
@@ -41,7 +42,7 @@
   .navbar-right {
     text-align: right;
 
-    @media (max-width: $screen-sm) {
+    @media (max-width: $grid-float-breakpoint) {
       background-color: color('gray-100');
       margin-bottom: 0;
       padding-bottom: 8px;
@@ -61,9 +62,12 @@
   .navbar-collapse {
     @extend %card-style;
 
-    @media (min-width: $screen-sm) {
+    @media (min-width: $grid-float-breakpoint) {
       @include box-shadow(none);
       @include text-shadow(none);
+    }
+    @media (max-width: $grid-float-breakpoint) {
+      border-top: 0;
     }
   }
 
@@ -76,6 +80,7 @@
   .navbar-nav > .open > a {
     color: $color-nav-hover;
     background-color: $color-nav-active;
+    border-color: color('secondary');
     &:hover,
     &:active,
     &:focus {
@@ -85,7 +90,6 @@
   }
   .navbar-nav > li > a {
     padding-top: 15px;
-
     &:hover,
     &:active,
     &:focus {
@@ -114,3 +118,4 @@
     }
   }
 }
+

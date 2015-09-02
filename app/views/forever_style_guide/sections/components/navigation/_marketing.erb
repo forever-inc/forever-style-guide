@@ -17,15 +17,18 @@
         <ul class="dropdown-menu dropdown-menu-full">
           <li class="dropdown-menu-content">
             <div class="row dropdown-menu-products">
-              <div class="col-sm-3 dropdown-menu-product">
+              <div class="col-sm-3 dropdown-menu-product dropdown-menu-product-main">
                 <%= link_to "#" do %>
                   <div>
-                    <div class="dropdown-menu-product-item">
-                      <%= image_tag("forever_style_guide/forever-logo.png", alt: "Forever Logo", class: "dropdown-menu-product-img") %>
-                    </div>
-                    <div class="well well-sm">
-                      <h4 class="dropdown-menu-product-title">Permanent Cloud Storage</h4>
-                      <p class="dropdown-menu-product-description">Something something something something asafl aasfl;js aflkj fajsdf;asjdf sa;lfj sfja</p>
+                    <%= image_tag("forever_style_guide/forever-swirl-logo.png", alt: "Forever Logo", class: "dropdown-menu-product-img") %>
+                    <div class="dropdown-menu-product-details">
+                      <h3 class="dropdown-menu-product-title hidden-sm hidden-xs">Forever Permanent Storage</h3>
+                      <button class="btn btn-block btn-primary btn-lg">
+                        <span class="visible-xs">Forever Permanent Storage</span>
+                        <span class="visible-sm">Forever Permanent<br>Storage</span>
+                        <span class="hidden-sm hidden-xs">Get Started</span>
+                      </button>
+                      <p class="dropdown-menu-product-description hidden-xs hidden-sm">Store, print and protect your family photos online, and trust they are safe for generations with the Forever Guarantee.</p>
                     </div>
                   </div>
                 <% end %>
@@ -33,25 +36,12 @@
               <div class="col-sm-3 dropdown-menu-product">
                 <%= link_to "#" do %>
                   <div>
-                    <div class="dropdown-menu-product-item">
-                      <%= image_tag("forever_style_guide/artisan-logo.png", alt: "Forever Artisan", class: "dropdown-menu-product-img") %>
-                    </div>
-                    <div class="well well-sm">
-                      <h4 class="dropdown-menu-product-title">Create &amp; Print your Stories</h4>
-                      <p class="dropdown-menu-product-description">Something something something something asafl aasfl;js aflkj fajsdf;asjdf sa;lfj sfja</p>
-                    </div>
-                  </div>
-                <% end %>
-              </div>
-              <div class="col-sm-3 dropdown-menu-product">
-                <%= link_to "#" do %>
-                  <div>
-                    <div class="dropdown-menu-product-item">
-                      <%= image_tag("forever_style_guide/historian-logo.png", alt: "Forever Historian", class: "dropdown-menu-product-img") %>
-                    </div>
-                    <div class="well well-sm">
-                      <h4 class="dropdown-menu-product-title">Organize your photos</h4>
-                      <p class="dropdown-menu-product-description">Something something something something asafl aasfl;js aflkj fajsdf;asjdf sa;lfj sfja</p>
+                    <div class="well well-sm dropdown-menu-product-details">
+                      <div class="dropdown-menu-product-item">
+                        <%= image_tag("forever_style_guide/artisan-logo-sm.png", alt: "Forever Artisan", class: "dropdown-menu-product-img") %>
+                      </div>
+                      <h4 class="dropdown-menu-product-title hidden-xs hidden-sm">Create &amp; Print Amazing Photo Gifts</h4>
+                      <p class="dropdown-menu-product-description hidden-xs hidden-sm">Personalize beautiful photo books, phone cases, cards, mugs, and more with our award-winning scrapbooking software!</p>
                     </div>
                   </div>
                 <% end %>
@@ -59,12 +49,27 @@
               <div class="col-sm-3 dropdown-menu-product">
                 <%= link_to "#" do %>
                   <div>
-                    <div class="dropdown-menu-product-item">
-                      <%= fa_stacked_icon "archive feature_bullet-icon", base: "circle feature_bullet-circle", class: "fa-2x fa-feature_bullet fa-feature_bullet-secondary" %>
+
+                    <div class="well well-sm dropdown-menu-product-details">
+                      <div class="dropdown-menu-product-item">
+                        <%= image_tag("forever_style_guide/historian-logo-sm.png", alt: "Forever Historian", class: "dropdown-menu-product-img") %>
+                      </div>
+                      <h4 class="dropdown-menu-product-title hidden-xs hidden-sm">Take Control of Your Desktop's Media Files</h4>
+                      <p class="dropdown-menu-product-description hidden-xs hidden-sm">Organize, edit, and protect any type of media file on your desktop with our powerful photo management software.</p>
                     </div>
-                    <div class="well well-sm">
-                      <h4 class="dropdown-menu-product-title">Media Conversion Services</h4>
-                      <p class="dropdown-menu-product-description">Something something something something asafl aasfl;js aflkj fajsdf;asjdf sa;lfj sfja</p>
+                  </div>
+                <% end %>
+              </div>
+              <div class="col-sm-3 dropdown-menu-product">
+                <%= link_to "#" do %>
+                  <div>
+
+                    <div class="well well-sm dropdown-menu-product-details">
+                      <div class="dropdown-menu-product-item">
+                        <%= image_tag("forever_style_guide/services-logo-sm.png", alt: "Forever Services", class: "dropdown-menu-product-img") %>
+                      </div>
+                      <h4 class="dropdown-menu-product-title hidden-xs hidden-sm">Photo Scanning and Media Conversion</h4>
+                      <p class="dropdown-menu-product-description hidden-xs hidden-sm">Send us old pictures, slides, photo albums, videos, audio tapes - anything! We’ll store them online, where you can then share them with anyone!</p>
                     </div>
                   </div>
                 <% end %>

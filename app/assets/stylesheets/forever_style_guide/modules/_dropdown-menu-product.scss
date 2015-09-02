@@ -1,18 +1,17 @@
-.dropdown-menu-products {
-  .dropdown-menu-product:not(:first-child) {
-    border-top: 0;
-    border-left: 1px solid color('gray-300');
-    @media (max-width: $screen-sm) {
-      border-top: 1px solid color('gray-300');
-      border-left: 0;
-    }
-  }
-}
+$product-image-height: 50px;
+$product-image-lg-factor: 1.2;
+$product-image-sm-factor: 0.85;
 
 .dropdown-menu-product {
   padding: 25px;
 
-  a:hover {
+  @media (max-width: $grid-float-breakpoint) {
+    padding: 5px;
+  }
+
+  a:hover,
+  a:active,
+  a:focus {
     text-decoration: none;
   }
   .dropdown-menu-product-title,
@@ -27,16 +26,58 @@
       text-decoration: underline;
     }
   }
+
+  .well {
+    margin-bottom: 0;
+    min-height: 310px;
+    background-color: white;
+    @extend %card-shadow;
+
+    @media(max-width: $grid-float-breakpoint) {
+      min-height: 0;
+      margin-bottom: 15px;
+      padding: 0;
+    }
+
+    @media(min-width: $screen-xl) {
+      min-height: 270px;
+    }
+
+    @media(min-width: $screen-xxl) {
+      min-height: 230px;
+    }
+  }
 }
 
 .dropdown-menu-product-item {
   margin-bottom: 30px;
-  height: 60px;
+  height: $product-image-height;
   text-align: center;
+
+  @media(max-width: $grid-float-breakpoint) {
+    margin-bottom: 10px;
+  }
 }
 .dropdown-menu-product-img {
   padding-top: 10px;
-  max-height: 60px;
+  @media(max-width: $grid-float-breakpoint) {
+    max-height: $product-image-height * $product-image-sm-factor;
+  }
+  @media(max-width: $screen-sm) {
+    max-height: $product-image-height;
+  }
+  @media(min-width: $grid-float-breakpoint) {
+    max-height: $product-image-height * $product-image-lg-factor;
+  }
+}
+
+.dropdown-menu-product-details {
+  position: relative;
+  min-width: 220px;
+
+  @media(max-width: $grid-float-breakpoint) {
+    min-width: 0;
+  }
 }
 
 .dropdown-menu-product-title,

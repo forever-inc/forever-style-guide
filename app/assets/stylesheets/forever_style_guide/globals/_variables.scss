@@ -1,4 +1,5 @@
-/* =variables
+/* =bootstrap variables
+variables placed here will be overridden and reloaded in bootstrap
 ---------------------------------------------------------------------------- */
 $border-radius-large:         2px !global;
 $border-radius-small:         1px !global;
@@ -16,6 +17,9 @@ $padding-small-horizontal:    8px !global;
 $padding-xs-vertical:         4px !global;
 $padding-xs-horizontal:       6px !global;
 
+
+/* =variables
+---------------------------------------------------------------------------- */
 $btn-lg-size: 64px;
 $btn-size: 42px;
 $btn-sm-size: 35px;
