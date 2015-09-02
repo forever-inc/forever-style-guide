@@ -38,4 +38,7 @@ $color-text:            set_color('text', $color-forever_gray) !default;
   .color-#{$id} {
     color: #{$color};
   }
+  .color_block-#{$id} {
+    background-color: #{$color};
+  }
 }

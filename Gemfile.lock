@@ -1,12 +1,12 @@
 PATH
   remote: .
   specs:
-    forever_style_guide (0.1.2)
+      forever_style_guide (0.1.2)
       bootstrap-sass
       compass-rails
       font-awesome-rails
       jquery-rails
-      rails (~> 4.2.1)
+      rails (~> 4.2.0)
       sass-rails
       style-guide
 

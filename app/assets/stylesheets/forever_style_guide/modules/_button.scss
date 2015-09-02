@@ -96,6 +96,17 @@
         box-shadow: none;
       }
     }
+    &.btn-inverse {
+      color: color('white');
+      border: 2px solid color('white');
+      &:hover,
+      &:active,
+      &:focus,
+      &:active:focus {
+        color: color('white');
+        border: 2px solid color('white');
+      }
+    }
   }
   &.btn-sign_in,
   &.btn-plain {
