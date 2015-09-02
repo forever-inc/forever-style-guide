@@ -49,7 +49,6 @@
               <div class="col-sm-3 dropdown-menu-product">
                 <%= link_to "#" do %>
                   <div>
-
                     <div class="well well-sm dropdown-menu-product-details">
                       <div class="dropdown-menu-product-item">
                         <%= image_tag("forever_style_guide/historian-logo-sm.png", alt: "Forever Historian", class: "dropdown-menu-product-img") %>
@@ -63,7 +62,6 @@
               <div class="col-sm-3 dropdown-menu-product">
                 <%= link_to "#" do %>
                   <div>
-
                     <div class="well well-sm dropdown-menu-product-details">
                       <div class="dropdown-menu-product-item">
                         <%= image_tag("forever_style_guide/services-logo-sm.png", alt: "Forever Services", class: "dropdown-menu-product-img") %>
@@ -87,8 +85,65 @@
       <li class="nav-item">
         <%= link_to "Digital Art", "#", class: 'nav-item-tab' %>
       </li>
-      <li class="nav-item">
-        <%= link_to "More", "#", class: 'nav-item-tab' %>
+      <li class="dropdown dropdown-left nav-item">
+        <a href="#" title="View More" class="nav-item-tab dropdown-toggle" data-toggle="dropdown">More</a>
+        <ul class="dropdown-menu dropdown-menu-more">
+          <li>
+            <div class="row">
+              <div class="col-sm-6 dropdown-menu-more-list">
+                <ul class="list-unstyled">
+                  <li>
+                    <%= link_to "About Forever", "https://www.forever.com/about", class: 'dropdown-menu-more-link', title: 'About Forever' %>
+                  </li>
+                  <li>
+                    <%= link_to "Beliefs & Values", "https://www.forever.com/about/beliefs", class: 'dropdown-menu-more-link', title: 'Beliefs & Values' %>
+                  </li> 
+                  <li>
+                    <%= link_to "Team", "https://www.forever.com/about/team", class: 'dropdown-menu-more-link', title: 'Our Team' %>
+                  </li>
+                  <li>
+                    <%= link_to "Press", "https://www.forever.com/about/press", class: 'dropdown-menu-more-link', title: 'Our Press' %>
+                  </li>
+                  <li>
+                    <%= link_to "Careers", "http://forever.theresumator.com/apply", class: 'dropdown-menu-more-link', title: 'Careers' %>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="col-sm-6">
+                <div class="well">
+                  <p class="dropdown-menu-more-featured">
+                  <%= link_to "https://forever1.zendesk.com", class: 'dropdown-menu-more-link', title: 'Forever Support' do %>
+                    <span class="fa-stack">
+                      <i class="fa fa-circle color-gray-600 fa-stack-2x"></i>
+                      <i class="fa fa-question fa-stack-1x color-white"></i>
+                    </span>
+                    Support
+                  <% end %>
+                  </p>
+                  <p class="dropdown-menu-more-featured">
+                  <%= link_to "http://blog.forever.com/", class: 'dropdown-menu-more-link', title: 'Forever Blog' do %>
+                    <span class="fa-stack">
+                      <i class="fa fa-circle color-gray-600 fa-stack-2x"></i>
+                      <i class="fa fa-rss fa-stack-1x color-white"></i>
+                    </span>
+                    Blog
+                  <% end %>
+                  </p>
+                  <p class="dropdown-menu-more-featured">
+                  <%= link_to "http://www.foreverlive2015.com/", class: 'dropdown-menu-more-link', title: 'Forever Live!' do %>
+                    <span class="fa-stack">
+                      <i class="fa fa-circle color-gray-600 fa-stack-2x"></i>
+                      <i class="fa fa-bullhorn fa-stack-1x color-white"></i>
+                    </span>
+                    Forever Live!
+                  <% end %>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
       </li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
