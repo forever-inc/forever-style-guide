@@ -1,0 +1,21 @@
+#header-is_fixed {
+  position: fixed;
+  display: block;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+
+  @media (max-width: $screen-md-min) {
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch; // smooth scrolling in mobile Safari
+  }
+  .navbar {
+    margin-bottom: 0;
+  }
+}
+.body-fixed {
+  @media (max-width: $screen-md-min) {
+    position: fixed;
+  }
+}
