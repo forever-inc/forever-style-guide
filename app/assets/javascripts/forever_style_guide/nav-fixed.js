@@ -2,6 +2,7 @@ $(function () {
   $('#header-is_fixed .dropdown').on('shown.bs.dropdown', function () {
     var windowHeight = $(window).height();
 
+    // this timeout allows for the dropdown item to fully expand before height is calculated
     setTimeout(function() { 
       var navHeight = ($('#header-is_fixed').outerHeight()); 
       if (navHeight >= windowHeight) {

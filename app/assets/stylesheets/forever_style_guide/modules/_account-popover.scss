@@ -92,6 +92,7 @@ $webapp-popover-background: #333333;
     &:focus {
       color: color('secondary');
     }
+    // Applies a right-hand separator to the first two items of a three item list
     &:nth-child(-n+2) {
       padding-right: 10px;
       margin-right: 10px;
