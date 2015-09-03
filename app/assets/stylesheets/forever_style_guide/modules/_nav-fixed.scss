@@ -4,11 +4,13 @@
   width: 100%;
   top: 0;
   left: 0;
-  z-index: 9999;
+  z-index: $zindex-navbar-fixed;
 
-  @media (max-width: $screen-md-min) {
-    overflow-y: scroll;
-    -webkit-overflow-scrolling: touch; // smooth scrolling in mobile Safari
+  &.is_scrolling {
+    @media (max-width: $screen-md-min) {
+      overflow-y: scroll;
+      -webkit-overflow-scrolling: touch; // smooth scrolling in mobile Safari
+    }
   }
   .navbar {
     margin-bottom: 0;

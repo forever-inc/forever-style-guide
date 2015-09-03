@@ -7,13 +7,17 @@ $(function () {
       if (navHeight >= windowHeight) {
         $('body').addClass('body-fixed');
         $('#header-is_fixed').css('max-height', windowHeight);
+        $('#header-is_fixed').addClass('is_scrolling');
       };
     }, 250);
+    $('.popover.account-popover').popover('hide');
   })
   $('#header-is_fixed .dropdown').on('hidden.bs.dropdown', function () {
-      $('body').removeClass('body-fixed');
+    $('body').removeClass('body-fixed');
+    $('#header-is_fixed').removeClass('is_scrolling');
   })
   $('#header-is_fixed #collapse-nav').on('hidden.bs.collapse', function () {
     $('body').removeClass('body-fixed');
+    $('#header-is_fixed').removeClass('is_scrolling');
   })
 });
