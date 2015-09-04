@@ -1,0 +1,47 @@
+<div class="account-popover-trigger visible-md visible-lg" data-toggle="popover-desktop">
+  <%= image_tag("style_guide/personas/jane_avatar.png", alt: "Jane Persona", title: "Jane Persona", class: "avatar avatar-xs") %>
+  <p class="account-popover-user">
+    <span class="small">Signed in as </span> <br />
+    <strong class="color-gray-600">Jane Persona</strong>
+  </p>
+</div>
+
+<div class="account-popover-trigger visible-xs visible-sm l-padded-thin" data-toggle="popover-mobile">
+  <%= image_tag("style_guide/personas/jane_avatar.png", alt: "Jane Persona", title: "Jane Persona", class: "avatar avatar-xs") %>
+  <p class="account-popover-user">
+    <span class="small">Signed in as </span> <br />
+    <strong class="color-gray-600">Jane Persona</strong>
+  </p>
+</div>
+
+<div class="account-popover hidden">
+  <div class="account-popover-app">
+    <div class="row">
+      <div class="col-sm-6">
+        <%= link_to "#", class: 'btn btn-link btn-inverse account-popover-link', title: 'My Home' do %>
+          <i class="fa fa-home"></i>My Home
+        <% end %>
+        <%= link_to "#", class: 'btn btn-link btn-inverse account-popover-link', title: 'Library' do %>
+          <i class="fa fa-home"></i>Library
+        <% end %>
+      </div>
+      <div class="col-sm-6">
+        <%= link_to "#", class: 'btn btn-link btn-inverse account-popover-link', title: 'Projects' do %>
+          <i class="fa fa-home"></i>Projects
+        <% end %>
+        <%= link_to "#", class: 'btn btn-link btn-inverse account-popover-link', title: 'People' do %>
+          <i class="fa fa-home"></i>People
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <div class="account-popover-settings l-padded-thin">
+    <div class="row">
+      <div class="col-sm-12 text-center">
+        <%= link_to 'Settings', "#", class: 'account-popover-link', title: 'Account Settings' %>
+        <%= link_to 'Order History', "#", class: 'account-popover-link', title: 'Order History' %>
+        <%= link_to 'Log Out', "#", class: 'account-popover-link', title: 'Log Out' %>
+      </div>
+    </div>
+  </div>
+</div>
