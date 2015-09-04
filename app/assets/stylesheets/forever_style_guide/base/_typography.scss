@@ -17,7 +17,7 @@ p {
 
 h1 {
   @extend %font-face-gotham;
-  font-weight: 600;
+  font-weight: 500;
   font-size: font-size(700);
 
   @media (max-width: $screen-sm-max) {
@@ -29,7 +29,7 @@ h1 {
 }
 h2 {
   @extend %font-face-gotham;
-  font-weight: 600;
+  font-weight: 500;
   font-size: font-size(600);
 
   @media (max-width: $screen-sm-max) {
@@ -41,7 +41,7 @@ h2 {
 }
 h3 {
   @extend %font-face-gotham;
-  font-weight: 400;
+  font-weight: 500;
   font-size: font-size(500);
 
   @media (max-width: $screen-sm-max) {
@@ -64,7 +64,7 @@ h4 {
 }
 h5 {
   @extend %font-face-gotham;
-  font-weight: 200;
+  font-weight: 300;
   font-size: font-size(300);
 }
 h6 {
