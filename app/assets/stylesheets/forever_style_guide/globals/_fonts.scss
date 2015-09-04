@@ -22,6 +22,10 @@ $font-face-bold_italic:     set_fontface('proxima_nova-bold_italic', ProximaNova
   }
 }
 
+%font-face-gotham {
+  font-family: 'Gotham A', 'Gotham B', Helvetica, Arial, sans-serif;
+}
+
 /* =font sizes
    ---------------------------------------------------------------------------- */
 $font-size-100: set_fontsize(100, 12px) !default;
