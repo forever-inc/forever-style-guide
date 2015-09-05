@@ -1,0 +1,102 @@
+$webapp-popover-width: 375px;
+$webapp-popover-background: #333333;
+
+.popover.account-popover {
+  width: $webapp-popover-width;
+  max-width: $webapp-popover-width;
+  position: relative;
+  top: 0!important; //override default popover inline styles
+  left: 0!important; 
+  margin-top: 0;
+  background-color: $webapp-popover-background;
+  border: 0;
+  border-radius: $border-radius-large;
+
+  .arrow:after {
+    border-bottom-color: $webapp-popover-background;
+  }
+  .popover-content {
+    padding: 0;
+  }
+  &.account-popover-mobile {
+    width: 100%;
+    max-width: 100%;
+
+    .arrow {
+      left: 30px!important; //override default popover inline styles
+    }
+  }
+}
+.account-popover-container {
+  position: fixed;
+  height: 0;
+  right: 15px;
+  top: 55px;
+  overflow: visible;
+  z-index: $zindex-popover;
+}
+.account-popover-trigger {
+  padding-right: 15px;
+  text-align: left;
+
+  &:hover {
+    cursor: pointer;
+  }
+  @media (min-width: $screen-md-min) {
+    float: right;
+  }
+  .avatar {
+    display: inline-block;
+    margin-top: 5px;
+    margin-right: 15px;
+    float: left;
+  }
+}
+.account-popover-user {
+  display: inline-block;
+  margin-top: 8px;
+  margin-bottom: 0;
+  line-height: 1;
+}
+
+.account-popover-app {
+  padding: 25px 35px 15px;
+
+  .account-popover-link {
+    display: block;
+    margin-bottom: 10px;
+
+    @media (min-width: $screen-md-min) {
+      text-align: left;
+    }
+  }
+  .fa {
+    margin-right: 10px;
+
+    @media (min-width: $screen-md-min) {
+      margin-left: 10px;
+    }
+  }
+}
+.account-popover-settings {
+  font-size: font-size('large');
+  background-color: color('white');
+  border-bottom-right-radius: $border-radius-large;
+  border-bottom-left-radius: $border-radius-large;
+
+  .account-popover-link {
+    color: color('gray-500');
+
+    &:hover,
+    &:active,
+    &:focus {
+      color: color('secondary');
+    }
+    // Applies a right-hand separator to the first two items of a three item list
+    &:nth-child(-n+2) {
+      padding-right: 10px;
+      margin-right: 10px;
+      border-right: 1px solid color('gray-700');
+    }
+  }
+}

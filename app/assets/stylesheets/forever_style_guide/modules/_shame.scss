@@ -1,0 +1,36 @@
+// overrides bootstraps collapse breakpoint
+@media (max-width: $grid-float-breakpoint) {
+  .navbar-header {
+    float: none;
+  }
+  .navbar-left,.navbar-right {
+    float: none !important;
+  }
+  .navbar-toggle {
+    display: block;
+  }
+  .navbar-fixed-top {
+    top: 0;
+  }
+  .navbar-collapse {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .navbar-collapse.collapse {
+    display: none !important;
+  }
+  .navbar-nav {
+    float: none !important;
+    margin: 7.5px 0;
+  }
+  .navbar-nav > li {
+    float: none;
+  }
+  .navbar-nav > li > a {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  .collapse.in {
+    display:block !important;
+  }
+}

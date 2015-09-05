@@ -59,10 +59,10 @@ $color-card-bg: color('white');
   @extend %item-style;
   @extend %item-shadow;
   height: $btn-size;
-  padding: $padding-default-vertical $btn-padding-default-horizontal;
   display: inline-block;
   text-align: center;
   font-size: font-size('default');
+  border: 0;
 
   @include transition-property(background-color, border);
   @include transition-duration(0.3s);
@@ -77,7 +77,7 @@ $color-card-bg: color('white');
   &:focus,
   &:active {
     outline: none;
-    border: 1px solid color('gray-400');
+    border: 0;
   }
 }
 

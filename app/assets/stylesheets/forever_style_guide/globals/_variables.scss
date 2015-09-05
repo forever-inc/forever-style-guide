@@ -1,21 +1,25 @@
+/* =bootstrap variables
+variables placed here will be overridden and reloaded in bootstrap
+---------------------------------------------------------------------------- */
+$border-radius-large:         2px !global;
+$border-radius-small:         1px !global;
+$border-radius-default:       $border-radius-small !default;
+
+$padding-default-vertical:    10px !default;
+$padding-default-horizontal:  8px !default;
+
+$padding-large-vertical:      20px !global;
+$padding-large-horizontal:    15px !global;
+
+$padding-small-vertical:      8px !global;
+$padding-small-horizontal:    8px !global;
+
+$padding-xs-vertical:         4px !global;
+$padding-xs-horizontal:       6px !global;
+
+
 /* =variables
 ---------------------------------------------------------------------------- */
-$border-radius-default:     2px !default;
-$border-radius-large:       4px !global;
-$border-radius-small:       2px !global;
-
-$padding-default-vertical:     10px !default;
-$padding-default-horizontal:   8px !default;
-
-$padding-large-vertical:    20px !global;
-$padding-large-horizontal:  15px !global;
-
-$padding-small-vertical:    8px !global;
-$padding-small-horizontal:  8px !global;
-
-$padding-xs-vertical:       4px !global;
-$padding-xs-horizontal:     6px !global;
-
 $btn-lg-size: 64px;
 $btn-size: 42px;
 $btn-sm-size: 35px;
@@ -30,3 +34,19 @@ $icon-lg-size: font-size(600);
 $icon-size: font-size(400);
 $icon-sm-size: font-size(300);
 $icon-xs-size: font-size(200);
+
+
+/* =Z-Index
+Including these here for use as Sass variables. Natively in bootstrap you are cautioned as follows:
+
+Warning: Avoid customizing these values. They're used for a bird's eye view
+of components dependent on the z-axis and are designed to all work together.
+---------------------------------------------------------------------------- */
+
+$zindex-navbar:            1000;
+$zindex-dropdown:          1000;
+$zindex-popover:           1060;
+$zindex-tooltip:           1070;
+$zindex-navbar-fixed:      1030;
+$zindex-modal-background:  1040;
+$zindex-modal:             1050;
