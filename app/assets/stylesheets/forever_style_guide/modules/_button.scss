@@ -1,14 +1,14 @@
 @mixin btn-color($color, $inverse: false) {
   @if ($inverse) {
     color: color('#{$color}');
-    background-color: transparent;
+    background-color: color('white');
     border: 2px solid color('#{$color}');
     @extend %no-shadow;
     &:hover,
     &:active,
     &:active:focus {
       color: color('#{$color}-dark');
-      background-color: transparent;
+      background-color: color('white');
       text-decoration: underline;
     }
   } @else {
@@ -49,62 +49,17 @@
       @include btn-color('gray');
     }
   }
-  &.btn-primary,
-  &.btn-success {
-    @include btn-color('primary');
-    &.btn-inverse {
-      @include btn-color('primary', true);
+
+  // creates a button style for each color in color dictionary
+  @each $id, $color in $colors {
+    @at-root #{&}.btn-#{$id} {
+      @include btn-color(#{$id});
+      &.btn-inverse {
+        @include btn-color(#{$id}, true);
+      }
     }
   }
-  &.btn-secondary,
-  &.btn-info {
-    @include btn-color('secondary');
-    &.btn-inverse {
-      @include btn-color('secondary', true);
-    }
-  }
-  &.btn-accent {
-    @include btn-color('accent');
-    &.btn-inverse {
-      @include btn-color('accent', true);
-    }
-  }
-  &.btn-warning {
-    @include btn-color('warning');
-    &.btn-inverse {
-      @include btn-color('warning', true);
-    }
-  }
-  &.btn-danger {
-    @include btn-color('danger');
-    &.btn-inverse {
-      @include btn-color('danger', true);
-    }
-  }
-  &.btn-valet {
-    @include btn-color('valet');
-    &.btn-inverse {
-      @include btn-color('valet', true);
-    }
-  }
-  &.btn-historian {
-    @include btn-color('historian');
-    &.btn-inverse {
-      @include btn-color('historian', true);
-    }
-  }
-  &.btn-artisan {
-    @include btn-color('artisan');
-    &.btn-inverse {
-      @include btn-color('artisan', true);
-    }
-  }
-  &.btn-services {
-    @include btn-color('services');
-    &.btn-inverse {
-      @include btn-color('services', true);
-    }
-  }
+
   &.btn-link {
     @include btn-color('secondary', true);
     background: none;
