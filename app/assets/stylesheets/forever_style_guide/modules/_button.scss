@@ -1,13 +1,15 @@
 @mixin btn-color($color, $inverse: false) {
   @if ($inverse) {
     color: color('#{$color}');
-    background-color: color('gray-100');
-    border: 0;
+    background-color: transparent;
+    border: 2px solid color('#{$color}');
+    @extend %no-shadow;
     &:hover,
     &:active,
     &:active:focus {
       color: color('#{$color}-dark');
-      background-color: color('silver');
+      background-color: transparent;
+      text-decoration: underline;
     }
   } @else {
     color: color('white');
@@ -77,6 +79,30 @@
     @include btn-color('danger');
     &.btn-inverse {
       @include btn-color('danger', true);
+    }
+  }
+  &.btn-valet {
+    @include btn-color('valet');
+    &.btn-inverse {
+      @include btn-color('valet', true);
+    }
+  }
+  &.btn-historian {
+    @include btn-color('historian');
+    &.btn-inverse {
+      @include btn-color('historian', true);
+    }
+  }
+  &.btn-artisan {
+    @include btn-color('artisan');
+    &.btn-inverse {
+      @include btn-color('artisan', true);
+    }
+  }
+  &.btn-services {
+    @include btn-color('services');
+    &.btn-inverse {
+      @include btn-color('services', true);
     }
   }
   &.btn-link {
