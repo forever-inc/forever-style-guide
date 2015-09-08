@@ -1,13 +1,15 @@
 @mixin btn-color($color, $inverse: false) {
   @if ($inverse) {
     color: color('#{$color}');
-    background-color: color('gray-100');
-    border: 0;
+    background-color: color('white');
+    border: 2px solid color('#{$color}');
+    @extend %no-shadow;
     &:hover,
     &:active,
     &:active:focus {
       color: color('#{$color}-dark');
-      background-color: color('silver');
+      background-color: color('white');
+      text-decoration: underline;
     }
   } @else {
     color: color('white');
@@ -47,38 +49,17 @@
       @include btn-color('gray');
     }
   }
-  &.btn-primary,
-  &.btn-success {
-    @include btn-color('primary');
-    &.btn-inverse {
-      @include btn-color('primary', true);
+
+  // creates a button style for each color in core color dictionary
+  @each $id, $color in $core_colors {
+    @at-root #{&}.btn-#{$id} {
+      @include btn-color(#{$id});
+      &.btn-inverse {
+        @include btn-color(#{$id}, true);
+      }
     }
   }
-  &.btn-secondary,
-  &.btn-info {
-    @include btn-color('secondary');
-    &.btn-inverse {
-      @include btn-color('secondary', true);
-    }
-  }
-  &.btn-accent {
-    @include btn-color('accent');
-    &.btn-inverse {
-      @include btn-color('accent', true);
-    }
-  }
-  &.btn-warning {
-    @include btn-color('warning');
-    &.btn-inverse {
-      @include btn-color('warning', true);
-    }
-  }
-  &.btn-danger {
-    @include btn-color('danger');
-    &.btn-inverse {
-      @include btn-color('danger', true);
-    }
-  }
+
   &.btn-link {
     @include btn-color('secondary', true);
     background: none;
@@ -155,6 +136,7 @@
     font-size: font-size('small');
     height: $btn-sm-size;
     padding: $padding-small-vertical $btn-padding-small-horizontal;
+    line-height: 1.6;
     border-radius: $border-radius-small;
 
     .fa {
@@ -163,9 +145,10 @@
     }
   }
   &.btn-xs {
-    font-size: font-size('small');
     height: $btn-xs-size;
     padding: $padding-xs-vertical $btn-padding-xs-horizontal;
+    font-size: font-size('small');
+    line-height: 1.8;
 
     .fa {
       font-size: $icon-xs-size;

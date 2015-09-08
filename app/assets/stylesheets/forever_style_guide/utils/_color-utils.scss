@@ -6,6 +6,9 @@ Sass functions and color related variables beyond standard color declarations
 // map for all color declarations
 $colors: () !default;
 
+// map for only colorified colors
+$core_colors: () !default;
+
 // pre-defined variations for easy consistent adjustments across future color variation tweaks
 $variations: (
   light: (
@@ -15,23 +18,18 @@ $variations: (
   dark: (
     function: darken,
     parameters: 10%
-  ),
-  fade: (
-    function: rgba,
-    parameters: .7
-  ),
-  gray: (
-    function: grayscale
-  ),
-  shade: (
-    function: mix,
-    parameters: white 80%
   )
 );
 
 // appends colors to master color list
-@function set_color($id, $color) {
+@function set_color($id, $color, $core: false) {
+  @debug $id;
   $colors: map-merge($colors, ($id: $color)) !global; // adds color declaration to global $colors map
+
+  @if $core {
+    $core_colors: map-merge($core_colors, ($id: $color)) !global; // adds color declaration to global $core_colors map
+  }
+
   @return $color;
 }
 
@@ -76,7 +74,7 @@ $variations: (
 
 // generates dynamic of a provided color and registers them as unique colors
 @function colorify($id, $color) {
-  $base-color: set_color($id, $color);
+  $base-color: set_color($id, $color, true);
   @each $variation, $varation-args in $variations {
     $variant-color: set_color('#{$id}-#{$variation}', color-variation($id, $variation));
   }
