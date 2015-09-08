@@ -50,8 +50,8 @@
     }
   }
 
-  // creates a button style for each color in color dictionary
-  @each $id, $color in $colors {
+  // creates a button style for each color in core color dictionary
+  @each $id, $color in $core_colors {
     @at-root #{&}.btn-#{$id} {
       @include btn-color(#{$id});
       &.btn-inverse {
