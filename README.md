@@ -30,7 +30,7 @@ The style guide is an easy to install rails engine that will mount to your exist
 ```
 gem 'bootstrap-sass'
 gem 'compass-rails'
-gem "font-awesome-rails"
+gem 'font-awesome-rails'
 gem 'forever_style_guide', git: 'git@github.com:forever-inc/forever-style-guide.git'
 
 ```
@@ -38,21 +38,18 @@ gem 'forever_style_guide', git: 'git@github.com:forever-inc/forever-style-guide.
 - Add to your assets/stylesheets/application.scss (If using application.css, this has to be .scss to use sass import)
 ```
 # recommend importing these before your other styles so you can override them if necessary
-@import "bootstrap-sprockets";
-@import "bootstrap";
+@import 'bootstrap';
 @import 'font-awesome';
+@import 'forever_style_guide/all';
 ```
 
 - Add to your assets/javascripts/application.js
 ```
-//= require bootstrap-sprockets
 //= require bootstrap
 ```
 
 - Add to your views/layouts/application.html.erb
 ```
-# style guide css should be loaded *before* you load any of your own app's css
-<%= stylesheet_link_tag    'forever_style_guide/application', media: 'all' %>
 # style guide js should be loaded *after* you load any of your own app's js
 <%= javascript_include_tag "forever_style_guide/application" %>
 ```

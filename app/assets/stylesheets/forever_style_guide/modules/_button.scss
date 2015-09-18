@@ -1,19 +1,20 @@
 @mixin btn-color($color, $inverse: false) {
   @if ($inverse) {
     color: color('#{$color}');
-    background-color: color('gray-100');
-    border: 1px solid color('gray-300');
+    background-color: color('white');
+    border: 2px solid color('#{$color}');
+    @extend %no-shadow;
     &:hover,
     &:active,
     &:active:focus {
-      border: 1px solid color('#{$color}-dark');
       color: color('#{$color}-dark');
-      background-color: color('silver');
+      background-color: color('white');
+      text-decoration: underline;
     }
   } @else {
     color: color('white');
     background-color: color('#{$color}');
-    border: 1px solid color('#{$color}-dark');
+    border: 0;
     &:hover,
     &:active,
     &:active:focus {
@@ -48,53 +49,43 @@
       @include btn-color('gray');
     }
   }
-  &.btn-primary,
-  &.btn-success {
-    @include btn-color('primary');
-    &.btn-inverse {
-      @include btn-color('primary', true);
+
+  // creates a button style for each color in core color dictionary
+  @each $id, $color in $core_colors {
+    @at-root #{&}.btn-#{$id} {
+      @include btn-color(#{$id});
+      &.btn-inverse {
+        @include btn-color(#{$id}, true);
+      }
     }
   }
-  &.btn-secondary,
-  &.btn-info {
-    @include btn-color('secondary');
-    &.btn-inverse {
-      @include btn-color('secondary', true);
-    }
-  }
-  &.btn-accent {
-    @include btn-color('accent');
-    &.btn-inverse {
-      @include btn-color('accent', true);
-    }
-  }
-  &.btn-warning {
-    @include btn-color('warning');
-    &.btn-inverse {
-      @include btn-color('warning', true);
-    }
-  }
-  &.btn-danger {
-    @include btn-color('danger');
-    &.btn-inverse {
-      @include btn-color('danger', true);
-    }
-  }
+
   &.btn-link {
     @include btn-color('secondary', true);
     background: none;
-    border: none;
+    border: 0;
     box-shadow: none;
     &:hover,
     &:active,
     &:focus {
-      border: none;
+      border: 0;
       background: none;
       text-decoration: underline;
       &:focus {
-        border: none;
+        border: 0;
         background: none;
         box-shadow: none;
+      }
+    }
+    &.btn-inverse {
+      color: color('white');
+      border: 2px solid color('white');
+      &:hover,
+      &:active,
+      &:focus,
+      &:active:focus {
+        color: color('white');
+        border: 2px solid color('white');
       }
     }
   }
@@ -102,13 +93,13 @@
   &.btn-plain {
     color: color('gray-500');
     background: none;
-    border: none;
+    border: 0;
     box-shadow: none;
     &:hover,
     &:active,
     &:focus {
       background: none;
-      border: none;
+      border: 0;
       &:focus {
         background: none;
         box-shadow: none;
@@ -126,9 +117,9 @@
     }
   }
   &.btn-lg {
-    @extend %font-face-light;
+    @extend %font-face-regular;
     height: $btn-lg-size;
-    font-size: font-size('large');
+    font-size: font-size(400);
     padding: $padding-large-horizontal $btn-padding-large-horizontal;
     border-radius: $border-radius-large;
     line-height: 1.8;
@@ -145,6 +136,7 @@
     font-size: font-size('small');
     height: $btn-sm-size;
     padding: $padding-small-vertical $btn-padding-small-horizontal;
+    line-height: 1.6;
     border-radius: $border-radius-small;
 
     .fa {
@@ -153,9 +145,10 @@
     }
   }
   &.btn-xs {
-    font-size: font-size('small');
     height: $btn-xs-size;
     padding: $padding-xs-vertical $btn-padding-xs-horizontal;
+    font-size: font-size('small');
+    line-height: 1.8;
 
     .fa {
       font-size: $icon-xs-size;

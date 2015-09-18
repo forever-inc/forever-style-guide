@@ -5,22 +5,22 @@
   background-size: cover;
 
   @media (min-width: $screen-xs) {
-    height: 400px;
+    height: 350px;
   }
   @media (min-width: $screen-sm) {
-    height: 450px;
+    height: 400px;
   }
   @media (min-width: $screen-md) {
-    height: 500px;
+    height: 450px;
   }
   @media (min-width: $screen-lg) {
-    height: 650px;
+    height: 500px;
   }
   @media (min-width: $screen-xl) {
-    height: 800px;
+    height: 650px;
   }
   @media (min-width: $screen-xxl) {
-    height: 1000px;
+    height: 900px;
   }
 
   &.hero-sm {
