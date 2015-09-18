@@ -1,44 +1,17 @@
-<footer class="footer l-padded-thin">
-  <div class="row footer-marketing">
-
-    <div class="col-xs-12 pages l-section-close">
-      <a href="https://www.forever.com/about">about</a>
-      |
-      <a href="https://www.forever.com/about/press">press</a>
-      |
-      <a href="https://www.forever.com/faq">faq</a>
+<div class="style-guide-partial" id="footer">
+  <div class="style-guide-partial-content">
+    <p>The visual included inline here provides a quick reference of the elements and styles included in the footer component. The complete, fully-responsive footer is available as a <%= link_to "Fullscreen Demo.", demo_link('footer') %>
+    </p>
+    <div class="footer-sample l-section">
+      <%= render partial: "forever_style_guide/sections/components/footer/footer_demo" %>
     </div>
-
-    <div class="social_media_icons center-block">
-      <a href="https://www.facebook.com/Forever">
-        <%= fa_stacked_icon "facebook", base: "circle feature_bullet-circle", class: "fa-3x fa-feature_bullet-social" %>
-      </a>
-      <a href="https://www.twitter.com/forever">
-        <%= fa_stacked_icon "twitter", base: "circle feature_bullet-circle", class: "fa-3x fa-feature_bullet-social" %>
-      </a>
-      <a href="https://www.youtube.com/channel/UCfBFL_W3FYW7W0wAr4EEGnA">
-        <%= fa_stacked_icon "youtube", base: "circle feature_bullet-circle", class: "fa-3x fa-feature_bullet-social" %>
-      </a>
-      <a href="https://plus.google.com/102706234482507094530/posts">
-        <%= fa_stacked_icon "google-plus", base: "circle feature_bullet-circle", class: "fa-3x fa-feature_bullet-social" %>
-      </a>
-      <a href="http://www.pinterest.com/FOREVER/">
-        <%= fa_stacked_icon "pinterest", base: "circle feature_bullet-circle", class: "fa-3x fa-feature_bullet-social" %>
-      </a>
+    <div class="style-guide-toggle">
+      <input id="style-guide-toggle-nav_basic" class="style-guide-toggle-input" type="checkbox" />
+      <label for="style-guide-toggle-nav_basic" class="style-guide-toggle-label">
+        <pre class="style-guide-toggle-source prettyprint linenums"><%= escape_erb_for_display("forever_style_guide/sections/components/footer/_footer.erb") %></pre>
+        <div class="style-guide-toggle-show">Show source code</div>
+        <div class="style-guide-toggle-hide">Hide source code</div>
+      </label>
     </div>
-
-    <div class="col-xs-12 info">
-      <div class="info-number">
-        Contact us at 1-888-FOREVER
-      </div>
-      <div class="info-tos">
-        <a href="https://www.forever.com/privacy">Privacy</a>
-        |
-        <a href="https://www.forever.com/tos">Terms of Service</a>
-        |
-        © 2014 Forever, Inc.
-      </div>
-    </div>
-
   </div>
-</footer>
+</div>

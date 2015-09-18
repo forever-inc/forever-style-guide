@@ -16,7 +16,8 @@ p {
 }
 
 h1 {
-  @extend %font-face-light;
+  @extend %font-face-gotham;
+  font-weight: 500;
   font-size: font-size(700);
 
   @media (max-width: $screen-sm-max) {
@@ -27,7 +28,8 @@ h1 {
   }
 }
 h2 {
-  @extend %font-face-light;
+  @extend %font-face-gotham;
+  font-weight: 500;
   font-size: font-size(600);
 
   @media (max-width: $screen-sm-max) {
@@ -38,7 +40,8 @@ h2 {
   }
 }
 h3 {
-  @extend %font-face-regular;
+  @extend %font-face-gotham;
+  font-weight: 500;
   font-size: font-size(500);
 
   @media (max-width: $screen-sm-max) {
@@ -49,7 +52,8 @@ h3 {
   }
 }
 h4 {
-  @extend %font-face-semibold;
+  @extend %font-face-gotham;
+  font-weight: 400;
   font-size: font-size(400);
   @media (max-width: $screen-sm-max) {
     font-size: font-size(400);
@@ -59,12 +63,14 @@ h4 {
   }
 }
 h5 {
-  @extend %font-face-semibold;
+  @extend %font-face-gotham;
+  font-weight: 300;
   font-size: font-size(300);
 }
 h6 {
-  @extend %font-face-semibold;
-  font-size: font-size('default');
+  @extend %font-face-gotham;
+  font-weight: 200;
+  font-size: font-size(200);
 }
 p {
   @extend %font-face-regular;
@@ -84,13 +90,15 @@ strong {
   margin-top: 0;
 }
 .lead {
+  @extend %font-face-gotham;
+  font-weight: 100;
   color: color('text');
 }
 a {
   color: color('secondary');
-  &:hover
   &:link,
   &:visited,
+  &:hover,
   &:active {
     color: color('secondary');
   }
