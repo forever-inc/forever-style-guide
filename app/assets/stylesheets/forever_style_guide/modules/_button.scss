@@ -117,9 +117,9 @@
     }
   }
   &.btn-lg {
-    @extend %font-face-light;
+    @extend %font-face-regular;
     height: $btn-lg-size;
-    font-size: font-size('large');
+    font-size: font-size(400);
     padding: $padding-large-horizontal $btn-padding-large-horizontal;
     border-radius: $border-radius-large;
     line-height: 1.8;
