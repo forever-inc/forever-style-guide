@@ -46,6 +46,9 @@
     a {
       display: block;
     }
+    &.is_top {
+      margin-top: 0;
+    }
   }
   .security_assurance-icon {
     width: 20%;
