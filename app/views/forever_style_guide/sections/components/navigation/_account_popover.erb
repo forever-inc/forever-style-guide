@@ -19,18 +19,18 @@
     <div class="row">
       <div class="col-sm-6">
         <%= link_to "#", class: 'btn btn-link btn-inverse account-popover-link', title: 'My Home' do %>
-          <i class="fa fa-home"></i>My Home
+          <%= fa_icon("home", text: "Home", class:"nav-item-icon") %>
         <% end %>
         <%= link_to "#", class: 'btn btn-link btn-inverse account-popover-link', title: 'Library' do %>
-          <i class="fa fa-home"></i>Library
+          <%= fa_icon("th-large", text: "Library", class:"nav-item-icon") %>
         <% end %>
       </div>
       <div class="col-sm-6">
         <%= link_to "#", class: 'btn btn-link btn-inverse account-popover-link', title: 'Projects' do %>
-          <i class="fa fa-home"></i>Projects
+          <%= fa_icon("paint-brush", text: "Projects", class:"nav-item-icon") %>
         <% end %>
         <%= link_to "#", class: 'btn btn-link btn-inverse account-popover-link', title: 'People' do %>
-          <i class="fa fa-home"></i>People
+          <%= fa_icon("group", text: "People", class:"nav-item-icon") %>
         <% end %>
       </div>
     </div>
