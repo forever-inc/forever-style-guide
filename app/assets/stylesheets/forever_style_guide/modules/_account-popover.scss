@@ -23,7 +23,7 @@ $webapp-popover-background: #333333;
     max-width: 100%;
 
     .arrow {
-      left: 30px!important; //override default popover inline styles
+      left: 37px!important; //override default popover inline styles
     }
   }
 }
@@ -61,10 +61,9 @@ $webapp-popover-background: #333333;
 }
 .account-popover-user {
   display: inline-block;
-  margin-top: 8px;
-  margin-bottom: 0;
+  margin: 8px 10px 0 0;
   line-height: 1;
-  max-width: 130px;
+  max-width: 140px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
