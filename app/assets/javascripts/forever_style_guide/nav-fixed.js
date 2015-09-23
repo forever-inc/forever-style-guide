@@ -21,13 +21,8 @@ $(function () {
   })
 
   // unfix body on toggle nav close
-  $('#header-is_fixed #collapse-nav').on('hidden.bs.collapse', function () {
+  $('#header-is_fixed .navbar-collapse').on('hidden.bs.collapse', function () {
     $('body').removeClass('body-fixed');
     $('#header-is_fixed').removeClass('is_scrolling');
-  })
-
-  // hide account popover on toggle nav close
-  $('#header-is_fixed #collapse-nav').on('hide.bs.collapse', function () {
-    $('.popover.account-popover').popover('hide');
   })
 });
