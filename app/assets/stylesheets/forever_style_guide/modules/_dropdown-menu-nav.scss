@@ -18,6 +18,9 @@
     width: 100%;
     @include border_highlight("left");
   }
+  &.dropdown-menu-full {
+    left: 0;
+  }
 }
 
 // navbar open styles
