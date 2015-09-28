@@ -25,6 +25,10 @@
       background-image: none;
     }
   }
+  .divider {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
 
   // Width and alignment variants
   @at-root #{&}-full {
