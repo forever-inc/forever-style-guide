@@ -6,7 +6,7 @@ $webapp-popover-background: #333333;
   max-width: $webapp-popover-width;
   position: relative;
   top: 0!important; //override default popover inline styles
-  left: 0!important; 
+  left: 0!important;
   margin-top: 0;
   background-color: $webapp-popover-background;
   border: 0;
@@ -23,7 +23,7 @@ $webapp-popover-background: #333333;
     max-width: 100%;
 
     .arrow {
-      left: 30px!important; //override default popover inline styles
+      left: 37px!important; //override default popover inline styles
     }
   }
 }
@@ -36,7 +36,7 @@ $webapp-popover-background: #333333;
   z-index: $zindex-popover;
 }
 .account-popover-trigger {
-  padding-right: 15px;
+  padding: 0;
   text-align: left;
 
   &:hover {
@@ -44,6 +44,13 @@ $webapp-popover-background: #333333;
   }
   @media (min-width: $screen-md-min) {
     float: right;
+  }
+
+  // switches at screen collapse breakpoint
+  @media(max-width: $grid-float-breakpoint) {
+    position: absolute;
+    top: 10px;
+    margin: 0;
   }
   .avatar {
     display: inline-block;
@@ -54,9 +61,17 @@ $webapp-popover-background: #333333;
 }
 .account-popover-user {
   display: inline-block;
-  margin-top: 8px;
-  margin-bottom: 0;
+  margin: 8px 10px 0 0;
   line-height: 1;
+  max-width: 140px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  // switches at screen collapse breakpoint
+  @media(max-width: $grid-float-breakpoint) {
+    max-width: inherit;
+  }
 }
 
 .account-popover-app {

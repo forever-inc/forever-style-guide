@@ -1,3 +1,4 @@
+// "Products & Services" Primary nav, featured first item styling
 $product-image-main-width: 550px;
 $product-image-main-height: 521px;
 
@@ -7,7 +8,6 @@ $product-image-main-height: 521px;
   .dropdown-menu-product-item {
     margin-bottom: 20px;
   }
-
   .dropdown-menu-product-img {
     position: absolute;
     width: $product-image-main-width;
@@ -19,38 +19,33 @@ $product-image-main-height: 521px;
     top: -120px;
     left: (-$product-image-main-width / 2) - 20;
 
-    @media(max-width: $grid-float-breakpoint) {
+    @media (max-width: $grid-float-breakpoint) {
       top: -90px;
     }
   }
-
   .dropdown-menu-product-details {
-    @media(min-width: $screen-xl) {
+    @media (min-width: $screen-xl) {
       width: 300px;
       margin-left: auto;
       margin-right: auto;
     }
   }
-
   .dropdown-menu-product-title {
-    @media(min-width: $screen-xl) {
+    @media (min-width: $screen-xl) {
       margin-bottom: 30px;
     }
   }
-
   .dropdown-menu-product-description {
     padding-top: 10px;
   }
-
-  .btn-primary {
-    @media(max-width: $grid-float-breakpoint) {
+  .dropdown-menu-product-btn {
+    @media (max-width: $grid-float-breakpoint) {
       height: 62px;
       font-size: font-size(300);
       line-height: 18px;
       @include box-shadow($shadow-color 0 2px 4px);
     }
-
-    @media(max-width: $screen-sm) {
+    @media (max-width: $screen-sm) {
       font-size: font-size(400);
     }
   }

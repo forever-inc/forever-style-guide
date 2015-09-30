@@ -1,16 +1,16 @@
 <div class="account-popover-trigger visible-md visible-lg" data-toggle="popover-desktop">
-  <%= image_tag("style_guide/personas/jane_avatar.png", alt: "Jane Persona", title: "Jane Persona", class: "avatar avatar-xs") %>
+  <%= image_tag("style_guide/personas/jane_avatar.png", alt: "Jane Persona", title: "Jane Persona Lada Lada Long Name", class: "avatar avatar-xs") %>
   <p class="account-popover-user">
     <span class="small">Signed in as </span> <br />
-    <strong class="color-gray-600">Jane Persona</strong>
+    <strong class="color-gray-600">Jane Persona Lada Lada Long Name</strong>
   </p>
 </div>
 
 <div class="account-popover-trigger visible-xs visible-sm l-padded-thin" data-toggle="popover-mobile">
-  <%= image_tag("style_guide/personas/jane_avatar.png", alt: "Jane Persona", title: "Jane Persona", class: "avatar avatar-xs") %>
+  <%= image_tag("style_guide/personas/jane_avatar.png", alt: "Jane Persona", title: "Jane Persona Lada Lada Long Name", class: "avatar avatar-xs") %>
   <p class="account-popover-user">
     <span class="small">Signed in as </span> <br />
-    <strong class="color-gray-600">Jane Persona</strong>
+    <strong class="color-gray-600">Jane Persona Lada Lada Long Name</strong>
   </p>
 </div>
 
@@ -19,18 +19,18 @@
     <div class="row">
       <div class="col-sm-6">
         <%= link_to "#", class: 'btn btn-link btn-inverse account-popover-link', title: 'My Home' do %>
-          <i class="fa fa-home"></i>My Home
+          <%= fa_icon("home", text: "Home", class:"nav-item-icon") %>
         <% end %>
         <%= link_to "#", class: 'btn btn-link btn-inverse account-popover-link', title: 'Library' do %>
-          <i class="fa fa-home"></i>Library
+          <%= fa_icon("th-large", text: "Library", class:"nav-item-icon") %>
         <% end %>
       </div>
       <div class="col-sm-6">
         <%= link_to "#", class: 'btn btn-link btn-inverse account-popover-link', title: 'Projects' do %>
-          <i class="fa fa-home"></i>Projects
+          <%= fa_icon("paint-brush", text: "Projects", class:"nav-item-icon") %>
         <% end %>
         <%= link_to "#", class: 'btn btn-link btn-inverse account-popover-link', title: 'People' do %>
-          <i class="fa fa-home"></i>People
+          <%= fa_icon("group", text: "People", class:"nav-item-icon") %>
         <% end %>
       </div>
     </div>

@@ -9,7 +9,7 @@ $(function () {
     container: '.account-popover-container',
     placement: 'bottom'
   })
-  $('[data-toggle="popover-mobile"]').popover({
+    $('[data-toggle="popover-mobile"]').popover({
     html: true,
     content: function () {
       return $('.account-popover').html();
@@ -38,5 +38,10 @@ $(function () {
   $('.account-popover-trigger').on('hidden.bs.popover', function () {
     $('body').removeClass('body-fixed');
     $('#header-is_fixed').removeClass('is_scrolling');
+  })
+
+  // hide account popover on toggle nav close
+  $('#header-is_fixed .navbar-collapse').on('hide.bs.collapse', function () {
+    $('.popover.account-popover').popover('hide');
   })
 });

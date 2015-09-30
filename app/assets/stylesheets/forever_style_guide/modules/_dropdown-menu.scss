@@ -1,17 +1,36 @@
-// dropdown-menu vanilla bootstrap styling
+// Basic dropdown styles
 .dropdown-menu {
-  top: $header_height - $header_active_border_height;
-  left: auto;
-  display: block;
-  padding: 0;
-  max-height: 0;
-  @include border_highlight("top");
-  @extend %card-shadow;
-  opacity: 0;
-  visibility: hidden;
-  overflow: hidden;
-  @include transition(opacity 0.3s ease-in-out, visibility 0.3s ease-in-out, max-height 0.3s ease-in-out);
+  padding-top: 0;
+  padding-bottom: 0;
+  border-radius: $border-radius-large;
 
+  > li > a {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: font-size('default');
+
+    &:first-child {
+      border-top-right-radius: $border-radius-large;
+      border-top-left-radius: $border-radius-large;
+    }
+    &:last-child {
+      border-bottom-right-radius: $border-radius-large;
+      border-bottom-left-radius: $border-radius-large;
+    }
+    &:hover,
+    &:active,
+    &:focus {
+      color: color('secondary');
+      background-color: color('gray-200');
+      background-image: none;
+    }
+  }
+  .divider {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  // Width and alignment variants
   @at-root #{&}-full {
     left: 0;
     right: 0;
@@ -30,59 +49,5 @@
   }
   @at-root #{&}-content {
     padding: 10px 30px;
-  }
-
-  @media(max-width: $grid-float-breakpoint) {
-    position: relative;
-    top: 0;
-    width: 100%;
-    @include border_highlight("left");
-  }
-}
-
-// navbar unactive open styles
-.navbar-nav .open .dropdown-menu {
-  @include border_highlight("top");
-  border-bottom-left-radius: $border-radius-large;
-
-  @media(max-width: $grid-float-breakpoint) {
-    @include border_highlight("left");
-    border-radius: 0;
-  }
-}
-
-// navbar active open styles
-.nav-item.active .dropdown-menu {
-  @include border_highlight("top", color("primary"));
-  border-bottom-left-radius: $border-radius-large;
-
-  @media(max-width: $grid-float-breakpoint) {
-    @include border_highlight("left", color("primary"));
-    border-radius: 0;
-  }
-}
-
-//opens dropdown on hover instead of click
-@media (min-width: $grid-float-breakpoint) {
-  .nav li.dropdown:hover,
-  .nav li.dropdown.open {
-    & > ul.dropdown-menu {
-      opacity: 1;
-      visibility: visible;
-      max-height: 500px;
-      @include box-shadow($shadow-color 0 2px 4px);
-    }
-  }
-}
-
-// mobile friendly 'click to open' behavior
-@media (max-width: $grid-float-breakpoint) {
-  .nav li.dropdown.open {
-    & > ul.dropdown-menu {
-      opacity: 1;
-      visibility: visible;
-      max-height: 500px;
-      @include box-shadow($shadow-color 0 2px 4px);
-    }
   }
 }
