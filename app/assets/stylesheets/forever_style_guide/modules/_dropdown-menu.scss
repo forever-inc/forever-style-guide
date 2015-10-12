@@ -1,0 +1,53 @@
+// Basic dropdown styles
+.dropdown-menu {
+  padding-top: 0;
+  padding-bottom: 0;
+  border-radius: $border-radius-large;
+
+  > li > a {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: font-size('default');
+
+    &:first-child {
+      border-top-right-radius: $border-radius-large;
+      border-top-left-radius: $border-radius-large;
+    }
+    &:last-child {
+      border-bottom-right-radius: $border-radius-large;
+      border-bottom-left-radius: $border-radius-large;
+    }
+    &:hover,
+    &:active,
+    &:focus {
+      color: color('secondary');
+      background-color: color('gray-200');
+      background-image: none;
+    }
+  }
+  .divider {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  // Width and alignment variants
+  @at-root #{&}-full {
+    left: 0;
+    right: 0;
+  }
+  @at-root #{&}-sm {
+    width: 160px;
+  }
+  @at-root #{&}-md {
+    width: 320px;
+  }
+  @at-root #{&}-lg {
+    width: 640px;
+  }
+  @at-root #{&}-xl {
+    width: 800px;
+  }
+  @at-root #{&}-content {
+    padding: 10px 30px;
+  }
+}

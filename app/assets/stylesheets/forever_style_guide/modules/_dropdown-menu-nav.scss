@@ -1,0 +1,66 @@
+// Primary Nav Dropdowns
+.dropdown-menu-nav {
+  display: block;
+  top: $header_height - $header_active_border_height;
+  left: auto;
+  padding: 0;
+  max-height: 0;
+  opacity: 0;
+  visibility: hidden;
+  overflow: hidden;
+  @include border_highlight("top");
+  @extend %card-shadow;
+  @include transition(opacity 0.3s ease-in-out, visibility 0.3s ease-in-out, max-height 0.3s ease-in-out);
+
+  @media (max-width: $grid-float-breakpoint) {
+    position: relative;
+    top: 0;
+    width: 100%;
+    @include border_highlight("left");
+  }
+  &.dropdown-menu-full {
+    left: 0;
+  }
+}
+
+// navbar open styles
+.navbar-nav .open .dropdown-menu-nav,
+.nav-item.active .dropdown-menu-nav {
+  border-bottom-left-radius: $border-radius-large;
+  @include border_highlight("top");
+
+  @media (max-width: $grid-float-breakpoint) {
+    border-radius: 0;
+    @include border_highlight("left");
+  }
+}
+// navbar active open styles
+.nav-item.active .dropdown-menu-nav {
+  @media (max-width: $grid-float-breakpoint) {
+    @include border_highlight("left", color("primary"));
+  }
+}
+
+@mixin show-dropdown {
+  max-height: 500px;
+  opacity: 1;
+  visibility: visible;
+  @include box-shadow($shadow-color 0 2px 4px);
+}
+// opens dropdown on hover instead of click
+.nav .dropdown:hover,
+.nav .dropdown.open {
+  & > .dropdown-menu-nav {
+    @media (min-width: $grid-float-breakpoint) {
+      @include show-dropdown;
+    }
+  }
+}
+// mobile friendly 'click to open' behavior
+.nav .dropdown.open {
+  & > .dropdown-menu-nav {
+    @media (max-width: $grid-float-breakpoint) {
+      @include show-dropdown;
+    }
+  }
+}

@@ -1,51 +1,72 @@
 /* list
 ---------------------------------------------------------------------------- */
-
 .list-group-item {
   @extend %item-style;
   @extend %no-shadow;
-  //border: 1px solid #ddd;
+  border-radius: 0;
+
+  &.active {
+    background-color: color('secondary');
+    border-color: color('secondary');
+
+    &:hover,
+    &:focus {
+      background-color: color('secondary-dark');
+      border-color: color('secondary-dark');
+    }
+
+    > .badge {
+      color: color('secondary');
+    }
+  }
 
   // Round the first and last items
   &:first-child {
-    border-bottom-left-radius: 2px;
-    border-top-left-radius: 2px;
+    border-top-right-radius: $border-radius-large;
+    border-top-left-radius: $border-radius-large;
   }
   &:last-child {
-    border-bottom-right-radius: 2px;
-    border-top-right-radius: 2px;
+    border-bottom-right-radius: $border-radius-large;
+    border-bottom-left-radius: $border-radius-large;
   }
 
-  &.list-group-item-success,
-  &.list-group-item-primary {
-    color: color('primary');
-  }
-  &.list-group-item-secondary,
-  &.list-group-item-info {
+  @at-root #{&}.list-group-item-success {
     color: color('secondary');
   }
-  &.list-group-item-accent {
+  @at-root #{&}.list-group-item-primary {
+    color: color('secondary');
+  }
+  @at-root #{&}.list-group-item-secondary {
+    color: color('secondary');
+  }
+  @at-root #{&}.list-group-item-info {
+    color: color('secondary');
+  }
+  @at-root #{&}.list-group-item-accent {
     color: color('accent');
   }
-  &.list-group-item-warning {
+  @at-root #{&}.list-group-item-warning {
     color: color('warning');
   }
-  &.list-group-item-danger {
+  @at-root #{&}.list-group-item-danger {
     color: color('danger');
   }
 }
 
-
 .list-benefit {
   margin: 0.25em 20px 0 20px;
   padding-left: 30px;
-
-  background: image-url("forever_style_guide/check.png") no-repeat 0 0;
-  list-style: none;
   text-align: left;
   font-size: font-size('default');
+  list-style: none;
+  background: image-url("forever_style_guide/check.png") no-repeat 0 0;
 
   @media(max-width: $screen-xs-min) {
     margin: 0;
   }
+}
+
+.list-roman {
+  list-style: lower-roman;
+  list-style-position: outside;
 }

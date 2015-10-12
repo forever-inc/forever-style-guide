@@ -1,0 +1,156 @@
+<!-- Marketing Bootstrap header -->
+<nav class="navbar navbar-default navbar-dropdown">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapse-nav" aria-expanded="false" aria-controls="navbar">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <%= link_to "http://www.forever.com", class: "navbar-brand" do %>
+      <%= image_tag("forever_style_guide/forever-logo.png", alt: "Forever Logo", class:"navbar-brand-logo") %>
+    <% end %>
+  </div>
+  <div id="collapse-nav" class="navbar-collapse collapse">
+    <ul class="nav navbar-nav navbar-left">
+      <li class="dropdown nav-item"><a href="#" class="nav-item-tab dropdown-toggle" data-toggle="dropdown">Products &amp; Services</a>
+        <ul class="dropdown-menu dropdown-menu-nav dropdown-menu-full">
+          <li class="dropdown-menu-content">
+            <div class="row dropdown-menu-products">
+              <div class="col-sm-3 dropdown-menu-product dropdown-menu-product-main">
+                <%= link_to "#" do %>
+                  <div>
+                    <%= image_tag("forever_style_guide/forever-swirl-logo.png", alt: "Forever Logo", class: "dropdown-menu-product-img") %>
+                    <div class="dropdown-menu-product-details">
+                      <h3 class="dropdown-menu-product-title hidden-sm hidden-xs">Forever Permanent Storage</h3>
+                      <button class="btn btn-block btn-primary btn-lg dropdown-menu-product-btn">
+                        <span class="visible-xs">Forever Permanent Storage</span>
+                        <span class="visible-sm">Forever Permanent<br>Storage</span>
+                        <span class="hidden-sm hidden-xs">Get Started</span>
+                      </button>
+                      <p class="dropdown-menu-product-description hidden-xs hidden-sm">Store, print and protect your family photos online, and trust they are safe for generations with the Forever Guarantee.</p>
+                    </div>
+                  </div>
+                <% end %>
+              </div>
+              <div class="col-sm-3 dropdown-menu-product">
+                <%= link_to "#" do %>
+                  <div>
+                    <div class="well well-sm dropdown-menu-product-details">
+                      <div class="dropdown-menu-product-item">
+                        <%= image_tag("forever_style_guide/artisan-logo-sm.png", alt: "Forever Artisan", class: "dropdown-menu-product-img") %>
+                      </div>
+                      <h4 class="dropdown-menu-product-title hidden-xs hidden-sm">Create &amp; Print Amazing Photo Gifts</h4>
+                      <p class="dropdown-menu-product-description hidden-xs hidden-sm">Personalize beautiful photo books, phone cases, cards, mugs, and more with our award-winning scrapbooking software!</p>
+                    </div>
+                  </div>
+                <% end %>
+              </div>
+              <div class="col-sm-3 dropdown-menu-product">
+                <%= link_to "#" do %>
+                  <div>
+                    <div class="well well-sm dropdown-menu-product-details">
+                      <div class="dropdown-menu-product-item">
+                        <%= image_tag("forever_style_guide/historian-logo-sm.png", alt: "Forever Historian", class: "dropdown-menu-product-img") %>
+                      </div>
+                      <h4 class="dropdown-menu-product-title hidden-xs hidden-sm">Take Control of Your Desktop's Media Files</h4>
+                      <p class="dropdown-menu-product-description hidden-xs hidden-sm">Organize, edit, and protect any type of media file on your desktop with our powerful photo management software.</p>
+                    </div>
+                  </div>
+                <% end %>
+              </div>
+              <div class="col-sm-3 dropdown-menu-product">
+                <%= link_to "#" do %>
+                  <div>
+                    <div class="well well-sm dropdown-menu-product-details">
+                      <div class="dropdown-menu-product-item">
+                        <%= image_tag("forever_style_guide/services-logo-sm.png", alt: "Forever Services", class: "dropdown-menu-product-img") %>
+                      </div>
+                      <h4 class="dropdown-menu-product-title hidden-xs hidden-sm">Photo Scanning and Media Conversion</h4>
+                      <p class="dropdown-menu-product-description hidden-xs hidden-sm">Send us old pictures, slides, photo albums, videos, audio tapes - anything! We’ll store them online, where you can then share them with anyone!</p>
+                    </div>
+                  </div>
+                <% end %>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </li>
+      <li class="nav-item">
+        <%= link_to "Guarantee", "#", class: 'nav-item-tab' %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "Print Shop", "#", class: 'nav-item-tab' %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "Digital Art", "#", class: 'nav-item-tab' %>
+      </li>
+      <li class="dropdown dropdown-left nav-item">
+        <a href="#" title="View More" class="nav-item-tab dropdown-toggle" data-toggle="dropdown">More</a>
+        <ul class="dropdown-menu dropdown-menu-nav dropdown-menu-more">
+          <li>
+            <div class="row">
+              <div class="col-sm-6 dropdown-menu-more-list">
+                <ul class="list-unstyled">
+                  <li>
+                    <%= link_to "About Forever", "https://www.forever.com/about", class: 'dropdown-menu-more-link', title: 'About Forever' %>
+                  </li>
+                  <li>
+                    <%= link_to "Beliefs & Values", "https://www.forever.com/about/beliefs", class: 'dropdown-menu-more-link', title: 'Beliefs & Values' %>
+                  </li> 
+                  <li>
+                    <%= link_to "Team", "https://www.forever.com/about/team", class: 'dropdown-menu-more-link', title: 'Our Team' %>
+                  </li>
+                  <li>
+                    <%= link_to "Press", "https://www.forever.com/about/press", class: 'dropdown-menu-more-link', title: 'Our Press' %>
+                  </li>
+                  <li>
+                    <%= link_to "Careers", "http://forever.theresumator.com/apply", class: 'dropdown-menu-more-link', title: 'Careers' %>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="col-sm-6">
+                <div class="well">
+                  <p class="dropdown-menu-more-featured">
+                  <%= link_to "https://forever1.zendesk.com", class: 'dropdown-menu-more-link', title: 'Forever Support' do %>
+                    <span class="fa-stack">
+                      <i class="fa fa-circle color-gray-600 fa-stack-2x"></i>
+                      <i class="fa fa-question fa-stack-1x color-white"></i>
+                    </span>
+                    Support
+                  <% end %>
+                  </p>
+                  <p class="dropdown-menu-more-featured">
+                  <%= link_to "http://blog.forever.com/", class: 'dropdown-menu-more-link', title: 'Forever Blog' do %>
+                    <span class="fa-stack">
+                      <i class="fa fa-circle color-gray-600 fa-stack-2x"></i>
+                      <i class="fa fa-rss fa-stack-1x color-white"></i>
+                    </span>
+                    Blog
+                  <% end %>
+                  </p>
+                  <p class="dropdown-menu-more-featured">
+                  <%= link_to "http://www.foreverlive2015.com/", class: 'dropdown-menu-more-link', title: 'Forever Live!' do %>
+                    <span class="fa-stack">
+                      <i class="fa fa-circle color-gray-600 fa-stack-2x"></i>
+                      <i class="fa fa-bullhorn fa-stack-1x color-white"></i>
+                    </span>
+                    Forever Live!
+                  <% end %>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <%= render partial: "forever_style_guide/sections/components/sign_in" %>
+    </ul>
+  </div><!--/.nav-collapse -->
+</nav>
+
+<div class="account-popover-container"></div>
+<div class="account-popover-container-mobile"></div>

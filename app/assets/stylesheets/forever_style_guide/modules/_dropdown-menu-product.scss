@@ -1,0 +1,82 @@
+// "Products & Services" primary nav items
+$product-image-height: 50px;
+$product-image-lg-factor: 1.2;
+$product-image-sm-factor: 0.85;
+
+.dropdown-menu-product {
+  padding: 25px;
+
+  @media (max-width: $grid-float-breakpoint) {
+    padding: 5px;
+  }
+
+  a:hover,
+  a:active,
+  a:focus {
+    text-decoration: none;
+  }
+  .dropdown-menu-product-title,
+  .dropdown-menu-product-description {
+    color: color('text');
+  }
+  &:hover,
+  &:focus,
+  &:active {
+    .dropdown-menu-product-title {
+      color: color('secondary');
+      text-decoration: underline;
+    }
+  }
+  .well {
+    margin-bottom: 0;
+    min-height: 310px;
+    background-color: color('white');
+    @extend %card-shadow;
+
+    @media (max-width: $grid-float-breakpoint) {
+      min-height: 0;
+      margin-bottom: 15px;
+      padding: 0;
+    }
+    @media (min-width: $screen-xl) {
+      min-height: 270px;
+    }
+    @media (min-width: $screen-xxl) {
+      min-height: 230px;
+    }
+  }
+}
+.dropdown-menu-product-item {
+  margin-bottom: 30px;
+  height: $product-image-height;
+  text-align: center;
+
+  @media (max-width: $grid-float-breakpoint) {
+    margin-bottom: 10px;
+  }
+}
+.dropdown-menu-product-img {
+  padding-top: 10px;
+
+  @media (max-width: $grid-float-breakpoint) {
+    max-height: $product-image-height * $product-image-sm-factor;
+  }
+  @media (max-width: $screen-sm) {
+    max-height: $product-image-height;
+  }
+  @media (min-width: $grid-float-breakpoint) {
+    max-height: $product-image-height * $product-image-lg-factor;
+  }
+}
+.dropdown-menu-product-details {
+  position: relative;
+  min-width: 220px;
+
+  @media (max-width: $grid-float-breakpoint) {
+    min-width: 0;
+  }
+}
+.dropdown-menu-product-title,
+.dropdown-menu-product-description {
+  text-align: center;
+}

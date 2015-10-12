@@ -1,0 +1,60 @@
+// "More" primary menu item dropdown
+.dropdown-menu-more {
+  @media (min-width: $screen-md-min) {
+    width: 540px;
+    padding: 25px 40px 30px;
+  }
+  .dropdown-menu-more-link {
+    display: block;
+    padding-top: 10px;
+    color: color('gray-500');
+    font-size: font-size('default');
+
+    @media (min-width: $screen-md-min) {
+      color: color('gray-600');
+      font-size: font-size('large');
+    }
+    &:hover,
+    &:focus,
+    &:active {
+      color: color('secondary');
+      background-color: transparent;
+      background-image: none;
+      text-decoration: none;
+
+      .fa-circle {
+        color: color('secondary');
+      }
+      .fa-stack-1x {
+        @extend %text-shadow;
+      }
+    }
+  }
+  .fa-stack {
+    margin-right: 5px;
+  }
+  .well {
+    margin-bottom: 0;
+    padding: 10px 0 15px 10px;
+    border-radius: 0;
+
+    @media (min-width: $screen-sm-min) {
+      margin: 10px;
+      border-radius: $border-radius-default;
+    }
+    @media (min-width: $screen-md-min) {
+      margin: 0;
+    }
+  }
+}
+.dropdown-menu-more-featured {
+  margin-bottom: 5px;
+}
+.dropdown-menu-more-list {
+  padding: 10px 0 15px 25px;
+
+  @media (min-width: $screen-md-min) {
+    margin-top: -5px;
+    padding: 0;
+  }
+}
