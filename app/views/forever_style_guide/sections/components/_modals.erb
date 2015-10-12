@@ -1,10 +1,26 @@
 <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-  Launch Modal
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#mySignupModal">
+  Sign Up
 </button>
 
-<!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#myConfirmModal3">
+  Delete Album
+</button>
+
+<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myConfirmModal4">
+  Delete Album
+</button>
+
+<button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#myConfirmModal">
+  Delete Content
+</button>
+
+<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myConfirmModal2">
+  Delete Content
+</button>
+
+<!-- Modal 1 -->
+<div class="modal fade" id="mySignupModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
 
@@ -57,6 +73,186 @@
         Already have a Forever Account? <a href="" class="toggle-options">Sign in.</a>
       </div>
 
+    </div>
+  </div>
+</div>
+
+<!-- Delete Album and Nested Albums -->
+<div class="modal fade" id="myConfirmModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h3 class="modal-title" id="myModalLabel">Delete Album & Nested Albums?</h3>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i class="modal-close_icon fa fa-times-circle-o"></i></span></button>
+      </div>
+
+      <div class="modal-body l-padded">
+        <div class="container-fluid"> <!-- the container-fluid class here allows us to use any gridding or other bootstrap layout we like within the modal -->
+          <div class="row">
+            <ul>
+              <li>
+                <p>Will delete this album and 15 nested albums <i class="fa fa-question-circle" data-toggle="tooltip" data-placement="top" title="Nested Albums are albums organized within other albums."></i></p>
+              </li>
+              <li>
+                <p>Your photos will <strong>not</strong> be deleted</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+
+        <div class="checkbox checkbox-inline checkbox-branded pull-left">
+          <label for="inline1" class="checkbox-label">
+            <input type="checkbox" name="inline1" id="inline1" check="">
+            <span class="checkbox-visual"></span>
+            Delete everything within album
+          </label>
+        </div>
+        <div class="pull-right">
+          <a href="#" class="btn btn-link">Cancel</a>
+          <a href="#" class="btn btn-primary">Delete Album</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Delete Album & Nested Albums & All Content -->
+<div class="modal fade" id="myConfirmModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h3 class="modal-title" id="myModalLabel">Delete Album & Nested Albums?</h3>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i class="modal-close_icon fa fa-times-circle-o"></i></span></button>
+      </div>
+
+      <div class="modal-body l-padded">
+        <div class="container-fluid">
+          <div class="row">
+            <ul>
+              <li>
+                <p>Will delete this album and 15 nested albums <i class="fa fa-question-circle" data-toggle="tooltip" data-placement="top" title="Nested Albums are albums organized within other albums."></i></p>
+              </li>
+              <li class="text-danger">
+                <p class="text-danger"><%= fa_icon "warning" %> Will also delete 1242 photos & documents within this album and nested albums.</p>
+              </li>
+              <li class="text-danger">
+                <p class="text-danger"><%= fa_icon "warning" %> This action cannot be undone.</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+
+        <div class="checkbox checkbox-inline checkbox-branded pull-left">
+          <label for="inline2" class="checkbox-label">
+            <input type="checkbox" name="inline2" id="inline2" check="">
+            <span class="checkbox-visual"></span>
+            Delete everything within album
+          </label>
+        </div>
+        <div class="pull-right">
+          <a href="#" class="btn btn-link">Cancel</a>
+          <a href="#" class="btn btn-danger">Delete Album & Contents</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Delete Album -->
+<div class="modal fade" id="myConfirmModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h3 class="modal-title" id="myModalLabel">Delete Album?</h3>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i class="modal-close_icon fa fa-times-circle-o"></i></span></button>
+      </div>
+
+      <div class="modal-body l-padded">
+        <div class="container-fluid">
+          <div class="row">
+            <ul>
+              <li>
+                <p>Will delete this album</p>
+              </li>
+              <li>
+                <p>Your photos will <strong>not</strong> be deleted</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+
+        <div class="checkbox checkbox-inline checkbox-branded pull-left">
+          <label for="inline3" class="checkbox-label">
+            <input type="checkbox" name="inline3" id="inline3" check="">
+            <span class="checkbox-visual"></span>
+            Delete everything within album
+          </label>
+        </div>
+        <div class="pull-right">
+          <a href="#" class="btn btn-link">Cancel</a>
+          <a href="#" class="btn btn-primary">Delete Album</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Delete Album and all content -->
+<div class="modal fade" id="myConfirmModal4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h3 class="modal-title" id="myModalLabel">Delete Album?</h3>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i class="modal-close_icon fa fa-times-circle-o"></i></span></button>
+      </div>
+
+      <div class="modal-body l-padded">
+        <div class="container-fluid">
+          <div class="row">
+            <ul>
+              <li>
+                <p>Will delete this album</p>
+              </li>
+              <li class="text-danger">
+                <p class="text-danger"><%= fa_icon "warning" %> Will also delete 132 photos & documents within this album.</p>
+              </li>
+              <li class="text-danger">
+                <p class="text-danger"><%= fa_icon "warning" %> This action cannot be undone.</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+
+        <div class="checkbox checkbox-inline checkbox-branded pull-left">
+          <label for="inline4" class="checkbox-label">
+            <input type="checkbox" name="inline4" id="inline4" check="">
+            <span class="checkbox-visual"></span>
+            Delete everything within album
+          </label>
+        </div>
+        <div class="pull-right">
+          <a href="#" class="btn btn-link">Cancel</a>
+          <a href="#" class="btn btn-danger">Delete Album & Contents</a>
+        </div>
+      </div>
     </div>
   </div>
 </div>
