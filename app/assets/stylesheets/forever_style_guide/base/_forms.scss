@@ -7,6 +7,12 @@
   margin-bottom: 15px;
 }
 
+.form-group-no_label {
+  @media (min-width: $screen-md-min) {
+    margin-top: 25px; // visual alignment for second field with no label, i.e. inline "Last Name"
+  }
+}
+
 .input-lg,
 .input-lg.form-control {
   height: $btn-lg-size;
@@ -27,4 +33,9 @@
   height: $btn-xs-size;
   border-radius: $border-radius-small;
   font-size: font-size('small');
+}
+
+label {
+  font-family: $font-face-regular;
+  font-weight: normal;
 }

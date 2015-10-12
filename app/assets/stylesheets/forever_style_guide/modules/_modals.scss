@@ -1,0 +1,57 @@
+// preventing  .style-guide-partial .style-guide-partial-rendered > * from forcing modal to render inline 
+.style-guide-partial .style-guide-partial-rendered .modal {
+  position: fixed;
+}
+
+.modal-dialog {
+  @media (min-width: $screen-md-min) {
+    width: 720px;
+  }
+}
+.modal-content {
+  border: 0;
+  border-radius: $border-radius-large;
+  @include box-shadow(transparentize($color-black, 0.6) 0 0 12px);
+}
+.modal-header {
+  @include center_with_flexbox(center, center);
+  background-color: color('gray-300');
+  border-top-right-radius: $border-radius-large;
+  border-top-left-radius: $border-radius-large;
+
+  .close {
+    -webkit-flex: 1 0 0;
+    flex: 1 0 0;
+    opacity: 1.0;
+    color: color('gray-500');
+    font-size: font-size(700);
+    text-shadow: none;
+
+    &:hover {
+      color: color('secondary');
+    }
+  }
+}
+.modal-title {
+  -webkit-flex: 8 0 0;
+  flex: 8 0 0;
+
+  @media (min-width: $screen-sm-min) {
+    -webkit-flex: 10 0 0;
+    flex: 10 0 0;
+  }
+}
+.modal-footer {
+  text-align: center;
+  border-top: 0;
+  background-color: color('gray-300');
+  border-bottom-right-radius: $border-radius-large;
+  border-bottom-left-radius: $border-radius-large;
+}
+
+.modal-backdrop {
+  background-color: $color-black;
+  &.in {
+    opacity: 0.6;
+  }
+}

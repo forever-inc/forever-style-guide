@@ -1,14 +1,23 @@
-<label>Basic Forms</label>
 <form>
-  <div class="form-group">
+  <div class="row">
+    <div class="form-group form-group-lg col-xs-12 col-sm-6">
+      <label class="login-label" for="new_firstname">Your Name*</label>
+      <input type="text" name="new_firstname" value="" placeholder="First Name" id="new_firstname" class="form-control" />
+    </div>
+    <div class="form-group form-group-lg form-group-no_label col-xs-12 col-sm-6">
+      <label class="sr-only" for="new_lasttname">Your Last Name*</label>
+      <input type="text" name="new_lastname" value="" placeholder="Last Name" id="new_lastname" class="form-control" />
+    </div>
+  </div>
+  <div class="form-group form-group-lg">
     <label for="exampleInputEmail1">Email address</label>
     <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
   </div>
-  <div class="form-group">
+  <div class="form-group form-group-lg">
     <label for="exampleInputPassword1">Password</label>
     <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
   </div>
-  <div class="form-group">
+  <div class="form-group l-section">
     <label for="exampleInputFile">File input</label>
     <input type="file" id="exampleInputFile">
     <p class="help-block">Example block-level help text here.</p>

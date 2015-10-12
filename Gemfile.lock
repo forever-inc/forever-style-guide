@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    forever_style_guide (1.2.2)
+    forever_style_guide (1.2.3)
       bootstrap-sass
       compass-rails
       font-awesome-rails
