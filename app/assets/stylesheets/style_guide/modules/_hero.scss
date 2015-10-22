@@ -1,3 +1,4 @@
 .hero.hero-sample {
   background-image: image-url("style_guide/hero/beach-girl.jpg");
+  background-position: 50% 70% !important; // blurjs inlines background-position
 }
