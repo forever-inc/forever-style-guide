@@ -323,7 +323,7 @@ var blurGenerated = false;
 
 var updateHeroPosition = function() {
   var $source = $('.hero-blur');
-  var $blur = $(".hero-blur-block");
+  var $blur = $(".hero-block-blur");
 
   var imgWidth = $blur.attr('data-hero-width');
   var imgHeight = $blur.attr('data-hero-height');
@@ -364,7 +364,7 @@ var updateHeroPosition = function() {
 
 
 var generateHeroBlur = function(done) {
-  $('.hero-blur-block').blurjs({
+  $('.hero-block-blur').blurjs({
     source: '.hero-blur',
     radius: 40,
     overlay: 'rgba(255,255,255,0.7)'
@@ -380,13 +380,13 @@ $(function() {
 
   // mobile images will use optimized image fallback
   if ($(window).width() <= 768) {
-    $(".hero-blur-block-side").addClass('hero-blur-block-visible');
+    $(".hero-block-side .hero-block-blur").addClass('hero-block-blur-visible');
   }
 
   generateHeroBlur(function(e, canvas) {
     blurGenerated = true;
     // initializes position upon load
-    $(e.target).addClass('hero-blur-block-visible');
+    $(e.target).addClass('hero-block-blur-visible');
     updateHeroPosition();
   });
 
@@ -407,9 +407,9 @@ $(window).resize(function() {
   // if mobile optimized image was loaded, now generate a proper blur image (mostly for local testing)
   if (!blurGenerated && $(window).width() >= 768) {
     blurGenerated = true;
-    $(".hero-blur-block").removeClass('hero-blur-block-visible');
+    $(".hero-block-blur").removeClass('hero-block-blur-visible');
     generateHeroBlur(function(e, canvas) {
-      $(e.target).addClass('hero-blur-block-visible');
+      $(e.target).addClass('hero-block-blur-visible');
       updateHeroPosition();
     });
   }
