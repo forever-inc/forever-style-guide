@@ -316,66 +316,71 @@
     : function (r, factory) { factory(jQuery); }
 );
 
-// percentage of 'x' position of center of focus for bg scaling
-var xFocus = 0.8;
-var yFocus = 0.5;
-var blurGenerated = false;
+$(function UpdateHeroModule () {
+  // percentage of 'x' position of center of focus for bg scaling
+  var xFocus = 0.8;
+  var yFocus = 0.5;
+  var blurGenerated = false;
 
-var updateHeroPosition = function() {
-  var $source = $('.hero-blur');
-  var $blur = $(".hero-block-blur");
+  this.updateHeroPosition = function updateHeroPosition() {
+    var $source = $('.hero-blur');
+    var $blur = $(".hero-block-blur");
 
-  var imgWidth = $blur.attr('data-hero-width');
-  var imgHeight = $blur.attr('data-hero-height');
-  var imgScale = imgHeight / imgWidth;
-  var heroScale = $source.outerHeight() / $source.outerWidth();
+    var imgWidth = $blur.attr('data-hero-width');
+    var imgHeight = $blur.attr('data-hero-height');
+    var imgScale = imgHeight / imgWidth;
+    var heroScale = $source.outerHeight() / $source.outerWidth();
 
-  // how many scaled pixels are on/off the viewport
-  var imgOnScreenX = (imgScale / heroScale) * imgWidth;
-  var imgOffScreenX = imgWidth - imgOnScreenX;
-  var imgOnScreenY = (imgScale / heroScale) * imgHeight;
-  var imgOffScreenY = imgHeight - imgOnScreenY;
+    // how many scaled pixels are on/off the viewport
+    var imgOnScreenX = (imgScale / heroScale) * imgWidth;
+    var imgOffScreenX = imgWidth - imgOnScreenX;
+    var imgOnScreenY = (imgScale / heroScale) * imgHeight;
+    var imgOffScreenY = imgHeight - imgOnScreenY;
 
-  var viewFactorX = imgOffScreenX / imgOnScreenX;
-  var viewFactorY = Math.abs(imgOffScreenY / imgOnScreenY);
+    var viewFactorX = imgOffScreenX / imgOnScreenX;
+    var viewFactorY = Math.abs(imgOffScreenY / imgOnScreenY);
 
-  // how many actual pixels are on/off the viewport
-  var heroOnScreenX = $source.outerWidth();
-  var heroOffScreenX = heroOnScreenX * viewFactorX;
+    // how many actual pixels are on/off the viewport
+    var heroOnScreenX = $source.outerWidth();
+    var heroOffScreenX = heroOnScreenX * viewFactorX;
 
-  var heroOnScreenY = $source.outerHeight();
-  var heroOffScreenY = heroOnScreenY * viewFactorY;
+    var heroOnScreenY = $source.outerHeight();
+    var heroOffScreenY = heroOnScreenY * viewFactorY;
 
-  var offsetBlurY = $source.offset().top - $blur.offset().top;
-  var offsetBlurX = $source.offset().left - $blur.offset().left;
+    var offsetBlurY = $source.offset().top - $blur.offset().top;
+    var offsetBlurX = $source.offset().left - $blur.offset().left;
 
-  if (heroScale >= imgScale) {
-    //console.log("image is wider than screen", heroOnScreenX, imgOffScreenX, heroOnScreenX, heroOffScreenX, viewFactorX, heroOnScreenY);
-    offsetBlurX -= heroOffScreenX * xFocus;
-    $blur.css('background-size', (heroOnScreenX + heroOffScreenX) + 'px ' + heroOnScreenY + "px");
-  } else {
-    //console.log("image is taller than screen", imgOnScreenY, imgOffScreenY, heroOnScreenY, heroOffScreenY, viewFactorY);
-    $blur.css('background-size',  heroOnScreenX + 'px auto');
-  }
+    if (heroScale >= imgScale) {
+      //console.log("image is wider than screen", heroOnScreenX, imgOffScreenX, heroOnScreenX, heroOffScreenX, viewFactorX, heroOnScreenY);
+      offsetBlurX -= heroOffScreenX * xFocus;
+      $blur.css('background-size', (heroOnScreenX + heroOffScreenX) + 'px ' + heroOnScreenY + "px");
+    } else {
+      //console.log("image is taller than screen", imgOnScreenY, imgOffScreenY, heroOnScreenY, heroOffScreenY, viewFactorY);
+      $blur.css('background-size',  heroOnScreenX + 'px auto');
+    }
 
-  $source.css('background-position', (xFocus * 100) + '% ' + '0%');
-  $blur.css('background-position', (offsetBlurX) + 'px ' + (offsetBlurY) + 'px');
-};
+    $source.css('background-position', (xFocus * 100) + '% ' + '0%');
+    $blur.css('background-position', (offsetBlurX) + 'px ' + (offsetBlurY) + 'px');
+  };
 
+  this.generateHeroBlur = function generateHeroBlur(done) {
+    $('.hero-block-blur').blurjs({
+      source: '.hero-blur',
+      radius: 40,
+      overlay: 'rgba(255,255,255,0.7)'
+    }).on('loaded', function(e, canvas) {
+      //console.log('loaded');
+      done(e, canvas);
+    });
+  };
 
-var generateHeroBlur = function(done) {
-  $('.hero-block-blur').blurjs({
-    source: '.hero-blur',
-    radius: 40,
-    overlay: 'rgba(255,255,255,0.7)'
-  }).on('loaded', function(e, canvas) {
-    //console.log('loaded');
-    done(e, canvas);
-  });
-};
+  window.UpdateHeroModule = UpdateHeroModule;
+} ); (window);
 
 // initialize
 $(function() {
+  var updateHeroModule = new UpdateHeroModule();
+
   $(".hero-blur").addClass('hero-blur-visible');
 
   // mobile images will use optimized image fallback
@@ -383,23 +388,24 @@ $(function() {
     $(".hero-block-side .hero-block-blur").addClass('hero-block-blur-visible');
   }
 
-  generateHeroBlur(function(e, canvas) {
+  updateHeroModule.generateHeroBlur(function(e, canvas) {
     blurGenerated = true;
     // initializes position upon load
     $(e.target).addClass('hero-block-blur-visible');
-    updateHeroPosition();
+    updateHeroModule.updateHeroPosition();
   });
 
-  updateHeroPosition();
+  updateHeroModule.updateHeroPosition();
 });
 
 var windowWidth = $(window).width();
 
 $(window).resize(function() {
+  var updateHeroModule = new UpdateHeroModule();
 
   // Check window width has actually changed and it's not just iOS triggering a resize event on scroll
   if ($(window).width() != windowWidth) {
-    updateHeroPosition();
+    updateHeroModule.updateHeroPosition();
     // Update the window width for next time
     windowWidth = $(window).width();
   }
@@ -408,15 +414,9 @@ $(window).resize(function() {
   if (!blurGenerated && $(window).width() >= 768) {
     blurGenerated = true;
     $(".hero-block-blur").removeClass('hero-block-blur-visible');
-    generateHeroBlur(function(e, canvas) {
+    updateHeroModule.generateHeroBlur(function(e, canvas) {
       $(e.target).addClass('hero-block-blur-visible');
-      updateHeroPosition();
+      updateHeroModule.updateHeroPosition();
     });
   }
-
-});
-
-$(window).scroll(function() {
-  // enables fixed display behavior
-  //updateHeroPosition();
 });
