@@ -316,7 +316,9 @@
     : function (r, factory) { factory(jQuery); }
 );
 
-$(function UpdateHeroModule () {
+
+(function UpdateHeroModule (elem) {
+
   // percentage of 'x' position of center of focus for bg scaling
   var xFocus = 0.8;
   var yFocus = 0.5;
@@ -363,45 +365,49 @@ $(function UpdateHeroModule () {
     $blur.css('background-position', (offsetBlurX) + 'px ' + (offsetBlurY) + 'px');
   };
 
-  this.generateHeroBlur = function generateHeroBlur(done) {
+  this.generateHeroBlur = function(done) {
     $('.hero-block-blur').blurjs({
       source: '.hero-blur',
       radius: 40,
       overlay: 'rgba(255,255,255,0.7)'
     }).on('loaded', function(e, canvas) {
-      //console.log('loaded');
       done(e, canvas);
     });
   };
 
-  window.UpdateHeroModule = UpdateHeroModule;
-} ); (window);
+  this.initialize = function() {
+    $(".hero-blur").addClass('hero-blur-visible');
+
+    // mobile images will use optimized image fallback
+    if ($(window).width() <= 768) {
+      $(".hero-block-side .hero-block-blur").addClass('hero-block-blur-visible');
+    }
+
+    this.generateHeroBlur(function(e, canvas) {
+      blurGenerated = true;
+      // initializes position upon load
+      $(e.target).addClass('hero-block-blur-visible');
+      this.updateHeroPosition();
+      console.log('hey ya');
+    });
+
+    this.updateHeroPosition();
+  }
+
+  elem.UpdateHeroModule = this;
+})(window);
 
 // initialize
 $(function() {
-  var updateHeroModule = new UpdateHeroModule();
-
-  $(".hero-blur").addClass('hero-blur-visible');
-
-  // mobile images will use optimized image fallback
-  if ($(window).width() <= 768) {
-    $(".hero-block-side .hero-block-blur").addClass('hero-block-blur-visible');
-  }
-
-  updateHeroModule.generateHeroBlur(function(e, canvas) {
-    blurGenerated = true;
-    // initializes position upon load
-    $(e.target).addClass('hero-block-blur-visible');
-    updateHeroModule.updateHeroPosition();
-  });
-
-  updateHeroModule.updateHeroPosition();
-});
+  setTimeout(function() {
+    window.UpdateHeroModule.initialize();
+  }, 100);
+})
 
 var windowWidth = $(window).width();
 
 $(window).resize(function() {
-  var updateHeroModule = new UpdateHeroModule();
+  var updateHeroModule = window.UpdateHeroModule;
 
   // Check window width has actually changed and it's not just iOS triggering a resize event on scroll
   if ($(window).width() != windowWidth) {
