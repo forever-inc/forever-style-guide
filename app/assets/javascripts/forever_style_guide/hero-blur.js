@@ -325,6 +325,7 @@
   var yFocus = 0.5;
 
   this.blurGenerated = false;
+  this.windowWidth = $(window).width();
 
   this.updateHeroPosition = function updateHeroPosition() {
     var $source = $('.hero-blur');
@@ -380,11 +381,6 @@
   this.initialize = function() {
     $(".hero-blur").addClass('hero-blur-visible');
 
-    // mobile images will use optimized image fallback
-    if ($(window).width() <= 768) {
-      $(".hero-block-side .hero-block-blur").addClass('hero-block-blur-visible');
-    }
-
     this.generateHeroBlur(function(e, canvas) {
       this.blurGenerated = true;
       // initializes position upon load
@@ -404,18 +400,23 @@ $(function() {
   setTimeout(function() {
     window.UpdateHeroModule.initialize();
   }, 100);
+
+  // mobile images will use optimized image fallback
+  if ($(window).width() <= 768) {
+    $(".hero-blur").addClass('hero-blur-visible');
+    $(".hero-block-side .hero-block-blur").addClass('hero-block-blur-visible');
+  }
 });
 
-var windowWidth = $(window).width();
 
 $(window).resize(function() {
   var updateHeroModule = window.UpdateHeroModule;
 
   // Check window width has actually changed and it's not just iOS triggering a resize event on scroll
-  if ($(window).width() != windowWidth) {
+  if ($(window).width() != updateHeroModule.windowWidth) {
     updateHeroModule.updateHeroPosition();
     // Update the window width for next time
-    windowWidth = $(window).width();
+    updateHeroModule.windowWidth = $(window).width();
   }
 
   // if mobile optimized image was loaded, now generate a proper blur image (mostly for local testing)
