@@ -313,7 +313,8 @@
 })(
   typeof define === 'function' && define.amd
     ? define
-    : function (r, factory) { factory(jQuery); }
+    : function (r, factory) { factory(jQuery);
+  }
 );
 
 
@@ -322,7 +323,8 @@
   // percentage of 'x' position of center of focus for bg scaling
   var xFocus = 0.8;
   var yFocus = 0.5;
-  var blurGenerated = false;
+
+  this.blurGenerated = false;
 
   this.updateHeroPosition = function updateHeroPosition() {
     var $source = $('.hero-blur');
@@ -384,15 +386,14 @@
     }
 
     this.generateHeroBlur(function(e, canvas) {
-      blurGenerated = true;
+      this.blurGenerated = true;
       // initializes position upon load
       $(e.target).addClass('hero-block-blur-visible');
       this.updateHeroPosition();
-      console.log('hey ya');
     });
 
     this.updateHeroPosition();
-  }
+  };
 
   elem.UpdateHeroModule = this;
 })(window);
@@ -403,7 +404,7 @@ $(function() {
   setTimeout(function() {
     window.UpdateHeroModule.initialize();
   }, 100);
-})
+});
 
 var windowWidth = $(window).width();
 
@@ -418,8 +419,8 @@ $(window).resize(function() {
   }
 
   // if mobile optimized image was loaded, now generate a proper blur image (mostly for local testing)
-  if (!blurGenerated && $(window).width() >= 768) {
-    blurGenerated = true;
+  if (!updateHeroModule.blurGenerated && $(window).width() >= 768) {
+    updateHeroModule.blurGenerated = true;
     $(".hero-block-blur").removeClass('hero-block-blur-visible');
     updateHeroModule.generateHeroBlur(function(e, canvas) {
       $(e.target).addClass('hero-block-blur-visible');
