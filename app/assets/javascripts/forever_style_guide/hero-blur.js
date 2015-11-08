@@ -371,8 +371,8 @@
   this.generateHeroBlur = function(done) {
     $('.hero-block-blur').blurjs({
       source: '.hero-blur',
-      radius: 40,
-      overlay: 'rgba(255,255,255,0.7)'
+      radius: 30,
+      overlay: 'rgba(255,255,255,0.8)'
     }).on('loaded', function(e, canvas) {
       done(e, canvas);
     });
