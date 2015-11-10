@@ -15,6 +15,30 @@
 </div>
 
 <div class="account-popover hidden">
+  <div class="account-popover-storage l-padded-thin">
+    <div class="row">
+      <div class="col-sm-6">Permanent Member</div>
+      <div class="col-sm-6 text-right">
+        <%= link_to "#", class: 'account-popover-link account-popover-link-text' do %>
+          26% of 10GB <%= fa_icon("chevron-right") %>
+        <% end %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="progress progress-thin">
+          <div class="progress-bar" role="progressbar" aria-valuenow="26" aria-valuemin="0" aria-valuemax="100" style="width: 26%">
+            <span class="progress-label">26%</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12">
+        <button class="btn btn-gray btn-inverse btn-block">Upgrade My Storage</button>
+      </div>
+    </div>
+  </div>
   <div class="account-popover-app">
     <div class="row">
       <div class="col-sm-6">

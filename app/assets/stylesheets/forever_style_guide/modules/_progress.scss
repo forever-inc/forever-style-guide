@@ -5,7 +5,18 @@ $progress-rounding: 10px;
   border-radius: $progress-rounding;
   background-color: $color-background;
 }
+.progress-thin {
+  height: 5px;
+  border-radius: 0;
+  background: color('black');
 
+  .progress-bar {
+    border-radius: 0;
+  }
+  .progress-label {
+    display: none;
+  }
+}
 .progress-bar,
 .progress-bar-default {
   line-height: 17px; // line height centers the label vertically
