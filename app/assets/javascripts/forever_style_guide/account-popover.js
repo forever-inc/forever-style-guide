@@ -1,3 +1,47 @@
+var accountPopover = (function () {
+  var _addStateClasses = function (container, state) {
+    container.find(".account-popover-link-text").addClass("account-popover-link-" + state);
+    container.find(".account-popover-storage-upgrade .btn").addClass("btn-" + state);
+    container.find(".progress-bar").addClass("progress-bar-" + state);
+  };
+
+  var _resetClasses = function (container) {
+    container.find(".account-popover-link-danger").removeClass("account-popover-link-danger");
+    container.find(".account-popover-link-warning").removeClass("account-popover-link-warning");
+    container.find(".account-popover-storage-upgrade .btn").removeClass("btn-danger btn-warning");
+    container.find(".progress-bar").removeClass("progress-bar-danger progress-bar-warning");
+  };
+
+  var setAccountStorage = function (storage) {
+    if (!storage.membership_type || !storage.percent_used || !storage.total_storage) {
+      return console.warn("argument storage must contain the following keys: 'membership_type', 'percent_used', 'total_storage'");
+    }
+
+    var $c = $(".account-popover-storage");
+    var percentAsInt = parseInt(storage.percent_used);
+
+    _resetClasses($c);
+
+    $c.find(".account-popover-membership_type").html(storage.membership_type);
+    $c.find(".account-popover-percent_used, .progress-label").html(storage.percent_used);
+    $c.find(".account-popover-total_storage").html(storage.total_storage);
+    $c.find(".progress-bar").attr("style", "width: " + storage.percent_used + ";");
+
+    if (percentAsInt >= 100) {
+      _addStateClasses($c, "danger");
+      $c.find(".account-popover-storage-upgrade").show();
+    } else if (percentAsInt >= 90) {
+      _addStateClasses($c, "warning");
+    } else {
+      $c.find(".account-popover-storage-upgrade").hide();
+    }
+  };
+
+  return {
+    setAccountStorage: setAccountStorage
+  };
+})();
+
 // Trigger account popovers
 $(function () {
   $('[data-toggle="popover-desktop"]').popover({
@@ -25,8 +69,8 @@ $(function () {
   $('.account-popover-trigger').on('shown.bs.popover', function () {
     var windowHeight = $(window).height();
 
-    $(function() { 
-      var navHeight = ($('#header-is_fixed').outerHeight()); 
+    $(function() {
+      var navHeight = ($('#header-is_fixed').outerHeight());
       if (navHeight >= windowHeight) {
         $('body').addClass('body-fixed');
         $('#header-is_fixed').css('max-height', windowHeight);

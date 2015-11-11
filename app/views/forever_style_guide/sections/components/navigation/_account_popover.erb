@@ -17,10 +17,10 @@
 <div class="account-popover hidden">
   <div class="account-popover-storage l-padded-thin">
     <div class="row">
-      <div class="col-sm-6">Permanent Member</div>
+      <div class="col-sm-6 account-popover-membership_type">Permanent Member</div>
       <div class="col-sm-6 text-right">
         <%= link_to "#", class: 'account-popover-link account-popover-link-text' do %>
-          26% of 10GB <%= fa_icon("chevron-right") %>
+          <span class="account-popover-percent_used">26%</span> of <span class="account-popover-total_storage">10GB</span> <%= fa_icon("chevron-right") %>
         <% end %>
       </div>
     </div>
@@ -33,7 +33,7 @@
         </div>
       </div>
     </div>
-    <div class="row">
+    <div class="row account-popover-storage-upgrade">
       <div class="col-sm-12">
         <button class="btn btn-gray btn-inverse btn-block">Upgrade My Storage</button>
       </div>
