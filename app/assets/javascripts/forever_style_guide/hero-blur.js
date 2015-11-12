@@ -313,7 +313,8 @@
 })(
   typeof define === 'function' && define.amd
     ? define
-    : function (r, factory) { factory(jQuery); }
+    : function (r, factory) { factory(jQuery);
+  }
 );
 
 
@@ -322,7 +323,9 @@
   // percentage of 'x' position of center of focus for bg scaling
   var xFocus = 0.8;
   var yFocus = 0.5;
-  var blurGenerated = false;
+
+  this.blurGenerated = false;
+  this.windowWidth = $(window).width();
 
   this.updateHeroPosition = function updateHeroPosition() {
     var $source = $('.hero-blur');
@@ -368,8 +371,8 @@
   this.generateHeroBlur = function(done) {
     $('.hero-block-blur').blurjs({
       source: '.hero-blur',
-      radius: 40,
-      overlay: 'rgba(255,255,255,0.7)'
+      radius: 30,
+      overlay: 'rgba(255,255,255,0.8)'
     }).on('loaded', function(e, canvas) {
       done(e, canvas);
     });
@@ -378,21 +381,15 @@
   this.initialize = function() {
     $(".hero-blur").addClass('hero-blur-visible');
 
-    // mobile images will use optimized image fallback
-    if ($(window).width() <= 768) {
-      $(".hero-block-side .hero-block-blur").addClass('hero-block-blur-visible');
-    }
-
     this.generateHeroBlur(function(e, canvas) {
-      blurGenerated = true;
+      this.blurGenerated = true;
       // initializes position upon load
       $(e.target).addClass('hero-block-blur-visible');
       this.updateHeroPosition();
-      console.log('hey ya');
     });
 
     this.updateHeroPosition();
-  }
+  };
 
   elem.UpdateHeroModule = this;
 })(window);
@@ -403,23 +400,28 @@ $(function() {
   setTimeout(function() {
     window.UpdateHeroModule.initialize();
   }, 100);
-})
 
-var windowWidth = $(window).width();
+  // mobile images will use optimized image fallback
+  if ($(window).width() <= 768) {
+    $(".hero-blur").addClass('hero-blur-visible');
+    $(".hero-block-side .hero-block-blur").addClass('hero-block-blur-visible');
+  }
+});
+
 
 $(window).resize(function() {
   var updateHeroModule = window.UpdateHeroModule;
 
   // Check window width has actually changed and it's not just iOS triggering a resize event on scroll
-  if ($(window).width() != windowWidth) {
+  if ($(window).width() != updateHeroModule.windowWidth) {
     updateHeroModule.updateHeroPosition();
     // Update the window width for next time
-    windowWidth = $(window).width();
+    updateHeroModule.windowWidth = $(window).width();
   }
 
   // if mobile optimized image was loaded, now generate a proper blur image (mostly for local testing)
-  if (!blurGenerated && $(window).width() >= 768) {
-    blurGenerated = true;
+  if (!updateHeroModule.blurGenerated && $(window).width() >= 768) {
+    updateHeroModule.blurGenerated = true;
     $(".hero-block-blur").removeClass('hero-block-blur-visible');
     updateHeroModule.generateHeroBlur(function(e, canvas) {
       $(e.target).addClass('hero-block-blur-visible');
