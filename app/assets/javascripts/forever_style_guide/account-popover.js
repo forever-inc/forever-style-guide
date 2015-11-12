@@ -1,10 +1,35 @@
+// an 'accounPopover' namespace for additional popover functionality.
 var accountPopover = (function () {
+  /**
+    Apply 'danger', 'warning' classes to the
+    popover's progress bar and upgrade button.
+
+    Example
+
+    ```javascript
+      _addStateClasses($popoverContainer, 'danger');
+    ```
+
+    @private
+  */
   var _addStateClasses = function (container, state) {
     container.find(".account-popover-link-text").addClass("account-popover-link-" + state);
     container.find(".account-popover-storage-upgrade .btn").addClass("btn-" + state);
     container.find(".progress-bar").addClass("progress-bar-" + state);
   };
 
+  /**
+    Removes the 'danger' and 'warning' classes to
+    the popover's progress bar and upgrade button.
+
+    Example
+
+    ```javascript
+      _resetClasses($popoverContainer);
+    ```
+
+    @private
+  */
   var _resetClasses = function (container) {
     container.find(".account-popover-link-danger").removeClass("account-popover-link-danger");
     container.find(".account-popover-link-warning").removeClass("account-popover-link-warning");
@@ -12,28 +37,46 @@ var accountPopover = (function () {
     container.find(".progress-bar").removeClass("progress-bar-danger progress-bar-warning");
   };
 
+  /**
+    Sets the user's storage data in the account
+    popover.
+
+    Example
+
+    ```javascript
+      var storage = {
+        membership_type: "Intro Member",
+        percent_used: "35%",
+        total_storage: "3GB"
+      };
+
+      accountPopover.setAccountStorage(storage)
+    ```
+
+    @public
+  */
   var setAccountStorage = function (storage) {
     if (!storage.membership_type || !storage.percent_used || !storage.total_storage) {
       return console.warn("argument storage must contain the following keys: 'membership_type', 'percent_used', 'total_storage'");
     }
 
-    var $c = $(".account-popover-storage");
+    var container = $(".account-popover-storage");
     var percentAsInt = parseInt(storage.percent_used);
 
-    _resetClasses($c);
+    _resetClasses(container);
 
-    $c.find(".account-popover-membership_type").html(storage.membership_type);
-    $c.find(".account-popover-percent_used, .progress-label").html(storage.percent_used);
-    $c.find(".account-popover-total_storage").html(storage.total_storage);
-    $c.find(".progress-bar").attr("style", "width: " + storage.percent_used + ";");
+    container.find(".account-popover-membership_type").html(storage.membership_type);
+    container.find(".account-popover-percent_used, .progress-label").html(storage.percent_used);
+    container.find(".account-popover-total_storage").html(storage.total_storage);
+    container.find(".progress-bar").attr("style", "width: " + storage.percent_used + ";");
 
     if (percentAsInt >= 100) {
-      _addStateClasses($c, "danger");
-      $c.find(".account-popover-storage-upgrade").show();
+      _addStateClasses(container, "danger");
+      container.find(".account-popover-storage-upgrade").show();
     } else if (percentAsInt >= 90) {
-      _addStateClasses($c, "warning");
+      _addStateClasses(container, "warning");
     } else {
-      $c.find(".account-popover-storage-upgrade").hide();
+      container.find(".account-popover-storage-upgrade").hide();
     }
   };
 
