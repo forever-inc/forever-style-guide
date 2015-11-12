@@ -7,13 +7,13 @@ $webapp-popover-background: #333333;
   position: relative;
   top: 0!important; //override default popover inline styles
   left: 0!important;
+  padding: 0;
   margin-top: 0;
-  background-color: $webapp-popover-background;
   border: 0;
   border-radius: $border-radius-large;
 
-  .arrow:after {
-    border-bottom-color: $webapp-popover-background;
+  .arrow {
+    border-bottom-color: $color-gray-400;
   }
   .popover-content {
     padding: 0;
@@ -73,8 +73,13 @@ $webapp-popover-background: #333333;
     max-width: inherit;
   }
 }
-
+.account-popover-storage {
+  .progress {
+    margin: 10px 0;
+  }
+}
 .account-popover-app {
+  background-color: $webapp-popover-background;
   padding: 25px 35px 15px;
 
   .account-popover-link {
@@ -113,5 +118,16 @@ $webapp-popover-background: #333333;
       margin-right: 10px;
       border-right: 1px solid color('gray-700');
     }
+  }
+}
+.account-popover-link {
+  &.account-popover-link-text {
+    color: color('text');
+  }
+  &.account-popover-link-warning {
+    color: color('warning');
+  }
+  &.account-popover-link-danger {
+    color: color('red');
   }
 }
