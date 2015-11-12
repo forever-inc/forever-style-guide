@@ -190,6 +190,15 @@
 
   // Because of Action buttons particular formatting, it requires some special positioning adjustments
   &.btn-action {
+
+    &.btn-link {
+      &:hover,
+      &:active,
+      &:focus {
+        text-decoration: none;
+      }
+    }
+
     .btn-action-label {
       margin: 0;
       padding-top: 0px;
