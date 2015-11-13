@@ -23,7 +23,6 @@ $variations: (
 
 // appends colors to master color list
 @function set_color($id, $color, $core: false) {
-  @debug $id;
   $colors: map-merge($colors, ($id: $color)) !global; // adds color declaration to global $colors map
 
   @if $core {
