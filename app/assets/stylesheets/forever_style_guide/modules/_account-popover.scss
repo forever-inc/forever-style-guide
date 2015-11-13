@@ -28,7 +28,7 @@ $webapp-popover-background: #333333;
   }
 }
 .account-popover-container {
-  position: fixed;
+  position: absolute;
   height: 0;
   right: 15px;
   top: 55px;
