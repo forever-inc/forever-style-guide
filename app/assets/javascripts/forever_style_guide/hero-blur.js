@@ -396,6 +396,8 @@
 
 // initialize
 $(function() {
+  if (!$(".hero-blur").length) return;
+
   // prevents a race condition where var heroOnScreenY = $source.outerHeight(); above returns an incorrect height
   setTimeout(function() {
     window.UpdateHeroModule.initialize();
