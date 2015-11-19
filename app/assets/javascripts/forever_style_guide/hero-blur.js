@@ -396,6 +396,10 @@
 
 // initialize
 $(function() {
+  // prevent errors on pages that do not contain a '.hero-blur' node.
+  // prefer early return in here vs. wrapping selectors and applying
+  // the plugin so that we don't have add $('.hero-blur').pluginName()
+  // to all of our individual projects.
   if (!$(".hero-blur").length) return;
 
   // prevents a race condition where var heroOnScreenY = $source.outerHeight(); above returns an incorrect height
