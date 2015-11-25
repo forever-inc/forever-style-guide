@@ -1,0 +1,52 @@
+$promo-color: #cc5959;
+
+.promo-banner {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  background-color: $promo-color;
+
+  @media (min-width: $screen-md-min) {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  .page-title {
+    display: inline-block;
+    margin-top: 10px;
+    @extend %text-shadow;
+
+    @media (min-width: $screen-md-min) {
+      margin-top: 5px;
+    }
+  }
+  .btn-promo {
+    color: color('white');
+    background-color: transparent;
+    border: 1px solid color('white');
+    box-shadow: none;
+
+    @media (min-width: $screen-sm-min) {
+      display: inline-block;
+      margin-top: -2px;
+      margin-left: 10px;
+      color: $promo-color;
+      background-color: white;
+      border-color: darken($promo-color, 8%);
+      border-width: 1px;
+
+      &:hover,
+      &:focus,
+      &:active,
+      &:active:focus {
+        background-color: lighten($promo-color, 37%);
+      }
+    }
+    @media (min-width: $screen-md-min) {
+      margin-top: -5px;
+    }
+  }
+  .fa {
+    @media (min-width: $screen-sm-min) {
+      color: darken($promo-color, 8%);
+    }
+  }
+}
