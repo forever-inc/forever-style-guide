@@ -29,6 +29,12 @@ $navbar-height: 50px;
     border: 1px solid color('white');
     box-shadow: none;
 
+    &:hover,
+    &:focus,
+    &:active,
+    &:active:focus {
+      background-color: transparent;
+    }
     @media (min-width: $screen-sm-min) {
       display: inline-block;
       margin-top: -2px;
