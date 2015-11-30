@@ -27,6 +27,10 @@
     padding: 10px 0 10px 10px;
     height: $header_height;
 
+    @media (min-width: $grid-float-breakpoint) {
+      padding-right: 30px;
+    }
+
     .navbar-brand-logo {
       width: 190px;
     }
