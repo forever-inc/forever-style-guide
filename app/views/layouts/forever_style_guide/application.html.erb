@@ -15,7 +15,7 @@
 </head>
 <body class="style-guide" data-spy="scroll" data-target=".style-guide-scrollspy">
 
-  <% if !content_for?(:hide_nav) %>
+  <% if !@hide_navigation %>
     <%= render partial: "layouts/forever_style_guide/navigation" %>
   <% end %>
 
