@@ -14,7 +14,11 @@
   <%= csrf_meta_tags %>
 </head>
 <body class="style-guide" data-spy="scroll" data-target=".style-guide-scrollspy">
-  <%= render partial: "layouts/forever_style_guide/navigation" %>
+
+  <% if !@hide_navigation %>
+    <%= render partial: "layouts/forever_style_guide/navigation" %>
+  <% end %>
+
   <div class="style-guide-body">
     <%= yield %>
   </div>

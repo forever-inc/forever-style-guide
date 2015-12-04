@@ -8,6 +8,7 @@ module ForeverStyleGuide
     end
 
     def demo
+      @hide_navigation = true
       render :file => File.join("forever_style_guide", "demo", params[:path])
     end
 
