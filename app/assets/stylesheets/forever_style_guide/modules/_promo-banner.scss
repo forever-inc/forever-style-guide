@@ -1,7 +1,7 @@
 $promo-color: #cc5959;
 $navbar-height: 50px;
 
-.promo-banner {
+.promo_banner {
   position: relative;
   z-index: $zindex-navbar - 1; // make sure this appears 'above' heroes but behind nav
   margin-top: $navbar-height;
