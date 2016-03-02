@@ -43,7 +43,7 @@ $product-image-main-height: 521px;
       height: 62px;
       font-size: font-size(300);
       line-height: 18px;
-      @include box-shadow($shadow-color 0 2px 4px);
+      @include box-shadow($shadow-color, 0, 2px, 4px);
     }
     @media (max-width: $screen-sm) {
       font-size: font-size(400);

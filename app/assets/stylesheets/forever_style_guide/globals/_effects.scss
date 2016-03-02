@@ -1,34 +1,45 @@
-@import "compass/css3/box-shadow";
 @import "compass/css3/text-shadow";
 @import "compass/css3/images";
 @import "compass/css3/transition";
+
+@mixin box-shadow($color, $top, $left, $blur, $inset: false) {
+  @if $inset {
+    -webkit-box-shadow: inset $top $left $blur $color;
+    -moz-box-shadow: inset $top $left $blur $color;
+    box-shadow: inset $top $left $blur $color;
+  } @else {
+    -webkit-box-shadow: $top $left $blur $color;
+    -moz-box-shadow: $top $left $blur $color;
+    box-shadow: $top $left $blur $color;
+  }
+}
 
 $shadow-color: rgba(color('gray-500'), 0.6);
 $color-card-bg: color('white');
 
 %no-shadow {
-  @include box-shadow(none);
+  @include box-shadow(transparent, 0, 0, 0);
   @include text-shadow(none);
 }
 
 %card-shadow {
-  @include box-shadow($shadow-color 0 2px 4px);
+  @include box-shadow($shadow-color, 0, 2px, 4px);
 }
 
 %footer-shadow {
-  @include box-shadow(lighten($shadow-color, 30%) 0 -1px 2px);
+  @include box-shadow(lighten($shadow-color, 30%), 0, -1px, 2px);
 }
 
 %text-shadow {
-  @include text-shadow($shadow-color 0 1px 2px);
+  @include text-shadow($shadow-color, 0, 1px, 2px);
 }
 
 %item-shadow {
-  @include box-shadow($shadow-color 1px 1px 1px);
+  @include box-shadow($shadow-color, 1px, 1px, 1px);
 }
 
 %inset-shadow {
-  @include box-shadow(inset 0 2px 3px $shadow-color );
+  @include box-shadow(inset 0, 2px, 3px, $shadow-color );
 }
 
 %hero-gradient {
