@@ -1,5 +1,4 @@
 @import "compass/css3/images";
-@import "compass/css3/transition";
 
 @mixin box-shadow($color, $top, $left, $blur, $inset: false) {
   @if $inset {
@@ -11,6 +10,14 @@
     -moz-box-shadow: $top $left $blur $color;
     box-shadow: $top $left $blur $color;
   }
+}
+
+@mixin transition($transition-properties...) {
+  -webkit-transition: $transition-properties;
+  -moz-transition: $transition-properties;
+  -ms-transition: $transition-properties;
+  -o-transition: $transition-properties;
+  transition: $transition-properties;
 }
 
 $shadow-color: rgba(color('gray-500'), 0.6);
@@ -38,7 +45,7 @@ $color-card-bg: color('white');
 }
 
 %inset-shadow {
-  @include box-shadow(inset 0, 2px, 3px, $shadow-color );
+  @include box-shadow(0, 2px, 3px, $shadow-color, true);
 }
 
 %hero-gradient {
@@ -76,8 +83,7 @@ $color-card-bg: color('white');
   font-size: font-size(300);
   border: 0;
 
-  @include transition-property(background-color, border);
-  @include transition-duration(0.3s);
+  @include transition(background-color 0.3s ease);
 
   &:active:focus {
     @extend %inset-shadow;
@@ -101,8 +107,7 @@ $color-card-bg: color('white');
   font-size: font-size('default');
   text-align: center;
 
-  @include transition-property(background-color, color);
-  @include transition-duration(0.3s);
+  @include transition(background-color 0.3s ease, color 0.3s ease);
 }
 
 // creates a sawtooth banner style for each color in core color dictionary
