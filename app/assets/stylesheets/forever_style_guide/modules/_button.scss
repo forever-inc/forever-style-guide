@@ -117,9 +117,9 @@
     }
   }
   &.btn-lg {
-    @extend %font-face-regular;
+    font-family: $font-face-regular;
     height: $btn-lg-size;
-    font-size: font-size(400);
+    font-size: $font-size-400;
     padding: $padding-large-horizontal $btn-padding-large-horizontal;
     border-radius: $border-radius-large;
     line-height: 1.8;
@@ -133,7 +133,7 @@
     }
   }
   &.btn-sm {
-    font-size: font-size('small');
+    font-size: $font-size-small;
     height: $btn-sm-size;
     padding: $padding-small-vertical $btn-padding-small-horizontal;
     line-height: 1.6;
@@ -147,7 +147,7 @@
   &.btn-xs {
     height: $btn-xs-size;
     padding: $padding-xs-vertical $btn-padding-xs-horizontal;
-    font-size: font-size('small');
+    font-size: $font-size-small;
     line-height: 1.8;
 
     .fa {

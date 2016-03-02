@@ -30,10 +30,10 @@ $btn-padding-large-horizontal: $padding-large-horizontal * 1.5;
 $btn-padding-small-horizontal: $padding-small-horizontal * 1.5;
 $btn-padding-xs-horizontal: $padding-xs-horizontal * 1.5;
 
-$icon-lg-size: font-size(600);
-$icon-size: font-size(400);
-$icon-sm-size: font-size(300);
-$icon-xs-size: font-size(200);
+$icon-lg-size: $font-size-600;
+$icon-size: $font-size-400;
+$icon-sm-size: $font-size-300;
+$icon-xs-size: $font-size-200;
 
 
 /* =Z-Index

@@ -86,7 +86,7 @@ $color-card-bg: color('white');
   line-height: 1.3;
   display: inline-block;
   text-align: center;
-  font-size: font-size(300);
+  font-size: $font-size-300;
   border: 0;
 
   @include transition(background-color 0.3s ease);
@@ -110,7 +110,7 @@ $color-card-bg: color('white');
   height: $btn-xs-size;
   width: $btn-xs-size;
   @extend %item-shadow;
-  font-size: font-size('default');
+  font-size: $font-size-default;
   text-align: center;
 
   @include transition(background-color 0.3s ease, color 0.3s ease);

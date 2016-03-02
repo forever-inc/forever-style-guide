@@ -8,11 +8,11 @@ $sophia_color: #9dd171;
     display: inline-block;
 
     .persona-header-title {
-      font-size: font-size('large');
+      font-size: $font-size-large;
     }
 
     .persona-header-quote {
-      font-size: font-size('default');
+      font-size: $font-size-default;
       position: relative;
       background-color: color('white');
       padding:10px;
@@ -36,16 +36,9 @@ $sophia_color: #9dd171;
     }
   }
 
-  .persona-body {
-
-  }
-
   &.persona-sophia {
     background-color: $sophia_color
   }
-
-
-
 }
 
 .style-guide-persona-block {
@@ -66,11 +59,11 @@ $sophia_color: #9dd171;
 }
 
 .style-guide-persona-title {
-  font-size: font-size('large');
+  font-size: $font-size-large;
 }
 
 .quote-bubble {
-  font-size: font-size('default');
+  font-size: $font-size-default;
   position: relative;
   background-color: color('white');
   color: color('gray-600');

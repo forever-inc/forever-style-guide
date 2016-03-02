@@ -8,11 +8,11 @@
     display: block;
     padding-top: 10px;
     color: color('gray-500');
-    font-size: font-size('default');
+    font-size: $font-size-default;
 
     @media (min-width: $screen-md-min) {
       color: color('gray-600');
-      font-size: font-size('large');
+      font-size: $font-size-large;
     }
     &:hover,
     &:focus,

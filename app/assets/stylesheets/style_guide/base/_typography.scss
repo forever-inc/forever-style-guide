@@ -1,7 +1,0 @@
-@each $id, $size in $font-sizes {
-  .font-size-#{$id} {
-    &:after {
-      content: "#{$size}";
-    }
-  };
-};

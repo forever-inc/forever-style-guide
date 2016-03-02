@@ -99,7 +99,7 @@ $webapp-popover-background: #333333;
   }
 }
 .account-popover-settings {
-  font-size: font-size('large');
+  font-size: $font-size-large;
   background-color: color('white');
   border-bottom-right-radius: $border-radius-large;
   border-bottom-left-radius: $border-radius-large;

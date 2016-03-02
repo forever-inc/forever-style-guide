@@ -1,43 +1,46 @@
 /* =fonts
 ---------------------------------------------------------------------------- */
-@import "forever_style_guide/utils/font-utils";
-
-/* =font faces
-   ---------------------------------------------------------------------------- */
-$font-face-light:           set_fontface('proxima_nova-light', ProximaNova-Light, 'light') !default;
-$font-face-regular:         set_fontface('proxima_nova-regular', ProximaNova-Reg, 'regular') !default;
-$font-face-semibold:        set_fontface('proxima_nova-semibold', ProximaNova-Sbold, 'semibold') !default;
-$font-face-bold:            set_fontface('proxima_nova-bold', ProximaNova-Bold, 'bold') !default;
-$font-face-regular_italic:  set_fontface('proxima_nova-regular_italic', ProximaNova-RegIt, 'italic') !default;
-$font-face-bold_italic:     set_fontface('proxima_nova-bold_italic', ProximaNova-BoldIt, 'bold-italic') !default;
-
-// font face placeholder selectors (use @extends)
-@each $id, $font-data in $font-faces {
-  $file: nth($font-data, 1);
-  $style: nth($font-data, 2);
-  @include font-face($id, font-files('#{$file}-webfont.woff', '#{$file}-webfont.ttf' ,'#{$file}-webfont.svg'),'#{$file}-webfont.eot');
-  /* @extend %font-#{$id} */
-  %font-face-#{$style} {
-    font-family: #{$id}, Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+@mixin fontFace($family, $src) {
+  @font-face {
+    font-family: $family;
+    src: font-url('#{$src}.eot'); // IE9 compat
+    src: font-url('#{$src}.eot?#iefix') format('embedded-opentype'), // IE8 and below
+      font-url('#{$src}.woff') format('woff'), // standards
+      font-url('#{$src}.ttf') format('truetype'), // Safari, Android, iOS
+      font-url('#{$src}.svg##{$family}') format('svg'); // legacy iOS
   }
 }
 
-%font-face-gotham {
-  font-family: 'Gotham A', 'Gotham B', Helvetica, Arial, sans-serif;
-}
+@include fontFace('proxima_nova-light', 'ProximaNova-Reg-webfont');
+@include fontFace('proxima_nova-regular', 'ProximaNova-Reg-webfont');
+@include fontFace('proxima_nova-semibold', 'ProximaNova-Sbold-webfont');
+@include fontFace('proxima_nova-bold', 'ProximaNova-Bold-webfont');
+@include fontFace('proxima_nova-regular_italic', 'ProximaNova-RegIt-webfont');
+@include fontFace('proxima_nova-regular_bold_italic', 'ProximaNova-BoldIt-webfont');
+
+/* =font faces
+   ---------------------------------------------------------------------------- */
+$font-face-light:           'proxima_nova-light', Helvetica, Arial, sans-serif;
+$font-face-regular:         'proxima_nova-regular', Helvetica, Arial, sans-serif;
+$font-face-semibold:        'proxima_nova-semibold', Helvetica, Arial, sans-serif;
+$font-face-bold:            'proxima_nova-bold', Helvetica, Arial, sans-serif;
+$font-face-regular_italic:  'proxima_nova-regular_italic', Helvetica, Arial, sans-serif;
+$font-face-bold_italic:     'proxima_nova-bold_italic', Helvetica, Arial, sans-serif;;
+
+$font-face-gotham:          'Gotham A', 'Gotham B', Helvetica, Arial, sans-serif;
 
 /* =font sizes
    ---------------------------------------------------------------------------- */
-$font-size-100: set_fontsize(100, 12px) !default;
-$font-size-200: set_fontsize(200, 14px) !default;
-$font-size-300: set_fontsize(300, 16px) !default;
-$font-size-400: set_fontsize(400, 18px) !default;
-$font-size-500: set_fontsize(500, 24px) !default;
-$font-size-600: set_fontsize(600, 36px) !default;
-$font-size-700: set_fontsize(700, 48px) !default;
-$font-size-800: set_fontsize(800, 64px) !default;
+$font-size-100: 12px;
+$font-size-200: 14px;
+$font-size-300: 16px;
+$font-size-400: 18px;
+$font-size-500: 24px;
+$font-size-600: 36px;
+$font-size-700: 48px;
+$font-size-800: 64px;
 
-$font-size-large: set_fontsize('large', $font-size-400) !global;
-$font-size-default: set_fontsize('default', $font-size-300) !default;
-$font-size-small: set_fontsize('small', $font-size-100) !global;
+$font-size-large: $font-size-400;
+$font-size-default: $font-size-300;
+$font-size-small: $font-size-100;
 

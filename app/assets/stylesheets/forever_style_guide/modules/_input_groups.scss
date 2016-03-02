@@ -2,7 +2,7 @@ $radio-offset: 10px;
 
 .input-group {
   .form-control {
-    font-size: font-size('default');
+    font-size: $font-size-default;
   }
 
   input {
@@ -16,17 +16,17 @@ $radio-offset: 10px;
 
   .input-group-addon {
     @extend %item-style;
-    font-size: font-size('default');
+    font-size: $font-size-default;
     padding: 0 $btn-padding-small-horizontal;
     @extend %no-shadow;
   }
 
   &.input-group-lg {
     .form-control {
-      font-size: font-size('large');
+      font-size: $font-size-large;
     }
     .input-group-addon {
-      font-size: font-size('large');
+      font-size: $font-size-large;
       padding-left: $btn-padding-large-horizontal;
       padding-right: $btn-padding-large-horizontal;
     }
@@ -44,10 +44,10 @@ $radio-offset: 10px;
   }
   &.input-group-sm {
     .form-control {
-      font-size: font-size('small');
+      font-size: $font-size-small;
     }
     .input-group-addon {
-      font-size: font-size('small');
+      font-size: $font-size-small;
       padding-left: $btn-padding-small-horizontal;
       padding-right: $btn-padding-small-horizontal;
     }
@@ -65,10 +65,10 @@ $radio-offset: 10px;
   }
   &.input-group-xs {
     .form-control {
-      font-size: font-size('small');
+      font-size: $font-size-small;
     }
     .input-group-addon {
-      font-size: font-size('small');
+      font-size: $font-size-small;
       padding-left: $btn-padding-xs-horizontal;
       padding-right: $btn-padding-xs-horizontal;
     }
@@ -81,7 +81,7 @@ $radio-offset: 10px;
       .btn {
         height: $btn-xs-size;
         border-radius: $border-radius-small;
-        font-size: font-size('small');
+        font-size: $font-size-small;
       }
     }
     input {
