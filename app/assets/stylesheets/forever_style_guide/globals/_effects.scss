@@ -1,5 +1,3 @@
-@import "compass/css3/images";
-
 @mixin box-shadow($color, $top, $left, $blur, $inset: false) {
   @if $inset {
     -webkit-box-shadow: inset $top $left $blur $color;
@@ -18,6 +16,18 @@
   -ms-transition: $transition-properties;
   -o-transition: $transition-properties;
   transition: $transition-properties;
+}
+
+@mixin hero-gradient($opacity, $distance_as_percent) {
+  &:before {
+    content: " ";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: linear-gradient(rgba(0, 0, 0, $opacity), transparent $distance_as_percent);
+  }
 }
 
 $shadow-color: rgba(color('gray-500'), 0.6);
@@ -50,10 +60,6 @@ $color-card-bg: color('white');
 
 %hero-gradient {
   @include hero-gradient(0.5, 15%);
-}
-
-%gray-gradient {
-  @include background-image(linear-gradient(color('white'), color('gray-300')));
 }
 
 %card-style {
@@ -144,4 +150,3 @@ $color-card-bg: color('white');
     }
   }
 }
-
