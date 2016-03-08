@@ -416,6 +416,8 @@ $(function() {
 
 
 $(window).resize(function() {
+  if (!$(".hero-blur").length) return;
+
   var updateHeroModule = window.UpdateHeroModule;
 
   // Check window width has actually changed and it's not just iOS triggering a resize event on scroll
