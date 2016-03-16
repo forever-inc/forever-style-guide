@@ -1,42 +1,65 @@
-@import "compass/css3/box-shadow";
-@import "compass/css3/text-shadow";
-@import "compass/css3/images";
-@import "compass/css3/transition";
+@mixin box-shadow($color, $top, $left, $blur, $inset: false) {
+  @if $inset {
+    -webkit-box-shadow: inset $top $left $blur $color;
+    -moz-box-shadow: inset $top $left $blur $color;
+    box-shadow: inset $top $left $blur $color;
+  } @else {
+    -webkit-box-shadow: $top $left $blur $color;
+    -moz-box-shadow: $top $left $blur $color;
+    box-shadow: $top $left $blur $color;
+  }
+}
+
+@mixin transition($transition-properties...) {
+  -webkit-transition: $transition-properties;
+  -moz-transition: $transition-properties;
+  -ms-transition: $transition-properties;
+  -o-transition: $transition-properties;
+  transition: $transition-properties;
+}
+
+@mixin hero-gradient($opacity, $distance_as_percent) {
+  &:before {
+    content: " ";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: linear-gradient(rgba(0, 0, 0, $opacity), transparent $distance_as_percent);
+  }
+}
 
 $shadow-color: rgba(color('gray-500'), 0.6);
 $color-card-bg: color('white');
 
 %no-shadow {
-  @include box-shadow(none);
-  @include text-shadow(none);
+  @include box-shadow(transparent, 0, 0, 0);
+  text-shadow: none;
 }
 
 %card-shadow {
-  @include box-shadow($shadow-color 0 2px 4px);
+  @include box-shadow($shadow-color, 0, 2px, 4px);
 }
 
 %footer-shadow {
-  @include box-shadow(lighten($shadow-color, 30%) 0 -1px 2px);
+  @include box-shadow(lighten($shadow-color, 30%), 0, -1px, 2px);
 }
 
 %text-shadow {
-  @include text-shadow($shadow-color 0 1px 2px);
+  text-shadow: $shadow-color, 0, 1px, 2px;
 }
 
 %item-shadow {
-  @include box-shadow($shadow-color 1px 1px 1px);
+  @include box-shadow($shadow-color, 1px, 1px, 1px);
 }
 
 %inset-shadow {
-  @include box-shadow(inset 0 2px 3px $shadow-color );
+  @include box-shadow(0, 2px, 3px, $shadow-color, true);
 }
 
 %hero-gradient {
   @include hero-gradient(0.5, 15%);
-}
-
-%gray-gradient {
-  @include background-image(linear-gradient(color('white'), color('gray-300')));
 }
 
 %card-style {
@@ -63,11 +86,10 @@ $color-card-bg: color('white');
   line-height: 1.3;
   display: inline-block;
   text-align: center;
-  font-size: font-size(300);
+  font-size: $font-size-300;
   border: 0;
 
-  @include transition-property(background-color, border);
-  @include transition-duration(0.3s);
+  @include transition(background-color 0.3s ease);
 
   &:active:focus {
     @extend %inset-shadow;
@@ -88,11 +110,10 @@ $color-card-bg: color('white');
   height: $btn-xs-size;
   width: $btn-xs-size;
   @extend %item-shadow;
-  font-size: font-size('default');
+  font-size: $font-size-default;
   text-align: center;
 
-  @include transition-property(background-color, color);
-  @include transition-duration(0.3s);
+  @include transition(background-color 0.3s ease, color 0.3s ease);
 }
 
 // creates a sawtooth banner style for each color in core color dictionary
@@ -129,4 +150,3 @@ $color-card-bg: color('white');
     }
   }
 }
-

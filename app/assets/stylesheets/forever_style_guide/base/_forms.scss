@@ -11,20 +11,20 @@
 .input-lg.form-control {
   height: $btn-lg-size;
   border-radius: $border-radius-large;
-  @extend %font-face-light;
-  font-size: font-size('large');
+  font-family: $font-face-light;
+  font-size: $font-size-large;
 }
 
 .input-sm,
 .input-sm.form-control {
   height: $btn-sm-size;
   border-radius: $border-radius-small;
-  font-size: font-size('small');
+  font-size: $font-size-small;
 }
 
 .input-xs,
 .input-xs.form-control {
   height: $btn-xs-size;
   border-radius: $border-radius-small;
-  font-size: font-size('small');
+  font-size: $font-size-small;
 }

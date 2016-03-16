@@ -7,7 +7,6 @@ require "forever_style_guide/partial"
 require 'sass-rails'
 require 'jquery-rails'
 require 'bootstrap-sass'
-require 'compass-rails'
 require 'font-awesome-rails'
 
 module ForeverStyleGuide

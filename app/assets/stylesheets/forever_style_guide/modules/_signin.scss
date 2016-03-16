@@ -7,15 +7,15 @@
 
   .login-item {
     float: left;
-    @extend %font-face-regular;
-    font-size: font-size(400);
+    font-family: $font-face-regular;
+    font-size: $font-size-400;
 
     &:first-child {
       margin-right: 5px;
     }
   }
   .btn {
-    font-size: font-size('large');
+    font-size: $font-size-large;
   }
 }
 .navbar-right .login {
@@ -29,7 +29,7 @@
     height: 35px;
     padding: 7px 10px;
     margin-top: 5px;
-    font-size: font-size(300);
+    font-size: $font-size-300;
   }
 }
 .nav-item.login a {

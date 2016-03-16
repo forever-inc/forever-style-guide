@@ -4,19 +4,15 @@
   background-position: top center;
   background-repeat: no-repeat;
   @include clearfix;
-  @include transition-property(opacity);
-  @include transition-duration(1s);
-  @include transition-timing-function(ease-in);
+  @include transition(opacity 1s ease-in);
 }
 
 .hero-block-blur {
   position: relative;
   margin-top: 150px;
   opacity: 0;
-  @include box-shadow(0 0 4px 2px rgba(color('gray'), 0.25));
-  @include transition-property(opacity);
-  @include transition-duration(1s);
-  @include transition-timing-function(ease-in);
+  @include box-shadow(rgba(color('gray'), 0.25), 0, 4px, 2px);
+  @include transition(opacity 1s ease-in);
 
   @media (min-width: $screen-lg) {
     margin-top: 250px;

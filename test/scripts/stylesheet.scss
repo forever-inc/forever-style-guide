@@ -1,9 +1,6 @@
 // These are global compass configuration options specific to panstoria-store
 $project-path: absolute-path("../../app/assets") !global;
 $fonts-dir: "fonts" !global;
-$compass-options: (fonts-dir: $fonts-dir);
-@import "compass/configuration";
-@include compass-configuration($compass-options);
 
 // bootstrap compass helpers
 @function twbs-font-path($path) {

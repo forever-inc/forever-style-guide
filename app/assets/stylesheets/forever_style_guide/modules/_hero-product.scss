@@ -11,11 +11,11 @@
   }
 
   .hero-product-details {
-    font-size: font-size(500);
+    font-size: $font-size-500;
     padding: 30px 10px;
 
     @media (max-width: $screen-sm) {
-      font-size: font-size(400);
+      font-size: $font-size-400;
       padding: 20px 0;
     }
   }

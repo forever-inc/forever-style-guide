@@ -29,7 +29,6 @@ The style guide is an easy to install rails engine that will mount to your exist
 - Add to your Gemfile:
 ```
 gem 'bootstrap-sass'
-gem 'compass-rails'
 gem 'font-awesome-rails'
 gem 'forever_style_guide', git: 'git@github.com:forever-inc/forever-style-guide.git'
 

@@ -1,6 +1,5 @@
-
 * {
-  @extend %font-face-regular;
+  font-family: 'proxima_nova-regular';
 }
 
 /* Headers */
@@ -16,83 +15,81 @@ p {
 }
 
 h1 {
-  @extend %font-face-gotham;
+  font-family: $font-face-gotham;
   font-weight: 500;
-  font-size: font-size(700);
+  font-size: $font-size-700;
 
   @media (max-width: $screen-sm-max) {
-    font-size: font-size(600);
+    font-size: $font-size-600;
   }
   @media (max-width: $screen-xs-max) {
-    font-size: font-size(500);
+    font-size: $font-size-500;
   }
 }
 h2 {
-  @extend %font-face-gotham;
+  font-family: $font-face-gotham;
   font-weight: 500;
-  font-size: font-size(600);
+  font-size: $font-size-600;
 
   @media (max-width: $screen-sm-max) {
-    font-size: font-size(500);
+    font-size: $font-size-500;
   }
   @media (max-width: $screen-xs-max) {
-    font-size: font-size(400);
+    font-size: $font-size-400;
   }
 }
 h3 {
-  @extend %font-face-gotham;
+  font-family: $font-face-gotham;
   font-weight: 500;
-  font-size: font-size(500);
+  font-size: $font-size-500;
 
   @media (max-width: $screen-sm-max) {
-    font-size: font-size(400);
+    font-size: $font-size-400;
   }
   @media (max-width: $screen-xs-max) {
-    font-size: font-size(300);
+    font-size: $font-size-300;
   }
 }
 h4 {
-  @extend %font-face-gotham;
+  font-family: $font-face-gotham;
   font-weight: 400;
-  font-size: font-size(400);
+  font-size: $font-size-400;
   @media (max-width: $screen-sm-max) {
-    font-size: font-size(400);
+    font-size: $font-size-400;
   }
   @media (max-width: $screen-xs-max) {
-    font-size: font-size(300);
+    font-size: $font-size-300;
   }
 }
 h5 {
-  @extend %font-face-gotham;
+  font-family: $font-face-gotham;
   font-weight: 300;
-  font-size: font-size(300);
+  font-size: $font-size-300;
 }
 h6 {
-  @extend %font-face-gotham;
+  font-family: $font-face-gotham;
   font-weight: 200;
-  font-size: font-size(200);
+  font-size: $font-size-200;
 }
 p {
-  @extend %font-face-regular;
-  font-size: font-size('default');
+  font-family: $font-face-regular;
+  font-size: $font-size-default;
   line-height: 1.6;
 }
 small {
-  @extend %font-face-regular;
-  font-size: font-size(100);
+  font-family: $font-face-regular;
+  font-size: $font-size-100;
 }
 b,
 strong {
-  @extend %font-face-bold;
-  color: color('text');
+  font-family: $font-face-bold;
 }
 .page-title {
   margin-top: 0;
 }
 .lead {
-  @extend %font-face-gotham;
+  font-family: $font-face-gotham;
   font-weight: 100;
-  color: color('text');
 }
 a {
   color: color('secondary');

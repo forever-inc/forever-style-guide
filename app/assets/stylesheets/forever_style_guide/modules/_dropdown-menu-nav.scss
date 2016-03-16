@@ -45,7 +45,7 @@
   max-height: 500px;
   opacity: 1;
   visibility: visible;
-  @include box-shadow($shadow-color 0 2px 4px);
+  @include box-shadow($shadow-color, 0, 2px, 4px);
 }
 // opens dropdown on hover instead of click
 .nav .dropdown:hover,

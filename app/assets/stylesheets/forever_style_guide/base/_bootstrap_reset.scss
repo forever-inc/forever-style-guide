@@ -1,6 +1,6 @@
 html, body {
   width: 100%;
-  @extend %font-face-regular;
+  font-family: $font-face-regular;
   background-color: $color-background;
   overflow-y: auto;
 }

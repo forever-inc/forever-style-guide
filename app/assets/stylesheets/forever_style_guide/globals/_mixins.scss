@@ -33,18 +33,6 @@
   }
 }
 
-@mixin hero-gradient($opacity, $distance_as_percent) {
-  &:before {
-    content: " ";
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    @include background-image(linear-gradient(rgba(0, 0, 0, $opacity), transparent $distance_as_percent));
-  }
-}
-
 @mixin center_with_flexbox ($flex-align, $justify-content) {
   display: -webkit-box;
   display: -webkit-flex;

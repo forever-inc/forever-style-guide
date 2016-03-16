@@ -12,7 +12,4 @@
 //
 //= require jquery
 //= require bootstrap-sprockets
-//= require bootstrap
 //= require style_guide/application
-//= require style_guide/identifiers
-//= require style_guide/prettify

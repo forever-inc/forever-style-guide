@@ -13,9 +13,8 @@
  */
 
 @import "bootstrap-sprockets";
-@import "bootstrap";
+@import 'bootstrap-custom';
 @import 'font-awesome';
 @import "forever_style_guide/all";
 @import "style_guide/prettify";
-@import "base/typography";
 @import "modules/all";

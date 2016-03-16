@@ -41,12 +41,12 @@ $product-image-main-height: 521px;
   .dropdown-menu-product-btn {
     @media (max-width: $grid-float-breakpoint) {
       height: 62px;
-      font-size: font-size(300);
+      font-size: $font-size-300;
       line-height: 18px;
-      @include box-shadow($shadow-color 0 2px 4px);
+      @include box-shadow($shadow-color, 0, 2px, 4px);
     }
     @media (max-width: $screen-sm) {
-      font-size: font-size(400);
+      font-size: $font-size-400;
     }
   }
 }
