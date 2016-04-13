@@ -1,0 +1,89 @@
+.hero_simple {
+  position: relative;
+  height: 500px;
+  background-size: cover;
+
+  h1, p {
+    color: color('white');
+    text-shadow: color('gray-600') 0 1px 3px;
+  }
+
+  @media (min-width: $screen-lg) {
+    height: 600px;
+  }
+  @media (min-width: $screen-xl) {
+    height: 650px;
+  }
+  @media (min-width: $screen-xxl) {
+    height: 900px;
+  }
+
+  &.hero_simple-sm {
+    height: auto;
+    @media (max-width: $screen-xs) {
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+    @media (min-width: $screen-xs) {
+      height: 230px;
+    }
+    @media (min-width: $screen-md) {
+      height: 260px;
+    }
+  }
+
+  &.hero_simple-sm-action {
+    // adding an additional element makes vertical spacing too tricky to be worth messing with a fixed height here 
+    @media (min-width: $screen-xs) and (max-width: $screen-sm){
+      height: auto;
+      padding-top: 30px;
+      padding-bottom: 30px;
+    }
+  }
+}
+.hero_simple-block {
+  position: absolute;
+  bottom: 0;
+  padding: 30px;
+
+  @media (min-width: $screen-xxl) {
+    padding: 50px;
+  }
+}
+.hero_simple-block-cta {
+  margin-top: 5px;
+
+  // for hero CTAs layout in between xs -> sm breakpoints
+  @media (max-width: 580px) {
+    width: 100%;
+  }
+}
+.hero_simple-sm-block {
+  @media (min-width: $screen-xs) {
+    padding-top: 70px;
+  } 
+  @media (min-width: $screen-md) {
+    padding-top: 80px;
+  }
+}
+.hero_simple-sm-action-block {
+  @media (min-width: $screen-sm) and (max-width: $screen-md) {
+  padding-top: 55px;
+  }
+}
+
+// basic template for colored/semi-transparent hero_simple-block
+@mixin hero_simple-block-color($color) {
+  background-color: color($color);
+   
+  @media (min-width: $screen-sm) {
+    background-color: rgba(color($color), 0.9);
+  }
+}
+
+// creates hero-simple-block color styles for each color in core color dictionary
+@each $id, $color in $core_colors {
+  .hero_simple-block-#{$id} {
+    @include hero_simple-block-color(#{$id});
+  }
+}
