@@ -1,0 +1,11 @@
+.hero_simple-sample {
+  margin-top: $header-height;
+  background-image: image-url("style_guide/hero/beach-girl.jpg");
+  background-size: contain;
+  background-position: 0% -15%;
+
+  @media (min-width: $screen-sm) {
+    background-size: cover;
+    background-position: 0% 94%;
+   }
+}
