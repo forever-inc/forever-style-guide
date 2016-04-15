@@ -20,6 +20,7 @@
 
   &.hero_simple-sm {
     height: auto;
+
     @media (max-width: $screen-xs) {
       padding-top: 20px;
       padding-bottom: 20px;
@@ -68,7 +69,7 @@
 }
 .hero_simple-sm-action-block {
   @media (min-width: $screen-sm) and (max-width: $screen-md) {
-  padding-top: 55px;
+    padding-top: 55px;
   }
 }
 
