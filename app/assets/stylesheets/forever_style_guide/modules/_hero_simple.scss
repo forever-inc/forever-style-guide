@@ -73,18 +73,11 @@
   }
 }
 
-// basic template for colored/semi-transparent hero_simple-block
-@mixin hero_simple-block-color($color) {
-  background-color: color($color);
-   
-  @media (min-width: $screen-sm) {
-    background-color: rgba(color($color), 0.9);
-  }
-}
-
-// creates hero-simple-block color styles for each color in core color dictionary
+// overrides transparency at small viewports for each color in core color dictionary
 @each $id, $color in $core_colors {
-  .hero_simple-block-#{$id} {
-    @include hero_simple-block-color(#{$id});
+  .hero_simple .color_block_trans-#{$id} {
+    @media (max-width: $screen-sm) {
+      background-color: $color;
+    }
   }
 }
