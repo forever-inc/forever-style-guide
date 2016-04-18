@@ -1,16 +1,27 @@
+$screen-almost_sm: 580px; // between xs -> sm breakpoints
+
+$hero_simple-height: 500px;
+$hero_simple-height-lg: 600px;
+$hero_simple-height-xl: 650px;
+$hero_simple-height-xxl: 900px;
+
+$hero_simple-sm-height-xs: 230px;
+$hero_simple-sm-height-md: 260px;
+
+
 .hero_simple {
   position: relative;
-  height: 500px;
+  height: $hero_simple-height;
   background-size: cover;
 
   @media (min-width: $screen-lg) {
-    height: 600px;
+    height: $hero_simple-height-lg;
   }
   @media (min-width: $screen-xl) {
-    height: 650px;
+    height: $hero_simple-height-xl;
   }
   @media (min-width: $screen-xxl) {
-    height: 900px;
+    height: $hero_simple-height-xxl;
   }
 
   &.hero_simple-sm {
@@ -21,10 +32,10 @@
       padding-bottom: 20px;
     }
     @media (min-width: $screen-xs) {
-      height: 230px;
+      height: $hero_simple-sm-height-xs;
     }
     @media (min-width: $screen-md) {
-      height: 260px;
+      height: $hero_simple-sm-height-md;
     }
   }
 
@@ -60,7 +71,7 @@
   margin-top: 5px;
 
   // for hero CTAs layout in between xs -> sm breakpoints
-  @media (max-width: 580px) {
+  @media (max-width: $screen-almost-sm) {
     width: 100%;
   }
 }
