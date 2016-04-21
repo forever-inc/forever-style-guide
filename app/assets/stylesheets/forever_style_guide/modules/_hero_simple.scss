@@ -52,6 +52,9 @@ $hero_simple-sm-height-md: 260px;
 .hero_simple-subheading {
   font-weight: normal;
 
+  @media (max-width: $screen-sm) {
+    line-height: 1.4;
+  }
   @media (min-width: $screen-md) {
     font-size: $font-size-500;
   }
