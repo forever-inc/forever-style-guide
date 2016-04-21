@@ -1,5 +1,3 @@
-$screen-almost_sm: 580px; // between xs -> sm breakpoints
-
 $hero_simple-height: 500px;
 $hero_simple-height-lg: 600px;
 $hero_simple-height-xl: 650px;
@@ -71,7 +69,7 @@ $hero_simple-sm-height-md: 260px;
   margin-top: 5px;
 
   // for hero CTAs layout in between xs -> sm breakpoints
-  @media (max-width: $screen-almost-sm) {
+  @media (max-width: $screen-xs_to_sm) {
     width: 100%;
   }
 }
@@ -93,7 +91,7 @@ $hero_simple-sm-height-md: 260px;
 
 // overrides transparency at small viewports for each color in core color dictionary
 @each $id, $color in $core_colors {
-  .hero_simple .color_block_trans-#{$id} {
+  .hero_simple .color_block-trans-#{$id} {
     @media (max-width: $screen-sm) {
       background-color: $color;
     }
