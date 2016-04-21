@@ -2,10 +2,19 @@
   margin-top: $header-height;
   background-image: image-url("style_guide/hero/beach-girl.jpg");
   background-size: contain;
-  background-position: 0% -15%;
 
+  @media (max-width: $screen-xs) {
+    background-image: image-url("style_guide/hero/beach-girl-xs.jpg");
+  }
+  @media (min-width: $screen-xs) {
+    background-image: image-url("style_guide/hero/beach-girl-sm.jpg");
+  }
   @media (min-width: $screen-sm) {
+    background-image: image-url("style_guide/hero/beach-girl-md.jpg");
     background-size: cover;
     background-position: 0% 94%;
+  }
+  @media (min-width: $screen-lg) {
+    background-image: image-url("style_guide/hero/beach-girl.jpg");
   }
 }
