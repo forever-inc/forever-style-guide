@@ -49,4 +49,8 @@ $color-text:            set_color('text', $color-forever_gray) !default;
   .color_block-#{$id} {
     background-color: #{$color};
   }
+  .color_block-trans-#{$id} {
+    background-color: #{$color};
+    background-color: rgba($color, 0.9);
+  }
 }

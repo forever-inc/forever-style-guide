@@ -8,6 +8,9 @@ $screen-xs:                  480px !global;
 $screen-xs-min:              $screen-xs !global;
 $screen-phone:               $screen-xs-min !global;
 
+// between xs & sm breakpoints
+$screen-xs_to_sm:            580px !global;
+
 // Small screen / tablet
 $screen-sm:                  768px !global;
 $screen-sm-min:              $screen-sm !global;

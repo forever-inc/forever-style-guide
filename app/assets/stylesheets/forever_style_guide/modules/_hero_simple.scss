@@ -1,0 +1,102 @@
+$hero_simple-height: 500px;
+$hero_simple-height-lg: 600px;
+$hero_simple-height-xl: 650px;
+$hero_simple-height-xxl: 900px;
+
+$hero_simple-sm-height-xs: 230px;
+$hero_simple-sm-height-md: 260px;
+
+
+.hero_simple {
+  position: relative;
+  height: $hero_simple-height;
+  background-size: cover;
+
+  @media (min-width: $screen-lg) {
+    height: $hero_simple-height-lg;
+  }
+  @media (min-width: $screen-xl) {
+    height: $hero_simple-height-xl;
+  }
+  @media (min-width: $screen-xxl) {
+    height: $hero_simple-height-xxl;
+  }
+
+  &.hero_simple-sm {
+    height: auto;
+
+    @media (max-width: $screen-xs) {
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+    @media (min-width: $screen-xs) {
+      height: $hero_simple-sm-height-xs;
+    }
+    @media (min-width: $screen-md) {
+      height: $hero_simple-sm-height-md;
+    }
+  }
+
+  &.hero_simple-sm-action {
+    // adding an additional element makes vertical spacing too tricky to be worth messing with a fixed height here 
+    @media (min-width: $screen-xs) and (max-width: $screen-md){
+      height: auto;
+      padding-top: 30px;
+      padding-bottom: 30px;
+    }
+  }
+}
+.hero_simple-shadow {
+  text-shadow: color('gray-500') 0 1px 2px;
+}
+.hero_simple-subheading {
+  font-weight: normal;
+
+  @media (max-width: $screen-sm) {
+    line-height: 1.4;
+  }
+  @media (min-width: $screen-md) {
+    font-size: $font-size-500;
+  }
+}
+.hero_simple-block {
+  position: absolute;
+  bottom: 0;
+  padding: 30px;
+
+  @media (min-width: $screen-xxl) {
+    padding: 50px;
+  }
+}
+.hero_simple-block-cta {
+  margin-top: 5px;
+
+  // for hero CTAs layout in between xs -> sm breakpoints
+  @media (max-width: $screen-xs_to_sm) {
+    width: 100%;
+  }
+}
+.hero_simple-sm-block {
+  @media (min-width: $screen-xs) {
+    padding-top: 70px;
+  } 
+  @media (min-width: $screen-md) {
+    padding-top: 80px;
+  }
+}
+.hero_simple-sm-action-section {
+  margin-top: 24px;
+
+  @media (min-width: $screen-md) {
+    margin-top: 32px;
+  }
+}
+
+// overrides transparency at small viewports for each color in core color dictionary
+@each $id, $color in $core_colors {
+  .hero_simple .color_block-trans-#{$id} {
+    @media (max-width: $screen-sm) {
+      background-color: $color;
+    }
+  }
+}
