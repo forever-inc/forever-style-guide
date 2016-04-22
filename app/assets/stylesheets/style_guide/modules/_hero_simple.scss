@@ -1,11 +1,8 @@
 .hero_simple-sample {
   margin-top: $header-height;
-  background-image: image-url("style_guide/hero/beach-girl.jpg");
+  background-image: image-url("style_guide/hero/beach-girl-xs.jpg");
   background-size: contain;
 
-  @media (max-width: $screen-xs) {
-    background-image: image-url("style_guide/hero/beach-girl-xs.jpg");
-  }
   @media (min-width: $screen-xs) {
     background-image: image-url("style_guide/hero/beach-girl-sm.jpg");
   }
