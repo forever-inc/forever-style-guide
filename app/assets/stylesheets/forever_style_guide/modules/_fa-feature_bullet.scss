@@ -23,6 +23,14 @@
     color: color('accent');
   }
 
+  &.fa-feature_bullet-services .fa-feature_bullet-circle {
+    color: color('services');
+  }
+
+  &.fa-feature_bullet-ambassador .fa-feature_bullet-circle {
+    color: color('ambassador');
+  }
+
   // inverse will reverse the white and colored element on the stacked icon
   &.fa-inverse {
     .fa-feature_bullet-circle {
@@ -39,6 +47,14 @@
 
     &.fa-feature_bullet-accent .fa-feature_bullet-icon {
       color: color('accent');
+    }
+
+    &.fa-feature_bullet-accent .fa-feature_bullet-icon {
+      color: color('services');
+    }
+
+    &.fa-feature_bullet-ambassador .fa-feature_bullet-icon {
+      color: color('ambassador');
     }
   }
 }
