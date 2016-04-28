@@ -47,7 +47,7 @@ $color-card-bg: color('white');
 }
 
 %text-shadow {
-  text-shadow: $shadow-color, 0, 1px, 2px;
+  text-shadow: $shadow-color 0 1px 2px;
 }
 
 %item-shadow {
