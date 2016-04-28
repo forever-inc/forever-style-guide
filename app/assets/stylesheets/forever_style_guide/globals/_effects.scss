@@ -1,12 +1,12 @@
-@mixin box-shadow($color, $top, $left, $blur, $inset: false) {
+@mixin box-shadow($color, $top, $left, $blur, $spread, $inset: false) {
   @if $inset {
-    -webkit-box-shadow: inset $top $left $blur $color;
-    -moz-box-shadow: inset $top $left $blur $color;
-    box-shadow: inset $top $left $blur $color;
+    -webkit-box-shadow: inset $top $left $blur $spread $color;
+    -moz-box-shadow: inset $top $left $blur $spread $color;
+    box-shadow: inset $top $left $blur $spread $color;
   } @else {
-    -webkit-box-shadow: $top $left $blur $color;
-    -moz-box-shadow: $top $left $blur $color;
-    box-shadow: $top $left $blur $color;
+    -webkit-box-shadow: $top $left $blur $spread $color;
+    -moz-box-shadow: $top $left $blur $spread $color;
+    box-shadow: $top $left $blur $spread $color;
   }
 }
 
@@ -34,16 +34,16 @@ $shadow-color: rgba(color('gray-500'), 0.6);
 $color-card-bg: color('white');
 
 %no-shadow {
-  @include box-shadow(transparent, 0, 0, 0);
+  @include box-shadow(transparent, 0, 0, 0, 0);
   text-shadow: none;
 }
 
 %card-shadow {
-  @include box-shadow($shadow-color, 0, 2px, 4px);
+  @include box-shadow($shadow-color, 0, 2px, 4px, 0);
 }
 
 %footer-shadow {
-  @include box-shadow(lighten($shadow-color, 30%), 0, -1px, 2px);
+  @include box-shadow(lighten($shadow-color, 30%), 0, -1px, 2px, 0);
 }
 
 %text-shadow {
@@ -51,11 +51,11 @@ $color-card-bg: color('white');
 }
 
 %item-shadow {
-  @include box-shadow($shadow-color, 1px, 1px, 1px);
+  @include box-shadow($shadow-color, 1px, 1px, 1px, 0);
 }
 
 %inset-shadow {
-  @include box-shadow(0, 2px, 3px, $shadow-color, true);
+  @include box-shadow($shadow-color, 0, 2px, 3px, 0, true);
 }
 
 %hero-gradient {
