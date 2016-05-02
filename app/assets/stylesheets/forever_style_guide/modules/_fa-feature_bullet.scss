@@ -11,24 +11,11 @@
     @extend %text-shadow;
   }
 
-  &.fa-feature_bullet-primary .fa-feature_bullet-circle {
-    color: color('primary');
-  }
-
-  &.fa-feature_bullet-secondary .fa-feature_bullet-circle {
-    color: color('secondary');
-  }
-
-  &.fa-feature_bullet-accent .fa-feature_bullet-circle {
-    color: color('accent');
-  }
-
-  &.fa-feature_bullet-services .fa-feature_bullet-circle {
-    color: color('services');
-  }
-
-  &.fa-feature_bullet-ambassador .fa-feature_bullet-circle {
-    color: color('ambassador');
+  //creates styles for each color in core color dictionary
+  @each $id, $color in $colors {
+    &.fa-feature_bullet-#{$id} .fa-feature_bullet-circle {
+      color: #{$color};
+    }
   }
 
   // inverse will reverse the white and colored element on the stacked icon
@@ -37,24 +24,10 @@
       color: color('white');
     }
 
-    &.fa-feature_bullet-primary .fa-feature_bullet-icon {
-      color: color('primary');
-    }
-
-    &.fa-feature_bullet-secondary .fa-feature_bullet-icon {
-      color: color('secondary');
-    }
-
-    &.fa-feature_bullet-accent .fa-feature_bullet-icon {
-      color: color('accent');
-    }
-
-    &.fa-feature_bullet-accent .fa-feature_bullet-icon {
-      color: color('services');
-    }
-
-    &.fa-feature_bullet-ambassador .fa-feature_bullet-icon {
-      color: color('ambassador');
+    @each $id, $color in $colors {
+      &.fa-feature_bullet-#{$id} .fa-feature_bullet-icon {
+        color: #{$color};
+      }
     }
   }
 }
