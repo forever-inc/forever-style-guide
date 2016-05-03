@@ -1,0 +1,128 @@
+$dropdown-height: 373px; // Allows for entire hero_simple text to display from $screen-md and up
+$nav-icon-width: 60px;
+
+@mixin dropdown-content-style {
+  display: block;
+  color: color('gray-300');
+  font-family: $font-face-light;
+  font-size: $font-size-large;
+}
+
+// Behavior
+.nav .dropdown.open {
+  & > .dropdown-menu-nav {
+    opacity: 1;
+    visibility: visible;
+    @include transition(opacity 0.2s ease-in-out);
+
+    @media (min-width: $grid-float-breakpoint) {
+      height: $dropdown-height;
+    }
+  }
+  &.dropdown-full_width {
+    position: static;
+
+    .dropdown-menu-nav {
+      right: 0;
+      left: 0;
+
+      @media (max-width: $grid-float-breakpoint) {
+        padding-bottom: 40px;
+        @include account-nav-border(bottom);
+      }
+    }
+  }
+}
+.dropdown-menu-nav {
+  display: block;
+  opacity: 0;
+  visibility: hidden;
+  border: none;
+  border-radius: 0;
+  @extend %card-shadow;
+
+  @media (max-width: $grid-float-breakpoint) {
+    padding-left: 15px;
+  }
+
+  .dropdown-menu-nav-link {
+    @include dropdown-content-style;
+
+    &:not(.dropdown-menu-nav-link-no_margin) {
+      margin-top: 10px;
+
+      @media (min-width: $screen-md-min) {
+        margin-top: 15px;
+      }
+    }
+    .fa {
+      margin-right: 10px;
+    }
+  }
+}
+
+// Styles
+.dropdown-menu-nav-description {
+  @include dropdown-content-style;
+}
+.dropdown-menu-nav-title {
+  margin-top: 10px;
+
+  @media (min-width: $screen-md-min) {
+    margin-top: 15px;
+  }
+}
+
+.dropdown-menu-account {
+  width: $nav-icon-width * 4;
+  right: 0;
+  border-bottom-right-radius: $border-radius-large;
+  border-bottom-left-radius: $border-radius-large;
+
+  li {
+    display: block;
+    overflow: hidden;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+  .progress {
+    margin-bottom: 10px;
+  }
+}
+.dropdown-menu-account-divider {
+  margin-top: 5px;
+  margin-bottom: 10px;
+  @include account-nav-border(bottom);
+}
+.dropdown-menu-account-user {
+  overflow: hidden;
+}
+.dropdown-menu-account-user-intro {
+  margin-top: $padding-small-vertical;
+  margin-bottom: 0;
+  font-size: $font-size-100;
+}
+.dropdown-menu-account-avatar {
+  margin-right: 10px;
+  border: 0;
+  box-shadow: none;
+}
+
+.dropdown-ambassador {
+  .dropdown-toggle {
+    height: $header_height;
+    padding: 0 10px;
+  }
+  .fa {
+    position: relative;
+    margin-left: 10px;
+    top: -10px;
+  }
+}
+.dropdown-ambassador-intro_text {
+  position: relative;
+  top: 5px;
+}
+.dropdown-ambassador-primary_text {
+  margin-right: 10px;
+}
