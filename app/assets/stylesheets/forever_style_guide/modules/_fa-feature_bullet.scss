@@ -11,16 +11,11 @@
     @extend %text-shadow;
   }
 
-  &.fa-feature_bullet-primary .fa-feature_bullet-circle {
-    color: color('primary');
-  }
-
-  &.fa-feature_bullet-secondary .fa-feature_bullet-circle {
-    color: color('secondary');
-  }
-
-  &.fa-feature_bullet-accent .fa-feature_bullet-circle {
-    color: color('accent');
+  //creates styles for each color in core color dictionary
+  @each $id, $color in $colors {
+    &.fa-feature_bullet-#{$id} .fa-feature_bullet-circle {
+      color: #{$color};
+    }
   }
 
   // inverse will reverse the white and colored element on the stacked icon
@@ -29,16 +24,10 @@
       color: color('white');
     }
 
-    &.fa-feature_bullet-primary .fa-feature_bullet-icon {
-      color: color('primary');
-    }
-
-    &.fa-feature_bullet-secondary .fa-feature_bullet-icon {
-      color: color('secondary');
-    }
-
-    &.fa-feature_bullet-accent .fa-feature_bullet-icon {
-      color: color('accent');
+    @each $id, $color in $colors {
+      &.fa-feature_bullet-#{$id} .fa-feature_bullet-icon {
+        color: #{$color};
+      }
     }
   }
 }
