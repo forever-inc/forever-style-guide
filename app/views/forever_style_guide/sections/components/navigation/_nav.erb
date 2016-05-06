@@ -7,6 +7,12 @@
         <span class='nav-icon-label'>Menu</span>
       </button>
 
+      <div class="navbar-brand">
+        <%= link_to '/', title: 'Forever Guaranteed Storage, Digital Scrapbooking, and Printing Logo' do %>
+          <%= image_tag image_url("forever_style_guide/forever-logo.jpg"), class: "navbar-brand-logo", alt: "Forever Guaranteed Storage, Digital Scrapbooking, and Printing Logo", title: 'Forever Guaranteed Storage, Digital Scrapbooking, and Printing Logo' %>
+        <% end %>
+      </div>
+
       <button type="button" class="navbar-toggle offcanvas-toggle pull-right nav-icon-stack" data-toggle="offcanvas" data-target="#js-account-nav-offcanvas">
         <i class='fa fa-user'></i>
         <span class='nav-icon-label'>Account</span>
@@ -17,8 +23,8 @@
       <ul class='nav navbar-nav navbar-left'>
 
         <li class="visible-xs visible-sm">
-          <div class="pull-left navbar-toggle navbar-toggle-close color_block-white" id="js-close-main-nav">
-            <div class="nav-icon-stack">
+          <div class="navbar-toggle navbar-toggle-close color_block-white " id="js-close-main-nav">
+            <div class="nav-icon-stack pull-left  navbar-toggle-close-left">
               <i class='fa fa-close'></i>
               <span class='nav-icon-label'>Close</span>
             </div>
@@ -44,7 +50,7 @@
 
         <li class="visible-xs visible-sm">
           <div class="navbar-toggle navbar-toggle-close color_block-white" id="js-close-account-nav">
-            <div class="nav-icon-stack">
+            <div class="nav-icon-stack pull-right navbar-toggle-close-right">
               <i class='fa fa-close'></i>
               <span class='nav-icon-label'>Close</span>
             </div>

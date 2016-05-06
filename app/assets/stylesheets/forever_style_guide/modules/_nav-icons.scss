@@ -14,10 +14,11 @@ $nav-icon-margin: 3px;
 }
 .nav-icon-label {
   font-size: $font-size-100;
+  line-height: $font-size-400
 }
 
 // Style offcanvas icons uniquely
-@media(max-width: $grid-float-breakpoint) {
+@media (max-width: $grid-float-breakpoint) {
   .navbar-account_item .nav-icon-stack {
     width: auto;
     padding: 15px !important;
@@ -59,8 +60,10 @@ $nav-icon-margin: 3px;
   margin-right: 0;
   margin-bottom: 0;
   color: color('gray-600');
+  font-size: $font-size-default;
   border: 0;
   border-radius: 0;
+  z-index: $zindex-navbar-fixed; // make sure toggles appear above logo
 
   &:hover,
   &:active,
@@ -84,17 +87,18 @@ $nav-icon-margin: 3px;
     padding: 0;
     @include account-nav-border(bottom);
 
-    @media(max-width: $screen-xs) {
-      background: color('white') asset-data-url('forever_style_guide/forever-logo.png') no-repeat 80% 10px;
-      background-size: 175px;
-    }
-    .nav-icon-stack {
-      height: $header_height;
-      @include account-nav-border(right);
-    }
     &:hover {
       background-color: color('white');
       cursor: pointer;
     }
+    .nav-icon-stack {
+      height: $header_height;
+    }
   }
+}
+.navbar-toggle-close-left {
+  @include account-nav-border(right);
+}
+.navbar-toggle-close-right {
+  @include account-nav-border(left);
 }

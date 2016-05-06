@@ -7,89 +7,96 @@
   <div class='container'>
     <div class='row'>
       <div class='col-sm-3 l-padded-thin'>
-        <h3 class='dropdown-menu-nav-title page-title color-primary-light'>Forever</h3>
+        <h3 class='dropdown-menu-nav-title page-title color-primary'>Forever</h3>
 
         <ul class="list-unstyled">
           <li>
-            <%= link_to 'Guaranteed Storage', nil, class: 'dropdown-menu-nav-link', title: 'Guaranteed Permanent Storage for Photos & Documents' %>
+            <%= link_to 'Guaranteed Storage', '/guaranteed_storage', class: 'dropdown-menu-nav-link', title: 'Guaranteed Permanent Storage for Photos & Documents' %>
           </li>
 
           <li>
-            <%= link_to 'Pricing', nil, class: 'dropdown-menu-nav-link', title: 'Guaranteed Permanent Photo Storage Pricing' %>
+            <%= link_to 'Pricing', '/pricing', class: 'dropdown-menu-nav-link', title: 'Guaranteed Permanent Photo Storage Pricing' %>
           </li>
 
           <li>
-            <%= link_to 'Projects', nil, class: 'dropdown-menu-nav-link', title: 'Make Photo Books and Other Print Projects' %>
+            <%= link_to 'Projects', '/projects', class: 'dropdown-menu-nav-link', title: 'Make Photo Books and Other Print Projects' %>
           </li>
 
           <li>
-            <%= link_to 'Media Conversion Services', nil, class: 'dropdown-menu-nav-link', title: 'Digitization and Scanning Services' %>
+            <%= link_to 'Media Conversion Services', '/services', class: 'dropdown-menu-nav-link', title: 'Digitization and Scanning Services' %>
           </li>
 
           <li>
-            <%= link_to 'Mobile Apps', nil, class: 'dropdown-menu-nav-link', title: 'Download Forever Mobile Apps' %>
+            <%= link_to 'Mobile Apps', '/app', class: 'dropdown-menu-nav-link', title: 'Download Forever Mobile Apps' %>
           </li>
 
           <li>
-            <%= link_to nil, class: 'dropdown-menu-nav-link', title: 'Forever Valet Desktop Photo Uploader' do %>
-              Forever Valet <br/>Desktop Uploader
+            <%= link_to '/valet', class: 'dropdown-menu-nav-link', title: 'Forever Valet Desktop Photo Uploader' do %>
+              Forever Valet
             <% end %>
           </li>
         </ul>
       </div>
 
       <div class='col-sm-3 l-padded-thin'>
-        <h3 class='dropdown-menu-nav-title page-title color-secondary-light'>Print Shop</h3>
+        <h3 class='dropdown-menu-nav-title page-title color-secondary'>Print Shop</h3>
 
         <ul class="list-unstyled">
           <li>
-            <%= link_to 'Photo Books', nil, class: 'dropdown-menu-nav-link', title: 'Create and Print Photo Books Online or with Artisan Scrapbooking Software' %>
+            <%= link_to 'Photo Books', '/photo-books', class: 'dropdown-menu-nav-link', title: 'Create and Print Photo Books Online or with Artisan Scrapbooking Software' %>
           </li>
 
           <li>
-            <%= link_to 'Cards', nil, class: 'dropdown-menu-nav-link', title: 'Create and Print Cards Online or with Artisan Scrapbooking Software' %>
+            <%= link_to 'Cards', '/cards', class: 'dropdown-menu-nav-link', title: 'Create and Print Cards Online or with Artisan Scrapbooking Software' %>
           </li>
 
           <li>
-            <%= link_to 'Calendars', nil, class: 'dropdown-menu-nav-link', title: 'Create and Print Calendars Online or with Artisan Scrapbooking Software' %>
+            <%= link_to 'Calendars', '/calendars', class: 'dropdown-menu-nav-link', title: 'Create and Print Calendars Online or with Artisan Scrapbooking Software' %>
           </li>
 
           <li>
-            <%= link_to 'Wall Art', nil, class: 'dropdown-menu-nav-link', title: 'Create and Print Canvases Online or with Artisan Scrapbooking Software' %>
+            <%= link_to 'Wall Art', '/wall-art', class: 'dropdown-menu-nav-link', title: 'Create and Print Canvases Online or with Artisan Scrapbooking Software' %>
           </li>
 
           <li>
-            <%= link_to 'Photo Gifts', nil, class: 'dropdown-menu-nav-link', title: 'Create and Print Photo Gifts Online or with Artisan Scrapbooking Software' %>
+            <%= link_to 'Photo Gifts', '/photo-gifts', class: 'dropdown-menu-nav-link', title: 'Create and Print Photo Gifts Online or with Artisan Scrapbooking Software' %>
           </li>
 
           <li>
-            <%= link_to 'Page Prints', nil, class: 'dropdown-menu-nav-link', title: 'Create and Print Scrapbooking Pages Online or with Artisan Scrapbooking Software' %>
+            <%= link_to 'Page Prints', '/page-prints', class: 'dropdown-menu-nav-link', title: 'Create and Print Scrapbooking Pages Online or with Artisan Scrapbooking Software' %>
           </li>
         </ul>
       </div>
 
       <div class='col-sm-3 l-padded-thin'>
-        <h3 class='dropdown-menu-nav-title page-title color-services-light'>Software</h3>
+        <h3 class='dropdown-menu-nav-title page-title color-services'>Software</h3>
 
         <ul class="list-unstyled">
           <li>
-            <%= link_to 'Forever Historian', nil, class: 'dropdown-menu-nav-link', title: 'Photo Management Software for Windows' %>
+            <%= link_to 'Forever Historian', '/historian', class: 'dropdown-menu-nav-link', title: 'Photo Management Software for Windows' %>
           </li>
 
           <li>
-            <%= link_to 'Forever Artisan', nil, class: 'dropdown-menu-nav-link', title: 'Forever Artisan 5 | Digital Scrapbooking Software' %>
+            <%= link_to 'Forever Artisan', '/artisan', class: 'dropdown-menu-nav-link', title: 'Forever Artisan 5 | Digital Scrapbooking Software' %>
           </li>
 
           <li>
-            <%= link_to 'Digital Art', nil, class: 'dropdown-menu-nav-link', title: 'Digital Scrapbooking Art and Embellishments' %>
-          </li>
+            <%= link_to 'Digital Art', '/digital-art', class: 'dropdown-menu-nav-link', title: 'Premium Digital Scrapbooking Art' %>
 
-          <li>
-            <%= link_to 'Shop Our Newest Digital Art', nil, class: 'dropdown-menu-nav-link', title: 'Newest Digital Scrapbooking Art and Embellishments' %>
-          </li>
+            <ul class="list-unstyled dropdown-menu-nav-bullets color-white">
+              <li>
+                <%= link_to 'New Digital Art', '/new-digital-art', class: 'dropdown-menu-nav-link', title: 'Newest Digital Scrapbooking Art and Embellishments' %>
+              </li>
 
-          <li>
-            <%= link_to 'Download Free Digital Art', nil, class: 'dropdown-menu-nav-link', title: 'Free Digital Scrapbooking Art and Embellishments' %>
+              <li>
+                <%= link_to 'On Sale', '/on-sale-digital-art', class: 'dropdown-menu-nav-link', title: 'On Sale Digital Scrapbooking Art and Embellishments' %>
+              </li>
+
+              <li>
+                <%= link_to 'Browse All', '/on-sale-digital-art', class: 'dropdown-menu-nav-link', title: 'All Digital Scrapbooking Art and Embellishments' %>
+              </li>
+            </ul>
+
           </li>
         </ul>
       </div>
@@ -99,11 +106,11 @@
 
         <ul class="list-unstyled">
           <li>
-            <%= link_to 'Gift Certificates', nil, class: 'dropdown-menu-nav-link', title: 'Buy Forever Gift Certificates' %>
+            <%= link_to 'Gift Certificates', '/gifts', class: 'dropdown-menu-nav-link', title: 'Buy Forever Gift Certificates' %>
           </li>
 
           <li>
-            <%= link_to 'Forever Gear', nil, class: 'dropdown-menu-nav-link', title: 'Shop Forever Branded Gear' %>
+            <%= link_to 'Forever Gear', '/gear', class: 'dropdown-menu-nav-link', title: 'Shop Forever Branded Gear' %>
           </li>
 
         </ul>

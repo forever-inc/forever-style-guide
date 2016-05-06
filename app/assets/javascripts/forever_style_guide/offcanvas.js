@@ -303,7 +303,7 @@
       });
       return $('.offcanvas-toggle').each(function() {
         return $(this).on('click', function(e) {
-          var el, selector;
+s          var el, selector;
           if (!$(this).hasClass('js-offcanvas-has-events')) {
             selector = $(this).attr('data-target');
             el = $(selector);
@@ -324,6 +324,7 @@
 }).call(this);
 
 $('#js-close-main-nav').on('click', function () {
+  console.log('hey ya');
   $("#js-main-nav-offcanvas").toggleClass('in');
 });
 

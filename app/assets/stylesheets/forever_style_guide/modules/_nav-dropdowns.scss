@@ -44,24 +44,27 @@ $nav-icon-width: 60px;
   @media (max-width: $grid-float-breakpoint) {
     padding-left: 15px;
   }
-
-  .dropdown-menu-nav-link {
-    @include dropdown-content-style;
-
-    &:not(.dropdown-menu-nav-link-no_margin) {
-      margin-top: 10px;
-
-      @media (min-width: $screen-md-min) {
-        margin-top: 15px;
-      }
-    }
-    .fa {
-      margin-right: 10px;
-    }
-  }
 }
 
 // Styles
+a.dropdown-menu-nav-link {
+  @include dropdown-content-style;
+
+  &:not(.dropdown-menu-nav-link-no_margin) {
+    margin-top: 10px;
+
+    @media (min-width: $screen-md-min) {
+      margin-top: 15px;
+    }
+  }
+  .fa {
+    margin-right: 10px;
+  }
+}
+.dropdown-menu-nav-bullets {
+  margin-left: 25px;
+  list-style: disc;
+}
 .dropdown-menu-nav-description {
   @include dropdown-content-style;
 }
@@ -74,25 +77,37 @@ $nav-icon-width: 60px;
 }
 
 .dropdown-menu-account {
-  width: $nav-icon-width * 4;
   right: 0;
   border-bottom-right-radius: $border-radius-large;
   border-bottom-left-radius: $border-radius-large;
 
-  li {
-    display: block;
-    overflow: hidden;
-    padding-top: 5px;
-    padding-bottom: 5px;
-  }
   .progress {
     margin-bottom: 10px;
+  }
+  @media (max-width: $grid-float-breakpoint) {
+    @include account-nav-border(bottom);
+  }
+  @media (min-width: $grid-float-breakpoint) {
+    width: $nav-icon-width * 4;
+  }
+}
+.dropdown-menu-account-item {
+  display: block;
+  overflow: hidden;
+
+  @media (min-width: $grid-float-breakpoint) {
+    padding-top: 5px;
+    padding-bottom: 5px;
   }
 }
 .dropdown-menu-account-divider {
   margin-top: 5px;
   margin-bottom: 10px;
   @include account-nav-border(bottom);
+
+  @media (max-width: $grid-float-breakpoint) {
+    border-color: color('gray-600');
+  }
 }
 .dropdown-menu-account-user {
   overflow: hidden;
@@ -106,22 +121,43 @@ $nav-icon-width: 60px;
   margin-right: 10px;
   border: 0;
   box-shadow: none;
+
+  @media (max-width: $grid-float-breakpoint) {
+    height: 40px; // avatar-xs
+    width: 40px;
+    margin-top: $padding-small-vertical;
+  }
+}
+.dropdown-menu-account-storage {
+  @media (max-width: $grid-float-breakpoint) {
+    font-size: $font-size-default;
+  }
 }
 
 .dropdown-ambassador {
   .dropdown-toggle {
-    height: $header_height;
     padding: 0 10px;
+
+    @media (max-width: $grid-float-breakpoint) {
+      padding-top: 0 !important; // overriding .navbar .nav.navbar-nav > li > a
+    }
   }
   .fa {
     position: relative;
     margin-left: 10px;
     top: -10px;
+
+    @media (max-width: $grid-float-breakpoint) {
+      top: 15px;
+    }
   }
 }
 .dropdown-ambassador-intro_text {
   position: relative;
-  top: 5px;
+
+  @media (min-width: $grid-float-breakpoint) {
+    top: 5px;
+  }
 }
 .dropdown-ambassador-primary_text {
   margin-right: 10px;

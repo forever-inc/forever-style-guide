@@ -6,15 +6,23 @@ $header_height: 50px;
   }
 }
 
-// Basic styles - a lot of overriding Bootstrap defaults
+// Basic styles - A lot of overriding Bootstrap defaults
 .navbar-toggle {
   @media (max-width: $grid-float-breakpoint) {
     display: block;
   }
 }
+.navbar-brand {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
+  margin: auto;
+  padding: $padding-small-vertical 0 0;
+  text-align: center;
+}
 .navbar {
-  background: color('white') asset-data-url('forever_style_guide/forever-logo.png') no-repeat 50% 10px;
-  background-size: 190px;
+  background-color: color('white');
   border-radius: 0;
   border: none;
   @extend %card-shadow;
@@ -32,10 +40,10 @@ $header_height: 50px;
       height: $header_height;
       color: color('gray-400');
       font-size: $font-size-500;
-      @include account-nav-border(bottom);
 
       @media (max-width: $grid-float-breakpoint) {
         padding-top: 15px;
+        @include account-nav-border(bottom);
       }
 
       @media (min-width: $grid-float-breakpoint) {
@@ -74,7 +82,7 @@ $header_height: 50px;
   }
 }
 .navbar-account_item {
-  @media(min-width: $grid-float-breakpoint) {
+  @media (min-width: $grid-float-breakpoint) {
     @include account-nav-border(left);
   }
 }
