@@ -1,0 +1,88 @@
+<%= link_to nil, class: 'dropdown-toggle', :data => { :toggle => 'dropdown' } do %>
+  Community
+  <i class='fa fa-chevron-down'></i>
+<% end %>
+
+<div class='dropdown-menu dropdown-menu-nav color_block-gray-700'>
+  <div class='container'>
+    <div class='row'>
+      <div class='col-sm-3 l-padded-thin'>
+        <h3 class='dropdown-menu-nav-title page-title color-primary'>Customer Support</h3>
+
+        <ul class="list-unstyled">
+          <li>
+            <%= link_to 'Pixels2Pages', '/pixels2pages', class: 'dropdown-menu-nav-link', title: 'Premium Desktop Software Support' %>
+            <small class="dropdown-menu-nav-link-subhead">Premium Training and Resources</small>
+          </li>
+
+          <li>
+            <%= link_to 'Help Center', '/help-center', class: 'dropdown-menu-nav-link', title: 'Forever Help Center' %>
+          </li>
+
+          <li>
+            <%= link_to 'FAQs', '/faqs', class: 'dropdown-menu-nav-link', title: 'Frequently Asked Questions' %>
+          </li>
+
+          <li>
+            <%= link_to 'Customer Commitments', '/customer-commitments', class: 'dropdown-menu-nav-link', title: 'Forever Customer Commitments' %>
+          </li>
+
+          <li>
+            <%= link_to 'Contact Us', '/contact', class: 'dropdown-menu-nav-link', title: 'Contact Us' %>
+          </li>
+        </ul>
+      </div>
+
+      <div class='col-sm-3 l-padded-thin'>
+        <h3 class='dropdown-menu-nav-title page-title color-ambassador-light'>Ambassadors</h3>
+
+        <ul class="list-unstyled">
+          <li>
+            <%= link_to 'Become an Ambassador', '/opportunity', class: 'dropdown-menu-nav-link', title: 'Make Money Helping People Save & Print their Photos' %>
+          </li>
+
+          <li>
+            <%= link_to 'Find an Ambassador', '/find-an-ambassador', class: 'dropdown-menu-nav-link', title: 'Get Free Training and Support from Certified Ambassadors' %>
+          </li>
+
+          <li>
+            <%= link_to 'Ambassador Direct', '/ambassador-direct', class: 'dropdown-menu-nav-link', title: 'Make Money as a Forever Business Partner' %>
+          </li>
+        </ul>
+      </div>
+
+      <div class='col-sm-3 l-padded-thin'>
+        <h3 class='dropdown-menu-nav-title page-title color-secondary'>Events</h3>
+
+        <ul class="list-unstyled">
+          <li>
+            <%= link_to 'Forever Live!', '/live', class: 'dropdown-menu-nav-link', title: 'Scrapbooking and Memory Keeping Conference' %>
+          </li>
+
+          <li>
+            <%= link_to 'Forever Retreats', '/retreats', class: 'dropdown-menu-nav-link', title: 'Creative Weekend Events for Scrapbooking and Memory Keeping' %>
+          </li>
+        </ul>
+      </div>
+
+      <div class='col-sm-3 l-padded-thin'>
+        <h3 class='dropdown-menu-nav-title page-title color-services'>Connect</h3>
+
+        <ul class="list-unstyled">
+          <li>
+            <%= link_to 'Facebook', '/facebook', target: '_blank', class: 'dropdown-menu-nav-link', title: 'Follow us on Facebook' %>
+          </li>
+
+          <li>
+            <%= link_to 'Blog', '/blog', class: 'dropdown-menu-nav-link', title: 'Learn more at the Forever Blog' %>
+          </li>
+
+          <li>
+            <%= link_to 'Press', '/press', class: 'dropdown-menu-nav-link', title: 'View Press Releases and News Stories' %>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</div>
