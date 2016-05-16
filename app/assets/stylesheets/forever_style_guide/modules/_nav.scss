@@ -1,96 +1,88 @@
-/* nav
----------------------------------------------------------------------------- */
-
-$color-nav-bg:  color('white');
-$color-nav-active: color('gray-100');
-$color-nav-hover: color('secondary');
 $header_height: 50px;
-$header_active_border_height: 2px;
 
-.nav {
-  &.nav-pills {
-    @extend %card-style;
+@mixin account-nav-border($sides...) {
+  @each $side in $sides {
+    border-#{$side}: 1px solid color('gray-400');
   }
+}
 
-  .nav-item {
-    @include clearfix;
-    font-family: $font-face-regular;
-    font-size: $font-size-300;
+// Basic styles - A lot of overriding Bootstrap defaults
+.navbar-toggle {
+  @media (max-width: $grid-float-breakpoint) {
+    display: block;
+  }
+}
+.navbar-brand {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
+  margin: auto;
+  padding: $padding-small-vertical 0 0;
+  text-align: center;
+}
+.navbar {
+  background-color: color('white');
+  border-radius: 0;
+  border: none;
+  @extend %card-shadow;
 
-    .nav-item-tab,
-    .nav-item-list {
-      border: 0;
+  .nav.navbar-nav {
+    margin-top: 0;
+    margin-bottom: 0;
+
+    @media (max-width: $grid-float-breakpoint) {
+      margin-left: 0;
+      margin-right: 0;
+    }
+
+    > li > a {
       height: $header_height;
-      color: color('gray-500');
-    }
-    .nav-item-tab {
-      @include border_highlight("bottom", transparent);
+      color: color('gray-400');
+      font-size: $font-size-500;
 
-      @media(max-width: $grid-float-breakpoint) {
-        @include border_highlight("left", transparent);
+      @media (max-width: $grid-float-breakpoint) {
+        padding-top: 15px;
+        @include account-nav-border(bottom);
       }
-    }
-    .nav-item-list {
-      @include border_highlight("left", transparent);
-    }
 
-    .nav-item-icon {
-      font-size: $font-size-400;
-      line-height: 20px;
-      vertical-align: bottom;
-    }
-
-    .nav-item-label {
-      line-height: 20px;
-    }
-
-    &:hover, &:focus {
-      .nav-item-tab,
-      .nav-item-list {
-        color: $color-nav-hover;
-        background-color: $color-nav-active;
+      @media (min-width: $grid-float-breakpoint) {
+        color: color('gray-600');
+        font-size: $font-size-default;
+        @include transition(all 0.2s ease-in-out);
       }
-      .nav-item-tab {
-        @include border_highlight("bottom");
-
-        @media(max-width: $grid-float-breakpoint) {
-          @include border_highlight("left");
+      &:hover {
+        @media (min-width: $grid-float-breakpoint) {
+          background-color: color('gray-300');
         }
       }
-      .nav-item-list {
-        @include border_highlight("left");
-      }
     }
+    > .active > a {
+      background-color: transparent;
 
-    @at-root #{&}.active {
-      .nav-item-tab {
-        height: $header_height;
-        color: color('gray-600');
-        background-color: $color-nav-active;
-        @include border_highlight("bottom", color("primary"));
-        border-right: 1px solid color('gray-300');
-        border-left: 1px solid color('gray-300');
-
+      &:hover,
+      &:focus {
         @media (max-width: $grid-float-breakpoint) {
-          @include border_highlight("left", color("primary"));
-          border-right: 1px solid color('gray-300');
-          border-bottom: 1px solid color('gray-300');
+          color: color('gray-400');
         }
       }
+    }
+    .dropdown.open > a {
+      color: color('gray-400');
+      background-color: color('gray-700');
 
-      .nav-item-list {
-        color: color('gray-600');
-        background-color: $color-nav-active;
-        @include border_highlight("left", color("primary"));
-        border-top: 1px solid color('gray-300');
-        border-bottom: 1px solid color('gray-300');
-      }
-
-      // neutralize hover on active nav selection
-      &:hover .nav-item-tab, .nav-item-list {
-        color: color('gray-600');
-        background-color: $color-nav-active;
+      @media (max-width: $grid-float-breakpoint) {
+        color: color('white');
+        background-color: color('secondary');
       }
     }
+    &.navbar-right {
+      margin-right: 0px;
+    }
+  }
+}
+.navbar-account_item {
+  @media (min-width: $grid-float-breakpoint) {
+    @include account-nav-border(left);
   }
 }
