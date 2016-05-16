@@ -61,9 +61,19 @@ a.dropdown-menu-nav-link {
     margin-right: 10px;
   }
 }
+.dropdown-menu-nav-link-subhead {
+  display: block;
+  margin-top: -5px;
+  color: $color-gray-500;
+  font-size: $font-size-200;
+}
 .dropdown-menu-nav-bullets {
-  margin-left: 25px;
-  list-style: disc;
+  @media (max-width: $grid-float-breakpoint) {
+    margin-left: 10px;
+  }
+  a.dropdown-menu-nav-link {
+    font-size: $font-size-200 !important;
+  }
 }
 .dropdown-menu-nav-description {
   @include dropdown-content-style;

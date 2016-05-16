@@ -41,7 +41,7 @@
             <% else %>
 
               <li>
-                <%= link_to nil, class: 'dropdown-menu-nav-link', title: 'Sign up for Forever' do %>
+                <%= link_to 'nil', class: 'dropdown-menu-nav-link', title: 'Sign up for Forever' do %>
                   <i class='fa fa-user'></i>Log In
                 <% end %>
               </li>
@@ -61,27 +61,31 @@
 
         <ul class="list-unstyled">
           <li>
-            <%= link_to nil, class: 'dropdown-menu-nav-link', title: 'Organize Photos in Your Forever Library' do %>
-              <i class='fa fa-th-large'></i>Library Demo
+            <%= link_to 'library-demo', class: 'dropdown-menu-nav-link', title: 'Organize Photos in Your Forever Library' do %>
+              Library Demo
             <% end %>
+            <small class="dropdown-menu-nav-link-subhead">Add and Organize Photos</small>
           </li>
 
           <li>
-            <%= link_to nil, class: 'dropdown-menu-nav-link', title: 'Create Print Projects' do %>
-              <i class='fa fa-paint-brush'></i>Projects Demo
+            <%= link_to 'projects-demo', class: 'dropdown-menu-nav-link', title: 'Create Print Projects' do %>
+              Projects Demo
             <% end %>
+            <small class="dropdown-menu-nav-link-subhead">Create Photo Books and More</small>
           </li>
 
           <li>
-            <%= link_to nil, class: 'dropdown-menu-nav-link', title: 'Share Photos with Friends and Family' do %>
-              <i class='fa fa-users'></i>People Demo
+            <%= link_to 'People Demo', class: 'dropdown-menu-nav-link', title: 'Share Photos with Friends and Family' do %>
+              People Demo
             <% end %>
+            <small class="dropdown-menu-nav-link-subhead">Share Photos and Documents</small>
           </li>
 
           <li>
-            <%= link_to nil, class: 'dropdown-menu-nav-link', title: 'View Your Shared Photo Albums' do %>
-              <i class='fa fa-home'></i>Home Demo
+            <%= link_to 'Home Demo', class: 'dropdown-menu-nav-link', title: 'View Your Shared Photo Albums' do %>
+              Home Demo
             <% end %>
+            <small class="dropdown-menu-nav-link-subhead">Showcase your Memories</small>
           </li>
 
         </ul>

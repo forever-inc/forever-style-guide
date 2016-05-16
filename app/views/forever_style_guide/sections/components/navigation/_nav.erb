@@ -15,7 +15,13 @@
 
       <button type="button" class="navbar-toggle offcanvas-toggle pull-right nav-icon-stack" data-toggle="offcanvas" data-target="#js-account-nav-offcanvas">
         <i class='fa fa-user'></i>
-        <span class='nav-icon-label'>Account</span>
+        <span class='nav-icon-label'>
+          <% if defined?(current_user) && (current_user != '') && current_user %>
+            Account
+          <% else %>
+            Log In
+          <% end %>
+        </span>
       </button>
     </div>
 
