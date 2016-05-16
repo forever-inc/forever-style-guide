@@ -1,0 +1,174 @@
+$dropdown-height: 373px; // Allows for entire hero_simple text to display from $screen-md and up
+$nav-icon-width: 60px;
+
+@mixin dropdown-content-style {
+  display: block;
+  color: color('gray-300');
+  font-family: $font-face-light;
+  font-size: $font-size-large;
+}
+
+// Behavior
+.nav .dropdown.open {
+  & > .dropdown-menu-nav {
+    opacity: 1;
+    visibility: visible;
+    @include transition(opacity 0.2s ease-in-out);
+
+    @media (min-width: $grid-float-breakpoint) {
+      height: $dropdown-height;
+    }
+  }
+  &.dropdown-full_width {
+    position: static;
+
+    .dropdown-menu-nav {
+      right: 0;
+      left: 0;
+
+      @media (max-width: $grid-float-breakpoint) {
+        padding-bottom: 40px;
+        @include account-nav-border(bottom);
+      }
+    }
+  }
+}
+.dropdown-menu-nav {
+  display: block;
+  opacity: 0;
+  visibility: hidden;
+  border: none;
+  border-radius: 0;
+  @extend %card-shadow;
+
+  @media (max-width: $grid-float-breakpoint) {
+    padding-left: 15px;
+  }
+}
+
+// Styles
+a.dropdown-menu-nav-link {
+  @include dropdown-content-style;
+
+  &:not(.dropdown-menu-nav-link-no_margin) {
+    margin-top: 10px;
+
+    @media (min-width: $screen-md-min) {
+      margin-top: 15px;
+    }
+  }
+  .fa {
+    margin-right: 10px;
+  }
+}
+.dropdown-menu-nav-link-subhead {
+  display: block;
+  margin-top: -5px;
+  color: $color-gray-500;
+  font-size: $font-size-200;
+}
+.dropdown-menu-nav-bullets {
+  @media (max-width: $grid-float-breakpoint) {
+    margin-left: 10px;
+  }
+  a.dropdown-menu-nav-link {
+    font-size: $font-size-200 !important;
+  }
+}
+.dropdown-menu-nav-description {
+  @include dropdown-content-style;
+}
+.dropdown-menu-nav-title {
+  margin-top: 10px;
+
+  @media (min-width: $screen-md-min) {
+    margin-top: 15px;
+  }
+}
+
+.dropdown-menu-account {
+  right: 0;
+  border-bottom-right-radius: $border-radius-large;
+  border-bottom-left-radius: $border-radius-large;
+
+  .progress {
+    margin-bottom: 10px;
+  }
+  @media (max-width: $grid-float-breakpoint) {
+    @include account-nav-border(bottom);
+  }
+  @media (min-width: $grid-float-breakpoint) {
+    width: $nav-icon-width * 4;
+  }
+}
+.dropdown-menu-account-item {
+  display: block;
+  overflow: hidden;
+
+  @media (min-width: $grid-float-breakpoint) {
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+}
+.dropdown-menu-account-divider {
+  margin-top: 5px;
+  margin-bottom: 10px;
+  @include account-nav-border(bottom);
+
+  @media (max-width: $grid-float-breakpoint) {
+    border-color: color('gray-600');
+  }
+}
+.dropdown-menu-account-user {
+  overflow: hidden;
+}
+.dropdown-menu-account-user-intro {
+  margin-top: $padding-small-vertical;
+  margin-bottom: 0;
+  font-size: $font-size-100;
+}
+.dropdown-menu-account-avatar {
+  margin-right: 10px;
+  border: 0;
+  box-shadow: none;
+
+  @media (max-width: $grid-float-breakpoint) {
+    height: 40px; // avatar-xs
+    width: 40px;
+    margin-top: $padding-small-vertical;
+  }
+}
+.dropdown-menu-account-storage {
+  @media (max-width: $grid-float-breakpoint) {
+    font-size: $font-size-default;
+  }
+}
+
+.dropdown-ambassador {
+  .dropdown-toggle {
+    padding: 0 10px;
+
+    @media (max-width: $grid-float-breakpoint) {
+      padding-top: 0 !important; // overriding .navbar .nav.navbar-nav > li > a
+    }
+  }
+  .fa {
+    position: relative;
+    margin-left: 10px;
+    top: -10px;
+
+    @media (max-width: $grid-float-breakpoint) {
+      top: 15px;
+    }
+  }
+}
+.dropdown-ambassador-intro_text {
+  position: relative;
+
+  @media (min-width: $grid-float-breakpoint) {
+    top: 5px;
+  }
+}
+.dropdown-ambassador-primary_text {
+  margin-right: 10px;
+}
