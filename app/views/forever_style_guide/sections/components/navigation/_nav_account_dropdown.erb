@@ -1,0 +1,41 @@
+<li class='navbar-account_item' id='mini-cart' data-turbolinks-temporary>
+  <%= link_to nil, class: "nav-icon-stack" do %>
+    <i class='fa fa-shopping-cart'></i>
+    <span class="nav-icon-label">Cart</span>
+  <% end %>
+</li>
+
+<!-- if current user show inbox -->
+<li class='navbar-account_item'>
+  <%= link_to nil, class: "nav-icon-stack" do %>
+    <i class='fa fa-inbox'></i>
+    <span class="nav-icon-label">Inbox</span>
+  <% end %>
+</li>
+
+<!-- if current user show account nav via dropdown on desktop-->
+<li class='dropdown navbar-account_item hidden-xs hidden-sm'>
+  <%= link_to nil, class: 'nav-icon-stack dropdown-toggle', :data => { :toggle => 'dropdown' } do %>
+    <i class='fa fa-user'></i>
+    <span class="nav-icon-label">Account</span>
+  <% end %>
+
+  <div class='dropdown-menu dropdown-menu-nav dropdown-menu-account color_block-gray-700'>
+    <%= render partial: "forever_style_guide/sections/components/navigation/nav_account_dropdown_menu" %>
+  </div>
+</li>
+
+<!-- if current user show account in offcanvas menu (without additional click) -->
+<li class='navbar-account_item visible-xs visible-sm'>
+  <div class='dropdown-menu-account color_block-gray-700'>
+    <%= render partial: "forever_style_guide/sections/components/navigation/nav_account_dropdown_menu" %>
+  </div>
+</li>
+
+<!-- if not current user, just show login button -->
+<li class='dropdown navbar-account_item hide'>
+  <%= link_to '/login', class: 'nav-icon-stack' do %>
+    <i class='fa fa-user'></i>
+    <span class="nav-icon-label">Log In</span>
+  <% end %>
+</li>
