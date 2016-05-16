@@ -1,0 +1,148 @@
+<%= link_to nil, class: 'dropdown-toggle', :data => { :toggle => 'dropdown' } do %>
+  My Forever
+  <i class='fa fa-chevron-down'></i>
+<% end %>
+
+<div class='dropdown-menu dropdown-menu-nav color_block-gray-700'>
+  <div class='container'>
+    <div class='row'>
+
+        <div class='col-sm-3 l-padded-thin'>
+          <h3 class='dropdown-menu-nav-title page-title color-primary'>My Forever App</h3>
+
+
+          <ul class="list-unstyled">
+            <!-- If signed in -->
+
+            <li class="hide">
+              <%= link_to '/library', class: 'dropdown-menu-nav-link', title: 'Organize Photos in Your Forever Library' do %>
+                <i class='fa fa-th-large'></i>Library
+              <% end %>
+            </li>
+
+            <li class="hide">
+              <%= link_to '/projects', class: 'dropdown-menu-nav-link', title: 'Create Print Projects' do %>
+                <i class='fa fa-paint-brush'></i>Projects
+              <% end %>
+            </li>
+
+            <li class="hide">
+              <%= link_to '/people', class: 'dropdown-menu-nav-link', title: 'Share Photos with Friends and Family' do %>
+                <i class='fa fa-users'></i>People
+              <% end %>
+            </li>
+
+            <li class="hide">
+              <%= link_to '/home', class: 'dropdown-menu-nav-link', title: 'View Your Shared Photo Albums' do %>
+                <i class='fa fa-home'></i>Home
+              <% end %>
+            </li>
+
+            <!-- else -->
+
+            <li>
+              <%= link_to '/login', class: 'dropdown-menu-nav-link', title: 'Log in to your Forever account' do %>
+                <i class='fa fa-user'></i>Log In
+              <% end %>
+            </li>
+
+            <li>
+              <%= link_to '/sign-up', class: 'dropdown-menu-nav-link', title: 'Sign up for Forever' do %>
+                <i class='fa fa-user-plus'></i>Sign Up Free!
+              <% end %>
+            </li>
+          </ul>
+        </div>
+
+      <div class='col-sm-3 l-padded-thin'>
+        <h3 class='dropdown-menu-nav-title page-title color-accent'>Product Tour</h3>
+
+        <ul class="list-unstyled">
+          <li>
+            <%= link_to '/library-demo', class: 'dropdown-menu-nav-link', title: 'Organize Photos in Your Forever Library' do %>
+              Library Demo
+            <% end %>
+            <small class="dropdown-menu-nav-link-subhead">Add and Organize Photos</small>
+          </li>
+
+          <li>
+            <%= link_to '/projects-demo', class: 'dropdown-menu-nav-link', title: 'Create Print Projects' do %>
+              Projects Demo
+            <% end %>
+            <small class="dropdown-menu-nav-link-subhead">Create Photo Books and More</small>
+          </li>
+
+          <li>
+            <%= link_to '/people-demo', class: 'dropdown-menu-nav-link', title: 'Share Photos with Friends and Family' do %>
+              People Demo
+            <% end %>
+            <small class="dropdown-menu-nav-link-subhead">Share Photos and Documents</small>
+          </li>
+
+          <li>
+            <%= link_to '/home-demo', class: 'dropdown-menu-nav-link', title: 'View Your Shared Photo Albums' do %>
+              Home Demo
+            <% end %>
+            <small class="dropdown-menu-nav-link-subhead">Showcase your Memories</small>
+          </li>
+
+        </ul>
+      </div>
+
+      <div class='col-sm-3 l-padded-thin'>
+        <h3 class='dropdown-menu-nav-title page-title color-secondary'>About</h3>
+
+        <ul class="list-unstyled">
+          <li>
+            <%= link_to 'About Us', '/about', class: 'dropdown-menu-nav-link', title: 'About Forever' %>
+          </li>
+
+          <li>
+            <%= link_to 'Our Team', '/about/team', class: 'dropdown-menu-nav-link', title: 'Meet the Forever Team' %>
+          </li>
+
+          <li>
+            <%= link_to 'Our Beliefs', '/about/beliefs', class: 'dropdown-menu-nav-link', title: 'Forever Beliefs and Values' %>
+          </li>
+
+          <li>
+            <%= link_to 'The Forever Guarantee', '/guarantee', class: 'dropdown-menu-nav-link', title: 'Forever Guarantee' %>
+          </li>
+
+        </ul>
+      </div>
+
+      <div class='col-sm-3 l-padded-thin'>
+        <h3 class='dropdown-menu-nav-title page-title color-services'>Get Started</h3>
+
+        <ul class="list-unstyled">
+          <li>
+            <%= link_to '/overview-video', class: 'dropdown-menu-nav-link', title: 'View the Forever Overview Video' do %>
+              <i class='fa fa-video-camera'></i>Forever Overview
+            <% end %>
+          </li>
+
+          <li>
+            <%= link_to '/uploading-photos-video', class: 'dropdown-menu-nav-link', title: 'View the Uploading Photos Tutorial Video' do %>
+              <i class='fa fa-video-camera'></i>Uploading Photos
+            <% end %>
+          </li>
+
+          <li>
+            <%= link_to '/getting-orgnanized-video', class: 'dropdown-menu-nav-link', title: 'View the Organizing Photos Tutorial Video' do %>
+              <i class='fa fa-video-camera'></i>Getting Organized
+            <% end %>
+          </li>
+
+          <li>
+            <%= link_to '/sharing-video', class: 'dropdown-menu-nav-link', title: 'View the Sharing Photos Tutorial Video' do %>
+              <i class='fa fa-video-camera'></i>Sharing
+            <% end %>
+          </li>
+
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</div>
