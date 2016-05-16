@@ -11,7 +11,7 @@ $offcanvas-media:                 $grid-float-breakpoint!default;
 
   .navbar-default {
     .navbar-offcanvas {
-      background-color: $navbar-default-bg;
+      background-color: color('gray-700');
     }
   }
 
@@ -27,12 +27,15 @@ $offcanvas-media:                 $grid-float-breakpoint!default;
     max-width: $offcanvas-width;
     left: -$offcanvas-width;
     top: 0;
-    padding-left: $navbar-padding-horizontal;
-    padding-right: $navbar-padding-horizontal;
-    z-index: 999;
+    z-index: $zindex-navbar-fixed + 1; // 999
     overflow: scroll;
     -webkit-overflow-scrolling: touch;
     transition: all $offcanvas-animation-time ease-in;
+
+    .nav > li {
+      width: 100%;
+      overflow: hidden;
+    }
 
     &.in {
       box-shadow: 0 0 20px rgba(0, 0, 0, .3);

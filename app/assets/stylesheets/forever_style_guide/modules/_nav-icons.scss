@@ -1,0 +1,104 @@
+$nav-icon-width: 60px;
+$nav-icon-margin: 3px;
+
+.nav-icon-stack {
+  width: $nav-icon-width;
+  padding: 7px 4px 4px 4px !important; // overriding .navbar-nav > li > a
+  text-align: center;
+
+  .fa {
+    display: block;
+    position: relative;
+    top: $nav-icon-margin;
+  }
+}
+.nav-icon-label {
+  font-size: $font-size-100;
+  line-height: $font-size-400
+}
+
+// Style offcanvas icons uniquely
+@media (max-width: $grid-float-breakpoint) {
+  .navbar-account_item .nav-icon-stack {
+    width: auto;
+    padding: 15px !important;
+    text-align: left;
+
+    .fa {
+      display: inline-block;
+      top: 0;
+      margin-right: 10px;
+    }
+    .nav-icon-label {
+      font-size: $font-size-500;
+    }
+  }
+}
+
+.navbar-default .navbar-nav {
+  .dropdown-toggle .fa-chevron-down {
+    margin-left: $nav-icon-margin;
+    font-size: 9px;
+    @include transition(transform 0.2s ease-in-out);
+
+    @media(max-width: $grid-float-breakpoint) {
+      position: absolute;
+      right: 15px;
+      font-size: $font-size-default;
+    }
+  }
+  .dropdown.open .dropdown-toggle .fa-chevron-down {
+    @include transform(rotate(180deg));
+  }
+}
+
+// Mobile Toggles
+.navbar-default .navbar-toggle {
+  height: $header_height;
+  width: $header_height;
+  margin-top: 0;
+  margin-right: 0;
+  margin-bottom: 0;
+  color: color('gray-600');
+  font-size: $font-size-default;
+  border: 0;
+  border-radius: 0;
+  z-index: $zindex-navbar-fixed; // make sure toggles appear above logo
+
+  &:hover,
+  &:active,
+  &:focus {
+    background-color: transparent;
+  }
+
+  &.nav-icon-stack {
+    padding: 0 !important; // overriding .navbar-nav > li > a
+  }
+  &.pull-right {
+    position: absolute;
+    right: 0;
+    @include account-nav-border(left);
+  }
+  &.pull-left {
+    @include account-nav-border(right);
+  }
+  &.navbar-toggle-close {
+    width: 100%;
+    padding: 0;
+    @include account-nav-border(bottom);
+
+    &:hover {
+      background-color: color('white');
+      cursor: pointer;
+    }
+    .nav-icon-stack {
+      height: $header_height;
+    }
+  }
+}
+.navbar-toggle-close-left {
+  @include account-nav-border(right);
+}
+.navbar-toggle-close-right {
+  @include account-nav-border(left);
+}
