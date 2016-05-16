@@ -1,0 +1,31 @@
+<li class='dropdown dropdown-full_width dropdown-ambassador navbar-account_item'>
+  <%= link_to nil, class: 'dropdown-toggle', :data => { :toggle => 'dropdown' } do %>
+    <div>
+      <small class="dropdown-ambassador-intro_text">Find or join Forever</small>
+    </div>
+    <span class="dropdown-ambassador-primary_text">Ambassadors</span>
+    <i class='fa fa-chevron-down'></i>
+  <% end %>
+
+  <div class='dropdown-menu dropdown-menu-nav color_block-gray-700'>
+    <div class='container'>
+      <div class='row'>
+
+        <div class='col-sm-6 l-padded-thin'>
+          <h3 class='dropdown-menu-nav-title page-title color-ambassador-light'>Join our team!</h3>
+          <hr />
+          <p class="dropdown-menu-nav-description color-white">To reach the Forever vision, we need brand ambassadors who love helping people capture and share their life's stories.</p>
+          <%= link_to 'Learn More', '/opportunity', class: 'btn btn-ambassador btn-lg l-section-close', title: 'Make Money Helping People Save & Print their Photos' %>
+        </div>
+
+        <div class='col-sm-6 l-padded-thin'>
+          <h3 class='dropdown-menu-nav-title page-title color-ambassador-light'>Your Ambassador</h3>
+          <hr />
+          <p class="dropdown-menu-nav-description color-white">Ambassadors provide <strong><u>free</u></strong> training, product consultations, and advance knowledge of sales and new products!</p>
+          <%= link_to 'Find a Local Ambassador', '/find-an-ambassador', class: 'btn btn-ambassador btn-lg l-section-close', title: 'Get Free Training and Support from Certified Ambassadors' %>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</li>
