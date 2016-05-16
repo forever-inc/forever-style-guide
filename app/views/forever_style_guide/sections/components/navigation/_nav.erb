@@ -1,0 +1,69 @@
+<header id='header-is_fixed'>
+  <nav class='navbar navbar-default color_block-white' role='navigation'>
+
+    <div class='navbar-header'>
+      <button type="button" class="navbar-toggle offcanvas-toggle pull-left nav-icon-stack" data-toggle="offcanvas" data-target="#js-main-nav-offcanvas">
+        <i class='fa fa-reorder'></i>
+        <span class='nav-icon-label'>Menu</span>
+      </button>
+
+      <div class="navbar-brand">
+        <%= link_to '/', title: 'Forever Guaranteed Storage, Digital Scrapbooking, and Printing Logo' do %>
+          <%= image_tag image_url("forever_style_guide/forever-logo.jpg"), class: "navbar-brand-logo", alt: "Forever Guaranteed Storage, Digital Scrapbooking, and Printing Logo", title: 'Forever Guaranteed Storage, Digital Scrapbooking, and Printing Logo' %>
+        <% end %>
+      </div>
+
+      <button type="button" class="navbar-toggle offcanvas-toggle pull-right nav-icon-stack" data-toggle="offcanvas" data-target="#js-account-nav-offcanvas">
+        <i class='fa fa-user'></i>
+        <span class='nav-icon-label'>
+          Log In
+        </span>
+      </button>
+    </div>
+
+    <div class="navbar-offcanvas navbar-offcanvas-touch" id="js-main-nav-offcanvas">
+      <ul class='nav navbar-nav navbar-left'>
+
+        <li class="visible-xs visible-sm">
+          <div class="navbar-toggle navbar-toggle-close color_block-white " id="js-close-main-nav">
+            <div class="nav-icon-stack pull-left  navbar-toggle-close-left">
+              <i class='fa fa-close'></i>
+              <span class='nav-icon-label'>Close</span>
+            </div>
+          </div>
+        </li>
+
+        <li class='dropdown dropdown-full_width'>
+          <!-- render partial: "forever_style_guide/sections/components/navigation/nav_my_forever_dropdown" %> -->
+        </li>
+
+        <li class='dropdown dropdown-full_width'>
+          <!-- render partial: "forever_style_guide/sections/components/navigation/nav_products_dropdown" %> -->
+        </li>
+
+        <li class='dropdown dropdown-full_width'>
+          <!-- render partial: "forever_style_guide/sections/components/navigation/nav_community_dropdown" %> -->
+        </li>
+      </ul>
+    </div>
+
+    <div class='navbar-offcanvas navbar-offcanvas-touch navbar-offcanvas-right' id='js-account-nav-offcanvas'>
+      <ul class='nav navbar-nav navbar-right'>
+
+        <li class="visible-xs visible-sm">
+          <div class="navbar-toggle navbar-toggle-close color_block-white" id="js-close-account-nav">
+            <div class="nav-icon-stack pull-right navbar-toggle-close-right">
+              <i class='fa fa-close'></i>
+              <span class='nav-icon-label'>Close</span>
+            </div>
+          </div>
+        </li>
+
+        <!-- render partial: "forever_style_guide/sections/components/navigation/nav_account" %> -->
+        <!-- render partial: "forever_style_guide/sections/components/navigation/nav_ambassador_dropdown" %> -->
+
+      </ul>
+    </div>
+
+  </nav>
+</header>
