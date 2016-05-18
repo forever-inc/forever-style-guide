@@ -12,45 +12,47 @@
 
 
           <ul class="list-unstyled">
-            <!-- If signed in -->
+            <% if defined?(current_user) && (current_user != '') && current_user %>
 
-            <li class="hide">
-              <%= link_to '/library', class: 'dropdown-menu-nav-link', title: 'Organize Photos in Your Forever Library' do %>
-                <i class='fa fa-th-large'></i>Library
-              <% end %>
-            </li>
+              <li>
+                <%= link_to '/library', class: 'dropdown-menu-nav-link', title: 'Organize Photos in Your Forever Library' do %>
+                  <i class='fa fa-th-large'></i>Library
+                <% end %>
+              </li>
 
-            <li class="hide">
-              <%= link_to '/projects', class: 'dropdown-menu-nav-link', title: 'Create Print Projects' do %>
-                <i class='fa fa-paint-brush'></i>Projects
-              <% end %>
-            </li>
+              <li>
+                <%= link_to '/projects', class: 'dropdown-menu-nav-link', title: 'Create Print Projects' do %>
+                  <i class='fa fa-paint-brush'></i>Projects
+                <% end %>
+              </li>
 
-            <li class="hide">
-              <%= link_to '/people', class: 'dropdown-menu-nav-link', title: 'Share Photos with Friends and Family' do %>
-                <i class='fa fa-users'></i>People
-              <% end %>
-            </li>
+              <li>
+                <%= link_to '/people', class: 'dropdown-menu-nav-link', title: 'Share Photos with Friends and Family' do %>
+                  <i class='fa fa-users'></i>People
+                <% end %>
+              </li>
 
-            <li class="hide">
-              <%= link_to '/home', class: 'dropdown-menu-nav-link', title: 'View Your Shared Photo Albums' do %>
-                <i class='fa fa-home'></i>Home
-              <% end %>
-            </li>
+              <li>
+                <%= link_to '/home', class: 'dropdown-menu-nav-link', title: 'View Your Shared Photo Albums' do %>
+                  <i class='fa fa-home'></i>Home
+                <% end %>
+              </li>
 
-            <!-- else -->
+            <% else %>
 
-            <li>
-              <%= link_to '/login', class: 'dropdown-menu-nav-link', title: 'Log in to your Forever account' do %>
-                <i class='fa fa-user'></i>Log In
-              <% end %>
-            </li>
+              <li>
+                <%= link_to '/login', class: 'dropdown-menu-nav-link', title: 'Log in to your Forever account' do %>
+                  <i class='fa fa-user'></i>Log In
+                <% end %>
+              </li>
 
-            <li>
-              <%= link_to '/sign-up', class: 'dropdown-menu-nav-link', title: 'Sign up for Forever' do %>
-                <i class='fa fa-user-plus'></i>Sign Up Free!
-              <% end %>
-            </li>
+              <li>
+                <%= link_to '/sign-up', class: 'dropdown-menu-nav-link', title: 'Sign up for Forever' do %>
+                  <i class='fa fa-user-plus'></i>Sign Up Free!
+                <% end %>
+              </li>
+
+            <% end %>
           </ul>
         </div>
 
