@@ -10,6 +10,9 @@
             <%= image_tag "default_avatar.jpg", class: "dropdown-menu-account-avatar avatar avatar-sm pull-left", alt: current_user.name, title: current_user.name %>
           <% end %>
 
+          <%= link_to ('tel:+' + current_user.name), title: 'Call' + current_user.name  do %>
+          123.123.1234
+          <% end %>
           <div class="dropdown-menu-account-user">
             <p class="dropdown-menu-account-user-intro color-gray-300">Signed in as</p>
             <h4 class="page-title color-gray-300"><%= current_user.name %></h4>
