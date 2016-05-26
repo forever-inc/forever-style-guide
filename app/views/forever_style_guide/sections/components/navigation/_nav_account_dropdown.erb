@@ -1,42 +1,37 @@
-<li class='navbar-account_item' id='mini-cart' data-turbolinks-temporary>
-  <%= link_to '/cart', class: "nav-icon-stack" do %>
+<li class='navbar-account_item navbar-account_item-cart' id='mini-cart' data-turbolinks-temporary>
+  <%= link_to '/cart', class: "nav-icon-stack hidden-grid-float-breakpoint " do %>
     <i class='fa fa-shopping-cart'></i>
     <span class="nav-icon-label">Cart</span>
   <% end %>
 </li>
 
 <% if defined?(current_user) && (current_user != '') && current_user %>
-  <li class='navbar-account_item'>
-    <%= link_to '/inbox', class: "nav-icon-stack" do %>
+  <li class='navbar-account_item-inbox navbar-account_item'>
+    <%= link_to '/inbox', class: "nav-icon-stack hidden-grid-float-breakpoint " do %>
       <i class='fa fa-inbox'></i>
       <span class="nav-icon-label">Inbox</span>
     <% end %>
   </li>
 
-  <li class='dropdown navbar-account_item hidden-xs hidden-sm'>
-    <%= link_to nil, class: 'nav-icon-stack dropdown-toggle', :data => { :toggle => 'dropdown' } do %>
-      <i class='fa fa-user'></i>
+  <li class='dropdown navbar-account_item'>
+    <%= link_to nil, class: 'nav-icon-stack dropdown-toggle dropdown-toggle-account', :data => { :toggle => 'dropdown' } do %>
+      <i class='fa fa-user hidden-grid-float-breakpoint'></i>
       <span class="nav-icon-label">Account</span>
+      <i class='fa fa-chevron-down visible-grid-float-breakpoint'></i>
     <% end %>
 
-    <!-- Show user info, settings, log out under "Account" dropdown on desktop -->
     <div class='dropdown-menu dropdown-menu-nav dropdown-menu-account color_block-gray-700'>
       <%= render partial: "forever_style_guide/sections/components/navigation/nav_account_dropdown_menu" %>
     </div>
   </li>
 
-  <!-- Show user info, etc... in offcanvas mobile menu -->
-  <li class='navbar-account_item visible-xs visible-sm'>
-    <div class='dropdown-menu-account color_block-gray-700'>
-      <%= render partial: "forever_style_guide/sections/components/navigation/nav_account_dropdown_menu" %>
-    </div>
-  </li>
-
 <% else %>
-  <li class='dropdown navbar-account_item'>
-    <%= link_to sign_in_path, class: 'nav-icon-stack' do %>
-      <i class='fa fa-user'></i>
-      <span class="nav-icon-label">Log In</span>
+  <li class='dropdown navbar-account_item hidden-grid-float-breakpoint'>
+    <%= link_to '/sign_in', class: 'nav-icon-stack' do %>
+
+      <i class='fa fa-user hidden-grid-float-breakpoint'></i>
+      <span class='nav-icon-label'>Log In</span>
+
     <% end %>
   </li>
 <% end %>

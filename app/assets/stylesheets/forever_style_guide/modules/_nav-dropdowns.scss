@@ -8,6 +8,12 @@ $nav-icon-width: 60px;
   font-size: $font-size-large;
 }
 
+@mixin mobile-active-dropdown-bg($color) {
+  color: color('white');
+  background-color: $color;
+  border-top-color: $color;
+}
+
 // Behavior
 .nav .dropdown.open {
   & > .dropdown-menu-nav {
@@ -25,14 +31,46 @@ $nav-icon-width: 60px;
     .dropdown-menu-nav {
       right: 0;
       left: 0;
-
-      @media (max-width: $grid-float-breakpoint) {
-        padding-bottom: 40px;
-        @include account-nav-border(bottom);
-      }
+    }
+  }
+  .dropdown-menu-nav {
+    @media (max-width: $grid-float-breakpoint) {
+      padding-bottom: 20px;
     }
   }
 }
+
+// Override bootstrap default to show dropdowns at custom breakpoint
+@media (max-width: $grid-float-breakpoint) {
+  .navbar-nav .open .dropdown-menu {
+    position: static;
+  }
+}
+
+// Styles
+.navbar .dropdown.open > .dropdown-toggle {
+  color: color('gray-400');
+  background-color: $nav-bg-color;
+
+  @media (max-width: $grid-float-breakpoint) {
+    &.dropdown-toggle-my_forever {
+      @include mobile-active-dropdown-bg($color-primary);
+    }
+    &.dropdown-toggle-products {
+      @include mobile-active-dropdown-bg($color-secondary);
+    }
+    &.dropdown-toggle-community {
+      @include mobile-active-dropdown-bg($color-accent);
+    }
+    &.dropdown-toggle-account {
+      @include mobile-active-dropdown-bg($color-forever_services);
+    }
+    &.dropdown-toggle-ambassador {
+      @include mobile-active-dropdown-bg($color-forever_ambassador);
+    }
+  }
+}
+
 .dropdown-menu-nav {
   display: block;
   opacity: 0;
@@ -42,11 +80,10 @@ $nav-icon-width: 60px;
   @extend %card-shadow;
 
   @media (max-width: $grid-float-breakpoint) {
-    padding-left: 15px;
+    padding-left: 5px;
   }
 }
 
-// Styles
 a.dropdown-menu-nav-link {
   @include dropdown-content-style;
 
@@ -60,7 +97,18 @@ a.dropdown-menu-nav-link {
   .fa {
     margin-right: 10px;
   }
+  span {
+    font-family: inherit; // persist font-style for conditionally hidden or shown text (span class="hidden-md")
+  }
 }
+.dropdown-menu-account-item {
+  .dropdown-menu-nav-link {
+    @media (max-width: $grid-float-breakpoint) {
+      margin-top: $padding-small-vertical;
+    }
+  }
+}
+
 .dropdown-menu-nav-link-subhead {
   display: block;
   margin-top: -5px;
@@ -77,6 +125,10 @@ a.dropdown-menu-nav-link {
 }
 .dropdown-menu-nav-description {
   @include dropdown-content-style;
+
+  @media(max-width: $grid-float-breakpoint) {
+    font-size: $font-size-300;
+  }
 }
 .dropdown-menu-nav-title {
   margin-top: 10px;
@@ -84,91 +136,7 @@ a.dropdown-menu-nav-link {
   @media (min-width: $screen-md-min) {
     margin-top: 15px;
   }
-}
-
-.dropdown-menu-account {
-  right: 0;
-  border-bottom-right-radius: $border-radius-large;
-  border-bottom-left-radius: $border-radius-large;
-
-  .progress {
-    margin-bottom: 10px;
+  @media(max-width: $grid-float-breakpoint) {
+    font-size: $font-size-400;
   }
-  @media (max-width: $grid-float-breakpoint) {
-    @include account-nav-border(bottom);
-  }
-  @media (min-width: $grid-float-breakpoint) {
-    width: $nav-icon-width * 4;
-  }
-}
-.dropdown-menu-account-item {
-  display: block;
-  overflow: hidden;
-
-  @media (min-width: $grid-float-breakpoint) {
-    padding-top: 5px;
-    padding-bottom: 5px;
-  }
-}
-.dropdown-menu-account-divider {
-  margin-top: 5px;
-  margin-bottom: 10px;
-  @include account-nav-border(bottom);
-
-  @media (max-width: $grid-float-breakpoint) {
-    border-color: color('gray-600');
-  }
-}
-.dropdown-menu-account-user {
-  overflow: hidden;
-}
-.dropdown-menu-account-user-intro {
-  margin-top: $padding-small-vertical;
-  margin-bottom: 0;
-  font-size: $font-size-100;
-}
-.dropdown-menu-account-avatar {
-  margin-right: 10px;
-  border: 0;
-  box-shadow: none;
-
-  @media (max-width: $grid-float-breakpoint) {
-    height: 40px; // avatar-xs
-    width: 40px;
-    margin-top: $padding-small-vertical;
-  }
-}
-.dropdown-menu-account-storage {
-  @media (max-width: $grid-float-breakpoint) {
-    font-size: $font-size-default;
-  }
-}
-
-.dropdown-ambassador {
-  .dropdown-toggle {
-    padding: 0 10px;
-
-    @media (max-width: $grid-float-breakpoint) {
-      padding-top: 0 !important; // overriding .navbar .nav.navbar-nav > li > a
-    }
-  }
-  .fa {
-    position: relative;
-    margin-left: 10px;
-    top: -10px;
-
-    @media (max-width: $grid-float-breakpoint) {
-      top: 15px;
-    }
-  }
-}
-.dropdown-ambassador-intro_text {
-  position: relative;
-
-  @media (min-width: $grid-float-breakpoint) {
-    top: 5px;
-  }
-}
-.dropdown-ambassador-primary_text {
-  margin-right: 10px;
 }

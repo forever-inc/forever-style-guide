@@ -1,6 +1,12 @@
 $nav-icon-width: 60px;
 $nav-icon-margin: 3px;
 
+@mixin chevron-style {
+  position: absolute;
+  right: 15px;
+  font-size: $font-size-default;
+}
+
 .nav-icon-stack {
   width: $nav-icon-width;
   padding: 7px 4px 4px 4px !important; // overriding .navbar-nav > li > a
@@ -17,17 +23,19 @@ $nav-icon-margin: 3px;
   line-height: $font-size-400
 }
 
-// Style offcanvas icons uniquely
+// Style offcanvas account icons consistent w/ product dropdowns
 @media (max-width: $grid-float-breakpoint) {
   .navbar-account_item .nav-icon-stack {
     width: auto;
-    padding: 15px !important;
+    padding: 15px !important; // override .navbar .nav.navbar-nav > li > a
     text-align: left;
 
-    .fa {
-      display: inline-block;
-      top: 0;
-      margin-right: 10px;
+    .fa-chevron-down {
+      top: 15px;
+    }
+    .fa-chevron-right {
+      top: 15px;
+      @include chevron-style;
     }
     .nav-icon-label {
       font-size: $font-size-500;
@@ -42,9 +50,7 @@ $nav-icon-margin: 3px;
     @include transition(transform 0.2s ease-in-out);
 
     @media(max-width: $grid-float-breakpoint) {
-      position: absolute;
-      right: 15px;
-      font-size: $font-size-default;
+      @include chevron-style;
     }
   }
   .dropdown.open .dropdown-toggle .fa-chevron-down {
@@ -53,7 +59,8 @@ $nav-icon-margin: 3px;
 }
 
 // Mobile Toggles
-.navbar-default .navbar-toggle {
+.navbar-default .navbar-toggle,
+a.cart-icon {
   height: $header_height;
   width: $header_height;
   margin-top: 0;
@@ -68,24 +75,20 @@ $nav-icon-margin: 3px;
   &:hover,
   &:active,
   &:focus {
+    text-decoration: none;
     background-color: transparent;
   }
 
   &.nav-icon-stack {
     padding: 0 !important; // overriding .navbar-nav > li > a
   }
-  &.pull-right {
-    position: absolute;
-    right: 0;
-    @include account-nav-border(left);
-  }
   &.pull-left {
-    @include account-nav-border(right);
+    @include nav-border(right);
   }
   &.navbar-toggle-close {
     width: 100%;
     padding: 0;
-    @include account-nav-border(bottom);
+    @include nav-border(bottom);
 
     &:hover {
       background-color: color('white');
@@ -95,10 +98,17 @@ $nav-icon-margin: 3px;
       height: $header_height;
     }
   }
+  .fa-shopping-cart {
+    padding-top: 5px;
+  }
+}
+a.cart-icon {
+  @media(max-width: $grid-float-breakpoint) {
+    position: absolute;
+    right: 0;
+    @include nav-border(left);
+  }
 }
 .navbar-toggle-close-left {
-  @include account-nav-border(right);
-}
-.navbar-toggle-close-right {
-  @include account-nav-border(left);
+  @include nav-border(right);
 }

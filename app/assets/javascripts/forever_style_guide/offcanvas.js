@@ -207,6 +207,7 @@
       Offcanvas.prototype._clicked = function(e) {
         e.preventDefault();
         this._sendEventsBefore();
+        console.log('hey ya');
         $(".navbar-offcanvas").not(this.target).trigger('offcanvas.close');
         this.target.toggleClass('in');
         this.element.toggleClass('is-open');

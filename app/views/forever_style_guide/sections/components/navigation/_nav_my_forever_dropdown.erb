@@ -1,4 +1,4 @@
-<%= link_to nil, class: 'dropdown-toggle', :data => { :toggle => 'dropdown' } do %>
+<%= link_to nil, class: 'dropdown-toggle dropdown-toggle-my_forever', :data => { :toggle => 'dropdown' } do %>
   My Forever
   <i class='fa fa-chevron-down'></i>
 <% end %>
@@ -7,7 +7,7 @@
   <div class='container'>
     <div class='row'>
 
-        <div class='col-sm-3 l-padded-thin'>
+        <div class='col-grid-float-3 l-padded-thin'>
           <h3 class='dropdown-menu-nav-title page-title color-primary'>My Forever App</h3>
 
 
@@ -41,13 +41,13 @@
             <% else %>
 
               <li>
-                <%= link_to '/login', class: 'dropdown-menu-nav-link', title: 'Log in to your Forever account' do %>
+                <%= link_to '/sign_in', class: 'dropdown-menu-nav-link', title: 'Log in to your Forever account' do %>
                   <i class='fa fa-user'></i>Log In
                 <% end %>
               </li>
 
               <li>
-                <%= link_to '/sign-up', class: 'dropdown-menu-nav-link', title: 'Sign up for Forever' do %>
+                <%= link_to '/sign_up', class: 'dropdown-menu-nav-link', title: 'Sign up for Forever' do %>
                   <i class='fa fa-user-plus'></i>Sign Up Free!
                 <% end %>
               </li>
@@ -56,7 +56,7 @@
           </ul>
         </div>
 
-      <div class='col-sm-3 l-padded-thin'>
+      <div class='col-grid-float-3 l-padded-thin'>
         <h3 class='dropdown-menu-nav-title page-title color-accent'>Product Tour</h3>
 
         <ul class="list-unstyled">
@@ -91,7 +91,7 @@
         </ul>
       </div>
 
-      <div class='col-sm-3 l-padded-thin'>
+      <div class='col-grid-float-3 l-padded-thin'>
         <h3 class='dropdown-menu-nav-title page-title color-secondary'>About</h3>
 
         <ul class="list-unstyled">
@@ -114,7 +114,7 @@
         </ul>
       </div>
 
-      <div class='col-sm-3 l-padded-thin'>
+      <div class='col-grid-float-3 l-padded-thin'>
         <h3 class='dropdown-menu-nav-title page-title color-services'>Get Started</h3>
 
         <ul class="list-unstyled">

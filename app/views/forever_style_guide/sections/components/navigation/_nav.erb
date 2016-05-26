@@ -2,7 +2,7 @@
   <nav class='navbar navbar-default color_block-white' role='navigation'>
 
     <div class='navbar-header'>
-      <button type="button" class="navbar-toggle offcanvas-toggle pull-left nav-icon-stack" data-toggle="offcanvas" data-target="#js-main-nav-offcanvas">
+      <button type="button" class="navbar-toggle offcanvas-toggle pull-left nav-icon-stack js-offcanvas-has-events" data-toggle="offcanvas" data-target="#js-main-nav-offcanvas">
         <i class='fa fa-reorder'></i>
         <span class='nav-icon-label'>Menu</span>
       </button>
@@ -13,56 +13,46 @@
         <% end %>
       </div>
 
-      <button type="button" class="navbar-toggle offcanvas-toggle pull-right nav-icon-stack" data-toggle="offcanvas" data-target="#js-account-nav-offcanvas">
-        <i class='fa fa-user'></i>
-        <span class='nav-icon-label'>
-          Log In
-        </span>
-      </button>
+      <a href="/cart" class="visible-grid-float-breakpoint nav-icon-stack cart-icon" title="View Your Shopping Cart">
+        <i class='fa fa-shopping-cart'></i>
+        <span class='nav-icon-label'>Cart</span>
+      </a>
     </div>
 
-    <div class="navbar-offcanvas navbar-offcanvas-touch" id="js-main-nav-offcanvas">
-      <ul class='nav navbar-nav navbar-left'>
+    <div class="navbar-offcanvas" id="js-main-nav-offcanvas">
+      <div class="navbar-offcanvas-container">
 
-        <li class="visible-xs visible-sm">
-          <div class="navbar-toggle navbar-toggle-close color_block-white " id="js-close-main-nav">
-            <div class="nav-icon-stack pull-left  navbar-toggle-close-left">
-              <i class='fa fa-close'></i>
-              <span class='nav-icon-label'>Close</span>
+        <ul class='nav navbar-nav navbar-left'>
+
+          <li class="visible-xs visible-sm">
+            <div class="navbar-toggle navbar-toggle-close color_block-white " id="js-close-main-nav">
+              <div class="nav-icon-stack pull-left  navbar-toggle-close-left">
+                <i class='fa fa-close'></i>
+                <span class='nav-icon-label'>Close</span>
+              </div>
             </div>
-          </div>
-        </li>
+          </li>
 
-        <li class='dropdown dropdown-full_width'>
-          <%= render partial: "forever_style_guide/sections/components/navigation/nav_my_forever_dropdown" %>
-        </li>
+          <li class='dropdown dropdown-full_width'>
+            <%= render partial: "forever_style_guide/sections/components/navigation/nav_my_forever_dropdown" %>
+          </li>
 
-        <li class='dropdown dropdown-full_width'>
-          <%= render partial: "forever_style_guide/sections/components/navigation/nav_products_dropdown" %>
-        </li>
+          <li class='dropdown dropdown-full_width'>
+            <%= render partial: "forever_style_guide/sections/components/navigation/nav_products_dropdown" %>
+          </li>
 
-        <li class='dropdown dropdown-full_width'>
-          <%= render partial: "forever_style_guide/sections/components/navigation/nav_community_dropdown" %>
-        </li>
-      </ul>
-    </div>
+          <li class='dropdown dropdown-full_width'>
+            <%= render partial: "forever_style_guide/sections/components/navigation/nav_community_dropdown" %>
+          </li>
+        </ul>
 
-    <div class='navbar-offcanvas navbar-offcanvas-touch navbar-offcanvas-right' id='js-account-nav-offcanvas'>
-      <ul class='nav navbar-nav navbar-right'>
+        <ul class='nav navbar-nav navbar-right'>
+          <%= render partial: "forever_style_guide/sections/components/navigation/nav_account_dropdown" %>
+          <%= render partial: "forever_style_guide/sections/components/navigation/nav_ambassador_dropdown" %>
+        </ul>
 
-        <li class="visible-xs visible-sm">
-          <div class="navbar-toggle navbar-toggle-close color_block-white" id="js-close-account-nav">
-            <div class="nav-icon-stack pull-right navbar-toggle-close-right">
-              <i class='fa fa-close'></i>
-              <span class='nav-icon-label'>Close</span>
-            </div>
-          </div>
-        </li>
-
-        <%= render partial: "forever_style_guide/sections/components/navigation/nav_account_dropdown" %>
-        <%= render partial: "forever_style_guide/sections/components/navigation/nav_ambassador_dropdown" %>
-
-      </ul>
+        <%= render partial: "forever_style_guide/sections/components/navigation/nav_account_signed_out_mobile" %>
+      </div>
     </div>
 
   </nav>
