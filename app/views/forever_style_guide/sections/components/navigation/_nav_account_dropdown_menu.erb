@@ -39,12 +39,13 @@
           <% end %>
         </li>
 
-        <!-- if current_user.is_ambassador -->
-        <li class="dropdown-menu-account-item">
-          <%= link_to '/back-office', class: 'dropdown-menu-nav-link dropdown-menu-nav-link-no_margin', title: 'Ambassador Back Office Reports' do %>
-            <i class='fa fa-suitcase'></i>My Back Office
-          <% end %>
-        </li>
+        <% if @linked_ambassador %>
+          <li class="dropdown-menu-account-item">
+            <%= link_to '/back-office', class: 'dropdown-menu-nav-link dropdown-menu-nav-link-no_margin', title: 'Ambassador Back Office Reports' do %>
+              <i class='fa fa-suitcase'></i>My Back Office
+            <% end %>
+          </li>
+        <% end %>
 
         <li class="dropdown-menu-account-divider hidden-xs hidden-sm"></li>
 
