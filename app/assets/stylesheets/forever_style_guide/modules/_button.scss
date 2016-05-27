@@ -54,11 +54,13 @@
   @each $id, $color in $core_colors {
     @at-root #{&}.btn-#{$id} {
       @include btn-color(#{$id});
+
       &.btn-inverse {
         @include btn-color(#{$id}, true);
+
         &.btn-inverse-hero {
-           border-color: color('white');
-       }
+          border-color: color('white');
+        }
       }
     }
   }
