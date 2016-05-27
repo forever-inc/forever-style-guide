@@ -56,6 +56,9 @@
       @include btn-color(#{$id});
       &.btn-inverse {
         @include btn-color(#{$id}, true);
+        &.btn-inverse-hero {
+ +          border-color: color('white');
+ +      }
       }
     }
   }
