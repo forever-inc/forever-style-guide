@@ -18,15 +18,35 @@
 <div class="color_block-white">
   <div class="container">
     <div class="l-padded-thick" style="min-height: 800px;">
-    <h1>Fixed Navigation</h1>
-      <p>To implement fixed navigation:</p>
+    <h1>New Nav &amp; Forever Style Guide 3.0.0</h1>
       <ol>
-        <li>Document usage</li>
+        <li class="l-section">Make sure you're using the style guide 3.0 gem
+          <pre class="well">
+            gem 'forever_style_guide', '3.0.0'
+          </pre>
+        </li>
+        <li class="l-section">
+          Add a helper to display to your application to use whole components from the style guide (not just styles)
+          <pre class="well">
+            def styleguide_component(type, properties)
+              render "forever_style_guide/sections/components/#{type}", properties
+            end
+          </pre>
+        </li>
+        <li class="l-section">
+          Call the components into your views
+          <pre class="well">
+            &lt;%= styleguide_component("navigation/nav", nil) %>
+          </pre>
+        </li>
+
+        <li class="l-section">
+          The styleguide handles routing for all the apps to point at marketing site, store and web app.
+          <pre class="well">
+            app/helpers/forever_style_guide/application_helper.rb
+          </pre>
+        </li>
       </ol>
-      <p>How it works:</p>
-      <ul>
-        <li>Add necessary clarifications</li>
-      </ul>
     </div>
   </div>
 </div>
