@@ -57,5 +57,81 @@ module ForeverStyleGuide
       url.query = nil
       url.to_s
     end
+
+    #Web App Paths
+    def login_path
+      web_app_url('/login')
+    end
+
+    def sign_up_path
+      web_app_url('/signup')
+    end
+
+    def library_path
+      web_app_url('/inbox')
+    end
+
+    def projects_path
+      web_app_url('/projects')
+    end
+
+    def people_path
+      web_app_url('/people/family')
+    end
+
+    def app_home_path
+      web_app_url('/')
+    end
+
+    #Marketing Site Paths
+    def about_path
+      www_url('/about')
+    end
+
+    def team_path
+      www_url('/about/team')
+    end
+
+    def beliefs_path
+      www_url('/about/beliefs')
+    end
+
+    def guarantee_path
+      www_url('/guarantee')
+    end
+
+    # External Paths
+    # TODO get updated videos on Zendesk
+    def zendesk_overview_video_path
+      "https://forever1.zendesk.com/hc/en-us/articles/204874607"
+    end
+
+    def zendesk_uploading_video_path
+      "https://forever1.zendesk.com/hc/en-us/articles/204496797"
+    end
+
+    def zendesk_organizing_video_path
+      "https://forever1.zendesk.com/hc/en-us/articles/203811218"
+    end
+
+    def zendesk_sharing_video_path
+      "https://forever1.zendesk.com/hc/en-us/articles/203935338"
+    end
+
+    def zendesk_tour_video_path
+      "https://forever1.zendesk.com/hc/en-us/articles/203913608"
+    end
+
+    def zendesk_albums_video_path
+      "https://forever1.zendesk.com/hc/en-us/articles/218144057"
+    end
+
+    def zendesk_tags_video_path
+      "https://forever1.zendesk.com/hc/en-us/articles/203834548"
+    end
+
+    def zendesk_dates_video_path
+      "https://forever1.zendesk.com/hc/en-us/articles/206462457"
+    end
   end
 end
