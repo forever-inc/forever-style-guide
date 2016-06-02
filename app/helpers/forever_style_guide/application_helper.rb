@@ -3,36 +3,6 @@ require 'pathname'
 module ForeverStyleGuide
   module ApplicationHelper
 
-    #Path helpers for style guide dummy app
-    def style_guide_path
-      Rails.application.routes.named_routes[:forever_style_guide].path.spec.to_s
-    end
-
-    def style_guide_root
-      ForeverStyleGuide::Engine.root
-    end
-
-    def style_guide_version
-      ForeverStyleGuide::VERSION
-    end
-
-    def sections_path
-      Pathname.new(Config.sections_path)
-    end
-
-    def demo_link(demo_name)
-      File.join(style_guide_path, "demo", demo_name)
-    end
-
-    def escape_for_display(content)
-      content.gsub(/\</, "&lt;").gsub(/\>/, "&gt;").html_safe
-    end
-
-    def escape_erb_for_display(partial_path)
-      partial = File.read("#{style_guide_root}/app/views/#{partial_path}")
-      escape_for_display(partial)
-    end
-
     #Path helpers for mounted style guide use
     def www_url(path = '/', url = nil)
       strip_subdomain("www", path, url)
@@ -144,6 +114,22 @@ module ForeverStyleGuide
       www_url('/pixels2pages')
     end
 
+    def customer_commitments_path
+      www_url('/commitments')
+    end
+
+    def opportunity_path
+      www_url('/opportunity')
+    end
+
+    def retreats_path
+      www_url('/retreats')
+    end
+
+    def press_path
+      www_url('/about/press')
+    end
+
     #Store Paths
     def services_path
       store_url('/services')
@@ -205,7 +191,63 @@ module ForeverStyleGuide
       store_url('/gifts')
     end
 
+    def find_ambassador_path
+      store_url('/find_ambassador')
+    end
+
+    def ambassador_direct_path
+      store_url('/ambassador-direct')
+    end
+
     # External Paths
+    def forever_live_path
+      "http://www.foreverlive2016.com"
+    end
+
+    def facebook_path
+      "https://www.facebook.com/Forever"
+    end
+
+    def twitter_path
+      "https://www.twitter.com/forever"
+    end
+
+    def instagram_path
+      "https://www.instagram.com/forever_inc/"
+    end
+
+    def youtube_path
+      "https://www.youtube.com/channel/UCfBFL_W3FYW7W0wAr4EEGnA"
+    end
+
+    def pinterest_path
+      "https://www.pinterest.com/FOREVER/"
+    end
+
+    def blog_path
+      "https://blog.forever.com/"
+    end
+
+    def help_center_path
+      "https://forever1.zendesk.com/hc/en-us"
+    end
+
+    def contact_us_path
+      "https://forever1.zendesk.com/hc/en-us/requests/new"
+    end
+
+    def web_faq_path
+      "https://forever1.zendesk.com/hc/en-us/categories/200175058-Forever-Web-Mobile-Apps"
+    end
+
+    def artisan_faq_path
+      "https://forever1.zendesk.com/hc/en-us/sections/200632048-Artisan-software"
+    end
+
+    def historian_faq_path
+      "https://forever1.zendesk.com/hc/en-us/sections/200520187-Historian"
+    end
+
     # TODO get updated videos on Zendesk
     def zendesk_overview_video_path
       "https://forever1.zendesk.com/hc/en-us/articles/204874607"
@@ -237,6 +279,36 @@ module ForeverStyleGuide
 
     def zendesk_dates_video_path
       "https://forever1.zendesk.com/hc/en-us/articles/206462457"
+    end
+
+    #Path helpers for style guide dummy app
+    def style_guide_path
+      Rails.application.routes.named_routes[:forever_style_guide].path.spec.to_s
+    end
+
+    def style_guide_root
+      ForeverStyleGuide::Engine.root
+    end
+
+    def style_guide_version
+      ForeverStyleGuide::VERSION
+    end
+
+    def sections_path
+      Pathname.new(Config.sections_path)
+    end
+
+    def demo_link(demo_name)
+      File.join(style_guide_path, "demo", demo_name)
+    end
+
+    def escape_for_display(content)
+      content.gsub(/\</, "&lt;").gsub(/\>/, "&gt;").html_safe
+    end
+
+    def escape_erb_for_display(partial_path)
+      partial = File.read("#{style_guide_root}/app/views/#{partial_path}")
+      escape_for_display(partial)
     end
   end
 end

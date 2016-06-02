@@ -11,19 +11,27 @@
 
         <ul class="list-unstyled">
           <li>
-            <%= link_to 'Help Center', '/help-center', class: 'dropdown-menu-nav-link', title: 'Forever Help Center' %>
+            <%= link_to 'Help Center', help_center_path, class: 'dropdown-menu-nav-link', title: 'Forever Help Center' %>
           </li>
 
           <li>
-            <%= link_to 'FAQs', '/faqs', class: 'dropdown-menu-nav-link', title: 'Frequently Asked Questions' %>
+            <%= link_to 'Web & Mobile App FAQ', web_faq_path, class: 'dropdown-menu-nav-link', title: 'Forever Artisan Frequently Asked Questions' %>
           </li>
 
           <li>
-            <%= link_to 'Customer Commitments', '/customer-commitments', class: 'dropdown-menu-nav-link', title: 'Forever Customer Commitments' %>
+            <%= link_to 'Artisan FAQ', artisan_faq_path, class: 'dropdown-menu-nav-link', title: 'Forever Artisan Frequently Asked Questions' %>
           </li>
 
           <li>
-            <%= link_to 'Contact Us', '/contact', class: 'dropdown-menu-nav-link', title: 'Contact Us' %>
+            <%= link_to 'Historian FAQ', historian_faq_path, class: 'dropdown-menu-nav-link', title: 'Forever Historian Frequently Asked Questions' %>
+          </li>
+
+          <li>
+            <%= link_to 'Customer Commitments', customer_commitments_path, class: 'dropdown-menu-nav-link', title: 'Forever Customer Commitments' %>
+          </li>
+
+          <li>
+            <%= link_to 'Contact Us', contact_us_path, class: 'dropdown-menu-nav-link', title: 'Contact Us' %>
           </li>
         </ul>
       </div>
@@ -33,15 +41,15 @@
 
         <ul class="list-unstyled">
           <li>
-            <%= link_to 'Become an Ambassador', '/opportunity', class: 'dropdown-menu-nav-link', title: 'Make Money Helping People Save & Print their Photos' %>
+            <%= link_to 'Become an Ambassador', opportunity_path, class: 'dropdown-menu-nav-link', title: 'Make Money Helping People Save & Print their Photos' %>
           </li>
 
           <li>
-            <%= link_to 'Find an Ambassador', '/find-an-ambassador', class: 'dropdown-menu-nav-link', title: 'Get Free Training and Support from Certified Ambassadors' %>
+            <%= link_to 'Find an Ambassador', find_ambassador_path, class: 'dropdown-menu-nav-link', title: 'Get Free Training and Support from Certified Ambassadors' %>
           </li>
 
-          <li>
-            <%= link_to 'Ambassador Direct', '/ambassador-direct', class: 'dropdown-menu-nav-link', title: 'Make Money as a Forever Business Partner' %>
+          <li class="hide">
+            <%= link_to 'Ambassador Direct', ambassador_direct_path, class: 'dropdown-menu-nav-link', title: 'Make Money as a Forever Business Partner' %>
           </li>
         </ul>
       </div>
@@ -51,11 +59,11 @@
 
         <ul class="list-unstyled">
           <li>
-            <%= link_to 'Forever Live!', '/live', class: 'dropdown-menu-nav-link', title: 'Scrapbooking and Memory Keeping Conference' %>
+            <%= link_to 'Forever Live!', forever_live_path, class: 'dropdown-menu-nav-link', title: 'Scrapbooking and Memory Keeping Conference' %>
           </li>
 
           <li>
-            <%= link_to 'Forever Retreats', '/retreats', class: 'dropdown-menu-nav-link', title: 'Creative Weekend Events for Scrapbooking and Memory Keeping' %>
+            <%= link_to 'Forever Retreats', retreats_path, class: 'dropdown-menu-nav-link', title: 'Creative Weekend Events for Scrapbooking and Memory Keeping' %>
           </li>
         </ul>
       </div>
@@ -65,15 +73,23 @@
 
         <ul class="list-unstyled">
           <li>
-            <%= link_to 'Facebook', '/facebook', target: '_blank', class: 'dropdown-menu-nav-link', title: 'Follow us on Facebook' %>
+            <%= link_to 'Facebook', facebook_path, target: '_blank', class: 'dropdown-menu-nav-link', title: 'Follow us on Facebook' %>
           </li>
 
           <li>
-            <%= link_to 'Blog', '/blog', class: 'dropdown-menu-nav-link', title: 'Learn more at the Forever Blog' %>
+            <%= link_to 'Twitter', twitter_path, target: '_blank', class: 'dropdown-menu-nav-link', title: 'Follow us on Twitter' %>
           </li>
 
           <li>
-            <%= link_to 'Press', '/press', class: 'dropdown-menu-nav-link', title: 'View Press Releases and News Stories' %>
+            <%= link_to 'Instagram', instagram_path, target: '_blank', class: 'dropdown-menu-nav-link', title: 'Follow us on Instagram' %>
+          </li>
+
+          <li>
+            <%= link_to 'Blog', blog_path, class: 'dropdown-menu-nav-link', title: 'Learn more at the Forever Blog' %>
+          </li>
+
+          <li>
+            <%= link_to 'Press', press_path, class: 'dropdown-menu-nav-link', title: 'View Press Releases and News Stories' %>
           </li>
         </ul>
       </div>
