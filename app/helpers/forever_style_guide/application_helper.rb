@@ -28,7 +28,7 @@ module ForeverStyleGuide
       url.to_s
     end
 
-    #Web App Paths
+    # Web App Paths
     def login_path
       web_app_url('/login')
     end
@@ -53,7 +53,19 @@ module ForeverStyleGuide
       web_app_url('/')
     end
 
-    #Marketing Site Paths
+    def user_settings_path
+      web_app_url('/settings') # TODO something not quite right here
+    end
+
+    def log_out_path
+      web_app_url('/logout') # TODO something not quite right here
+    end
+
+    # Marketing Site Paths
+    def marketing_home_path
+      www_url('/')
+    end
+
     def about_path
       www_url('/about')
     end
@@ -130,7 +142,11 @@ module ForeverStyleGuide
       www_url('/about/press')
     end
 
-    #Store Paths
+    # Store Paths
+    def cart_path
+      store_url('/cart')
+    end
+
     def services_path
       store_url('/services')
     end
@@ -197,6 +213,14 @@ module ForeverStyleGuide
 
     def ambassador_direct_path
       store_url('/ambassador-direct')
+    end
+
+    def upgrade_path
+      store_url('/upgrade')
+    end
+
+    def back_office_path
+      store_url('/back_office')
     end
 
     # External Paths
@@ -281,7 +305,7 @@ module ForeverStyleGuide
       "https://forever1.zendesk.com/hc/en-us/articles/206462457"
     end
 
-    #Path helpers for style guide dummy app
+    # Path helpers for style guide dummy app
     def style_guide_path
       Rails.application.routes.named_routes[:forever_style_guide].path.spec.to_s
     end

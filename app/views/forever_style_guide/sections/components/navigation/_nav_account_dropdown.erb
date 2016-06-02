@@ -1,5 +1,5 @@
 <li class='navbar-account_item navbar-account_item-cart' id='mini-cart' data-turbolinks-temporary>
-  <%= link_to '/cart', class: "nav-icon-stack hidden-grid-float-breakpoint " do %>
+  <%= link_to cart_path, class: "nav-icon-stack hidden-grid-float-breakpoint " do %>
     <i class='fa fa-shopping-cart'></i>
     <span class="nav-icon-label">Cart</span>
   <% end %>
@@ -7,7 +7,7 @@
 
 <% if defined?(current_user) && (current_user != '') && current_user %>
   <li class='navbar-account_item-inbox navbar-account_item'>
-    <%= link_to '/inbox', class: "nav-icon-stack hidden-grid-float-breakpoint " do %>
+    <%= link_to library_path, class: "nav-icon-stack hidden-grid-float-breakpoint " do %>
       <i class='fa fa-inbox'></i>
       <span class="nav-icon-label">Inbox</span>
     <% end %>
@@ -27,11 +27,9 @@
 
 <% else %>
   <li class='dropdown navbar-account_item hidden-grid-float-breakpoint'>
-    <%= link_to '/sign_in', class: 'nav-icon-stack' do %>
-
+    <%= link_to login_path, class: 'nav-icon-stack' do %>
       <i class='fa fa-user hidden-grid-float-breakpoint'></i>
       <span class='nav-icon-label'>Log In</span>
-
     <% end %>
   </li>
 <% end %>
