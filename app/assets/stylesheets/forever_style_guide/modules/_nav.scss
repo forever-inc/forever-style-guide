@@ -84,6 +84,7 @@ $nav-bg-color: color('gray-700');
     }
   }
 }
+
 .navbar-account_item {
   @media (min-width: $grid-float-breakpoint) {
     @include nav-border(left);
@@ -93,7 +94,7 @@ $nav-bg-color: color('gray-700');
 .navbar-account-signed_out-btn {
   position: absolute;
   width: $offcanvas-width - ($offcanvas-padding * 2);
-  left:  $offcanvas-padding;
+  left: $offcanvas-padding;
   margin-top: $offcanvas-padding;
   margin-bottom: $offcanvas-padding;
 
