@@ -3,6 +3,7 @@ require 'pathname'
 module ForeverStyleGuide
   module ApplicationHelper
 
+    #Path helpers for style guide dummy app
     def style_guide_path
       Rails.application.routes.named_routes[:forever_style_guide].path.spec.to_s
     end
@@ -32,5 +33,29 @@ module ForeverStyleGuide
       escape_for_display(partial)
     end
 
+    #Path helpers for mounted style guide use
+    def www_url(path = '/', url = nil)
+      strip_subdomain("www", path, url)
+    end
+
+    def web_app_url(path = '/', url = nil)
+      strip_subdomain("my", path, url)
+    end
+
+    def store_url(path = '/', url = nil)
+      strip_subdomain("store", path, url)
+    end
+
+    def strip_subdomain(sub, path = '/', url = nil)
+      url ||= request.url if respond_to?(:request)
+      url = URI(url)
+      replace = url.to_s
+      protocols = ['www.', 'store.', 'my.']
+      replace = protocols.find { |protocol| replace.include?(protocol) }
+      url.host = url.host.sub(replace, "#{sub}.")
+      url.path = path
+      url.query = nil
+      url.to_s
+    end
   end
 end
