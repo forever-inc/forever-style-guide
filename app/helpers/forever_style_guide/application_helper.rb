@@ -22,6 +22,12 @@ module ForeverStyleGuide
       replace = url.to_s
       protocols = ['www.', 'store.', 'my.']
       replace = protocols.find { |protocol| replace.include?(protocol) }
+
+      #protect against a nil return that would break localhost
+      if replace.blank?
+        replace ='/'
+      end
+
       url.host = url.host.sub(replace, "#{sub}.")
       url.path = path
       url.query = nil
