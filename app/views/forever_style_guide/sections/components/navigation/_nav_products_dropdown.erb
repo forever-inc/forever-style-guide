@@ -11,34 +11,33 @@
 
         <ul class="list-unstyled">
           <li>
-            <%= link_to '/guaranteed_storage', class: 'dropdown-menu-nav-link', title: 'Guaranteed Permanent Storage for Photos & Documents' do %>
+            <%= link_to storage_path, class: 'dropdown-menu-nav-link', title: 'Guaranteed Permanent Storage for Photos & Documents' do %>
               Guaranteed <span class='hidden-md'>Cloud </span> Storage
             <% end %>
-            <small class="dropdown-menu-nav-link-subhead">Product Features and Pricing</small>
+            <small class="dropdown-menu-nav-link-subhead">View Pricing, Benefits and Features</small>
           </li>
 
           <li>
-            <%= link_to 'Mobile Apps', '/app', class: 'dropdown-menu-nav-link', title: 'Download Forever Mobile Apps' %>
-            <small class="dropdown-menu-nav-link-subhead">for iOS and Android</small>
-          </li>
-
-          <li>
-            <%= link_to 'Forever Valet', '/valet', class: 'dropdown-menu-nav-link', title: 'Forever Valet Desktop Photo Uploader'  %>
-            <small class="dropdown-menu-nav-link-subhead">Desktop Uploader</small>
-          </li>
-
-          <li>
-            <%= link_to '/services', class: 'dropdown-menu-nav-link', title: 'Digitization and Scanning Services' do %>
+            <%= link_to services_path, class: 'dropdown-menu-nav-link', title: 'Digitization and Scanning Services' do %>
               <span class='hidden-md'>Media </span>Conversion Services
             <% end %>
             <small class="dropdown-menu-nav-link-subhead">Scanning and Digitization</small>
           </li>
 
           <li>
-            <%= link_to 'Forever Historian', '/historian', class: 'dropdown-menu-nav-link', title: 'Photo Management Software for Windows' %>
+            <%= link_to 'Forever Historian', historian_path, class: 'dropdown-menu-nav-link', title: 'Photo Management Software for Windows' %>
               <small class="dropdown-menu-nav-link-subhead">Windows Photo Software</small>
           </li>
 
+          <li>
+            <%= link_to 'Mobile Apps', app_path, class: 'dropdown-menu-nav-link', title: 'Download Forever Mobile Apps' %>
+            <small class="dropdown-menu-nav-link-subhead">for iOS and Android</small>
+          </li>
+
+          <li>
+            <%= link_to 'Forever Valet', valet_path, class: 'dropdown-menu-nav-link', title: 'Forever Valet Desktop Photo Uploader'  %>
+            <small class="dropdown-menu-nav-link-subhead">Desktop Uploader</small>
+          </li>
         </ul>
       </div>
 
@@ -48,32 +47,37 @@
         <ul class="list-unstyled">
 
           <li>
-            <%= link_to 'Forever Artisan', '/artisan', class: 'dropdown-menu-nav-link', title: 'Forever Artisan 5 Digital Scrapbooking Software' %>
+            <%= link_to 'Forever Artisan', artisan_path, class: 'dropdown-menu-nav-link', title: 'Forever Artisan 5 Digital Scrapbooking Software' %>
               <small class="dropdown-menu-nav-link-subhead">Windows Scrapbooking Software</small>
           </li>
 
           <li>
-            <%= link_to 'Digital Art', '/digital-art', class: 'dropdown-menu-nav-link', title: 'Premium Digital Scrapbooking Art' %>
+            <%= link_to 'Digital Art', digital_art_path, class: 'dropdown-menu-nav-link', title: 'Premium Digital Scrapbooking Art' %>
             <small class="dropdown-menu-nav-link-subhead">Art Kits and Templates for Artisan</small>
 
             <ul class="list-unstyled dropdown-menu-nav-bullets">
               <li>
-                <%= link_to '- New Digital Art', '/new-digital-art', class: 'dropdown-menu-nav-link', title: 'Newest Digital Scrapbooking Art and Embellishments' %>
+                <%= link_to '- New Digital Art', new_digital_art_path, class: 'dropdown-menu-nav-link', title: 'Newest Digital Scrapbooking Art and Embellishments' %>
               </li>
 
               <li>
-                <%= link_to '- On Sale', '/on-sale-digital-art', class: 'dropdown-menu-nav-link dropdown-menu-nav-link-no_margin', title: 'On Sale Digital Scrapbooking Art and Embellishments' %>
+                <%= link_to '- On Sale', sale_digital_art_path, class: 'dropdown-menu-nav-link dropdown-menu-nav-link-no_margin', title: 'On Sale Digital Scrapbooking Art and Embellishments' %>
               </li>
 
               <li>
-                <%= link_to '- Browse All', '/all-digital-art', class: 'dropdown-menu-nav-link dropdown-menu-nav-link-no_margin', title: 'All Digital Scrapbooking Art and Embellishments' %>
+                <%= link_to '- Browse All', all_digital_art_path, class: 'dropdown-menu-nav-link dropdown-menu-nav-link-no_margin', title: 'All Digital Scrapbooking Art and Embellishments' %>
               </li>
             </ul>
           </li>
 
-          <li>
-            <%= link_to 'Forever Projects', '/projects', class: 'dropdown-menu-nav-link', title: 'Make Photo Books and Other Print Projects' %>
+          <li class="hide">
+            <%= link_to 'Forever Projects', projects_marketing_path, class: 'dropdown-menu-nav-link', title: 'Make Photo Books and Other Print Projects' %>
             <small class="dropdown-menu-nav-link-subhead">Online Photo Books and More</small>
+          </li>
+
+          <li>
+            <%= link_to 'pixels2Pages', p2p_path, class: 'dropdown-menu-nav-link', title: 'Premium Training and Resources' %>
+            <small class="dropdown-menu-nav-link-subhead">Premium Training and Resources</small>
           </li>
 
         </ul>
@@ -84,27 +88,34 @@
 
         <ul class="list-unstyled">
           <li>
-            <%= link_to 'Photo Books', '/photo-books', class: 'dropdown-menu-nav-link', title: 'Create and Print Photo Books Online or with Artisan Scrapbooking Software' %>
-          </li>
+            <%= link_to 'Print Gallery Home', print_path, class: 'dropdown-menu-nav-link', title: 'Create and Print Online or with Artisan Scrapbooking Software' %>
+            <small class="dropdown-menu-nav-link-subhead">Browse Products and View Pricing</small>
 
-          <li>
-            <%= link_to 'Cards', '/cards', class: 'dropdown-menu-nav-link', title: 'Create and Print Cards Online or with Artisan Scrapbooking Software' %>
-          </li>
+            <ul class="list-unstyled dropdown-menu-nav-bullets">
+              <li>
+                <%= link_to '- Photo Books', photo_books_path, class: 'dropdown-menu-nav-link', title: 'Create and Print Photo Books Online or with Artisan Scrapbooking Software' %>
+              </li>
 
-          <li>
-            <%= link_to 'Calendars', '/calendars', class: 'dropdown-menu-nav-link', title: 'Create and Print Calendars Online or with Artisan Scrapbooking Software' %>
-          </li>
+              <li>
+                <%= link_to '- Cards', cards_path, class: 'dropdown-menu-nav-link', title: 'Create and Print Cards Online or with Artisan Scrapbooking Software' %>
+              </li>
 
-          <li>
-            <%= link_to 'Wall Art', '/wall-art', class: 'dropdown-menu-nav-link', title: 'Create and Print Canvases Online or with Artisan Scrapbooking Software' %>
-          </li>
+              <li>
+                <%= link_to '- Calendars', calendars_path, class: 'dropdown-menu-nav-link', title: 'Create and Print Calendars Online or with Artisan Scrapbooking Software' %>
+              </li>
 
-          <li>
-            <%= link_to 'Photo Gifts', '/photo-gifts', class: 'dropdown-menu-nav-link', title: 'Create and Print Photo Gifts Online or with Artisan Scrapbooking Software' %>
-          </li>
+              <li>
+                <%= link_to '- Wall Art', wall_art_path, class: 'dropdown-menu-nav-link', title: 'Create and Print Canvases Online or with Artisan Scrapbooking Software' %>
+              </li>
 
-          <li>
-            <%= link_to 'Page Prints', '/page-prints', class: 'dropdown-menu-nav-link', title: 'Create and Print Scrapbooking Pages Online or with Artisan Scrapbooking Software' %>
+              <li>
+                <%= link_to '- Photo Gifts', photo_gifts_path, class: 'dropdown-menu-nav-link', title: 'Create and Print Photo Gifts Online or with Artisan Scrapbooking Software' %>
+              </li>
+
+              <li>
+                <%= link_to '- Page Prints', page_prints_path, class: 'dropdown-menu-nav-link', title: 'Create and Print Scrapbooking Pages Online or with Artisan Scrapbooking Software' %>
+              </li>
+            </ul>
           </li>
         </ul>
       </div>
@@ -114,23 +125,23 @@
 
         <ul class="list-unstyled">
           <li>
-            <%= link_to 'Gift Certificates', '/gifts', class: 'dropdown-menu-nav-link', title: 'Buy Forever Gift Certificates' %>
+            <%= link_to 'Gift Certificates', gifts_path, class: 'dropdown-menu-nav-link', title: 'Buy Forever Gift Certificates' %>
+          </li>
+
+          <li class="hide">
+            <%= link_to 'Current Promotions', promotions_path, class: 'dropdown-menu-nav-link', title: 'Photo Printing, Digital Art, and Storage Promotions' %>
           </li>
 
           <li>
-            <%= link_to 'Current Promotions', '/promotions', class: 'dropdown-menu-nav-link', title: 'Photo Printing, Digital Art, and Storage Promotions' %>
+            <%= link_to 'Shipping Info', shipping_info_path, class: 'dropdown-menu-nav-link', title: 'Shipping Information' %>
           </li>
 
           <li>
-            <%= link_to 'Shipping Info', '/shipping', class: 'dropdown-menu-nav-link', title: 'Shipping Information' %>
+            <%= link_to 'Volume Print Discounts', bulk_orders_path, class: 'dropdown-menu-nav-link', title: 'Save Money on Large Print Orders' %>
           </li>
 
           <li>
-            <%= link_to 'Volume Print Discounts', '/bulk-orders', class: 'dropdown-menu-nav-link', title: 'Save Money on Large Print Orders' %>
-          </li>
-
-          <li>
-            <%= link_to 'Return Policy', '/returns', class: 'dropdown-menu-nav-link', title: 'Return Policy' %>
+            <%= link_to 'Return Policy', return_policy_path, class: 'dropdown-menu-nav-link', title: 'Return Policy' %>
           </li>
         </ul>
       </div>

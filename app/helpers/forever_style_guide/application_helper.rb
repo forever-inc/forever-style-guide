@@ -100,6 +100,111 @@ module ForeverStyleGuide
       www_url('/guarantee')
     end
 
+    def storage_path
+      www_url('/guaranteed_storage')
+    end
+
+    def app_path
+      www_url('/app')
+    end
+
+    def valet_path
+      www_url('/valet')
+    end
+
+    def historian_path
+      www_url('/historian')
+    end
+
+    def artisan_path
+      www_url('/artisan')
+    end
+
+    def projects_marketing_path
+      www_url('/projects')
+    end
+
+    def promotions_path
+      www_url('/holidays')
+    end
+
+    def shipping_info_path
+      www_url('/shipping')
+    end
+
+    def bulk_orders_path
+      www_url('/bulk-orders')
+    end
+
+    def return_policy_path
+      www_url('/returns')
+    end
+
+    def p2p_path
+      www_url('/pixels2pages')
+    end
+
+    #Store Paths
+    def services_path
+      store_url('/services')
+    end
+
+    def digital_art_path
+      store_url('/digital_art')
+    end
+
+    def new_digital_art_path
+      store_url('/new_digital_art')
+    end
+
+    def sale_digital_art_path
+      store_url('/sale_digital_art')
+    end
+
+    def all_digital_art_path
+      store_url('/all_digital_art')
+    end
+
+    def print_path
+      store_url('/print')
+    end
+
+    def photo_books_path
+      store_url('/photobooks')
+    end
+
+    def cards_path
+      store_url('/cards')
+    end
+
+    def calendars_path
+      store_url('/calendars')
+    end
+
+    def wall_art_path
+      store_url('/wall_art')
+    end
+
+    def photo_gifts_path
+      store_url('/photo_gifts')
+    end
+
+    def page_prints_path
+      store_url('/page_prints')
+    end
+
+    def gift_certificate_path
+      store_url('/gift_certificates')
+    end
+
+    def gift_certificate_path
+      store_url('/gift_certificates')
+    end
+
+    def gifts_path
+      store_url('/gifts')
+    end
+
     # External Paths
     # TODO get updated videos on Zendesk
     def zendesk_overview_video_path
