@@ -23,7 +23,7 @@
 
             <!-- TODO actually display storage -->
             <span class="dropdown-menu-account-storage">40% of 50Gb</span>
-            <%= link_to "Upgrade", upgrade_path, class: 'small', title: "Upgrade your Forever Guaranteed Permanent Storage" %>
+            <%= link_to "Upgrade", upgrade_url, class: 'small', title: "Upgrade your Forever Guaranteed Permanent Storage" %>
           </p>
 
           <div class="progress progress-thin color_block-primary">
@@ -34,14 +34,14 @@
         <li class="dropdown-menu-account-divider"></li>
 
         <li class="dropdown-menu-account-item">
-          <%= link_to user_settings_path, class: 'dropdown-menu-nav-link dropdown-menu-nav-link-no_margin', title: 'View User Settings' do %>
+          <%= link_to user_settings_url, class: 'dropdown-menu-nav-link dropdown-menu-nav-link-no_margin', title: 'View User Settings' do %>
             <i class='fa fa-cog'></i>Settings
           <% end %>
         </li>
 
         <% if @linked_ambassador %>
           <li class="dropdown-menu-account-item">
-            <%= link_to back_office_path, class: 'dropdown-menu-nav-link dropdown-menu-nav-link-no_margin', title: 'Ambassador Back Office Reports' do %>
+            <%= link_to back_office_url, class: 'dropdown-menu-nav-link dropdown-menu-nav-link-no_margin', title: 'Ambassador Back Office Reports' do %>
               <i class='fa fa-suitcase'></i>My Back Office
             <% end %>
           </li>
@@ -50,7 +50,7 @@
         <li class="dropdown-menu-account-divider hidden-xs hidden-sm"></li>
 
         <li class="dropdown-menu-account-item">
-          <%= link_to log_out_path, class: 'dropdown-menu-nav-link dropdown-menu-nav-link-no_margin', title: 'Log Out of Forever' do %>
+          <%= link_to log_out_url, class: 'dropdown-menu-nav-link dropdown-menu-nav-link-no_margin', title: 'Log Out of Forever' do %>
             <i class='fa fa-share'></i>Log Out
           <% end %>
         </li>

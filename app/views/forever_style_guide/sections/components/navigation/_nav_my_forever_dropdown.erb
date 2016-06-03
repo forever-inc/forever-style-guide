@@ -15,25 +15,25 @@
           <% if defined?(current_user) && (current_user != '') && current_user %>
 
             <li>
-              <%= link_to library_path, class: 'dropdown-menu-nav-link', title: 'Organize Photos in Your Forever Library' do %>
+              <%= link_to library_url, class: 'dropdown-menu-nav-link', title: 'Organize Photos in Your Forever Library' do %>
                 <i class='fa fa-th-large'></i>Library
               <% end %>
             </li>
 
             <li>
-              <%= link_to projects_path, class: 'dropdown-menu-nav-link', title: 'Create Print Projects' do %>
+              <%= link_to projects_url, class: 'dropdown-menu-nav-link', title: 'Create Print Projects' do %>
                 <i class='fa fa-paint-brush'></i>Projects
               <% end %>
             </li>
 
             <li>
-              <%= link_to people_path, class: 'dropdown-menu-nav-link', title: 'Share Photos with Friends and Family' do %>
+              <%= link_to people_url, class: 'dropdown-menu-nav-link', title: 'Share Photos with Friends and Family' do %>
                 <i class='fa fa-users'></i>People
               <% end %>
             </li>
 
             <li>
-              <%= link_to app_home_path, class: 'dropdown-menu-nav-link', title: 'View Your Shared Photo Albums' do %>
+              <%= link_to app_home_url, class: 'dropdown-menu-nav-link', title: 'View Your Shared Photo Albums' do %>
                 <i class='fa fa-home'></i>Home
               <% end %>
             </li>
@@ -41,13 +41,13 @@
           <% else %>
 
             <li>
-              <%= link_to login_path, class: 'dropdown-menu-nav-link', title: 'Log in to your Forever account' do %>
+              <%= link_to login_url, class: 'dropdown-menu-nav-link', title: 'Log in to your Forever account' do %>
                 <i class='fa fa-user'></i>Log In
               <% end %>
             </li>
 
             <li>
-              <%= link_to sign_up_path, class: 'dropdown-menu-nav-link', title: 'Sign up for Forever' do %>
+              <%= link_to sign_up_url, class: 'dropdown-menu-nav-link', title: 'Sign up for Forever' do %>
                 <i class='fa fa-user-plus'></i>Sign Up Free!
               <% end %>
             </li>
@@ -61,19 +61,19 @@
 
         <ul class="list-unstyled">
           <li>
-            <%= link_to 'The Forever Guarantee', guarantee_path, class: 'dropdown-menu-nav-link', title: 'Forever Guarantee' %>
+            <%= link_to 'The Forever Guarantee', guarantee_url, class: 'dropdown-menu-nav-link', title: 'Forever Guarantee' %>
           </li>
 
           <li>
-            <%= link_to 'About Us', about_path, class: 'dropdown-menu-nav-link', title: 'About Forever' %>
+            <%= link_to 'About Us', about_url, class: 'dropdown-menu-nav-link', title: 'About Forever' %>
           </li>
 
           <li>
-            <%= link_to 'Our Team', team_path, class: 'dropdown-menu-nav-link', title: 'Meet the Forever Team' %>
+            <%= link_to 'Our Team', team_url, class: 'dropdown-menu-nav-link', title: 'Meet the Forever Team' %>
           </li>
 
           <li>
-            <%= link_to 'Our Beliefs', beliefs_path, class: 'dropdown-menu-nav-link', title: 'Forever Beliefs and Values' %>
+            <%= link_to 'Our Beliefs', beliefs_url, class: 'dropdown-menu-nav-link', title: 'Forever Beliefs and Values' %>
           </li>
         </ul>
       </div>
@@ -83,25 +83,25 @@
 
         <ul class="list-unstyled">
           <li>
-            <%= link_to zendesk_overview_video_path, class: 'dropdown-menu-nav-link', title: 'View the Forever Overview Video', target:'_blank' do %>
+            <%= link_to zendesk_overview_video_url, class: 'dropdown-menu-nav-link', title: 'View the Forever Overview Video', target:'_blank' do %>
               <i class='fa fa-video-camera'></i>Forever Overview
             <% end %>
           </li>
 
           <li>
-            <%= link_to zendesk_uploading_video_path, class: 'dropdown-menu-nav-link', title: 'View the Uploading Photos Tutorial Video', target:'_blank' do %>
+            <%= link_to zendesk_uploading_video_url, class: 'dropdown-menu-nav-link', title: 'View the Uploading Photos Tutorial Video', target:'_blank' do %>
               <i class='fa fa-video-camera'></i>Uploading Photos
             <% end %>
           </li>
 
           <li>
-            <%= link_to zendesk_organizing_video_path, class: 'dropdown-menu-nav-link', title: 'View the Organizing Photos Tutorial Video', target:'_blank' do %>
+            <%= link_to zendesk_organizing_video_url, class: 'dropdown-menu-nav-link', title: 'View the Organizing Photos Tutorial Video', target:'_blank' do %>
               <i class='fa fa-video-camera'></i>Getting Organized
             <% end %>
           </li>
 
           <li>
-            <%= link_to zendesk_sharing_video_path, class: 'dropdown-menu-nav-link', title: 'View the Sharing Photos Tutorial Video', target:'_blank' do %>
+            <%= link_to zendesk_sharing_video_url, class: 'dropdown-menu-nav-link', title: 'View the Sharing Photos Tutorial Video', target:'_blank' do %>
               <i class='fa fa-video-camera'></i>Sharing
             <% end %>
           </li>
@@ -113,25 +113,25 @@
         <div class="hidden-grid-float-breakpoint l-section-far"></div>
         <ul class="list-unstyled">
           <li>
-            <%= link_to zendesk_tour_video_path, class: 'dropdown-menu-nav-link', title: 'Video Tour of a Well Curated Forever Account', target:'_blank' do %>
+            <%= link_to zendesk_tour_video_url, class: 'dropdown-menu-nav-link', title: 'Video Tour of a Well Curated Forever Account', target:'_blank' do %>
               <i class='fa fa-video-camera'></i>Account Tour
             <% end %>
           </li>
 
           <li>
-            <%= link_to zendesk_albums_video_path, class: 'dropdown-menu-nav-link', title: 'Organizing Photos with Albums in Forever - Video Tutorial', target:'_blank' do %>
+            <%= link_to zendesk_albums_video_url, class: 'dropdown-menu-nav-link', title: 'Organizing Photos with Albums in Forever - Video Tutorial', target:'_blank' do %>
               <i class='fa fa-video-camera'></i>Albums
             <% end %>
           </li>
 
           <li>
-            <%= link_to zendesk_tags_video_path, class: 'dropdown-menu-nav-link', title: 'Organizing Photos with Tags in Forever - Video Tutorial', target:'_blank' do %>
+            <%= link_to zendesk_tags_video_url, class: 'dropdown-menu-nav-link', title: 'Organizing Photos with Tags in Forever - Video Tutorial', target:'_blank' do %>
               <i class='fa fa-video-camera'></i>Tags
             <% end %>
           </li>
 
           <li>
-            <%= link_to zendesk_dates_video_path, class: 'dropdown-menu-nav-link', title: 'Organizing Photos by Date in Forever - Video Tutorial', target:'_blank' do %>
+            <%= link_to zendesk_dates_video_url, class: 'dropdown-menu-nav-link', title: 'Organizing Photos by Date in Forever - Video Tutorial', target:'_blank' do %>
               <i class='fa fa-video-camera'></i>Dates
             <% end %>
           </li>

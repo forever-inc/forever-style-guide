@@ -8,15 +8,15 @@
       </button>
 
       <div class="navbar-brand">
-        <%= link_to marketing_home_path, title: 'Forever Guaranteed Storage, Digital Scrapbooking, and Printing Logo' do %>
+        <%= link_to marketing_home_url, title: 'Forever Guaranteed Storage, Digital Scrapbooking, and Printing Logo' do %>
           <%= image_tag image_url("forever_style_guide/forever-logo.jpg"), class: "navbar-brand-logo", alt: "Forever Guaranteed Storage, Digital Scrapbooking, and Printing Logo", title: 'Forever Guaranteed Storage, Digital Scrapbooking, and Printing Logo' %>
         <% end %>
       </div>
 
-      <a href="/cart" class="visible-grid-float-breakpoint nav-icon-stack cart-icon" title="View Your Shopping Cart">
+      <%= link_to cart_url, class: 'visible-grid-float-breakpoint nav-icon-stack cart-icon', title:'View Your Shopping Cart' do %>
         <i class='fa fa-shopping-cart'></i>
         <span class='nav-icon-label'>Cart</span>
-      </a>
+      <% end %>
     </div>
 
     <div class="navbar-offcanvas" id="js-main-nav-offcanvas">
