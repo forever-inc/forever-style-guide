@@ -2,11 +2,11 @@
   <%= link_to nil, class: 'dropdown-toggle dropdown-toggle-ambassador', :data => { :toggle => 'dropdown' } do %>
     <div>
       <small class="dropdown-ambassador-intro_text">
-        <%= defined?(ambassador) && (ambassador != '') && ambassador ? 'Your Ambassador' : 'Find or join Forever' %>
+        <%= defined?(ambassador) && ambassador.present? ? 'Your Ambassador' : 'Find or join Forever' %>
       </small>
     </div>
     <span class="dropdown-ambassador-primary_text">
-      <%= defined?(ambassador) && (ambassador != '') && ambassador ? ambassador.name : 'Ambassadors' %>
+      <%= defined?(ambassador) && ambassador.present? ? ambassador.name : 'Ambassadors' %>
     </span>
     <i class='fa fa-chevron-down'></i>
   <% end %>
@@ -18,7 +18,7 @@
         <div class='col-grid-float-6  col-grid-float-push-6 l-padded-thin'>
           <h3 class='dropdown-menu-nav-title page-title color-ambassador-light'>Your Ambassador</h3>
 
-          <% if defined?(ambassador) && (ambassador != '') && ambassador %>
+          <% if defined?(ambassador) && ambassador.present? %>
 
             <%= link_to 'change', '/find-an-ambassador', title: 'Change Your Forever Ambassador', class: 'pull-right dropdown-ambassador-edit_btn' %>
             <div class='dropdown-menu-account-divider'></div>

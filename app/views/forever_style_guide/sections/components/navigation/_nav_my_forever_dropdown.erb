@@ -12,7 +12,7 @@
 
 
         <ul class="list-unstyled">
-          <% if defined?(current_user) && (current_user != '') && current_user %>
+          <% if defined?(current_user) && current_user.present? %>
 
             <li>
               <%= link_to library_url, class: 'dropdown-menu-nav-link', title: 'Organize Photos in Your Forever Library' do %>
