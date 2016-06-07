@@ -1,36 +1,58 @@
-<header class="style-guide-header">
-  <nav class="navbar navbar-default navbar-fixed-top navbar-stackable">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
+<header id='header-is_fixed'>
+  <nav class='navbar navbar-default color_block-white' role='navigation'>
+
+    <div class='navbar-header'>
+      <button type="button" class="navbar-toggle offcanvas-toggle pull-left nav-icon-stack" data-toggle="offcanvas" data-target="#js-main-nav-offcanvas">
+        <i class='fa fa-reorder'></i>
+        <span class='nav-icon-label'>Menu</span>
       </button>
-      <%= link_to forever_style_guide_path, class: "navbar-brand" do %>
-        <%= image_tag("forever_style_guide/forever-logo.png", alt: "Forever Logo", class:"navbar-brand-logo") %>
-      <% end %>
-    </div>
-    <div id="navbar" class="navbar-collapse collapse">
-      <ul class="nav navbar-nav">
-        <% @sections.each_with_index do |section, index| %>
-          <li class="nav-item <%= (section == @current_section) ? 'active'.html_safe : '' %>">
-            <%= link_to forever_style_guide_path + section.id, class:"nav-item-tab" do %>
-              <%= fa_icon(section.icon, class:"nav-item-icon") %>
-              <span class="nav-item-label"><%= section.title %></span>
-            <% end %>
-          </li>
+
+      <div class="navbar-brand">
+        <%= link_to '/style_guide', title: 'Forever Guaranteed Storage, Digital Scrapbooking, and Printing Logo' do %>
+          <%= image_tag("forever_style_guide/forever-logo.jpg", class: "navbar-brand-logo", alt: "Forever Guaranteed Storage, Digital Scrapbooking, and Printing Logo", title: 'Forever Guaranteed Storage, Digital Scrapbooking, and Printing Logo') %>
         <% end %>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li class="nav-item-stack">
-          <div class="nav-item-icon">
-            <a href="#" class="switch switch-off"></a>
+      </div>
+    </div>
+
+    <div class="navbar-offcanvas" id="js-main-nav-offcanvas">
+      <div class="navbar-offcanvas-container">
+        <ul class="nav navbar-nav navbar-left">
+
+          <li class="visible-xs visible-sm">
+            <div class="navbar-toggle navbar-toggle-close color_block-white" id="js-close-main-nav">
+              <div class="nav-icon-stack pull-left navbar-toggle-close-left">
+                <i class='fa fa-close'></i>
+                <span class='nav-icon-label'>Close</span>
+              </div>
+            </div>
+          </li>
+          <li class='dropdown dropdown-full_width'>
+            <%= link_to nil, class: 'dropdown-toggle dropdown-toggle-my_forever', :data => { :toggle => 'dropdown' } do %>
+              Style Guide Sections
+              <i class='fa fa-chevron-down'></i>
+            <% end %>
+
+            <div class='dropdown-menu dropdown-menu-nav color_block-gray-700'>
+              <div class='container-fluid dropdown-menu-nav-container'>
+                <div class='row'>
+                  <div class="col-sm-1"></div>
+                  <% @sections.each_with_index do |section, index| %>
+                    <div class="col-sm-2 l-padded l-section text-center <%= (section == @current_section) ? 'active'.html_safe : '' %>">
+                      <h2>
+                        <%= link_to forever_style_guide_path + section.id, class:"nav-item-tab" do %>
+                          <%= fa_icon(section.icon, class:"nav-item-icon") %>
+                          <div><%= section.title %></div>
+                        <% end %>
+                      </h2>
+                    </div>
+                  <% end %>
+
+
+              </div>
+            </div>
           </div>
-          <span class="nav-item-label">Testing</span>
         </li>
-      </ul>
-    </div><!--/.nav-collapse -->
+      </div>
+    </div>
   </nav>
 </header>
-

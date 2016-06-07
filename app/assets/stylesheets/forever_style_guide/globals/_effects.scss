@@ -18,6 +18,12 @@
   transition: $transition-properties;
 }
 
+@mixin transform($transform-properties...) {
+  -ms-transform: $transform-properties; /* IE 9 */
+  -webkit-transform: $transform-properties; /* Chrome, Safari, Opera */
+  transform: $transform-properties;
+}
+
 @mixin hero-gradient($opacity, $distance_as_percent) {
   &:before {
     content: " ";

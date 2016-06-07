@@ -1,0 +1,53 @@
+// Styling for Vertical Nav lists
+$header_active_border_height: 2px;
+
+.nav {
+  &.nav-pills {
+    @extend %card-style;
+  }
+
+  .nav-item {
+    @include clearfix;
+    font-family: $font-face-regular;
+    font-size: $font-size-300;
+
+    .nav-item-list {
+      border: 0;
+      height: $header_height;
+      color: color('gray-500');
+    }
+    .nav-item-list {
+      @include border_highlight("left", transparent);
+    }
+
+    // For styleguide primary nav icon + text style
+    .nav-item-icon {
+      font-size: $font-size-400;
+      line-height: 20px;
+      vertical-align: bottom;
+    }
+    .nav-item-label {
+      line-height: 20px;
+    }
+
+    &:hover, &:focus {
+      .nav-item-list {
+        color: color('secondary');
+        background-color: color('gray-100');
+      }
+      .nav-item-list {
+        @include border_highlight("left");
+      }
+    }
+
+    @at-root #{&}.active {
+      .nav-item-list {
+        color: color('gray-600');
+        background-color: color('gray-100');
+        border-top: 1px solid color('gray-300');
+        border-bottom: 1px solid color('gray-300');
+        @include border_highlight("left", color("primary"));
+      }
+    }
+  }
+}
