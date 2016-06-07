@@ -13,7 +13,8 @@
         <% end %>
       </div>
 
-      <%= link_to cart_url, class: 'visible-grid-float-breakpoint nav-icon-stack cart-icon', title:'View Your Shopping Cart' do %>
+      <!-- Show cart in primary header bar on mobile: see nav_account_dropdown.erb for desktop -->
+      <%= link_to cart_url, class: 'visible-grid-float-breakpoint nav-icon-stack cart-icon', title:'View Your Shopping Cart', id: 'mini-cart' do %>
         <i class='fa fa-shopping-cart'></i>
         <span class='nav-icon-label'>Cart</span>
       <% end %>

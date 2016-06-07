@@ -139,7 +139,7 @@ a.dropdown-menu-nav-link {
 .dropdown-menu-nav-description {
   @include dropdown-content-style;
 
-  @media(max-width: $grid-float-breakpoint) {
+  @media (max-width: $grid-float-breakpoint) {
     font-size: $font-size-300;
   }
 }
@@ -149,7 +149,7 @@ a.dropdown-menu-nav-link {
   @media (min-width: $screen-md-min) {
     margin-top: 15px;
   }
-  @media(max-width: $grid-float-breakpoint) {
+  @media (max-width: $grid-float-breakpoint) {
     font-size: $font-size-400;
   }
 }

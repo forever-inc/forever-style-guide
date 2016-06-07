@@ -25,7 +25,6 @@ $nav-bg-color: color('gray-700');
   text-align: center;
 }
 .navbar {
-  background-color: color('white');
   border-radius: 0;
   border: none;
   @extend %card-shadow;
@@ -64,7 +63,7 @@ $nav-bg-color: color('gray-700');
     .dropdown.open > .dropdown-toggle {
       color: color('white');
 
-      @media(min-width: $grid-float-breakpoint) {
+      @media (min-width: $grid-float-breakpoint) {
         color: color('gray-400');
         background-color: $nav-bg-color;
       }
@@ -80,7 +79,7 @@ $nav-bg-color: color('gray-700');
       }
     }
     &.navbar-right {
-      margin-right: 0px;
+      margin-right: 0;
     }
   }
 }
@@ -91,10 +90,10 @@ $nav-bg-color: color('gray-700');
   }
 }
 
-.navbar-account-signed_out-btn {
+.navbar-account-signed_out_btn {
   position: absolute;
-  width: $offcanvas-width - ($offcanvas-padding * 2);
-  left: $offcanvas-padding;
+  width: $offcanvas-width - ($offcanvas-padding * 2) - 5; // 5 = .dropdown-menu-nav padding-left
+  left: $offcanvas-padding + 5;
   margin-top: $offcanvas-padding;
   margin-bottom: $offcanvas-padding;
 

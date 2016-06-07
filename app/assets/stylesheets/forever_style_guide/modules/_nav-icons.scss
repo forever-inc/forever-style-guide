@@ -20,7 +20,7 @@ $nav-icon-margin: 3px;
 }
 .nav-icon-label {
   font-size: $font-size-100;
-  line-height: $font-size-400
+  line-height: $font-size-400;
 }
 
 // Style offcanvas account icons consistent w/ product dropdowns
@@ -103,7 +103,7 @@ a.cart-icon {
   }
 }
 a.cart-icon {
-  @media(max-width: $grid-float-breakpoint) {
+  @media (max-width: $grid-float-breakpoint) {
     position: absolute;
     right: 0;
     @include nav-border(left);

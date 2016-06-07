@@ -21,7 +21,7 @@ $offcanvas-media:                 $grid-float-breakpoint!default;
     max-width: $offcanvas-width;
     left: -$offcanvas-width;
     top: 0;
-    z-index: $zindex-navbar-fixed + 1; // 999
+    z-index: $zindex-navbar-fixed + 1; // Make sure offcanvas nav is 'above' fixed header
     overflow: scroll;
     -webkit-overflow-scrolling: touch;
     transition: left $offcanvas-animation-time ease-in;

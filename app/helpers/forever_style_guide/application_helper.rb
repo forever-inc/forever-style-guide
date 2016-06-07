@@ -25,7 +25,7 @@ module ForeverStyleGuide
 
       #protect against a nil return that would break localhost
       if replace.blank?
-        replace ='/'
+        replace = '/'
       end
 
       url.host = url.host.sub(replace, "#{sub}.")

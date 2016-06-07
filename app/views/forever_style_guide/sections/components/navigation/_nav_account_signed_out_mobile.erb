@@ -1,5 +1,5 @@
 <% if !(defined?(current_user) && current_user.present?) %>
-  <%= link_to login_url, class: 'visible-grid-float-breakpoint btn btn-action btn-primary navbar-account-signed_out-btn is_fixed_bottom' do %>
+  <%= link_to login_url, class: 'visible-grid-float-breakpoint btn btn-action btn-primary navbar-account-signed_out_btn is_fixed_bottom' do %>
     <span class="btn-action-label">Log In or Sign Up</span>
     <%= fa_icon "chevron-right", class: "btn-action-icon" %>
   <% end %>

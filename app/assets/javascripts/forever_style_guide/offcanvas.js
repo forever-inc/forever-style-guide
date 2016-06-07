@@ -204,10 +204,10 @@ $(document).on('ready page:load', function() {
 
   $('.navbar-offcanvas .dropdown').on('click', function () {
     if ($(this).hasClass('open')) {
-      $('.navbar-account-signed_out-btn').addClass('is_fixed_bottom');
+      $('.navbar-account-signed_out_btn').addClass('is_fixed_bottom');
     }
     else {
-      $('.navbar-account-signed_out-btn').removeClass('is_fixed_bottom');
+      $('.navbar-account-signed_out_btn').removeClass('is_fixed_bottom');
     }
   });
 })

@@ -3,8 +3,7 @@
     padding: 0 10px;
 
     @media (max-width: $grid-float-breakpoint) {
-      padding-top: 0 !important; // overriding .navbar .nav.navbar-nav > li > a
-      padding-left: $offcanvas-padding;
+      padding: 0 0 0 $offcanvas-padding !important; // overriding .navbar .nav.navbar-nav > li > a
     }
   }
   .fa-chevron-down {
@@ -25,7 +24,7 @@
   .dropdown-ambassador-container {
     @media (max-width: $grid-float-breakpoint) {
       width: $offcanvas-width - $offcanvas-padding;
-      padding-left: 10px;
+      padding-left: 15px;
     }
   }
   .dropdown-menu-nav {
