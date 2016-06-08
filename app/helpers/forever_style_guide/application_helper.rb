@@ -266,10 +266,6 @@ module ForeverStyleGuide
       "https://play.google.com/store/apps/details?id=com.forever.forever"
     end
 
-    def blog_url
-      "https://blog.forever.com/"
-    end
-
     def help_center_url
       "https://forever1.zendesk.com/hc/en-us"
     end
