@@ -258,6 +258,14 @@ module ForeverStyleGuide
       "https://blog.forever.com/"
     end
 
+    def ios_url
+      "https://itunes.apple.com/us/app/forever/id808235823?ls=1&mt=8"
+    end
+
+    def android_url
+      "https://play.google.com/store/apps/details?id=com.forever.forever"
+    end
+
     def help_center_url
       "https://forever1.zendesk.com/hc/en-us"
     end
