@@ -39,6 +39,10 @@ module ForeverStyleGuide
       defined?(current_order) && current_order.product_count > 0
     end
 
+    def has_ambassador?
+      defined?(current_ambassador) && current_ambassador.present?
+    end
+
     # Web App Paths
     def login_url
       web_app_url('/login')
