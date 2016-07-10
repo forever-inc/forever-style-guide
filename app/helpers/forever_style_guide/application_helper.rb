@@ -34,6 +34,11 @@ module ForeverStyleGuide
       url.to_s
     end
 
+
+    def has_item_in_cart?
+      defined?(current_order) && current_order.product_count > 0
+    end
+
     # Web App Paths
     def login_url
       web_app_url('/login')
