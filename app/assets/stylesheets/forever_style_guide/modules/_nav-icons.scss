@@ -61,8 +61,8 @@ $nav-icon-margin: 3px;
 // Mobile Toggles
 .navbar-default .navbar-toggle,
 a.cart-icon {
-  height: $header_height;
-  width: $header_height;
+  height: $header-height;
+  width: $header-height;
   margin-top: 0;
   margin-right: 0;
   margin-bottom: 0;
@@ -95,7 +95,7 @@ a.cart-icon {
       cursor: pointer;
     }
     .nav-icon-stack {
-      height: $header_height;
+      height: $header-height;
     }
   }
   .fa-shopping-cart {
