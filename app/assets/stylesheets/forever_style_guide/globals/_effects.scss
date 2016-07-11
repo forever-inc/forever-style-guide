@@ -74,6 +74,12 @@ $color-card-bg: color('white');
 }
 .card {
   @extend %card-style;
+
+  @each $id, $color in $colors {
+    &.color_block-#{$id} {
+     background-color: #{$color};
+    }
+  }
 }
 
 %item-style {
