@@ -53,7 +53,8 @@ $color-live16-dark_blue:    colorify('live16-dark_blue', #142f3d) !default;
   .color-#{$id} {
     color: #{$color};
   }
-  .color_block-#{$id} {
+  .color_block-#{$id},
+  .card.color_block-#{$id} {
     background-color: #{$color};
   }
   .color_block-trans-#{$id} {
