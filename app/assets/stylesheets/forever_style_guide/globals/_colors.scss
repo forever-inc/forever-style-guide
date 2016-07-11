@@ -44,6 +44,11 @@ $color-danger:          colorify('danger', $color-forever_red) !default;
 $color-background:      set_color('background', $color-forever_beige) !default;
 $color-text:            set_color('text', $color-forever_gray) !default;
 
+// Forever LIVE! 2016 brand colors
+$color-live16-green: colorify('live16-green', #367860) !default;
+$color-live16-blue: colorify('live16-blue', #014c5e) !default;
+$color-live16-dark_blue: colorify('live16-dark_blue', #142f3d) !default;
+
 @each $id, $color in $colors {
   .color-#{$id} {
     color: #{$color};
