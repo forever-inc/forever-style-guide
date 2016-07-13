@@ -1,11 +1,47 @@
 <!-- Trigger the modal with a button -->
-<button type="button" class="btn btn-artisan btn-lg" data-toggle="modal" data-target="#myModal">Decision Modal</button>
+<div class='row'>
+  <div class='col-md-6'>
+    <h3>Informative Modals:</h3>
+    <button type="button" class="btn btn-artisan btn-md" data-toggle="modal" data-target="#info1">Decision/Action</button>
+    <button type="button" class="btn btn-artisan btn-md" data-toggle="modal" data-target="#info2">Info/Agreement</button>
+  </div>
+  <div class='col-md-6'>
+    <h3>Product Modals:</h3>
+    <button type="button" class="btn btn-artisan btn-md" data-toggle="modal" data-target="#product1">Add to Cart</button>
+    <button type="button" class="btn btn-artisan btn-md" data-toggle="modal" data-target="#product2">Product Details</button>
+  </div>
+  <div class='col-md-6'>
+    <h3>Media Modals:</h3>
+    <button type="button" class="btn btn-artisan btn-md" data-toggle="modal" data-target="#media1">Help Content</button>
+    <button type="button" class="btn btn-artisan btn-md" data-toggle="modal" data-target="#media2">New Feature</button>
+  </div>
+  <div class='col-md-6'>
+    <h3>Field Modals:</h3>
+    <button type="button" class="btn btn-artisan btn-md" data-toggle="modal" data-target="#field1">Promotional</button>
+    <button type="button" class="btn btn-artisan btn-md" data-toggle="modal" data-target="#field2">Sign in/up</button>
+  </div>
+</div>
 
-<!-- Modal -->
-<div id="myModal" class="modal fade" role="dialog">
+<!-- Informative Modals -->
+<div id="info1" class="modal fade" role="dialog">
   <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header modal-theme color_block-danger">
+        <span type="button" class="modal-close-position" data-dismiss="modal"><i class="fa fa-close fa-2x"></i></span>
+        <h3 class="modal-title"><i class="fa fa-trash-o"></i> Delete Photo?</h3>
+      </div>
+      <div class="modal-body">
+        <p>Some text in the modal.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
 
-    <!-- Modal content-->
+<div id="info2" class="modal fade" role="dialog">
+  <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
         <span type="button" class="close modal-close-position" data-dismiss="modal"><i class="fa fa-close"></i></span>
@@ -18,6 +54,110 @@
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
       </div>
     </div>
+  </div>
+</div>
 
+<!-- Product Modals -->
+<div id="product1" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <span type="button" class="close modal-close-position" data-dismiss="modal"><i class="fa fa-close"></i></span>
+        <h4 class="modal-title">Modal Header</h4>
+      </div>
+      <div class="modal-body">
+        <p>Some text in the modal.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="product2" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <span type="button" class="close modal-close-position" data-dismiss="modal"><i class="fa fa-close"></i></span>
+        <h4 class="modal-title">Modal Header</h4>
+      </div>
+      <div class="modal-body">
+        <p>Some text in the modal.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Media Modals -->
+<div id="media1" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <span type="button" class="close modal-close-position" data-dismiss="modal"><i class="fa fa-close"></i></span>
+        <h4 class="modal-title">Modal Header</h4>
+      </div>
+      <div class="modal-body">
+        <p>Some text in the modal.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="media2" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <span type="button" class="close modal-close-position" data-dismiss="modal"><i class="fa fa-close"></i></span>
+        <h4 class="modal-title">Modal Header</h4>
+      </div>
+      <div class="modal-body">
+        <p>Some text in the modal.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Field Modals -->
+<div id="field1" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <span type="button" class="close modal-close-position" data-dismiss="modal"><i class="fa fa-close"></i></span>
+        <h4 class="modal-title">Modal Header</h4>
+      </div>
+      <div class="modal-body">
+        <p>Some text in the modal.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="field2" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <span type="button" class="close modal-close-position" data-dismiss="modal"><i class="fa fa-close"></i></span>
+        <h4 class="modal-title">Modal Header</h4>
+      </div>
+      <div class="modal-body">
+        <p>Some text in the modal.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
   </div>
 </div>
