@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    forever_style_guide (3.0.0)
+    forever_style_guide (2.0.3)
       bootstrap-sass
       font-awesome-rails
       jquery-rails
@@ -192,4 +192,4 @@ DEPENDENCIES
   thor
 
 BUNDLED WITH
-   1.12.5
+   1.10.6
