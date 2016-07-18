@@ -1,0 +1,100 @@
+$modal-padding-15: 15px;
+$modal-form-width-lg: 355px;
+$modal-product-suggestion-sm: 170px;
+
+.modal-close-position {
+  float: right;
+}
+
+.modal-theme {
+  color: $color-white;
+}
+
+.modal-title {
+  color: inherit;
+  font-family: $font-face-light;
+}
+
+.modal-footer-buttons {
+  padding: $modal-padding-15;
+  border-top: 1px solid $color-gray-400;
+  text-align: right;
+}
+
+.modal-footer-txt {
+  line-height: 3;
+  font-family: $font-face-bold;
+  color: $color-gray-600;
+}
+
+.modal-footer-info {
+  padding: 10px;
+}
+
+.modal-body-info {
+  padding: 30px;
+}
+
+.modal-product-name-sm {
+  margin: 10px auto 0;
+  max-width: $modal-product-suggestion-sm;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  font-family: $font-face-bold;
+  color: $color-gray-600;
+}
+
+.modal-footer-products {
+  padding: $modal-padding-15;
+}
+
+.product-preview:hover .modal-product-name-sm {
+  color: $color-secondary;
+}
+
+.close {
+  float: right;
+}
+
+.modal-footer-txt.checkbox {
+  line-height: 1.5;
+}
+
+.media.text-center {
+  padding: 0px 40px;
+  margin-top: $modal-padding-15;
+}
+
+.modal-content.modal-promo {
+  background-image: url('modals/promobg.jpg');
+  background-size: cover;
+  height: 475px;
+}
+
+.modal-promo-footer,
+.modal-promo-header {
+  border: none;
+}
+
+.modal-promo-content {
+  margin-top: 165px;
+  color: $color-gray-600;
+  font-size: 25px;
+  text-align: center;
+  padding: 0px 50px;
+}
+
+.modal-promo-form {
+  width: $modal-form-width-lg;
+  text-align: center;
+  margin : 0 auto;
+}
+
+.promo-btn {
+  position: relative;
+  display: block;
+  margin: 0 auto;
+  margin-top: 10px;
+  width: $modal-form-width-lg;
+}

@@ -1,29 +1,25 @@
 <!-- Trigger the modal with a button -->
 <div class='row'>
   <div class='col-md-6'>
-    <h3>Informative Modals:</h3>
-    <button type="button" class="btn btn-danger btn-md" data-toggle="modal" data-target="#info1">Decision/Action</button>
-    <button type="button" class="btn btn-danger btn-inverse btn-md" data-toggle="modal" data-target="#info2">Info/Agreement</button>
+    <h3>Decision/Info:</h3>
+    <button type="button" class="btn btn-danger btn-lg" data-toggle="modal" data-target="#info">Delete Photo</button>
   </div>
   <div class='col-md-6'>
-    <h3>Product Modals:</h3>
-    <button type="button" class="btn btn-primary btn-md" data-toggle="modal" data-target="#product1">Add to Cart</button>
-    <button type="button" class="btn btn-primary btn-inverse btn-md" data-toggle="modal" data-target="#product2">Product Details</button>
+    <h3>Product:</h3>
+    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#product">Add to Cart</button>
   </div>
   <div class='col-md-6'>
-    <h3>Media Modals:</h3>
-    <button type="button" class="btn btn-artisan btn-md" data-toggle="modal" data-target="#media1">Help Content</button>
-    <button type="button" class="btn btn-artisan btn-inverse btn-md" data-toggle="modal" data-target="#media2">New Feature</button>
+    <h3>Media:</h3>
+    <button type="button" class="btn btn-artisan btn-lg" data-toggle="modal" data-target="#media">Learn How</button>
   </div>
   <div class='col-md-6'>
-    <h3>Field Modals:</h3>
-    <button type="button" class="btn btn-services btn-md" data-toggle="modal" data-target="#field1">Promotional</button>
-    <button type="button" class="btn btn-services btn-inverse btn-md" data-toggle="modal" data-target="#field2">Sign in/up</button>
+    <h3>Field:</h3>
+    <button type="button" class="btn btn-services btn-lg" data-toggle="modal" data-target="#field">Share Promotion</button>
   </div>
 </div>
 
-<!-- Informative Modals -->
-<div id="info1" class="modal fade" role="dialog">
+<!-- Decision Modals -->
+<div id="info" class="modal fade" role="dialog">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header modal-theme color_block-danger">
@@ -42,127 +38,111 @@
   </div>
 </div>
 
-<div id="info2" class="modal fade" role="dialog">
+<!-- Product Modals -->
+<div id="product" class="modal fade" role="dialog">
   <div class="modal-dialog">
     <div class="modal-content">
-      <div class="modal-header modal-theme color_block-danger">
+      <div class="modal-header modal-theme color_block-primary">
         <span type="button" class="modal-close-position" data-dismiss="modal"><i class="fa fa-close fa-2x"></i></span>
-        <h3 class="modal-title"><i class="fa fa-exclamation-circle"></i> Confirm Cancellation</h3>
+        <h3 class="modal-title"><i class="fa fa-check-circle-o"></i> 1 Item Added to Cart</h3>
       </div>
       <div class="modal-body modal-body-info">
-        <h4 class="modal-body-title">Are you sure you want to cancel your subscription?</h4>
-        <p>Your photos and documents will no longer be guaranteed.  You will not be able to add any additional items to Forever.</p>
+      <div class='row'>
+        <div class='col-md-6'>
+         <%= image_tag("forever_style_guide/single-product.jpg", alt: "Forever Logo", class:"navbar-brand-logo") %>
+        </div>
+        <div class='col-md-6'>
+          <h3>What Makes Your Soul Happy - 5x7 Digital Art Print</h3>
+          <p>Designed by <%= link_to 'LJS Designs', '#', title: 'LJS Designs' %><br />Price $3.50</p>
+          <button type="button" class="btn btn-secondary btn-inverse" data-dismiss="modal">Keep Shopping</button>
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Checkout</button>
+        </div>
       </div>
-      <div class="modal-footer modal-footer-info">
-        <span class="pull-left modal-footer-txt"><i>This action cannot be undone.</i></span>
-        <button type="button" class="btn btn-link" data-dismiss="modal">Cancel</button>
-        <button type="button" class="btn btn-primary" data-dismiss="modal">Yes, Delete</button>
       </div>
-    </div>
-  </div>
-</div>
-
-<!-- Product Modals -->
-<div id="product1" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <span type="button" class="close modal-close-position" data-dismiss="modal"><i class="fa fa-close"></i></span>
-        <h4 class="modal-title">Modal Header</h4>
-      </div>
-      <div class="modal-body">
-        <p>Some text in the modal.</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div id="product2" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <span type="button" class="close modal-close-position" data-dismiss="modal"><i class="fa fa-close"></i></span>
-        <h4 class="modal-title">Modal Header</h4>
-      </div>
-      <div class="modal-body">
-        <p>Some text in the modal.</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      <div class="modal-footer modal-footer-products">
+        <div class='row text-center'>
+          <p>Shoppers also liked:</p>
+          <div class='col-md-4 product-preview'><%= image_tag("forever_style_guide/digiart1.png", alt: "Forever Logo", class:"navbar-brand-logo") %>
+            <p class='modal-product-name-sm'>Jammin' Jungle Juice MEGA Bundle</p>
+            <%= link_to 'View Details', '#', title: 'View Details' %>
+          </div>
+          <div class='col-md-4 product-preview'><%= image_tag("forever_style_guide/digiart2.png", alt: "Forever Logo", class:"navbar-brand-logo") %>
+            <p class='modal-product-name-sm'>Sunshine on My Shoulder - The Bundle!</p>
+            <%= link_to 'View Details', '#', title: 'View Details' %>
+          </div>
+          <div class='col-md-4 product-preview'><%= image_tag("forever_style_guide/digiart3.png", alt: "Forever Logo", class:"navbar-brand-logo") %>
+            <p class='modal-product-name-sm'>Vintage Americana Bundle</p>
+             <%= link_to 'View Details', '#', title: 'View Details' %>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </div>
 
 <!-- Media Modals -->
-<div id="media1" class="modal fade" role="dialog">
+<div id="media" class="modal fade" role="dialog">
   <div class="modal-dialog">
     <div class="modal-content">
-      <div class="modal-header">
-        <span type="button" class="close modal-close-position" data-dismiss="modal"><i class="fa fa-close"></i></span>
-        <h4 class="modal-title">Modal Header</h4>
+      <div class="modal-header modal-theme color_block-artisan">
+        <span type="button" class="modal-close-position" data-dismiss="modal"><i class="fa fa-close fa-2x"></i></span>
+        <h3 class="modal-title"><i class="fa fa-info-circle"></i> Why not round 'em up with Lasso Select?</h3>
       </div>
-      <div class="modal-body">
-        <p>Some text in the modal.</p>
+      <div class="modal-body modal-body-info">
+        <%= image_tag("forever_style_guide/contextualhelplassoanimation.gif", alt: "Forever Logo", class:"navbar-brand-logo") %>
+        <p class='media text-center'>Select and de-select lots of photos and documents by clicking and dragging your cursor around the items you want to work on.</p>
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div id="media2" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <span type="button" class="close modal-close-position" data-dismiss="modal"><i class="fa fa-close"></i></span>
-        <h4 class="modal-title">Modal Header</h4>
-      </div>
-      <div class="modal-body">
-        <p>Some text in the modal.</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      <div class="modal-footer modal-footer-info">
+        <span class="pull-left modal-footer-txt checkbox">
+          <label><input type="checkbox" value=""><i>Do not show me again.</i></label>
+        </span>
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Got It!</button>
       </div>
     </div>
   </div>
 </div>
 
 <!-- Field Modals -->
-<div id="field1" class="modal fade" role="dialog">
+<div id="field" class="modal fade" role="dialog">
   <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
+    <div class="modal-content modal-promo">
+      <div class="modal-header modal-promo-header">
         <span type="button" class="close modal-close-position" data-dismiss="modal"><i class="fa fa-close"></i></span>
-        <h4 class="modal-title">Modal Header</h4>
       </div>
       <div class="modal-body">
-        <p>Some text in the modal.</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <p class='modal-promo-content'>Share this deal with friends & family.</p>
+        <input type="email" name="email" id="" autofocus="autofocus" class="form-control modal-promo-form" placeholder="Enter Email Address">
+        <button type="button" class="btn btn-services btn-artisan promo-btn" data-dismiss="modal">Send & Close</button>
       </div>
     </div>
   </div>
 </div>
 
-<div id="field2" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <span type="button" class="close modal-close-position" data-dismiss="modal"><i class="fa fa-close"></i></span>
-        <h4 class="modal-title">Modal Header</h4>
-      </div>
-      <div class="modal-body">
-        <p>Some text in the modal.</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      </div>
+<h3>Product Detail Gallery:</h3>
+<div class="row">
+    <div class="col-md-offset-2 col-md-8">
+        <div class="row">
+
+            <a href="http://41.media.tumblr.com/f37ac708134914c471073e4c0b47328d/tumblr_mrn3dc10Wa1r1thfzo8_1280.jpg" data-toggle="lightbox" data-gallery="multiimages" data-left_arrow_class=".fa .fa-chevron-left .glyphicon .glyphicon-chevron-left" data-right_arrow_class=".fa .fa-chevron-right .glyphicon .glyphicon-chevron-right" data-title="People walking down stairs" class="col-sm-4">
+                <%= image_tag("forever_style_guide/single-product.jpg", alt: "Sample product", class:"img-responsive") %>
+            </a>
+            <a href="http://41.media.tumblr.com/838b44224e39c30cd43490deb11b919d/tumblr_mrn3dc10Wa1r1thfzo1_1280.jpg" data-toggle="lightbox" data-gallery="multiimages" data-title="Man getting wet" class="col-sm-4">
+                <%= image_tag("forever_style_guide/single-product.jpg", alt: "Sample product", class:"img-responsive") %>
+            </a>
+            <a href="http://41.media.tumblr.com/e06a3513b0b36843f54bee99aeac689a/tumblr_mrn3dc10Wa1r1thfzo2_1280.jpg" data-toggle="lightbox" data-gallery="multiimages" data-title="Someone lost their dress" class="col-sm-4">
+                <%= image_tag("forever_style_guide/single-product.jpg", alt: "Sample product", class:"img-responsive") %>
+            </a>
+        </div>
+        <div class="row">
+            <a href="http://41.media.tumblr.com/9d3e6a9c89a856a2ad0be3ab4ca598b2/tumblr_mrn3dc10Wa1r1thfzo4_1280.jpg" data-toggle="lightbox" data-gallery="multiimages" data-footer="Big ass waterfall- using footer instead of title" class="col-sm-4">
+               <%= image_tag("forever_style_guide/single-product.jpg", alt: "Sample product", class:"img-responsive") %>
+            </a>
+            <a href="http://41.media.tumblr.com/9d3e6a9c89a856a2ad0be3ab4ca598b2/tumblr_mrn3dc10Wa1r1thfzo4_1280.jpg" data-toggle="lightbox" data-gallery="multiimages" data-title="Cool bottle" data-footer="Now fill it with whiskey" class="col-sm-4">
+               <%= image_tag("forever_style_guide/single-product.jpg", alt: "Sample product", class:"img-responsive") %>
+            </a>
+            <a href="http://36.media.tumblr.com/de356cd6570d7c26e73979467f296f67/tumblr_mrn3dc10Wa1r1thfzo6_1280.jpg" data-toggle="lightbox" class="col-sm-4">
+                <%= image_tag("forever_style_guide/single-product.jpg", alt: "Sample product", class:"img-responsive") %>
+            </a>
+        </div>
     </div>
-  </div>
 </div>
