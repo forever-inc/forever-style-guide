@@ -51,7 +51,6 @@ $nav-bg-color: color('gray-700');
       @media (min-width: $grid-float-breakpoint) {
         color: color('gray-600');
         font-size: $font-size-default;
-        @include transition(all 0.2s ease-in-out);
       }
       &:hover {
         @media (min-width: $grid-float-breakpoint) {
