@@ -50,8 +50,8 @@
 
               <% if current_ambassador.phone %>
                 <div class="col-grid-float-6">
-                  <%= link_to ('tel:+' + current_ambassador.phone),  title: 'Call' + current_ambassador.name, class: 'btn btn-default btn-link btn-action dropdown-ambassador-contact_btn' do %>
-                    <i class="fa fa-phone btn-action-icon"></i><span class="btn-action-label"><%= current_ambassador.phone %></span>
+                  <%= link_to ('tel:+' + number_to_phone(current_ambassador.phone)),  title: 'Call ' + current_ambassador.name, class: 'btn btn-default btn-link btn-action dropdown-ambassador-contact_btn' do %>
+                    <i class="fa fa-phone btn-action-icon"></i><span class="btn-action-label"><%= number_to_phone(current_ambassador.phone) %></span>
                   <% end %>
                 </div>
               <% end %>
