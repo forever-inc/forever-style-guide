@@ -1,10 +1,6 @@
 <!-- Show cart in navbar right on desktop: see nav.erb for mobile  -->
-<!-- TODO show item count in cart -->
-<li class='navbar-account_item navbar-account_item-cart' id='mini-cart' data-turbolinks-temporary>
-  <%= link_to cart_url, class: "nav-icon-stack hidden-grid-float-breakpoint" do %>
-    <i class='fa fa-shopping-cart'></i>
-    <span class="nav-icon-label">Cart</span>
-  <% end %>
+<li class='navbar-account_item navbar-account_item-cart hidden-grid-float-breakpoint'>
+  <%= render partial: "forever_style_guide/sections/components/navigation/nav_cart_icon" %>
 </li>
 
 <% if defined?(current_user) && current_user.present?  %>
