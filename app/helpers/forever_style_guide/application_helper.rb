@@ -113,7 +113,7 @@ module ForeverStyleGuide
     end
 
     def artisan_url
-      www_url('/artisan')
+      store_url('/artisan')
     end
 
     def projects_marketing_url
@@ -145,7 +145,7 @@ module ForeverStyleGuide
     end
 
     def opportunity_url
-      www_url('/opportunity')
+      store_url('/opportunity')
     end
 
     def retreats_url
