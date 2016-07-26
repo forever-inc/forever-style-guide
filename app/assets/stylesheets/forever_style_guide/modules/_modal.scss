@@ -1,25 +1,17 @@
 $modal-padding-footer: 15px;
 $modal-form-width-lg: 355px;
 $modal-product-suggestion-sm: 170px;
-
-.modal-close-position {
-  float: right;
-}
-
-.modal-close-position:hover,
-.modal-close-position:focus {
-  cursor: pointer;
-}
+$modal-promo-height: 475px;
 
 .modal-title {
-  color: inherit;
   font-family: $font-face-light;
+  color: inherit;
 }
 
 .modal-footer-buttons {
   padding: $modal-padding-footer;
-  border-top: 1px solid $color-gray-400;
   text-align: right;
+  border-top: 1px solid $color-gray-400;
 }
 
 .modal-footer-txt {
@@ -55,7 +47,9 @@ $modal-product-suggestion-sm: 170px;
 }
 
 .close:hover,
-.close:focus {
+.close:focus,
+.modal-close:hover,
+.modal-close:focus {
   cursor: pointer;
 }
 
@@ -63,15 +57,15 @@ $modal-product-suggestion-sm: 170px;
   line-height: 1.5;
 }
 
-.media.text-center {
-  padding: 0px 40px;
+.modal-media-text {
+  padding: 0 40px;
   margin-top: $modal-padding-footer;
 }
 
 .modal-content.modal-promo {
   background-image: url('modals/promobg.jpg');
   background-size: cover;
-  height: 475px;
+  height: $modal-promo-height;
 }
 
 .modal-promo-footer,
@@ -80,23 +74,23 @@ $modal-product-suggestion-sm: 170px;
 }
 
 .modal-promo-content {
-  margin-top: 165px;
-  padding: 0px 50px;
   color: $color-gray-600;
-  font-size: 25px;
+  font-size: $font-size-500;
   text-align: center;
+  margin-top: 165px;
+  padding: 0 50px;
 }
 
 .modal-promo-form {
-  margin : 0 auto;
   width: $modal-form-width-lg;
+  margin : 0 auto;
   text-align: center;
 }
 
 .promo-btn {
+  width: $modal-form-width-lg;
   position: relative;
   display: block;
   margin: 0 auto;
   margin-top: 10px;
-  width: $modal-form-width-lg;
 }

@@ -14,7 +14,7 @@
   </div>
   <div class='col-md-6'>
     <h3>Field:</h3>
-    <button type="button" class="btn btn-services btn-lg" data-toggle="modal" data-target="#field" title="View Pricing">View Promotion</button>
+    <button type="button" class="btn btn-services btn-lg" data-toggle="modal" data-target="#promo" title="View Pricing">View Promotion</button>
   </div>
 </div>
 
@@ -23,7 +23,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header color-white color_block-danger">
-        <span type="button" class="modal-close-position" data-dismiss="modal"><i class="fa fa-close fa-2x"></i></span>
+        <span type="button" class="modal-close pull-right" data-dismiss="modal"><i class="fa fa-close fa-2x"></i></span>
         <h3 class="modal-title"><i class="fa fa-trash-o"></i> Delete Photo?</h3>
       </div>
       <div class="modal-body modal-body-info">
@@ -31,8 +31,8 @@
       </div>
       <div class="modal-footer modal-footer-info">
         <span class="pull-left modal-footer-txt"><i>This action cannot be undone.</i></span>
-        <button type="button" class="btn btn-link" data-dismiss="modal">Cancel</button>
-        <button type="button" class="btn btn-primary" data-dismiss="modal">Yes, Delete</button>
+        <button type="button" class="btn btn-link" data-dismiss="modal" title="Cancel">Cancel</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal" title="Delete">Yes, Delete</button>
       </div>
     </div>
   </div>
@@ -43,7 +43,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header color-white color_block-primary">
-        <span type="button" class="modal-close-position" data-dismiss="modal"><i class="fa fa-close fa-2x"></i></span>
+        <span type="button" class="modal-close pull-right" data-dismiss="modal"><i class="fa fa-close fa-2x"></i></span>
         <h3 class="modal-title"><i class="fa fa-check-circle-o"></i> 1 Item Added to Cart</h3>
       </div>
       <div class="modal-body modal-body-info">
@@ -54,8 +54,8 @@
         <div class='col-md-6'>
           <h3>What Makes Your Soul Happy - 5x7 Digital Art Print</h3>
           <p>Designed by <%= link_to 'LJS Designs', '#', title: 'LJS Designs' %><br />Price $3.50</p>
-          <button type="button" class="btn btn-secondary btn-inverse" data-dismiss="modal">Keep Shopping</button>
-          <button type="button" class="btn btn-primary" data-dismiss="modal">Checkout</button>
+          <button type="button" class="btn btn-secondary btn-inverse" data-dismiss="modal" title="Keep Shopping">Keep Shopping</button>
+          <button type="button" class="btn btn-primary" data-dismiss="modal" title="Checkout">Checkout</button>
         </div>
       </div>
       </div>
@@ -63,17 +63,17 @@
         <div class='row text-center'>
           <p>Shoppers also liked:</p>
           <div class='col-md-4 product-preview'>
-            <%= image_tag("forever_style_guide/digiart1.png", alt: "Forever Logo", class:"navbar-brand-logo") %>
+            <%= image_tag("forever_style_guide/digiart1.png", alt: "Forever Digital Art Kit", title: "Forever Digital Art Kit", class:"navbar-brand-logo") %>
             <p class='modal-product-name-sm'>Jammin' Jungle Juice MEGA Bundle</p>
             <%= link_to 'View Details', '#', title: 'View Details' %>
           </div>
           <div class='col-md-4 product-preview'>
-            <%= image_tag("forever_style_guide/digiart2.png", alt: "Forever Logo", class:"navbar-brand-logo") %>
+            <%= image_tag("forever_style_guide/digiart2.png", alt: "Forever Digital Art Kit", title: "Forever Digital Art Kit", class:"navbar-brand-logo") %>
             <p class='modal-product-name-sm'>Sunshine on My Shoulder - The Bundle!</p>
             <%= link_to 'View Details', '#', title: 'View Details' %>
           </div>
           <div class='col-md-4 product-preview'>
-            <%= image_tag("forever_style_guide/digiart3.png", alt: "Forever Logo", class:"navbar-brand-logo") %>
+            <%= image_tag("forever_style_guide/digiart3.png", alt: "Forever Digital Art Kit", title: "Forever Digital Art Kit", class:"navbar-brand-logo") %>
             <p class='modal-product-name-sm'>Vintage Americana Bundle</p>
              <%= link_to 'View Details', '#', title: 'View Details' %>
           </div>
@@ -88,34 +88,34 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header color-white color_block-artisan">
-        <span type="button" class="modal-close-position" data-dismiss="modal"><i class="fa fa-close fa-2x"></i></span>
+        <span type="button" class="modal-close pull-right" data-dismiss="modal"><i class="fa fa-close fa-2x"></i></span>
         <h3 class="modal-title"><i class="fa fa-info-circle"></i> Why not round 'em up with Lasso Select?</h3>
       </div>
       <div class="modal-body modal-body-info">
         <%= image_tag("forever_style_guide/contextualhelplassoanimation.gif", alt: "Forever Logo", class:"navbar-brand-logo") %>
-        <p class='media text-center'>Select and de-select lots of photos and documents by clicking and dragging your cursor around the items you want to work on.</p>
+        <p class='modal-media-text text-center'>Select and de-select lots of photos and documents by clicking and dragging your cursor around the items you want to work on.</p>
       </div>
       <div class="modal-footer modal-footer-info">
         <span class="pull-left modal-footer-txt checkbox">
           <label><input type="checkbox" value=""><i>Do not show me again.</i></label>
         </span>
-        <button type="button" class="btn btn-primary" data-dismiss="modal">Got It!</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal" title="Got it, Close">Got It!</button>
       </div>
     </div>
   </div>
 </div>
 
-<!-- Field Modals -->
-<div id="field" class="modal fade" role="dialog">
+<!-- Promo Modals -->
+<div id="promo" class="modal fade" role="dialog">
   <div class="modal-dialog">
     <div class="modal-content modal-promo">
       <div class="modal-header modal-promo-header">
-        <span type="button" class="close modal-close-position" data-dismiss="modal"><i class="fa fa-close"></i></span>
+        <span type="button" class="modal-close pull-right" data-dismiss="modal" title="Close"><i class="fa fa-close"></i></span>
       </div>
       <div class="modal-body">
-        <p class='modal-promo-content'>Share this deal with friends & family.</p>
+        <p class='modal-promo-content'>Share this deal with friends &amp; family.</p>
         <input type="email" name="email" id="" autofocus="autofocus" class="form-control modal-promo-form" placeholder="Enter Email Address">
-        <button type="button" class="btn btn-services btn-artisan promo-btn" data-dismiss="modal">Send & Close</button>
+        <button type="button" class="btn btn-services btn-artisan promo-btn" data-dismiss="modal" title="Send and Close">Send & Close</button>
       </div>
     </div>
   </div>
