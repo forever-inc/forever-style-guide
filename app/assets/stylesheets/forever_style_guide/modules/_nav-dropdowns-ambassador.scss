@@ -1,3 +1,5 @@
+$your-ambassador-intro-text-width: 110px;
+
 .dropdown-ambassador {
   .dropdown-toggle {
     padding: 0 10px;
@@ -51,7 +53,8 @@
   }
 }
 .dropdown-ambassador-primary_text {
-  margin-right: 10px;
+  display: inline-block;
+  min-width: $your-ambassador-intro-text-width; //allows for names shorter than the Your Ambassador intro text
 }
 .dropdown-ambassador-edit_btn {
   display: block;

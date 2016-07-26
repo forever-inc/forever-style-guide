@@ -34,6 +34,14 @@ module ForeverStyleGuide
       url.to_s
     end
 
+    def has_item_in_cart?
+      defined?(current_order) && current_order.product_count > 0
+    end
+
+    def has_ambassador?
+      defined?(current_ambassador) && current_ambassador.present?
+    end
+
     # Web App Paths
     def login_url
       web_app_url('/login')
@@ -105,7 +113,7 @@ module ForeverStyleGuide
     end
 
     def artisan_url
-      www_url('/artisan')
+      store_url('/artisan')
     end
 
     def projects_marketing_url
@@ -137,7 +145,7 @@ module ForeverStyleGuide
     end
 
     def opportunity_url
-      www_url('/opportunity')
+      store_url('/opportunity')
     end
 
     def retreats_url

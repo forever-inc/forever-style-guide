@@ -1,5 +1,6 @@
 $nav-icon-width: 60px;
 $nav-icon-margin: 3px;
+$cart-count-width: 20px;
 
 @mixin chevron-style {
   position: absolute;
@@ -21,6 +22,11 @@ $nav-icon-margin: 3px;
 .nav-icon-label {
   font-size: $font-size-100;
   line-height: $font-size-400;
+
+  &.has_count {
+    position: absolute;
+    top: 26px; // align labels
+  }
 }
 
 // Style offcanvas account icons consistent w/ product dropdowns
@@ -61,8 +67,8 @@ $nav-icon-margin: 3px;
 // Mobile Toggles
 .navbar-default .navbar-toggle,
 a.cart-icon {
-  height: $header_height;
-  width: $header_height;
+  height: $header-height;
+  width: $header-height;
   margin-top: 0;
   margin-right: 0;
   margin-bottom: 0;
@@ -78,10 +84,6 @@ a.cart-icon {
     text-decoration: none;
     background-color: transparent;
   }
-
-  &.nav-icon-stack {
-    padding: 0 !important; // overriding .navbar-nav > li > a
-  }
   &.pull-left {
     @include nav-border(right);
   }
@@ -95,11 +97,8 @@ a.cart-icon {
       cursor: pointer;
     }
     .nav-icon-stack {
-      height: $header_height;
+      height: $header-height;
     }
-  }
-  .fa-shopping-cart {
-    padding-top: 5px;
   }
 }
 a.cart-icon {
@@ -109,6 +108,16 @@ a.cart-icon {
     @include nav-border(left);
   }
 }
+.cart-icon-count {
+  display: inline-block;
+  float: right;
+  height: $cart-count-width;
+  min-width: $cart-count-width;
+  padding-top: 1px; // vertical align number in circle
+  font-size: $font-size-200;
+  border-radius: 50%;
+}
+
 .navbar-toggle-close-left {
   @include nav-border(right);
 }
