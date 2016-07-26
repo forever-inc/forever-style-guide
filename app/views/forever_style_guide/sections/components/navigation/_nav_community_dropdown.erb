@@ -1,0 +1,99 @@
+<%= link_to nil, class: 'dropdown-toggle dropdown-toggle-community', :data => { :toggle => 'dropdown' } do %>
+  Community
+  <i class='fa fa-chevron-down'></i>
+<% end %>
+
+<div class='dropdown-menu dropdown-menu-nav color_block-gray-700'>
+  <div class='container dropdown-menu-nav-container'>
+    <div class='row'>
+      <div class='col-grid-float-3 l-padded-thin'>
+        <h3 class='dropdown-menu-nav-title page-title color-primary'>Customer Support</h3>
+
+        <ul class="list-unstyled">
+          <li>
+            <%= link_to 'Help Center', help_center_url, class: 'dropdown-menu-nav-link', title: 'Forever Help Center' %>
+          </li>
+
+          <li>
+            <%= link_to 'Web & Mobile App FAQ', web_faq_url, class: 'dropdown-menu-nav-link', title: 'Forever Artisan Frequently Asked Questions' %>
+          </li>
+
+          <li>
+            <%= link_to 'Artisan FAQ', artisan_faq_url, class: 'dropdown-menu-nav-link', title: 'Forever Artisan Frequently Asked Questions' %>
+          </li>
+
+          <li>
+            <%= link_to 'Historian FAQ', historian_faq_url, class: 'dropdown-menu-nav-link', title: 'Forever Historian Frequently Asked Questions' %>
+          </li>
+
+          <li>
+            <%= link_to 'Customer Commitments', customer_commitments_url, class: 'dropdown-menu-nav-link', title: 'Forever Customer Commitments' %>
+          </li>
+
+          <li>
+            <%= link_to 'Contact Us', contact_us_url, class: 'dropdown-menu-nav-link', title: 'Contact Us' %>
+          </li>
+        </ul>
+      </div>
+
+      <div class='col-grid-float-3 l-padded-thin'>
+        <h3 class='dropdown-menu-nav-title page-title color-ambassador-light'>Ambassadors</h3>
+
+        <ul class="list-unstyled">
+          <li>
+            <%= link_to 'Become an Ambassador', opportunity_url, class: 'dropdown-menu-nav-link', title: 'Make Money Helping People Save & Print their Photos' %>
+          </li>
+
+          <li>
+            <%= link_to 'Find an Ambassador', find_ambassador_url, class: 'dropdown-menu-nav-link', title: 'Get Free Training and Support from Certified Ambassadors' %>
+          </li>
+
+          <li class="hide">
+            <%= link_to 'Ambassador Direct', ambassador_direct_url, class: 'dropdown-menu-nav-link', title: 'Make Money as a Forever Business Partner' %>
+          </li>
+        </ul>
+      </div>
+
+      <div class='col-grid-float-3 l-padded-thin'>
+        <h3 class='dropdown-menu-nav-title page-title color-secondary'>Events</h3>
+
+        <ul class="list-unstyled">
+          <li>
+            <%= link_to 'Forever Live!', forever_live_url, class: 'dropdown-menu-nav-link', title: 'Scrapbooking and Memory Keeping Conference' %>
+          </li>
+
+          <li>
+            <%= link_to 'Forever Retreats', retreats_url, class: 'dropdown-menu-nav-link', title: 'Creative Weekend Events for Scrapbooking and Memory Keeping' %>
+          </li>
+        </ul>
+      </div>
+
+      <div class='col-grid-float-3 l-padded-thin'>
+        <h3 class='dropdown-menu-nav-title page-title color-services'>Connect</h3>
+
+        <ul class="list-unstyled">
+          <li>
+            <%= link_to 'Facebook', facebook_url, target: '_blank', class: 'dropdown-menu-nav-link', title: 'Follow us on Facebook' %>
+          </li>
+
+          <li>
+            <%= link_to 'Twitter', twitter_url, target: '_blank', class: 'dropdown-menu-nav-link', title: 'Follow us on Twitter' %>
+          </li>
+
+          <li>
+            <%= link_to 'Instagram', instagram_url, target: '_blank', class: 'dropdown-menu-nav-link', title: 'Follow us on Instagram' %>
+          </li>
+
+          <li>
+            <%= link_to 'Blog', blog_url, class: 'dropdown-menu-nav-link', title: 'Learn more at the Forever Blog' %>
+          </li>
+
+          <li>
+            <%= link_to 'Press', press_url, class: 'dropdown-menu-nav-link', title: 'View Press Releases and News Stories' %>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</div>
