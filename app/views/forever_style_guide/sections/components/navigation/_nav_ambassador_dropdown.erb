@@ -2,11 +2,11 @@
   <%= link_to nil, class: 'dropdown-toggle dropdown-toggle-ambassador', :data => { :toggle => 'dropdown' } do %>
     <div>
       <small class="dropdown-ambassador-intro_text">
-        <%= defined?(ambassador) && ambassador.present? ? 'Your Ambassador' : 'Find or join Forever' %>
+        <%= has_ambassador? ? 'Your Ambassador' : 'Find or join Forever' %>
       </small>
     </div>
     <span class="dropdown-ambassador-primary_text">
-      <%= defined?(ambassador) && ambassador.present? ? ambassador.name : 'Ambassadors' %>
+      <%= has_ambassador? ? current_ambassador.name : 'Ambassadors' %>
     </span>
     <i class='fa fa-chevron-down'></i>
   <% end %>
@@ -18,72 +18,72 @@
         <div class='col-grid-float-6  col-grid-float-push-6 l-padded-thin'>
           <h3 class='dropdown-menu-nav-title page-title color-ambassador-light'>Your Ambassador</h3>
 
-          <% if defined?(ambassador) && ambassador.present? %>
+          <% if has_ambassador? %>
 
-            <%= link_to 'change', '/find-an-ambassador', title: 'Change Your Forever Ambassador', class: 'pull-right dropdown-ambassador-edit_btn' %>
+            <%= link_to 'change', find_ambassador_url, title: 'Change Your Forever Ambassador', class: 'pull-right dropdown-ambassador-edit_btn' %>
             <div class='dropdown-menu-account-divider'></div>
 
             <div>
-              <% if ambassador.avatar_url_small %>
-                <%= image_tag ambassador.avatar_url_small, class: "dropdown-menu-account-avatar avatar avatar-sm pull-left", alt: ambassador.name, title: ambassador.name %>
+              <% if current_ambassador.avatar_url_small %>
+                <%= image_tag current_ambassador.avatar_url_small, class: "dropdown-menu-account-avatar avatar avatar-sm pull-left", alt: current_ambassador.name, title: current_ambassador.name %>
               <% else %>
-                <%= image_tag "default_avatar.jpg", class: "dropdown-menu-account-avatar avatar avatar-sm pull-left", alt: ambassador.name, title: ambassador.name %>
+                <%= image_tag "forever_style_guide/default_avatar.jpg", class: "dropdown-menu-account-avatar avatar avatar-sm pull-left", alt: current_ambassador.name, title: current_ambassador.name %>
               <% end %>
             </div>
 
             <div class="dropdown-ambassador-basic_info">
-              <h4 class="color-ambassador-light dropdown-ambassador-name"><%= ambassador.email %></h4>
-              <p class="color-gray-300 page-title dropdown-ambassador-rank"><%= ambassador.rank %></p>
-              <p class="color-gray-300 page-title dropdown-ambassador-city"><%= ambassador.city %>, <%= ambassador.region %></p>
+              <h4 class="color-ambassador-light dropdown-ambassador-name"><%= current_ambassador.name %></h4>
+              <p class="color-gray-300 page-title dropdown-ambassador-rank"><%= current_ambassador.rank %></p>
+              <p class="color-gray-300 page-title dropdown-ambassador-city"><%= current_ambassador.city %>, <%= current_ambassador.region %></p>
             </div>
 
             <div class='dropdown-menu-account-divider'></div>
 
             <div class="row">
-              <% if ambassador.email %>
+              <% if current_ambassador.email %>
                 <div class="col-grid-float-6">
-                  <%= mail_to ambassador.email,  title: ambassador.email, class: 'btn btn-default btn-link btn-action dropdown-ambassador-contact_btn' do %>
-                    <i class="fa fa-envelope btn-action-icon"></i><span class="btn-action-label"><%= ambassador.email %></span>
+                  <%= mail_to current_ambassador.email,  title: current_ambassador.email, class: 'btn btn-default btn-link btn-action dropdown-ambassador-contact_btn' do %>
+                    <i class="fa fa-envelope btn-action-icon"></i><span class="btn-action-label"><%= current_ambassador.email %></span>
                   <% end %>
                 </div>
               <% end %>
 
-              <% if ambassador.phone %>
+              <% if current_ambassador.phone %>
                 <div class="col-grid-float-6">
-                  <%= link_to ('tel:+' + ambassador.phone),  title: 'Call' + ambassador.name, class: 'btn btn-default btn-link btn-action dropdown-ambassador-contact_btn' do %>
-                    <i class="fa fa-phone btn-action-icon"></i><span class="btn-action-label"><%= ambassador.phone %></span>
+                  <%= link_to ('tel:+' + number_to_phone(current_ambassador.phone)),  title: 'Call ' + current_ambassador.name, class: 'btn btn-default btn-link btn-action dropdown-ambassador-contact_btn' do %>
+                    <i class="fa fa-phone btn-action-icon"></i><span class="btn-action-label"><%= number_to_phone(current_ambassador.phone) %></span>
                   <% end %>
                 </div>
               <% end %>
 
-              <% if ambassador.website %>
+              <% if current_ambassador.website %>
                 <div class="col-grid-float-6">
-                  <%= link_to ambassador.website,  title: ambassador.website, class: 'btn btn-default btn-link btn-action dropdown-ambassador-contact_btn' do %>
-                    <i class="fa fa-link btn-action-icon"></i><span class="btn-action-label">ambassador.website</span>
+                  <%= link_to current_ambassador.website,  title: current_ambassador.website, class: 'btn btn-default btn-link btn-action dropdown-ambassador-contact_btn' do %>
+                    <i class="fa fa-link btn-action-icon"></i><span class="btn-action-label">current_ambassador.website</span>
                   <% end %>
                 </div>
               <% end %>
 
-              <% if ambassador.facebook_url %>
+              <% if current_ambassador.facebook_url %>
                 <div class="col-grid-float-6">
-                  <%= link_to ambassador.facebook_url,  title: ambassador.facebook_url, class: 'btn btn-default btn-link btn-action dropdown-ambassador-contact_btn' do %>
-                    <i class="fa fa-facebook btn-action-icon"></i><span class="btn-action-label">ambassador.facebook_url</span>
+                  <%= link_to current_ambassador.facebook_url,  title: current_ambassador.facebook_url, class: 'btn btn-default btn-link btn-action dropdown-ambassador-contact_btn' do %>
+                    <i class="fa fa-facebook btn-action-icon"></i><span class="btn-action-label">current_ambassador.facebook_url</span>
                   <% end %>
                 </div>
               <% end %>
 
-              <% if ambassador.twitter_handle %>
+              <% if current_ambassador.twitter_handle %>
                 <div class="col-grid-float-6">
-                  <%= link_to ambassador.twitter_handle,  title: ambassador.twitter_handle, class: 'btn btn-default btn-link btn-action dropdown-ambassador-contact_btn' do %>
-                    <i class="fa fa-twitter btn-action-icon"></i><span class="btn-action-label">ambassador.twitter_handle</span>
+                  <%= link_to current_ambassador.twitter_handle,  title: current_ambassador.twitter_handle, class: 'btn btn-default btn-link btn-action dropdown-ambassador-contact_btn' do %>
+                    <i class="fa fa-twitter btn-action-icon"></i><span class="btn-action-label">current_ambassador.twitter_handle</span>
                   <% end %>
                 </div>
               <% end %>
 
-              <% if ambassador.instagram_url %>
+              <% if current_ambassador.instagram_url %>
                 <div class="col-grid-float-6">
-                  <%= link_to ambassador.instagram_url,  title: ambassador.instagram_url, class: 'btn btn-default btn-link btn-action dropdown-ambassador-contact_btn' do %>
-                    <i class="fa fa-instagram btn-action-icon"></i><span class="btn-action-label">ambassador.instagram_url</span>
+                  <%= link_to current_ambassador.instagram_url,  title: current_ambassador.instagram_url, class: 'btn btn-default btn-link btn-action dropdown-ambassador-contact_btn' do %>
+                    <i class="fa fa-instagram btn-action-icon"></i><span class="btn-action-label">current_ambassador.instagram_url</span>
                   <% end %>
                 </div>
               <% end %>

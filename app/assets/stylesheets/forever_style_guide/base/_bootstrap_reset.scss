@@ -1,5 +1,3 @@
-$header_height: 50px;
-
 html, body {
   width: 100%;
   font-family: $font-face-regular;
@@ -8,7 +6,7 @@ html, body {
 }
 
 .style-guide {
-  padding-top: $header_height;
+  padding-top: $header-height;
 }
 .nav-pills > li > a {
   border-radius: 0;

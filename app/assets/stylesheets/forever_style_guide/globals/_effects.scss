@@ -123,6 +123,11 @@ $color-card-bg: color('white');
   @include transition(background-color 0.3s ease, color 0.3s ease);
 }
 
+.polaroid_photo_border {
+  border: 8px solid color('gray-100');
+  @extend %item-shadow;
+}
+
 // creates a sawtooth banner style for each color in core color dictionary
 @each $id, $color in $core_colors {
   $sawtooth-size: 8px;

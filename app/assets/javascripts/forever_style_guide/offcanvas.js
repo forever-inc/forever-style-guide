@@ -200,6 +200,7 @@ $(document).on('ready page:load', function() {
 
   $('#js-close-main-nav').on('click', function () {
     $('#js-main-nav-offcanvas').toggleClass('in');
+    $('body').removeClass('offcanvas-stop-scrolling');
   });
 
   $('.navbar-offcanvas .dropdown').on('click', function () {
