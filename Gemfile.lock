@@ -1,5 +1,5 @@
 PATH
-  remote: .
+  remote: 
   specs:
     forever_style_guide (3.0.1)
       bootstrap-sass

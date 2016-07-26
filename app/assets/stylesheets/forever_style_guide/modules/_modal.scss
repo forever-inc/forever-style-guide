@@ -46,6 +46,10 @@ $modal-promo-height: 475px;
   color: $color-secondary;
 }
 
+.product-preview-link:hover {
+  text-decoration: none;
+}
+
 .close:hover,
 .close:focus,
 .modal-close:hover,
