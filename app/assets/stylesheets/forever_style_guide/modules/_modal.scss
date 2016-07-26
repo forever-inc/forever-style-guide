@@ -6,6 +6,11 @@ $modal-product-suggestion-sm: 170px;
   float: right;
 }
 
+.modal-close-position:hover,
+.modal-close-position:focus {
+  cursor: pointer;
+}
+
 .modal-theme {
   color: $color-white;
 }
@@ -53,8 +58,9 @@ $modal-product-suggestion-sm: 170px;
   color: $color-secondary;
 }
 
-.close {
-  float: right;
+.close:hover,
+.close:focus {
+  cursor: pointer;
 }
 
 .modal-footer-txt.checkbox {
@@ -97,4 +103,10 @@ $modal-product-suggestion-sm: 170px;
   margin: 0 auto;
   margin-top: 10px;
   width: $modal-form-width-lg;
+}
+
+.modal-open .modal {
+    overflow-x: hidden;
+    overflow-y: auto;
+    z-index: 2000;
 }
