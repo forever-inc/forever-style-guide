@@ -2,6 +2,7 @@ $toggle-list-bg: color('white');
 
 .list-group-toggle {
   font-size: $font-size-300;
+  margin-bottom: 10px; //TODO this was getting overridden somewhere to 20px
 
   .list-group-toggle-trigger {
     padding: 2px 10px 6px;
@@ -27,9 +28,10 @@ $toggle-list-bg: color('white');
     background-color: $toggle-list-bg;
     border-color: color('gray-300') $toggle-list-bg $toggle-list-bg;
 
-    &:last-child {
-      border-bottom-color: color('gray-300');
-    }
+    //TODO delete extra line under last list item
+    //&:last-child {
+    //  border-bottom-color: color('gray-300');
+    //}
   }
   .list-group-item.is_active {
     border-right-color: color('gray-300');
