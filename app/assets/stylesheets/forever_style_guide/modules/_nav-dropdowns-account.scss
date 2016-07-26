@@ -1,0 +1,58 @@
+.dropdown-menu-account {
+  width: 100%;
+  right: 0;
+  border-bottom-right-radius: $border-radius-large;
+  border-bottom-left-radius: $border-radius-large;
+
+  .progress {
+    margin-bottom: 10px;
+  }
+  @media (max-width: $grid-float-breakpoint) {
+    @include nav-border(bottom);
+  }
+  @media (min-width: $grid-float-breakpoint) {
+    width: $nav-icon-width * 4;
+  }
+}
+.dropdown-menu-account-item {
+  display: block;
+  overflow: hidden;
+
+  @media (min-width: $grid-float-breakpoint) {
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+}
+.dropdown-menu-account-divider {
+  margin-top: 5px;
+  margin-bottom: 10px;
+  @include nav-border(bottom);
+
+  @media (max-width: $grid-float-breakpoint) {
+    border-color: color('gray-600');
+  }
+}
+.dropdown-menu-account-user {
+  overflow: hidden;
+}
+.dropdown-menu-account-user-intro {
+  margin-top: $padding-small-vertical;
+  margin-bottom: 0;
+  font-size: $font-size-100;
+}
+.dropdown-menu-account-avatar {
+  margin-right: 10px;
+  border: 0;
+  box-shadow: none;
+
+  @media (max-width: $grid-float-breakpoint) {
+    height: 40px; // avatar-xs
+    width: 40px;
+    margin-top: $padding-small-vertical;
+  }
+}
+.dropdown-menu-account-storage {
+  @media (max-width: $grid-float-breakpoint) {
+    font-size: $font-size-default;
+  }
+}

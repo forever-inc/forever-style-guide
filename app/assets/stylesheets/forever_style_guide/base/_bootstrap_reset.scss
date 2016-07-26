@@ -1,3 +1,5 @@
+$header_height: 50px;
+
 html, body {
   width: 100%;
   font-family: $font-face-regular;
@@ -5,6 +7,9 @@ html, body {
   overflow-y: auto;
 }
 
+.style-guide {
+  padding-top: $header_height;
+}
 .nav-pills > li > a {
   border-radius: 0;
 }
