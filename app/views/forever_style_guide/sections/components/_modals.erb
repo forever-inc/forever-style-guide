@@ -2,47 +2,27 @@
 <div class='row'>
   <div class='col-md-6'>
     <h3>Decision/Info:</h3>
-    <button type="button" class="btn btn-danger btn-lg" data-toggle="modal" data-target="#info">Delete Photo</button>
+    <button type="button" class="btn btn-danger btn-lg" data-toggle="modal" data-target="#info" title="Delete Photo">Delete Photo</button>
   </div>
   <div class='col-md-6'>
     <h3>Product:</h3>
-    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#product">Add to Cart</button>
+    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#product" title="Add to Cart">Add to Cart</button>
   </div>
   <div class='col-md-6'>
     <h3>Media:</h3>
-    <button type="button" class="btn btn-artisan btn-lg" data-toggle="modal" data-target="#media">Learn More</button>
+    <button type="button" class="btn btn-artisan btn-lg" data-toggle="modal" data-target="#media" title="Learn More">Learn More</button>
   </div>
   <div class='col-md-6'>
     <h3>Field:</h3>
-    <button type="button" class="btn btn-services btn-lg" data-toggle="modal" data-target="#field">View Promotion</button>
+    <button type="button" class="btn btn-services btn-lg" data-toggle="modal" data-target="#field" title="View Pricing">View Promotion</button>
   </div>
 </div>
-
-  <div class="modal fade" id="myModal" role="dialog" backdrop="true">
-    <div class="modal-dialog">
-    
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Modal with Dark Overlay</h4>
-        </div>
-        <div class="modal-body">
-          <p>This modal has a dark overlay.</p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div>
-      </div>
-      
-    </div>
-  </div>
 
 <!-- Decision Modals -->
 <div id="info" class="modal fade" role="dialog" data-keyboard="true">
   <div class="modal-dialog">
     <div class="modal-content">
-      <div class="modal-header modal-theme color_block-danger">
+      <div class="modal-header color-white color_block-danger">
         <span type="button" class="modal-close-position" data-dismiss="modal"><i class="fa fa-close fa-2x"></i></span>
         <h3 class="modal-title"><i class="fa fa-trash-o"></i> Delete Photo?</h3>
       </div>
@@ -62,7 +42,7 @@
 <div id="product" class="modal fade" role="dialog">
   <div class="modal-dialog">
     <div class="modal-content">
-      <div class="modal-header modal-theme color_block-primary">
+      <div class="modal-header color-white color_block-primary">
         <span type="button" class="modal-close-position" data-dismiss="modal"><i class="fa fa-close fa-2x"></i></span>
         <h3 class="modal-title"><i class="fa fa-check-circle-o"></i> 1 Item Added to Cart</h3>
       </div>
@@ -82,15 +62,18 @@
       <div class="modal-footer modal-footer-products">
         <div class='row text-center'>
           <p>Shoppers also liked:</p>
-          <div class='col-md-4 product-preview'><%= image_tag("forever_style_guide/digiart1.png", alt: "Forever Logo", class:"navbar-brand-logo") %>
+          <div class='col-md-4 product-preview'>
+            <%= image_tag("forever_style_guide/digiart1.png", alt: "Forever Logo", class:"navbar-brand-logo") %>
             <p class='modal-product-name-sm'>Jammin' Jungle Juice MEGA Bundle</p>
             <%= link_to 'View Details', '#', title: 'View Details' %>
           </div>
-          <div class='col-md-4 product-preview'><%= image_tag("forever_style_guide/digiart2.png", alt: "Forever Logo", class:"navbar-brand-logo") %>
+          <div class='col-md-4 product-preview'>
+            <%= image_tag("forever_style_guide/digiart2.png", alt: "Forever Logo", class:"navbar-brand-logo") %>
             <p class='modal-product-name-sm'>Sunshine on My Shoulder - The Bundle!</p>
             <%= link_to 'View Details', '#', title: 'View Details' %>
           </div>
-          <div class='col-md-4 product-preview'><%= image_tag("forever_style_guide/digiart3.png", alt: "Forever Logo", class:"navbar-brand-logo") %>
+          <div class='col-md-4 product-preview'>
+            <%= image_tag("forever_style_guide/digiart3.png", alt: "Forever Logo", class:"navbar-brand-logo") %>
             <p class='modal-product-name-sm'>Vintage Americana Bundle</p>
              <%= link_to 'View Details', '#', title: 'View Details' %>
           </div>
@@ -104,7 +87,7 @@
 <div id="media" class="modal fade" role="dialog">
   <div class="modal-dialog">
     <div class="modal-content">
-      <div class="modal-header modal-theme color_block-artisan">
+      <div class="modal-header color-white color_block-artisan">
         <span type="button" class="modal-close-position" data-dismiss="modal"><i class="fa fa-close fa-2x"></i></span>
         <h3 class="modal-title"><i class="fa fa-info-circle"></i> Why not round 'em up with Lasso Select?</h3>
       </div>

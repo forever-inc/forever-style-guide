@@ -11,10 +11,6 @@ $modal-product-suggestion-sm: 170px;
   cursor: pointer;
 }
 
-.modal-theme {
-  color: $color-white;
-}
-
 .modal-title {
   color: inherit;
   font-family: $font-face-light;
@@ -103,10 +99,4 @@ $modal-product-suggestion-sm: 170px;
   margin: 0 auto;
   margin-top: 10px;
   width: $modal-form-width-lg;
-}
-
-.modal-open .modal {
-    overflow-x: hidden;
-    overflow-y: auto;
-    z-index: 2000;
 }
