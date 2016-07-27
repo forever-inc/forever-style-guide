@@ -1,3 +1,6 @@
+$header_active_border_height: 2px;
+$color-nav-hover: color('secondary');
+
 @mixin clearfix {
   zoom: 1;
   &:before,

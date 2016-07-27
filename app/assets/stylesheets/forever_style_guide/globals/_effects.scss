@@ -18,6 +18,12 @@
   transition: $transition-properties;
 }
 
+@mixin transform($transform-properties...) {
+  -ms-transform: $transform-properties; /* IE 9 */
+  -webkit-transform: $transform-properties; /* Chrome, Safari, Opera */
+  transform: $transform-properties;
+}
+
 @mixin hero-gradient($opacity, $distance_as_percent) {
   &:before {
     content: " ";
@@ -115,6 +121,11 @@ $color-card-bg: color('white');
   text-align: center;
 
   @include transition(background-color 0.3s ease, color 0.3s ease);
+}
+
+.polaroid_photo_border {
+  border: 8px solid color('gray-100');
+  @extend %item-shadow;
 }
 
 // creates a sawtooth banner style for each color in core color dictionary
