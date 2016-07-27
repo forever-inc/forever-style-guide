@@ -2,6 +2,18 @@ $modal-padding-footer: 15px;
 $modal-form-width-lg: 355px;
 $modal-product-suggestion-sm: 170px;
 $modal-promo-height: 475px;
+$border-radius-modal: 6px;
+
+.modal-content {
+  border: none;
+  border-radius: $border-radius-modal;
+}
+
+.modal-header {
+  border: none;
+  border-top-right-radius: inherit;
+  border-top-left-radius: inherit;
+}
 
 .modal-title {
   font-family: $font-face-light;
@@ -72,11 +84,6 @@ $modal-promo-height: 475px;
   height: $modal-promo-height;
 }
 
-.modal-promo-footer,
-.modal-promo-header {
-  border: none;
-}
-
 .modal-promo-content {
   color: $color-gray-600;
   font-size: $font-size-500;
@@ -97,8 +104,4 @@ $modal-promo-height: 475px;
   display: block;
   margin: 0 auto;
   margin-top: 10px;
-}
-
-.modal-promo {
-  border: none;
 }
