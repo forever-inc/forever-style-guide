@@ -109,7 +109,7 @@ module ForeverStyleGuide
     end
 
     def historian_url
-      www_url('/historian')
+      store_url('/historian')
     end
 
     def artisan_url
@@ -186,27 +186,27 @@ module ForeverStyleGuide
     end
 
     def photo_books_url
-      store_url('/photobooks')
+      store_url('/print#photobooks')
     end
 
     def cards_url
-      store_url('/cards')
+      store_url('/print#cards')
     end
 
     def calendars_url
-      store_url('/calendars')
+      store_url('/print#calendars')
     end
 
     def wall_art_url
-      store_url('/wall_art')
+      store_url('/print#wall_art')
     end
 
     def photo_gifts_url
-      store_url('/photo_gifts')
+      store_url('/print#photo_gifts')
     end
 
     def page_prints_url
-      store_url('/page_prints')
+      store_url('/print#page_prints')
     end
 
     def gift_certificate_url
