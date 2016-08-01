@@ -186,27 +186,27 @@ module ForeverStyleGuide
     end
 
     def photo_books_url
-      store_url('/print#photobooks')
+      store_url('/photobooks')
     end
 
     def cards_url
-      store_url('/print#cards')
+      store_url('/cards')
     end
 
     def calendars_url
-      store_url('/print#calendars')
+      store_url('/calendars')
     end
 
     def wall_art_url
-      store_url('/print#wall_art')
+      store_url('/wall_art')
     end
 
     def photo_gifts_url
-      store_url('/print#photo_gifts')
+      store_url('/photo_gifts')
     end
 
     def page_prints_url
-      store_url('/print#page_prints')
+      store_url('/page_prints')
     end
 
     def gift_certificate_url
