@@ -109,7 +109,7 @@ module ForeverStyleGuide
     end
 
     def historian_url
-      www_url('/historian')
+      store_url('/historian')
     end
 
     def artisan_url
@@ -125,7 +125,7 @@ module ForeverStyleGuide
     end
 
     def shipping_info_url
-      www_url('/shipping')
+      store_url('/shipping')
     end
 
     def bulk_orders_url
@@ -133,7 +133,7 @@ module ForeverStyleGuide
     end
 
     def return_policy_url
-      www_url('/returns')
+      store_url('/returns')
     end
 
     def p2p_url
@@ -141,7 +141,7 @@ module ForeverStyleGuide
     end
 
     def customer_commitments_url
-      www_url('/commitments')
+      store_url('/commitments')
     end
 
     def opportunity_url
@@ -235,6 +235,14 @@ module ForeverStyleGuide
 
     def back_office_url
       store_url('/back_office')
+    end
+
+    def tos_url
+      store_url('/tos')
+    end
+
+    def privacy_url
+      store_url('/privacy')
     end
 
     # External Paths
