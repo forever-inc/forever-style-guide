@@ -39,14 +39,6 @@ module ForeverStyleGuide
     end
 
     # Web App Paths
-    def login_url
-      web_app_url('/login')
-    end
-
-    def sign_up_url
-      web_app_url('/signup')
-    end
-
     def library_url
       web_app_url('/inbox')
     end
@@ -64,14 +56,22 @@ module ForeverStyleGuide
     end
 
     def user_settings_url
-      web_app_url('/settings') # TODO something not quite right here
-    end
-
-    def log_out_url
-      web_app_url('/logout') # TODO something not quite right here
+      web_app_url('/settings') # TODO story against webapp to make this behave consistently
     end
 
     # Combined Store/WWW Paths - now all available at www.forever.com
+    def login_url
+      www_url('/sign_in')
+    end
+
+    def log_out_url
+      www_url('/log_out') # TODO store should handle this and redirect_to
+    end
+
+    def sign_up_url
+      www_url('/sign_up')
+    end
+
     def marketing_home_url
       www_url('/')
     end
