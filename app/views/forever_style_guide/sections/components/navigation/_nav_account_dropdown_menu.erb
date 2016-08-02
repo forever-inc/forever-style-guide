@@ -50,7 +50,7 @@
         <li class="dropdown-menu-account-divider hidden-xs hidden-sm"></li>
 
         <li class="dropdown-menu-account-item">
-          <%= link_to log_out_url, class: 'dropdown-menu-nav-link dropdown-menu-nav-link-no_margin', title: 'Log Out of Forever' do %>
+          <%= link_to log_out_url, method: :delete, class: 'dropdown-menu-nav-link dropdown-menu-nav-link-no_margin', title: 'Log Out of Forever' do %>
             <i class='fa fa-share'></i>Log Out
           <% end %>
         </li>
