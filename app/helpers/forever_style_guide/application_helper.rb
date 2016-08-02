@@ -12,10 +12,6 @@ module ForeverStyleGuide
       strip_subdomain("my", path, url)
     end
 
-    def store_url(path = '/', url = nil)
-      strip_subdomain("store", path, url)
-    end
-
     def strip_subdomain(sub, path = '/', url = nil)
       url ||= request.url if respond_to?(:request)
       url = URI(url)
@@ -75,7 +71,7 @@ module ForeverStyleGuide
       web_app_url('/logout') # TODO something not quite right here
     end
 
-    # Marketing Site Paths
+    # Combined Store/WWW Paths - now all available at www.forever.com
     def marketing_home_url
       www_url('/')
     end
@@ -109,11 +105,11 @@ module ForeverStyleGuide
     end
 
     def historian_url
-      store_url('/historian')
+      www_url('/historian')
     end
 
     def artisan_url
-      store_url('/artisan')
+      www_url('/artisan')
     end
 
     def projects_marketing_url
@@ -125,7 +121,7 @@ module ForeverStyleGuide
     end
 
     def shipping_info_url
-      store_url('/shipping')
+      www_url('/shipping')
     end
 
     def bulk_orders_url
@@ -133,7 +129,7 @@ module ForeverStyleGuide
     end
 
     def return_policy_url
-      store_url('/returns')
+      www_url('/returns')
     end
 
     def p2p_url
@@ -141,11 +137,11 @@ module ForeverStyleGuide
     end
 
     def customer_commitments_url
-      store_url('/commitments')
+      www_url('/commitments')
     end
 
     def opportunity_url
-      store_url('/opportunity')
+      www_url('/opportunity')
     end
 
     def retreats_url
@@ -156,93 +152,92 @@ module ForeverStyleGuide
       www_url('/about/press')
     end
 
-    # Store Paths
     def cart_url
-      store_url('/cart')
+      www_url('/cart')
     end
 
     def services_url
-      store_url('/services')
+      www_url('/services')
     end
 
     def digital_art_url
-      store_url('/digital_art')
+      www_url('/digital_art')
     end
 
     def new_digital_art_url
-      store_url('/new_digital_art')
+      www_url('/new_digital_art')
     end
 
     def sale_digital_art_url
-      store_url('/sale_digital_art')
+      www_url('/sale_digital_art')
     end
 
     def all_digital_art_url
-      store_url('/all_digital_art')
+      www_url('/all_digital_art')
     end
 
     def print_url
-      store_url('/print')
+      www_url('/print')
     end
 
     def photo_books_url
-      store_url('/photobooks')
+      www_url('/photobooks')
     end
 
     def cards_url
-      store_url('/cards')
+      www_url('/cards')
     end
 
     def calendars_url
-      store_url('/calendars')
+      www_url('/calendars')
     end
 
     def wall_art_url
-      store_url('/wall_art')
+      www_url('/wall_art')
     end
 
     def photo_gifts_url
-      store_url('/photo_gifts')
+      www_url('/photo_gifts')
     end
 
     def page_prints_url
-      store_url('/page_prints')
+      www_url('/page_prints')
     end
 
     def gift_certificate_url
-      store_url('/gift_certificates')
+      www_url('/gift_certificates')
     end
 
     def gift_certificate_url
-      store_url('/gift_certificates')
+      www_url('/gift_certificates')
     end
 
     def gifts_url
-      store_url('/gifts')
+      www_url('/gifts')
     end
 
     def find_ambassador_url
-      store_url('/find_ambassador')
+      www_url('/find_ambassador')
     end
 
     def ambassador_direct_url
-      store_url('/ambassador-direct')
+      www_url('/ambassador-direct')
     end
 
     def upgrade_url
-      store_url('/upgrade')
+      www_url('/upgrade')
     end
 
     def back_office_url
-      store_url('/back_office')
+      www_url('/back_office')
     end
 
     def tos_url
-      store_url('/tos')
+      www_url('/tos')
     end
 
     def privacy_url
-      store_url('/privacy')
+      www_url('/privacy')
     end
 
     # External Paths
