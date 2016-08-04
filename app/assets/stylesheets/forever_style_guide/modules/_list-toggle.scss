@@ -82,7 +82,7 @@ $toggle-list-bg: color('white');
     @include transition(max-height 0.3s ease-in-out, margin-top 0.2s ease-in-out, opacity 0.2s ease-in-out);
 
     &.is_open {
-      max-height: 300px; // may need adjusted given list length
+      max-height: 1000px; // may need adjusted given list length
       opacity: 1.0;
     }
     .list-group-item {
