@@ -19,7 +19,10 @@ var setup_toggle_list = function(){
         $(activeListItems).next("input[type='checkbox']").prop('checked', true);
         $(activeListItems).parents('.list-group-item-child').addClass('is_open');
         $(activeListItems).parents('.list-group-item').addClass('is_active');
-        $(activeListItems).parents('.list-group-item').find('.list-group-toggle-trigger .fa').toggleClass("fa-plus fa-minus");
+        $(activeListItems).parents('.list-group-item')
+                            .addClass('is_active')
+                            .find('.list-group-toggle-trigger .fa')
+                            .toggleClass("fa-plus fa-minus");
     }
 };
 $(document).ready(setup_toggle_list);
