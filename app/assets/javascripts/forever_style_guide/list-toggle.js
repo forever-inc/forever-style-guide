@@ -2,7 +2,7 @@ var setup_toggle_list = function () {
   $(".list-group-toggler").click(function (e) {
     e.preventDefault();
     $(this).next('.list-group-item-child').toggleClass("is_open");
-    $(this).find('i.list-group-trigger').toggleClass("fa-plus fa-minus");
+    $(this).find('.list-group-toggle-trigger').toggleClass("fa-plus fa-minus");
   });
 
   $('.list-group-link').on('click', function (e) {
