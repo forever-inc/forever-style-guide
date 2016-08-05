@@ -1,5 +1,9 @@
 $toggle-list-bg: color('white');
 
+.list-group-toggler:hover {
+  cursor: pointer;
+}
+
 .list-group-toggle {
   font-size: $font-size-300;
 
