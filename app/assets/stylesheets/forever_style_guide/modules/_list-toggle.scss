@@ -35,12 +35,16 @@ $toggle-list-bg: color('white');
       border-bottom-color: color('gray-300');
     }
   }
-  .list-group-item.is_active {
-    border-right-color: color('gray-300');
-    border-left: 2px solid color('primary');
+  .list-group-item {
+    border-left: 2px solid transparent;
 
-    &:hover {
-      background-color: $toggle-list-bg;
+    &.is_active {
+      border-right-color: color('gray-300');
+      border-left-color: color('primary');
+
+      &:hover {
+        background-color: $toggle-list-bg;
+      }
     }
   }
   .list-group-link {
