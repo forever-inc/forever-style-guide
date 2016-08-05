@@ -1,5 +1,34 @@
 /* list
 ---------------------------------------------------------------------------- */
+.list-group {
+  &.list-group-settings_list {
+    margin-bottom: 0;
+
+    .list-group-item {
+      color: $color-forever_blue;
+      border-radius: 0;
+      border: 0;
+      border-left: 5px solid transparent;
+      background-color: $color-gray-100;
+
+      &:hover {
+        color: $color-gray-600;
+        background-color: $color-gray-300;
+      }
+      &.active {
+        color: $color-gray-600;
+        border: 0;
+        border-left: 5px solid $color-forever_green;
+        background-color: $color-gray-300;
+      }
+      &:last-of-type {
+        border-bottom-right-radius: $border-radius-large;
+        border-bottom-left-radius: $border-radius-large;
+      }
+    }
+  }
+}
+
 .list-group-item {
   @extend %item-style;
   @extend %no-shadow;
@@ -69,4 +98,20 @@
 .list-roman {
   list-style: lower-roman;
   list-style-position: outside;
+}
+
+.panel {
+  &.panel-settings {
+    border: 0;
+
+    // bootstrap selector override :(
+    > .panel-heading {
+      border-bottom: 2px solid $color-gray-300;
+      background-color: $color-gray-100;
+    }
+  }
+}
+
+.panel-body-settings {
+  padding: 0;
 }

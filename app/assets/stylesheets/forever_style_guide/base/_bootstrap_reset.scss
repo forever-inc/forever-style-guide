@@ -5,6 +5,9 @@ html, body {
   overflow-y: auto;
 }
 
+.style-guide {
+  padding-top: $header-height;
+}
 .nav-pills > li > a {
   border-radius: 0;
 }
