@@ -36,11 +36,10 @@ var setup_toggle_list = function () {
     $(activeListItems).next("input[type='checkbox']").prop('checked', true);
     $(activeListItems).addClass('list-group-link-is_active');
     $(activeListItems).parents('.list-group-item-child').addClass('is_open');
-    $(activeListItems).parents('.list-group-item').addClass('is_active');
     $(activeListItems).parents('.list-group-item')
-      .addClass('is_active')
-      .find('.list-group-toggle-trigger .fa')
-      .toggleClass("fa-plus fa-minus");
+      .find('.list-group-toggle-trigger.fa')
+      .removeClass('fa-plus')
+      .addClass('fa-minus');
   }
 };
 $(document).ready(setup_toggle_list);
