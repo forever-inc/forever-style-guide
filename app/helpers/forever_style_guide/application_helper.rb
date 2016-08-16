@@ -25,9 +25,11 @@ module ForeverStyleGuide
       end
 
       url.host = url.host.sub(replace, "#{sub}.")
-      url.path = path
+
+      # Allow ember routes like /#/settings/password
+      url.path = URI.escape(path, '#')
       url.query = nil
-      url.to_s
+      url = URI.decode(url.to_s)
     end
 
     def has_item_in_cart?
@@ -56,7 +58,7 @@ module ForeverStyleGuide
     end
 
     def user_settings_url
-      web_app_url('/settings') # TODO story against webapp to make this behave consistently
+      web_app_url('/#/settings')
     end
 
     # Combined Store/WWW Paths - now all available at www.forever.com
@@ -65,7 +67,7 @@ module ForeverStyleGuide
     end
 
     def log_out_url
-      www_url('/log_out') # TODO store should handle this and redirect_to
+      www_url('/log_out')
     end
 
     def sign_up_url
