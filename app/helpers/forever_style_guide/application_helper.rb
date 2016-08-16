@@ -36,6 +36,22 @@ module ForeverStyleGuide
       defined?(current_order) && current_order.product_count > 0
     end
 
+    #User storage methds as seen in web app user.rb
+    def capacity_readable
+      if current_user
+        number_to_human_size(current_user.storage_capacity)
+      end
+    end
+
+    def storage_ratio_percent
+      number_to_percentage(storage_ratio * 100, precision: 0)
+    end
+
+    def storage_ratio
+      return 0 if current_user.storage_capacity == 0
+      current_user.storage_used.to_f / current_user.storage_capacity.to_f
+    end
+
     def has_ambassador?
       defined?(current_ambassador) && current_ambassador.present?
     end
