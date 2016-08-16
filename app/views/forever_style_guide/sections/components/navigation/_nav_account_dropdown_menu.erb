@@ -39,7 +39,7 @@
           <% end %>
         </li>
 
-        <% if current_user.linked_ambassador %>
+        <% if current_user.linked_ambassador.active? %>
           <li class="dropdown-menu-account-item">
             <%= link_to back_office_url, class: 'dropdown-menu-nav-link dropdown-menu-nav-link-no_margin', title: 'Ambassador Back Office Reports' do %>
               <i class='fa fa-suitcase'></i>My Back Office
