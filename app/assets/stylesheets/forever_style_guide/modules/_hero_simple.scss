@@ -92,8 +92,8 @@ $hero_simple-sm-height-md: 260px;
   }
 }
 
-// overrides transparency at small viewports for each color in core color dictionary
-@each $id, $color in $core_colors {
+// overrides transparency at small viewports for each color
+@each $id, $color in $colors {
   .hero_simple .color_block-trans-#{$id} {
     @media (max-width: $screen-sm) {
       background-color: $color;
