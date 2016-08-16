@@ -21,13 +21,12 @@
         <li class="dropdown-menu-account-item">
           <p class="color-gray-300">
 
-            <!-- TODO actually display storage -->
-            <span class="dropdown-menu-account-storage">40% of 50Gb</span>
+            <span class="dropdown-menu-account-storage"><%= storage_ratio_percent %> of <%= capacity_readable %></span>
             <%= link_to "Upgrade", upgrade_url, class: 'small', title: "Upgrade your Forever Guaranteed Permanent Storage" %>
           </p>
 
-          <div class="progress progress-thin color_block-primary">
-            <div class="progress-bar color_block-gray-400" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%"></div>
+          <div class="progress progress-thin color_block-gray-400">
+            <div class="progress-bar" role="progressbar" aria-valuenow="<%= storage_ratio %>" aria-valuemin="0" aria-valuemax="100" style="width: <%= storage_ratio_percent %>; max-width: 100%;"></div>
           </div>
         </li>
 
@@ -39,7 +38,7 @@
           <% end %>
         </li>
 
-        <% if current_user.linked_ambassador %>
+        <% if current_user.linked_ambassador.active? %>
           <li class="dropdown-menu-account-item">
             <%= link_to back_office_url, class: 'dropdown-menu-nav-link dropdown-menu-nav-link-no_margin', title: 'Ambassador Back Office Reports' do %>
               <i class='fa fa-suitcase'></i>My Back Office
