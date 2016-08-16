@@ -1,0 +1,112 @@
+<li class='dropdown dropdown-full_width dropdown-ambassador navbar-account_item'>
+  <%= link_to nil, class: 'dropdown-toggle dropdown-toggle-ambassador', :data => { :toggle => 'dropdown' } do %>
+    <div>
+      <small class="dropdown-ambassador-intro_text">
+        <%= has_ambassador? ? 'Your Ambassador' : 'Find or join Forever' %>
+      </small>
+    </div>
+    <span class="dropdown-ambassador-primary_text">
+      <%= has_ambassador? ? current_ambassador.name : 'Ambassadors' %>
+    </span>
+    <i class='fa fa-chevron-down'></i>
+  <% end %>
+
+  <div class='dropdown-menu dropdown-menu-nav color_block-gray-700'>
+    <div class='container dropdown-menu-nav-container dropdown-ambassador-container'>
+      <div class='row'>
+
+        <div class='col-grid-float-6  col-grid-float-push-6 l-padded-thin'>
+          <h3 class='dropdown-menu-nav-title page-title color-ambassador-light'>Your Ambassador</h3>
+
+          <% if has_ambassador? %>
+
+            <%= link_to 'change', find_ambassador_url, title: 'Change Your Forever Ambassador', class: 'pull-right dropdown-ambassador-edit_btn' %>
+            <div class='dropdown-menu-account-divider'></div>
+
+            <div>
+              <% if current_ambassador.avatar_url_small %>
+                <%= image_tag current_ambassador.avatar_url_small, class: "dropdown-menu-account-avatar avatar avatar-sm pull-left", alt: current_ambassador.name, title: current_ambassador.name %>
+              <% else %>
+                <%= image_tag "forever_style_guide/default_avatar.jpg", class: "dropdown-menu-account-avatar avatar avatar-sm pull-left", alt: current_ambassador.name, title: current_ambassador.name %>
+              <% end %>
+            </div>
+
+            <div class="dropdown-ambassador-basic_info">
+              <h4 class="color-ambassador-light dropdown-ambassador-name"><%= current_ambassador.name %></h4>
+              <p class="color-gray-300 page-title dropdown-ambassador-rank"><%= current_ambassador.rank %></p>
+              <p class="color-gray-300 page-title dropdown-ambassador-city"><%= current_ambassador.city %>, <%= current_ambassador.region %></p>
+            </div>
+
+            <div class='dropdown-menu-account-divider'></div>
+
+            <div class="row">
+              <% if current_ambassador.email %>
+                <div class="col-grid-float-6">
+                  <%= mail_to current_ambassador.email,  title: current_ambassador.email, class: 'btn btn-default btn-link btn-action dropdown-ambassador-contact_btn' do %>
+                    <i class="fa fa-envelope btn-action-icon"></i><span class="btn-action-label"><%= current_ambassador.email %></span>
+                  <% end %>
+                </div>
+              <% end %>
+
+              <% if current_ambassador.phone %>
+                <div class="col-grid-float-6">
+                  <%= link_to ('tel:+' + number_to_phone(current_ambassador.phone)),  title: 'Call ' + current_ambassador.name, class: 'btn btn-default btn-link btn-action dropdown-ambassador-contact_btn' do %>
+                    <i class="fa fa-phone btn-action-icon"></i><span class="btn-action-label"><%= number_to_phone(current_ambassador.phone) %></span>
+                  <% end %>
+                </div>
+              <% end %>
+
+              <% if current_ambassador.website %>
+                <div class="col-grid-float-6">
+                  <%= link_to current_ambassador.website,  title: current_ambassador.website, class: 'btn btn-default btn-link btn-action dropdown-ambassador-contact_btn' do %>
+                    <i class="fa fa-link btn-action-icon"></i><span class="btn-action-label">current_ambassador.website</span>
+                  <% end %>
+                </div>
+              <% end %>
+
+              <% if current_ambassador.facebook_url %>
+                <div class="col-grid-float-6">
+                  <%= link_to current_ambassador.facebook_url,  title: current_ambassador.facebook_url, class: 'btn btn-default btn-link btn-action dropdown-ambassador-contact_btn' do %>
+                    <i class="fa fa-facebook btn-action-icon"></i><span class="btn-action-label">current_ambassador.facebook_url</span>
+                  <% end %>
+                </div>
+              <% end %>
+
+              <% if current_ambassador.twitter_handle %>
+                <div class="col-grid-float-6">
+                  <%= link_to current_ambassador.twitter_handle,  title: current_ambassador.twitter_handle, class: 'btn btn-default btn-link btn-action dropdown-ambassador-contact_btn' do %>
+                    <i class="fa fa-twitter btn-action-icon"></i><span class="btn-action-label">current_ambassador.twitter_handle</span>
+                  <% end %>
+                </div>
+              <% end %>
+
+              <% if current_ambassador.instagram_url %>
+                <div class="col-grid-float-6">
+                  <%= link_to current_ambassador.instagram_url,  title: current_ambassador.instagram_url, class: 'btn btn-default btn-link btn-action dropdown-ambassador-contact_btn' do %>
+                    <i class="fa fa-instagram btn-action-icon"></i><span class="btn-action-label">current_ambassador.instagram_url</span>
+                  <% end %>
+                </div>
+              <% end %>
+            </div>
+
+          <% else %>
+
+            <div class='dropdown-menu-account-divider'></div>
+            <p class="dropdown-menu-nav-description">Ambassadors provide <strong><u>free</u></strong> training, product consultations, and advance knowledge of sales and new products!</p>
+            <%= link_to find_ambassador_url, class: 'btn btn-ambassador btn-inverse btn-lg l-section-close', title: 'Get Free Training and Support from Certified Ambassadors' do %>
+              Find <span class="hidden-xs">a Local</span><span class="hidden-sm hidden-md hidden-lg">an</span> Ambassador
+            <% end %>
+
+          <% end %>
+        </div>
+
+        <div class='col-grid-float-6 l-padded-thin'>
+          <h3 class='dropdown-menu-nav-title page-title color-ambassador-light'>Join our team!</h3>
+          <div class='dropdown-menu-account-divider'></div>
+          <p class="dropdown-menu-nav-description">To reach the Forever vision, we need brand ambassadors who love helping people capture and share their life's stories.</p>
+          <%= link_to 'Learn More', opportunity_url, class: 'btn btn-ambassador btn-inverse btn-lg l-section-close', title: 'Make Money Helping People Save & Print their Photos' %>
+        </div>
+      </div>
+    </div>
+  </div>
+</li>

@@ -1,34 +1,50 @@
-<%= render partial: "layouts/forever_style_guide/navigation" %>
+<%= render partial: "forever_style_guide/sections/components/navigation/nav" %>
 
-<div class="jumbotron style-guide-section-header style-guide-section-header-primary hero hero-md">
-  <div class="container style-guide-section-header-title">
-    <h1>Style Guide Nav</h1>
+<div class="hero_simple hero_simple-sample">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-12 text-center color_block-trans-secondary hero_simple-block">
+        <h1 class="page-title color-white hero_simple-shadow">Check out our Unified Nav Component</h1>
+        <h2 class="page-title color-white hero_simple-shadow hero_simple-subheading">It gives users a robust and consistent experience</h2>
+        <%= link_to 'Primary Action', "#", class: 'btn btn-lg btn-primary hero_simple-block-cta', title: "Primary Action" %>
+        <%= link_to 'Learn More', "#", class: 'btn btn-lg btn-artisan btn-inverse hero_simple-block-cta', title: "Learn More" %>
+      </div>
+    </div>
   </div>
 </div>
 
-<div>
-  <%= render partial: "forever_style_guide/sections/components/navigation/dropdown" %>
-</div>
-<div class="jumbotron style-guide-section-header style-guide-section-header-secondary hero hero-md">
-  <div class="container style-guide-section-header-title">
-    <h1>Dropdown Nav</h1>
-  </div>
-</div>
+<div class="color_block-white">
+  <div class="container">
+    <div class="l-padded-thick" style="min-height: 800px;">
+    <h1>New Nav &amp; Forever Style Guide 3.0.0</h1>
+      <ol>
+        <li class="l-section">Make sure you're using the style guide 3.0 gem
+          <pre class="well">
+            gem 'forever_style_guide', '3.0.0'
+          </pre>
+        </li>
+        <li class="l-section">
+          Add a helper to display to your application to use whole components from the style guide (not just styles)
+          <pre class="well">
+            def styleguide_component(type, properties)
+              render "forever_style_guide/sections/components/#{type}", properties
+            end
+          </pre>
+        </li>
+        <li class="l-section">
+          Call the components into your views
+          <pre class="well">
+            &lt;%= styleguide_component("navigation/nav", nil) %>
+          </pre>
+        </li>
 
-<div>
-  <%= render partial: "forever_style_guide/sections/components/navigation/marketing" %>
-</div>
-<div class="jumbotron style-guide-section-header style-guide-section-header-secondary hero hero-md">
-  <div class="container style-guide-section-header-title">
-    <h1>Marketing</h1>
-  </div>
-</div>
-
-<div>
-  <%= render partial: "forever_style_guide/sections/components/navigation/signed_in" %>
-</div>
-<div class="jumbotron style-guide-section-header style-guide-section-header-secondary hero hero-md">
-  <div class="container style-guide-section-header-title">
-    <h1>Signed In</h1>
+        <li class="l-section">
+          The styleguide handles routing for all the apps to point at marketing site, store and web app.
+          <pre class="well">
+            app/helpers/forever_style_guide/application_helper.rb
+          </pre>
+        </li>
+      </ol>
+    </div>
   </div>
 </div>

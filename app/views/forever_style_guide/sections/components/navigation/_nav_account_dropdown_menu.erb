@@ -1,0 +1,60 @@
+<div class='container-fluid'>
+  <div class='row'>
+    <div class='col-xs-12 l-padded-thin'>
+
+      <ul class="list-unstyled">
+        <li class="dropdown-menu-account-item">
+          <% if current_user.avatar_url_small %>
+            <%= image_tag current_user.avatar_url_small, class: "dropdown-menu-account-avatar avatar avatar-sm pull-left", alt: current_user.name, title: current_user.name %>
+          <% else %>
+            <%= image_tag "default_avatar.jpg", class: "dropdown-menu-account-avatar avatar avatar-sm pull-left", alt: current_user.name, title: current_user.name %>
+          <% end %>
+
+          <div class="dropdown-menu-account-user">
+            <p class="dropdown-menu-account-user-intro color-gray-300">Signed in as</p>
+            <h4 class="page-title color-gray-300"><%= current_user.name %></h4>
+          </div>
+        </li>
+
+        <li class="dropdown-menu-account-divider"></li>
+
+        <li class="dropdown-menu-account-item">
+          <p class="color-gray-300">
+
+            <span class="dropdown-menu-account-storage"><%= storage_ratio_percent %> of <%= capacity_readable %></span>
+            <%= link_to "Upgrade", upgrade_url, class: 'small', title: "Upgrade your Forever Guaranteed Permanent Storage" %>
+          </p>
+
+          <div class="progress progress-thin color_block-gray-400">
+            <div class="progress-bar" role="progressbar" aria-valuenow="<%= storage_ratio %>" aria-valuemin="0" aria-valuemax="100" style="width: <%= storage_ratio_percent %>; max-width: 100%;"></div>
+          </div>
+        </li>
+
+        <li class="dropdown-menu-account-divider"></li>
+
+        <li class="dropdown-menu-account-item">
+          <%= link_to user_settings_url, class: 'dropdown-menu-nav-link dropdown-menu-nav-link-no_margin', title: 'View User Settings' do %>
+            <i class='fa fa-cog'></i>Settings
+          <% end %>
+        </li>
+
+        <% if current_user.linked_ambassador.active? %>
+          <li class="dropdown-menu-account-item">
+            <%= link_to back_office_url, class: 'dropdown-menu-nav-link dropdown-menu-nav-link-no_margin', title: 'Ambassador Back Office Reports' do %>
+              <i class='fa fa-suitcase'></i>My Back Office
+            <% end %>
+          </li>
+        <% end %>
+
+        <li class="dropdown-menu-account-divider hidden-xs hidden-sm"></li>
+
+        <li class="dropdown-menu-account-item">
+          <%= link_to log_out_url, method: :delete, class: 'dropdown-menu-nav-link dropdown-menu-nav-link-no_margin', title: 'Log Out of Forever' do %>
+            <i class='fa fa-share'></i>Log Out
+          <% end %>
+        </li>
+      </ul>
+
+    </div>
+  </div>
+</div>
