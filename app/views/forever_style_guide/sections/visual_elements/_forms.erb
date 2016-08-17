@@ -13,58 +13,62 @@
     <input type="file" id="exampleInputFile">
     <p class="help-block">Example block-level help text here.</p>
   </div>
-  <div class="checkbox checkbox-branded l-section">
-    <label for="agree" class="checkbox-label">
-      <input type="checkbox" name="agree" id="agree">
-      <span class="checkbox-visual"></span>
-      Click here if you agree to the Terms &amp; Conditions
-    </label>
+
+  <h3 class="color-gray-500 l-section-far">Checkboxes</h2>
+  <p class="gray-600">Just add the checkbox-branded class to your form-group div got get branded styling via label:before and label:after.</p>
+  <div class="form-group form-group-lg checkbox-branded l-section-close">
+    <input name="stripe_account[terms_of_service]" type="hidden" value="0">
+    <input type="checkbox" value="1" name="stripe_account[terms_of_service]" id="stripe_account_terms_of_service">
+    <label for="stripe_account_terms_of_service">I have read and agree to the <a href= "/tos">Terms of Service</a> and <a href= "/tos">Privacy Policy</a></label>
   </div>
-  <div class="form-group  l-section-close">
-    <div class="checkbox checkbox-inline checkbox-branded">
-      <label for="inline1" class="checkbox-label">
-        <input type="checkbox" name="inline1" id="inline1" check>
-        <span class="checkbox-visual"></span>
-        Inline option
-      </label>
-      <label for="inline2" class="checkbox-label">
-        <input type="checkbox" name="inline2" id="inline2">
-        <span class="checkbox-visual"></span>
-        Inline alternate option
-      </label>
+
+  <div class="clearfix">
+    <div class="form-group form-group-lg checkbox-branded checkbox-branded-inline">
+      <input name="option1" type="hidden" value="0">
+      <input type="checkbox" value="1" name="option1" id="option1">
+      <label for="option1">Upsell 1 (+ $3.99)</a></label>
+    </div>
+
+    <div class="form-group form-group-lg checkbox-branded checkbox-branded-inline">
+      <input name="option2" type="hidden" value="0">
+      <input type="checkbox" value="1" name="option2" id="option2">
+      <label for="option2">Upsell 2 (+ $3.99)</a></label>
     </div>
   </div>
+
+  <h3 class="color-gray-500 l-section">Radios</h2>
   <div class="radio radio-branded l-section">
+    <p class="gray-600">Just add the radio-branded class to your form-group div got get branded styling via label:before and label:after.</p>
     <label class="radio-label">
       <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
-      <span class="radio-visual"></span>
-      Option one is this and that&mdash;be sure to include why it's great
+      Option one is this and that
     </label>
     <label class="radio-label radio-branded l-section-close">
       <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
-      <span class="radio-visual"></span>
-      Option two can be something else and selecting it will deselect option one
+      Option two can be something else
     </label>
   </div>
+
   <div class="form-group l-section-close">
-  <div class="radio radio-inline radio-branded">
-    <label class="radio-label">
-      <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
-      <span class="radio-visual"></span>
-      Option One Inline
-    </label>
-    <label class="radio-label radio-branded">
-      <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
-      <span class="radio-visual"></span>
-      Option Two Inline
-    </label>
-    <label class="radio-label radio-branded">
-      <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
-      <span class="radio-visual"></span>
-      Option Three Inline
-    </label>
+    <div class="radio radio-inline radio-branded">
+      <label class="radio-label">
+        <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+        <span class="radio-visual"></span>
+        Option One Inline
+      </label>
+      <label class="radio-label radio-branded">
+        <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+        <span class="radio-visual"></span>
+        Option Two Inline
+      </label>
+      <label class="radio-label radio-branded">
+        <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+        <span class="radio-visual"></span>
+        Option Three Inline
+      </label>
+    </div>
   </div>
-  </div>
+
   <div class="form-group l-section">
     <div class="select">
       <select class="select-field form-control">
