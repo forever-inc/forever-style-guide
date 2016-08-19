@@ -1,119 +1,44 @@
-/* =footer
----------------------------------------------------------------------------- */
-.footer {
-  background-color: color('white');
-  @extend %footer-shadow;
+.footer-header {
+  font-weight: 500;
 }
-.footer-products {
-  padding: $padding-default-vertical 40px;
+.footer-main_block {
+  margin-top: 10px;
 
-  @media (min-width: $screen-sm-min) {
-    padding-right: 10px;
-    padding-left: 15px;
+  @media (min-width: $screen-md) {
+    margin-top: 20px;
   }
 }
-.footer-products-item {
-  padding-top: $padding-default-vertical;
-  padding-bottom: $padding-default-vertical;
-
-  &:first-child {
-    margin-top: 3px; //visual alignment for logos
-
-    @media (min-width: $screen-md-min) {
-      text-align: left;
-    }
-    @media (min-width: $screen-lg-min) {
-      margin-top: 5px
-    }
-  }
-  &:last-child {
-    @media (min-width: $screen-md-min) {
-      text-align: right;
-    }
-  }
+.footer-title {
+  font-size: $font-size-300;
+  margin-bottom: 5px;
 }
-
-.footer-links {
-  background-color: color('gray-800');
-
-  .security_assurance {
-    margin: 15px auto 0;
-    padding: 10px 10px 5px 0;
-    color: color('gray-400');
-    line-height: 1.2;
-    border: 1px solid color('gray-600');
-    border-radius: $border-radius-large;
-    a {
-      display: block;
-    }
-    &.is_top {
-      margin-top: 0;
-    }
-  }
-  .security_assurance-icon {
-    width: 20%;
-    float: left;
-    color: color('gray-400');
-    font-size: $font-size-600;
-  }
-  .security_assurance-text {
-    width: 80%;
-    float: left;
-  }
-}
-.footer-links-ambassadors {
-  @media (min-width: $screen-sm-min) {
-    margin-top: $padding-large-vertical;
-    padding-top: $padding-large-vertical;
-    text-align: center;
-    border-top: 1px solid color('gray-600');
-    p {
-      max-width: 300px;
-      margin-right: auto;
-      margin-left: auto;
-    }
-  }
-  @media (min-width: $screen-md-min) {
-    margin-top: 0;
-    padding-top: 0;
-    text-align: left;
-    border: 0;
-  }
-  @media (min-width: $screen-lg-min) {
-    padding-right: 40px;
-  }
-}
-
-.footer-info {
-  overflow: hidden;
-  color: color('white');
-  text-align: center;
-  background-color: color('gray-800');
+.footer-main_block .footer-link { // override link styles
+  color: color('gray-300');
+  font-size: $font-size-200;
 }
 .footer-social_icons {
-  padding: 15px 0 0;
-  border-top: 1px solid color('gray-600');
-
-  @media (min-width: $screen-sm-min) {
-    text-align: right;
-  }
-  a {
-    color: color('white');
-
-    &:hover,
-    &:active,
-    &:focus {
-    text-decoration: none;
-
-      .fa-feature_bullet-circle {
-        color: color('gray-500');
-      }
-    }
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.footer-divider {
+  margin-top: 0;
+  margin-bottom: 5px;
+  border-top: 1px solid $color-gray-500;
+}
+.footer-bottom_left { 
+  @media (max-width: $screen-sm) {
+    margin-bottom: 0;
+    margin-top: 5px;
   }
 }
-.footer-copy_contact {
-  @media (min-width: $screen-sm-min) {
-    text-align: left;
-    border-top: 1px solid color('gray-600');
+.footer-bottom_right {
+  @media (min-width: $screen-sm) {
+    text-align: right;
   }
+}
+.footer-main_block .footer-link-dark { // override link styles
+  color: color('gray-400');
+}
+.footer-social_icons .fa-feature_bullet:hover {
+  color: color('gray-500');
 }
