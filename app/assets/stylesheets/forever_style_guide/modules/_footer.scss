@@ -7,38 +7,41 @@
   @media (min-width: $screen-md) {
     margin-top: 20px;
   }
+
+  .footer-link {
+    color: color('gray-300');
+    font-size: $font-size-200;
+  }
+  
+  .footer-link-dark {
+    color: color('gray-400');
+  }
 }
 .footer-title {
   font-size: $font-size-300;
   margin-bottom: 5px;
 }
-.footer-main_block .footer-link { // override link styles
-  color: color('gray-300');
-  font-size: $font-size-200;
-}
 .footer-social_icons {
   margin-top: 10px;
   margin-bottom: 10px;
+
+  .fa-feature_bullet:hover {
+    color: color('gray-500');
+  }
 }
 .footer-divider {
   margin-top: 0;
   margin-bottom: 5px;
   border-top: 1px solid $color-gray-500;
 }
-.footer-bottom_left { 
+.footer-copyright { 
   @media (max-width: $screen-sm) {
     margin-bottom: 0;
     margin-top: 5px;
   }
 }
-.footer-bottom_right {
-  @media (min-width: $screen-sm) {
+.footer-policy_links {
+  @media (min-width: $screen-md) {
     text-align: right;
   }
-}
-.footer-main_block .footer-link-dark { // override link styles
-  color: color('gray-400');
-}
-.footer-social_icons .fa-feature_bullet:hover {
-  color: color('gray-500');
 }

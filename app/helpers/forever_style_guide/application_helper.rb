@@ -257,9 +257,6 @@ module ForeverStyleGuide
     def privacy_url
       www_url('/privacy')
     end
-    def careers_url
-      www_url('/careers')
-    end
 
     # External Paths
     def forever_live_url
@@ -296,6 +293,10 @@ module ForeverStyleGuide
 
     def android_url
       "https://play.google.com/store/apps/details?id=com.forever.forever"
+    end
+
+    def careers_url
+      "http://forever.theresumator.com/apply"
     end
 
     def help_center_url
