@@ -295,6 +295,10 @@ module ForeverStyleGuide
       "https://play.google.com/store/apps/details?id=com.forever.forever"
     end
 
+    def careers_url
+      "http://forever.theresumator.com/apply"
+    end
+
     def help_center_url
       "https://forever1.zendesk.com/hc/en-us"
     end
