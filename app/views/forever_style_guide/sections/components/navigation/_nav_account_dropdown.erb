@@ -5,7 +5,7 @@
 
 <% if defined?(current_user) && current_user.present?  %>
   <li class='navbar-account_item-inbox navbar-account_item'>
-    <%= link_to library_url, class: "nav-icon-stack hidden-grid-float-breakpoint" do %>
+    <%= link_to inbox_url, class: "nav-icon-stack hidden-grid-float-breakpoint" do %>
       <i class='fa fa-inbox'></i>
       <span class="nav-icon-label">Inbox</span>
     <% end %>
