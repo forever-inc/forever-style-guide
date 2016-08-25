@@ -27,7 +27,7 @@ module ForeverStyleGuide
       url.host = url.host.sub(replace, "#{sub}.")
 
       # Allow ember routes like /#/settings/password
-      url.path = URI.escape(path, '#')
+      url.path = URI.escape(path, '#, ?')
       url.query = nil
       url = URI.decode(url.to_s)
     end
@@ -59,6 +59,10 @@ module ForeverStyleGuide
     # Web App Paths
     def library_url
       web_app_url('/inbox')
+    end
+
+    def inbox_url
+      web_app_url('/#/inbox?inbox_filter_type=unorganized-items')
     end
 
     def projects_url

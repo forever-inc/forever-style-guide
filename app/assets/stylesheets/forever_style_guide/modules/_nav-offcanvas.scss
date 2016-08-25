@@ -18,6 +18,7 @@ $offcanvas-media:                 $grid-float-breakpoint!default;
   .navbar-offcanvas {
     position: fixed;
     width: 100%;
+    min-height: 100%; // Ensure offcanvas menu ignores mobile-safari's padding garbage
     max-width: $offcanvas-width;
     left: -$offcanvas-width;
     top: 0;

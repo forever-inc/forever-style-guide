@@ -35,7 +35,7 @@
         <h4 class="color-gray-300 footer-title">Support</h4>
         <hr class="footer-divider" />
         <ul class="list-unstyled">
-          <li><%= link_to "Visit Forever Help Center", help_center_url, class: "footer-link", title: "Visit the Forever Help Center" %></li>
+          <li><%= link_to "Visit Forever Help Center", help_center_url, class: "footer-link", title: "Visit the Forever Help Center", target: '_blank' %></li>
           <li><%= mail_to "support@forever.com", "support@forever.com", class: "footer-link", title: "Email us at support@forever.com" %></li>
           <li><%= link_to "1-888-FOREVER (1-888-367-3837)", "tel:1-888-367-3837", class: "footer-link", title: "Call us at 1-888-367-3837" %></li>
         </ul>
@@ -45,11 +45,11 @@
          <h4 class="color-gray-300 footer-title">Stay Connected</h4>
         <hr class="footer-divider" />
         <div class="footer-social_icons">
-          <%= link_to (fa_stacked_icon "facebook feature_bullet-icon", base: "circle", class: "fa-feature_bullet color-gray-600"), facebook_url, title: "Follow Forever on Facebook" %>
-          <%= link_to (fa_stacked_icon "twitter feature_bullet-icon", base: "circle", class: "fa-feature_bullet color-gray-600"), twitter_url, title: "Follow Forever on Twitter" %>
-          <%= link_to (fa_stacked_icon "instagram feature_bullet-icon", base: "circle", class: "fa-feature_bullet color-gray-600"), instagram_url, title: "Follow Forever on Instagram" %>
-          <%= link_to (fa_stacked_icon "youtube feature_bullet-icon", base: "circle", class: "fa-feature_bullet color-gray-600"), youtube_url, title: "Follow Forever on YouTube" %>
-          <%= link_to (fa_stacked_icon "pinterest feature_bullet-icon", base: "circle", class: "fa-feature_bullet color-gray-600"), pinterest_url, title: "Follow Forever on Pinterest" %>
+          <%= link_to (fa_stacked_icon "facebook feature_bullet-icon", base: "circle", class: "fa-feature_bullet color-gray-600"), facebook_url, title: "Follow Forever on Facebook", target: '_blank' %>
+          <%= link_to (fa_stacked_icon "twitter feature_bullet-icon", base: "circle", class: "fa-feature_bullet color-gray-600"), twitter_url, title: "Follow Forever on Twitter", target: '_blank' %>
+          <%= link_to (fa_stacked_icon "instagram feature_bullet-icon", base: "circle", class: "fa-feature_bullet color-gray-600"), instagram_url, title: "Follow Forever on Instagram", target: '_blank' %>
+          <%= link_to (fa_stacked_icon "youtube feature_bullet-icon", base: "circle", class: "fa-feature_bullet color-gray-600"), youtube_url, title: "Follow Forever on YouTube", target: '_blank' %>
+          <%= link_to (fa_stacked_icon "pinterest feature_bullet-icon", base: "circle", class: "fa-feature_bullet color-gray-600"), pinterest_url, title: "Follow Forever on Pinterest", target: '_blank' %>
         </div>
       </div>
     </div>
@@ -60,7 +60,7 @@
       </div>
       <div class="col-xs-12 col-sm-6 footer-policy_links">
         <p class="small color-gray-400">
-          <%= link_to "Careers", careers_url, title: "Join the Forever Team", class: "footer-link footer-link-dark" %> | 
+          <%= link_to "Careers", careers_url, title: "Join the Forever Team", class: "footer-link footer-link-dark", target: '_blank' %> | 
           <%= link_to "Privacy Policy", privacy_url, class: "footer-link footer-link-dark", title: "Forever Privacy Policy" %> | 
           <%= link_to "Terms of Service", tos_url, class: "footer-link footer-link-dark", title: "Forever Terms of Service" %>
         </p>
