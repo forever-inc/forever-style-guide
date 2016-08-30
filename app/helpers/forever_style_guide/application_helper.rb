@@ -36,6 +36,36 @@ module ForeverStyleGuide
       defined?(current_order) && current_order.product_count > 0
     end
 
+    def has_ambassador?
+      defined?(current_ambassador) && current_ambassador.present?
+    end
+
+    #active state nav
+    def is_active?
+      return true if @pages.any?{ |matches| [controller.controller_name, controller.action_name].include? matches }
+    end
+
+    def is_in_product_dropdown?
+      @pages = [
+        'guaranteed_storage', 'add_storage', 'services', 'historian', 'downloads', 'valet',
+        'artisan', 'digital_art', 'digital_art_library', 'p2p',
+        'print',
+        'gifts', 'shipping', 'bulk_orders', 'returns',
+        'products'
+      ]
+      is_active?
+    end
+
+    def is_in_my_forever_dropdown?
+      @pages = ['guarantee', 'about', 'team', 'beliefs']
+      is_active?
+    end
+
+    def is_in_community_dropdown?
+      @pages = ['opportunity', 'find_ambassadors', 'commitments', 'retreats']
+      is_active?
+    end
+
     #User storage methds as seen in web app user.rb
     def capacity_readable
       if current_user
@@ -50,10 +80,6 @@ module ForeverStyleGuide
     def storage_ratio
       return 0 if current_user.storage_capacity == 0
       current_user.storage_used.to_f / current_user.storage_capacity.to_f
-    end
-
-    def has_ambassador?
-      defined?(current_ambassador) && current_ambassador.present?
     end
 
     # Web App Paths
@@ -187,15 +213,15 @@ module ForeverStyleGuide
     end
 
     def new_digital_art_url
-      www_url('/new_digital_art')
+      www_url('/digital_art_library?facet_name=new')
     end
 
-    def sale_digital_art_url
-      www_url('/sale_digital_art')
+    def free_digital_art_url
+      www_url('/digital_art_library?facet_name=free')
     end
 
     def all_digital_art_url
-      www_url('/all_digital_art')
+      www_url('/digital_art_library')
     end
 
     def print_url
@@ -247,7 +273,11 @@ module ForeverStyleGuide
     end
 
     def upgrade_url
-      www_url('/upgrade')
+      if defined?(current_user) && current_user.membership
+        www_url('/add_storage')
+      else
+        www_url('/pricing')
+      end
     end
 
     def back_office_url
@@ -323,7 +353,6 @@ module ForeverStyleGuide
       "https://forever1.zendesk.com/hc/en-us/sections/200520187-Historian"
     end
 
-    # TODO get updated videos on Zendesk
     def zendesk_overview_video_url
       "https://forever1.zendesk.com/hc/en-us/articles/204874607"
     end
@@ -333,27 +362,27 @@ module ForeverStyleGuide
     end
 
     def zendesk_organizing_video_url
-      "https://forever1.zendesk.com/hc/en-us/articles/203811218"
+      "https://forever1.zendesk.com/hc/en-us/articles/222868828-Organizing-your-Forever-Inbox-Video-"
     end
 
     def zendesk_sharing_video_url
-      "https://forever1.zendesk.com/hc/en-us/articles/203935338"
+      "https://forever1.zendesk.com/hc/en-us/articles/203834518-Using-the-People-Tab-Video-"
     end
 
-    def zendesk_tour_video_url
-      "https://forever1.zendesk.com/hc/en-us/articles/203913608"
+    def zendesk_inbox_video_url
+      "https://forever1.zendesk.com/hc/en-us/articles/223580988-Deeper-Dive-into-How-to-Use-your-Inbox-Video-"
     end
 
     def zendesk_albums_video_url
+      "https://forever1.zendesk.com/hc/en-us/articles/226085547-Creating-an-Album-Uploading-Directly-to-an-Album-Video-"
+    end
+
+    def zendesk_nested_albums_video_url
       "https://forever1.zendesk.com/hc/en-us/articles/218144057"
     end
 
     def zendesk_tags_video_url
-      "https://forever1.zendesk.com/hc/en-us/articles/203834548"
-    end
-
-    def zendesk_dates_video_url
-      "https://forever1.zendesk.com/hc/en-us/articles/206462457"
+      "https://forever1.zendesk.com/hc/en-us/articles/223595308-Using-Albums-and-Tags-Video-"
     end
 
     # Path helpers for style guide dummy app

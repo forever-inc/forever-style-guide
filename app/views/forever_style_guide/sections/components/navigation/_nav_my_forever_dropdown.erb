@@ -1,4 +1,4 @@
-<%= link_to nil, class: 'dropdown-toggle dropdown-toggle-my_forever', :data => { :toggle => 'dropdown' } do %>
+<%= link_to nil, class: "dropdown-toggle dropdown-toggle-my_forever products #{'active' if is_in_my_forever_dropdown?}", :data => { :toggle => 'dropdown' } do %>
   My Forever
   <i class='fa fa-chevron-down'></i>
 <% end %>
@@ -112,8 +112,8 @@
         <div class="hidden-grid-float-breakpoint l-section-far"></div>
         <ul class="list-unstyled">
           <li>
-            <%= link_to zendesk_tour_video_url, class: 'dropdown-menu-nav-link', title: 'Video Tour of a Well Curated Forever Account', target: '_blank' do %>
-              <i class='fa fa-video-camera'></i>Account Tour
+            <%= link_to zendesk_inbox_video_url, class: 'dropdown-menu-nav-link', title: 'How to Use Your Inbox in Forever - Video Tutorial', target: '_blank' do %>
+              <i class='fa fa-video-camera'></i>Inbox
             <% end %>
           </li>
 
@@ -124,14 +124,14 @@
           </li>
 
           <li>
-            <%= link_to zendesk_tags_video_url, class: 'dropdown-menu-nav-link', title: 'Organizing Photos with Tags in Forever - Video Tutorial', target: '_blank' do %>
-              <i class='fa fa-video-camera'></i>Tags
+            <%= link_to zendesk_nested_albums_video_url, class: 'dropdown-menu-nav-link', title: 'Organizing Photos with Nested Albums in Forever - Video Tutorial', target: '_blank' do %>
+              <i class='fa fa-video-camera'></i>Nested Albums
             <% end %>
           </li>
 
           <li>
-            <%= link_to zendesk_dates_video_url, class: 'dropdown-menu-nav-link', title: 'Organizing Photos by Date in Forever - Video Tutorial', target: '_blank' do %>
-              <i class='fa fa-video-camera'></i>Dates
+            <%= link_to zendesk_tags_video_url, class: 'dropdown-menu-nav-link', title: 'Organizing Photos with Tags in Forever - Video Tutorial', target: '_blank' do %>
+              <i class='fa fa-video-camera'></i>Tags
             <% end %>
           </li>
         </ul>

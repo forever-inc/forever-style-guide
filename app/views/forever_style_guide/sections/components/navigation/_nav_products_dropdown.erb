@@ -1,4 +1,4 @@
-<%= link_to nil, class: 'dropdown-toggle dropdown-toggle-products', :data => { :toggle => 'dropdown' } do %>
+<%= link_to nil, class: "dropdown-toggle dropdown-toggle-products #{'active' if is_in_product_dropdown?}", :data => { :toggle => 'dropdown' } do %>
   Products
   <i class='fa fa-chevron-down'></i>
 <% end %>
@@ -57,11 +57,11 @@
 
             <ul class="list-unstyled dropdown-menu-nav-bullets">
               <li>
-                <%= link_to '- New Digital Art', new_digital_art_url, class: 'dropdown-menu-nav-link', title: 'Newest Digital Scrapbooking Art and Embellishments' %>
+                <%= link_to '- New Digital Art', new_digital_art_url, remote: true, method: :post, class: 'dropdown-menu-nav-link', title: 'Newest Digital Scrapbooking Art and Embellishments' %>
               </li>
 
               <li>
-                <%= link_to '- On Sale', sale_digital_art_url, class: 'dropdown-menu-nav-link dropdown-menu-nav-link-no_margin', title: 'On Sale Digital Scrapbooking Art and Embellishments' %>
+                <%= link_to '- Free Kits', free_digital_art_url, remote: true, method: :post, class: 'dropdown-menu-nav-link dropdown-menu-nav-link-no_margin', title: 'On Sale Digital Scrapbooking Art and Embellishments' %>
               </li>
 
               <li>
