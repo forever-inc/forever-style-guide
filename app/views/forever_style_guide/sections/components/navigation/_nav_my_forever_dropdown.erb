@@ -1,4 +1,4 @@
-<%= link_to nil, class: 'dropdown-toggle dropdown-toggle-my_forever', :data => { :toggle => 'dropdown' } do %>
+<%= link_to nil, class: "dropdown-toggle dropdown-toggle-my_forever products #{'active' if is_in_my_forever_dropdown?}", :data => { :toggle => 'dropdown' } do %>
   My Forever
   <i class='fa fa-chevron-down'></i>
 <% end %>

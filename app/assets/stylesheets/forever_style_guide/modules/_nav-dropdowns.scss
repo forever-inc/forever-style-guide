@@ -8,6 +8,15 @@ $nav-icon-width: 60px;
   font-size: $font-size-large;
 }
 
+@mixin active-style($color) {
+  @media (min-width: $grid-float-breakpoint) {
+    box-shadow: inset 0 3px 0 0 $color;
+  }
+  @media (max-width: $grid-float-breakpoint) {
+    box-shadow: inset 3px 0 0 0 $color;
+  }
+}
+
 @mixin mobile-active-dropdown-bg($color) {
   color: color('white');
   background-color: $color;
@@ -47,7 +56,20 @@ $nav-icon-width: 60px;
   }
 }
 
-// Styles
+// Active State for 3 primary product side navs
+.dropdown-toggle {
+  &.dropdown-toggle-my_forever.active {
+    @include active-style($color-primary);
+  }
+  &.dropdown-toggle-products.active {
+    @include active-style($color-secondary);
+  }
+  &.dropdown-toggle-community.active {
+    @include active-style($color-accent);
+  }
+}
+
+// Mega Menu Expanded Styles
 .navbar .dropdown.open > .dropdown-toggle {
   color: color('gray-400');
   background-color: $nav-bg-color;
