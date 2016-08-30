@@ -247,7 +247,11 @@ module ForeverStyleGuide
     end
 
     def upgrade_url
-      www_url('/upgrade')
+      if defined?(current_user) && current_user.membership
+        www_url('/add_storage')
+      else
+        www_url('/pricing')
+      end
     end
 
     def back_office_url
