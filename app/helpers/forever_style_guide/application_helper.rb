@@ -187,15 +187,15 @@ module ForeverStyleGuide
     end
 
     def new_digital_art_url
-      www_url('/new_digital_art')
+      www_url('/digital_art_library?facet_name=new')
     end
 
-    def sale_digital_art_url
-      www_url('/sale_digital_art')
+    def free_digital_art_url
+      www_url('/digital_art_library?facet_name=free')
     end
 
     def all_digital_art_url
-      www_url('/all_digital_art')
+      www_url('/digital_art_library')
     end
 
     def print_url
