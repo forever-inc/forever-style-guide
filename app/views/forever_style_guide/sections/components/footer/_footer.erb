@@ -1,142 +1,69 @@
-<footer class="footer">
-  <div class="footer-products container">
+<footer class="footer color_block-gray-700">
+  <div class="container-fluid color_block-services-dark">
+    <h4 class="color-white text-center footer-header">Collect, curate, and celebrate your memories now and for generations.</h4>
+  </div>
+
+  <div class="container footer-main_block">
     <div class="row">
-      <div class="footer-products-item col-xs-6 col-sm-3">
-        <%= link_to "https://store.forever.com/pricing", :title => "Forever Permanent Storage" do %>
-          <%= image_tag("forever_style_guide/forever-logo.png", alt: "Forever Logo", title: "Forever Permanent Storage", class: "footer-product-img") %>
-        <% end %>
+
+      <div class="col-md-6 col-md-push-3 col-xs-12">
+        <h4 class="color-gray-300 footer-title">Forever&trade; Products</h4>
+        <hr class="footer-divider" />
+        <div class="row">
+          <div class="col-xs-6">
+            <ul class="list-unstyled">
+              <li><%= link_to "Guaranteed Storage", storage_url, class: "footer-link", title: "Guaranteed Permanent Storage for Photos & Documents" %></li>
+              <li><%= link_to "Forever Artisan", artisan_url, class: "footer-link", title: "Forever Artisan 5 Digital Scrapbooking Software" %></li>
+              <li><%= link_to "Forever Historian", historian_url, class: "footer-link", title: "Photo Management Software for Windows" %></li>
+            </ul>
+          </div>
+          <div class="col-xs-6">
+            <ul class="list-unstyled">
+              <li><%= link_to "Digital Art", digital_art_url, class: "footer-link" , title: "Premium Digital Scrapbooking Art" %></li>
+              <li><%= link_to "Print Products", print_url, class: "footer-link" , title: "Create and Print Online or with Artisan Scrapbooking Software"%></li>
+              <li>
+                <%= link_to services_url, class: "footer-link", title: "Digitization and Scanning Services" do %>
+                  Media Conversion <span class="hidden-xs">Services</span>
+                <% end %>
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
-      <div class="footer-products-item col-xs-6 col-sm-3">
-        <%= link_to "https://forever.com/artisan", :title => "Forever Artisan" do %>
-          <%= image_tag("forever_style_guide/artisan-logo-sm.png", alt: "Forever Artisan Logo", title: "Forever Artisan", class: "footer-product-img") %>
-        <% end %>
+
+      <div class="col-md-3 col-md-pull-6 col-sm-6 col-xs-12">
+        <h4 class="color-gray-300 footer-title">Support</h4>
+        <hr class="footer-divider" />
+        <ul class="list-unstyled">
+          <li><%= link_to "Visit Forever Help Center", help_center_url, class: "footer-link", title: "Visit the Forever Help Center", target: '_blank' %></li>
+          <li><%= mail_to "support@forever.com", "support@forever.com", class: "footer-link", title: "Email us at support@forever.com" %></li>
+          <li><%= link_to "1-888-FOREVER (1-888-367-3837)", "tel:1-888-367-3837", class: "footer-link", title: "Call us at 1-888-367-3837" %></li>
+        </ul>
       </div>
-      <div class="footer-products-item col-xs-6 col-sm-3">
-      <%= link_to "https://forever.com/historian", :title => "Forever Historian" do %>
-        <%= image_tag("forever_style_guide/historian-logo-sm.png", alt: "Forever Historian Logo", title: "Forever Historian", class: "footer-product-img") %>
-      <% end %>
-      </div>
-      <div class="footer-products-item col-xs-6 col-sm-3">
-      <%= link_to "https://store.forever.com/digitization-services", :title => "Forever Services" do %>
-        <%= image_tag("forever_style_guide/services-logo-sm.png", alt: "Forever Services Logo", title: "Forever Services", class: "footer-product-img") %>
-      <% end %>
+
+      <div class="col-md-3 col-xs-12 col-sm-6">
+         <h4 class="color-gray-300 footer-title">Stay Connected</h4>
+        <hr class="footer-divider" />
+        <div class="footer-social_icons">
+          <%= link_to (fa_stacked_icon "facebook feature_bullet-icon", base: "circle", class: "fa-feature_bullet color-gray-600"), facebook_url, title: "Follow Forever on Facebook", target: '_blank' %>
+          <%= link_to (fa_stacked_icon "twitter feature_bullet-icon", base: "circle", class: "fa-feature_bullet color-gray-600"), twitter_url, title: "Follow Forever on Twitter", target: '_blank' %>
+          <%= link_to (fa_stacked_icon "instagram feature_bullet-icon", base: "circle", class: "fa-feature_bullet color-gray-600"), instagram_url, title: "Follow Forever on Instagram", target: '_blank' %>
+          <%= link_to (fa_stacked_icon "youtube feature_bullet-icon", base: "circle", class: "fa-feature_bullet color-gray-600"), youtube_url, title: "Follow Forever on YouTube", target: '_blank' %>
+          <%= link_to (fa_stacked_icon "pinterest feature_bullet-icon", base: "circle", class: "fa-feature_bullet color-gray-600"), pinterest_url, title: "Follow Forever on Pinterest", target: '_blank' %>
+        </div>
       </div>
     </div>
-  </div>
 
-  <div class="footer-links l-padded">
-    <div class="container">
-      <div class="row">
-        <div class="col-xs-6 col-sm-8 col-md-6">
-          <div class="row">
-            <div class="hidden-xs col-sm-4 col-md-3">
-              <ul class="list-unstyled">
-                <li><a href="#" title="Print Shop">Print Shop</a></li>
-                <li><a href="#" title="Digital Art">Digital Art</a></li>
-                <li><a href="#" title="Gift Certificates">Gift Certificates</a></li>
-                <li><a href="#" title="Support">Support</a></li>
-                <li><a href="#" title="Blog">Blog</a></li>
-                <li><a href="#" title="Forever Live!">Forever Live!</a></li>
-              </ul>
-            </div>
-            <div class="col-sm-4 col-sm-push-4 col-md-push-3">
-              <ul class="list-unstyled">
-                <li class="visible-xs"><a href="#" title="Gift Certificates">Gift Certificates</a></li>
-                <li><a href="#" title="My Account">My Account</a></li>
-                <li><a href="#" title="Customer Commitments">Customer Commitments</a></li>
-                <li><a href="#" title="Terms of Service">Terms of Service</a></li>
-                <li><a href="#" title="Investment Policy">Investment Policy</a></li>
-                <li><a href="#" title="Return Policy">Return Policy</a></li>
-              </ul>
-            </div>
-            <div class="hidden-xs col-xs-6 col-sm-4 col-sm-pull-4 col-md-3">
-              <ul class="list-unstyled">
-                <li><a href="#" title="About Forever">About</a></li>
-                <li><a href="#" title="Guarantee">Guarantee</a></li>
-                <li><a href="#" title="Our Team">Team</a></li>
-                <li><a href="#" title="Beliefs &amp; Values">Beliefs</a></li>
-                <li><a href="#" title="Forever Press">Press</a></li>
-                <li><a href="#" title="Careers at Forever">Careers</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <div class="hidden-xs col-sm-4 col-md-3 col-md-push-3">
-          <div class="row">
-            <div class="col-xs-6">
-              <a href="#" title="Sign In" type="button" class="btn btn-default btn-block">Sign In</a>
-            </div>
-            <div class="col-xs-6">
-              <a href="#" title="Join Today" type="button" class="btn btn-primary btn-block">Join Today</a>
-            </div>
-          </div>
-          <div class="clearfix"></div>
-          <div class="row no-gutter security_assurance">
-            <div class="text-center security_assurance-icon">
-              <span class="fa fa-lock"></span>
-            </div>
-            <div class="small security_assurance-text">
-              Forever is committed to the security of your information.
-              <a href="#" title="Review Our Privacy Policy">Review our Privacy Policy.</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="clearfix visible-sm"></div>
-        <div class="footer-links-ambassadors col-xs-6 col-sm-12 col-md-3 col-md-pull-3">
-          <h6 class="page-title color-gray-400">Forever Amabassadors</h6>
-          <p class="small color-gray-400">
-            Help others capture and share their life’s stories. <span class="hidden-xs">(Plus earn commissions and get insider tips &amp; training.)</span>
-          </p>
-          <a href="#" title="Ambassador Home"><span class="hidden-xs">Visit</span> Ambassador Home</a>
-        </div>
-
+    <div class="row l-section-close">
+      <div class="col-xs-12 col-sm-6">
+        <p class="footer-link footer-link-dark footer-copyright">&copy; 2013–<%= Time.now.year %> Forever, Inc</p>
       </div>
-    </div>
-  </div>
-
-  <div class="footer-info">
-    <div class="container">
-      <div class="row">
-        <div class="footer-social_icons col-xs-12 col-sm-6 col-sm-push-6">
-          <a title="Email Support@Forever.com" href="mailto:support@forever.com">
-            <span class="fa-stack fa-2x fa-feature_bullet-social">
-              <i class="fa fa-circle fa-feature_bullet-circle color-gray-600 fa-stack-2x"></i>
-              <i class="fa fa-envelope fa-stack-1x"></i>
-            </span>
-          </a>
-          <a title="Forever Facebook" href="https://www.facebook.com/Forever">
-            <span class="fa-stack fa-2x fa-feature_bullet-social">
-              <i class="fa fa-circle fa-feature_bullet-circle color-gray-600 fa-stack-2x"></i>
-              <i class="fa fa-facebook fa-stack-1x"></i>
-            </span>
-          </a>
-          <a title="Forever Twitter" href="https://www.twitter.com/forever">
-            <span class="fa-stack fa-2x fa-feature_bullet-social">
-              <i class="fa fa-circle fa-feature_bullet-circle color-gray-600 fa-stack-2x"></i>
-              <i class="fa fa-twitter fa-stack-1x"></i>
-            </span>
-          </a>
-          <a title="Forever YouTube" href="https://www.youtube.com/channel/UCfBFL_W3FYW7W0wAr4EEGnA">
-            <span class="fa-stack fa-2x fa-feature_bullet-social">
-              <i class="fa fa-circle fa-feature_bullet-circle color-gray-600 fa-stack-2x"></i>
-              <i class="fa fa-youtube fa-stack-1x"></i>
-            </span>
-          </a>
-          <a title="Forever Pinterest" href="http://www.pinterest.com/FOREVER/">
-            <span class="fa-stack fa-2x fa-feature_bullet-social">
-              <i class="fa fa-circle fa-feature_bullet-circle color-gray-600 fa-stack-2x"></i>
-              <i class="fa fa-pinterest fa-stack-1x"></i>
-            </span>
-          </a>
-        </div>
-        <div class="col-xs-12 col-sm-6 col-sm-pull-6 footer-copy_contact">
-          <h3 class="color-gray-400">Contact us at 1-888-FOREVER</h3>
-          <p class="color-gray-400">
-            &copy; Copyright 2015, Forever, Inc.
-          </p>
-        </div>
+      <div class="col-xs-12 col-sm-6 footer-policy_links">
+        <p class="small color-gray-400">
+          <%= link_to "Careers", careers_url, title: "Join the Forever Team", class: "footer-link footer-link-dark", target: '_blank' %> | 
+          <%= link_to "Privacy Policy", privacy_url, class: "footer-link footer-link-dark", title: "Forever Privacy Policy" %> | 
+          <%= link_to "Terms of Service", tos_url, class: "footer-link footer-link-dark", title: "Forever Terms of Service" %>
+        </p>
       </div>
     </div>
   </div>

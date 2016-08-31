@@ -106,29 +106,3 @@ $(function () {
     placement: 'bottom'
   })
 });
-
-// Compare height of viewport against height of header on popover expansion
-$(function () {
-  $('.account-popover-trigger').on('shown.bs.popover', function () {
-    var windowHeight = $(window).height();
-
-    $(function() {
-      var navHeight = ($('#header-is_fixed').outerHeight());
-      if (navHeight >= windowHeight) {
-        $('body').addClass('body-fixed');
-        $('#header-is_fixed').css('max-height', windowHeight);
-        $('#header-is_fixed').addClass('is_scrolling');
-      };
-    })
-  })
-  // unfix body on popover close
-  $('.account-popover-trigger').on('hidden.bs.popover', function () {
-    $('body').removeClass('body-fixed');
-    $('#header-is_fixed').removeClass('is_scrolling');
-  })
-
-  // hide account popover on toggle nav close
-  $('#header-is_fixed .navbar-collapse').on('hide.bs.collapse', function () {
-    $('.popover.account-popover').popover('hide');
-  })
-});

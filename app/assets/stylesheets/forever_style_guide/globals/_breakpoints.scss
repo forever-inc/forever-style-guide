@@ -45,6 +45,6 @@ $screen-xl-max:              ($screen-xxl-min - 1) !global;
 
 
 //** Point at which the navbar becomes uncollapsed.
-$grid-float-breakpoint: $screen-md !global;
+$grid-float-breakpoint: 920px!global;
 //** Point at which the navbar begins collapsing.
 $grid-float-breakpoint-max: ($grid-float-breakpoint - 1) !global;
