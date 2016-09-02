@@ -76,14 +76,6 @@ $your-ambassador-intro-text-width: 110px;
   }
 }
 .dropdown-ambassador-contact_btn {
-  max-width: $offcanvas-width;
-  overflow: hidden;
-  text-overflow: ellipsis;
-
-  @media (min-width: $grid-float-breakpoint) and (max-width: $screen-md-max) {
-    max-width: 180px;
-  }
-
   &:hover,
   &:active,
   &:focus {

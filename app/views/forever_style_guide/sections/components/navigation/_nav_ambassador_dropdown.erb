@@ -42,48 +42,48 @@
             <div class="row">
               <% if current_ambassador.email %>
                 <div class="col-grid-float-6">
-                  <%= mail_to current_ambassador.email,  title: current_ambassador.email, class: 'btn btn-default btn-link btn-action dropdown-ambassador-contact_btn' do %>
-                    <i class="fa fa-envelope btn-action-icon"></i><span class="btn-action-label"><%= current_ambassador.email %></span>
+                  <%= mail_to current_ambassador.email, title: current_ambassador.email, class: 'btn btn-default btn-link btn-action dropdown-ambassador-contact_btn' do %>
+                    <i class="fa fa-fw fa-envelope btn-action-icon"></i><span class="btn-action-label"><%= current_ambassador.email %></span>
                   <% end %>
                 </div>
               <% end %>
 
               <% if current_ambassador.phone %>
                 <div class="col-grid-float-6">
-                  <%= link_to ('tel:+' + number_to_phone(current_ambassador.phone)),  title: 'Call ' + current_ambassador.name, class: 'btn btn-default btn-link btn-action dropdown-ambassador-contact_btn' do %>
-                    <i class="fa fa-phone btn-action-icon"></i><span class="btn-action-label"><%= number_to_phone(current_ambassador.phone) %></span>
+                  <%= link_to ('tel:+' + number_to_phone(current_ambassador.phone)), title: 'Call ' + current_ambassador.name, class: 'btn btn-default btn-link btn-action dropdown-ambassador-contact_btn' do %>
+                    <i class="fa fa-fw fa-phone btn-action-icon"></i><span class="btn-action-label"><%= number_to_phone(current_ambassador.phone) %></span>
                   <% end %>
                 </div>
               <% end %>
 
               <% if current_ambassador.website %>
                 <div class="col-grid-float-6">
-                  <%= link_to current_ambassador.website,  title: current_ambassador.website, class: 'btn btn-default btn-link btn-action dropdown-ambassador-contact_btn' do %>
-                    <i class="fa fa-link btn-action-icon"></i><span class="btn-action-label">current_ambassador.website</span>
+                  <%= link_to '//' + current_ambassador.website, title: current_ambassador.website, class: 'btn btn-default btn-link btn-action dropdown-ambassador-contact_btn', target: '_blank' do %>
+                    <i class="fa fa-fw fa-link btn-action-icon"></i><span class="btn-action-label">My Website</span>
                   <% end %>
                 </div>
               <% end %>
 
               <% if current_ambassador.facebook_url %>
                 <div class="col-grid-float-6">
-                  <%= link_to current_ambassador.facebook_url,  title: current_ambassador.facebook_url, class: 'btn btn-default btn-link btn-action dropdown-ambassador-contact_btn' do %>
-                    <i class="fa fa-facebook btn-action-icon"></i><span class="btn-action-label">current_ambassador.facebook_url</span>
+                  <%= link_to '//' + current_ambassador.facebook_url, title: current_ambassador.facebook_url, class: 'btn btn-default btn-link btn-action dropdown-ambassador-contact_btn', target: '_blank' do %>
+                    <i class="fa fa-fw fa-facebook btn-action-icon"></i><span class="btn-action-label">My Facebook Page</span>
                   <% end %>
                 </div>
               <% end %>
 
               <% if current_ambassador.twitter_handle %>
                 <div class="col-grid-float-6">
-                  <%= link_to current_ambassador.twitter_handle,  title: current_ambassador.twitter_handle, class: 'btn btn-default btn-link btn-action dropdown-ambassador-contact_btn' do %>
-                    <i class="fa fa-twitter btn-action-icon"></i><span class="btn-action-label">current_ambassador.twitter_handle</span>
+                  <%= link_to '//' + current_ambassador.twitter_handle, title: current_ambassador.twitter_handle, class: 'btn btn-default btn-link btn-action dropdown-ambassador-contact_btn', target: '_blank' do %>
+                    <i class="fa fa-fw fa-twitter btn-action-icon"></i><span class="btn-action-label">Follow me on Twitter</span>
                   <% end %>
                 </div>
               <% end %>
 
               <% if current_ambassador.instagram_url %>
                 <div class="col-grid-float-6">
-                  <%= link_to current_ambassador.instagram_url,  title: current_ambassador.instagram_url, class: 'btn btn-default btn-link btn-action dropdown-ambassador-contact_btn' do %>
-                    <i class="fa fa-instagram btn-action-icon"></i><span class="btn-action-label">current_ambassador.instagram_url</span>
+                  <%= link_to '//' + current_ambassador.instagram_url, title: current_ambassador.instagram_url, class: 'btn btn-default btn-link btn-action dropdown-ambassador-contact_btn', target: '_blank' do %>
+                    <i class="fa fa-fw fa-instagram btn-action-icon"></i><span class="btn-action-label">Follow me on Instagram</span>
                   <% end %>
                 </div>
               <% end %>
