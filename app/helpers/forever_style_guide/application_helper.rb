@@ -82,6 +82,15 @@ module ForeverStyleGuide
       current_user.storage_used.to_f / current_user.storage_capacity.to_f
     end
 
+    # Admin Links
+    def store_admin_url
+      www_url('/admin')
+    end
+
+    def web_app_admin_url
+      web_app_url('/admin')
+    end
+
     # Web App Paths
     def library_url
       web_app_url('/inbox')

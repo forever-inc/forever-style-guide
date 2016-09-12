@@ -18,7 +18,21 @@
 
         <li class="dropdown-menu-account-divider"></li>
 
-        <li class="dropdown-menu-account-item">
+        <% if current_user.superadmin? %>
+          <li class="dropdown-menu-account-item">
+            <%= link_to store_admin_url, class: 'dropdown-menu-nav-link dropdown-menu-nav-link-no_margin', title: 'Administer The Forever Store' do %>
+              <i class='fa fa-shopping-basket fa-fw'></i>Store Admin
+            <% end %>
+          </li>
+
+          <li class="dropdown-menu-account-item">
+            <%= link_to web_app_admin_url, class: 'dropdown-menu-nav-link dropdown-menu-nav-link-no_margin', title: 'Administer The Forever Web App' do %>
+              <i class='fa fa-magic fa-fw'></i>Web App Admin
+            <% end %>
+          </li>
+        <% end %>
+
+        <li class="dropdown-menu-account-item <%= 'hide' if current_user.superadmin? %>">
           <p class="color-gray-300">
 
             <span class="dropdown-menu-account-storage"><%= storage_ratio_percent %> of <%= capacity_readable %></span>
@@ -34,14 +48,14 @@
 
         <li class="dropdown-menu-account-item">
           <%= link_to user_settings_url, class: 'dropdown-menu-nav-link dropdown-menu-nav-link-no_margin', title: 'View User Settings' do %>
-            <i class='fa fa-cog'></i>Settings
+            <i class='fa fa-cog fa-fw'></i>Settings
           <% end %>
         </li>
 
         <% if current_user.linked_ambassador.try(:active?) %>
           <li class="dropdown-menu-account-item">
             <%= link_to back_office_url, class: 'dropdown-menu-nav-link dropdown-menu-nav-link-no_margin', title: 'Ambassador Back Office Reports' do %>
-              <i class='fa fa-suitcase'></i>My Back Office
+              <i class='fa fa-suitcase fa-fw'></i>My Back Office
             <% end %>
           </li>
         <% end %>
@@ -50,7 +64,7 @@
 
         <li class="dropdown-menu-account-item">
           <%= link_to log_out_url, method: :delete, class: 'dropdown-menu-nav-link dropdown-menu-nav-link-no_margin', title: 'Log Out of Forever' do %>
-            <i class='fa fa-share'></i>Log Out
+            <i class='fa fa-share fa-fw'></i>Log Out
           <% end %>
         </li>
       </ul>
