@@ -1,0 +1,32 @@
+.impersonation_banner {
+  overflow: hidden;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-size: $font-size-200;
+}
+
+.btn.btn-cancel_impersonation {
+  height: auto;
+  color: $color-white;
+  font-size: $font-size-200;
+
+  @media (min-width: $screen-sm-min) {
+    float: right;
+    margin-top: -3px; //account for fa-close icon throwing off vertical alignment
+  }
+  @media (max-width: $screen-xs-max) {
+    display: block;
+    clear: both;
+    text-align: left;
+  }
+
+  &:link,
+  &:hover,
+  &:focus,
+  &:active,
+  &:active:focus {
+    color: $color-white;
+    text-decoration: none;
+    padding: 0;
+  }
+}

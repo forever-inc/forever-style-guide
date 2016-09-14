@@ -91,6 +91,10 @@ module ForeverStyleGuide
       web_app_url('/admin')
     end
 
+    def stop_impersonating_url
+      web_app_url('/admin/users')
+    end
+
     # Web App Paths
     def library_url
       web_app_url('/inbox')

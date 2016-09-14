@@ -1,4 +1,9 @@
 <header id='header-is_fixed'>
+
+  <% if defined?(current_admin) && current_admin.present? %>
+    <%= render partial: "forever_style_guide/sections/components/navigation/impersonation_banner" %>
+  <% end %>
+
   <nav class='navbar navbar-default color_block-white' role='navigation'>
 
     <div class='navbar-header'>
