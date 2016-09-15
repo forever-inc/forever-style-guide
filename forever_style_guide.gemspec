@@ -17,7 +17,7 @@ Gem::Specification.new do |s|
   s.files = Dir[
     "{app}/assets/stylesheets/forever_style_guide/*",
     "{app}/assets/javascripts/forever_style_guide/*",
-    "{app}/assets/javascripts/forever_style_guide/*",
+    "{app}/assets/images/forever_style_guide/*",
   ]
 
   s.add_dependency "rails", "~> 4.2.0"
