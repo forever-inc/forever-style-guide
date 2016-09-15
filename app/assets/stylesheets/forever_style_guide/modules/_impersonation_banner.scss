@@ -9,6 +9,7 @@
   height: auto;
   color: $color-white;
   font-size: $font-size-200;
+  text-decoration: none;
 
   @media (min-width: $screen-sm-min) {
     float: right;
@@ -26,7 +27,6 @@
   &:active,
   &:active:focus {
     color: $color-white;
-    text-decoration: none;
     padding: 0;
   }
 }
