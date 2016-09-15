@@ -4,7 +4,7 @@
       <span class="hidden-xs">Logged in as <%= current_admin.name %>, but a</span><span class="visible-xs-inline">A</span>cting on behalf of <%= current_user.name %>
     </div>
     <%= link_to stop_impersonating_url, class: 'btn btn-sm btn-link btn-cancel_impersonation' do %>
-      <i class="fa fa-times"></i> Stop Managing <%= current_user.name %>
+      <i class="fa fa-times"></i> Stop Managing <span class="hidden-xs"><%= current_user.name %></span>
     <% end %>
   </div>
 </div>
