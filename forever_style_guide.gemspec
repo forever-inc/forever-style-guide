@@ -18,6 +18,8 @@ Gem::Specification.new do |s|
     "{app}/assets/stylesheets/forever_style_guide/*",
     "{app}/assets/javascripts/forever_style_guide/*",
     "{app}/assets/images/forever_style_guide/*",
+    "{app}/helpers/forever_style_guide/*",
+    "Rakefile"
   ]
 
   s.add_dependency "rails", "~> 4.2.0"
