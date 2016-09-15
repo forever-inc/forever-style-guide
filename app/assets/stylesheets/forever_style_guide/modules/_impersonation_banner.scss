@@ -1,5 +1,6 @@
 .impersonation_banner {
   overflow: hidden;
+  min-width: $minimum-application-width;
   padding-top: 5px;
   padding-bottom: 5px;
   font-size: $font-size-200;
