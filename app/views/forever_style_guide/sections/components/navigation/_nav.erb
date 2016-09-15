@@ -1,4 +1,9 @@
 <header id='header-is_fixed'>
+
+  <% if defined?(current_admin) && current_admin.present? %>
+    <%= render partial: "forever_style_guide/sections/components/navigation/impersonation_banner" %>
+  <% end %>
+
   <nav class='navbar navbar-default color_block-white' role='navigation'>
 
     <div class='navbar-header'>
@@ -10,6 +15,7 @@
       <div class="navbar-brand">
         <%= link_to marketing_home_url, title: 'Forever Guaranteed Storage, Digital Scrapbooking, and Printing Logo' do %>
           <%= image_tag image_url("forever_style_guide/forever-logo.jpg"), class: "navbar-brand-logo", alt: "Forever Guaranteed Storage, Digital Scrapbooking, and Printing Logo", title: 'Forever Guaranteed Storage, Digital Scrapbooking, and Printing Logo' %>
+          <%= image_tag image_url("forever_style_guide/forever-logo-xs.png"), class: "navbar-brand-logo-xs", alt: "Forever Guaranteed Storage, Digital Scrapbooking, and Printing Logo", title: 'Forever Guaranteed Storage, Digital Scrapbooking, and Printing Logo' %>
         <% end %>
       </div>
 

@@ -22,6 +22,23 @@ $nav-bg-color: color('gray-700');
   margin: auto;
   padding: $padding-small-vertical 0 0;
   text-align: center;
+
+  .navbar-brand-logo-xs {
+    display: none;
+  }
+
+  @media (max-width: $minimum-application-width) {
+    padding-top: 0;
+    padding-right: $header-height;
+    padding-left: $header-height;
+
+    .navbar-brand-logo-xs {
+      display: block;
+    }
+    .navbar-brand-logo {
+      display: none;
+    }
+  }
 }
 .navbar {
   border-radius: 0;
