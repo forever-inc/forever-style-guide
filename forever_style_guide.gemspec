@@ -14,8 +14,16 @@ Gem::Specification.new do |s|
   s.description = "Install this as a gem in your Forever app and it will expose style guide through /style-guide route"
   s.license     = "MIT"
 
-  s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc"]
-  s.test_files = Dir["test/**/*"]
+  s.files = Dir[
+    "{config,db,lib}/**/*",
+    "{app/assets/fonts}/**/*",
+    "{app/assets/images/forever_style_guide}/**/*",
+    "{app/assets/javascripts/forever_style_guide}/**/*",
+    "{app/assets/stylesheets/forever_style_guide}/**/*",
+    "{app/helpers/forever_style_guide}/**/*",
+    "{app/views/forever_style_guide/sections/components/navigation}/**/*",
+    "{app/views/forever_style_guide/sections/components/footer}/**/*"
+    ]
 
   s.add_dependency "rails", "~> 4.2.0"
   s.add_dependency "style-guide"
