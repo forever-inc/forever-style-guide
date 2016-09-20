@@ -20,7 +20,7 @@ $checkbox_size: 20px;
     display: inline-block;
  
     label {
-      padding-left: $checkbox_size + 10px;
+      padding-left: $checkbox_size * 1.5;
     }
   }
 
