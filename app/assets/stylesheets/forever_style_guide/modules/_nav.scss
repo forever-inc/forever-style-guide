@@ -27,7 +27,7 @@ $nav-bg-color: color('gray-700');
     display: none;
   }
 
-  @media (max-width: $minimum-application-width) {
+  @media (max-width: $minimum-application-width-xs-max) {
     padding-top: 0;
     padding-right: $header-height;
     padding-left: $header-height;

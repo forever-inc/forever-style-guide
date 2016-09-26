@@ -79,9 +79,12 @@ $border-radius-modal: 6px;
 }
 
 .modal-content.modal-promo {
-  background-image: url('modals/promobg.jpg');
   background-size: cover;
   height: $modal-promo-height;
+}
+
+.modal-promo-sample {
+  background-image: url('modals/promobg.jpg');
 }
 
 .modal-promo-content {
