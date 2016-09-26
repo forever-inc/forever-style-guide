@@ -48,3 +48,7 @@ $screen-xl-max:              ($screen-xxl-min - 1) !global;
 $grid-float-breakpoint: 920px!global;
 //** Point at which the navbar begins collapsing.
 $grid-float-breakpoint-max: ($grid-float-breakpoint - 1) !global;
+
+// Assign a minimum body width for the application
+$minimum-application-width: 320px;
+$minimum-application-width-xs-max: ($minimum-application-width - 1) !global;
