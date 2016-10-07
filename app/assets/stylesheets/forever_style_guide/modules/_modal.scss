@@ -2,7 +2,8 @@ $modal-padding-footer: 15px;
 $modal-form-width-lg: 355px;
 $modal-product-suggestion-sm: 170px;
 $modal-promo-height: 475px;
-$border-radius-modal: 6px;
+$border-radius-modal: 4px;
+$kit_promo-dark: #4b2d2f;
 
 .modal-content {
   border: none;
@@ -13,10 +14,26 @@ $border-radius-modal: 6px;
   border: none;
   border-top-right-radius: inherit;
   border-top-left-radius: inherit;
+  padding: 10px;
+
+  &.modal-promo-header {
+    background-color: transparent;
+  }
+
+  .close {
+    margin-top: 1px; // visual alignment
+    color: $color-gray-700;
+    opacity: 1.0;
+    @extend %no-shadow;
+    &:hover {
+      color: $color-gray-600;
+    }
+  }
 }
 
 .modal-title {
   font-family: $font-face-light;
+  font-size: $font-size-500;
   color: inherit;
 }
 
@@ -62,11 +79,27 @@ $border-radius-modal: 6px;
   text-decoration: none;
 }
 
+.modal-dialog {
+  @media (min-width: $screen-xs-min) {
+    margin: ($header-height + 5) 10px 0;
+  }
+  @media (min-width: $screen-sm-min) {
+    margin: ($header-height + 5) auto 0;
+  }
+  @media (min-width: $screen-md-min) {
+    margin-top: $header-height * 2;
+   }
+ }
+
 .close:hover,
 .close:focus,
 .modal-close:hover,
 .modal-close:focus {
   cursor: pointer;
+}
+
+.modal-promo-kit-close {
+  color: $kit_promo-dark;
 }
 
 .modal-footer-txt.checkbox {
@@ -85,6 +118,11 @@ $border-radius-modal: 6px;
 
 .modal-promo-sample {
   background-image: url('modals/promobg.jpg');
+}
+
+.modal-promo-kit {
+  background-position: 50%;
+  image-rendering: -webkit-optimize-contrast; // fixes text-in-image fuzziness in Chrome
 }
 
 .modal-promo-content {
