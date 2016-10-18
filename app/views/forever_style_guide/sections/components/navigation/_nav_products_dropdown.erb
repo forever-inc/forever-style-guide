@@ -125,6 +125,12 @@
 
         <ul class="list-unstyled">
           <li>
+            <%= link_to promotions_url, class: 'dropdown-menu-nav-link', title: 'Photo Printing, Digital Art, and Storage Promotions' do %>
+              <i class='fa fa-star'></i>Current Promotions
+            <% end %>
+          </li>
+          
+          <li>
             <%= link_to 'Gift Certificates', gifts_url, class: 'dropdown-menu-nav-link', title: 'Buy Forever Gift Certificates' %>
           </li>
 
