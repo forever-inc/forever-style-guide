@@ -1,69 +1,68 @@
-// Styling checkboxes and radio buttons by hiding the input and using pseudo-classes
-// This technique is a bit more tightly coupled to the markup than we'd prefer but it gives us a lot of cross-browser style control
-.checkbox.checkbox-branded,
-.checkbox-inline.checkbox-branded,
-.radio.radio-branded,
-.radio-inline.radio-branded {
-  input[type="checkbox"],
-  input[type="radio"] {
-    opacity: 0;
-    width: 0;
-    height: 0;
-  }
-  .checkbox-visual,
-  .radio-visual {
-    margin-right: 15px;
-    float: left;
+$checkbox_size: 20px;
 
-    &:before {
-      @extend %check-style;
-      background-color: color('gray-200');
-      color: color('gray-400');
-      font-family: fontawesome;
+@mixin checkbox($background-color, $border-color) {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: $checkbox_size;
+  height: $checkbox_size;
+  background-color: $background-color;
+  border: 2px solid $border-color;
+  border-radius: $border-radius-large;
+  @include transition(border-color 0.2s ease-in-out, background-color 0.2s ease-in-out);
+}
+
+.checkbox-branded {
+  position: relative;
+  font-size: $font-size-default;
+
+  &.checkbox { // using added specificity of .checkbox to override bootstrap
+    display: inline-block;
+ 
+    label {
+      padding-left: $checkbox_size * 1.5;
     }
   }
-  input[type="checkbox"]:checked + .checkbox-visual:before,
-  input[type="radio"]:checked + .radio-visual:before {
-    color: color('white');
-    background-color: color('primary');
-  }
-  .checkbox-label,
-  .radio-label {
-    display: block;
-    padding-left: 0;
-    line-height: $btn-xs-size;
+
+  label {
+    cursor: pointer;
+    padding-left: $checkbox_size * 0.75;
+
+    @media (max-width: $screen-md-min) {
+      line-height: $font-size-default; // helps labels that wrap to two lines
+    }
+
+    &:before {
+      @include checkbox($color-white, $color-gray-400);
+      content: '';
+    }
+    &:after {
+      @include checkbox($color-white, $color-gray-400);
+      content: '\f00c';
+      font-family: fontawesome;
+      color: $color-white;
+      padding-left: 1px; // horizontal alignment of check w/ in box
+      line-height: 17px; // vertical alignment of check w/ in box
+      opacity: 0;
+    }
+    &:hover::after {
+      border-color: $color-gray-500;
+      opacity: 1;
+    }
+  } 
+
+  input[type=checkbox] {
+    visibility: hidden;
+
+    &:checked + label:after,
+    &:checked + .has-error label:after
+     {
+      @include checkbox($color-primary, color('primary-dark'));
+      opacity: 1;
+    }
   }
 }
-
-.checkbox-inline.checkbox-branded,
-.radio-inline.radio-branded {
-  padding-left: 0;
-
-  .checkbox-label,
-  .radio-label {
-    display: inline-block;
-    margin-right: 25px;
-  }
-}
-
-.checkbox.checkbox-branded, 
-.checkbox-inline.checkbox-branded {
-  .checkbox-visual:before {
-    content: "\f00c";
-    border-radius: $border-radius-default;
-  }
-  input[type="checkbox"]:checked + .checkbox-visual:before {
-    background-color: color('primary');
-  }
-}
-.radio.radio-branded,
-.radio-inline.radio-branded {
-  .radio-visual:before {
-    content: "\f111";
-    padding-top: 1px; //shim for text alignment
-    @include circle($btn-xs-size, color('gray-200'));
-  }
-  input[type="radio"]:checked + .radio-visual:before {
-    background-color: color('secondary');
-  }
+.checkbox-branded-inline {
+  float: left;
+  margin-right: $checkbox_size * 1.5;
 }
