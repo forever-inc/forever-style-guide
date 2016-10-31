@@ -178,7 +178,7 @@ module ForeverStyleGuide
     end
 
     def promotions_url
-      www_url('/holidays')
+      www_url('/promotions')
     end
 
     def shipping_info_url
