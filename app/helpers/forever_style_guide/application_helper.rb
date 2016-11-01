@@ -120,6 +120,10 @@ module ForeverStyleGuide
       web_app_url('/#/settings')
     end
 
+    def ambassador_settings_url
+      web_app_url('/#/settings/ambassador')
+    end
+
     # Combined Store/WWW Paths - now all available at www.forever.com
     def login_url
       www_url('/sign_in')

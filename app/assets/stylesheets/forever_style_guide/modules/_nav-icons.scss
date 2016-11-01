@@ -30,7 +30,7 @@ $cart-count-width: 20px;
 }
 
 // Style offcanvas account icons consistent w/ product dropdowns
-@media (max-width: $grid-float-breakpoint) {
+@media (max-width: $grid-float-breakpoint-max) {
   .navbar-account_item .nav-icon-stack {
     width: auto;
     padding: 15px !important; // override .navbar .nav.navbar-nav > li > a
@@ -55,7 +55,7 @@ $cart-count-width: 20px;
     font-size: 9px;
     @include transition(transform 0.2s ease-in-out);
 
-    @media(max-width: $grid-float-breakpoint) {
+    @media(max-width: $grid-float-breakpoint-max) {
       @include chevron-style;
     }
   }
@@ -102,7 +102,7 @@ a.cart-icon {
   }
 }
 a.cart-icon {
-  @media (max-width: $grid-float-breakpoint) {
+  @media (max-width: $grid-float-breakpoint-max) {
     position: absolute;
     right: 0;
     @include nav-border(left);

@@ -10,7 +10,7 @@ $nav-bg-color: color('gray-700');
 
 // Basic styles - A lot of overriding Bootstrap defaults
 .navbar-toggle {
-  @media (max-width: $grid-float-breakpoint) {
+  @media (max-width: $grid-float-breakpoint-max) {
     display: block;
   }
 }
@@ -49,7 +49,7 @@ $nav-bg-color: color('gray-700');
     margin-top: 0;
     margin-bottom: 0;
 
-    @media (max-width: $grid-float-breakpoint) {
+    @media (max-width: $grid-float-breakpoint-max) {
       margin-left: 0;
       margin-right: 0;
     }
@@ -59,7 +59,7 @@ $nav-bg-color: color('gray-700');
       color: color('gray-400');
       font-size: $font-size-500;
 
-      @media (max-width: $grid-float-breakpoint) {
+      @media (max-width: $grid-float-breakpoint-max) {
         padding-top: $offcanvas-padding;
         @include nav-border(top);
         border-color: color('gray-600')
@@ -88,7 +88,7 @@ $nav-bg-color: color('gray-700');
 
       &:hover,
       &:focus {
-        @media (max-width: $grid-float-breakpoint) {
+        @media (max-width: $grid-float-breakpoint-max) {
           color: color('gray-400');
         }
       }
