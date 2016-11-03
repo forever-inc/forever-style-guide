@@ -121,7 +121,7 @@ module ForeverStyleGuide
     end
 
     def ambassador_settings_url
-      web_app_url('/#/settings/ambassador')
+      www_url('/settings/my_ambassador')
     end
 
     # Combined Store/WWW Paths - now all available at www.forever.com
