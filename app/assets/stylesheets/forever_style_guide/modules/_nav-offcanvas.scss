@@ -1,9 +1,8 @@
 // https://github.com/iamphill/Bootstrap-Offcanvas
 $offcanvas-width:                 270px !default;
 $offcanvas-animation-time:        .15s !default;
-$offcanvas-media-max:             $grid-float-breakpoint-max!default;
 
-@media (max-width: $offcanvas-media-max) {
+@media (max-width: $grid-float-breakpoint-max) {
   .offcanvas-stop-scrolling {
     height: 100%;
     overflow: hidden;

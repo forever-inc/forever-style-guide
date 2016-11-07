@@ -58,6 +58,7 @@ $your-ambassador-intro-text-width: 110px;
 }
 .dropdown-ambassador-edit_btn {
   display: block;
+
   @media (min-width: $grid-float-breakpoint) {
     margin-top: -30px;
   }
