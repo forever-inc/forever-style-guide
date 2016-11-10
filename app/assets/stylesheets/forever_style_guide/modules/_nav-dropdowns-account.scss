@@ -7,7 +7,7 @@
   .progress {
     margin-bottom: 10px;
   }
-  @media (max-width: $grid-float-breakpoint) {
+  @media (max-width: $grid-float-breakpoint-max) {
     @include nav-border(bottom);
   }
   @media (min-width: $grid-float-breakpoint) {
@@ -28,7 +28,7 @@
   margin-bottom: 10px;
   @include nav-border(bottom);
 
-  @media (max-width: $grid-float-breakpoint) {
+  @media (max-width: $grid-float-breakpoint-max) {
     border-color: color('gray-600');
   }
 }
@@ -45,14 +45,14 @@
   border: 0;
   box-shadow: none;
 
-  @media (max-width: $grid-float-breakpoint) {
+  @media (max-width: $grid-float-breakpoint-max) {
     height: 40px; // avatar-xs
     width: 40px;
     margin-top: $padding-small-vertical;
   }
 }
 .dropdown-menu-account-storage {
-  @media (max-width: $grid-float-breakpoint) {
+  @media (max-width: $grid-float-breakpoint-max) {
     font-size: $font-size-default;
   }
 }
