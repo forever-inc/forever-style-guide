@@ -32,6 +32,16 @@ module ForeverStyleGuide
       url = URI.decode(url.to_s)
     end
 
+    def absolute_url(url_str)
+      return  unless url_str.present?
+
+      url_str = url_str.strip
+
+      return url_str if url_str =~ /https?\:/i
+
+      "http://" + url_str
+    end
+
     def has_item_in_cart?
       defined?(current_order) && current_order.product_count > 0
     end
@@ -396,16 +406,6 @@ module ForeverStyleGuide
 
     def zendesk_tags_video_url
       "https://forever1.zendesk.com/hc/en-us/articles/223595308-Using-Albums-and-Tags-Video-"
-    end
-
-    def absolute_url(url_str)
-      return  unless url_str.present?
-
-      url_str = url_str.strip
-
-      return url_str if url_str =~ /https?\:/i
-
-      "http://" + url_str
     end
 
     # Path helpers for style guide dummy app
