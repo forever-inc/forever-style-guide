@@ -56,33 +56,33 @@
                 </div>
               <% end %>
 
-              <% if current_ambassador.website %>
+              <% if current_ambassador.website.present? %>
                 <div class="col-grid-float-6">
-                  <%= link_to '//' + current_ambassador.website, title: current_ambassador.website, class: 'btn btn-default btn-link btn-action dropdown-ambassador-contact_btn', target: '_blank' do %>
+                  <%= link_to absolute_url(current_ambassador.website), title: absolute_url(current_ambassador.website), class: 'btn btn-default btn-link btn-action dropdown-ambassador-contact_btn', target: '_blank' do %>
                     <i class="fa fa-fw fa-link btn-action-icon"></i><span class="btn-action-label">My Website</span>
                   <% end %>
                 </div>
               <% end %>
 
-              <% if current_ambassador.facebook_url %>
+              <% if current_ambassador.facebook_url.present? %>
                 <div class="col-grid-float-6">
-                  <%= link_to '//' + current_ambassador.facebook_url, title: current_ambassador.facebook_url, class: 'btn btn-default btn-link btn-action dropdown-ambassador-contact_btn', target: '_blank' do %>
+                  <%= link_to absolute_url(current_ambassador.facebook_url), title: absolute_url(current_ambassador.facebook_url), class: 'btn btn-default btn-link btn-action dropdown-ambassador-contact_btn', target: '_blank' do %>
                     <i class="fa fa-fw fa-facebook btn-action-icon"></i><span class="btn-action-label">My Facebook Page</span>
                   <% end %>
                 </div>
               <% end %>
 
-              <% if current_ambassador.twitter_handle %>
+              <% if current_ambassador.twitter_handle.present? %>
                 <div class="col-grid-float-6">
-                  <%= link_to '//' + current_ambassador.twitter_handle, title: current_ambassador.twitter_handle, class: 'btn btn-default btn-link btn-action dropdown-ambassador-contact_btn', target: '_blank' do %>
+                  <%= link_to absolute_url(current_ambassador.twitter_handle), title: absolute_url(current_ambassador.twitter_handle), class: 'btn btn-default btn-link btn-action dropdown-ambassador-contact_btn', target: '_blank' do %>
                     <i class="fa fa-fw fa-twitter btn-action-icon"></i><span class="btn-action-label">Follow me on Twitter</span>
                   <% end %>
                 </div>
               <% end %>
 
-              <% if current_ambassador.instagram_url %>
+              <% if current_ambassador.instagram_url.present? %>
                 <div class="col-grid-float-6">
-                  <%= link_to '//' + current_ambassador.instagram_url, title: current_ambassador.instagram_url, class: 'btn btn-default btn-link btn-action dropdown-ambassador-contact_btn', target: '_blank' do %>
+                  <%= link_to absolute_url(current_ambassador.instagram_url), title: absolute_url(current_ambassador.instagram_url), class: 'btn btn-default btn-link btn-action dropdown-ambassador-contact_btn', target: '_blank' do %>
                     <i class="fa fa-fw fa-instagram btn-action-icon"></i><span class="btn-action-label">Follow me on Instagram</span>
                   <% end %>
                 </div>
