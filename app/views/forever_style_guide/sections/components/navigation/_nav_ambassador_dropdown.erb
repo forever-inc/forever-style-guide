@@ -20,7 +20,7 @@
 
           <% if has_ambassador? %>
 
-            <%= link_to 'Manage Ambassador', ambassador_settings_url, title: 'Manage Your Forever Ambassador', class: 'pull-right-grid-float-breakpoint dropdown-ambassador-edit_btn' %>
+            <%= link_to 'Manage Ambassador', current_user ? ambassador_settings_url : find_ambassador_url, title: 'Manage Your Forever Ambassador', class: 'pull-right-grid-float-breakpoint dropdown-ambassador-edit_btn' %>
             <div class='dropdown-menu-account-divider'></div>
 
             <div>
