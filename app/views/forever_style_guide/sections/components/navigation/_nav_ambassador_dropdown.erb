@@ -34,7 +34,7 @@
             <div class="dropdown-ambassador-basic_info">
               <h4 class="color-ambassador-light dropdown-ambassador-name"><%= current_ambassador.name %></h4>
               <p class="color-gray-300 page-title dropdown-ambassador-rank"><%= current_ambassador.rank %></p>
-              <p class="color-gray-300 page-title dropdown-ambassador-city"><%= current_ambassador.city %>, <%= current_ambassador.region %></p>
+              <p class="color-gray-300 page-title dropdown-ambassador-city"><%= current_ambassador.address.try(:city) || current_ambassador.city %>, <%= current_ambassador.address.try(:region) || current_ambassador.region %></p>
             </div>
 
             <div class='dropdown-menu-account-divider'></div>
@@ -48,7 +48,7 @@
                 </div>
               <% end %>
 
-              <% if current_ambassador.phone %>
+              <% if current_ambassador.phone.present? %>
                 <div class="col-grid-float-6">
                   <%= link_to ('tel:+' + number_to_phone(current_ambassador.phone)), title: 'Call ' + current_ambassador.name, class: 'btn btn-default btn-link btn-action dropdown-ambassador-contact_btn' do %>
                     <i class="fa fa-fw fa-phone btn-action-icon"></i><span class="btn-action-label"><%= number_to_phone(current_ambassador.phone) %></span>
