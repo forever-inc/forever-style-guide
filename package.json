@@ -1,0 +1,22 @@
+{
+  "name": "forever-style-guide",
+  "version": "1.0.0",
+  "description": "Built on top of https://github.com/pivotalexperimental/style-guide",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/forever-inc/forever-style-guide.git"
+  },
+  "author": "",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/forever-inc/forever-style-guide/issues"
+  },
+  "homepage": "https://github.com/forever-inc/forever-style-guide#readme"
+}
