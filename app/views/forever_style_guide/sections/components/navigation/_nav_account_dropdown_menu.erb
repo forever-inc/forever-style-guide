@@ -16,8 +16,6 @@
           </div>
         </li>
 
-        <li class="dropdown-menu-account-divider"></li>
-
         <% if current_user.superadmin? %>
           <li class="dropdown-menu-account-item">
             <%= link_to store_admin_url, class: 'dropdown-menu-nav-link dropdown-menu-nav-link-no_margin', title: 'Administer The Forever Store' do %>
@@ -33,10 +31,10 @@
         <% end %>
 
         <li class="dropdown-menu-account-item <%= 'hide' if current_user.superadmin? %>">
-          <p class="color-gray-300">
+          <p class="dropdown-menu-account-storage color-gray-300">
 
-            <span class="dropdown-menu-account-storage"><%= storage_ratio_percent %> of <%= capacity_readable %></span>
-            <%= link_to "Upgrade", upgrade_url, class: 'small', title: "Upgrade your Forever Guaranteed Permanent Storage" %>
+            <%= storage_ratio_percent %> of <%= capacity_readable %>
+            <%= link_to "Upgrade", upgrade_url, title: "Upgrade your Forever Guaranteed Permanent Storage" %>
           </p>
 
           <div class="progress progress-thin color_block-gray-400">
@@ -44,27 +42,44 @@
           </div>
         </li>
 
-        <li class="dropdown-menu-account-divider"></li>
-
-        <li class="dropdown-menu-account-item">
-          <%= link_to user_settings_url, class: 'dropdown-menu-nav-link dropdown-menu-nav-link-no_margin', title: 'View User Settings' do %>
-            <i class='fa fa-cog fa-fw'></i>Settings
-          <% end %>
-        </li>
-
         <% if current_user.linked_ambassador.try(:active?) %>
           <li class="dropdown-menu-account-item">
-            <%= link_to back_office_url, class: 'dropdown-menu-nav-link dropdown-menu-nav-link-no_margin', title: 'Ambassador Back Office Reports' do %>
+            <%= link_to back_office_url, class: 'dropdown-menu-nav-link dropdown-menu-nav-link-small dropdown-menu-nav-link-no_margin', title: 'Ambassador Back Office Reports' do %>
               <i class='fa fa-suitcase fa-fw'></i>My Back Office
             <% end %>
           </li>
+          <li class="dropdown-menu-account-divider dropdown-menu-account-divider-thin hidden-xs hidden-sm"></li>
         <% end %>
 
-        <li class="dropdown-menu-account-divider hidden-xs hidden-sm"></li>
+        <li class="dropdown-menu-account-item">
+          <%= link_to user_settings_url, class: 'dropdown-menu-nav-link dropdown-menu-nav-link-small dropdown-menu-nav-link-no_margin', title: 'View User Settings' do %>
+            <i class='fa fa-cog fa-fw'></i>Account Settings
+          <% end %>
+        </li>
+
+        <li class="dropdown-menu-account-item">
+          <%= link_to user_order_history_url, class: 'dropdown-menu-nav-link dropdown-menu-nav-link-small dropdown-menu-nav-link-no_margin', title: 'View Order History' do %>
+            <i class='fa fa-credit-card fa-fw'></i>Order History
+          <% end %>
+        </li>
+
+        <li class="dropdown-menu-account-item">
+          <%= link_to user_downloads_url, class: 'dropdown-menu-nav-link dropdown-menu-nav-link-small dropdown-menu-nav-link-no_margin', title: 'View Downloads' do %>
+            <i class='fa fa-cloud-download fa-fw'></i>Downloads
+          <% end %>
+        </li>
+
+        <li class="dropdown-menu-account-item">
+          <%= link_to projects_url, class: 'dropdown-menu-nav-link dropdown-menu-nav-link-small dropdown-menu-nav-link-no_margin', title: 'View Downloads' do %>
+            <i class='fa fa-paint-brush fa-fw'></i>Print Projects
+          <% end %>
+        </li>
+
+        <li class="dropdown-menu-account-divider dropdown-menu-account-divider-thin hidden-xs hidden-sm"></li>
 
         <li class="dropdown-menu-account-item">
 
-          <%= link_to current_admin ? stop_impersonating_url : log_out_url, class: 'dropdown-menu-nav-link dropdown-menu-nav-link-no_margin', title: 'Log Out of Forever' do %>
+          <%= link_to current_admin ? stop_impersonating_url : log_out_url, class: 'dropdown-menu-nav-link dropdown-menu-nav-link-small dropdown-menu-nav-link-no_margin', title: 'Log Out of Forever' do %>
             <i class='fa fa-share fa-fw'></i>Log Out
           <% end %>
         </li>

@@ -19,8 +19,8 @@
   overflow: hidden;
 
   @media (min-width: $grid-float-breakpoint) {
-    padding-top: 5px;
-    padding-bottom: 5px;
+    padding-top: 0;
+    padding-bottom: 10px;
   }
 }
 .dropdown-menu-account-divider {
@@ -31,6 +31,10 @@
   @media (max-width: $grid-float-breakpoint-max) {
     border-color: color('gray-600');
   }
+}
+.dropdown-menu-account-divider-thin {
+  margin-top: 0;
+  border-color: color('gray-600');
 }
 .dropdown-menu-account-user {
   overflow: hidden;
@@ -52,7 +56,6 @@
   }
 }
 .dropdown-menu-account-storage {
-  @media (max-width: $grid-float-breakpoint-max) {
-    font-size: $font-size-default;
-  }
+  margin-bottom: 0;
+  font-size: $font-size-200;
 }
