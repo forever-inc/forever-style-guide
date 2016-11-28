@@ -52,7 +52,6 @@ $color-live16-dark_blue:    colorify('live16-dark_blue', #142f3d) !default;
 // Forever LIVE! 2017 brand colors
 $color-live17-orange:       colorify('live17-orange', #f6921e) !default;
 $color-live17-teal:         colorify('live17-teal', #37b2bc) !default;
-$color-live17-dark_teal:    colorify('live17-dark_teal', #003439) !default;
 $color-live17-purple:       colorify('live17-purple', #902b89) !default;
 
 @each $id, $color in $colors {
