@@ -1,6 +1,7 @@
 .dropdown-menu-account {
   width: 100%;
   right: 0;
+  padding-top: 15px;
   border-bottom-right-radius: $border-radius-large;
   border-bottom-left-radius: $border-radius-large;
 
@@ -20,7 +21,7 @@
 
   @media (min-width: $grid-float-breakpoint) {
     padding-top: 0;
-    padding-bottom: 10px;
+    padding-bottom: $padding-small-vertical;
   }
 }
 .dropdown-menu-account-divider {
