@@ -126,8 +126,17 @@ module ForeverStyleGuide
       web_app_url('/')
     end
 
+    # User settings links (store and web app)
     def user_settings_url
       web_app_url('/#/settings')
+    end
+
+    def user_order_history_url
+      www_url('/settings/orders')
+    end
+
+    def user_downloads_url
+      www_url('/settings/downloads')
     end
 
     def ambassador_settings_url
