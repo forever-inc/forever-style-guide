@@ -62,8 +62,9 @@ $color-live17-purple:       colorify('live17-purple', #902b89) !default;
   .card.color_block-#{$id} {
     background-color: #{$color};
   }
+  @debug $color;
   .color_block-trans-#{$id} {
     background-color: #{$color};
-    background-color: rgba($color, 0.9);
+    //background-color: rgba($color, 0.9);
   }
 }

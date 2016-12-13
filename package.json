@@ -18,5 +18,9 @@
   "bugs": {
     "url": "https://github.com/forever-inc/forever-style-guide/issues"
   },
-  "homepage": "https://github.com/forever-inc/forever-style-guide#readme"
+  "homepage": "https://github.com/forever-inc/forever-style-guide#readme",
+  "dependencies": {
+    "bootstrap-sass": "^3.3.7",
+    "font-awesome": "^4.7.0"
+  }
 }
