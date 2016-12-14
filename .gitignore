@@ -14,6 +14,7 @@
 /.bundle
 /vendor/bundle/
 /vendor/ruby/
+/dist
 
 # minimal Rails specific artifacts
 db/*.sqlite3
