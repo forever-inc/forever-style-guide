@@ -93,7 +93,6 @@ class MarsStyleGuideBuild {
   resolveNodeModuleFolder(moduleName) {
     const parent = path.resolve(process.cwd(), '../', moduleName);
     const child = `${__dirname}/node_modules/${moduleName}`;
-    console.log(parent);
     if (fs.existsSync(parent)) {
       return parent;
     } else if (fs.existsSync(child)) {

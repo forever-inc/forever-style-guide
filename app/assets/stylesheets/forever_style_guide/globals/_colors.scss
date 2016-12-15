@@ -64,6 +64,6 @@ $color-live17-purple:       colorify('live17-purple', #902b89) !default;
   }
   .color_block-trans-#{$id} {
     background-color: #{$color};
-    //background-color: rgba($color, 0.9);
+    background-color: rgba($color, 0.9);
   }
 }
