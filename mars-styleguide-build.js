@@ -93,10 +93,13 @@ class MarsStyleGuideBuild {
   resolveNodeModuleFolder(moduleName) {
     const parent = path.resolve(process.cwd(), '../', moduleName);
     const child = `${__dirname}/node_modules/${moduleName}`;
+    const other = `${process.cwd()}/node_modules/${moduleName}`;
     if (fs.existsSync(parent)) {
       return parent;
     } else if (fs.existsSync(child)) {
       return child;
+    } else if (other) {
+      return other;
     }
     console.error(`ERROR: Module not found: ${moduleName}.`);
     console.error(`  - Ensure you have run 'npm install'.`);
