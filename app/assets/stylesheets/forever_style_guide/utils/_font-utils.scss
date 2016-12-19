@@ -1,0 +1,13 @@
+$font-sizes: () !default;
+$font-weights: () !default;
+
+@function fontify($id, $font-size) {
+  $font-sizes: map-merge($font-sizes, ($id: $font-size)) !global;
+  @return $font-size;
+}
+
+@function weightify($id, $font-weight) {
+  $font-weights: map-merge($font-weights, ($id: $font-weight)) !global;
+  @return $font-weight;
+}
+
