@@ -8,6 +8,25 @@ $nav-bg-color: color('gray-700');
   }
 }
 
+.navbar-nav > li > a {
+  padding: 8px;
+  text-transform: uppercase;
+}
+
+.navbar .navbar-nav.navbar-left > li > a {
+  padding-right: 20px;
+  padding-left: 20px;
+  text-transform: capitalize;
+  letter-spacing: 0.3px;
+}
+
+
+.navbar .navbar-nav.navbar-right > li > a {
+  padding: 10px 8px 8px;
+  font-size: 11px !important;
+}
+
+
 // Basic styles - A lot of overriding Bootstrap defaults
 .navbar-toggle {
   @media (max-width: $grid-float-breakpoint-max) {
@@ -17,10 +36,11 @@ $nav-bg-color: color('gray-700');
 .navbar-brand {
   position: absolute;
   width: 100%;
+  height: $header-height;
   left: 0;
   top: 0;
   margin: auto;
-  padding: $padding-small-vertical 0 0;
+  padding: 4px 0 0;
   text-align: center;
 
   .navbar-brand-logo-xs {
@@ -43,6 +63,7 @@ $nav-bg-color: color('gray-700');
 .navbar {
   border-radius: 0;
   border: none;
+  min-height: $header-height;
   @extend %card-shadow;
 
   .nav.navbar-nav {
@@ -57,7 +78,9 @@ $nav-bg-color: color('gray-700');
     > li > a {
       height: $header-height;
       color: color('gray-400');
-      font-size: $font-size-500;
+      font-size: $font-size-100;
+  float: left;
+
 
       @media (max-width: $grid-float-breakpoint-max) {
         padding-top: $offcanvas-padding;
@@ -67,7 +90,9 @@ $nav-bg-color: color('gray-700');
 
       @media (min-width: $grid-float-breakpoint) {
         color: color('gray-600');
-        font-size: $font-size-default;
+        font-size: $font-size-200;
+        font-family: $font-face-gotham;
+        font-weight: 500;
       }
       &:hover {
         @media (min-width: $grid-float-breakpoint) {

@@ -6,37 +6,33 @@
 <div class='dropdown-menu dropdown-menu-nav color_block-gray-700'>
   <div class='container dropdown-menu-nav-container'>
     <div class='row'>
+
       <div class='col-grid-float-3 l-padded-thin'>
-        <h3 class='dropdown-menu-nav-title page-title color-primary'>Media Management</h3>
+        <h3 class='dropdown-menu-nav-title page-title color-secondary'>Products</h3>
 
         <ul class="list-unstyled">
           <li>
-            <%= link_to storage_url, class: 'dropdown-menu-nav-link', title: 'Guaranteed Permanent Storage for Photos & Documents' do %>
-              <%= trademark("Forever Storage") %>
-            <% end %>
-            <small class="dropdown-menu-nav-link-subhead">View Pricing, Benefits and Features</small>
+            <%= link_to 'Photo Books', photo_books_url, class: 'dropdown-menu-nav-link', title: 'Create and Print Photo Books Online or with Artisan Scrapbooking Software' %>
           </li>
 
           <li>
-            <%= link_to services_url, class: 'dropdown-menu-nav-link', title: 'Digitization and Scanning Services' do %>
-              <span class='hidden-md'>Media </span>Conversion Services
-            <% end %>
-            <small class="dropdown-menu-nav-link-subhead">Scanning and Digitization</small>
+            <%= link_to 'Cards', cards_url, class: 'dropdown-menu-nav-link', title: 'Create and Print Cards Online or with Artisan Scrapbooking Software' %>
           </li>
 
           <li>
-            <%= link_to trademark('Forever Historian'), historian_url, class: 'dropdown-menu-nav-link', title: 'Photo Management Software for Windows' %>
-              <small class="dropdown-menu-nav-link-subhead">Windows Photo Software</small>
+            <%= link_to 'Calendars', calendars_url, class: 'dropdown-menu-nav-link', title: 'Create and Print Calendars Online or with Artisan Scrapbooking Software' %>
           </li>
 
           <li>
-            <%= link_to 'Mobile Apps', app_url, class: 'dropdown-menu-nav-link', title: 'Download Forever Mobile Apps' %>
-            <small class="dropdown-menu-nav-link-subhead">for iOS and Android</small>
+            <%= link_to 'Wall Art', wall_art_url, class: 'dropdown-menu-nav-link', title: 'Create and Print Canvases Online or with Artisan Scrapbooking Software' %>
           </li>
 
           <li>
-            <%= link_to trademark('Forever Valet'), valet_url, class: 'dropdown-menu-nav-link', title: 'Forever Valet Desktop Photo Uploader'  %>
-            <small class="dropdown-menu-nav-link-subhead">Desktop Uploader</small>
+            <%= link_to 'Photo Gifts', photo_gifts_url, class: 'dropdown-menu-nav-link', title: 'Create and Print Photo Gifts Online or with Artisan Scrapbooking Software' %>
+          </li>
+
+          <li>
+            <%= link_to 'Page Prints', page_prints_url, class: 'dropdown-menu-nav-link', title: 'Create and Print Scrapbooking Pages Online or with Artisan Scrapbooking Software' %>
           </li>
         </ul>
       </div>
@@ -52,27 +48,27 @@
           </li>
 
           <li>
-            <%= link_to 'Digital Art', digital_art_url, class: 'dropdown-menu-nav-link', title: 'Premium Digital Scrapbooking Art' %>
-            <small class="dropdown-menu-nav-link-subhead">Art Kits and Templates for Artisan</small>
-
-            <ul class="list-unstyled dropdown-menu-nav-bullets">
-              <li>
-                <%= link_to '- New Digital Art', new_digital_art_url, class: 'dropdown-menu-nav-link', title: 'Newest Digital Scrapbooking Art and Embellishments' %>
-              </li>
-
-              <li>
-                <%= link_to '- Free Kits', free_digital_art_url, class: 'dropdown-menu-nav-link dropdown-menu-nav-link-no_margin', title: 'On Sale Digital Scrapbooking Art and Embellishments' %>
-              </li>
-
-              <li>
-                <%= link_to '- Browse All', all_digital_art_url, class: 'dropdown-menu-nav-link dropdown-menu-nav-link-no_margin', title: 'All Digital Scrapbooking Art and Embellishments' %>
-              </li>
-            </ul>
+            <%= link_to trademark('Forever Historian'), historian_url, class: 'dropdown-menu-nav-link', title: 'Photo Management Software for Windows' %>
+              <small class="dropdown-menu-nav-link-subhead">Windows Photo Software</small>
           </li>
 
-          <li class="hide">
-            <%= link_to 'Forever Projects', projects_marketing_url, class: 'dropdown-menu-nav-link', title: 'Make Photo Books and Other Print Projects' %>
-            <small class="dropdown-menu-nav-link-subhead">Online Photo Books and More</small>
+          <li>
+            <%= link_to 'Digital Art', digital_art_url, class: 'dropdown-menu-nav-link', title: 'Premium Digital Scrapbooking Art' %>
+            <small class="dropdown-menu-nav-link-subhead hide">Art Kits and Templates for Artisan</small>
+
+            <ul class="dropdown-menu-nav-bullets color-gray-200">
+              <li>
+                <%= link_to 'New Digital Art', new_digital_art_url, class: 'dropdown-menu-nav-link dropdown-menu-nav-link-no_margin', title: 'Newest Digital Scrapbooking Art and Embellishments' %>
+              </li>
+
+              <li>
+                <%= link_to 'Free Kits', free_digital_art_url, class: 'dropdown-menu-nav-link dropdown-menu-nav-link-no_margin', title: 'On Sale Digital Scrapbooking Art and Embellishments' %>
+              </li>
+
+              <li>
+                <%= link_to 'Browse All', all_digital_art_url, class: 'dropdown-menu-nav-link dropdown-menu-nav-link-no_margin', title: 'All Digital Scrapbooking Art and Embellishments' %>
+              </li>
+            </ul>
           </li>
 
           <li>
@@ -84,74 +80,57 @@
       </div>
 
       <div class='col-grid-float-3 l-padded-thin'>
-        <h3 class='dropdown-menu-nav-title page-title color-secondary'>Printing</h3>
+        <h3 class='dropdown-menu-nav-title page-title color-primary'>Account Services</h3>
 
         <ul class="list-unstyled">
           <li>
-            <%= link_to 'All Print Products', print_url, class: 'dropdown-menu-nav-link', title: 'Create and Print Online or with Artisan Scrapbooking Software' %>
-            <small class="dropdown-menu-nav-link-subhead">Browse Products and View Pricing</small>
-
-            <ul class="list-unstyled dropdown-menu-nav-bullets">
-              <li>
-                <%= link_to '- Photo Books', photo_books_url, class: 'dropdown-menu-nav-link', title: 'Create and Print Photo Books Online or with Artisan Scrapbooking Software' %>
-              </li>
-
-              <li>
-                <%= link_to '- Cards', cards_url, class: 'dropdown-menu-nav-link', title: 'Create and Print Cards Online or with Artisan Scrapbooking Software' %>
-              </li>
-
-              <li>
-                <%= link_to '- Calendars', calendars_url, class: 'dropdown-menu-nav-link', title: 'Create and Print Calendars Online or with Artisan Scrapbooking Software' %>
-              </li>
-
-              <li>
-                <%= link_to '- Wall Art', wall_art_url, class: 'dropdown-menu-nav-link', title: 'Create and Print Canvases Online or with Artisan Scrapbooking Software' %>
-              </li>
-
-              <li>
-                <%= link_to '- Photo Gifts', photo_gifts_url, class: 'dropdown-menu-nav-link', title: 'Create and Print Photo Gifts Online or with Artisan Scrapbooking Software' %>
-              </li>
-
-              <li>
-                <%= link_to '- Page Prints', page_prints_url, class: 'dropdown-menu-nav-link', title: 'Create and Print Scrapbooking Pages Online or with Artisan Scrapbooking Software' %>
-              </li>
-            </ul>
+            <%= link_to storage_url, class: 'dropdown-menu-nav-link', title: 'Guaranteed Permanent Storage for Photos & Documents' do %>
+              <%= trademark("Forever Storage") %>
+            <% end %>
+            <small class="dropdown-menu-nav-link-subhead">Permanent cloud storage</small>
           </li>
-        </ul>
-      </div>
 
-      <div class='col-grid-float-3 l-padded-thin'>
-        <h3 class='dropdown-menu-nav-title page-title color-ambassador-light'>Shopping</h3>
-
-        <ul class="list-unstyled">
           <li>
-            <%= link_to promotions_url, class: 'dropdown-menu-nav-link', title: 'Photo Printing, Digital Art, and Storage Promotions' do %>
-              <i class='fa fa-star'></i>Current Promotions
+            <%= link_to services_url, class: 'dropdown-menu-nav-link', title: 'Digitization and Scanning Services' do %>
+              Photo Scanning <br/>and Video Conversion
             <% end %>
           </li>
 
           <li>
-            <%= link_to 'Gift Certificates', gifts_url, class: 'dropdown-menu-nav-link', title: 'Buy Forever Gift Certificates' %>
-          </li>
-
-          <li class="hide">
-            <%= link_to 'Current Promotions', promotions_url, class: 'dropdown-menu-nav-link', title: 'Photo Printing, Digital Art, and Storage Promotions' %>
-          </li>
-
-          <li>
-            <%= link_to 'Shipping Info', shipping_info_url, class: 'dropdown-menu-nav-link', title: 'Shipping Information' %>
-          </li>
-
-          <li>
-            <%= link_to 'Volume Print Discounts', bulk_orders_url, class: 'dropdown-menu-nav-link', title: 'Save Money on Large Print Orders' %>
-          </li>
-
-          <li>
-            <%= link_to 'Return Policy', return_policy_url, class: 'dropdown-menu-nav-link', title: 'Return Policy' %>
+            <%= link_to trademark('Forever Valet'), valet_url, class: 'dropdown-menu-nav-link', title: 'Forever Valet Desktop Photo Uploader'  %>
+            <small class="dropdown-menu-nav-link-subhead">Desktop Uploader</small>
           </li>
         </ul>
       </div>
 
+
+      <div class='col-grid-float-3 l-padded-thin'>
+        <h3 class='dropdown-menu-nav-title color-primary-light'>Mobile Apps</h3>
+
+        <ul class="list-unstyled">
+          <li>
+            <%= link_to 'Forever™ Mobile Apps', app_url, class: 'dropdown-menu-nav-link', title: 'Download Forever Mobile Apps' %>
+          </li>
+
+          <li>
+            <%= link_to 'Download the iPhone App', ios_url, class: 'dropdown-menu-nav-link', title: 'Download Forever Mobile Apps' %>
+          </li>
+
+
+          <li>
+            <%= link_to 'Download the Android App', android_url, class: 'dropdown-menu-nav-link', title: 'Download Forever Mobile Apps' %>
+          </li>
+        </ul>
+
+
+        <h3 class='dropdown-menu-nav-title color-ambassador-light l-section'>Gifts</h3>
+
+        <ul class="list-unstyled">
+          <li>
+            <%= link_to 'Gift Certificates', gifts_url, class: 'dropdown-menu-nav-link', title: 'Buy Forever Gift Certificates' %>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </div>

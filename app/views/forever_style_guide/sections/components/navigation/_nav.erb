@@ -47,14 +47,27 @@
             <%= render partial: "forever_style_guide/sections/components/navigation/nav_products_dropdown" %>
           </li>
 
+
           <li class='dropdown dropdown-full_width'>
             <%= render partial: "forever_style_guide/sections/components/navigation/nav_community_dropdown" %>
           </li>
         </ul>
 
         <ul class='nav navbar-nav navbar-right'>
-          <%= render partial: "forever_style_guide/sections/components/navigation/nav_account_dropdown" %>
+          <li><%= link_to "Inspiration", blog_url, title: 'Get Inspired at the Forever Blog', target: "_blank" %></li>
+
+          <li>
+            <%= link_to promotions_url, style: 'color: #ED773A;', title: 'View Deals, Sales, and Promotions' do %>
+              Deals<i class='fa fa-star' style="display: block; float: right;"></i>
+            <% end %>
+          </li>
+
+          <li><%= link_to "Help", help_center_url, title: 'Forever Help Center', target: "_blank" %></li>
+
           <%= render partial: "forever_style_guide/sections/components/navigation/nav_ambassador_dropdown" %>
+
+
+          <%= render partial: "forever_style_guide/sections/components/navigation/nav_account_dropdown" %>
         </ul>
 
         <%= render partial: "forever_style_guide/sections/components/navigation/nav_account_signed_out_mobile" %>
