@@ -1,11 +1,11 @@
-$dropdown-height: 373px; // Allows for entire hero_simple text to display from $screen-md and up
+$dropdown-height: 325px; // Allows for entire hero_simple text to display from $screen-md and up
 $nav-icon-width: 60px;
 
 @mixin dropdown-content-style {
   display: block;
   color: color('gray-300');
   font-family: $font-face-light;
-  font-size: $font-size-large;
+  font-size: $font-size-300;
 }
 
 @mixin active-style($color) {
@@ -99,7 +99,6 @@ $nav-icon-width: 60px;
   visibility: hidden;
   border: none;
   border-radius: 0;
-  @extend %card-shadow;
 
   @media (max-width: $grid-float-breakpoint-max) {
     padding-left: 5px;
@@ -126,7 +125,7 @@ a.dropdown-menu-nav-link {
     margin-top: 10px;
 
     @media (min-width: $screen-md-min) {
-      margin-top: 15px;
+      margin-top: 10px;
     }
   }
   &.dropdown-menu-nav-link-sm {
@@ -154,6 +153,9 @@ a.dropdown-menu-nav-link {
   font-size: $font-size-200;
 }
 .dropdown-menu-nav-bullets {
+  padding-left: 20px;
+  list-style: disc;
+
   @media (max-width: $grid-float-breakpoint-max) {
     margin-left: 10px;
   }

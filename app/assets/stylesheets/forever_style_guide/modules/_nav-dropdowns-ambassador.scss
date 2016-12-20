@@ -30,9 +30,7 @@ $your-ambassador-intro-text-width: 110px;
     }
   }
   .dropdown-menu-nav {
-    @media (max-width: $grid-float-breakpoint-max) {
-      box-shadow: none;
-    }
+    box-shadow: none !important;
   }
   .btn.btn-ambassador.btn-lg {
     //preferring redunant button styling to redundant mobile markup for this one instance

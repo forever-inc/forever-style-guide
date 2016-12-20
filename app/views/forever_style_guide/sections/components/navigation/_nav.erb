@@ -47,14 +47,76 @@
             <%= render partial: "forever_style_guide/sections/components/navigation/nav_products_dropdown" %>
           </li>
 
+
           <li class='dropdown dropdown-full_width'>
             <%= render partial: "forever_style_guide/sections/components/navigation/nav_community_dropdown" %>
           </li>
         </ul>
 
         <ul class='nav navbar-nav navbar-right'>
-          <%= render partial: "forever_style_guide/sections/components/navigation/nav_account_dropdown" %>
+          <li><%= link_to "Inspiration", blog_url, title: 'Get Inspired at the Forever Blog', target: "_blank" %></li>
+
+          <li>
+            <%= link_to promotions_url, style: 'color: #ED773A;', title: 'View Deals, Sales, and Promotions' do %>
+              Deals<i class='fa fa-star' style="display: block; float: right;"></i>
+            <% end %>
+          </li>
+
+
+
+
+
+          <!-- HELP -->
+          <li class='dropdown'>
+            <%= link_to nil, class: 'dropdown-toggle', :data => { :toggle => 'dropdown' } do %>
+              Help
+              <i class='fa fa-chevron-down'></i>
+            <% end %>
+
+            <div class='dropdown-menu dropdown-menu-nav dropdown-menu-account color_block-gray-700'>
+
+            <div class='container-fluid'>
+              <div class='row'>
+                <div class='col-xs-12'>
+
+                  <h3 class="dropdown-menu-nav-title page-title color-primary">Contact Support</h3>
+                    <ul class="list-unstyled">
+
+                      <li class="dropdown-menu-account-item l-section-close">
+                        <%= link_to user_settings_url, class: 'dropdown-menu-nav-link dropdown-menu-nav-link-sm dropdown-menu-nav-link-no_margin', title: 'View User Settings' do %>
+                          <i class='fa fa-phone fa-fw'></i>Call 1-888-FOREVER<span style="display: block; padding-left: 30px; margin-top: -20px;"> <br/>(1-888-367-3837)</span>
+                        <% end %>
+                      </li>
+
+                      <li class="dropdown-menu-account-divider dropdown-menu-account-divider-thin hidden-xs hidden-sm" style="margin-top: 10px;"></li>
+
+                      <li class="dropdown-menu-account-item l-section-close">
+                        <%= link_to user_settings_url, class: 'dropdown-menu-nav-link dropdown-menu-nav-link-sm dropdown-menu-nav-link-no_margin', title: 'View User Settings' do %>
+                          <i class='fa fa-envelope fa-fw'></i>Email <span style="display: block; padding-left: 30px;">support@forever.com</span>
+                        <% end %>
+                      </li>
+
+                      <li class="dropdown-menu-account-divider dropdown-menu-account-divider-thin hidden-xs hidden-sm" style="margin-top: 10px;"></li>
+
+                      <li class="dropdown-menu-account-item l-section-close">
+                        <%= link_to user_settings_url, class: 'dropdown-menu-nav-link dropdown-menu-nav-link-sm dropdown-menu-nav-link-no_margin', title: 'View User Settings' do %>
+                          <i class='fa fa-search fa-fw'></i>Search <span style="display: block; padding-left: 30px;">Visit our Help Center</span>
+                        <% end %>
+                      </li>
+
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+
+
+
           <%= render partial: "forever_style_guide/sections/components/navigation/nav_ambassador_dropdown" %>
+
+
+          <%= render partial: "forever_style_guide/sections/components/navigation/nav_account_dropdown" %>
         </ul>
 
         <%= render partial: "forever_style_guide/sections/components/navigation/nav_account_signed_out_mobile" %>

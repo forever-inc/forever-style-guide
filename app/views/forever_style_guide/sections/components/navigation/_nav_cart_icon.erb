@@ -1,5 +1,4 @@
-<%= link_to cart_url, class: "nav-icon-stack cart-icon", title:'View Your Shopping Cart', id: 'mini-cart' do %>
-  <span class="color-white color_block-primary cart-icon-count <%= 'hidden' unless has_item_in_cart? %>"><%= defined?(current_order) ? current_order.product_count : 0 %></span>
-  <i class='fa fa-shopping-cart'></i>
-  <span class="nav-icon-label cart-icon-label <%= has_item_in_cart? ? 'has_count' : '' %>">Cart</span>
+<%= link_to cart_url, style: 'border: none; padding-right: 30px !important; width: auto;', class: "nav-icon-stack cart-icon", title:'View Your Shopping Cart', id: 'mini-cart' do %>
+  <span style="position: absolute; top: 8px; right: 5px; z-index: 999;" class="color-white color_block-primary cart-icon-count">2</span>
+  <i style="font-size: 17px; top: 3px;" class='fa fa-shopping-cart'></i>
 <% end %>

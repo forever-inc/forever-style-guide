@@ -14,6 +14,12 @@
           <% if defined?(current_user) && current_user.present? %>
 
             <li>
+              <%= link_to app_home_url, class: 'dropdown-menu-nav-link', title: 'View Your Shared Photo Albums' do %>
+                <i class='fa fa-home'></i>Home
+              <% end %>
+            </li>
+
+            <li>
               <%= link_to library_url, class: 'dropdown-menu-nav-link', title: 'Organize Photos in Your Forever Library' do %>
                 <i class='fa fa-th-large'></i>Library
               <% end %>
@@ -21,19 +27,13 @@
 
             <li>
               <%= link_to projects_url, class: 'dropdown-menu-nav-link', title: 'Create Print Projects' do %>
-                <i class='fa fa-paint-brush'></i>Projects
+                <i class='fa fa-paint-brush'></i> My Projects
               <% end %>
             </li>
 
             <li>
               <%= link_to people_url, class: 'dropdown-menu-nav-link', title: 'Share Photos with Friends and Family' do %>
-                <i class='fa fa-users'></i>People
-              <% end %>
-            </li>
-
-            <li>
-              <%= link_to app_home_url, class: 'dropdown-menu-nav-link', title: 'View Your Shared Photo Albums' do %>
-                <i class='fa fa-home'></i>Home
+                <i class='fa fa-users'></i>Friends &amp; Family
               <% end %>
             </li>
 
@@ -56,15 +56,70 @@
       </div>
 
       <div class='col-grid-float-3 l-padded-thin'>
-        <h3 class='dropdown-menu-nav-title page-title color-secondary'>About</h3>
+        <h3 class='dropdown-menu-nav-title page-title color-services'>Get Started</h3>
 
         <ul class="list-unstyled">
           <li>
-            <%= link_to "The #{trademark('Forever Guarantee')}", guarantee_url, class: 'dropdown-menu-nav-link', title: 'Forever Guarantee' %>
+            <%= link_to zendesk_overview_video_url, class: 'dropdown-menu-nav-link', title: 'View the Forever Overview Video', target: '_blank' do %>
+              1. Forever Overview
+            <% end %>
           </li>
 
           <li>
+            <%= link_to 'https://forever1.zendesk.com/hc/en-us/articles/204496787-Navigating-your-Home-Page-Video-', class: 'dropdown-menu-nav-link', title: 'View the Uploading Photos Tutorial Video', target: '_blank' do %>
+              2. Your Forever Home Page
+            <% end %>
+          </li>
+
+          <li>
+            <%= link_to 'https://forever1.zendesk.com/hc/en-us/articles/204496797-Uploading-Photos-Video-', class: 'dropdown-menu-nav-link', title: 'View the Organizing Photos Tutorial Video', target: '_blank' do %>
+              3. How to Upload Photos
+            <% end %>
+          </li>
+
+        </ul>
+      </div>
+
+      <div class='col-grid-float-3 l-padded-thin dropdown-menu-nav-extra_column'>
+        <h3 class='dropdown-menu-nav-title page-title color-services'>Get Organized</h3>
+        <ul class="list-unstyled">
+          <li>
+            <%= link_to 'https://forever1.zendesk.com/hc/en-us/articles/226085547-Creating-an-Album-Uploading-Directly-to-an-Album-Video-', class: 'dropdown-menu-nav-link', title: 'How to Use Your Inbox in Forever - Video Tutorial', target: '_blank' do %>
+              1. Make an Album
+            <% end %>
+          </li>
+
+          <li>
+            <%= link_to 'https://forever1.zendesk.com/hc/en-us/articles/218144057-Nested-Albums-Video-', class: 'dropdown-menu-nav-link', title: 'Organizing Photos with Albums in Forever - Video Tutorial', target: '_blank' do %>
+              2. Make Nested Albums
+            <% end %>
+          </li>
+
+          <li>
+            <%= link_to 'https://forever1.zendesk.com/hc/en-us/articles/203834548-Video-Tagging-Photos', class: 'dropdown-menu-nav-link', title: 'Organizing Photos with Nested Albums in Forever - Video Tutorial', target: '_blank' do %>
+              3. How to Use Tags
+            <% end %>
+          </li>
+
+          <li>
+            <%= link_to 'https://forever1.zendesk.com/hc/en-us/articles/231696787-Bulk-Organizing-Tool-', class: 'dropdown-menu-nav-link', title: 'Organizing Photos with Tags in Forever - Video Tutorial', target: '_blank' do %>
+              4. Bulk Organizing
+            <% end %>
+          </li>
+        </ul>
+      </div>
+
+
+      <div class='col-grid-float-3 l-padded-thin'>
+        <h3 class='dropdown-menu-nav-title page-title color-secondary'>About Us</h3>
+
+        <ul class="list-unstyled">
+          <li>
             <%= link_to 'About Us', about_url, class: 'dropdown-menu-nav-link', title: 'About Forever' %>
+          </li>
+
+          <li>
+            <%= link_to "The #{trademark('Forever Guarantee')}", guarantee_url, class: 'dropdown-menu-nav-link', title: 'Forever Guarantee' %>
           </li>
 
           <li>
@@ -73,66 +128,6 @@
 
           <li>
             <%= link_to 'Our Beliefs', beliefs_url, class: 'dropdown-menu-nav-link', title: 'Forever Beliefs and Values' %>
-          </li>
-        </ul>
-      </div>
-
-      <div class='col-grid-float-3 l-padded-thin'>
-        <h3 class='dropdown-menu-nav-title page-title color-services'>Get Started</h3>
-
-        <ul class="list-unstyled">
-          <li>
-            <%= link_to zendesk_overview_video_url, class: 'dropdown-menu-nav-link', title: 'View the Forever Overview Video', target: '_blank' do %>
-              <i class='fa fa-video-camera'></i>Forever Overview
-            <% end %>
-          </li>
-
-          <li>
-            <%= link_to zendesk_uploading_video_url, class: 'dropdown-menu-nav-link', title: 'View the Uploading Photos Tutorial Video', target: '_blank' do %>
-              <i class='fa fa-video-camera'></i>Uploading Photos
-            <% end %>
-          </li>
-
-          <li>
-            <%= link_to zendesk_organizing_video_url, class: 'dropdown-menu-nav-link', title: 'View the Organizing Photos Tutorial Video', target: '_blank' do %>
-              <i class='fa fa-video-camera'></i>Getting Organized
-            <% end %>
-          </li>
-
-          <li>
-            <%= link_to zendesk_sharing_video_url, class: 'dropdown-menu-nav-link', title: 'View the Sharing Photos Tutorial Video', target: '_blank' do %>
-              <i class='fa fa-video-camera'></i>Sharing
-            <% end %>
-          </li>
-
-        </ul>
-      </div>
-
-      <div class='col-grid-float-3 l-padded-thin dropdown-menu-nav-extra_column'>
-        <div class="hidden-grid-float-breakpoint l-section-far"></div>
-        <ul class="list-unstyled">
-          <li>
-            <%= link_to zendesk_inbox_video_url, class: 'dropdown-menu-nav-link', title: 'How to Use Your Inbox in Forever - Video Tutorial', target: '_blank' do %>
-              <i class='fa fa-video-camera'></i>Inbox
-            <% end %>
-          </li>
-
-          <li>
-            <%= link_to zendesk_albums_video_url, class: 'dropdown-menu-nav-link', title: 'Organizing Photos with Albums in Forever - Video Tutorial', target: '_blank' do %>
-              <i class='fa fa-video-camera'></i>Albums
-            <% end %>
-          </li>
-
-          <li>
-            <%= link_to zendesk_nested_albums_video_url, class: 'dropdown-menu-nav-link', title: 'Organizing Photos with Nested Albums in Forever - Video Tutorial', target: '_blank' do %>
-              <i class='fa fa-video-camera'></i>Nested Albums
-            <% end %>
-          </li>
-
-          <li>
-            <%= link_to zendesk_tags_video_url, class: 'dropdown-menu-nav-link', title: 'Organizing Photos with Tags in Forever - Video Tutorial', target: '_blank' do %>
-              <i class='fa fa-video-camera'></i>Tags
-            <% end %>
           </li>
         </ul>
       </div>

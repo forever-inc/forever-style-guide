@@ -1,37 +1,61 @@
 <%= link_to nil, class: "dropdown-toggle dropdown-toggle-community #{'active' if is_in_community_dropdown?}", :data => { :toggle => 'dropdown' } do %>
-  Community
+    Community
   <i class='fa fa-chevron-down'></i>
 <% end %>
 
 <div class='dropdown-menu dropdown-menu-nav color_block-gray-700'>
   <div class='container dropdown-menu-nav-container'>
     <div class='row'>
+
       <div class='col-grid-float-3 l-padded-thin'>
-        <h3 class='dropdown-menu-nav-title page-title color-primary'>Customer Support</h3>
+        <h3 class='dropdown-menu-nav-title page-title color-primary'>Friends &amp; Family</h3>
+
+        <ul class="list-unstyled">
+          <li class='<%= 'hide' unless current_user %>'>
+            <%= link_to  people_url, class: 'dropdown-menu-nav-link', title: 'Make Money Helping People Save & Print their Photos' do %>
+              <i class="fa fa-users"></i> View Your Friends &amp; Family
+            <% end %>
+          </li>
+
+          <li class="l-section-close">
+            <%= link_to 'Invite Friends & Family', 'https://forever1.zendesk.com/hc/en-us/articles/203874618-How-do-I-invite-people-to-become-members-of-my-Friends-Family-', class: 'dropdown-menu-nav-link', title: 'Get Free Training and Support from Certified Ambassadors' %>
+          </li>
+
+          <li>
+            <%= link_to 'Assign an Account Manager', 'https://forever1.zendesk.com/hc/en-us/articles/203833088-What-is-an-Account-Manager-How-Do-I-Set-One-Up-', class: 'dropdown-menu-nav-link', title: 'Get Free Training and Support from Certified Ambassadors' %>
+          </li>
+
+        </ul>
+      </div>
+
+      <div class='col-grid-float-3 l-padded-thin'>
+        <h3 class='dropdown-menu-nav-title page-title color-secondary-light'>Sharing</h3>
 
         <ul class="list-unstyled">
           <li>
-            <%= link_to 'Help Center', help_center_url, class: 'dropdown-menu-nav-link', title: 'Forever Help Center', target: '_blank' %>
+            <%= link_to 'Sharing Photos & Albums', 'https://forever1.zendesk.com/hc/en-us/articles/230756727-How-do-I-share-my-photos-and-albums-on-Forever-Video-', class: 'dropdown-menu-nav-link', title: 'Get Free Training and Support from Certified Ambassadors' %>
           </li>
 
           <li>
-            <%= link_to 'Web & Mobile App FAQ', web_faq_url, class: 'dropdown-menu-nav-link', title: 'Forever Artisan Frequently Asked Questions', target: '_blank' %>
+            <%= link_to 'Forever Privacy Settings', 'https://forever1.zendesk.com/hc/en-us/articles/204534157-How-does-Forever-allow-me-to-control-privacy-', class: 'dropdown-menu-nav-link', title: 'Get Free Training and Support from Certified Ambassadors' %>
           </li>
 
           <li>
-            <%= link_to "#{trademark('Artisan')} FAQ", artisan_faq_url, class: 'dropdown-menu-nav-link', title: 'Forever Artisan Frequently Asked Questions', target: '_blank' %>
+            <%= link_to 'View the Complete Sharing Guide', 'https://forever1.zendesk.com/hc/en-us/articles/219456067-Sharing-with-Forever-Full-Instructional-Guide-', class: 'dropdown-menu-nav-link', title: 'Make Money Helping People Save & Print their Photos' %>
+          </li>
+        </ul>
+      </div>
+
+      <div class='col-grid-float-3 l-padded-thin'>
+        <h3 class='dropdown-menu-nav-title page-title color-services'>Events</h3>
+
+        <ul class="list-unstyled">
+          <li>
+            <%= link_to trademark('Forever Retreats'), retreats_url, class: 'dropdown-menu-nav-link', title: 'Creative Weekend Events for Scrapbooking and Memory Keeping' %>
           </li>
 
           <li>
-            <%= link_to "#{trademark('Historian')} FAQ", historian_faq_url, class: 'dropdown-menu-nav-link', title: 'Forever Historian Frequently Asked Questions', target: '_blank' %>
-          </li>
-
-          <li>
-            <%= link_to 'Customer Commitments', customer_commitments_url, class: 'dropdown-menu-nav-link', title: 'Forever Customer Commitments' %>
-          </li>
-
-          <li>
-            <%= link_to 'Contact Us', contact_us_url, class: 'dropdown-menu-nav-link', title: 'Contact Us', target: '_blank' %>
+            <%= link_to trademark('Forever Live!'), forever_live_url, class: 'dropdown-menu-nav-link', title: 'Scrapbooking and Memory Keeping Conference', target: '_blank' %>
           </li>
         </ul>
       </div>
@@ -41,55 +65,15 @@
 
         <ul class="list-unstyled">
           <li>
+            <%= link_to 'Find an Ambassador', find_ambassador_url, class: 'dropdown-menu-nav-link', title: 'Get Free Training and Support from Certified Ambassadors' %>
+          </li>
+
+          <li>
             <%= link_to 'Become an Ambassador', opportunity_url, class: 'dropdown-menu-nav-link', title: 'Make Money Helping People Save & Print their Photos' %>
           </li>
 
           <li>
-            <%= link_to 'Find an Ambassador', find_ambassador_url, class: 'dropdown-menu-nav-link', title: 'Get Free Training and Support from Certified Ambassadors' %>
-          </li>
-
-          <li class="hide">
-            <%= link_to 'Ambassador Direct', ambassador_direct_url, class: 'dropdown-menu-nav-link', title: 'Make Money as a Forever Business Partner' %>
-          </li>
-        </ul>
-      </div>
-
-      <div class='col-grid-float-3 l-padded-thin'>
-        <h3 class='dropdown-menu-nav-title page-title color-secondary'>Events</h3>
-
-        <ul class="list-unstyled">
-          <li>
-            <%= link_to trademark('Forever Live!'), forever_live_url, class: 'dropdown-menu-nav-link', title: 'Scrapbooking and Memory Keeping Conference', target: '_blank' %>
-          </li>
-
-          <li>
-            <%= link_to trademark('Forever Retreats'), retreats_url, class: 'dropdown-menu-nav-link', title: 'Creative Weekend Events for Scrapbooking and Memory Keeping' %>
-          </li>
-        </ul>
-      </div>
-
-      <div class='col-grid-float-3 l-padded-thin'>
-        <h3 class='dropdown-menu-nav-title page-title color-services'>Connect</h3>
-
-        <ul class="list-unstyled">
-          <li>
-            <%= link_to 'Facebook', facebook_url, target: '_blank', class: 'dropdown-menu-nav-link', title: 'Follow us on Facebook' %>
-          </li>
-
-          <li>
-            <%= link_to 'Twitter', twitter_url, target: '_blank', class: 'dropdown-menu-nav-link', title: 'Follow us on Twitter' %>
-          </li>
-
-          <li>
-            <%= link_to 'Instagram', instagram_url, target: '_blank', class: 'dropdown-menu-nav-link', title: 'Follow us on Instagram' %>
-          </li>
-
-          <li>
-            <%= link_to 'Blog', blog_url, class: 'dropdown-menu-nav-link', title: 'Learn more at the Forever Blog' %>
-          </li>
-
-          <li>
-            <%= link_to 'Press', press_url, class: 'dropdown-menu-nav-link', title: 'View Press Releases and News Stories' %>
+            <%= link_to 'Ambassador Training Site', find_ambassador_url, class: 'dropdown-menu-nav-link', title: 'Get Free Training and Support from Certified Ambassadors' %>
           </li>
         </ul>
       </div>

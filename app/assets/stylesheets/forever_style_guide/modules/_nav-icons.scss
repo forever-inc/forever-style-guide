@@ -1,5 +1,5 @@
 $nav-icon-width: 60px;
-$nav-icon-margin: 3px;
+$nav-icon-margin: 2px;
 $cart-count-width: 20px;
 
 @mixin chevron-style {
@@ -20,8 +20,9 @@ $cart-count-width: 20px;
   }
 }
 .nav-icon-label {
-  font-size: $font-size-100;
-  line-height: $font-size-400;
+  font-size: $font-size-200;
+  line-height: $font-size-100;
+  font-family: $font-face-gotham;
 
   &.has_count {
     position: absolute;
@@ -51,8 +52,11 @@ $cart-count-width: 20px;
 
 .navbar-default .navbar-nav {
   .dropdown-toggle .fa-chevron-down {
+    display: inline-block; 
+    float: right;
+    margin-top: 8px;
     margin-left: $nav-icon-margin;
-    font-size: 9px;
+    font-size: 6px;
     @include transition(transform 0.2s ease-in-out);
 
     @media(max-width: $grid-float-breakpoint-max) {
@@ -63,6 +67,17 @@ $cart-count-width: 20px;
     @include transform(rotate(180deg));
   }
 }
+
+
+.navbar-default .navbar-nav.navbar-left {
+  .dropdown-toggle .fa-chevron-down {
+    margin-left: 10px;
+    font-size: 8px;
+    margin-top: 6px;
+  }
+}
+
+
 
 // Mobile Toggles
 .navbar-default .navbar-toggle,
