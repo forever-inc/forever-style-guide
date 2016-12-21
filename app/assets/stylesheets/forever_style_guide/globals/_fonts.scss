@@ -42,9 +42,9 @@ $font-size-600: fontify('600', 36px) !default;
 $font-size-700: fontify('700', 48px) !default;
 $font-size-800: fontify('800', 64px) !default;
 
-$font-size-large: fontify('large', $font-size-400) !default;
+$font-size-lg: fontify('lg', $font-size-400) !default;
 $font-size-default: fontify('default', $font-size-300) !default;
-$font-size-small: fontify('small', $font-size-100) !default;
+$font-size-sm: fontify('sm', $font-size-100) !default;
 
 @each $id, $font-size in $font-sizes {
   .font-size-#{$id} {
