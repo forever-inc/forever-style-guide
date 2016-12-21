@@ -4,7 +4,7 @@
   <%= render partial: "forever_style_guide/sections/components/navigation/nav_cart_icon" %>
 </li>
 
-<% if defined?(current_user) && current_user.present?  %>
+<% if defined?(current_user) && current_user.present? %>
   <li class='dropdown'>
     <%= link_to nil, class: 'dropdown-toggle', :data => { :toggle => 'dropdown' } do %>
       Account

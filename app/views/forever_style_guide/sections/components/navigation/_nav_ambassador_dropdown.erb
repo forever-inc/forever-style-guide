@@ -3,9 +3,10 @@
 
 <%= link_to nil, class: "dropdown-toggle dropdown-toggle-ambassador #{'active' if is_in_product_dropdown?}", :data => { :toggle => 'dropdown' } do %>
   <% if has_ambassador? %>
-    <span style="text-transform: lowercase!important; font-size: 12px; font-weight: 200; display: block; text-align: center; margin-top: -11px; margin-bottom: -9px;">Shopping with:</span>
+    <span style="text-transform: capitalize!important; font-size: 10px; font-weight: 200; display: block; text-align: center; margin-top: -10px; margin-bottom: -10px;">Your Ambassador:</span>
     <%= current_ambassador.name %>
   <% else %>
+      <span style="text-transform: capitalize!important; font-size: 10px; font-weight: 200; display: block; text-align: center; margin-top: -10px; margin-bottom: -10px;">Discover</span>
     Ambassadors
   <% end %>
     <i class='fa fa-chevron-down'></i>
