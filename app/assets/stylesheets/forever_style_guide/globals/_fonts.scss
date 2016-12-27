@@ -42,9 +42,10 @@ $font-size-600: fontify('600', 36px) !default;
 $font-size-700: fontify('700', 48px) !default;
 $font-size-800: fontify('800', 64px) !default;
 
-$font-size-large: fontify('lg', $font-size-400) !default;
+/* !global to override bootstrap's $font-size-large and $font-size-small */
+$font-size-large: fontify('lg', $font-size-400) !global;
 $font-size-default: fontify('default', $font-size-300) !default;
-$font-size-small: fontify('sm', $font-size-100) !default;
+$font-size-small: fontify('sm', $font-size-100) !global;
 
 @each $id, $font-size in $font-sizes {
   .font-size-#{$id} {
