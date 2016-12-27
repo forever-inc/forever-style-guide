@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    forever_style_guide (3.0.39)
+    forever_style_guide (3.0.40)
       bootstrap-sass
       font-awesome-rails
       jquery-rails
