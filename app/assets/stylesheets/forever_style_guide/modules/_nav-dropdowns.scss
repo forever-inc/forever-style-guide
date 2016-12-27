@@ -1,4 +1,4 @@
-$dropdown-height: 373px; // Allows for entire hero_simple text to display from $screen-md and up
+$dropdown-height: 325px; // Allows for entire hero_simple text to display from $screen-md and up
 $nav-icon-width: 60px;
 
 @mixin dropdown-content-style {
@@ -126,7 +126,7 @@ a.dropdown-menu-nav-link {
     margin-top: 10px;
 
     @media (min-width: $screen-md-min) {
-      margin-top: 15px;
+      margin-top: 10px;
     }
   }
   &.dropdown-menu-nav-link-sm {

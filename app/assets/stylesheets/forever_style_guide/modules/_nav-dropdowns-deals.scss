@@ -1,0 +1,24 @@
+.navbar-deals {
+  color: $color-forever-orange !important;
+}
+
+.nav-dropdown-deals {
+  .icon-offset {
+    display: block;
+    padding-left: 30px;
+  }
+}
+.dropdown-menu-deals {
+  width: 100%;
+  right: 0;
+  padding-top: 15px;
+  border-bottom-right-radius: $border-radius-large;
+  border-bottom-left-radius: $border-radius-large;
+
+  @media (max-width: $grid-float-breakpoint-max) {
+    @include nav-border(bottom);
+  }
+  @media (min-width: $grid-float-breakpoint) {
+    width: $nav-icon-width * 4;
+  }
+}

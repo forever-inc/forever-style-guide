@@ -4,13 +4,6 @@
 </li>
 
 <% if defined?(current_user) && current_user.present?  %>
-  <li class='navbar-account_item-inbox navbar-account_item'>
-    <%= link_to inbox_url, class: "nav-icon-stack hidden-grid-float-breakpoint", title: "Organize Photos from Your Forever Inbox" do %>
-      <i class='fa fa-inbox'></i>
-      <span class="nav-icon-label">Inbox</span>
-    <% end %>
-  </li>
-
   <li class='dropdown navbar-account_item'>
     <%= link_to nil, class: 'nav-icon-stack dropdown-toggle dropdown-toggle-account', :data => { :toggle => 'dropdown' } do %>
       <i class='fa fa-user hidden-grid-float-breakpoint'></i>
