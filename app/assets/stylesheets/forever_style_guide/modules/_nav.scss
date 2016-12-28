@@ -1,5 +1,5 @@
 $offcanvas-width: 270px;
-$offcanvas-padding: 15px;
+$offcanvas-padding: 10px;
 $nav-bg-color: color('gray-700');
 
 @mixin nav-border($sides...) {
@@ -20,8 +20,9 @@ $nav-bg-color: color('gray-700');
   left: 0;
   top: 0;
   margin: auto;
-  padding: $padding-small-vertical 0 0;
+  padding: $padding-xs-vertical 0 0;
   text-align: center;
+  height: $header-height;
 
   .navbar-brand-logo-xs {
     display: none;
@@ -56,16 +57,16 @@ $nav-bg-color: color('gray-700');
     }
 
     > li > a {
-      padding-top: 10px;
-      padding-bottom: 10px;
       height: $header-height;
       color: color('gray-400');
       font-size: $font-size-100;
+      font-weight: bold;
       font-family: $font-face-gotham;
       text-transform: uppercase;
 
       @media (max-width: $grid-float-breakpoint-max) {
         padding-top: $offcanvas-padding;
+        font-size: $font-size-large;
         @include nav-border(top);
         border-color: color('gray-600')
       }
@@ -102,6 +103,12 @@ $nav-bg-color: color('gray-700');
       margin-right: 0;
     }
   }
+}
+
+/* Bootstrap override */
+.navbar-nav > li > a {
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .navbar-account-signed_out_btn {

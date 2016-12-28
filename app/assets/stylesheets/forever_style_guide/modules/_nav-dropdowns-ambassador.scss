@@ -45,16 +45,19 @@ $your-ambassador-intro-text-width: 110px;
     }
   }
 }
+.dropdown-ambassador-text_container {
+  display: inline-block;
+}
 .dropdown-ambassador-intro_text {
   position: relative;
-
-  @media (min-width: $grid-float-breakpoint) {
-    top: 5px;
-  }
+  text-align: center;
+  font-family: $font-face-gotham;
+  font-size: 10px;
+  font-weight: normal;
 }
 .dropdown-ambassador-primary_text {
-  display: inline-block;
   min-width: $your-ambassador-intro-text-width; //allows for names shorter than the Your Ambassador intro text
+  font-family: $font-face-gotham;
 }
 .dropdown-ambassador-edit_btn {
   display: block;

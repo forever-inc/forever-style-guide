@@ -1,6 +1,7 @@
-$nav-icon-width: 60px;
+$nav-icon-width: 85px;
 $nav-icon-margin: 3px;
 $cart-count-width: 20px;
+$cart-icon-width: 35px;
 
 @mixin chevron-style {
   position: absolute;
@@ -10,7 +11,7 @@ $cart-count-width: 20px;
 
 .nav-icon-stack {
   width: $nav-icon-width;
-  padding: 7px 4px 4px 4px !important; // overriding .navbar-nav > li > a
+  padding: 3px 4px 4px 4px !important; // overriding .navbar-nav > li > a
   text-align: center;
 
   .fa {
@@ -48,7 +49,7 @@ $cart-count-width: 20px;
 .navbar-default .navbar-nav {
   .dropdown-toggle .fa-chevron-down {
     margin-left: $nav-icon-margin;
-    font-size: 6px;
+    font-size: 10px;
     @include transition(transform 0.2s ease-in-out);
 
     @media(max-width: $grid-float-breakpoint-max) {
@@ -60,16 +61,21 @@ $cart-count-width: 20px;
   }
 }
 
+a.cart-icon {
+  padding: 11px 4px 4px 4px !important; //override .nav.navbar-nav > li > a
+}
+
 // Mobile Toggles
 .navbar-default .navbar-toggle,
 a.cart-icon {
   height: $header-height;
-  width: $header-height;
+  width: $cart-count-width + $cart-icon-width;
   margin-top: 0;
   margin-right: 0;
   margin-bottom: 0;
   color: color('gray-600');
   font-size: $font-size-default;
+  text-align: center;
   border: 0;
   border-radius: 0;
   z-index: $zindex-navbar-fixed; // make sure toggles appear above logo
@@ -112,6 +118,11 @@ a.cart-icon {
   padding-top: 1px; // vertical align number in circle
   font-size: $font-size-200;
   border-radius: 50%;
+}
+
+.deals-icon {
+  display: block;
+  float: right;
 }
 
 .navbar-toggle-close-left {

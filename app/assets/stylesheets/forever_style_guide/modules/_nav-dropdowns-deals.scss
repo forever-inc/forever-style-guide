@@ -1,5 +1,7 @@
 .navbar-deals {
-  color: $color-forever-orange !important;
+  @media (min-width: $grid-float-breakpoint) {
+    color: $color-forever-orange !important;
+  }
 }
 
 .nav-dropdown-deals {

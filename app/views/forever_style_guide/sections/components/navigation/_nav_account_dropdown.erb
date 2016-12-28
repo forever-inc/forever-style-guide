@@ -5,10 +5,9 @@
 
 <% if defined?(current_user) && current_user.present?  %>
   <li class='dropdown navbar-account_item'>
-    <%= link_to nil, class: 'nav-icon-stack dropdown-toggle dropdown-toggle-account', :data => { :toggle => 'dropdown' } do %>
-      <i class='fa fa-user hidden-grid-float-breakpoint'></i>
-      <span class="nav-icon-label">Account</span>
-      <i class='fa fa-chevron-down visible-grid-float-breakpoint'></i>
+    <%= link_to nil, class: 'dropdown-toggle dropdown-toggle-account', :data => { :toggle => 'dropdown' } do %>
+      Account
+      <i class='fa fa-chevron-down'></i>
     <% end %>
 
     <div class='dropdown-menu dropdown-menu-nav dropdown-menu-account color_block-gray-700'>
@@ -18,9 +17,8 @@
 
 <% else %>
   <li class='dropdown navbar-account_item hidden-grid-float-breakpoint'>
-    <%= link_to login_url, class: 'nav-icon-stack' do %>
-      <i class='fa fa-user hidden-grid-float-breakpoint'></i>
-      <span class='nav-icon-label'>Log In</span>
+    <%= link_to login_url do %>
+      Log In
     <% end %>
   </li>
 <% end %>
