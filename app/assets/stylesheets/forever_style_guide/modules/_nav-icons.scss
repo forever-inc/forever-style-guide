@@ -26,34 +26,18 @@ $cart-icon-width: 35px;
   font-family: $font-face-gotham;
 }
 
-// Style offcanvas account icons consistent w/ product dropdowns
-@media (max-width: $grid-float-breakpoint-max) {
-  .navbar-account_item .nav-icon-stack {
-    width: auto;
-    padding: 15px !important; // override .navbar .nav.navbar-nav > li > a
-    text-align: left;
-
-    .fa-chevron-down {
-      top: 15px;
-    }
-    .fa-chevron-right {
-      top: 15px;
-      @include chevron-style;
-    }
-    .nav-icon-label {
-      font-size: $font-size-500;
-    }
-  }
-}
-
 .navbar-default .navbar-nav {
   .dropdown-toggle .fa-chevron-down {
-    margin-left: $nav-icon-margin;
     font-size: 10px;
     @include transition(transform 0.2s ease-in-out);
 
     @media(max-width: $grid-float-breakpoint-max) {
       @include chevron-style;
+    }
+
+    @media(min-width: $grid-float-breakpoint) {
+      position: relative;
+      top: -1px;
     }
   }
   .dropdown.open .dropdown-toggle .fa-chevron-down {
@@ -123,6 +107,10 @@ a.cart-icon {
 .deals-icon {
   display: block;
   float: right;
+
+  @media (max-width: $grid-float-breakpoint-max) {
+    margin-right: 4px;
+  }
 }
 
 .navbar-toggle-close-left {

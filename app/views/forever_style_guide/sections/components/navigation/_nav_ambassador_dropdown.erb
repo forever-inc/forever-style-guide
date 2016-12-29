@@ -1,12 +1,12 @@
-<li class='dropdown dropdown-full_width dropdown-ambassador navbar-account_item'>
+<li class='dropdown dropdown-full_width dropdown-ambassador'>
   <%= link_to nil, class: 'dropdown-toggle dropdown-toggle-ambassador', :data => { :toggle => 'dropdown' } do %>
     <div class="dropdown-ambassador-text_container">
-      <div class="dropdown-ambassador-intro_text">
+      <p class="dropdown-ambassador-intro_text">
         <%= has_ambassador? ? 'Your Ambassador' : 'Discover' %>
-      </div>
-      <span class="dropdown-ambassador-primary_text">
+      </p>
+      <div class="dropdown-ambassador-primary_text">
         <%= has_ambassador? ? current_ambassador.name : 'Ambassadors' %>
-      </span>
+      </div>
     </div>
     <i class='fa fa-chevron-down'></i>
   <% end %>

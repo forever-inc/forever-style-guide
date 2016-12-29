@@ -2,25 +2,19 @@ $your-ambassador-intro-text-width: 110px;
 
 .dropdown-ambassador {
   .dropdown-toggle {
-    padding: 0 10px;
+    padding-top: 0 !important;
 
     @media (max-width: $grid-float-breakpoint-max) {
-      padding: 0 0 0 $offcanvas-padding !important; // overriding .navbar .nav.navbar-nav > li > a
+      padding-top: 0 !important; // overriding .navbar .nav.navbar-nav > li > a
     }
   }
   .fa-chevron-down {
-    position: relative;
-    margin-left: 10px;
-    top: -10px;
-
     @media (max-width: $grid-float-breakpoint-max) {
       top: $offcanvas-padding;
     }
-  }
-  &:last-child {
-    @media (max-width: $grid-float-breakpoint-max) {
-      @include nav-border(bottom);
-      border-color: color('gray-600');
+
+    @media (min-width: $grid-float-breakpoint) {
+      top: -5px !important;
     }
   }
   .dropdown-ambassador-container {
@@ -49,15 +43,31 @@ $your-ambassador-intro-text-width: 110px;
   display: inline-block;
 }
 .dropdown-ambassador-intro_text {
-  position: relative;
-  text-align: center;
+  margin-bottom: -6px;
+  color: inherit;
   font-family: $font-face-gotham;
   font-size: 10px;
   font-weight: normal;
+
+  @media (max-width: $grid-float-breakpoint-max) {
+    margin-bottom: -3px;
+  }
+
+  @media (min-width: $grid-float-breakpoint) {
+    text-align: center;
+  }
 }
 .dropdown-ambassador-primary_text {
   min-width: $your-ambassador-intro-text-width; //allows for names shorter than the Your Ambassador intro text
   font-family: $font-face-gotham;
+  max-width: 132px; //max width so that right nav won't overlap with logo
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  @media (max-width: $grid-float-breakpoint-max) {
+    max-width: 228px; //max width so that name wont overlap chevron icon
+  }
 }
 .dropdown-ambassador-edit_btn {
   display: block;

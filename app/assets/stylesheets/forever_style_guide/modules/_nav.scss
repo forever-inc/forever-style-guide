@@ -35,6 +35,7 @@ $nav-bg-color: color('gray-700');
 
     .navbar-brand-logo-xs {
       display: block;
+      height: 100%;
     }
     .navbar-brand-logo {
       display: none;
@@ -63,6 +64,7 @@ $nav-bg-color: color('gray-700');
       font-weight: bold;
       font-family: $font-face-gotham;
       text-transform: uppercase;
+      padding: $offcanvas-padding; /* bootstrap override */
 
       @media (max-width: $grid-float-breakpoint-max) {
         padding-top: $offcanvas-padding;
@@ -103,12 +105,6 @@ $nav-bg-color: color('gray-700');
       margin-right: 0;
     }
   }
-}
-
-/* Bootstrap override */
-.navbar-nav > li > a {
-  padding-top: 10px;
-  padding-bottom: 10px;
 }
 
 .navbar-account-signed_out_btn {

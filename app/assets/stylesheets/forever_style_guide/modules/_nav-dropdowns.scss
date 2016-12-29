@@ -49,6 +49,15 @@ $nav-icon-width: 60px;
   }
 }
 
+.dropdown {
+  &:last-child {
+    @media (max-width: $grid-float-breakpoint-max) {
+      @include nav-border(bottom);
+      border-color: color('gray-600');
+    }
+  }
+}
+
 // Override bootstrap default to show dropdowns at custom breakpoint
 @media (max-width: $grid-float-breakpoint-max) {
   .navbar-nav .open .dropdown-menu {
@@ -89,6 +98,9 @@ $nav-icon-width: 60px;
     }
     &.dropdown-toggle-ambassador {
       @include mobile-active-dropdown-bg($color-forever_ambassador);
+    }
+    &.dropdown-toggle-help{
+      @include mobile-active-dropdown-bg($color-primary);
     }
   }
 }
