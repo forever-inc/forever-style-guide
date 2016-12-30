@@ -107,6 +107,12 @@ $nav-bg-color: color('gray-700');
   }
 }
 
+.navbar-deals {
+  @media (min-width: $grid-float-breakpoint) {
+    color: $color-forever-orange !important;
+  }
+}
+
 .navbar-account-signed_out_btn {
   position: absolute;
   width: $offcanvas-width - ($offcanvas-padding * 2) - 5; // 5 = .dropdown-menu-nav padding-left

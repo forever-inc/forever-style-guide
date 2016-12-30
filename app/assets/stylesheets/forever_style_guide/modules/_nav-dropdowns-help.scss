@@ -1,16 +1,10 @@
-.navbar-deals {
-  @media (min-width: $grid-float-breakpoint) {
-    color: $color-forever-orange !important;
-  }
-}
-
-.nav-dropdown-deals {
+.nav-dropdown-help {
   .icon-offset {
     display: block;
     padding-left: 30px;
   }
 }
-.dropdown-menu-deals {
+.dropdown-menu-help {
   width: 100%;
   right: 0;
   padding-top: 15px;

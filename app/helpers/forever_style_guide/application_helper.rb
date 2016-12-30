@@ -89,6 +89,11 @@ module ForeverStyleGuide
       is_active?
     end
 
+    def is_in_deals_dropdown?
+      @pages = ['promotions', 'deals']
+      is_active?
+    end
+
     #User storage methds as seen in web app user.rb
     def capacity_readable
       if current_user

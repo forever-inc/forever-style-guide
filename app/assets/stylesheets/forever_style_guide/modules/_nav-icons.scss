@@ -1,5 +1,5 @@
-$nav-icon-width: 85px;
 $nav-icon-margin: 3px;
+$nav-icon-label-size: 10px;
 $cart-count-width: 20px;
 $cart-icon-width: 35px;
 
@@ -10,7 +10,6 @@ $cart-icon-width: 35px;
 }
 
 .nav-icon-stack {
-  width: $nav-icon-width;
   padding: 3px 4px 4px 4px !important; // overriding .navbar-nav > li > a
   text-align: center;
 
@@ -19,10 +18,22 @@ $cart-icon-width: 35px;
     position: relative;
     top: $nav-icon-margin;
   }
+
+  .icon-bar {
+    display: block;
+    width: 28px;
+    height: 4px;
+    border-radius: 4px;
+    margin: 2px auto 0 auto;
+
+    &:last-of-type {
+      margin-bottom: 2px;
+    }
+  }
 }
 .nav-icon-label {
-  font-size: $font-size-200;
-  line-height: $font-size-100;
+  font-size: $nav-icon-label-size;
+  line-height: $nav-icon-label-size;
   font-family: $font-face-gotham;
 }
 
@@ -46,7 +57,11 @@ $cart-icon-width: 35px;
 }
 
 a.cart-icon {
-  padding: 11px 4px 4px 4px !important; //override .nav.navbar-nav > li > a
+  padding-top: 4px;
+
+  @media(min-width: $grid-float-breakpoint) {
+    padding-top: 2px !important; //override .nav.navbar-nav > li > a
+  }
 }
 
 // Mobile Toggles
@@ -70,9 +85,6 @@ a.cart-icon {
     text-decoration: none;
     background-color: transparent;
   }
-  &.pull-left {
-    @include nav-border(right);
-  }
   &.navbar-toggle-close {
     width: 100%;
     padding: 0;
@@ -91,7 +103,6 @@ a.cart-icon {
   @media (max-width: $grid-float-breakpoint-max) {
     position: absolute;
     right: 0;
-    @include nav-border(left);
   }
 }
 .cart-icon-count {
@@ -111,8 +122,4 @@ a.cart-icon {
   @media (max-width: $grid-float-breakpoint-max) {
     margin-right: 4px;
   }
-}
-
-.navbar-toggle-close-left {
-  @include nav-border(right);
 }

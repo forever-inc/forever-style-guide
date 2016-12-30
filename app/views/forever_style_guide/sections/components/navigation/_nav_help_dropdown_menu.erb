@@ -1,4 +1,4 @@
-<div class='container-fluid nav-dropdown-deals'>
+<div class='container-fluid nav-dropdown-help'>
   <div class='row'>
     <div class='col-xs-12'>
 
@@ -6,7 +6,7 @@
       <ul class="list-unstyled">
 
         <li class="dropdown-menu-account-item l-section-close">
-          <%= link_to user_settings_url, class: 'dropdown-menu-nav-link dropdown-menu-nav-link-sm dropdown-menu-nav-link-no_margin', title: 'View User Settings' do %>
+          <%= link_to "tel:1-888-367-3837", class: 'dropdown-menu-nav-link dropdown-menu-nav-link-sm dropdown-menu-nav-link-no_margin', title: 'Call Customer Support' do %>
             <i class='fa fa-phone fa-fw'></i>Call 1-888-FOREVER <span class="icon-offset">(1-888-367-3837)</span>
           <% end %>
         </li>
@@ -14,7 +14,7 @@
         <li class="dropdown-menu-account-divider dropdown-menu-account-divider-thin hidden-xs hidden-sm" style="marg\in-top: 10px;"></li>
 
         <li class="dropdown-menu-account-item l-section-close">
-          <%= link_to user_settings_url, class: 'dropdown-menu-nav-link dropdown-menu-nav-link-sm dropdown-menu-nav-link-no_margin', title: 'View User Settings' do %>
+          <%= link_to "mailto:support@forever.com", class: 'dropdown-menu-nav-link dropdown-menu-nav-link-sm dropdown-menu-nav-link-no_margin', title: 'Email Customer Care' do %>
             <i class='fa fa-envelope fa-fw'></i>Email <span class="icon-offset">support@forever.com</span>
           <% end %>
         </li>
@@ -22,8 +22,8 @@
         <li class="dropdown-menu-account-divider dropdown-menu-account-divider-thin hidden-xs hidden-sm" style="marg\in-top: 10px;"></li>
 
         <li class="dropdown-menu-account-item l-section-close">
-          <%= link_to user_settings_url, class: 'dropdown-menu-nav-link dropdown-menu-nav-link-sm dropdown-menu-nav-link-no_margin', title: 'View User Settings' do %>
-            <i class='fa fa-search fa-fw'></i>Search <span class="icon-offset">Visit our Help Center</span>
+          <%= link_to help_center_url, class: 'dropdown-menu-nav-link dropdown-menu-nav-link-sm dropdown-menu-nav-link-no_margin', title: 'Seach the Forever Help Center', target: '_blank' do %>
+            <i class='fa fa-search fa-fw'></i>Search <span class="icon-offset">Forever Help Center</span>
           <% end %>
         </li>
 
