@@ -61,7 +61,7 @@ $nav-bg-color: color('gray-700');
       height: $header-height;
       color: color('gray-400');
       font-size: $font-size-100;
-      font-weight: bold;
+      font-weight: $font-weight-bold;
       font-family: $font-face-gotham;
       text-transform: uppercase;
       padding: $offcanvas-padding; /* bootstrap override */

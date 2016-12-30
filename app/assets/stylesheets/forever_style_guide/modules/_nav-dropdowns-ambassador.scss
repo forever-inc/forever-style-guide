@@ -52,7 +52,7 @@ $your-ambassador-intro-text-width: 110px;
   color: inherit;
   font-family: $font-face-gotham;
   font-size: 10px;
-  font-weight: normal;
+  font-weight: $font-weight-normal;
   text-transform: capitalize;
 
   @media (max-width: $grid-float-breakpoint-max) {
