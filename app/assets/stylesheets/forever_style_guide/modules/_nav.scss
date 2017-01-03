@@ -75,13 +75,13 @@ $nav-bg-color: color('gray-700');
 
       @media (min-width: $grid-float-breakpoint) {
         color: color('gray-600');
-        font-size: $font-size-200;
       }
       &:hover {
         @media (min-width: $grid-float-breakpoint) {
           background-color: color('gray-300');
         }
       }
+
     }
     .dropdown.open > .dropdown-toggle {
       color: color('white');

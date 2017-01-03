@@ -1,7 +1,12 @@
 $nav-icon-margin: 3px;
-$nav-icon-label-size: 10px;
+$cart-count-mobile-offset: 8px;
 $cart-count-width: 20px;
-$cart-icon-width: 35px;
+$cart-icon-width: 28px + 20px; //20px to account for padding
+$cart-icon-vertical-offset: 2px;
+$cart-icon-vertical-offset-mobile: 4px;
+$deals-icon-horizontal-offset: 3px;
+$deals-icon-horizontal-offset-mobile: 4px;
+$chevron-bottom-alignment-offset: -1px;
 
 @mixin chevron-style {
   position: absolute;
@@ -32,14 +37,14 @@ $cart-icon-width: 35px;
   }
 }
 .nav-icon-label {
-  font-size: $nav-icon-label-size;
-  line-height: $nav-icon-label-size;
+  font-size: $font-size-xsmall;
+  line-height: $font-size-xsmall;
   font-family: $font-face-gotham;
 }
 
 .navbar-default .navbar-nav {
   .dropdown-toggle .fa-chevron-down {
-    font-size: 10px;
+    font-size: $font-size-xsmall;
     @include transition(transform 0.2s ease-in-out);
 
     @media(max-width: $grid-float-breakpoint-max) {
@@ -48,7 +53,7 @@ $cart-icon-width: 35px;
 
     @media(min-width: $grid-float-breakpoint) {
       position: relative;
-      top: -1px;
+      top: $chevron-bottom-alignment-offset;
     }
   }
   .dropdown.open .dropdown-toggle .fa-chevron-down {
@@ -57,10 +62,10 @@ $cart-icon-width: 35px;
 }
 
 a.cart-icon {
-  padding-top: 4px;
+  padding-top: $cart-icon-vertical-offset-mobile;
 
   @media(min-width: $grid-float-breakpoint) {
-    padding-top: 2px !important; //override .nav.navbar-nav > li > a
+    padding-top: $cart-icon-vertical-offset !important; //override .nav.navbar-nav > li > a
   }
 }
 
@@ -68,7 +73,7 @@ a.cart-icon {
 .navbar-default .navbar-toggle,
 a.cart-icon {
   height: $header-height;
-  width: $cart-count-width + $cart-icon-width;
+  width: $cart-icon-width;
   margin-top: 0;
   margin-right: 0;
   margin-bottom: 0;
@@ -98,6 +103,9 @@ a.cart-icon {
       height: $header-height;
     }
   }
+  &.with-count {
+    width: $cart-count-width + $cart-icon-width;
+  }
 }
 a.cart-icon {
   @media (max-width: $grid-float-breakpoint-max) {
@@ -113,13 +121,22 @@ a.cart-icon {
   padding-top: 1px; // vertical align number in circle
   font-size: $font-size-200;
   border-radius: 50%;
+
+  @media (max-width: $grid-float-breakpoint-max) {
+    margin-right: $cart-count-mobile-offset;
+  }
 }
 
 .deals-icon {
   display: block;
-  float: right;
 
   @media (max-width: $grid-float-breakpoint-max) {
-    margin-right: 4px;
+    margin-right: $deals-icon-horizontal-offset-mobile;
+    float: left;
+  }
+
+  @media (min-width: $grid-float-breakpoint) {
+    float: right;
+    margin-left: $deals-icon-horizontal-offset;
   }
 }

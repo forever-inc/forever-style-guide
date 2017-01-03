@@ -1,12 +1,10 @@
-$your-ambassador-intro-text-width: 110px;
+$ambassador-name-tab-max-space: 140px; //max width so that right nav won't overlap with logo
+$ambassador-name-tab-max-space-mobile: 228px;
+$distance-to-close-ambassador-text-gap: -3px;
 
 .dropdown-ambassador {
   .dropdown-toggle {
-    padding-top: 0 !important;
-
-    @media (max-width: $grid-float-breakpoint-max) {
-      padding-top: 0 !important; // overriding .navbar .nav.navbar-nav > li > a
-    }
+    padding-top: 0 !important; // overriding .navbar .nav.navbar-nav > li > a
   }
   .fa-chevron-down {
     @media (max-width: $grid-float-breakpoint-max) {
@@ -14,7 +12,7 @@ $your-ambassador-intro-text-width: 110px;
     }
 
     @media (min-width: $grid-float-breakpoint) {
-      top: -5px !important;
+      top: -5px !important; //override .navbar-default .navbar-nav .dropdown-toggle .fa-chevron-down
     }
   }
   .dropdown-ambassador-container {
@@ -48,15 +46,15 @@ $your-ambassador-intro-text-width: 110px;
   display: inline-block;
 }
 .dropdown-ambassador-intro_text {
-  margin-bottom: -6px;
+  margin-bottom: $distance-to-close-ambassador-text-gap * 2;
   color: inherit;
   font-family: $font-face-gotham;
-  font-size: 10px;
+  font-size: $font-size-xsmall;
   font-weight: $font-weight-normal;
   text-transform: capitalize;
 
   @media (max-width: $grid-float-breakpoint-max) {
-    margin-bottom: -3px;
+    margin-bottom: $distance-to-close-ambassador-text-gap;
   }
 
   @media (min-width: $grid-float-breakpoint) {
@@ -64,15 +62,14 @@ $your-ambassador-intro-text-width: 110px;
   }
 }
 .dropdown-ambassador-primary_text {
-  min-width: $your-ambassador-intro-text-width; //allows for names shorter than the Your Ambassador intro text
   font-family: $font-face-gotham;
-  max-width: 132px; //max width so that right nav won't overlap with logo
+  max-width: $ambassador-name-tab-max-space;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 
   @media (max-width: $grid-float-breakpoint-max) {
-    max-width: 228px; //max width so that name wont overlap chevron icon
+    max-width: $ambassador-name-tab-max-space-mobile; //max width so that name wont overlap chevron icon
   }
 }
 .dropdown-ambassador-edit_btn {

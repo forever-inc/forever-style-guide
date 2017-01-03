@@ -1,4 +1,4 @@
-$dropdown-height: 325px; // Allows for entire hero_simple text to display from $screen-md and up
+$dropdown-height: 345px; // Allows for entire hero_simple text to display from $screen-md and up
 $nav-icon-width: 60px;
 
 @mixin dropdown-content-style {
@@ -145,13 +145,10 @@ a.dropdown-menu-nav-link {
     }
   }
   &.dropdown-menu-nav-link-sm {
-    font-size: $font-size-default;
+    font-size: $font-size-200;
   }
   .fa {
     margin-right: 10px;
-  }
-  span {
-    font-family: inherit; // persist font-style for conditionally hidden or shown text (span class="hidden-md")
   }
 }
 .dropdown-menu-account-item {
