@@ -1,5 +1,5 @@
-$ambassador-name-tab-max-space: 140px; //max width so that right nav won't overlap with logo
-$ambassador-name-tab-max-space-mobile: 228px;
+$ambassador-name-max-width: 140px; //max width so that right nav won't overlap with logo
+$ambassador-name-max-width-mobile: 228px;
 $distance-to-close-ambassador-text-gap: -3px;
 
 .dropdown-ambassador {
@@ -12,7 +12,7 @@ $distance-to-close-ambassador-text-gap: -3px;
     }
 
     @media (min-width: $grid-float-breakpoint) {
-      top: -5px !important; //override .navbar-default .navbar-nav .dropdown-toggle .fa-chevron-down
+      top: -7px !important; //override .navbar-default .navbar-nav .dropdown-toggle .fa-chevron-down
     }
   }
   .dropdown-ambassador-container {
@@ -62,14 +62,14 @@ $distance-to-close-ambassador-text-gap: -3px;
   }
 }
 .dropdown-ambassador-primary_text {
+  max-width: $ambassador-name-max-width;
   font-family: $font-face-gotham;
-  max-width: $ambassador-name-tab-max-space;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 
   @media (max-width: $grid-float-breakpoint-max) {
-    max-width: $ambassador-name-tab-max-space-mobile; //max width so that name wont overlap chevron icon
+    max-width: $ambassador-name-max-width-mobile; //max width so that name wont overlap chevron icon
   }
 }
 .dropdown-ambassador-edit_btn {

@@ -21,8 +21,8 @@ $nav-bg-color: color('gray-700');
   top: 0;
   margin: auto;
   padding: $padding-xs-vertical 0 0;
-  text-align: center;
   height: $header-height;
+  text-align: center;
 
   .navbar-brand-logo-xs {
     display: none;
@@ -43,10 +43,10 @@ $nav-bg-color: color('gray-700');
   }
 }
 .navbar {
+  min-height: $header-height;
   border-radius: 0;
   border: none;
   @extend %card-shadow;
-  min-height: $header-height;
 
   .nav.navbar-nav {
     margin-top: 0;
@@ -59,12 +59,12 @@ $nav-bg-color: color('gray-700');
 
     > li > a {
       height: $header-height;
+      padding: $offcanvas-padding; /* bootstrap override */
       color: color('gray-400');
       font-size: $font-size-100;
       font-weight: $font-weight-bold;
       font-family: $font-face-gotham;
       text-transform: uppercase;
-      padding: $offcanvas-padding; /* bootstrap override */
 
       @media (max-width: $grid-float-breakpoint-max) {
         padding-top: $offcanvas-padding;
@@ -104,12 +104,6 @@ $nav-bg-color: color('gray-700');
     &.navbar-right {
       margin-right: 0;
     }
-  }
-}
-
-.navbar-deals {
-  @media (min-width: $grid-float-breakpoint) {
-    color: $color-forever-orange !important;
   }
 }
 

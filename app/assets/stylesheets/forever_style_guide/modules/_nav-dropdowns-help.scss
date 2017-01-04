@@ -1,24 +1,21 @@
 $supporting-text-icon-offset: 33px;
+
 .nav-dropdown-help {
   .icon-offset {
     display: block;
     padding-left: $supporting-text-icon-offset;
+    line-height: $font-size-large;
   }
 }
 .dropdown-menu-help {
-  width: 100%;
-  right: 0;
   padding-top: 15px;
   border-bottom-right-radius: $border-radius-large;
   border-bottom-left-radius: $border-radius-large;
 
-  @media (max-width: $grid-float-breakpoint-max) {
-    @include nav-border(bottom);
-  }
   @media (min-width: $grid-float-breakpoint) {
     width: $nav-icon-width * 4;
   }
 }
 .nav-help-section-title {
-  font-family: $font-face-bold;
+  font-family: $font-face-semibold;
 }

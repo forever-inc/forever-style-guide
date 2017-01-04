@@ -77,9 +77,16 @@ $nav-icon-width: 60px;
     @include active-style($color-accent);
   }
 }
-//ugly cousin active state
-.navbar-deals.active {
-  @include active-style($color-primary);
+
+.navbar-deals {
+  //ugly cousin active state
+  &.active {
+    @include active-style($color-forever_orange);
+  }
+
+  @media (min-width: $grid-float-breakpoint) {
+    color: $color-forever-orange !important;
+  }
 }
 
 // Mega Menu Expanded Styles
@@ -145,7 +152,9 @@ a.dropdown-menu-nav-link {
     }
   }
   &.dropdown-menu-nav-link-sm {
-    font-size: $font-size-200;
+    @media (min-width: $grid-float-breakpoint) {
+      font-size: $font-size-200;
+    }
   }
   .fa {
     margin-right: 10px;
