@@ -9,11 +9,11 @@ $cart-icon-vertical-offset: 7px;
 $cart-icon-vertical-offset-mobile: 4px;
 $deals-icon-horizontal-offset: 3px;
 $deals-icon-horizontal-offset-mobile: 4px;
-$chevron-bottom-alignment-offset: -1px;
+$chevron-bottom-alignment-offset: 15px;
+$chevron-right-alignment-offset: 5px;
 $screen-below-xs: $screen-xs - 1;
 
 @mixin chevron-style {
-  position: absolute;
   right: 15px;
   font-size: $font-size-default;
 }
@@ -52,6 +52,7 @@ $screen-below-xs: $screen-xs - 1;
 
 .navbar-default .navbar-nav {
   .dropdown-toggle .fa-chevron-down {
+    position: absolute;
     font-size: $font-size-xsmall;
     @include transition(transform 0.2s ease-in-out);
 
@@ -60,8 +61,8 @@ $screen-below-xs: $screen-xs - 1;
     }
 
     @media(min-width: $grid-float-breakpoint) {
-      position: relative;
-      top: $chevron-bottom-alignment-offset;
+      right: $chevron-right-alignment-offset;
+      bottom: $chevron-bottom-alignment-offset;
     }
   }
   .dropdown.open .dropdown-toggle .fa-chevron-down {
@@ -144,15 +145,13 @@ a.cart-icon {
 }
 
 .deals-icon {
-  display: block;
-
   @media (max-width: $grid-float-breakpoint-max) {
     margin-right: $deals-icon-horizontal-offset-mobile;
     float: left;
   }
 
   @media (min-width: $grid-float-breakpoint) {
-    float: right;
+    vertical-align: top;
     margin-left: $deals-icon-horizontal-offset;
   }
 }

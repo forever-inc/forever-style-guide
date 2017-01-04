@@ -10,10 +10,6 @@ $distance-to-close-ambassador-text-gap: -3px;
     @media (max-width: $grid-float-breakpoint-max) {
       top: $offcanvas-padding;
     }
-
-    @media (min-width: $grid-float-breakpoint) {
-      top: -7px !important; //override .navbar-default .navbar-nav .dropdown-toggle .fa-chevron-down
-    }
   }
   .dropdown-ambassador-container {
     @media (max-width: $grid-float-breakpoint-max) {
