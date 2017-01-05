@@ -3,6 +3,19 @@ require 'pathname'
 module ForeverStyleGuide
   module ApplicationHelper
 
+    def trademark(copy)
+      case copy
+      when "Forever", "Forever Storage", "Forever Historian", "Forever Valet", "pixels2Pages", "Historian", "Forever Live!"
+        copy += "™"
+      when "Forever Account", "Forever Guarantee", "Forever Guarantee Fund", "Forever Membership", "Forever Guarantee Fund", "Forever Members", "Forever Retreats", "Forever Ambassador", "Forever Ambassadors"
+        copy[0..6] + "™" + copy[7..copy.length-1]
+      when "Forever Artisan", "Artisan"
+        copy += "®"
+      else
+        copy
+      end
+    end
+
     #Path helpers for mounted style guide use
     def www_url(path = '/', url = nil)
       strip_subdomain("www", path, url)
@@ -107,7 +120,7 @@ module ForeverStyleGuide
 
     # Web App Paths
     def library_url
-      web_app_url('/inbox')
+      web_app_url('/#/inbox')
     end
 
     def inbox_url
@@ -115,19 +128,28 @@ module ForeverStyleGuide
     end
 
     def projects_url
-      web_app_url('/projects')
+      web_app_url('/#/projects')
     end
 
     def people_url
-      web_app_url('/people/family')
+      web_app_url('/#/people/family')
     end
 
     def app_home_url
-      web_app_url('/')
+      web_app_url('/#/')
     end
 
+    # User settings links (store and web app)
     def user_settings_url
       web_app_url('/#/settings')
+    end
+
+    def user_order_history_url
+      www_url('/settings/orders')
+    end
+
+    def user_downloads_url
+      www_url('/settings/downloads')
     end
 
     def ambassador_settings_url
@@ -168,7 +190,7 @@ module ForeverStyleGuide
     end
 
     def storage_url
-      www_url('/guaranteed_storage')
+      www_url('/forever_storage')
     end
 
     def app_url

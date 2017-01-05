@@ -129,6 +129,9 @@ a.dropdown-menu-nav-link {
       margin-top: 15px;
     }
   }
+  &.dropdown-menu-nav-link-sm {
+    font-size: $font-size-default;
+  }
   .fa {
     margin-right: 10px;
   }
