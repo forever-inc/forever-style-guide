@@ -32,8 +32,8 @@ $screen-below-xs: $screen-xs - 1;
     display: block;
     width: $icon-width;
     height: 4px;
-    border-radius: 4px;
-    margin: 3px auto 0 auto;
+    border-radius: $border-radius-xl;
+    margin: auto;
     background-color: $color-gray-600 !important; //override bootstrap .navbar-default .navbar-toggle .icon-bar
 
     &:first-of-type {
