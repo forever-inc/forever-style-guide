@@ -34,6 +34,7 @@ $screen-below-xs: $screen-xs - 1;
     height: 4px;
     border-radius: 4px;
     margin: 3px auto 0 auto;
+    background-color: $color-gray-600 !important; //override bootstrap .navbar-default .navbar-toggle .icon-bar
 
     &:first-of-type {
       margin-top: 1px;
@@ -67,14 +68,6 @@ $screen-below-xs: $screen-xs - 1;
   }
   .dropdown.open .dropdown-toggle .fa-chevron-down {
     @include transform(rotate(180deg));
-  }
-}
-
-a.cart-icon {
-  padding-top: $cart-icon-vertical-offset-mobile;
-
-  @media(min-width: $grid-float-breakpoint) {
-    padding-top: $cart-icon-vertical-offset !important; //override .nav.navbar-nav > li > a
   }
 }
 
@@ -120,12 +113,20 @@ a.cart-icon {
     }
   }
 }
+
 a.cart-icon {
+  padding-top: $cart-icon-vertical-offset-mobile;
+
   @media (max-width: $grid-float-breakpoint-max) {
     position: absolute;
     right: 0;
   }
+
+  @media(min-width: $grid-float-breakpoint) {
+    padding-top: $cart-icon-vertical-offset !important; //override .nav.navbar-nav > li > a
+  }
 }
+
 .cart-icon-count {
   display: inline-block;
   float: right;
@@ -141,6 +142,10 @@ a.cart-icon {
 
   @media (min-width: $screen-xs) and (max-width: $grid-float-breakpoint-max) {
     margin-right: $cart-count-mobile-offset;
+  }
+
+  @media (max-width: $grid-float-breakpoint-max) {
+    margin-top: 5px;
   }
 }
 
