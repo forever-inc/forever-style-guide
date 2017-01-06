@@ -45,7 +45,7 @@ $distance-to-close-ambassador-text-gap: -3px;
   margin-bottom: $distance-to-close-ambassador-text-gap * 2;
   color: inherit;
   font-family: $font-face-gotham;
-  font-size: $font-size-xsmall;
+  font-size: $font-size-xsmall !important; // override in web app .area-settings p
   font-weight: $font-weight-normal;
   text-transform: capitalize;
 

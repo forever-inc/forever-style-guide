@@ -218,8 +218,8 @@ module ForeverStyleGuide
       www_url('/projects')
     end
 
-    def promotions_url
-      www_url('/promotions')
+    def deals_url
+      www_url('/deals')
     end
 
     def shipping_info_url
