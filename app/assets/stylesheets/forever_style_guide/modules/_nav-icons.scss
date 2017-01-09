@@ -2,7 +2,9 @@ $nav-icon-margin: 3px;
 $cart-count-xsmall-offset: 2px;
 $cart-count-mobile-offset: 6px;
 $cart-count-width: 20px;
+$cart-count-width-small: 17px;
 $cart-icon-xsmall-width: 30px + 10px; //10px to account for extra spacing
+$cart-count-icon-overlap: 8px;
 $icon-width: 28px;
 $cart-tab-padding: 20px;
 $cart-icon-vertical-offset: 7px;
@@ -108,6 +110,10 @@ a.cart-icon {
   &.with-count {
     width: $cart-count-width + $icon-width + $cart-tab-padding;
 
+    @media (max-width: $grid-float-breakpoint-max) {
+      width: $cart-count-width + $icon-width - $cart-count-icon-overlap + $cart-tab-padding;
+    }
+
     @media (max-width: $screen-below-xs) {
       width: $cart-count-width + $cart-icon-xsmall-width;
     }
@@ -145,7 +151,15 @@ a.cart-icon {
   }
 
   @media (max-width: $grid-float-breakpoint-max) {
-    margin-top: 5px;
+    position: absolute;
+    right: 3px;
+    top: 2px;
+    margin-right: 0;
+    margin-top: 0;
+    min-width: $cart-count-width-small;
+    height: $cart-count-width-small;
+    font-size: $font-size-100;
+    box-shadow: 0px 0px 0px 2px white;
   }
 }
 
