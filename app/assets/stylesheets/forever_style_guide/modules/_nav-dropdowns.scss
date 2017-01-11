@@ -1,4 +1,4 @@
-$dropdown-height: 373px; // Allows for entire hero_simple text to display from $screen-md and up
+$dropdown-height: 345px; // Allows for entire hero_simple text to display from $screen-md and up
 $nav-icon-width: 60px;
 
 @mixin dropdown-content-style {
@@ -49,6 +49,15 @@ $nav-icon-width: 60px;
   }
 }
 
+.dropdown {
+  &:last-child {
+    @media (max-width: $grid-float-breakpoint-max) {
+      @include nav-border(bottom);
+      border-color: color('gray-600');
+    }
+  }
+}
+
 // Override bootstrap default to show dropdowns at custom breakpoint
 @media (max-width: $grid-float-breakpoint-max) {
   .navbar-nav .open .dropdown-menu {
@@ -66,6 +75,17 @@ $nav-icon-width: 60px;
   }
   &.dropdown-toggle-community.active {
     @include active-style($color-accent);
+  }
+}
+
+.navbar-deals {
+  //ugly cousin active state
+  &.active {
+    @include active-style($color-forever_orange);
+  }
+
+  @media (min-width: $grid-float-breakpoint) {
+    color: $color-forever-orange !important;
   }
 }
 
@@ -90,6 +110,9 @@ $nav-icon-width: 60px;
     &.dropdown-toggle-ambassador {
       @include mobile-active-dropdown-bg($color-forever_ambassador);
     }
+    &.dropdown-toggle-help{
+      @include mobile-active-dropdown-bg($color-primary);
+    }
   }
 }
 
@@ -99,7 +122,6 @@ $nav-icon-width: 60px;
   visibility: hidden;
   border: none;
   border-radius: 0;
-  @extend %card-shadow;
 
   @media (max-width: $grid-float-breakpoint-max) {
     padding-left: 5px;
@@ -126,17 +148,16 @@ a.dropdown-menu-nav-link {
     margin-top: 10px;
 
     @media (min-width: $screen-md-min) {
-      margin-top: 15px;
+      margin-top: 10px;
     }
   }
   &.dropdown-menu-nav-link-sm {
-    font-size: $font-size-default;
+    @media (min-width: $grid-float-breakpoint) {
+      font-size: $font-size-200;
+    }
   }
   .fa {
     margin-right: 10px;
-  }
-  span {
-    font-family: inherit; // persist font-style for conditionally hidden or shown text (span class="hidden-md")
   }
 }
 .dropdown-menu-account-item {

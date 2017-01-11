@@ -1,6 +1,4 @@
 .dropdown-menu-account {
-  width: 100%;
-  right: 0;
   padding-top: 15px;
   border-bottom-right-radius: $border-radius-large;
   border-bottom-left-radius: $border-radius-large;
@@ -8,9 +6,7 @@
   .progress {
     margin-bottom: 10px;
   }
-  @media (max-width: $grid-float-breakpoint-max) {
-    @include nav-border(bottom);
-  }
+
   @media (min-width: $grid-float-breakpoint) {
     width: $nav-icon-width * 4;
   }
