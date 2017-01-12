@@ -89,6 +89,11 @@ module ForeverStyleGuide
       is_active?
     end
 
+    def is_in_deals_dropdown?
+      @pages = ['promotions', 'deals']
+      is_active?
+    end
+
     #User storage methds as seen in web app user.rb
     def capacity_readable
       if current_user
@@ -213,8 +218,8 @@ module ForeverStyleGuide
       www_url('/projects')
     end
 
-    def promotions_url
-      www_url('/promotions')
+    def deals_url
+      www_url('/deals')
     end
 
     def shipping_info_url

@@ -8,8 +8,10 @@
 
     <div class='navbar-header'>
       <button type="button" class="navbar-toggle offcanvas-toggle pull-left nav-icon-stack" data-toggle="offcanvas" data-target="#js-main-nav-offcanvas">
-        <i class='fa fa-reorder'></i>
-        <span class='nav-icon-label'>Menu</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <div class='nav-icon-label'>Menu</div>
       </button>
 
       <div class="navbar-brand">
@@ -30,10 +32,10 @@
 
         <ul class='nav navbar-nav navbar-left'>
 
-          <li class="visible-xs visible-sm">
+          <li class="hidden-lg">
             <div class="navbar-toggle navbar-toggle-close color_block-white" id="js-close-main-nav">
-              <div class="nav-icon-stack pull-left navbar-toggle-close-left">
-                <i class='fa fa-close'></i>
+              <div class="nav-icon-stack pull-left navbar-toggle">
+                <i class='fa fa-lg fa-close'></i>
                 <span class='nav-icon-label'>Close</span>
               </div>
             </div>
@@ -50,11 +52,17 @@
           <li class='dropdown dropdown-full_width'>
             <%= render partial: "forever_style_guide/sections/components/navigation/nav_community_dropdown" %>
           </li>
+
+          <li class=''>
+            <%= render partial: "forever_style_guide/sections/components/navigation/nav_deals" %>
+          </li>
         </ul>
 
         <ul class='nav navbar-nav navbar-right'>
-          <%= render partial: "forever_style_guide/sections/components/navigation/nav_account_dropdown" %>
+          <%= render partial: "forever_style_guide/sections/components/navigation/nav_inspiration" %>
+          <%= render partial: "forever_style_guide/sections/components/navigation/nav_help" %>
           <%= render partial: "forever_style_guide/sections/components/navigation/nav_ambassador_dropdown" %>
+          <%= render partial: "forever_style_guide/sections/components/navigation/nav_account_dropdown" %>
         </ul>
 
         <%= render partial: "forever_style_guide/sections/components/navigation/nav_account_signed_out_mobile" %>

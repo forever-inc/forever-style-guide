@@ -1,5 +1,5 @@
 $offcanvas-width: 270px;
-$offcanvas-padding: 15px;
+$offcanvas-padding: 10px;
 $nav-bg-color: color('gray-700');
 
 @mixin nav-border($sides...) {
@@ -20,7 +20,8 @@ $nav-bg-color: color('gray-700');
   left: 0;
   top: 0;
   margin: auto;
-  padding: $padding-small-vertical 0 0;
+  padding: $padding-xs-vertical 0 0;
+  height: $header-height;
   text-align: center;
 
   .navbar-brand-logo-xs {
@@ -34,6 +35,7 @@ $nav-bg-color: color('gray-700');
 
     .navbar-brand-logo-xs {
       display: block;
+      height: 100%;
     }
     .navbar-brand-logo {
       display: none;
@@ -41,6 +43,7 @@ $nav-bg-color: color('gray-700');
   }
 }
 .navbar {
+  min-height: $header-height;
   border-radius: 0;
   border: none;
   @extend %card-shadow;
@@ -56,24 +59,34 @@ $nav-bg-color: color('gray-700');
 
     > li > a {
       height: $header-height;
+      padding: $offcanvas-padding; /* bootstrap override */
       color: color('gray-400');
-      font-size: $font-size-500;
+      font-size: $font-size-100;
+      font-weight: $font-weight-bold;
+      font-family: $font-face-gotham;
+      text-transform: uppercase;
 
       @media (max-width: $grid-float-breakpoint-max) {
         padding-top: $offcanvas-padding;
+        font-size: $font-size-large;
         @include nav-border(top);
         border-color: color('gray-600')
       }
 
       @media (min-width: $grid-float-breakpoint) {
+        position: relative;
         color: color('gray-600');
-        font-size: $font-size-default;
+
+        &.dropdown-toggle {
+          padding-right: 20px;
+        }
       }
       &:hover {
         @media (min-width: $grid-float-breakpoint) {
           background-color: color('gray-300');
         }
       }
+
     }
     .dropdown.open > .dropdown-toggle {
       color: color('white');
@@ -96,12 +109,6 @@ $nav-bg-color: color('gray-700');
     &.navbar-right {
       margin-right: 0;
     }
-  }
-}
-
-.navbar-account_item {
-  @media (min-width: $grid-float-breakpoint) {
-    @include nav-border(left);
   }
 }
 
