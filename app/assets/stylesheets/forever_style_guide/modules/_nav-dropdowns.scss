@@ -2,7 +2,7 @@ $dropdown-height: 345px; // Allows for entire hero_simple text to display from $
 $nav-icon-width: 60px;
 
 @mixin dropdown-content-style {
-  display: block;
+  display: inline-block;
   color: color('gray-300');
   font-family: $font-face-light;
   font-size: $font-size-large;

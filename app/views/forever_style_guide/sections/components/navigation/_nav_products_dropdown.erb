@@ -115,6 +115,10 @@
               <li>
                 <%= link_to '- Page Prints', page_prints_url, class: 'dropdown-menu-nav-link', title: 'Create and Print Scrapbooking Pages Online or with Artisan Scrapbooking Software' %>
               </li>
+
+              <li>
+                <%= link_to '- Photo Prints', photo_prints_url, class: 'dropdown-menu-nav-link', title: 'Print Photos for Pickup at Walgreens® or Duane Reade®' %> <small class="color-orange">NEW!</small>
+              </li>
             </ul>
           </li>
         </ul>
@@ -125,9 +129,7 @@
 
         <ul class="list-unstyled">
           <li>
-            <%= link_to deals_url, class: 'dropdown-menu-nav-link', title: 'Photo Printing, Digital Art, and Storage Promotions' do %>
-              <i class='fa fa-star'></i>Current Deals
-            <% end %>
+            <%= link_to 'Current Deals', deals_url, class: 'dropdown-menu-nav-link', title: 'Photo Printing, Digital Art, and Storage Promotions' %>
           </li>
 
           <li>
