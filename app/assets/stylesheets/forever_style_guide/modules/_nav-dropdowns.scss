@@ -2,7 +2,7 @@ $dropdown-height: 345px; // Allows for entire hero_simple text to display from $
 $nav-icon-width: 60px;
 
 @mixin dropdown-content-style {
-  display: block;
+  display: inline-block;
   color: color('gray-300');
   font-family: $font-face-light;
   font-size: $font-size-large;
@@ -145,11 +145,7 @@ a.dropdown-menu-nav-link {
   @include dropdown-content-style;
 
   &:not(.dropdown-menu-nav-link-no_margin) {
-    margin-top: 10px;
-
-    @media (min-width: $screen-md-min) {
-      margin-top: 10px;
-    }
+    margin-top: 8px;
   }
   &.dropdown-menu-nav-link-sm {
     @media (min-width: $grid-float-breakpoint) {
