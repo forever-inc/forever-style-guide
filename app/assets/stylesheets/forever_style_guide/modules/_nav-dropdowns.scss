@@ -145,11 +145,7 @@ a.dropdown-menu-nav-link {
   @include dropdown-content-style;
 
   &:not(.dropdown-menu-nav-link-no_margin) {
-    margin-top: 10px;
-
-    @media (min-width: $screen-md-min) {
-      margin-top: 10px;
-    }
+    margin-top: 8px;
   }
   &.dropdown-menu-nav-link-sm {
     @media (min-width: $grid-float-breakpoint) {
