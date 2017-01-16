@@ -33,6 +33,7 @@ $font-face-gotham:          'Gotham A', 'Gotham B', Helvetica, Arial, sans-serif
 
 /* =font sizes
    ---------------------------------------------------------------------------- */
+$font-size-000: fontify('000', 10px) !default;
 $font-size-100: fontify('100', 12px) !default;
 $font-size-200: fontify('200', 14px) !default;
 $font-size-300: fontify('300', 16px) !default;
@@ -46,6 +47,7 @@ $font-size-800: fontify('800', 64px) !default;
 $font-size-large: fontify('lg', $font-size-400) !global;
 $font-size-default: fontify('default', $font-size-300) !default;
 $font-size-small: fontify('sm', $font-size-100) !global;
+$font-size-xsmall: fontify('xs', $font-size-000) !default;
 
 @each $id, $font-size in $font-sizes {
   .font-size-#{$id} {
