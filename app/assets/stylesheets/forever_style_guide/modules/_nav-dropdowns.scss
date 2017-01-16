@@ -1,8 +1,9 @@
 $dropdown-height: 345px; // Allows for entire hero_simple text to display from $screen-md and up
 $nav-icon-width: 60px;
+$dropdown-spacer-height: 51px;
 
 @mixin dropdown-content-style {
-  display: block;
+  display: inline-block;
   color: color('gray-300');
   font-family: $font-face-light;
   font-size: $font-size-large;
@@ -134,6 +135,10 @@ $nav-icon-width: 60px;
   }
 }
 
+.dropdown-menu-nav-spacer {
+  margin-top: $dropdown-spacer-height;
+}
+
 .dropdown-menu-nav-extra_column {
   @media (max-width: $grid-float-breakpoint-max) {
     margin-top: -10px; // compensate for l-padded-thin
@@ -145,11 +150,7 @@ a.dropdown-menu-nav-link {
   @include dropdown-content-style;
 
   &:not(.dropdown-menu-nav-link-no_margin) {
-    margin-top: 10px;
-
-    @media (min-width: $screen-md-min) {
-      margin-top: 10px;
-    }
+    margin-top: 8px;
   }
   &.dropdown-menu-nav-link-sm {
     @media (min-width: $grid-float-breakpoint) {

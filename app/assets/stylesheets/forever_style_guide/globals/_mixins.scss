@@ -23,19 +23,6 @@ $color-nav-hover: color('secondary');
   transition: $transition-property $transition-time $method;
 }
 
-@mixin circle($diameter, $color) {
-  width: $diameter;
-  height: $diameter;
-  border-radius: 50%;
-  background-color: $color;
-}
-
-@mixin link_visited_hover_active {
-  &:link, &:visited, &:hover, &:active {
-    @content;
-  }
-}
-
 @mixin center_with_flexbox ($flex-align, $justify-content) {
   display: -webkit-box;
   display: -webkit-flex;
