@@ -1,3 +1,6 @@
+$hero-no_overlap-height-xxl: 450px;
+$hero-no_overlap-block-padding: 30px;
+
 .hero {
   height: 300px;
   position: relative;
@@ -45,29 +48,6 @@
     }
   }
 
-  &.hero-xs {
-    height: 100px;
-
-    @media (min-width: $screen-xs) {
-      height: 150px;
-    }
-    @media (min-width: $screen-sm) {
-      height: 200px;
-    }
-    @media (min-width: $screen-md) {
-      height: 250px;
-    }
-    @media (min-width: $screen-lg) {
-      height: 300px;
-    }
-    @media (min-width: $screen-xl) {
-      height: 350px;
-    }
-    @media (min-width: $screen-xxl) {
-      height: 400px;
-    }
-  }
-
   &.hero-shaded {
     @extend %hero-gradient;
   }
@@ -75,4 +55,33 @@
   h1, h2, h3, h4, h5, h6, p {
     @extend %text-shadow;
   }
+}
+
+/* using percentage-based padding to dynamically adjust the height (img-height / img-width * container-width) 
+http://stackoverflow.com/questions/600743/how-to-get-div-height-to-auto-adjust-to-background-size/22211990#22211990
+
+TODO: use picture element + picturefill to avoid css hacks
+ */
+.hero-no_overlap {
+  width: 100%;
+  height: 0; 
+  padding-top: 50%; /* (240 / 480 * 100) image size: 480px x 240px */
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  @media (min-width: $screen-xs) {
+    padding-top: 34%; /* (484 / 1400 * 100) image sizes: 768px x 266px (xs) and 1400px x 484px (sm) */
+  }
+  @media (min-width: $screen-xl) {
+    height: $hero-no_overlap-height-xxl;
+    padding-top: 0;
+    background-size: auto;
+    background-position: center;
+    background-repeat: repeat-x;
+  }
+}
+
+.hero-no_overlap-block {
+  padding-top: $hero-no_overlap-block-padding;
+  padding-bottom: $hero-no_overlap-block-padding;
 }
