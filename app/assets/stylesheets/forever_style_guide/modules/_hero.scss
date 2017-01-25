@@ -1,6 +1,10 @@
 $hero-no_overlap-height-xxl: 450px;
 $hero-no_overlap-block-padding: 30px;
+$hero-img-height: 484px;
+$hero-img-width: 1400px;
 
+// TODO: confirm that we can remove everything below this (except the no_overlap bit!)
+//       and pull in hero_simple styles
 .hero {
   height: 300px;
   position: relative;
@@ -70,7 +74,7 @@ TODO: use picture element + picturefill to avoid css hacks
   background-repeat: no-repeat;
 
   @media (min-width: $screen-xs) {
-    padding-top: 34%; /* (484 / 1400 * 100) image sizes: 768px x 266px (xs) and 1400px x 484px (sm) */
+    padding-top: percentage($hero-img-height / $hero-img-width); /* image sizes: 768px x 266px (xs) and 1400px x 484px (sm) */
   }
   @media (min-width: $screen-xl) {
     height: $hero-no_overlap-height-xxl;
