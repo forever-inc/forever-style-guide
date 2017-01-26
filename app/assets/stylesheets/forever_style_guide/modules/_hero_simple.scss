@@ -6,7 +6,7 @@ $hero_simple-height-xxl: 900px;
 $hero_simple-sm-height-xs: 230px;
 $hero_simple-sm-height-md: 260px;
 
-
+/* TODO: refactor and move to _hero.scss */
 .hero_simple {
   position: relative;
   height: $hero_simple-height;
