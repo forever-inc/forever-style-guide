@@ -3,7 +3,7 @@
 }
 
 .hero-february { // demo style
-    background-image: image-url("style_guide/hero/february-deal-hero.jpg");  
+    background-image: image-url("style_guide/hero/february-deal-hero.jpg");
 
     @media (min-width: $screen-xs) {
       background-image: image-url("style_guide/hero/february-deal-hero-xs.jpg");
@@ -12,6 +12,6 @@
       background-image: image-url("style_guide/hero/february-deal-hero-sm.jpg");
     }
     @media (min-width: $screen-xl) {
-        background-image: image-url("style_guide/hero/february-deal-hero-xl.jpg")
+      background-image: image-url("style_guide/hero/february-deal-hero-xl.jpg")
     }
   }
