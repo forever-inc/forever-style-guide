@@ -1,3 +1,14 @@
+$hero-no_overlap-height-xxl: 450px;
+$hero-no_overlap-block-padding: 30px;
+$hero-img-width: 480px;
+$hero-img-height: 240px;
+$hero-img-width-xs: 768px;
+$hero-img-height-xs: 266px;
+$hero-img-width-sm: 1400px;
+$hero-img-height-sm: 484px;
+
+// TODO: confirm that we can remove everything below this (except the no_overlap bit!)
+//       and pull in hero_simple styles
 .hero {
   height: 300px;
   position: relative;
@@ -45,29 +56,6 @@
     }
   }
 
-  &.hero-xs {
-    height: 100px;
-
-    @media (min-width: $screen-xs) {
-      height: 150px;
-    }
-    @media (min-width: $screen-sm) {
-      height: 200px;
-    }
-    @media (min-width: $screen-md) {
-      height: 250px;
-    }
-    @media (min-width: $screen-lg) {
-      height: 300px;
-    }
-    @media (min-width: $screen-xl) {
-      height: 350px;
-    }
-    @media (min-width: $screen-xxl) {
-      height: 400px;
-    }
-  }
-
   &.hero-shaded {
     @extend %hero-gradient;
   }
@@ -75,4 +63,36 @@
   h1, h2, h3, h4, h5, h6, p {
     @extend %text-shadow;
   }
+}
+
+/* using percentage-based padding to dynamically adjust the height (img-height / img-width * container-width) 
+http://stackoverflow.com/questions/600743/how-to-get-div-height-to-auto-adjust-to-background-size/22211990#22211990
+
+TODO: use picture element + picturefill to avoid css hacks
+ */
+.hero-no_overlap {
+  width: 100%;
+  height: 0; 
+  padding-top: percentage($hero-img-height / $hero-img-width);
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  @media (min-width: $screen-xs) {
+    padding-top: percentage($hero-img-height-xs / $hero-img-width-xs);
+  }
+  @media (min-width: $screen-sm) {
+    padding-top: percentage($hero-img-height-sm / $hero-img-width-sm);
+  }
+  @media (min-width: $screen-xl) {
+    height: $hero-no_overlap-height-xxl;
+    padding-top: 0;
+    background-size: auto;
+    background-position: center;
+    background-repeat: repeat-x;
+  }
+}
+
+.hero-no_overlap-block {
+  padding-top: $hero-no_overlap-block-padding;
+  padding-bottom: $hero-no_overlap-block-padding;
 }
