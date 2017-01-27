@@ -1,6 +1,3 @@
-// TODO: promo modal specific code should be moved out of modules/modal and
-//be moved to a more specific promo stylesheet
-
 $modal-padding-footer: 15px;
 $modal-form-width-lg: 355px;
 $modal-product-suggestion-sm: 170px;
@@ -113,12 +110,6 @@ $modal-promo-height: 475px;
   background-size: cover;
   height: $modal-promo-height;
 }
-
-/* coomenting this out as webpack in mars ui will choke as the image path is invalid outside of asset pipeline.
-- if needed, can be fixed by giving asset paths a variable that can be overridden or restructuring output folder. Moving on for now since it is not clear this is needed.
-.modal-promo-sample {
-  background-image: url('modals/promobg.jpg');
-}*/
 
 .modal-promo-kit {
   background-position: 50%;
