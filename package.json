@@ -7,7 +7,8 @@
     "test": "test"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "node mars-styleguide-build.js"
   },
   "repository": {
     "type": "git",
@@ -18,5 +19,11 @@
   "bugs": {
     "url": "https://github.com/forever-inc/forever-style-guide/issues"
   },
-  "homepage": "https://github.com/forever-inc/forever-style-guide#readme"
+  "homepage": "https://github.com/forever-inc/forever-style-guide#readme",
+  "dependencies": {
+    "bootstrap-sass": "^3.3.7",
+    "copy": "^0.3.0",
+    "font-awesome": "^4.7.0",
+    "node-sass": "^4.0.0"
+  }
 }

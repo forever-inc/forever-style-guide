@@ -1,0 +1,29 @@
+@import "colors";
+@import "fonts";
+
+/* OVERRIDE FONT IMPORTS*/
+$base-font-path: '' !default;
+@mixin fontFace($family, $src) {
+  @font-face {
+    font-family: $family;
+    src: url('#{$base-font-path}/#{$src}.eot'); // IE9 compat
+    src: url('#{$base-font-path}/#{$src}.eot?#iefix') format('embedded-opentype'), // IE8 and below
+    url('#{$base-font-path}/#{$src}.woff') format('woff'), // standards
+    url('#{$base-font-path}/#{$src}.ttf') format('truetype'), // Safari, Android, iOS
+    url('#{$base-font-path}/#{$src}.svg##{$family}') format('svg'); // legacy iOS
+  }
+}
+
+@include fontFace('proxima_nova-light', 'ProximaNova-Light-webfont');
+@include fontFace('proxima_nova-regular', 'ProximaNova-Reg-webfont');
+@include fontFace('proxima_nova-semibold', 'ProximaNova-Sbold-webfont');
+@include fontFace('proxima_nova-bold', 'ProximaNova-Bold-webfont');
+@include fontFace('proxima_nova-regular_italic', 'ProximaNova-RegIt-webfont');
+@include fontFace('proxima_nova-regular_bold_italic', 'ProximaNova-BoldIt-webfont');
+
+
+@import "breakpoints";
+@import "variables";
+@import "mixins";
+@import "effects";
+@import "layout";

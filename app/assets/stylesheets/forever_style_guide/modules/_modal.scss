@@ -111,10 +111,6 @@ $modal-promo-height: 475px;
   height: $modal-promo-height;
 }
 
-.modal-promo-sample {
-  background-image: url('modals/promobg.jpg');
-}
-
 .modal-promo-kit {
   background-position: 50%;
   image-rendering: -webkit-optimize-contrast; // fixes text-in-image fuzziness in Chrome
