@@ -2,8 +2,8 @@ $modal-padding-footer: 15px;
 $modal-form-width-lg: 355px;
 $modal-product-suggestion-sm: 170px;
 $modal-promo-height: 475px;
-$modal-lg-screen-md-width: 900px;
-$modal-lg-screen-lg-width: 1170px;
+$modal-xl-screen-md-width: 900px;
+$modal-xl-screen-lg-width: 1170px;
 
 .modal-content {
   border: none;
@@ -142,10 +142,10 @@ $modal-lg-screen-lg-width: 1170px;
 
 .modal-xl {
   @media (min-width: $screen-md){
-    width: $modal-lg-screen-md-width;
+    width: $modal-xl-screen-md-width;
   }
 
   @media (min-width: $screen-lg){
-    width: $modal-lg-screen-lg-width;
+    width: $modal-xl-screen-lg-width;
   }
 }
