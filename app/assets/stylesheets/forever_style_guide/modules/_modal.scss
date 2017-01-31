@@ -137,3 +137,13 @@ $modal-promo-height: 475px;
   margin: 0 auto;
   margin-top: 10px;
 }
+
+.modal-xl {
+  @media (min-width: 992px){
+    width: 900px;
+  }
+
+  @media (min-width: 1200px){
+    width: 1170px;
+  }
+}
