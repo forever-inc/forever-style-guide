@@ -2,6 +2,8 @@ $modal-padding-footer: 15px;
 $modal-form-width-lg: 355px;
 $modal-product-suggestion-sm: 170px;
 $modal-promo-height: 475px;
+$modal-lg-screen-md-width: 900px;
+$modal-lg-screen-lg-width: 1170px;
 
 .modal-content {
   border: none;
@@ -139,11 +141,11 @@ $modal-promo-height: 475px;
 }
 
 .modal-xl {
-  @media (min-width: 992px){
-    width: 900px;
+  @media (min-width: $screen-md){
+    width: $modal-lg-screen-md-width;
   }
 
-  @media (min-width: 1200px){
-    width: 1170px;
+  @media (min-width: $screen-lg){
+    width: $modal-lg-screen-lg-width;
   }
 }
