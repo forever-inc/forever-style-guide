@@ -160,6 +160,9 @@ a.cart-icon {
   @media (min-width: $screen-xs) and (max-width: $screen-lg) {
     margin-right: $cart-count-offset;
   }
+  @media (min-width: $grid-float-breakpoint-max) and (max-width: $screen-lg) {
+    padding-top: 0;
+  }
   @media (max-width: $screen-lg) {
     position: absolute;
     right: 3px;
