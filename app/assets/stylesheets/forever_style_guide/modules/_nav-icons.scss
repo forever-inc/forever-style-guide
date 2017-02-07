@@ -12,6 +12,7 @@ $cart-icon-width-xs: 30px + 10px; //10px to account for extra spacing
 $cart-icon-vertical-offset: 7px;
 $cart-icon-vertical-offset-mobile: 4px;
 $cart-tab-padding: 20px;
+$cart-tab-padding-md_to_lg: 7px;
 
 // Deals Star Positioning
 $deals-icon-horizontal-offset: 3px;
@@ -94,6 +95,10 @@ a.cart-icon {
   border: 0;
   border-radius: 0;
   z-index: $zindex-navbar-fixed; // make sure toggles appear above logo
+
+  @media (min-width: $grid-float-breakpoint-max) and (max-width: $screen-lg) {
+    width: $icon-width + $cart-tab-padding-md_to_lg;
+  }
 
   &:hover,
   &:active,
