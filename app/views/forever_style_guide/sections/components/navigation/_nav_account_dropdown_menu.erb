@@ -12,7 +12,7 @@
 
           <div class="dropdown-menu-account-user">
             <p class="dropdown-menu-account-user-intro color-gray-300">Signed in as</p>
-            <h4 class="page-title color-gray-300"><%= current_user.name %></h4>
+            <h4 class="dropdown-menu-account-user-name page-title color-gray-300"><%= current_user.name %></h4>
           </div>
         </li>
 
@@ -44,7 +44,7 @@
           </div>
         </li>
 
-        <% if current_user.linked_ambassador.try(:active?) %>
+        <% if !current_user.linked_ambassador.try(:active?) %>
           <li class="dropdown-menu-account-item">
             <%= link_to back_office_url, class: 'dropdown-menu-nav-link dropdown-menu-nav-link-sm dropdown-menu-nav-link-no_margin', title: 'Ambassador Back Office Reports' do %>
               <i class='fa fa-suitcase fa-fw'></i>My Back Office
