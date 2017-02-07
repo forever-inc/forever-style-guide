@@ -1,24 +1,28 @@
 $nav-icon-margin: 3px;
-$cart-count-xsmall-offset: 2px;
-$cart-count-mobile-offset: 6px;
-$cart-count-width: 20px;
-$cart-count-width-small: 17px;
-$cart-icon-xsmall-width: 30px + 10px; //10px to account for extra spacing
-$cart-count-icon-overlap: 8px;
 $icon-width: 28px;
-$cart-tab-padding: 20px;
-$cart-icon-vertical-offset: 7px;
-$cart-icon-vertical-offset-mobile: 4px;
-$deals-icon-horizontal-offset: 3px;
-$deals-icon-horizontal-offset-mobile: 4px;
-$chevron-bottom-alignment-offset: 15px;
-$chevron-right-alignment-offset: 5px;
 $screen-below-xs: $screen-xs - 1;
 
-@mixin chevron-style {
-  right: 15px;
-  font-size: $font-size-default;
-}
+// Cart + Count Positioning
+$cart-count-offset: 6px;
+$cart-count-offset-xs: 2px;
+$cart-count-width: 20px;
+$cart-count-width-sm: 17px;
+$cart-count-icon-overlap: 8px;
+$cart-icon-width-xs: 30px + 10px; //10px to account for extra spacing
+$cart-icon-vertical-offset: 7px;
+$cart-icon-vertical-offset-mobile: 4px;
+$cart-tab-padding: 20px;
+
+// Deals Star Positioning
+$deals-icon-horizontal-offset: 3px;
+$deals-icon-horizontal-offset-mobile: 4px;
+
+// Chevron Icon Positioning
+$chevron-bottom-offset: 15px;
+$chevron-bottom-offset-alt: 17px;
+$chevron-right-offset: 5px;
+$chevron-right-offset-alt: 2px;
+$chevron-font-size-xxs: 8px;
 
 .nav-icon-stack {
   padding: 3px 4px 4px 4px !important; // overriding .navbar-nav > li > a
@@ -41,7 +45,6 @@ $screen-below-xs: $screen-xs - 1;
     &:first-of-type {
       margin-top: 1px;
     }
-
     &:last-of-type {
       margin-bottom: 3px;
     }
@@ -60,12 +63,16 @@ $screen-below-xs: $screen-xs - 1;
     @include transition(transform 0.2s ease-in-out);
 
     @media(max-width: $grid-float-breakpoint-max) {
-      @include chevron-style;
+      right: 15px;
+      font-size: $font-size-default;
     }
-
     @media(min-width: $grid-float-breakpoint) {
-      right: $chevron-right-alignment-offset;
-      bottom: $chevron-bottom-alignment-offset;
+      bottom: $chevron-bottom-offset;
+    }
+    @media (min-width: $grid-float-breakpoint){
+      right: $chevron-right-offset;
+      bottom: $chevron-bottom-offset-alt;
+      font-size: $chevron-font-size-xxs;
     }
   }
   .dropdown.open .dropdown-toggle .fa-chevron-down {
@@ -110,12 +117,12 @@ a.cart-icon {
   &.with-count {
     width: $cart-count-width + $icon-width + $cart-tab-padding;
 
-    @media (max-width: $grid-float-breakpoint-max) {
-      width: $cart-count-width + $icon-width - $cart-count-icon-overlap + $cart-tab-padding;
+    @media (min-width: $grid-float-breakpoint-max) and (max-width: $screen-lg) {
+      width: $cart-count-width + $icon-width - $cart-count-icon-overlap;
+      text-align: left;
     }
-
     @media (max-width: $screen-below-xs) {
-      width: $cart-count-width + $cart-icon-xsmall-width;
+      width: $cart-count-width + $cart-icon-width-xs;
     }
   }
 }
@@ -123,12 +130,11 @@ a.cart-icon {
 a.cart-icon {
   padding-top: $cart-icon-vertical-offset-mobile;
 
-  @media (max-width: $grid-float-breakpoint-max) {
+  @media (max-width: $screen-lg-min) {
     position: absolute;
     right: 0;
   }
-
-  @media(min-width: $grid-float-breakpoint) {
+  @media (min-width: $screen-md_to_lg) {
     padding-top: $cart-icon-vertical-offset !important; //override .nav.navbar-nav > li > a
   }
 }
@@ -140,24 +146,23 @@ a.cart-icon {
   min-width: $cart-count-width;
   padding-top: 1px; // vertical align number in circle
   font-size: $font-size-200;
+  text-align: center;
   border-radius: 50%;
 
   @media (max-width: $screen-below-xs) {
-    margin-right: $cart-count-xsmall-offset;
+    margin-right: $cart-count-offset-xs;
   }
-
-  @media (min-width: $screen-xs) and (max-width: $grid-float-breakpoint-max) {
-    margin-right: $cart-count-mobile-offset;
+  @media (min-width: $screen-xs) and (max-width: $screen-lg) {
+    margin-right: $cart-count-offset;
   }
-
-  @media (max-width: $grid-float-breakpoint-max) {
+  @media (max-width: $screen-lg) {
     position: absolute;
     right: 3px;
     top: 2px;
     margin-right: 0;
     margin-top: 0;
-    min-width: $cart-count-width-small;
-    height: $cart-count-width-small;
+    min-width: $cart-count-width-sm;
+    height: $cart-count-width-sm;
     font-size: $font-size-100;
     box-shadow: 0px 0px 0px 2px white;
   }

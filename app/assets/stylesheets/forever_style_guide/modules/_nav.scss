@@ -2,6 +2,11 @@ $offcanvas-width: 270px;
 $offcanvas-padding: 10px;
 $nav-bg-color: color('gray-700');
 
+$nav-li-a-padding-base: 4px;
+$nav-li-a-padding-right-desktop: 20px;
+$nav-li-a-padding-right-md_to_lg: 14px;
+$nav-li-a-padding-right-lg: 16px;
+
 @mixin nav-border($sides...) {
   @each $side in $sides {
     border-#{$side}: 1px solid color('gray-400');
@@ -72,21 +77,36 @@ $nav-bg-color: color('gray-700');
         @include nav-border(top);
         border-color: color('gray-600')
       }
-
-      @media (min-width: $grid-float-breakpoint) {
+      @media (min-width: $grid-float-breakpoint-max) {
         position: relative;
         color: color('gray-600');
-
-        &.dropdown-toggle {
-          padding-right: 20px;
-        }
+      }
+      @media (min-width: $grid-float-breakpoint-max) and (max-width: $screen-md_to_lg) {
+        padding-left: $nav-li-a-padding-base;
+        padding-right: $nav-li-a-padding-base;
+      }
+      @media (min-width: $screen-md_to_lg) and (max-width: $screen-lg-min) {
+        padding-left: $nav-li-a-padding-base * 2;
+        padding-right: $nav-li-a-padding-base * 2;
       }
       &:hover {
-        @media (min-width: $grid-float-breakpoint) {
+        @media (min-width: $grid-float-breakpoint-max) {
           background-color: color('gray-300');
         }
       }
-
+      &.dropdown-toggle {
+        @media (min-width: $grid-float-breakpoint) {
+          padding-right: $nav-li-a-padding-right-desktop;
+        }
+        @media (min-width: $grid-float-breakpoint) and (max-width: $screen-md_to_lg) {
+          padding-left: $nav-li-a-padding-base;
+          padding-right: $nav-li-a-padding-right-md_to_lg;
+        }
+        @media (min-width: $screen-md_to_lg) and (max-width: $screen-lg) {
+          padding-left: $nav-li-a-padding-base + 2;
+          padding-right: $nav-li-a-padding-right-lg;
+        }
+      }
     }
     .dropdown.open > .dropdown-toggle {
       color: color('white');
