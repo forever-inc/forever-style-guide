@@ -49,6 +49,24 @@ $checkbox_size: 20px;
       border-color: $color-gray-500;
       opacity: 1;
     }
+
+    //start: for mars ui checkbox
+    //mars ui does not use or need a real checkbox, and instead simple adds a class to the  label for checked and disabled states
+    //need better treatment for disabled.
+    &.checked:after {
+      @include checkbox($color-primary, color('primary-dark'));
+      opacity: 1;
+    }
+    &.disabled {
+      cursor: not-allowed;
+    }
+    &.disabled:after {}
+    &.disabled.checked:after {
+      @include checkbox($color-gray-400, $color-gray-500);
+    }
+    //end: for mars ui checbox
+
+
   } 
 
   input[type=checkbox] {

@@ -17,12 +17,12 @@ $offcanvas-animation-time:        .15s !default;
   .navbar-offcanvas {
     position: fixed;
     width: 100%;
-    min-height: 100%; // Ensure offcanvas menu ignores mobile-safari's padding garbage
     max-width: $offcanvas-width;
     left: -$offcanvas-width;
     top: 0;
+    bottom: 0;
     z-index: $zindex-navbar-fixed + 1; // Make sure offcanvas nav is 'above' fixed header
-    overflow: scroll;
+    overflow-y: auto;
     -webkit-overflow-scrolling: touch;
     transition: left $offcanvas-animation-time ease-in;
 

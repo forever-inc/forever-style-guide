@@ -2,6 +2,8 @@ $modal-padding-footer: 15px;
 $modal-form-width-lg: 355px;
 $modal-product-suggestion-sm: 170px;
 $modal-promo-height: 475px;
+$modal-xl-screen-md-width: 900px;
+$modal-xl-screen-lg-width: 1170px;
 
 .modal-content {
   border: none;
@@ -111,10 +113,6 @@ $modal-promo-height: 475px;
   height: $modal-promo-height;
 }
 
-.modal-promo-sample {
-  background-image: url('modals/promobg.jpg');
-}
-
 .modal-promo-kit {
   background-position: 50%;
   image-rendering: -webkit-optimize-contrast; // fixes text-in-image fuzziness in Chrome
@@ -140,4 +138,14 @@ $modal-promo-height: 475px;
   display: block;
   margin: 0 auto;
   margin-top: 10px;
+}
+
+.modal-xl {
+  @media (min-width: $screen-md){
+    width: $modal-xl-screen-md-width;
+  }
+
+  @media (min-width: $screen-lg){
+    width: $modal-xl-screen-lg-width;
+  }
 }

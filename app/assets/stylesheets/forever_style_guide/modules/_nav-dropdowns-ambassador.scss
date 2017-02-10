@@ -1,5 +1,6 @@
-$ambassador-name-max-width: 140px; //max width so that right nav won't overlap with logo
-$ambassador-name-max-width-mobile: 228px;
+$ambassador-name-max-width: 228px;
+$ambassador-name-max-width-md: 100px;
+$ambassador-name-max-width-lg: 140px;
 $distance-to-close-ambassador-text-gap: -3px;
 
 .dropdown-ambassador {
@@ -58,14 +59,17 @@ $distance-to-close-ambassador-text-gap: -3px;
   }
 }
 .dropdown-ambassador-primary_text {
-  max-width: $ambassador-name-max-width;
+  max-width: $ambassador-name-max-width; // managing points at which ambassador name is ellipsized
   font-family: $font-face-gotham;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 
-  @media (max-width: $grid-float-breakpoint-max) {
-    max-width: $ambassador-name-max-width-mobile; //max width so that name wont overlap chevron icon
+  @media (min-width: $grid-float-breakpoint) {
+    max-width: $ambassador-name-max-width-md;
+  }
+  @media (min-width: $screen-md_to_lg) {
+    max-width: $ambassador-name-max-width-lg;
   }
 }
 .dropdown-ambassador-edit_btn {
