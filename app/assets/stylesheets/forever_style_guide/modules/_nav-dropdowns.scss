@@ -1,6 +1,7 @@
 $dropdown-height: 345px; // Allows for entire hero_simple text to display from $screen-md and up
 $nav-icon-width: 60px;
 $dropdown-spacer-height: 51px;
+$dropdown-spacer-height-alt: 39px;
 
 @mixin dropdown-content-style {
   display: inline-block;
@@ -137,6 +138,10 @@ $dropdown-spacer-height: 51px;
 
 .dropdown-menu-nav-spacer {
   margin-top: $dropdown-spacer-height;
+
+  @media (min-width: $grid-float-breakpoint-max) and (max-width: $screen-lg) {
+    margin-top: $dropdown-spacer-height-alt;
+  }
 }
 
 .dropdown-menu-nav-extra_column {

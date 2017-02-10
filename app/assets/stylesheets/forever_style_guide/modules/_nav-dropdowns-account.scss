@@ -33,8 +33,10 @@
   margin-top: 0;
   border-color: color('gray-600');
 }
-.dropdown-menu-account-user {
-  overflow: hidden;
+.dropdown-menu-account-user-name {
+  @media (min-width: $grid-float-breakpoint) {
+    @include multi_line_ellipsis($lineHeight: 1.1em, $lineCount: 3, $bgColor: $color-gray-700);
+  }
 }
 .dropdown-menu-account-user-intro {
   margin-top: $padding-small-vertical;
