@@ -7,7 +7,7 @@
     "test": "test"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "node_modules/.bin/stylelint \"app/assets/stylesheets/**/*.scss\" --syntax scss",
     "build": "node mars-styleguide-build.js"
   },
   "repository": {
@@ -25,5 +25,8 @@
     "copy": "^0.3.0",
     "font-awesome": "^4.7.0",
     "node-sass": "^4.0.0"
+  },
+  "devDependencies": {
+    "forever-stylelint-config": "git+ssh://git@github.com/forever-inc/forever-stylelint-config.git#master"
   }
 }
