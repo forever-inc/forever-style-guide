@@ -257,6 +257,29 @@
   }
 }
 
+@mixin btn-block() {
+  display: block;
+  width: 100%;
+}
+
+.btn-block-xs {
+  @media (max-width: $screen-xs-max) {
+    @include btn-block();
+  }
+}
+
+.btn-block-sm {
+  @media (max-width: $screen-sm-max) {
+    @include btn-block();
+  }
+}
+
+.btn-block-md {
+  @media (max-width: $screen-md-max) {
+    @include btn-block();
+  }
+}
+
 .btn-group {
   .btn-icon .fa {
     vertical-align: middle;
