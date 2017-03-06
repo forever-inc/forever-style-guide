@@ -94,9 +94,9 @@ $color-card-bg: color('white');
   vertical-align: middle;
   text-align: center;
   font-size: $font-size-300;
-  border: 0;
+  border: 2px solid color('gray-100');
 
-  @include transition(background-color 0.3s ease);
+  @include transition(background-color 0.3s ease, border 0.3s ease);
 
   &:active:focus {
     @extend %inset-shadow;
@@ -108,7 +108,6 @@ $color-card-bg: color('white');
   &:focus,
   &:active {
     outline: none;
-    border: 0;
   }
 }
 
