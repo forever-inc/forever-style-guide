@@ -14,11 +14,13 @@
   } @else {
     color: color('white');
     background-color: color('#{$color}');
-    border: 0;
+    border: 2px solid color('#{$color}');
+    @extend %no-shadow;
     &:hover,
     &:active,
     &:active:focus {
       background-color: color('#{$color}-dark');
+      border-color: color('#{$color}-dark');
       text-decoration: none;
     }
   }
@@ -37,13 +39,16 @@
 
   &.btn-default {
     color: $color-gray-600;
+    border: 2px solid color('white');
     &:hover,
     &:active,
     &:focus {
       background-color: color('white');
+      border: 2px solid color('white');
     }
     &.disabled {
       background-color: color('silver');
+      border: 2px solid color('silver');
     }
     &.btn-inverse {
       @include btn-color('gray');
@@ -68,16 +73,16 @@
   &.btn-link {
     @include btn-color('secondary', true);
     background: none;
-    border: 0;
+    border: 2px solid transparent; /* border needed to be consistent with btn pattern but must be transparent b/c link has no background */
     box-shadow: none;
     &:hover,
     &:active,
     &:focus {
-      border: 0;
+      border: 2px solid transparent; /* border needed to be consistent with btn pattern but must be transparent b/c link has no background */
       background: none;
       text-decoration: underline;
       &:focus {
-        border: 0;
+        border: 2px solid transparent; /* border needed to be consistent with btn pattern but must be transparent b/c link has no background */
         background: none;
         box-shadow: none;
       }
@@ -98,13 +103,13 @@
   &.btn-plain {
     color: color('gray-500');
     background: none;
-    border: 0;
+    border: 2px solid transparent; /* border needed to be consistent with btn pattern but must be transparent b/c link has no background */
     box-shadow: none;
     &:hover,
     &:active,
     &:focus {
       background: none;
-      border: 0;
+      border: 2px solid transparent; /* border needed to be consistent with btn pattern but must be transparent b/c link has no background */
       &:focus {
         background: none;
         box-shadow: none;
@@ -249,6 +254,29 @@
 
   &.btn-no-padding {
     padding: 0;
+  }
+}
+
+@mixin btn-block() {
+  display: block;
+  width: 100%;
+}
+
+.btn-block-xs {
+  @media (max-width: $screen-xs-max) {
+    @include btn-block();
+  }
+}
+
+.btn-block-sm {
+  @media (max-width: $screen-sm-max) {
+    @include btn-block();
+  }
+}
+
+.btn-block-md {
+  @media (max-width: $screen-md-max) {
+    @include btn-block();
   }
 }
 
