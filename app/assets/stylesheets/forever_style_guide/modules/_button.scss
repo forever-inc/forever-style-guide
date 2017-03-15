@@ -152,7 +152,7 @@
 
     .fa {
       font-size: $icon-sm-size;
-      padding-top: 4px;
+      padding-top: 2px;
     }
   }
   &.btn-xs {
@@ -230,7 +230,7 @@
       }
     }
     &.btn-sm {
-      padding-top: 4px;
+      padding-top: $btn-padding-small-vertical;
       .btn-action-label {
         padding-top: 4px;
       }
@@ -240,7 +240,7 @@
       }
     }
     &.btn-xs {
-      padding-top: 4px;
+      padding-top: $btn-padding-xs-vertical;
       .btn-action-label {
         padding-right: 3px;
       }
