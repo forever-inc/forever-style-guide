@@ -34,14 +34,20 @@
   margin-bottom: 5px;
   border-top: 1px solid $color-gray-500;
 }
-.footer-copyright { 
+.footer-copyright {
+  margin-bottom: 0;
   @media (max-width: $screen-sm) {
-    margin-bottom: 0;
     margin-top: 5px;
   }
 }
 .footer-policy_links {
+  margin-bottom: 0;
   @media (min-width: $screen-md) {
     text-align: right;
+  }
+}
+.footer-location {
+  @media (min-width: $screen-md) {
+    vertical-align: text-top;
   }
 }
