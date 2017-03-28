@@ -5,11 +5,11 @@ module ForeverStyleGuide
 
     def trademark(copy)
       case copy
-      when "Forever", "Forever Storage", "Forever Historian", "Forever Valet", "pixels2Pages", "Historian", "Forever Live!"
+      when "Forever", "Forever Historian", "Forever Valet", "pixels2Pages", "Historian", "Forever Live!"
         copy += "™"
       when "Forever Account", "Forever Guarantee", "Forever Guarantee Fund", "Forever Membership", "Forever Guarantee Fund", "Forever Members", "Forever Retreats", "Forever Ambassador", "Forever Ambassadors"
         copy[0..6] + "™" + copy[7..copy.length-1]
-      when "Forever Artisan", "Artisan"
+      when "Forever Artisan", "Artisan", "Forever Storage"
         copy += "®"
       else
         copy
