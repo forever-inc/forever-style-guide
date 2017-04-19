@@ -18,18 +18,24 @@
 @include fontFace('proxima_nova-semibold', 'ProximaNova-Sbold-webfont');
 @include fontFace('proxima_nova-bold', 'ProximaNova-Bold-webfont');
 @include fontFace('proxima_nova-regular_italic', 'ProximaNova-RegIt-webfont');
-@include fontFace('proxima_nova-regular_bold_italic', 'ProximaNova-BoldIt-webfont');
+@include fontFace('proxima_nova-bold_italic', 'ProximaNova-BoldIt-webfont');
 
 /* =font faces
    ---------------------------------------------------------------------------- */
-$font-face-light:           'proxima_nova-light', Helvetica, Arial, sans-serif;
-$font-face-regular:         'proxima_nova-regular', Helvetica, Arial, sans-serif;
-$font-face-semibold:        'proxima_nova-semibold', Helvetica, Arial, sans-serif;
-$font-face-bold:            'proxima_nova-bold', Helvetica, Arial, sans-serif;
-$font-face-regular_italic:  'proxima_nova-regular_italic', Helvetica, Arial, sans-serif;
-$font-face-bold_italic:     'proxima_nova-bold_italic', Helvetica, Arial, sans-serif;
+$font-face-light:           faceify('light', ('proxima_nova-light', Helvetica, Arial, sans-serif)) !default;
+$font-face-regular:         faceify('regular', ('proxima_nova-regular', Helvetica, Arial, sans-serif)) !default;
+$font-face-semibold:        faceify('semibold', ('proxima_nova-semibold', Helvetica, Arial, sans-serif)) !default;
+$font-face-bold:            faceify('bold', ('proxima_nova-bold', Helvetica, Arial, sans-serif)) !default;
+$font-face-regular_italic:  faceify('italic', ('proxima_nova-regular_italic', Helvetica, Arial, sans-serif)) !default;
+$font-face-bold_italic:     faceify('bold_italic', ('proxima_nova-bold_italic', Helvetica, Arial, sans-serif)) !default;
 
-$font-face-gotham:          'Gotham A', 'Gotham B', Helvetica, Arial, sans-serif;
+$font-face-gotham:          faceify('gotham', ('Gotham A', 'Gotham B', Helvetica, Arial, sans-serif)) !default;
+
+@each $id, $font-face in $font-faces {
+  .font-face-#{$id} {
+    font-family: #{$font-face};
+  }
+}
 
 /* =font sizes
    ---------------------------------------------------------------------------- */
@@ -44,10 +50,10 @@ $font-size-700: fontify('700', 48px) !default;
 $font-size-800: fontify('800', 64px) !default;
 
 /* !global to override bootstrap's $font-size-large and $font-size-small */
-$font-size-large: fontify('lg', $font-size-400) !global;
+$font-size-large:   fontify('lg', $font-size-400) !global;
 $font-size-default: fontify('default', $font-size-300) !default;
-$font-size-small: fontify('sm', $font-size-100) !global;
-$font-size-xsmall: fontify('xs', $font-size-000) !default;
+$font-size-small:   fontify('sm', $font-size-100) !global;
+$font-size-xsmall:  fontify('xs', $font-size-000) !default;
 
 @each $id, $font-size in $font-sizes {
   .font-size-#{$id} {
@@ -67,9 +73,9 @@ $font-weight-700: weightify('700', 700) !default;
 $font-weight-800: weightify('800', 800) !default;
 $font-weight-900: weightify('900', 900) !default;
 
-$font-weight-normal: weightify('normal', normal) !default;
-$font-weight-bold: weightify('bold', bold) !default;
-$font-weight-bolder: weightify('bolder', bolder) !default;
+$font-weight-normal:  weightify('normal', normal) !default;
+$font-weight-bold:    weightify('bold', bold) !default;
+$font-weight-bolder:  weightify('bolder', bolder) !default;
 $font-weight-lighter: weightify('lighter', lighter) !default;
 $font-weight-initial: weightify('initial', initial) !default;
 $font-weight-inherit: weightify('inherit', inherit) !default;

@@ -148,4 +148,10 @@ $modal-xl-screen-lg-width: 1170px;
   @media (min-width: $screen-lg){
     width: $modal-xl-screen-lg-width;
   }
+
+  &.modal-dialog {
+    @media (min-width: $screen-md-min) {
+      margin-top: $header-height + 5; // prefer to have more vertical real estate available for large modals
+    }
+  }
 }
