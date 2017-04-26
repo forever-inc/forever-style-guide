@@ -21,10 +21,6 @@ module ForeverStyleGuide
       strip_subdomain("www", path, url)
     end
 
-    def web_app_url(path = '/', url = nil)
-      strip_subdomain("my", path, url)
-    end
-
     def strip_subdomain(sub, path = '/', url = nil)
       url ||= request.url if respond_to?(:request)
       url = URI(url)
@@ -116,39 +112,40 @@ module ForeverStyleGuide
     end
 
     def web_app_admin_url
-      web_app_url('/admin')
+      # this probably goes away
+      ('/app/admin')
     end
 
     def stop_impersonating_url
-      web_app_url('/admin/users')
+      ('/app/admin/users')
     end
 
     # Web App Paths
     def library_url
-      web_app_url('/#/inbox')
+      ('/app/library')
     end
 
     def inbox_url
-      web_app_url('/#/inbox?inbox_filter_type=unorganized-items')
+      ('/app/library')
     end
 
     def projects_url
-      web_app_url('/#/projects')
+      ('/app/library')
     end
 
     def people_url
-      web_app_url('/#/people/family')
+      ('/app/users')
     end
 
     def app_home_url
-      web_app_url('/#/')
+      ('/app/home')
     end
 
-    # User settings links (store and web app)
     def user_settings_url
-      web_app_url('/#/settings')
+      ('/app/settings')
     end
 
+    # Combined Store/WWW Paths - now all available at www.forever.com
     def user_order_history_url
       www_url('/settings/orders')
     end
@@ -161,7 +158,6 @@ module ForeverStyleGuide
       www_url('/settings/my_ambassador')
     end
 
-    # Combined Store/WWW Paths - now all available at www.forever.com
     def login_url
       www_url('/sign_in')
     end
