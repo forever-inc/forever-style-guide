@@ -128,8 +128,12 @@ module ForeverStyleGuide
       ('/app/library')
     end
 
-    def inbox_url
-      ('/app/library')
+    def albums_url
+      ('/app/albums')
+    end
+
+    def tags_url
+      ('/app/tags')
     end
 
     def projects_url
@@ -140,7 +144,7 @@ module ForeverStyleGuide
       ('/app/users')
     end
 
-    def app_home_url
+    def profile_url
       ('/app/home')
     end
 

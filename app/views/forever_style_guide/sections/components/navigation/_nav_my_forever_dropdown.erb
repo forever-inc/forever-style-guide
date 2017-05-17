@@ -14,27 +14,27 @@
           <% if defined?(current_user) && current_user.present? %>
 
             <li>
-              <%= link_to library_url, class: 'dropdown-menu-nav-link', title: 'Organize Photos in Your Forever Library' do %>
-                <i class='fa fa-th-large'></i>Library
-              <% end %>
+              <%= link_to 'Library', library_url, class: 'dropdown-menu-nav-link', title: 'Organize Photos in Your Forever Library' %>
             </li>
 
             <li>
-              <%= link_to projects_url, class: 'dropdown-menu-nav-link', title: 'Create Print Projects' do %>
-                <i class='fa fa-paint-brush'></i>Projects
-              <% end %>
+              <%= link_to 'Albums', albums_url, class: 'dropdown-menu-nav-link', title: 'Share Albums with Friends' %>
             </li>
 
             <li>
-              <%= link_to people_url, class: 'dropdown-menu-nav-link', title: 'Share Photos with Friends and Family' do %>
-                <i class='fa fa-users'></i>People
-              <% end %>
+              <%= link_to 'Tags', tags_url, class: 'dropdown-menu-nav-link', title: 'Tag Photos of Friends and Places' %>
             </li>
 
             <li>
-              <%= link_to app_home_url, class: 'dropdown-menu-nav-link', title: 'View Your Shared Photo Albums' do %>
-                <i class='fa fa-home'></i>Home
-              <% end %>
+              <%= link_to 'My Projects', projects_url, class: 'dropdown-menu-nav-link', title: 'Create Print Projects' %>
+            </li>
+
+            <li>
+              <%= link_to 'Friends & Family', people_url, class: 'dropdown-menu-nav-link', title: 'Share Photos with Friends and Family' %>
+            </li>
+
+            <li>
+              <%= link_to 'Profile', profile_url, class: 'dropdown-menu-nav-link', title: 'View Your Profile' %>
             </li>
 
           <% else %>
