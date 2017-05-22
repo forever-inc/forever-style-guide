@@ -430,10 +430,6 @@ module ForeverStyleGuide
       "https://forever1.zendesk.com/hc/en-us/articles/203834518-Using-the-People-Tab-Video-"
     end
 
-    def zendesk_inbox_video_url
-      "https://forever1.zendesk.com/hc/en-us/articles/223580988-Deeper-Dive-into-How-to-Use-your-Inbox-Video-"
-    end
-
     def zendesk_albums_video_url
       "https://forever1.zendesk.com/hc/en-us/articles/226085547-Creating-an-Album-Uploading-Directly-to-an-Album-Video-"
     end
