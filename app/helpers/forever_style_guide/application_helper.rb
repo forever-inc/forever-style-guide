@@ -145,7 +145,7 @@ module ForeverStyleGuide
     end
 
     def profile_url
-      ('/app/home')
+      ('/app/profile')
     end
 
     def user_settings_url
