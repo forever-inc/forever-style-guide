@@ -117,10 +117,7 @@ module ForeverStyleGuide
     end
 
     def stop_impersonating_url
-      # This won't work this way.  You need to call the api to reset current_user to the impersonator first,
-      # which is a POST
-      # and there is no '/app/admin/user' route...it is just '/admin/users' (store route) or www_url('/admin/users')
-      ('/app/admin/users')
+      ('/impersonations')
     end
 
     # Web App Paths
