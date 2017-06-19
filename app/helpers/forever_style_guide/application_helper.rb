@@ -111,11 +111,6 @@ module ForeverStyleGuide
       www_url('/admin')
     end
 
-    def web_app_admin_url
-      # this probably goes away
-      ('/app/admin')
-    end
-
     def stop_impersonating_url
       ('/impersonations')
     end
