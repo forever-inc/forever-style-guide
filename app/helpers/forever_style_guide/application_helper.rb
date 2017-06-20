@@ -134,7 +134,7 @@ module ForeverStyleGuide
     end
 
     def projects_url
-      ('/app/library')
+      ('/app/projects')
     end
 
     def people_url
