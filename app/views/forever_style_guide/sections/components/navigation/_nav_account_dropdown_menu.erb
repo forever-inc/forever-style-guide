@@ -81,7 +81,7 @@
 
         <li class="dropdown-menu-account-item">
 
-          <%= link_to current_admin ? stop_impersonating_url : log_out_url, class: 'dropdown-menu-nav-link dropdown-menu-nav-link-sm dropdown-menu-nav-link-no_margin', title: 'Log Out of Forever', method: current_admin ? :delete : :post do %>
+          <%= link_to current_admin ? stop_impersonating_url : log_out_url, class: 'dropdown-menu-nav-link dropdown-menu-nav-link-sm dropdown-menu-nav-link-no_margin', title: 'Log Out of Forever', method: :delete do %>
             <i class='fa fa-share fa-fw'></i>Log Out
           <% end %>
         </li>
