@@ -198,8 +198,8 @@ module ForeverStyleGuide
       www_url('/forever_storage')
     end
 
-    def app_url
-      www_url('/app')
+    def mobile_url
+      www_url('/mobile')
     end
 
     def valet_url
