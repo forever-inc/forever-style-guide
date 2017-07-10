@@ -416,27 +416,23 @@ module ForeverStyleGuide
     end
 
     def zendesk_uploading_video_url
-      "https://forever1.zendesk.com/hc/en-us/articles/204496797"
-    end
-
-    def zendesk_organizing_video_url
-      "https://forever1.zendesk.com/hc/en-us/articles/222868828-Organizing-your-Forever-Inbox-Video-"
+      "https://forever1.zendesk.com/hc/en-us/articles/115000519251-Tutorial-Video-How-to-Upload"
     end
 
     def zendesk_sharing_video_url
-      "https://forever1.zendesk.com/hc/en-us/articles/203834518-Using-the-People-Tab-Video-"
+      "https://forever1.zendesk.com/hc/en-us/articles/115000519131-Tutorial-Video-How-to-Share-with-Friends-and-Family"
     end
 
     def zendesk_albums_video_url
-      "https://forever1.zendesk.com/hc/en-us/articles/226085547-Creating-an-Album-Uploading-Directly-to-an-Album-Video-"
-    end
-
-    def zendesk_nested_albums_video_url
-      "https://forever1.zendesk.com/hc/en-us/articles/218144057"
+      "https://forever1.zendesk.com/hc/en-us/articles/115000519171-Tutorial-Video-Organizing-with-Albums"
     end
 
     def zendesk_tags_video_url
-      "https://forever1.zendesk.com/hc/en-us/articles/223595308-Using-Albums-and-Tags-Video-"
+      "https://forever1.zendesk.com/hc/en-us/articles/115000519211-Tutorial-Video-Tagging-in-Forever-"
+    end
+
+    def zendesk_projects_video_url
+      "https://forever1.zendesk.com/hc/en-us/articles/115000519471-Tutorial-Video-Print-Projects"
     end
 
     # Path helpers for style guide dummy app
