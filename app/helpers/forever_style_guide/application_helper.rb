@@ -301,10 +301,6 @@ module ForeverStyleGuide
       www_url('/page_prints')
     end
 
-    def photo_prints_url
-      www_url('/photo_prints')
-    end
-
     def gift_certificate_url
       www_url('/gift_certificates')
     end
