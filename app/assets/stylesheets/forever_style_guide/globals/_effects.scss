@@ -161,3 +161,37 @@ $color-card-bg: color('white');
     }
   }
 }
+
+// can be added to sections to create slant effect
+@each $id, $color in $colors {
+
+  .slant-right-#{$id} {
+  width: 100%;
+  position: relative;
+  
+    &::after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 0;
+      border-right: 100vw solid transparent;
+      border-bottom: 60px solid #{$id};
+      top: -60px;
+    }
+  }
+
+  .slant-left-#{$id} {
+  width: 100%;
+  position: relative;
+  
+    &::after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 0;
+      border-left: 100vw solid transparent;
+      border-bottom: 60px solid #{$id};
+      top: -60px;
+    }
+  }
+}
