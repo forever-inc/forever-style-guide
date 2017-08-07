@@ -168,14 +168,14 @@ $color-card-bg: color('white');
   .slant-right-#{$id} {
   width: 100%;
   position: relative;
-  
+
     &::after {
       content: "";
       position: absolute;
       width: 0;
       height: 0;
       border-right: 100vw solid transparent;
-      border-bottom: 60px solid #{$id};
+      border-bottom: 60px solid color('#{$id}');
       top: -60px;
     }
   }
@@ -190,7 +190,7 @@ $color-card-bg: color('white');
       width: 0;
       height: 0;
       border-left: 100vw solid transparent;
-      border-bottom: 60px solid #{$id};
+      border-bottom: 60px solid color('#{$id}');
       top: -60px;
     }
   }
