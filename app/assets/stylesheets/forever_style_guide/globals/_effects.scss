@@ -162,7 +162,7 @@
   }
 }
 
-// can be added to sections to create slant effect
+// add this class to any section to add a slant effect to the top of that element
 @each $id, $color in $colors {
 
   .slant-right-#{$id} {
@@ -183,7 +183,7 @@
   .slant-left-#{$id} {
     width: 100%;
     position: relative;
-    
+
     &::after {
       content: "";
       position: absolute;
