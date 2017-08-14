@@ -1,3 +1,5 @@
+@import "forever_style_guide/globals/breakpoints";
+
 @mixin box-shadow($color, $top, $left, $blur, $spread, $inset: false) {
   @if $inset {
     -webkit-box-shadow: inset $top $left $blur $spread $color;
@@ -22,6 +24,12 @@
     -ms-transform: $transform-properties; /* IE 9 */
     -webkit-transform: $transform-properties; /* Chrome, Safari, Opera */
     transform: $transform-properties;
+    -moz-transform: $transform-properties;
+    -o-transform: $transform-properties;
+  }
+
+  @mixin skewY ($y) {
+     @include transform(skewY($y));
   }
 
   @mixin hero-gradient($opacity, $distance_as_percent) {
@@ -163,35 +171,36 @@
 }
 
 // add this class to any section to add a slant effect to the top of that element
-@each $id, $color in $colors {
 
-  .slant-right-#{$id} {
-    width: 100%;
-    position: relative;
+$slant-height: 161px;
+$slant-position-top: -85px;
+$slant-angle-left: -184deg;
+$slant-angle-left-xs: -182deg;
+$slant-angle-right: 184deg;
+$slant-angle-right-xs: 182deg;
 
-    &::after {
-      content: "";
-      position: absolute;
-      width: 0;
-      height: 0;
-      border-right: 100vw solid transparent;
-      border-bottom: 60px solid color('#{$id}');
-      top: -60px;
-    }
+.slant::before {
+  content: "";
+  height: $slant-height;
+  display: block;
+  margin-top: -1px;
+  top: $slant-position-top;
+  position: relative;
+  background-color: inherit;
+}
+
+.slant-left::before {
+  @include skewY($slant-angle-left);
+
+  @media (max-width: $screen-xs) { // reposition floating elements on mobile
+    @include skewY($slant-angle-left-xs);
   }
+}
 
-  .slant-left-#{$id} {
-    width: 100%;
-    position: relative;
+.slant-right::before {  
+  @include skewY($slant-angle-right);
 
-    &::after {
-      content: "";
-      position: absolute;
-      width: 0;
-      height: 0;
-      border-left: 100vw solid transparent;
-      border-bottom: 60px solid color('#{$id}');
-      top: -60px;
-    }
+  @media (max-width: $screen-xs) { // reposition floating elements on mobile
+    @include skewY($slant-angle-right-xs);
   }
 }
