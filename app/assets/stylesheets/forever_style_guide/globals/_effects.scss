@@ -171,19 +171,17 @@
 }
 
 // add this class to any section to add a slant effect to the top of that element
-// custom positioning required for greater ranges of resize -> xxl and sm screens
-$slant-position-top: -70px;
+// custom positioning required for resize of end spectrums -> xxl and sm screens
+$slant-position-top: -40px;
 $slant-position-top-sm: -15px;
 $slant-position-top-xxl: -80px;
 
-$slant-height: 140px;
+$slant-height: 95px;
 $slant-height-sm: 65px;
 $slant-height-xxl: 220px;
 
-$slant-angle-left: -184deg;
-$slant-angle-left-xs: -182deg;
-$slant-angle-right: 184deg;
-$slant-angle-right-xs: 182deg;
+$slant-angle-left: -182deg;
+$slant-angle-right: 182deg;
 
 .slant::before {
   content: "";
@@ -207,15 +205,8 @@ $slant-angle-right-xs: 182deg;
 
 .slant-left::before {
   @include skewY($slant-angle-left);
-  @media (max-width: $screen-sm) { // reduce severity of angle on mobile
-    @include skewY($slant-angle-left-xs);
-  }
 }
 
 .slant-right::before {  
   @include skewY($slant-angle-right);
-
-  @media (max-width: $screen-sm) { // reduce severity of angle on mobile
-    @include skewY($slant-angle-right-xs);
-  }
 }
