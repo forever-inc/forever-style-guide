@@ -171,28 +171,27 @@
 }
 
 // add this class to any section to add a slant effect to the top of that element
-
-$slant-height: 161px;
 $slant-position-top: -85px;
+$slant-height: 161px;
 $slant-angle-left: -184deg;
-$slant-angle-left-xs: -182deg;
 $slant-angle-right: 184deg;
+$slant-angle-left-xs: -182deg;
 $slant-angle-right-xs: 182deg;
 
 .slant::before {
   content: "";
-  height: $slant-height;
-  display: block;
-  margin-top: -1px;
-  top: $slant-position-top;
   position: relative;
+  top: $slant-position-top;
+  display: block;
+  height: $slant-height;
+  margin-top: -1px;
   background-color: inherit;
 }
 
 .slant-left::before {
   @include skewY($slant-angle-left);
 
-  @media (max-width: $screen-xs) { // reposition floating elements on mobile
+  @media (max-width: $screen-xs) { // reduce severity of angle on mobile
     @include skewY($slant-angle-left-xs);
   }
 }
@@ -200,7 +199,7 @@ $slant-angle-right-xs: 182deg;
 .slant-right::before {  
   @include skewY($slant-angle-right);
 
-  @media (max-width: $screen-xs) { // reposition floating elements on mobile
+  @media (max-width: $screen-xs) { // reduce severity of angle on mobile
     @include skewY($slant-angle-right-xs);
   }
 }
