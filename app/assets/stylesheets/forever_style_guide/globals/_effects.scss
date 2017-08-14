@@ -21,15 +21,15 @@
   }
 
   @mixin transform($transform-properties...) {
+    transform: $transform-properties;
     -ms-transform: $transform-properties; /* IE 9 */
     -webkit-transform: $transform-properties; /* Chrome, Safari, Opera */
-    transform: $transform-properties;
     -moz-transform: $transform-properties;
     -o-transform: $transform-properties;
   }
 
   @mixin skewY ($y) {
-     @include transform(skewY($y));
+    @include transform(skewY($y));
   }
 
   @mixin hero-gradient($opacity, $distance_as_percent) {
@@ -171,27 +171,43 @@
 }
 
 // add this class to any section to add a slant effect to the top of that element
-$slant-position-top: -85px;
-$slant-height: 161px;
+// custom positioning required for greater ranges of resize -> xxl and sm screens
+$slant-position-top: -70px;
+$slant-position-top-sm: -15px;
+$slant-position-top-xxl: -80px;
+
+$slant-height: 140px;
+$slant-height-sm: 65px;
+$slant-height-xxl: 220px;
+
 $slant-angle-left: -184deg;
-$slant-angle-right: 184deg;
 $slant-angle-left-xs: -182deg;
+$slant-angle-right: 184deg;
 $slant-angle-right-xs: 182deg;
 
 .slant::before {
   content: "";
   position: relative;
   top: $slant-position-top;
-  display: block;
   height: $slant-height;
+  display: block;
   margin-top: -1px;
   background-color: inherit;
+
+  @media (min-width: $screen-xxl) {
+    top: $slant-position-top-xxl;
+    height: $slant-height-xxl;
+  }
+
+  @media (max-width: $screen-sm) {
+    top: $slant-position-top-sm;
+    height: $slant-height-sm;
+  }
 }
 
 .slant-left::before {
   @include skewY($slant-angle-left);
-
-  @media (max-width: $screen-xs) { // reduce severity of angle on mobile
+  @media (max-width: $screen-sm) { // reduce severity of angle on mobile
     @include skewY($slant-angle-left-xs);
   }
 }
@@ -199,7 +215,7 @@ $slant-angle-right-xs: 182deg;
 .slant-right::before {  
   @include skewY($slant-angle-right);
 
-  @media (max-width: $screen-xs) { // reduce severity of angle on mobile
+  @media (max-width: $screen-sm) { // reduce severity of angle on mobile
     @include skewY($slant-angle-right-xs);
   }
 }
