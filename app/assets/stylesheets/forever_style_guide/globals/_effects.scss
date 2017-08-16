@@ -161,3 +161,43 @@ $color-card-bg: color('white');
     }
   }
 }
+
+// add this class to any section to add a slant effect to the top of that element
+// custom positioning required for resize of end spectrums -> xxl and sm screens
+$slant-position-top: -40px;
+$slant-position-top-sm: -15px;
+$slant-position-top-xxl: -80px;
+
+$slant-height: 95px;
+$slant-height-sm: 65px;
+$slant-height-xxl: 220px;
+
+$slant-angle-left: -182deg;
+$slant-angle-right: 182deg;
+
+.slant::before {
+  content: "";
+  display: block;
+  position: relative;
+  top: $slant-position-top;
+  height: $slant-height;
+  background-color: inherit;
+
+  @media (min-width: $screen-xxl) {
+    top: $slant-position-top-xxl;
+    height: $slant-height-xxl;
+  }
+
+  @media (max-width: $screen-sm) {
+    top: $slant-position-top-sm;
+    height: $slant-height-sm;
+  }
+}
+
+.slant-left::before {
+  @include transform(skewY($slant-angle-left));
+}
+
+.slant-right::before {
+  @include transform(skewY($slant-angle-right));
+}
