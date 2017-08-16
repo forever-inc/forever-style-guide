@@ -183,12 +183,12 @@ $slant-angle-right: 182deg;
   height: $slant-height;
   background-color: inherit;
 
-  // @media (min-width: $screen-xxl) {
-  //   top: $slant-position-top-xxl;
-  //   height: $slant-height-xxl;
-  // }
+  @media (min-width: $screen-xxl-min) {
+    top: $slant-position-top-xxl;
+    height: $slant-height-xxl;
+  }
 
-  @media (max-width: $screen-sm) {
+  @media (max-width: $screen-sm-min) {
     top: $slant-position-top-sm;
     height: $slant-height-sm;
   }
