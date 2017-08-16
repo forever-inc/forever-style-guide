@@ -26,10 +26,6 @@
   -o-transform: $transform-properties;
 }
 
-@mixin skewY ($y) {
-  @include transform(skewY($y));
-}
-
 @mixin hero-gradient($opacity, $distance_as_percent) {
   &:before {
     content: " ";
@@ -183,11 +179,10 @@ $slant-angle-right: 182deg;
 
 .slant::before {
   content: "";
+  display: block;
   position: relative;
   top: $slant-position-top;
   height: $slant-height;
-  display: block;
-  margin-top: -1px;
   background-color: inherit;
 
   @media (min-width: $screen-xxl) {
@@ -202,9 +197,9 @@ $slant-angle-right: 182deg;
 }
 
 .slant-left::before {
-  @include skewY($slant-angle-left);
+  @include transform(skewY($slant-angle-left));
 }
 
-.slant-right::before {  
-  @include skewY($slant-angle-right);
+.slant-right::before {
+  @include transform(skewY($slant-angle-right));
 }
