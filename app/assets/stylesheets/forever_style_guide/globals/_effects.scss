@@ -5,135 +5,135 @@
     -webkit-box-shadow: inset $top $left $blur $spread $color;
     -moz-box-shadow: inset $top $left $blur $spread $color;
     box-shadow: inset $top $left $blur $spread $color;
-    } @else {
-      -webkit-box-shadow: $top $left $blur $spread $color;
-      -moz-box-shadow: $top $left $blur $spread $color;
-      box-shadow: $top $left $blur $spread $color;
-    }
+  } @else {
+    -webkit-box-shadow: $top $left $blur $spread $color;
+    -moz-box-shadow: $top $left $blur $spread $color;
+    box-shadow: $top $left $blur $spread $color;
+  }
+}
+
+@mixin transition($transition-properties...) {
+  -webkit-transition: $transition-properties;
+  -moz-transition: $transition-properties;
+  -ms-transition: $transition-properties;
+  -o-transition: $transition-properties;
+  transition: $transition-properties;
+}
+
+@mixin transform($transform-properties...) {
+  transform: $transform-properties;
+  -ms-transform: $transform-properties; /* IE 9 */
+  -webkit-transform: $transform-properties; /* Chrome, Safari, Opera */
+  -moz-transform: $transform-properties;
+  -o-transform: $transform-properties;
+}
+
+@mixin skewY ($y) {
+  @include transform(skewY($y));
+}
+
+@mixin hero-gradient($opacity, $distance_as_percent) {
+  &:before {
+    content: " ";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: linear-gradient(rgba(0, 0, 0, $opacity), transparent $distance_as_percent);
+  }
+}
+
+$shadow-color: rgba(color('gray-500'), 0.6);
+$color-card-bg: color('white');
+
+%no-shadow {
+  @include box-shadow(transparent, 0, 0, 0, 0);
+  text-shadow: none;
+}
+
+%card-shadow {
+  @include box-shadow($shadow-color, 0, 2px, 4px, 0);
+}
+
+%footer-shadow {
+  @include box-shadow(lighten($shadow-color, 30%), 0, -1px, 2px, 0);
+}
+
+%text-shadow {
+  text-shadow: $shadow-color 0 1px 2px;
+}
+
+%item-shadow {
+  @include box-shadow($shadow-color, 1px, 1px, 1px, 0);
+}
+
+%inset-shadow {
+  @include box-shadow($shadow-color, 0, 2px, 3px, 0, true);
+}
+
+%hero-gradient {
+  @include hero-gradient(0.5, 15%);
+}
+
+%card-style {
+  @extend %card-shadow;
+  background-color: $color-card-bg;
+}
+.card {
+  @extend %card-style;
+}
+
+%item-style {
+  background-color: color('gray-100');
+  color: color('gray-600');
+  border: 1px solid color('gray-400');
+  border-radius: $border-radius-default;
+  text-shadow: none;
+}
+
+%btn-style {
+  @extend %item-style;
+  @extend %item-shadow;
+  height: $btn-size;
+  padding: $padding-default-vertical $btn-padding-default-horizontal;
+  line-height: 1.3;
+  display: inline-block;
+  vertical-align: middle;
+  text-align: center;
+  font-size: $font-size-300;
+  border: 2px solid color('gray-100');
+
+  @include transition(background-color 0.3s ease, border 0.3s ease);
+
+  &:active:focus {
+    @extend %inset-shadow;
+    outline: none;
+    background-color: color('silver');
   }
 
-  @mixin transition($transition-properties...) {
-    -webkit-transition: $transition-properties;
-    -moz-transition: $transition-properties;
-    -ms-transition: $transition-properties;
-    -o-transition: $transition-properties;
-    transition: $transition-properties;
+  &:hover,
+  &:focus,
+  &:active {
+    outline: none;
   }
+}
 
-  @mixin transform($transform-properties...) {
-    transform: $transform-properties;
-    -ms-transform: $transform-properties; /* IE 9 */
-    -webkit-transform: $transform-properties; /* Chrome, Safari, Opera */
-    -moz-transform: $transform-properties;
-    -o-transform: $transform-properties;
-  }
+%check-style {
+  display: block;
+  height: $btn-xs-size;
+  width: $btn-xs-size;
+  @extend %item-shadow;
+  font-size: $font-size-default;
+  text-align: center;
 
-  @mixin skewY ($y) {
-    @include transform(skewY($y));
-  }
+  @include transition(background-color 0.3s ease, color 0.3s ease);
+}
 
-  @mixin hero-gradient($opacity, $distance_as_percent) {
-    &:before {
-      content: " ";
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      top: 0;
-      left: 0;
-      background-image: linear-gradient(rgba(0, 0, 0, $opacity), transparent $distance_as_percent);
-    }
-  }
-
-  $shadow-color: rgba(color('gray-500'), 0.6);
-  $color-card-bg: color('white');
-
-  %no-shadow {
-    @include box-shadow(transparent, 0, 0, 0, 0);
-    text-shadow: none;
-  }
-
-  %card-shadow {
-    @include box-shadow($shadow-color, 0, 2px, 4px, 0);
-  }
-
-  %footer-shadow {
-    @include box-shadow(lighten($shadow-color, 30%), 0, -1px, 2px, 0);
-  }
-
-  %text-shadow {
-    text-shadow: $shadow-color 0 1px 2px;
-  }
-
-  %item-shadow {
-    @include box-shadow($shadow-color, 1px, 1px, 1px, 0);
-  }
-
-  %inset-shadow {
-    @include box-shadow($shadow-color, 0, 2px, 3px, 0, true);
-  }
-
-  %hero-gradient {
-    @include hero-gradient(0.5, 15%);
-  }
-
-  %card-style {
-    @extend %card-shadow;
-    background-color: $color-card-bg;
-  }
-  .card {
-    @extend %card-style;
-  }
-
-  %item-style {
-    background-color: color('gray-100');
-    color: color('gray-600');
-    border: 1px solid color('gray-400');
-    border-radius: $border-radius-default;
-    text-shadow: none;
-  }
-
-  %btn-style {
-    @extend %item-style;
-    @extend %item-shadow;
-    height: $btn-size;
-    padding: $padding-default-vertical $btn-padding-default-horizontal;
-    line-height: 1.3;
-    display: inline-block;
-    vertical-align: middle;
-    text-align: center;
-    font-size: $font-size-300;
-    border: 2px solid color('gray-100');
-
-    @include transition(background-color 0.3s ease, border 0.3s ease);
-
-    &:active:focus {
-      @extend %inset-shadow;
-      outline: none;
-      background-color: color('silver');
-    }
-
-    &:hover,
-    &:focus,
-    &:active {
-      outline: none;
-    }
-  }
-
-  %check-style {
-    display: block;
-    height: $btn-xs-size;
-    width: $btn-xs-size;
-    @extend %item-shadow;
-    font-size: $font-size-default;
-    text-align: center;
-
-    @include transition(background-color 0.3s ease, color 0.3s ease);
-  }
-
-  .polaroid_photo_border {
-    border: 8px solid color('gray-100');
-    @extend %item-shadow;
-  }
+.polaroid_photo_border {
+  border: 8px solid color('gray-100');
+  @extend %item-shadow;
+}
 
 // creates a sawtooth banner style for each color in core color dictionary
 @each $id, $color in $core_colors {
