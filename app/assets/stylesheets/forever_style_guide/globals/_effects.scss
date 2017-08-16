@@ -1,5 +1,3 @@
-@import "forever_style_guide/globals/breakpoints";
-
 @mixin box-shadow($color, $top, $left, $blur, $spread, $inset: false) {
   @if $inset {
     -webkit-box-shadow: inset $top $left $blur $spread $color;
