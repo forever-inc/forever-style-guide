@@ -1,3 +1,7 @@
+// TODO / TECH DEBT - this import shouldn't be necessary as other global modules have access
+// This is a (gross) fix to an issue we could only recreate when consuming a published gem. ie Works as expected locally when you remove this import, but results in undefined variables when pulled from rubygems.org
+@import 'breakpoints';
+
 @mixin box-shadow($color, $top, $left, $blur, $spread, $inset: false) {
   @if $inset {
     -webkit-box-shadow: inset $top $left $blur $spread $color;
