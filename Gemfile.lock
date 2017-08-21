@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    forever_style_guide (3.2.10)
+    forever_style_guide (3.2.11)
       bootstrap-sass
       font-awesome-rails
       jquery-rails
@@ -190,3 +190,4 @@ DEPENDENCIES
   sprockets (= 2.12.4)
   sqlite3
   thor
+  
