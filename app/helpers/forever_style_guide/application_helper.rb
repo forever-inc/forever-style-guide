@@ -93,7 +93,7 @@ module ForeverStyleGuide
     #User storage methds as seen in web app user.rb
     def capacity_readable
       if current_user
-        number_to_human_size(current_user.storage_capacity)
+        number_to_human_size(current_user.storage_capacity, precision: 4)
       end
     end
 
