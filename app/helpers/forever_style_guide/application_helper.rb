@@ -278,7 +278,7 @@ module ForeverStyleGuide
     end
 
     def predesigned_layouts_digital_art_url
-      www_url('/digital_art_library?facet_name=page-layouts')
+      www_url('/prints_library?facet_name=pre-designed%20layouts')
     end
 
     def all_digital_art_url
