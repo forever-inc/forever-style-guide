@@ -269,6 +269,10 @@ module ForeverStyleGuide
       www_url('/prints_library?facet_name=print-featured')
     end
 
+    def artisan_prints_url
+      www_url('/artisan#printing')
+    end
+
     def free_digital_art_url
       www_url('/digital_art_library?facet_name=free')
     end
