@@ -262,11 +262,11 @@ module ForeverStyleGuide
     end
 
     def all_photo_books_url
-      www_url('/photo_book_library')
+      www_url('/prints_library')
     end
 
     def featured_photo_books_url
-      www_url('/photo_book_library?facet_name=print-featured')
+      www_url('/prints_library?facet_name=print-featured')
     end
 
     def free_digital_art_url
