@@ -7,7 +7,7 @@ module ForeverStyleGuide
       case copy
       when "Forever", "Forever Historian", "Forever Valet", "pixels2Pages", "Historian", "Forever Live!"
         copy += "™"
-      when "Forever Account", "Forever Guarantee", "Forever Guarantee Fund", "Forever Membership", "Forever Guarantee Fund", "Forever Members", "Forever Retreats", "Forever Ambassador", "Forever Ambassadors"
+      when "Forever Account", "Forever Guarantee", "Forever Guarantee Fund", "Forever Membership", "Forever Guarantee Fund", "Forever Members", "Forever Retreats", "Forever Ambassador", "Forever Ambassadors", "Forever Print"
         copy[0..6] + "™" + copy[7..copy.length-1]
       when "Forever Artisan", "Artisan", "Forever Storage"
         copy += "®"
@@ -209,10 +209,6 @@ module ForeverStyleGuide
       www_url('/artisan')
     end
 
-    def projects_marketing_url
-      www_url('/projects')
-    end
-
     def deals_url
       www_url('/deals')
     end
@@ -265,40 +261,24 @@ module ForeverStyleGuide
       www_url('/digital_art_library?facet_name=new')
     end
 
+    def all_photo_books_url
+      www_url('/photo_book_library')
+    end
+
+    def featured_photo_books_url
+      www_url('/photo_book_library?facet_name=print-featured')
+    end
+
     def free_digital_art_url
       www_url('/digital_art_library?facet_name=free')
     end
 
+    def predesigned_layouts_digital_art_url
+      www_url('/digital_art_library?facet_name=page-layouts')
+    end
+
     def all_digital_art_url
       www_url('/digital_art_library')
-    end
-
-    def print_url
-      www_url('/print')
-    end
-
-    def photo_books_url
-      www_url('/photobooks')
-    end
-
-    def cards_url
-      www_url('/cards')
-    end
-
-    def calendars_url
-      www_url('/calendars')
-    end
-
-    def wall_art_url
-      www_url('/wall_art')
-    end
-
-    def photo_gifts_url
-      www_url('/photo_gifts')
-    end
-
-    def page_prints_url
-      www_url('/page_prints')
     end
 
     def gift_certificate_url
