@@ -67,8 +67,8 @@ module ForeverStyleGuide
     def is_in_product_dropdown?
       @pages = [
         'guaranteed_storage', 'add_storage', 'services', 'historian', 'downloads', 'valet',
-        'artisan', 'digital_art', 'digital_art_library', 'p2p',
-        'print',
+        'artisan', 'digital_art', 'digital_art_library', 'forever_print_library' 'p2p',
+        'forever_print',
         'gifts', 'shipping', 'bulk_orders', 'returns',
         'products'
       ]
@@ -265,12 +265,12 @@ module ForeverStyleGuide
       www_url('/digital_art_library?facet_name=new')
     end
 
-    def all_photo_books_url
-      www_url('/print_library')
+    def forever_photo_books_library_url
+      www_url('/forever_print_library')
     end
 
-    def featured_photo_books_url
-      www_url('/print_library?facet_name=print-featured')
+    def featured_photo_books_library_url
+      www_url('/forever_print_library?facet_name=print-featured')
     end
 
     def artisan_print_url
