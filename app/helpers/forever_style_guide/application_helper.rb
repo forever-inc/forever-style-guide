@@ -209,6 +209,10 @@ module ForeverStyleGuide
       www_url('/artisan')
     end
 
+    def forever_print_url
+      www_url('/forever_print')
+    end
+
     def deals_url
       www_url('/deals')
     end
@@ -262,14 +266,14 @@ module ForeverStyleGuide
     end
 
     def all_photo_books_url
-      www_url('/prints_library')
+      www_url('/print_library')
     end
 
     def featured_photo_books_url
-      www_url('/prints_library?facet_name=print-featured')
+      www_url('/print_library?facet_name=print-featured')
     end
 
-    def artisan_prints_url
+    def artisan_print_url
       www_url('/artisan#printing')
     end
 
