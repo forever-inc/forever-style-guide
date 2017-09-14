@@ -190,4 +190,6 @@ DEPENDENCIES
   sprockets (= 2.12.4)
   sqlite3
   thor
- 
+
+BUNDLED WITH
+   1.10.6
