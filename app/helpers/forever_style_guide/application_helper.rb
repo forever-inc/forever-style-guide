@@ -68,7 +68,7 @@ module ForeverStyleGuide
       @pages = [
         'guaranteed_storage', 'add_storage', 'services', 'historian', 'downloads', 'valet',
         'artisan', 'digital_art', 'digital_art_library', 'forever_print_library' 'p2p',
-        'forever_print',
+        'forever_print', 'print', 'prints',
         'gifts', 'shipping', 'bulk_orders', 'returns',
         'products'
       ]
