@@ -265,7 +265,7 @@ module ForeverStyleGuide
       www_url('/digital_art_library?facet_name=new')
     end
 
-    def forever_photo_books_library_url
+    def forever_print_library_url
       www_url('/forever_print_library')
     end
 
