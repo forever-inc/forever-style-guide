@@ -68,7 +68,7 @@ module ForeverStyleGuide
       @pages = [
         'guaranteed_storage', 'add_storage', 'services', 'historian', 'downloads', 'valet',
         'artisan', 'digital_art', 'digital_art_library', 'forever_print_library' 'p2p',
-        'forever_print', 'print', 'prints',
+        'forever_print', 'print', 'prints', 'print_quality',
         'gifts', 'shipping', 'bulk_orders', 'returns',
         'products'
       ]
@@ -211,6 +211,10 @@ module ForeverStyleGuide
 
     def forever_print_url
       www_url('/forever_print')
+    end
+
+    def print_quality_url
+      www_url('/print_quality')
     end
 
     def deals_url
