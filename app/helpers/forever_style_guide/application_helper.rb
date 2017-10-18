@@ -13,10 +13,10 @@ module ForeverStyleGuide
         copy + "™"
       when "Forever Account", "Forever Guarantee", "Forever Guarantee Fund", "Forever Membership", "Forever Guarantee Fund", "Forever Members", "Forever Retreats", "Forever Ambassador", "Forever Ambassadors"
         copy[0..6].upcase + "™" + copy[7..copy.length-1]
-      when "Forever Artisan", "Artisan", "Forever Storage"
-          copy[0..6].upcase + copy[7..copy.length-1] + "®"
+      when "Forever Artisan", "Forever Storage"
+        copy[0..6].upcase + copy[7..copy.length-1] + "®"
       when "Artisan"
-            copy + "®"
+        copy + "®"
       else
         copy
       end
