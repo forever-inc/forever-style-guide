@@ -1,0 +1,19 @@
+$font-faces: () !default;
+$font-sizes: () !default;
+$font-weights: () !default;
+
+@function faceify($id, $font-face) {
+  $font-faces: map-merge($font-faces, ($id: $font-face)) !global;
+  @return $font-face;
+}
+
+@function fontify($id, $font-size) {
+  $font-sizes: map-merge($font-sizes, ($id: $font-size)) !global;
+  @return $font-size;
+}
+
+@function weightify($id, $font-weight) {
+  $font-weights: map-merge($font-weights, ($id: $font-weight)) !global;
+  @return $font-weight;
+}
+

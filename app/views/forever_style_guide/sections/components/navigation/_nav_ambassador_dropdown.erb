@@ -1,13 +1,13 @@
-<li class='dropdown dropdown-full_width dropdown-ambassador navbar-account_item'>
+<li class='dropdown dropdown-full_width dropdown-ambassador'>
   <%= link_to nil, class: 'dropdown-toggle dropdown-toggle-ambassador', :data => { :toggle => 'dropdown' } do %>
-    <div>
-      <small class="dropdown-ambassador-intro_text">
-        <%= has_ambassador? ? 'Your Ambassador' : 'Find or join Forever' %>
-      </small>
+    <div class="dropdown-ambassador-text_container">
+      <p class="dropdown-ambassador-intro_text">
+        <%= has_ambassador? ? 'Your Ambassador' : 'Discover' %>
+      </p>
+      <div class="dropdown-ambassador-primary_text">
+        <%= has_ambassador? ? current_ambassador.name : 'Ambassadors' %>
+      </div>
     </div>
-    <span class="dropdown-ambassador-primary_text">
-      <%= has_ambassador? ? current_ambassador.name : 'Ambassadors' %>
-    </span>
     <i class='fa fa-chevron-down'></i>
   <% end %>
 
@@ -20,7 +20,7 @@
 
           <% if has_ambassador? %>
 
-            <%= link_to 'change', find_ambassador_url, title: 'Change Your Forever Ambassador', class: 'pull-right dropdown-ambassador-edit_btn' %>
+            <%= link_to 'Manage Ambassador', current_user ? ambassador_settings_url : find_ambassador_url, title: 'Manage Your Forever Ambassador', class: 'pull-right-grid-float-breakpoint dropdown-ambassador-edit_btn' %>
             <div class='dropdown-menu-account-divider'></div>
 
             <div>
@@ -33,8 +33,8 @@
 
             <div class="dropdown-ambassador-basic_info">
               <h4 class="color-ambassador-light dropdown-ambassador-name"><%= current_ambassador.name %></h4>
-              <p class="color-gray-300 page-title dropdown-ambassador-rank"><%= current_ambassador.rank %></p>
-              <p class="color-gray-300 page-title dropdown-ambassador-city"><%= current_ambassador.city %>, <%= current_ambassador.region %></p>
+              <p class="color-gray-300 page-title dropdown-ambassador-rank"><%= current_ambassador.achieved_rank %></p>
+              <p class="color-gray-300 page-title dropdown-ambassador-city"><%= current_ambassador.ambassador_address.city %>, <%= current_ambassador.ambassador_address.region %></p>
             </div>
 
             <div class='dropdown-menu-account-divider'></div>
@@ -48,7 +48,7 @@
                 </div>
               <% end %>
 
-              <% if current_ambassador.phone %>
+              <% if current_ambassador.phone.present? %>
                 <div class="col-grid-float-6">
                   <%= link_to ('tel:+' + number_to_phone(current_ambassador.phone)), title: 'Call ' + current_ambassador.name, class: 'btn btn-default btn-link btn-action dropdown-ambassador-contact_btn' do %>
                     <i class="fa fa-fw fa-phone btn-action-icon"></i><span class="btn-action-label"><%= number_to_phone(current_ambassador.phone) %></span>
@@ -56,33 +56,33 @@
                 </div>
               <% end %>
 
-              <% if current_ambassador.website %>
+              <% if current_ambassador.website.present? %>
                 <div class="col-grid-float-6">
-                  <%= link_to '//' + current_ambassador.website, title: current_ambassador.website, class: 'btn btn-default btn-link btn-action dropdown-ambassador-contact_btn', target: '_blank' do %>
+                  <%= link_to absolute_url(current_ambassador.website), title: absolute_url(current_ambassador.website), class: 'btn btn-default btn-link btn-action dropdown-ambassador-contact_btn', target: '_blank' do %>
                     <i class="fa fa-fw fa-link btn-action-icon"></i><span class="btn-action-label">My Website</span>
                   <% end %>
                 </div>
               <% end %>
 
-              <% if current_ambassador.facebook_url %>
+              <% if current_ambassador.facebook_url.present? %>
                 <div class="col-grid-float-6">
-                  <%= link_to '//' + current_ambassador.facebook_url, title: current_ambassador.facebook_url, class: 'btn btn-default btn-link btn-action dropdown-ambassador-contact_btn', target: '_blank' do %>
+                  <%= link_to absolute_url(current_ambassador.facebook_url), title: absolute_url(current_ambassador.facebook_url), class: 'btn btn-default btn-link btn-action dropdown-ambassador-contact_btn', target: '_blank' do %>
                     <i class="fa fa-fw fa-facebook btn-action-icon"></i><span class="btn-action-label">My Facebook Page</span>
                   <% end %>
                 </div>
               <% end %>
 
-              <% if current_ambassador.twitter_handle %>
+              <% if current_ambassador.twitter_handle.present? %>
                 <div class="col-grid-float-6">
-                  <%= link_to '//' + current_ambassador.twitter_handle, title: current_ambassador.twitter_handle, class: 'btn btn-default btn-link btn-action dropdown-ambassador-contact_btn', target: '_blank' do %>
+                  <%= link_to absolute_url(current_ambassador.twitter_handle), title: absolute_url(current_ambassador.twitter_handle), class: 'btn btn-default btn-link btn-action dropdown-ambassador-contact_btn', target: '_blank' do %>
                     <i class="fa fa-fw fa-twitter btn-action-icon"></i><span class="btn-action-label">Follow me on Twitter</span>
                   <% end %>
                 </div>
               <% end %>
 
-              <% if current_ambassador.instagram_url %>
+              <% if current_ambassador.instagram_url.present? %>
                 <div class="col-grid-float-6">
-                  <%= link_to '//' + current_ambassador.instagram_url, title: current_ambassador.instagram_url, class: 'btn btn-default btn-link btn-action dropdown-ambassador-contact_btn', target: '_blank' do %>
+                  <%= link_to absolute_url(current_ambassador.instagram_url), title: absolute_url(current_ambassador.instagram_url), class: 'btn btn-default btn-link btn-action dropdown-ambassador-contact_btn', target: '_blank' do %>
                     <i class="fa fa-fw fa-instagram btn-action-icon"></i><span class="btn-action-label">Follow me on Instagram</span>
                   <% end %>
                 </div>

@@ -1,15 +1,12 @@
 .dropdown-menu-account {
-  width: 100%;
-  right: 0;
+  padding-top: 15px;
   border-bottom-right-radius: $border-radius-large;
   border-bottom-left-radius: $border-radius-large;
 
   .progress {
     margin-bottom: 10px;
   }
-  @media (max-width: $grid-float-breakpoint) {
-    @include nav-border(bottom);
-  }
+
   @media (min-width: $grid-float-breakpoint) {
     width: $nav-icon-width * 4;
   }
@@ -19,8 +16,8 @@
   overflow: hidden;
 
   @media (min-width: $grid-float-breakpoint) {
-    padding-top: 5px;
-    padding-bottom: 5px;
+    padding-top: 0;
+    padding-bottom: $padding-small-vertical;
   }
 }
 .dropdown-menu-account-divider {
@@ -28,12 +25,18 @@
   margin-bottom: 10px;
   @include nav-border(bottom);
 
-  @media (max-width: $grid-float-breakpoint) {
+  @media (max-width: $grid-float-breakpoint-max) {
     border-color: color('gray-600');
   }
 }
-.dropdown-menu-account-user {
-  overflow: hidden;
+.dropdown-menu-account-divider-thin {
+  margin-top: 0;
+  border-color: color('gray-600');
+}
+.dropdown-menu-account-user-name {
+  @media (min-width: $grid-float-breakpoint) {
+    @include multi_line_ellipsis($lineHeight: 1.1em, $lineCount: 3, $bgColor: $color-gray-700);
+  }
 }
 .dropdown-menu-account-user-intro {
   margin-top: $padding-small-vertical;
@@ -45,14 +48,13 @@
   border: 0;
   box-shadow: none;
 
-  @media (max-width: $grid-float-breakpoint) {
+  @media (max-width: $grid-float-breakpoint-max) {
     height: 40px; // avatar-xs
     width: 40px;
     margin-top: $padding-small-vertical;
   }
 }
 .dropdown-menu-account-storage {
-  @media (max-width: $grid-float-breakpoint) {
-    font-size: $font-size-default;
-  }
+  margin-bottom: 0;
+  font-size: $font-size-200;
 }

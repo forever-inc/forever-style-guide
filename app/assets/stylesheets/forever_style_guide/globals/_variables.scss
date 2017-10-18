@@ -21,10 +21,10 @@ $padding-xs-horizontal:       6px !global;
 
 /* =variables
 ---------------------------------------------------------------------------- */
-$header-height: 50px;
+$header-height: 40px;
 
-$footer-height: 455px;
-$footer-height-sm: 340px;
+$footer-height: 486px;
+$footer-height-sm: 365px;
 $footer-height-md: 240px;
 
 $btn-lg-size: 64px;
@@ -36,6 +36,11 @@ $btn-padding-default-horizontal: $padding-default-horizontal * 1.5;
 $btn-padding-large-horizontal: $padding-large-horizontal * 1.5;
 $btn-padding-small-horizontal: $padding-small-horizontal * 1.5;
 $btn-padding-xs-horizontal: $padding-xs-horizontal * 1.5;
+
+$btn-padding-default-vertical : $padding-default-vertical - 2;
+$btn-padding-large-vertical : $padding-large-horizontal - 2;
+$btn-padding-small-vertical : $padding-small-vertical - 2;
+$btn-padding-xs-vertical : $padding-xs-vertical - 2;
 
 $icon-lg-size: $font-size-600;
 $icon-size: $font-size-400;

@@ -1,5 +1,5 @@
 * {
-  font-family: 'proxima_nova-regular';
+  font-family: $font-face-regular;
 }
 
 /* Headers */
@@ -98,5 +98,33 @@ a {
   &:hover,
   &:active {
     color: color('secondary');
+  }
+}
+
+/* 
+  mixin for multiline ellipsization
+  http://hackingui.com/front-end/a-pure-css-solution-for-multiline-text-truncation/
+*/
+@mixin multi_line_ellipsis($lineHeight: 1.1em, $lineCount: 3, $bgColor: $color-gray-700) {
+  overflow: hidden;
+  position: relative;
+  line-height: $lineHeight;
+  max-height: $lineHeight * $lineCount;
+  padding-right: 1em;
+
+  &:before {
+    content: '...';
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+  &:after {
+    content: '';
+    position: absolute;
+    right: 0;
+    width: 1em;
+    height: 1em;
+    margin-top: 0.2em;
+    background: $bgColor;
   }
 }

@@ -1,5 +1,5 @@
 // overrides bootstraps collapse breakpoint
-@media (max-width: $grid-float-breakpoint) {
+@media (max-width: $grid-float-breakpoint-max) {
   .navbar-header {
     float: none;
   }
@@ -25,10 +25,6 @@
   }
   .navbar-nav > li {
     float: none;
-  }
-  .navbar-nav > li > a {
-    padding-top: 10px;
-    padding-bottom: 10px;
   }
   .collapse.in {
     display:block !important;

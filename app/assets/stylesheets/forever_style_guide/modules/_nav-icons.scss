@@ -1,16 +1,32 @@
-$nav-icon-width: 60px;
 $nav-icon-margin: 3px;
-$cart-count-width: 20px;
+$icon-width: 28px;
+$screen-below-xs: $screen-xs - 1;
 
-@mixin chevron-style {
-  position: absolute;
-  right: 15px;
-  font-size: $font-size-default;
-}
+// Cart + Count Positioning
+$cart-count-offset: 6px;
+$cart-count-offset-xs: 2px;
+$cart-count-width: 20px;
+$cart-count-width-sm: 17px;
+$cart-count-icon-overlap: 8px;
+$cart-icon-width-xs: 30px + 10px; //10px to account for extra spacing
+$cart-icon-vertical-offset: 7px;
+$cart-icon-vertical-offset-mobile: 4px;
+$cart-tab-padding: 20px;
+$cart-tab-padding-md_to_lg: 7px;
+
+// Deals Star Positioning
+$deals-icon-horizontal-offset: 3px;
+$deals-icon-horizontal-offset-mobile: 4px;
+
+// Chevron Icon Positioning
+$chevron-bottom-offset: 15px;
+$chevron-bottom-offset-alt: 17px;
+$chevron-right-offset: 5px;
+$chevron-right-offset-alt: 2px;
+$chevron-font-size-xxs: 8px;
 
 .nav-icon-stack {
-  width: $nav-icon-width;
-  padding: 7px 4px 4px 4px !important; // overriding .navbar-nav > li > a
+  padding: 3px 4px 4px 4px !important; // overriding .navbar-nav > li > a
   text-align: center;
 
   .fa {
@@ -18,45 +34,46 @@ $cart-count-width: 20px;
     position: relative;
     top: $nav-icon-margin;
   }
+
+  .icon-bar {
+    display: block;
+    width: $icon-width;
+    height: 4px;
+    border-radius: $border-radius-xl;
+    margin: auto;
+    background-color: $color-gray-600 !important; //override bootstrap .navbar-default .navbar-toggle .icon-bar
+
+    &:first-of-type {
+      margin-top: 1px;
+    }
+    &:last-of-type {
+      margin-bottom: 3px;
+    }
+  }
 }
 .nav-icon-label {
-  font-size: $font-size-100;
-  line-height: $font-size-400;
-
-  &.has_count {
-    position: absolute;
-    top: 26px; // align labels
-  }
-}
-
-// Style offcanvas account icons consistent w/ product dropdowns
-@media (max-width: $grid-float-breakpoint) {
-  .navbar-account_item .nav-icon-stack {
-    width: auto;
-    padding: 15px !important; // override .navbar .nav.navbar-nav > li > a
-    text-align: left;
-
-    .fa-chevron-down {
-      top: 15px;
-    }
-    .fa-chevron-right {
-      top: 15px;
-      @include chevron-style;
-    }
-    .nav-icon-label {
-      font-size: $font-size-500;
-    }
-  }
+  font-size: $font-size-xsmall;
+  line-height: $font-size-xsmall;
+  font-family: $font-face-gotham;
 }
 
 .navbar-default .navbar-nav {
   .dropdown-toggle .fa-chevron-down {
-    margin-left: $nav-icon-margin;
-    font-size: 9px;
+    position: absolute;
+    font-size: $font-size-xsmall;
     @include transition(transform 0.2s ease-in-out);
 
-    @media(max-width: $grid-float-breakpoint) {
-      @include chevron-style;
+    @media(max-width: $grid-float-breakpoint-max) {
+      right: 15px;
+      font-size: $font-size-default;
+    }
+    @media(min-width: $grid-float-breakpoint) {
+      bottom: $chevron-bottom-offset;
+    }
+    @media (min-width: $grid-float-breakpoint){
+      right: $chevron-right-offset;
+      bottom: $chevron-bottom-offset-alt;
+      font-size: $chevron-font-size-xxs;
     }
   }
   .dropdown.open .dropdown-toggle .fa-chevron-down {
@@ -68,24 +85,26 @@ $cart-count-width: 20px;
 .navbar-default .navbar-toggle,
 a.cart-icon {
   height: $header-height;
-  width: $header-height;
+  width: $icon-width + $cart-tab-padding;
   margin-top: 0;
   margin-right: 0;
   margin-bottom: 0;
   color: color('gray-600');
   font-size: $font-size-default;
+  text-align: center;
   border: 0;
   border-radius: 0;
   z-index: $zindex-navbar-fixed; // make sure toggles appear above logo
+
+  @media (min-width: $grid-float-breakpoint-max) and (max-width: $screen-lg) {
+    width: $icon-width + $cart-tab-padding-md_to_lg;
+  }
 
   &:hover,
   &:active,
   &:focus {
     text-decoration: none;
     background-color: transparent;
-  }
-  &.pull-left {
-    @include nav-border(right);
   }
   &.navbar-toggle-close {
     width: 100%;
@@ -100,14 +119,31 @@ a.cart-icon {
       height: $header-height;
     }
   }
-}
-a.cart-icon {
-  @media (max-width: $grid-float-breakpoint) {
-    position: absolute;
-    right: 0;
-    @include nav-border(left);
+  &.with-count {
+    width: $cart-count-width + $icon-width + $cart-tab-padding;
+
+    @media (min-width: $grid-float-breakpoint-max) and (max-width: $screen-lg) {
+      width: $cart-count-width + $icon-width - $cart-count-icon-overlap;
+      text-align: left;
+    }
+    @media (max-width: $screen-below-xs) {
+      width: $cart-count-width + $cart-icon-width-xs;
+    }
   }
 }
+
+a.cart-icon {
+  padding-top: $cart-icon-vertical-offset-mobile;
+
+  @media (max-width: $screen-lg-min) {
+    position: absolute;
+    right: 0;
+  }
+  @media (min-width: $screen-md_to_lg) {
+    padding-top: $cart-icon-vertical-offset !important; //override .nav.navbar-nav > li > a
+  }
+}
+
 .cart-icon-count {
   display: inline-block;
   float: right;
@@ -115,9 +151,39 @@ a.cart-icon {
   min-width: $cart-count-width;
   padding-top: 1px; // vertical align number in circle
   font-size: $font-size-200;
+  text-align: center;
   border-radius: 50%;
+
+  @media (max-width: $screen-below-xs) {
+    margin-right: $cart-count-offset-xs;
+  }
+  @media (min-width: $screen-xs) and (max-width: $screen-lg) {
+    margin-right: $cart-count-offset;
+  }
+  @media (min-width: $grid-float-breakpoint-max) and (max-width: $screen-lg) {
+    padding-top: 0;
+  }
+  @media (max-width: $screen-lg) {
+    position: absolute;
+    right: 3px;
+    top: 2px;
+    margin-right: 0;
+    margin-top: 0;
+    min-width: $cart-count-width-sm;
+    height: $cart-count-width-sm;
+    font-size: $font-size-100;
+    box-shadow: 0px 0px 0px 2px white;
+  }
 }
 
-.navbar-toggle-close-left {
-  @include nav-border(right);
+.deals-icon {
+  @media (max-width: $grid-float-breakpoint-max) {
+    margin-right: $deals-icon-horizontal-offset-mobile;
+    float: left;
+  }
+
+  @media (min-width: $grid-float-breakpoint) {
+    vertical-align: top;
+    margin-left: $deals-icon-horizontal-offset;
+  }
 }

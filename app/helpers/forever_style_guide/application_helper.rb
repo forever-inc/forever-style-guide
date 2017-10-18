@@ -3,13 +3,28 @@ require 'pathname'
 module ForeverStyleGuide
   module ApplicationHelper
 
+    def trademark(copy)
+      case copy
+      when "Forever"
+        copy.upcase
+      when "Forever Historian", "Forever Valet", "Forever Live!", "Forever Print"
+        copy[0..6].upcase + copy[7..copy.length-1] + "™"
+      when "pixels2Pages", "Historian"
+        copy + "™"
+      when "Forever Account", "Forever Guarantee", "Forever Guarantee Fund", "Forever Membership", "Forever Guarantee Fund", "Forever Members", "Forever Retreats", "Forever Ambassador", "Forever Ambassadors"
+        copy[0..6].upcase + "™" + copy[7..copy.length-1]
+      when "Forever Artisan", "Forever Storage"
+        copy[0..6].upcase + copy[7..copy.length-1] + "®"
+      when "Artisan"
+        copy + "®"
+      else
+        copy
+      end
+    end
+
     #Path helpers for mounted style guide use
     def www_url(path = '/', url = nil)
       strip_subdomain("www", path, url)
-    end
-
-    def web_app_url(path = '/', url = nil)
-      strip_subdomain("my", path, url)
     end
 
     def strip_subdomain(sub, path = '/', url = nil)
@@ -32,6 +47,16 @@ module ForeverStyleGuide
       url = URI.decode(url.to_s)
     end
 
+    def absolute_url(url_str)
+      return  unless url_str.present?
+
+      url_str = url_str.strip
+
+      return url_str if url_str =~ /https?\:/i
+
+      "http://" + url_str
+    end
+
     def has_item_in_cart?
       defined?(current_order) && current_order.product_count > 0
     end
@@ -48,8 +73,8 @@ module ForeverStyleGuide
     def is_in_product_dropdown?
       @pages = [
         'guaranteed_storage', 'add_storage', 'services', 'historian', 'downloads', 'valet',
-        'artisan', 'digital_art', 'digital_art_library', 'p2p',
-        'print',
+        'artisan', 'digital_art', 'digital_art_library', 'forever_print_library' 'p2p',
+        'forever_print', 'print', 'prints', 'print_quality',
         'gifts', 'shipping', 'bulk_orders', 'returns',
         'products'
       ]
@@ -66,10 +91,15 @@ module ForeverStyleGuide
       is_active?
     end
 
+    def is_in_deals_dropdown?
+      @pages = ['promotions', 'deals']
+      is_active?
+    end
+
     #User storage methds as seen in web app user.rb
     def capacity_readable
       if current_user
-        number_to_human_size(current_user.storage_capacity)
+        number_to_human_size(current_user.storage_capacity, precision: 4)
       end
     end
 
@@ -87,40 +117,52 @@ module ForeverStyleGuide
       www_url('/admin')
     end
 
-    def web_app_admin_url
-      web_app_url('/admin')
-    end
-
     def stop_impersonating_url
-      web_app_url('/admin/users')
+      ('/impersonations')
     end
 
     # Web App Paths
     def library_url
-      web_app_url('/inbox')
+      ('/app/library')
     end
 
-    def inbox_url
-      web_app_url('/#/inbox?inbox_filter_type=unorganized-items')
+    def albums_url
+      ('/app/albums')
+    end
+
+    def tags_url
+      ('/app/tags')
     end
 
     def projects_url
-      web_app_url('/projects')
+      ('/app/projects')
     end
 
     def people_url
-      web_app_url('/people/family')
+      ('/app/users')
     end
 
-    def app_home_url
-      web_app_url('/')
+    def profile_url
+      ('/app/profile')
     end
 
     def user_settings_url
-      web_app_url('/#/settings')
+      ('/app/settings')
     end
 
     # Combined Store/WWW Paths - now all available at www.forever.com
+    def user_order_history_url
+      www_url('/settings/orders')
+    end
+
+    def user_downloads_url
+      www_url('/settings/downloads')
+    end
+
+    def ambassador_settings_url
+      www_url('/settings/my_ambassador')
+    end
+
     def login_url
       www_url('/sign_in')
     end
@@ -154,11 +196,11 @@ module ForeverStyleGuide
     end
 
     def storage_url
-      www_url('/guaranteed_storage')
+      www_url('/forever_storage')
     end
 
-    def app_url
-      www_url('/app')
+    def mobile_url
+      www_url('/mobile')
     end
 
     def valet_url
@@ -173,12 +215,16 @@ module ForeverStyleGuide
       www_url('/artisan')
     end
 
-    def projects_marketing_url
-      www_url('/projects')
+    def forever_print_url
+      www_url('/forever_print')
     end
 
-    def promotions_url
-      www_url('/holidays')
+    def print_quality_url
+      www_url('/print_quality')
+    end
+
+    def deals_url
+      www_url('/deals')
     end
 
     def shipping_info_url
@@ -229,40 +275,28 @@ module ForeverStyleGuide
       www_url('/digital_art_library?facet_name=new')
     end
 
+    def forever_print_library_url
+      www_url('/forever_print_library')
+    end
+
+    def featured_photo_books_library_url
+      www_url('/forever_print_library?facet_name=print-featured')
+    end
+
+    def artisan_print_url
+      www_url('/artisan#printing')
+    end
+
     def free_digital_art_url
       www_url('/digital_art_library?facet_name=free')
     end
 
+    def predesigned_layouts_digital_art_url
+      www_url('/digital_art_library?facet_name=pre-designed%20layouts')
+    end
+
     def all_digital_art_url
       www_url('/digital_art_library')
-    end
-
-    def print_url
-      www_url('/print')
-    end
-
-    def photo_books_url
-      www_url('/photobooks')
-    end
-
-    def cards_url
-      www_url('/cards')
-    end
-
-    def calendars_url
-      www_url('/calendars')
-    end
-
-    def wall_art_url
-      www_url('/wall_art')
-    end
-
-    def photo_gifts_url
-      www_url('/photo_gifts')
-    end
-
-    def page_prints_url
-      www_url('/page_prints')
     end
 
     def gift_certificate_url
@@ -371,31 +405,23 @@ module ForeverStyleGuide
     end
 
     def zendesk_uploading_video_url
-      "https://forever1.zendesk.com/hc/en-us/articles/204496797"
-    end
-
-    def zendesk_organizing_video_url
-      "https://forever1.zendesk.com/hc/en-us/articles/222868828-Organizing-your-Forever-Inbox-Video-"
+      "https://forever1.zendesk.com/hc/en-us/articles/115000519251-Tutorial-Video-How-to-Upload"
     end
 
     def zendesk_sharing_video_url
-      "https://forever1.zendesk.com/hc/en-us/articles/203834518-Using-the-People-Tab-Video-"
-    end
-
-    def zendesk_inbox_video_url
-      "https://forever1.zendesk.com/hc/en-us/articles/223580988-Deeper-Dive-into-How-to-Use-your-Inbox-Video-"
+      "https://forever1.zendesk.com/hc/en-us/articles/115000519131-Tutorial-Video-How-to-Share-with-Friends-and-Family"
     end
 
     def zendesk_albums_video_url
-      "https://forever1.zendesk.com/hc/en-us/articles/226085547-Creating-an-Album-Uploading-Directly-to-an-Album-Video-"
-    end
-
-    def zendesk_nested_albums_video_url
-      "https://forever1.zendesk.com/hc/en-us/articles/218144057"
+      "https://forever1.zendesk.com/hc/en-us/articles/115000519171-Tutorial-Video-Organizing-with-Albums"
     end
 
     def zendesk_tags_video_url
-      "https://forever1.zendesk.com/hc/en-us/articles/223595308-Using-Albums-and-Tags-Video-"
+      "https://forever1.zendesk.com/hc/en-us/articles/115000519211-Tutorial-Video-Tagging-in-Forever-"
+    end
+
+    def zendesk_projects_video_url
+      "https://forever1.zendesk.com/hc/en-us/articles/115000519471-Tutorial-Video-Print-Projects"
     end
 
     # Path helpers for style guide dummy app

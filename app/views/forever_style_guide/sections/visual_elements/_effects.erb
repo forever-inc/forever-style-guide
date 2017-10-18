@@ -1,5 +1,19 @@
 <label>.polaroid_photo_border</label>
-<div>
-  <img src="/assets/style_guide/hero/beach-girl-xs.jpg" class="polaroid_photo_border">
-</div>
-<p>Subtly mimics the polaroid style being used in print and other materials, particularly for ambassadors.</p>
+<section>
+  <div>
+    <img src="/assets/style_guide/hero/beach-girl-xs.jpg" class="polaroid_photo_border">
+  </div>
+  <p>Subtly mimics the polaroid style being used in print and other materials, particularly for ambassadors.</p>
+</section>
+
+<label>.slant .slant-{direction}</label>
+
+<section class="color_block-services-dark slant slant-right l-section-far"></section>
+<section class="color_block-services slant slant-left"></section>
+<section class="color_block-services-light slant slant-right"></section>
+
+<ul class="list-unstyled">
+  <li>The slant inherits it's color from whatever <code>.color_block-*</code> is applied in that section.</li>
+  <li>Slant properties are applied <code>:before</code> so the class should be placed at the top of each section.</li>
+  <li><code>.l-section-*</code> utility can be used to offset the page height that is lost to slant height as needed.</li>
+</ul>

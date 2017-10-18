@@ -14,11 +14,13 @@
   } @else {
     color: color('white');
     background-color: color('#{$color}');
-    border: 0;
+    border: 2px solid color('#{$color}');
+    @extend %no-shadow;
     &:hover,
     &:active,
     &:active:focus {
       background-color: color('#{$color}-dark');
+      border-color: color('#{$color}-dark');
       text-decoration: none;
     }
   }
@@ -26,6 +28,7 @@
 
 .btn {
   @extend %btn-style;
+  padding: $btn-padding-default-vertical $btn-padding-default-horizontal;
 
   &:hover,
   &:active {
@@ -37,13 +40,16 @@
 
   &.btn-default {
     color: $color-gray-600;
+    border: 2px solid color('white');
     &:hover,
     &:active,
     &:focus {
       background-color: color('white');
+      border: 2px solid color('white');
     }
     &.disabled {
       background-color: color('silver');
+      border: 2px solid color('silver');
     }
     &.btn-inverse {
       @include btn-color('gray');
@@ -68,16 +74,16 @@
   &.btn-link {
     @include btn-color('secondary', true);
     background: none;
-    border: 0;
+    border: 2px solid transparent; /* border needed to be consistent with btn pattern but must be transparent b/c link has no background */
     box-shadow: none;
     &:hover,
     &:active,
     &:focus {
-      border: 0;
+      border: 2px solid transparent; /* border needed to be consistent with btn pattern but must be transparent b/c link has no background */
       background: none;
       text-decoration: underline;
       &:focus {
-        border: 0;
+        border: 2px solid transparent; /* border needed to be consistent with btn pattern but must be transparent b/c link has no background */
         background: none;
         box-shadow: none;
       }
@@ -98,13 +104,13 @@
   &.btn-plain {
     color: color('gray-500');
     background: none;
-    border: 0;
+    border: 2px solid transparent; /* border needed to be consistent with btn pattern but must be transparent b/c link has no background */
     box-shadow: none;
     &:hover,
     &:active,
     &:focus {
       background: none;
-      border: 0;
+      border: 2px solid transparent; /* border needed to be consistent with btn pattern but must be transparent b/c link has no background */
       &:focus {
         background: none;
         box-shadow: none;
@@ -125,7 +131,7 @@
     font-family: $font-face-regular;
     height: $btn-lg-size;
     font-size: $font-size-400;
-    padding: $padding-large-horizontal $btn-padding-large-horizontal;
+    padding: $btn-padding-large-vertical $btn-padding-large-horizontal;
     border-radius: $border-radius-large;
     line-height: 1.8;
 
@@ -140,18 +146,18 @@
   &.btn-sm {
     font-size: $font-size-small;
     height: $btn-sm-size;
-    padding: $padding-small-vertical $btn-padding-small-horizontal;
+    padding: $btn-padding-small-vertical $btn-padding-small-horizontal;
     line-height: 1.6;
     border-radius: $border-radius-small;
 
     .fa {
       font-size: $icon-sm-size;
-      padding-top: 4px;
+      padding-top: 2px;
     }
   }
   &.btn-xs {
     height: $btn-xs-size;
-    padding: $padding-xs-vertical $btn-padding-xs-horizontal;
+    padding: $btn-padding-xs-vertical $btn-padding-xs-horizontal;
     font-size: $font-size-small;
     line-height: 1.8;
 
@@ -224,7 +230,7 @@
       }
     }
     &.btn-sm {
-      padding-top: 4px;
+      padding-top: $btn-padding-small-vertical;
       .btn-action-label {
         padding-top: 4px;
       }
@@ -234,7 +240,7 @@
       }
     }
     &.btn-xs {
-      padding-top: 4px;
+      padding-top: $btn-padding-xs-vertical;
       .btn-action-label {
         padding-right: 3px;
       }
@@ -249,6 +255,29 @@
 
   &.btn-no-padding {
     padding: 0;
+  }
+}
+
+@mixin btn-block() {
+  display: block;
+  width: 100%;
+}
+
+.btn-block-xs {
+  @media (max-width: $screen-xs-max) {
+    @include btn-block();
+  }
+}
+
+.btn-block-sm {
+  @media (max-width: $screen-sm-max) {
+    @include btn-block();
+  }
+}
+
+.btn-block-md {
+  @media (max-width: $screen-md-max) {
+    @include btn-block();
   }
 }
 

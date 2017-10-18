@@ -1,6 +1,11 @@
 $offcanvas-width: 270px;
-$offcanvas-padding: 15px;
+$offcanvas-padding: 10px;
 $nav-bg-color: color('gray-700');
+
+$nav-li-a-padding-base: 4px;
+$nav-li-a-padding-right-desktop: 20px;
+$nav-li-a-padding-right-md_to_lg: 14px;
+$nav-li-a-padding-right-lg: 16px;
 
 @mixin nav-border($sides...) {
   @each $side in $sides {
@@ -10,7 +15,7 @@ $nav-bg-color: color('gray-700');
 
 // Basic styles - A lot of overriding Bootstrap defaults
 .navbar-toggle {
-  @media (max-width: $grid-float-breakpoint) {
+  @media (max-width: $grid-float-breakpoint-max) {
     display: block;
   }
 }
@@ -20,7 +25,8 @@ $nav-bg-color: color('gray-700');
   left: 0;
   top: 0;
   margin: auto;
-  padding: $padding-small-vertical 0 0;
+  padding: $padding-xs-vertical 0 0;
+  height: $header-height;
   text-align: center;
 
   .navbar-brand-logo-xs {
@@ -34,6 +40,7 @@ $nav-bg-color: color('gray-700');
 
     .navbar-brand-logo-xs {
       display: block;
+      height: 100%;
     }
     .navbar-brand-logo {
       display: none;
@@ -41,6 +48,7 @@ $nav-bg-color: color('gray-700');
   }
 }
 .navbar {
+  min-height: $header-height;
   border-radius: 0;
   border: none;
   @extend %card-shadow;
@@ -49,29 +57,54 @@ $nav-bg-color: color('gray-700');
     margin-top: 0;
     margin-bottom: 0;
 
-    @media (max-width: $grid-float-breakpoint) {
+    @media (max-width: $grid-float-breakpoint-max) {
       margin-left: 0;
       margin-right: 0;
     }
 
     > li > a {
       height: $header-height;
+      padding: $offcanvas-padding; /* bootstrap override */
       color: color('gray-400');
-      font-size: $font-size-500;
+      font-size: $font-size-100;
+      font-weight: $font-weight-bold;
+      font-family: $font-face-gotham;
+      text-transform: uppercase;
 
-      @media (max-width: $grid-float-breakpoint) {
+      @media (max-width: $grid-float-breakpoint-max) {
         padding-top: $offcanvas-padding;
+        font-size: $font-size-large;
         @include nav-border(top);
         border-color: color('gray-600')
       }
-
-      @media (min-width: $grid-float-breakpoint) {
+      @media (min-width: $grid-float-breakpoint-max) {
+        position: relative;
         color: color('gray-600');
-        font-size: $font-size-default;
+      }
+      @media (min-width: $grid-float-breakpoint-max) and (max-width: $screen-md_to_lg) {
+        padding-left: $nav-li-a-padding-base;
+        padding-right: $nav-li-a-padding-base;
+      }
+      @media (min-width: $screen-md_to_lg) and (max-width: $screen-lg-min) {
+        padding-left: $nav-li-a-padding-base * 2;
+        padding-right: $nav-li-a-padding-base * 2;
       }
       &:hover {
-        @media (min-width: $grid-float-breakpoint) {
+        @media (min-width: $grid-float-breakpoint-max) {
           background-color: color('gray-300');
+        }
+      }
+      &.dropdown-toggle {
+        @media (min-width: $grid-float-breakpoint) {
+          padding-right: $nav-li-a-padding-right-desktop;
+        }
+        @media (min-width: $grid-float-breakpoint) and (max-width: $screen-md_to_lg) {
+          padding-left: $nav-li-a-padding-base;
+          padding-right: $nav-li-a-padding-right-md_to_lg;
+        }
+        @media (min-width: $screen-md_to_lg) and (max-width: $screen-lg) {
+          padding-left: $nav-li-a-padding-base + 2;
+          padding-right: $nav-li-a-padding-right-lg;
         }
       }
     }
@@ -88,7 +121,7 @@ $nav-bg-color: color('gray-700');
 
       &:hover,
       &:focus {
-        @media (max-width: $grid-float-breakpoint) {
+        @media (max-width: $grid-float-breakpoint-max) {
           color: color('gray-400');
         }
       }
@@ -96,12 +129,6 @@ $nav-bg-color: color('gray-700');
     &.navbar-right {
       margin-right: 0;
     }
-  }
-}
-
-.navbar-account_item {
-  @media (min-width: $grid-float-breakpoint) {
-    @include nav-border(left);
   }
 }
 
