@@ -5,12 +5,18 @@ module ForeverStyleGuide
 
     def trademark(copy)
       case copy
-      when "Forever", "Forever Historian", "Forever Valet", "pixels2Pages", "Historian", "Forever Live!"
-        copy += "™"
+      when "Forever"
+        copy.upcase
+      when "Forever Historian", "Forever Valet", "Forever Live!", "Forever Print"
+        copy[0..6].upcase + copy[7..copy.length-1] + "™"
+      when "pixels2Pages", "Historian"
+        copy + "™"
       when "Forever Account", "Forever Guarantee", "Forever Guarantee Fund", "Forever Membership", "Forever Guarantee Fund", "Forever Members", "Forever Retreats", "Forever Ambassador", "Forever Ambassadors"
-        copy[0..6] + "™" + copy[7..copy.length-1]
-      when "Forever Artisan", "Artisan", "Forever Storage"
-        copy += "®"
+        copy[0..6].upcase + "™" + copy[7..copy.length-1]
+      when "Forever Artisan", "Forever Storage"
+        copy[0..6].upcase + copy[7..copy.length-1] + "®"
+      when "Artisan"
+        copy + "®"
       else
         copy
       end
@@ -67,8 +73,8 @@ module ForeverStyleGuide
     def is_in_product_dropdown?
       @pages = [
         'guaranteed_storage', 'add_storage', 'services', 'historian', 'downloads', 'valet',
-        'artisan', 'digital_art', 'digital_art_library', 'p2p',
-        'print',
+        'artisan', 'digital_art', 'digital_art_library', 'forever_print_library' 'p2p',
+        'forever_print', 'print', 'prints', 'print_quality',
         'gifts', 'shipping', 'bulk_orders', 'returns',
         'products'
       ]
@@ -93,7 +99,7 @@ module ForeverStyleGuide
     #User storage methds as seen in web app user.rb
     def capacity_readable
       if current_user
-        number_to_human_size(current_user.storage_capacity)
+        number_to_human_size(current_user.storage_capacity, precision: 4)
       end
     end
 
@@ -209,8 +215,12 @@ module ForeverStyleGuide
       www_url('/artisan')
     end
 
-    def projects_marketing_url
-      www_url('/projects')
+    def forever_print_url
+      www_url('/forever_print')
+    end
+
+    def print_quality_url
+      www_url('/print_quality')
     end
 
     def deals_url
@@ -265,40 +275,28 @@ module ForeverStyleGuide
       www_url('/digital_art_library?facet_name=new')
     end
 
+    def forever_print_library_url
+      www_url('/forever_print_library')
+    end
+
+    def featured_photo_books_library_url
+      www_url('/forever_print_library?facet_name=print-featured')
+    end
+
+    def artisan_print_url
+      www_url('/artisan#printing')
+    end
+
     def free_digital_art_url
       www_url('/digital_art_library?facet_name=free')
     end
 
+    def predesigned_layouts_digital_art_url
+      www_url('/digital_art_library?facet_name=pre-designed%20layouts')
+    end
+
     def all_digital_art_url
       www_url('/digital_art_library')
-    end
-
-    def print_url
-      www_url('/print')
-    end
-
-    def photo_books_url
-      www_url('/photobooks')
-    end
-
-    def cards_url
-      www_url('/cards')
-    end
-
-    def calendars_url
-      www_url('/calendars')
-    end
-
-    def wall_art_url
-      www_url('/wall_art')
-    end
-
-    def photo_gifts_url
-      www_url('/photo_gifts')
-    end
-
-    def page_prints_url
-      www_url('/page_prints')
     end
 
     def gift_certificate_url
