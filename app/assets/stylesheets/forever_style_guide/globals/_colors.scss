@@ -58,9 +58,7 @@ $color-live17-purple:       colorify('live17-purple', #902b89) !default;
 $color-live18-yellow:       colorify('live18-yellow', #febe10) !default;
 $color-live18-blue:         colorify('live18-blue', #008ccf) !default;
 $color-live18-orange:       colorify('live18-orange', #f57e25) !default;
-$color-live18-blue-accent:  colorify('live18-blue-accent', #006ea0) !default;
 $color-live18-grey:         colorify('live18-grey', #a4abb6) !default;
-$color-live18-black:        colorify('live18-black', #474342) !default;
 
 @each $id, $color in $colors {
   .color-#{$id} {
