@@ -280,7 +280,7 @@ module ForeverStyleGuide
     end
 
     def featured_photo_books_library_url
-      www_url('/forever_print_library?facet_name=print-featured')
+      www_url('/forever_print_library?facet_name=featured')
     end
 
     def artisan_print_url
