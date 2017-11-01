@@ -7,7 +7,7 @@ module ForeverStyleGuide
       case copy
       when "Forever"
         copy.upcase
-      when "Forever Historian", "Forever Valet", "Forever Live!", "Forever Print"
+      when "Forever Historian", "Forever Live!", "Forever Print"
         copy[0..6].upcase + copy[7..copy.length-1] + "™"
       when "pixels2Pages", "Historian"
         copy + "™"
@@ -72,7 +72,7 @@ module ForeverStyleGuide
 
     def is_in_product_dropdown?
       @pages = [
-        'guaranteed_storage', 'add_storage', 'services', 'historian', 'downloads', 'valet',
+        'guaranteed_storage', 'add_storage', 'services', 'historian', 'downloads',
         'artisan', 'digital_art', 'digital_art_library', 'forever_print_library' 'p2p',
         'forever_print', 'print', 'prints', 'print_quality',
         'gifts', 'shipping', 'bulk_orders', 'returns',
@@ -201,10 +201,6 @@ module ForeverStyleGuide
 
     def mobile_url
       www_url('/mobile')
-    end
-
-    def valet_url
-      www_url('/valet')
     end
 
     def historian_url
