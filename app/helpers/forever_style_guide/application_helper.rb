@@ -417,7 +417,7 @@ module ForeverStyleGuide
     end
 
     def zendesk_projects_video_url
-      "https://forever1.zendesk.com/hc/en-us/articles/115000519471-Tutorial-Video-Print-Projects"
+      "https://forever1.zendesk.com/hc/en-us/articles/115002526452-Video-Tutorial-FOREVER-Print"
     end
 
     # Path helpers for style guide dummy app
