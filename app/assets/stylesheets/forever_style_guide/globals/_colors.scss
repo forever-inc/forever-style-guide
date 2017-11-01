@@ -7,13 +7,13 @@
 $color-forever_green:       colorify('green', #7dc142) !default;
 $color-forever_spare:       colorify('spare', #7ec24d) !default;
 $color-forever_historian:   colorify('historian', #67bd68) !default;
+$color-forever_valet:       colorify('valet', #50bd94) !default;
 $color-forever_services:    colorify('services', #39b3be) !default;
 $color-forever_artisan:     colorify('artisan', #28a6de) !default;
 $color-forever_blue:        colorify('blue', #2b91cf) !default;
 $color-forever_ambassador:  colorify('ambassador', #a4314c) !default;
 $color-forever_p2p:         colorify('p2p', #f89406) !default;
 
-$color-forever_emerald:     colorify('emerald', #50bd94) !default;
 $color-forever_orange:      colorify('orange', #ED773A) !default;
 $color-forever_red:         colorify('red', #bf3030) !default;
 $color-forever_gray:        colorify('gray', #434445) !default;
@@ -38,7 +38,7 @@ $color-black:               set_color('black', #000) !default;
 // Semantic color usages, list of aliases for declared colors.
 $color-primary:             colorify('primary', $color-forever_green) !default;
 $color-secondary:           colorify('secondary', $color-forever_blue) !default;
-$color-accent:              colorify('accent', $color-forever_emerald) !default;
+$color-accent:              colorify('accent', $color-forever_valet) !default;
 $color-warning:             colorify('warning', $color-forever_orange) !default;
 $color-danger:              colorify('danger', $color-forever_red) !default;
 $color-background:          set_color('background', $color-forever_beige) !default;
