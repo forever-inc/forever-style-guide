@@ -7,7 +7,7 @@ module ForeverStyleGuide
       case copy
       when "Forever"
         copy.upcase
-      when "Forever Historian", "Forever Live!", "Forever Print"
+      when "Forever Historian", "Forever Valet", "Forever Live!", "Forever Print"
         copy[0..6].upcase + copy[7..copy.length-1] + "™"
       when "pixels2Pages", "Historian"
         copy + "™"
