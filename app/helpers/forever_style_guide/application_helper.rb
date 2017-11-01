@@ -72,7 +72,7 @@ module ForeverStyleGuide
 
     def is_in_product_dropdown?
       @pages = [
-        'guaranteed_storage', 'add_storage', 'services', 'historian', 'downloads', 'valet',
+        'guaranteed_storage', 'add_storage', 'services', 'historian', 'downloads',
         'artisan', 'digital_art', 'digital_art_library', 'forever_print_library' 'p2p',
         'forever_print', 'print', 'prints', 'print_quality',
         'gifts', 'shipping', 'bulk_orders', 'returns',
@@ -201,10 +201,6 @@ module ForeverStyleGuide
 
     def mobile_url
       www_url('/mobile')
-    end
-
-    def valet_url
-      www_url('/valet')
     end
 
     def historian_url
@@ -421,7 +417,7 @@ module ForeverStyleGuide
     end
 
     def zendesk_projects_video_url
-      "https://forever1.zendesk.com/hc/en-us/articles/115000519471-Tutorial-Video-Print-Projects"
+      "https://forever1.zendesk.com/hc/en-us/articles/115002526452-Video-Tutorial-FOREVER-Print"
     end
 
     # Path helpers for style guide dummy app
