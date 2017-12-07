@@ -12,14 +12,14 @@ module ForeverStyleGuide
       when "pixels2Pages", "Historian", "ClickCollage", "It's like insurance for your photos", "Paper Tray Studio", "p2P", "StoryBook Legacy", "Templates & Co", "Valet"
         copy + "™"
       when "Forever Account", "Forever Guarantee", "Forever Guarantee Fund", "Forever Membership", "Forever Retreats",
-           "Forever Retreat", "Forever Ambassador", "Forever Ambassadors", "Forever Deal of the Day", "Forever App", "Forever Digital Art", 
-           "Forever Digital Art Store", "Forever Founder's Club", "Forever Gift Certificate", "Forever Gift Certificates", "Forever Intro Account", "Forever Library", 
+           "Forever Retreat", "Forever Ambassador", "Forever Ambassadors", "Forever Deal of the Day", "Forever App", "Forever Digital Art",
+           "Forever Digital Art Store", "Forever Founder's Club", "Forever Gift Certificate", "Forever Gift Certificates", "Forever Intro Account", "Forever Library",
            "Forever Media Conversion", "Forever Mobile", "Forever Owner", "Forever Vault", "Forever Print Shop", "Forever Services",
            "Forever Software", "Forever Store"
         copy[0..6].upcase + "™" + copy[7..copy.length-1]
       when "Forever Artisan", "Forever Storage"
         copy[0..6].upcase + copy[7..copy.length-1] + "®"
-      when "Artisan"
+      when "Artisan", "Panstoria"
         copy + "®"
       else
         copy
