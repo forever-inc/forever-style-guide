@@ -21,7 +21,6 @@ Gem::Specification.new do |s|
     "{app/assets/javascripts/forever_style_guide}/**/*",
     "{app/assets/stylesheets/forever_style_guide}/**/*",
     "{app/helpers/forever_style_guide}/**/*",
-    "{app/views/forever_style_guide/sections/components/navigation}/**/*",
     "{app/views/forever_style_guide/sections/components/footer}/**/*"
     ]
 
