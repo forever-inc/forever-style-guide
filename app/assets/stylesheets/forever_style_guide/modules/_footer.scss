@@ -99,6 +99,12 @@ a.footer-main_block-nav_group-links-link {
 .footer-info_block-social_link {
   padding-left: $padding-default-horizontal;
   padding-right: $padding-default-horizontal;
+
+  &:hover {
+    .footer-info_block-social_icon {
+      color: $color-white;
+    }
+  }
 }
 
 a.footer-info_block-legal-link {
