@@ -110,8 +110,8 @@ a.footer-main_block-nav_group-links-link {
 
   &::after {
     position: absolute;
-    top: -$social-icon-hover-size / 4;
-    left: -$social-icon-hover-size / 4;
+    top: -($social-icon-hover-size - $social-icon-size) / 2;
+    left: -($social-icon-hover-size - $social-icon-size) / 2;
     width: $social-icon-hover-size;
     height: $social-icon-hover-size;
     background-color: $color-gray-500;
