@@ -1,3 +1,6 @@
+$social-icon-size: 20px;
+$social-icon-hover-size: 35px;
+
 .footer-tagline {
   padding-top: $padding-small-vertical;
   padding-bottom: $padding-small-vertical;
@@ -97,10 +100,42 @@ a.footer-main_block-nav_group-links-link {
 }
 
 .footer-info_block-social_link {
-  padding-left: $padding-default-horizontal;
-  padding-right: $padding-default-horizontal;
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: $social-icon-size;
+  height: $social-icon-size;
+  margin-right: $padding-default-horizontal;
 
-  &:hover {
+  &::after {
+    position: absolute;
+    top: -$social-icon-hover-size / 4;
+    left: -$social-icon-hover-size / 4;
+    width: $social-icon-hover-size;
+    height: $social-icon-hover-size;
+    background-color: $color-gray-500;
+    border-radius: 50%;
+    opacity: 0;
+    z-index: $zindex-navbar - 2;
+    @include transition(opacity 0.15s ease-in-out);
+    content: "";
+  }
+
+  .footer-info_block-social_icon {
+    position: relative;
+    z-index: $zindex-navbar - 1;
+    @include transition(color 0.15s ease-in-out);
+  }
+
+  &:hover,
+  &:active {
+    text-decoration: none;
+
+    &::after {
+      opacity: 1;
+    }
+
     .footer-info_block-social_icon {
       color: $color-white;
     }
