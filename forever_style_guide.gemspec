@@ -22,7 +22,6 @@ Gem::Specification.new do |s|
     "{app/assets/stylesheets/forever_style_guide}/**/*",
     "{app/helpers/forever_style_guide}/**/*",
     "{app/views/forever_style_guide/sections/components/navigation}/**/*",
-    "{app/views/forever_style_guide/sections/components/footer}/**/*"
     ]
 
   s.add_dependency "rails", "~> 4.2.0"
