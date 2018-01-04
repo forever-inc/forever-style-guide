@@ -1,3 +1,8 @@
+.footer-tagline {
+  padding-top: $padding-small-vertical;
+  padding-bottom: $padding-small-vertical;
+}
+
 .footer-main_block {
   @media screen and (min-width: $screen-sm) {
     padding-left: 0;
