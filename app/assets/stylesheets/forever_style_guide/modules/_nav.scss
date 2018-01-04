@@ -150,6 +150,27 @@ a.navigation-items-link {
     padding-left: $padding-xs-horizontal;
     padding-right: $padding-xs-horizontal;
     font-size: $font-size-100;
+    position: relative;
+  }
+
+  @media screen and (min-width: $screen-lg) {
+    font-size: $font-size-100;
+    padding-left: $padding-default-horizontal;
+    padding-right: $padding-default-horizontal;
+  }
+}
+
+a.navigation-items-link-deals {
+  position: relative;
+  color: $color-warning;
+
+  &::after {
+    content: "\f005";
+    font-family: 'FontAwesome';
+    position: relative;
+    top: -5px;
+    font-size: $font-size-000;
+    right: -3px;
   }
 }
 
