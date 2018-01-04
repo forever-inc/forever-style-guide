@@ -20,8 +20,7 @@ Gem::Specification.new do |s|
     "{app/assets/images/forever_style_guide}/**/*",
     "{app/assets/javascripts/forever_style_guide}/**/*",
     "{app/assets/stylesheets/forever_style_guide}/**/*",
-    "{app/helpers/forever_style_guide}/**/*",
-    "{app/views/forever_style_guide/sections/components/navigation}/**/*",
+    "{app/helpers/forever_style_guide}/**/*"
     ]
 
   s.add_dependency "rails", "~> 4.2.0"
