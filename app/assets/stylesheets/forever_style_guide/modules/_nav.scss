@@ -211,6 +211,10 @@ a.navigation-items-link-deals {
 
 .navigation-user_info-cart {
   margin-right: $padding-small-horizontal;
+
+  @media screen and (min-width: $screen-lg) {
+    margin-right: $padding-large-horizontal;
+  }
 }
 
 .navigation-user_info-logged_out-sign_up_btn {
