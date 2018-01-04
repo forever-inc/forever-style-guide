@@ -21,6 +21,7 @@ $hamburger-patty-width: 20px;
   justify-content: space-between;
   font-family: $font-face-gotham;
   box-shadow: 0 5px 20px rgba(0,0,0,.1);
+  height: 65px;
 }
 
 .navigation-logo a {
@@ -113,19 +114,27 @@ a.navigation-cart_icon {
 
   @media screen and (min-width: $screen-md) {
     display: block;
-    position: relative;
+    position: static;
     z-index: 100;
     background: transparent;
     padding: 0;
     box-shadow: none;
     top: 0;
     width: auto;
+    height: 100%;
   }
+}
+
+.navigation-menu-list {
+  height: 100%;
 }
 
 .navigation-menu-list_item {
   @media screen and (min-width: $screen-md) {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    height: 100%;
+    position: relative;
   }
 
   &:not(:last-of-type) {
@@ -133,6 +142,18 @@ a.navigation-cart_icon {
 
     @media screen and (min-width: $screen-md) {
       border-bottom: 0;
+    }
+  }
+
+  &::after {
+    @media screen and (min-width: $screen-md) {
+      position: absolute;
+      bottom: -$padding-large-horizontal;
+      left: 0;
+      height: 5px;
+      width: 100%;
+      background: red;
+      content: "";
     }
   }
 }
