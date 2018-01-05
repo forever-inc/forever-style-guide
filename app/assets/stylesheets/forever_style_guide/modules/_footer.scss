@@ -45,53 +45,21 @@ a.footer-main_block-nav_group-links-link {
   }
 }
 
-.footer-info_block-inner {
-  @media screen and (min-width: $screen-sm) {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-  }
-}
-
 .footer-info_block-address {
-  @media screen and (min-width: $screen-sm) {
-    flex-shrink: 0;
-    order: 1;
-    width: 100%;
-  }
-
-  @media screen and (min-width: $screen-lg) {
-    width: auto;
-    order: 2;
-    flex-shrink: 1;
-  }
-}
-
-.footer-info_block-social {
   margin-bottom: 0;
 
-  @media screen and (min-width: $screen-sm) {
-    order: 2;
-  }
-
-  @media screen and (min-width: $screen-md) {
-    margin-top: $padding-large-vertical;
+  @media screen and (min-width: $screen-xs) {
+    margin-top: $padding-default-vertical;
   }
 
   @media screen and (min-width: $screen-lg) {
-    order: 1;
     margin-top: 0;
   }
 }
 
 .footer-info_block-legal {
-  @media screen and (min-width: $screen-sm) {
-    order: 3;
-  }
-
-  @media screen and (min-width: $screen-md) {
-    margin-top: $padding-large-vertical;
+  @media screen and (min-width: $screen-xs) {
+    margin-top: $padding-default-vertical;
   }
 
   @media screen and (min-width: $screen-lg) {
