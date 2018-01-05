@@ -71,6 +71,13 @@ module ForeverStyleGuide
 
     #active state nav
     def is_active?
+      @pages = [
+        'guaranteed_storage', 'add_storage', 'services', 'historian', 'downloads',
+        'artisan', 'digital_art', 'digital_art_library', 'forever_print_library' 'p2p',
+        'forever_print', 'print', 'prints', 'print_quality',
+        'gifts', 'shipping', 'bulk_orders', 'returns',
+        'products', 'deals'
+      ]
       return true if @pages.any?{ |matches| [controller.controller_name, controller.action_name].include? matches }
     end
 

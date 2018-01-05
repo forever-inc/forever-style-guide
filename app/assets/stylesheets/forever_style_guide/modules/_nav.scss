@@ -15,13 +15,13 @@ $hamburger-patty-width: 20px;
 }
 
 .navigation {
-  padding: $padding-large-horizontal;
+  padding: 0 $padding-large-horizontal;
   display: flex;
   align-items: center;
   justify-content: space-between;
   font-family: $font-face-gotham;
   box-shadow: 0 5px 20px rgba(0,0,0,.1);
-  height: 65px;
+  height: 55px;
 }
 
 .navigation-logo a {
@@ -83,7 +83,7 @@ $hamburger-patty-width: 20px;
 }
 
 .navigation-logo_image {
-  height: 20px;
+  height: 18px;
 }
 
 .navigation-link {
@@ -144,16 +144,17 @@ a.navigation-cart_icon {
       border-bottom: 0;
     }
   }
+}
 
-  &::after {
-    @media screen and (min-width: $screen-md) {
-      position: absolute;
-      bottom: -$padding-large-horizontal;
-      left: 0;
-      height: 5px;
-      width: 100%;
-      background: red;
-      content: "";
+.navigation-menu-list_item-active {
+
+
+  a.navigation-items-link {
+    color: $color-secondary;
+
+    &::before {
+      opacity: 1;
+      background-color: $color-secondary;
     }
   }
 }
@@ -168,16 +169,47 @@ a.navigation-items-link {
   @media screen and (min-width: $screen-md) {
     padding-top: 0;
     padding-bottom: 0;
-    padding-left: $padding-xs-horizontal;
-    padding-right: $padding-xs-horizontal;
+    padding-left: 4px;
+    padding-right: 4px;
     font-size: $font-size-100;
     position: relative;
+    height: 100%;
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    transition: color 0.15s ease-in-out;
   }
 
   @media screen and (min-width: $screen-lg) {
-    font-size: $font-size-100;
+    font-size: $font-size-200;
     padding-left: $padding-default-horizontal;
     padding-right: $padding-default-horizontal;
+  }
+
+  &::before {
+    @media screen and (min-width: $screen-md) {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 4px;
+      width: 100%;
+      background-color: $color-gray-400;
+      content: "";
+      opacity: 0;
+      transition: opacity 0.15s ease-in-out;
+    }
+  }
+
+  &:hover {
+    @media screen and (min-width: $screen-md) {
+      color: $color-black;
+    }
+
+    &::before {
+      @media screen and (min-width: $screen-md) {
+        opacity: 1;
+      }
+    }
   }
 }
 
