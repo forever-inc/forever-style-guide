@@ -24,25 +24,6 @@ $hamburger-patty-width: 20px;
   height: 55px;
 }
 
-.navigation-logo a {
-  display: block;
-}
-
-.navigation a:focus {
-  position: relative;
-  outline: none;
-
-  &::after {
-    content: "";
-    width: calc(100% + 20px);
-    height: calc(100% + 20px);
-    top: -10px;
-    left: -10px;
-    border: 2px solid $color-secondary;
-    position: absolute;
-  }
-}
-
 .navigation-toggle_button {
   background: transparent;
   border: none;
