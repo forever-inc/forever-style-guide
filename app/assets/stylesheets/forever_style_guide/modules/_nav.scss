@@ -262,6 +262,27 @@ a.navigation-items-link-deals {
   }
 }
 
+.navigation-user_info-logged_out-log_in_link {
+  text-transform: uppercase;
+  color: $color-gray-600 !important;
+  transition: color 0.15s ease-in-out;
+  text-decoration: none;
+
+  @media screen and (min-width: $screen-lg) {
+    font-size: $font-size-200;
+  }
+
+  &:hover {
+    color: $color-gray-700;
+  }
+}
+
 .navigation-user_info-logged_out-sign_up_btn {
   margin-left: $padding-small-horizontal;
+  height: auto !important;
+
+  @media screen and (min-width: $screen-lg) {
+    font-size: $font-size-200 !important;
+    margin-left: $padding-large-horizontal;
+  }
 }
