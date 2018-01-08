@@ -127,6 +127,7 @@ a.navigation-cart_icon {
 
 .navigation-menu-list {
   height: 100%;
+  overflow: hidden;
 }
 
 .navigation-menu-list_item {
@@ -153,7 +154,7 @@ a.navigation-cart_icon {
     color: $color-secondary;
 
     &::before {
-      opacity: 1;
+      transform: scaleX(1);
       background-color: $color-secondary;
     }
   }
@@ -193,10 +194,10 @@ a.navigation-items-link {
       left: 0;
       height: 4px;
       width: 100%;
-      background-color: $color-gray-400;
+      background-color: $color-secondary;
       content: "";
-      opacity: 0;
-      transition: opacity 0.15s ease-in-out;
+      transform: scaleX(0);
+      transition: transform 0.15s ease-in-out;
     }
   }
 
@@ -207,7 +208,8 @@ a.navigation-items-link {
 
     &::before {
       @media screen and (min-width: $screen-md) {
-        opacity: 1;
+        transform: scaleX(1);
+        transition: transform 0.25s cubic-bezier(.7,-0.07,.41,1.3);
       }
     }
   }
@@ -216,6 +218,10 @@ a.navigation-items-link {
 a.navigation-items-link-deals {
   position: relative;
   color: $color-warning;
+
+  &:hover {
+    color: mix($color-black, $color-warning, 20%);
+  }
 
   &::after {
     content: "\f005";
