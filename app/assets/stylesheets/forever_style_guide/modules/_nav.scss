@@ -233,13 +233,20 @@ a.navigation-items-link-deals {
   }
 }
 
-.navigation-user_info-help {
-  display: none;
-}
-
 .navigation-user_info {
   display: flex;
   align-items: center;
+}
+
+.navigation-user_info-help {
+  @media screen and (min-width: $screen-md) {
+    margin-right: $padding-small-horizontal;
+  }
+
+  @media screen and (min-width: $screen-lg) {
+    font-size: $font-size-200;
+    margin-right: $padding-large-horizontal;
+  }
 }
 
 .navigation-user_info-logged_out {
