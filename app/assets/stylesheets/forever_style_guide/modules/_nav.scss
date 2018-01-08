@@ -64,7 +64,11 @@ $hamburger-patty-width: 20px;
 }
 
 .navigation-logo_image {
-  height: 18px;
+  height: 20px;
+
+  @media screen and (min-width: $screen-lg) {
+    height: 23px;
+  }
 }
 
 .navigation-link {
