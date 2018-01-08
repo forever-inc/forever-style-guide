@@ -241,10 +241,26 @@ a.navigation-items-link-deals {
 
 .navigation-user_info-cart {
   margin-right: $padding-small-horizontal;
+  position: relative;
 
   @media screen and (min-width: $screen-lg) {
     margin-right: $padding-large-horizontal;
   }
+}
+
+.navigation-user_info-cart-with_count {
+  margin-right: $padding-large-horizontal * 1.5;
+}
+
+.navigation-user_info-cart-count {
+  padding: 0 7px 0 6px;
+  border-radius: 50px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: -5px;
+  right: -15px;
 }
 
 .navigation-user_info-logged_out-log_in_link {
