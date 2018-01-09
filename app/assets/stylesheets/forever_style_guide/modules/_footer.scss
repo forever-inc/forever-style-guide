@@ -1,6 +1,10 @@
 $social-icon-size: 20px;
 $social-icon-hover-size: 35px;
 
+@mixin social_icon_transition($property) {
+  @include transition($property 0.15s ease-in-out);
+}
+
 .footer-tagline {
   padding-top: $padding-small-vertical;
   padding-bottom: $padding-small-vertical;
@@ -86,14 +90,8 @@ a.footer-main_block-nav_group-link {
     border-radius: 50%;
     opacity: 0;
     z-index: $zindex-navbar - 2;
-    @include transition(opacity 0.15s ease-in-out);
+    @include social_icon_transition(opacity);
     content: "";
-  }
-
-  .footer-info_block-social_icon {
-    position: relative;
-    z-index: $zindex-navbar - 1;
-    @include transition(color 0.15s ease-in-out);
   }
 
   &:hover,
@@ -110,8 +108,14 @@ a.footer-main_block-nav_group-link {
   }
 }
 
+.footer-info_block-social_icon {
+  position: relative;
+  z-index: $zindex-navbar - 1;
+  @include social_icon_transition(color);
+}
+
 a.footer-info_block-legal-link {
-  color: $color-white;
   padding-left: $padding-small-horizontal;
   padding-right: $padding-small-horizontal;
+  color: $color-white;
 }
