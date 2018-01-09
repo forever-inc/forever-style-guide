@@ -52,6 +52,7 @@ $nav-li-a-padding-right-lg: 16px;
   border-radius: 0;
   border: none;
   @extend %card-shadow;
+  margin-bottom: 0;
 
   .nav.navbar-nav {
     margin-top: 0;
