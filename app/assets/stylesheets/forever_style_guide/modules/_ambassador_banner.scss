@@ -1,15 +1,18 @@
 $ambassador-bar-vertical-padding: 6px;
+$scrim-opacity: 0.2;
+$ambassador-text-transparentize-amount: 0.2;
+$ambassador-text-hover-transparentize-amount: 0.4;
+$ambassador-emphasis-hover-transparentize-amount: $ambassador-text-transparentize-amount;
 
 a.ambassador_banner {
+  position: relative;
+  display: block;
   padding-top: $ambassador-bar-vertical-padding;
   padding-bottom: $ambassador-bar-vertical-padding;
-  display: block;
-  background-image: linear-gradient(to left, mix($color-accent, $color-secondary, 50%), mix($color-black, $color-secondary, 10%));
-  position: relative;
   text-decoration: none;
+  background-image: linear-gradient(to left, mix($color-accent, $color-secondary, 50%), mix($color-black, $color-secondary, 10%));
 
   &::after {
-    content: "";
     position: absolute;
     top: 0;
     left: 0;
@@ -17,36 +20,37 @@ a.ambassador_banner {
     height: 100%;
     background-color: $color-black;
     opacity: 0;
-    transition: opacity 0.15s ease-in-out;
-    z-index: 99;
+    @include transition(opacity 0.15s ease-in-out);
+    z-index: $zindex-navbar - 2;
+    content: "";
   }
 
   &:hover {
     &::after {
-      opacity: 0.2;
+      opacity: $ambassador-scrim-opacity;
     }
 
     .ambassador_banner-text {
-      color: transparentize($color-white, 0.4);
+      color: transparentize($color-white, $ambassador-text-hover-transparentize-amount);
     }
 
     .ambassador_banner-emphasized {
-      color: transparentize($color-white, 0.2);
+      color: transparentize($color-white, $ambassador-emphasis-hover-transparentize-amount);
     }
   }
 }
 
 .ambassador_banner-text {
-  color: transparentize($color-white, 0.2);
   position: relative;
-  z-index: 100;
-  transition: color 0.15s ease-in-out;
+  color: transparentize($color-white, $ambassador-text-transparentize-amount);
+  z-index: $zindex-navbar - 1;
+  @include transition(color 0.15s ease-in-out);
 }
 
 .ambassador_banner-emphasized {
-  text-decoration: underline;
-  transition: color 0.15s ease-in-out;
   display: block;
+  text-decoration: underline;
+  @include transition(color 0.15s ease-in-out);
 
   @media screen and (min-width: $screen-xs) {
     display: inline;
