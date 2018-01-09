@@ -25,7 +25,7 @@ Gem::Specification.new do |s|
     "{app/views/forever_style_guide/sections/components/footer}/**/*"
     ]
 
-  s.add_dependency "rails", "~> 4.2.0"
+  s.add_dependency "rails", '~> 5.1'
   s.add_dependency "style-guide"
 
   s.add_dependency "sass-rails"
@@ -36,6 +36,5 @@ Gem::Specification.new do |s|
   s.add_development_dependency "sqlite3"
   s.add_development_dependency "guard-rails"
   s.add_development_dependency "guard-livereload"
-  s.add_development_dependency "rack-livereload"
   s.add_development_dependency "thor"
 end

@@ -12,4 +12,4 @@ gemspec
 
 # To use debugger
 # gem 'debugger'
-gem 'sprockets', '2.12.4'
+gem 'sprockets', '~> 3.7.1'
