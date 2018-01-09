@@ -1,6 +1,8 @@
+$ambassador-bar-vertical-padding: 6px;
+
 a.ambassador_banner {
-  padding-top: $padding-small-vertical;
-  padding-bottom: $padding-small-vertical;
+  padding-top: $ambassador-bar-vertical-padding;
+  padding-bottom: $ambassador-bar-vertical-padding;
   display: block;
   background-image: linear-gradient(to left, mix($color-accent, $color-secondary, 50%), mix($color-black, $color-secondary, 10%));
   position: relative;
