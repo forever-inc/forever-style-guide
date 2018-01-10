@@ -7,6 +7,7 @@ $navigation-height: 55px;
 
 $hamburger-patty-height: 2px;
 $hamburger-patty-width: 20px;
+$hamburger-bun-gap: 4px;
 
 @mixin nav-border($sides...) {
   @each $side in $sides {
@@ -22,6 +23,15 @@ $hamburger-patty-width: 20px;
   font-family: $font-face-gotham;
   box-shadow: 0 5px 20px rgba(0,0,0,.1);
   height: 55px;
+
+  &.open {
+    box-shadow: 0 5px 20px rgba(0,0,0,.05);
+  }
+}
+
+.navigation-collapsed_buttons {
+  display: flex;
+  align-items: center;
 }
 
 .navigation-toggle_button {
@@ -31,11 +41,30 @@ $hamburger-patty-width: 20px;
   font-size: inherit;
   height: 100%;
   padding: 0;
-  height: 30px;
+  height: ($hamburger-patty-height * 3) + ($hamburger-bun-gap * 2); // Bun down, shoe, mustard, pan, bun--nooooo
   line-height: 0;
+  display: flex;
+  outline: none;
 
   @media screen and (min-width: $screen-md) {
     display: none;
+  }
+
+  &.open {
+    .navigation-toggle_button-hamburger {
+      transform: rotate(45deg);
+      transition: transform 0.3s cubic-bezier(0.41, -0.4, 0.53, 1.34);
+
+      &::before {
+        transform: translateY(6px) rotate(90deg);
+        transition: transform 0.3s cubic-bezier(0.41, -0.4, 0.53, 1.34);
+      }
+
+      &::after {
+        transform: translateY(-6px) rotate(90deg);
+        transition: transform 0.3s cubic-bezier(0.41, -0.4, 0.53, 1.34);
+      }
+    }
   }
 }
 
@@ -45,21 +74,24 @@ $hamburger-patty-width: 20px;
   height: $hamburger-patty-height;
   background: $color-gray-500;
   display: inline-block;
+  transition: transform 0.3s cubic-bezier(0.41, -0.4, 0.53, 1.34);
 
   &::before,
   &::after {
     content: "";
     position: absolute;
-    top: -6px;
+    top: -($hamburger-patty-height + $hamburger-bun-gap);
     left: 0;
     width: 100%;
     height: 100%;
     background: $color-gray-500;
     display: inline-block;
+    transition: transform 0.3s cubic-bezier(0.41, -0.4, 0.53, 1.34);
+    transform: none;
   }
 
   &::after {
-    top: 6px;
+    top: ($hamburger-patty-height + $hamburger-bun-gap);
   }
 }
 
@@ -86,10 +118,10 @@ a.navigation-cart_icon {
   font-size: $font-size-200;
 }
 
-.navigation-menu {
+.navigation-items {
   position: absolute;
   width: 100%;
-  background: $color-gray-200;
+  background: $color-white;
   left: 0;
   top: 100%;
   padding: $padding-large-vertical $padding-large-horizontal;
@@ -108,6 +140,21 @@ a.navigation-cart_icon {
     width: auto;
     height: 100%;
   }
+
+  &.open {
+    display: block;
+  }
+}
+
+.navigation-menu {
+  padding-top: $padding-large-vertical;
+  margin-left: -$padding-large-horizontal;
+  margin-right: -$padding-large-horizontal;
+
+  @media screen and (min-width: $screen-md) {
+    margin: 0;
+    padding-top: 0;
+  }
 }
 
 .navigation-menu-list {
@@ -121,14 +168,6 @@ a.navigation-cart_icon {
     align-items: center;
     height: 100%;
     position: relative;
-  }
-
-  &:not(:last-of-type) {
-    border-bottom: 1px solid $color-gray-300;
-
-    @media screen and (min-width: $screen-md) {
-      border-bottom: 0;
-    }
   }
 }
 
@@ -151,6 +190,9 @@ a.navigation-items-link {
   padding-bottom: $padding-default-vertical;
   display: block;
   text-transform: uppercase;
+  position: relative;
+  padding-left: $padding-large-horizontal;
+  padding-right: $padding-large-horizontal;
 
   @media screen and (min-width: $screen-md) {
     padding-top: 0;
@@ -173,6 +215,21 @@ a.navigation-items-link {
   }
 
   &::before {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    width: 4px;
+    background-color: $color-secondary;
+    content: "";
+    transform: scaleX(0);
+    transition: transform 0.15s ease-in-out;
+    transform-origin: left;
+
+    @media screen and (min-width: $screen-md) {
+      transform-origin: center;
+    }
+
     @media screen and (min-width: $screen-md) {
       position: absolute;
       bottom: 0;
@@ -187,14 +244,17 @@ a.navigation-items-link {
   }
 
   &:hover {
-    @media screen and (min-width: $screen-md) {
-      color: $color-black;
-    }
+    text-decoration: none;
+    color: $color-secondary;
 
     &::before {
+      transform: scaleX(1);
+      transition: transform 0.25s ease-in-out;
+      transform-origin: left;
+
       @media screen and (min-width: $screen-md) {
-        transform: scaleX(1);
         transition: transform 0.25s cubic-bezier(.7,-0.07,.41,1.3);
+        transform-origin: center;
       }
     }
   }
@@ -219,12 +279,18 @@ a.navigation-items-link-deals {
 }
 
 .navigation-user_info {
-  display: flex;
-  align-items: center;
+  @media screen and (min-width: $screen-md) {
+    display: flex;
+    align-items: center;
+  }
 }
 
 .navigation-user_info-help {
+  margin-left: -$padding-large-horizontal;
+  margin-right: -$padding-large-horizontal;
+
   @media screen and (min-width: $screen-md) {
+    display: block;
     margin-right: $padding-small-horizontal;
   }
 
@@ -232,11 +298,22 @@ a.navigation-items-link-deals {
     font-size: $font-size-200;
     margin-right: $padding-large-horizontal;
   }
+
+  a {
+    padding-left: $padding-large-horizontal;
+    padding-right: $padding-large-horizontal;
+  }
 }
 
 .navigation-user_info-logged_out {
-  display: flex;
-  align-items: center;
+  text-align: center;
+  padding-bottom: $padding-large-vertical;
+  border-bottom: 2px solid $color-gray-200;
+
+  @media screen and (min-width: $screen-md) {
+    display: flex;
+    align-items: center;
+  }
 }
 
 .navigation-user_info-cart {
@@ -280,6 +357,7 @@ a.navigation-items-link-deals {
 
 .navigation-user_info-logged_out-sign_up_btn {
   margin-left: $padding-small-horizontal;
+  font-size: $font-size-200 !important;
   height: auto !important;
 
   @media screen and (min-width: $screen-lg) {
