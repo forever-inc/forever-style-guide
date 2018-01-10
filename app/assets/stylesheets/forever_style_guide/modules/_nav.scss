@@ -159,6 +159,7 @@ a.navigation-items-link {
     padding-left: 4px;
     padding-right: 4px;
     font-size: $font-size-100;
+    letter-spacing: 0.5px;
     position: relative;
     height: 100%;
     display: inline-flex;
@@ -272,10 +273,12 @@ a.navigation-items-link-deals {
 
   @media screen and (min-width: $screen-md) {
     font-size: $font-size-100;
+    letter-spacing: 0.5px;
   }
 
   @media screen and (min-width: $screen-lg) {
     font-size: $font-size-200;
+    letter-spacing: 0;
   }
 
   &:hover {
@@ -289,6 +292,7 @@ a.navigation-items-link-deals {
 
   @media screen and (min-width: $screen-md) {
     font-size: $font-size-100 !important;
+    letter-spacing: 0.5px;
   }
 
   @media screen and (min-width: $screen-lg) {
