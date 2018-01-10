@@ -21,7 +21,7 @@ a.ambassador_banner {
     background-color: $color-black;
     opacity: 0;
     @include transition(opacity 0.15s ease-in-out);
-    z-index: $zindex-navbar - 2;
+    z-index: $zindex-navbar - 1;
     content: "";
   }
 
@@ -29,28 +29,18 @@ a.ambassador_banner {
     &::after {
       opacity: $ambassador-scrim-opacity;
     }
-
-    .ambassador_banner-text {
-      color: transparentize($color-white, $ambassador-text-hover-transparentize-amount);
-    }
-
-    .ambassador_banner-emphasized {
-      color: transparentize($color-white, $ambassador-emphasis-hover-transparentize-amount);
-    }
   }
 }
 
 .ambassador_banner-text {
   position: relative;
   color: transparentize($color-white, $ambassador-text-transparentize-amount);
-  z-index: $zindex-navbar - 1;
-  @include transition(color 0.15s ease-in-out);
+  z-index: $zindex-navbar - 2;
 }
 
 .ambassador_banner-emphasized {
   display: block;
   text-decoration: underline;
-  @include transition(color 0.15s ease-in-out);
 
   @media screen and (min-width: $screen-xs) {
     display: inline;
