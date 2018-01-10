@@ -223,6 +223,7 @@ a.navigation-items-link-deals {
 .navigation-user_info {
   display: flex;
   align-items: center;
+  height: 100%;
 }
 
 .navigation-user_info-help {
@@ -299,4 +300,177 @@ a.navigation-items-link-deals {
     font-size: $font-size-200 !important;
     margin-left: $padding-large-horizontal;
   }
+}
+
+.navigation-user_info-logged_in {
+  height: 100%;
+}
+
+.user_info-logged_in-account_dropdown_trigger {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+  height: 100%;
+  overflow-y: hidden;
+  transition: opacity 0.15s ease-in-out;
+
+  &:hover {
+    opacity: 0.7;
+  }
+
+  &.open {
+    .user_info-logged_in-account_dropdown_trigger-icon {
+      transform: rotate(180deg);
+    }
+  }
+}
+
+.user_info-logged_in-account_dropdown_trigger-avatar {
+  border: none;
+  height: 35px;
+  width: 35px;
+  box-shadow: none;
+  margin-right: $padding-default-horizontal;
+}
+
+.user_info-logged_in-account_dropdown_trigger-name {
+  margin-right: $padding-small-horizontal;
+  transition: transform 0.15s ease-in-out;
+}
+
+.user_info-logged_in-account_dropdown_trigger-icon {
+  margin-top: -3px;
+}
+
+.user_info-logged_in-account_dropdown {
+  display: block;
+  position: absolute;
+  background: $color-white;
+  box-shadow: 0 5px 20px rgba(0,0,0,.1);
+  top: calc(100% + 20px);
+  right: 10px;
+  padding: $padding-large-vertical $padding-large-horizontal;
+  padding-bottom: 0;
+  width: 300px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    right: 10px;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+
+    border-bottom: 10px solid $color-white;
+  }
+
+  &.open {
+    display: block;
+  }
+}
+
+.user_info-logged_in-account_dropdown-overview {
+  display: flex;
+  align-items: center;
+  padding-bottom: $padding-large-vertical;
+  border-bottom: 2px solid $color-gray-200;
+}
+
+.user_info-logged_in-account_dropdown-avatar {
+  margin: 0;
+  box-shadow: 0 5px 15px rgba(0,0,0,.2);
+  border: none;
+  padding: 0;
+  margin-right: $padding-large-horizontal;
+}
+
+.user_info-logged_in-account_dropdown-storage {
+  width: 100%;
+}
+
+.user_info-logged_in-account_dropdown-storage_percentage {
+  height: 10px;
+  border-radius: 50px;
+  background: $color-gray-300;
+  margin-top: $padding-xs-vertical;
+  margin-bottom: $padding-small-vertical;
+  width: 100%;
+}
+
+.user_info-logged_in-account_dropdown-storage_percentage-inner {
+  border-radius: 50px;
+  background: $color-forever_services;
+  height: 100%;
+}
+
+.user_info-logged_in-account_dropdown-menu {
+  padding-top: $padding-default-vertical;
+}
+
+.user_info-logged_in-account_dropdown-menu-list {
+
+  padding-top: $padding-small-vertical;
+  padding-bottom: $padding-small-vertical;
+  margin-bottom: 0;
+
+  &:not(:last-of-type) {
+    border-bottom: 2px solid $color-gray-200;
+  }
+}
+
+a.user_info-logged_in-account_dropdown-menu-list-link  {
+  color: $color-gray-600;
+  display: block;
+  padding-top: $padding-small-vertical;
+  padding-bottom: $padding-small-vertical;
+  position: relative;
+  margin-left: -$padding-large-horizontal;
+  margin-right: -$padding-large-horizontal;
+  padding-left: $padding-large-horizontal;
+  padding-right: $padding-large-horizontal;
+  text-decoration: none;
+
+  &::before {
+    @media screen and (min-width: $screen-md) {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 100%;
+      width: 4px;
+      background-color: $color-secondary;
+      content: "";
+      transform: scaleX(0);
+      transition: transform 0.15s ease-in-out;
+      transform-origin: left;
+    }
+  }
+
+  &:hover {
+    color: $color-black;
+    @media screen and (min-width: $screen-md) {
+      color: $color-black;
+    }
+
+    &::before {
+      @media screen and (min-width: $screen-md) {
+        transform: scaleX(1);
+        transition: transform 0.25s ease-in-out;
+      }
+    }
+  }
+}
+
+.user_info-logged_in-account_dropdown-menu-list-sign_out {
+  color: $color-danger !important;
+}
+
+.letter-spacing-small {
+  letter-spacing: 0.3px;
+}
+
+.letter-spacing-large {
+  letter-spacing: 0.5px;
 }
