@@ -32,6 +32,10 @@ $hamburger-bun-gap: 4px;
 .navigation-collapsed_buttons {
   display: flex;
   align-items: center;
+
+  @media screen and (min-width: $screen-md) {
+    order: 3;
+  }
 }
 
 .navigation-toggle_button {
@@ -130,7 +134,8 @@ a.navigation-cart_icon {
   display: none;
 
   @media screen and (min-width: $screen-md) {
-    display: block;
+    display: flex;
+    align-items: center;
     position: static;
     z-index: 100;
     background: transparent;
@@ -280,6 +285,7 @@ a.navigation-items-link-deals {
 
 .navigation-user_info {
   @media screen and (min-width: $screen-md) {
+    order: 2;
     display: flex;
     align-items: center;
   }
@@ -313,6 +319,8 @@ a.navigation-items-link-deals {
   @media screen and (min-width: $screen-md) {
     display: flex;
     align-items: center;
+    border-bottom: none;
+    padding-bottom: 0;
   }
 }
 
@@ -346,6 +354,10 @@ a.navigation-items-link-deals {
   transition: color 0.15s ease-in-out;
   text-decoration: none;
 
+  @media screen and (min-width: $screen-md) {
+    font-size: $font-size-100;
+  }
+
   @media screen and (min-width: $screen-lg) {
     font-size: $font-size-200;
   }
@@ -359,6 +371,10 @@ a.navigation-items-link-deals {
   margin-left: $padding-small-horizontal;
   font-size: $font-size-200 !important;
   height: auto !important;
+
+  @media screen and (min-width: $screen-md) {
+    font-size: $font-size-100 !important;
+  }
 
   @media screen and (min-width: $screen-lg) {
     font-size: $font-size-200 !important;
