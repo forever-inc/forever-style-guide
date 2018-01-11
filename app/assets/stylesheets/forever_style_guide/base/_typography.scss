@@ -21,14 +21,13 @@ h1, .heading-large {
   @media (min-width: $screen-sm) {
     font-size: $font-size-600;
   }
-  
+
   @media (min-width: $screen-md) {
     font-size: $font-size-700;
   }
 }
 h2, .heading-medium {
   font-family: $font-face-gotham;
-  font-weight: 500;
   font-size: $font-size-400;
 
   @media (min-width: $screen-sm) {
@@ -41,7 +40,6 @@ h2, .heading-medium {
 }
 h3, .heading-small {
   font-family: $font-face-gotham;
-  font-weight: 500;
   font-size: $font-size-300;
 
   @media (min-width: $screen-sm) {
@@ -54,7 +52,6 @@ h3, .heading-small {
 }
 h4, .heading-extra-small {
   font-family: $font-face-gotham;
-  font-weight: 400;
   font-size: $font-size-300;
 
   @media (min-width: $screen-sm) {
@@ -68,7 +65,6 @@ h5 {
 }
 h6 {
   font-family: $font-face-gotham;
-  font-weight: 200;
   font-size: $font-size-200;
 }
 p {
