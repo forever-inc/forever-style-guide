@@ -337,6 +337,10 @@ a.navigation-items-link-deals {
 .user_info-logged_in-account_dropdown_trigger-name {
   margin-right: $padding-small-horizontal;
   transition: transform 0.15s ease-in-out;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 100px;
 }
 
 .user_info-logged_in-account_dropdown_trigger-icon {
@@ -344,7 +348,7 @@ a.navigation-items-link-deals {
 }
 
 .user_info-logged_in-account_dropdown {
-  display: block;
+  display: none;
   position: absolute;
   background: $color-white;
   box-shadow: 0 5px 20px rgba(0,0,0,.1);
@@ -385,6 +389,7 @@ a.navigation-items-link-deals {
   border: none;
   padding: 0;
   margin-right: $padding-large-horizontal;
+  align-self: flex-start;
 }
 
 .user_info-logged_in-account_dropdown-storage {
