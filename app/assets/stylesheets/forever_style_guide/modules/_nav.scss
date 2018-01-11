@@ -223,17 +223,40 @@ a.navigation-items-link-deals {
 .navigation-user_info {
   display: flex;
   align-items: center;
+  height: 100%;
 }
 
 .navigation-user_info-help {
   @media screen and (min-width: $screen-md) {
-    margin-right: $padding-small-horizontal;
+    height: 100%;
   }
 
   @media screen and (min-width: $screen-lg) {
     font-size: $font-size-200;
-    margin-right: $padding-large-horizontal;
   }
+}
+
+.navigation-user_info-help_link {
+  @media screen and (min-width: $screen-md) {
+    padding-left: $padding-small-horizontal;
+    padding-right: $padding-small-horizontal;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+  }
+
+  &:hover {
+    text-decoration: none;
+
+    .navigation-user_info-help_icon {
+      color: $color-primary;
+    }
+  }
+}
+
+.navigation-user_info-help_icon {
+  transition: color 0.15s ease-in-out;
 }
 
 .navigation-user_info-logged_out {
@@ -242,12 +265,24 @@ a.navigation-items-link-deals {
 }
 
 .navigation-user_info-cart {
-  margin-right: $padding-small-horizontal;
-  position: relative;
-
-  @media screen and (min-width: $screen-lg) {
-    margin-right: $padding-large-horizontal;
+  @media screen and (min-width: $screen-md) {
+    padding-right: $padding-small-horizontal;
+    padding-left: $padding-small-horizontal;
+    position: relative;
+    transition: color 0.15s ease-in-out;
   }
+
+  &:hover {
+    text-decoration: none;
+
+    .navigation-user_info-cart_icon {
+      color: $color-primary;
+    }
+  }
+}
+
+.navigation-user_info-cart_icon {
+  transition: color 0.15s ease-in-out;
 }
 
 .navigation-user_info-cart-with_count {
@@ -265,15 +300,17 @@ a.navigation-items-link-deals {
   right: -15px;
 }
 
-.navigation-user_info-logged_out-log_in_link {
+a.navigation-user_info-logged_out-log_in_link {
   text-transform: uppercase;
-  color: $color-gray-600 !important;
+  color: $color-gray-600;
   transition: color 0.15s ease-in-out;
   text-decoration: none;
 
   @media screen and (min-width: $screen-md) {
     font-size: $font-size-100;
     letter-spacing: 0.5px;
+    margin-left: $padding-small-horizontal;
+    transition: color 0.15s ease-in-out;
   }
 
   @media screen and (min-width: $screen-lg) {
@@ -282,7 +319,8 @@ a.navigation-items-link-deals {
   }
 
   &:hover {
-    color: $color-gray-700;
+    color: $color-primary;
+    text-decoration: none;
   }
 }
 
