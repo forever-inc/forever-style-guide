@@ -13,7 +13,8 @@ h6,
 p {
   color: color('text');
 }
-h1, .heading-large {
+h1,
+.heading-large {
   font-family: $font-face-gotham;
   font-weight: 500;
   font-size: $font-size-500;
@@ -26,7 +27,8 @@ h1, .heading-large {
     font-size: $font-size-700;
   }
 }
-h2, .heading-medium {
+h2,
+.heading-medium {
   font-family: $font-face-gotham;
   font-size: $font-size-400;
 
@@ -38,7 +40,8 @@ h2, .heading-medium {
     font-size: $font-size-600;
   }
 }
-h3, .heading-small {
+h3,
+.heading-small {
   font-family: $font-face-gotham;
   font-size: $font-size-300;
 
@@ -50,7 +53,8 @@ h3, .heading-small {
     font-size: $font-size-500;
   }
 }
-h4, .heading-extra_small {
+h4,
+.heading-extra_small {
   font-family: $font-face-gotham;
   font-size: $font-size-300;
 
