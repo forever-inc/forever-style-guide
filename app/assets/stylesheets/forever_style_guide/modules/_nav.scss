@@ -93,7 +93,8 @@ $cart-count-vertical-position: -5px;
   }
 }
 
-.navigation-logo_image {
+.navigation-logo_image,
+.navigation-logo {
   height: $logo-height-small;
 
   @media screen and (min-width: $screen-lg) {
