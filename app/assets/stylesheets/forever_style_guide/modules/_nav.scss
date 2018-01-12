@@ -1,150 +1,338 @@
-$offcanvas-width: 270px;
-$offcanvas-padding: 10px;
-$nav-bg-color: color('gray-700');
+$navigation-height: 55px;
+$navigation-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+$navigation-link-hover-transition: color 0.15s ease-in-out;
+$letter-spacing-large: 0.5px;
 
-$nav-li-a-padding-base: 4px;
-$nav-li-a-padding-right-desktop: 20px;
-$nav-li-a-padding-right-md_to_lg: 14px;
-$nav-li-a-padding-right-lg: 16px;
+$hamburger-patty-height: 2px;
+$hamburger-patty-width: 20px;
+$hamburger-bun-gap: 6px;
 
-@mixin nav-border($sides...) {
-  @each $side in $sides {
-    border-#{$side}: 1px solid color('gray-400');
+$logo-height-small: 20px;
+$logo-height-large: 28px;
+
+$hover-border-size: 4px;
+
+$deals-icon-horizontal-position: -3px;
+$deals-icon-vertical-position: -5px;
+
+$cart-count-horizontal-position: -15px;
+$cart-count-vertical-position: -5px;
+
+@mixin nav_hover_border($orientation) {
+  &::before {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    @if $orientation == horizontal {
+      height: $hover-border-size;
+      width: 100%;
+    } @else if $orientation == vertical {
+      height: 100%;
+      width: $hover-border-size;
+    }
+
+    background-color: $color-secondary;
+    content: "";
+    transform: scaleX(0);
+    @include transition(transform 0.15s ease-in-out);
+  }
+
+  &:hover {
+    &::before {
+      transform: scaleX(1);
+      @include transition(transform 0.25s cubic-bezier(.7,-0.07,.41,1.3));
+    }
   }
 }
 
-// Basic styles - A lot of overriding Bootstrap defaults
-.navbar-toggle {
-  @media (max-width: $grid-float-breakpoint-max) {
-    display: block;
-  }
+.navigation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: $navigation-height;
+  padding: 0 $padding-large-horizontal;
+  box-shadow: $navigation-shadow;
 }
-.navbar-brand {
-  position: absolute;
-  width: 100%;
-  left: 0;
-  top: 0;
-  margin: auto;
-  padding: $padding-xs-vertical 0 0;
-  height: $header-height;
-  text-align: center;
 
-  .navbar-brand-logo-xs {
+.navigation-toggle_button {
+  height: 30px;
+  padding: 0;
+  font-family: inherit;
+  font-size: inherit;
+  background: transparent;
+  border: none;
+  line-height: 0;
+
+  @media screen and (min-width: $screen-md) {
     display: none;
   }
-
-  @media (max-width: $minimum-application-width-xs-max) {
-    padding-top: 0;
-    padding-right: $header-height;
-    padding-left: $header-height;
-
-    .navbar-brand-logo-xs {
-      display: block;
-      height: 100%;
-    }
-    .navbar-brand-logo {
-      display: none;
-    }
-  }
 }
-.navbar {
-  min-height: $header-height;
-  border-radius: 0;
-  border: none;
-  @extend %card-shadow;
-  margin-bottom: 0;
 
-  .nav.navbar-nav {
-    margin-top: 0;
-    margin-bottom: 0;
+.navigation-toggle_button-hamburger {
+  position: relative;
+  display: inline-block;
+  width: $hamburger-patty-width;
+  height: $hamburger-patty-height;
+  background: $color-gray-500;
 
-    @media (max-width: $grid-float-breakpoint-max) {
-      margin-left: 0;
-      margin-right: 0;
-    }
+  &::before,
+  &::after {
+    position: absolute;
+    top: -$hamburger-bun-gap;
+    left: 0;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    background: $color-gray-500;
+    content: "";
+  }
 
-    > li > a {
-      height: $header-height;
-      padding: $offcanvas-padding; /* bootstrap override */
-      color: color('gray-400');
-      font-size: $font-size-100;
-      font-weight: $font-weight-bold;
-      font-family: $font-face-gotham;
-      text-transform: uppercase;
-
-      @media (max-width: $grid-float-breakpoint-max) {
-        padding-top: $offcanvas-padding;
-        font-size: $font-size-large;
-        @include nav-border(top);
-        border-color: color('gray-600')
-      }
-      @media (min-width: $grid-float-breakpoint-max) {
-        position: relative;
-        color: color('gray-600');
-      }
-      @media (min-width: $grid-float-breakpoint-max) and (max-width: $screen-md_to_lg) {
-        padding-left: $nav-li-a-padding-base;
-        padding-right: $nav-li-a-padding-base;
-      }
-      @media (min-width: $screen-md_to_lg) and (max-width: $screen-lg-min) {
-        padding-left: $nav-li-a-padding-base * 2;
-        padding-right: $nav-li-a-padding-base * 2;
-      }
-      &:hover {
-        @media (min-width: $grid-float-breakpoint-max) {
-          background-color: color('gray-300');
-        }
-      }
-      &.dropdown-toggle {
-        @media (min-width: $grid-float-breakpoint) {
-          padding-right: $nav-li-a-padding-right-desktop;
-        }
-        @media (min-width: $grid-float-breakpoint) and (max-width: $screen-md_to_lg) {
-          padding-left: $nav-li-a-padding-base;
-          padding-right: $nav-li-a-padding-right-md_to_lg;
-        }
-        @media (min-width: $screen-md_to_lg) and (max-width: $screen-lg) {
-          padding-left: $nav-li-a-padding-base + 2;
-          padding-right: $nav-li-a-padding-right-lg;
-        }
-      }
-    }
-    .dropdown.open > .dropdown-toggle {
-      color: color('white');
-
-      @media (min-width: $grid-float-breakpoint) {
-        color: color('gray-400');
-        background-color: $nav-bg-color;
-      }
-    }
-    > .active > a {
-      background-color: transparent;
-
-      &:hover,
-      &:focus {
-        @media (max-width: $grid-float-breakpoint-max) {
-          color: color('gray-400');
-        }
-      }
-    }
-    &.navbar-right {
-      margin-right: 0;
-    }
+  &::after {
+    top: $hamburger-bun-gap;
   }
 }
 
-.navbar-account-signed_out_btn {
+.navigation-logo_image,
+.navigation-logo {
+  height: $logo-height-small;
+
+  @media screen and (min-width: $screen-lg) {
+    height: $logo-height-large;
+  }
+}
+
+a.navigation-cart_icon {
+  color: $color-gray-500;
+}
+
+.navigation-menu {
   position: absolute;
-  width: $offcanvas-width - ($offcanvas-padding * 2) - 5; // 5 = .dropdown-menu-nav padding-left
-  left: $offcanvas-padding + 5;
-  margin-top: $offcanvas-padding;
-  margin-bottom: $offcanvas-padding;
+  top: 100%;
+  left: 0;
+  display: none;
+  width: 100%;
+  background-color: $color-gray-200;
+  padding: $padding-large-vertical $padding-large-horizontal;
+  z-index: -1;
+  box-shadow: $navigation-shadow;
 
-  &.is_fixed_bottom {
-    bottom: 10px;
-    margin-bottom: 0;
+  @media screen and (min-width: $screen-md) {
+    position: static;
+    top: 0;
+    display: flex;
+    align-items: center;
+    width: auto;
+    height: 100%;
+    padding: 0;
+    background: transparent;
+    box-shadow: none;
+    z-index: 100;
   }
-  .btn-action-icon {
-    margin-top: 2px;
+}
+
+.navigation-menu-list {
+  height: 100%;
+  overflow: hidden;
+}
+
+.navigation-menu-list_item {
+  @media screen and (min-width: $screen-md) {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    height: 100%;
+  }
+
+  &:not(:last-of-type) {
+    border-bottom: 1px solid $color-gray-300;
+
+    @media screen and (min-width: $screen-md) {
+      border-bottom: 0;
+    }
+  }
+}
+
+.navigation-menu-list_item-active {
+  a.navigation-items-link {
+    color: $color-secondary;
+
+    &::before {
+      background-color: $color-secondary;
+      transform: scaleX(1);
+    }
+  }
+}
+
+a.navigation-items-link {
+  display: block;
+  padding-top: $padding-default-vertical;
+  padding-bottom: $padding-default-vertical;
+  color: $color-gray-600;
+  text-transform: uppercase;
+
+  @media screen and (min-width: $screen-md) {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    height: 100%;
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: 4px;
+    padding-right: 4px;
+    font-size: $font-size-100;
+    letter-spacing: $letter-spacing-large;
+    text-decoration: none;
+    @include transition($navigation-link-hover-transition);
+    @include nav_hover_border(horizontal)
+  }
+
+  @media screen and (min-width: $screen-lg) {
+    font-size: $font-size-200;
+    padding-left: $padding-default-horizontal;
+    padding-right: $padding-default-horizontal;
+  }
+
+  &:hover {
+    @media screen and (min-width: $screen-md) {
+      color: $color-secondary;
+    }
+  }
+}
+
+a.navigation-items-link-deals {
+  position: relative;
+  color: $color-warning;
+
+  &:hover {
+    color: mix($color-black, $color-warning, 20%);
+  }
+
+  &::after {
+    position: relative;
+    top: $deals-icon-vertical-position;
+    right: $deals-icon-horizontal-position;
+    font-family: 'FontAwesome';
+    font-size: $font-size-000;
+    content: "\f005"; // Star
+  }
+}
+
+.navigation-user_info {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.navigation-user_info-help {
+  @media screen and (min-width: $screen-md) {
+    height: 100%;
+  }
+
+  @media screen and (min-width: $screen-lg) {
+    font-size: $font-size-200;
+  }
+}
+
+.navigation-user_info-help_link {
+  @media screen and (min-width: $screen-md) {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding-left: $padding-small-horizontal;
+    padding-right: $padding-small-horizontal;
+    text-decoration: none;
+  }
+
+  &:hover {
+    text-decoration: none;
+
+    .navigation-user_info-help_icon {
+      color: $color-secondary;
+    }
+  }
+}
+
+.navigation-user_info-help_icon {
+  @include transition($navigation-link-hover-transition);
+}
+
+.navigation-user_info-logged_out {
+  display: flex;
+  align-items: center;
+}
+
+.navigation-user_info-cart {
+  @media screen and (min-width: $screen-md) {
+    position: relative;
+    padding-right: $padding-small-horizontal;
+    padding-left: $padding-small-horizontal;
+    @include transition($navigation-link-hover-transition);
+  }
+
+  &:hover {
+    text-decoration: none;
+
+    .navigation-user_info-cart_icon {
+      color: $color-secondary;
+    }
+  }
+}
+
+.navigation-user_info-cart_icon {
+  @include transition($navigation-link-hover-transition);
+}
+
+.navigation-user_info-cart-with_count {
+  margin-right: $padding-large-horizontal * 1.5;
+}
+
+.navigation-user_info-cart-count {
+  position: absolute;
+  top: $cart-count-vertical-position;
+  right: $cart-count-horizontal-position;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 7px 0 6px; // To make it look like a circle with 1 item in cart
+  border-radius: 50px; // To get it looking like a pill when more items are added
+}
+
+a.navigation-user_info-logged_out-log_in_link {
+  text-transform: uppercase;
+  color: $color-gray-600;
+  text-decoration: none;
+  @include transition(color 0.15s ease-in-out);
+
+  @media screen and (min-width: $screen-md) {
+    margin-left: $padding-small-horizontal;
+    font-size: $font-size-100;
+    letter-spacing: $letter-spacing-large;
+  }
+
+  @media screen and (min-width: $screen-lg) {
+    font-size: $font-size-200;
+    letter-spacing: 0;
+  }
+
+  &:hover {
+    color: $color-secondary;
+    text-decoration: none;
+  }
+}
+
+// Overriding button styles to make it look good with smaller font size
+.navigation-user_info-logged_out-sign_up_btn {
+  margin-left: $padding-small-horizontal;
+  height: auto !important;
+
+  @media screen and (min-width: $screen-md) {
+    font-size: $font-size-100 !important;
+    letter-spacing: $letter-spacing-large;
+  }
+
+  @media screen and (min-width: $screen-lg) {
+    margin-left: $padding-large-horizontal;
+    font-size: $font-size-200 !important;
   }
 }
