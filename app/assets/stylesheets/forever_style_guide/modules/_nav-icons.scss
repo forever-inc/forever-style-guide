@@ -134,14 +134,6 @@ a.cart-icon {
 
 a.cart-icon {
   padding-top: $cart-icon-vertical-offset-mobile;
-
-  @media (max-width: $screen-lg-min) {
-    position: absolute;
-    right: 0;
-  }
-  @media (min-width: $screen-md_to_lg) {
-    padding-top: $cart-icon-vertical-offset !important; //override .nav.navbar-nav > li > a
-  }
 }
 
 .cart-icon-count {
