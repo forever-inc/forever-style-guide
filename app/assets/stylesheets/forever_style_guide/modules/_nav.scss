@@ -93,7 +93,8 @@ $cart-count-vertical-position: -5px;
   }
 }
 
-.navigation-logo_image {
+.navigation-logo_image,
+.navigation-logo {
   height: $logo-height-small;
 
   @media screen and (min-width: $screen-lg) {
@@ -252,6 +253,40 @@ a.navigation-items-link-deals {
   }
 }
 
+a.navigation-items-link-deals {
+  position: relative;
+  color: $color-warning;
+
+  &:hover {
+    color: mix($color-black, $color-warning, 20%);
+  }
+
+  &::after {
+    position: relative;
+    top: $deals-icon-vertical-position;
+    right: $deals-icon-horizontal-position;
+    font-family: 'FontAwesome';
+    font-size: $font-size-000;
+    content: "\f005"; // Star
+  }
+}
+
+.navigation-user_info {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.navigation-user_info-help {
+  @media screen and (min-width: $screen-md) {
+    height: 100%;
+  }
+
+  @media screen and (min-width: $screen-lg) {
+    font-size: $font-size-200;
+  }
+}
+
 .navigation-user_info-help_icon {
   @include transition($navigation-link-hover-transition);
 }
@@ -268,11 +303,22 @@ a.navigation-items-link-deals {
     padding-left: $padding-small-horizontal;
     @include transition($navigation-link-hover-transition);
   }
+}
+
+.navigation-user_info-help_link {
+  @media screen and (min-width: $screen-md) {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding-left: $padding-small-horizontal;
+    padding-right: $padding-small-horizontal;
+    text-decoration: none;
+  }
 
   &:hover {
     text-decoration: none;
 
-    .navigation-user_info-cart_icon {
+    .navigation-user_info-help_icon {
       color: $color-secondary;
     }
   }
@@ -496,6 +542,72 @@ a.user_info-logged_in-account_dropdown-menu-list-link  {
         transition: transform 0.25s ease-in-out;
       }
     }
+  }
+}
+
+a.navigation-user_info-cart {
+  &:hover {
+    .navigation-user_info-cart_icon {
+      color: $color-secondary;
+    }
+  }
+}
+
+.navigation-user_info-cart_icon {
+  @include transition($navigation-link-hover-transition);
+}
+
+.navigation-user_info-cart-with_count {
+  margin-right: $padding-large-horizontal * 1.5;
+}
+
+.navigation-user_info-cart-count {
+  position: absolute;
+  top: $cart-count-vertical-position;
+  right: $cart-count-horizontal-position;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 7px 0 6px; // To make it look like a circle with 1 item in cart
+  border-radius: 50px; // To get it looking like a pill when more items are added
+}
+
+a.navigation-user_info-logged_out-log_in_link {
+  text-transform: uppercase;
+  color: $color-gray-600;
+  text-decoration: none;
+  @include transition(color 0.15s ease-in-out);
+
+  @media screen and (min-width: $screen-md) {
+    margin-left: $padding-small-horizontal;
+    font-size: $font-size-100;
+    letter-spacing: $letter-spacing-large;
+  }
+
+  @media screen and (min-width: $screen-lg) {
+    font-size: $font-size-200;
+    letter-spacing: 0;
+  }
+
+  &:hover {
+    color: $color-secondary;
+    text-decoration: none;
+  }
+}
+
+// Overriding button styles to make it look good with smaller font size
+.navigation-user_info-logged_out-sign_up_btn {
+  margin-left: $padding-small-horizontal;
+  height: auto !important;
+
+  @media screen and (min-width: $screen-md) {
+    font-size: $font-size-100 !important;
+    letter-spacing: $letter-spacing-large;
+  }
+
+  @media screen and (min-width: $screen-lg) {
+    margin-left: $padding-large-horizontal;
+    font-size: $font-size-200 !important;
   }
 }
 
