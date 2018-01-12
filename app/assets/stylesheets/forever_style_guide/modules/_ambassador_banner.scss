@@ -1,0 +1,120 @@
+$ambassador-bar-vertical-padding: 6px;
+$ambassador-scrim-opacity: 0.1;
+$ambassador-text-transparentize-amount: 0.2;
+$ambassador-avatar-size: 100px;
+
+.ambassador_banner {
+  position: relative;
+  display: block;
+  text-decoration: none;
+  background-image: linear-gradient(to left, mix($color-black, $color-forever_valet, 10%), mix($color-black, $color-forever_services, 10%));
+}
+
+a.ambassador_banner-no_ambassador {
+  background-image: none;
+  background-color: $color-gray-300;
+
+  &:hover {
+    text-decoration: none;
+
+    &::after {
+      opacity: $ambassador-scrim-opacity;
+    }
+  }
+
+  .ambassador_banner-text {
+    color: $color-gray-600;
+  }
+
+  .ambassador_banner-emphasized {
+    color: $color-gray-700;
+  }
+}
+
+.ambassador_banner-text {
+  position: relative;
+  color: transparentize($color-white, $ambassador-text-transparentize-amount);
+  padding-top: $ambassador-bar-vertical-padding;
+  padding-bottom: $ambassador-bar-vertical-padding;
+  cursor: pointer;
+  z-index: $zindex-navbar - 2;
+
+  &::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $color-black;
+    opacity: 0;
+    @include transition(opacity 0.15s ease-in-out);
+    z-index: $zindex-navbar - 1;
+    content: "";
+    pointer-events: none;
+  }
+
+  &:hover {
+    text-decoration: none;
+
+    &::after {
+      opacity: $ambassador-scrim-opacity;
+    }
+  }
+}
+
+.ambassador_banner-emphasized {
+  display: block;
+
+  @media screen and (min-width: $screen-xs) {
+    display: inline;
+  }
+}
+
+.ambassador_banner-ambassador_dropdown {
+  display: none;
+
+  &.open {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top: 2px solid transparentize($color-white, 0.8);
+  }
+}
+
+.ambassador_banner-ambassador_dropdown-avatar {
+  width: $ambassador-avatar-size;
+  height: $ambassador-avatar-size;
+  align-self: flex-start;
+  margin: 0;
+  margin-right: $padding-large-horizontal * 2;
+  padding: 0;
+  border: none;
+  box-shadow: 0 5px 20px rgba(0,0,0,.2);
+}
+
+.ambassador_banner-ambassador_dropdown-info-main-name {
+  margin: 0;
+}
+
+.ambassador_banner-ambassador_dropdown-info-secondary {
+  margin-top: $padding-large-vertical;
+}
+
+.ambassador_banner-ambassador_dropdown-info-main-rank {
+  color: transparentize($color-white, 0.3);
+}
+
+.ambassador_banner-ambassador_dropdown-info-main-location {
+  color: transparentize($color-white, 0.2);
+}
+
+a.ambassador_banner-ambassador_dropdown-info-secondary-link {
+  display: inline-block;
+  margin-top: $padding-xs-vertical / 2;
+  margin-bottom: $padding-xs-vertical / 2;
+  color: $color-white;
+}
+
+.ambassador_banner-ambassador_dropdown-info-secondary-link_icon {
+  padding-right: $padding-xs-horizontal;
+}
