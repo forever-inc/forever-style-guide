@@ -115,6 +115,12 @@ a.ambassador_banner-no_ambassador {
   color: transparentize($color-white, 0.2);
 }
 
+a.ambassador_banner-ambassador_dropdown-info-main-manage {
+  display: block;
+  color: $color-white;
+  margin-top: $padding-default-vertical;
+}
+
 a.ambassador_banner-ambassador_dropdown-info-secondary-link {
   display: inline-block;
   margin-top: $padding-xs-vertical / 2;
