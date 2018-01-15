@@ -1,7 +1,7 @@
 $ambassador-bar-vertical-padding: 6px;
 $ambassador-scrim-opacity: 0.1;
 $ambassador-text-transparentize-amount: 0.2;
-$ambassador-avatar-size: 100px;
+$ambassador-avatar-size: 130px;
 
 .ambassador_banner {
   position: relative;
@@ -91,7 +91,8 @@ a.ambassador_banner-no_ambassador {
   margin: 0;
   margin-right: $padding-large-horizontal * 2;
   padding: 0;
-  border: none;
+  border-radius: 50%;
+  border: 4px solid #fafafa;
   box-shadow: 0 5px 20px rgba(0,0,0,.2);
 }
 
