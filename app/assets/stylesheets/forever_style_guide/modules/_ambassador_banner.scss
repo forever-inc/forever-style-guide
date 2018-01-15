@@ -81,7 +81,7 @@ a.ambassador_banner-no_ambassador {
   width: 100%;
   background-image: $ambassador-bar-background-gradient;
   border-top: 2px solid transparentize($color-white, 0.8);
-  z-index: $zindex-navbar + 1;
+  z-index: $zindex-navbar-fixed + 1;
 
   &.open {
     display: flex;
