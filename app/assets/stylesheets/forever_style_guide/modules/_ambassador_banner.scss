@@ -2,12 +2,13 @@ $ambassador-bar-vertical-padding: 6px;
 $ambassador-scrim-opacity: 0.1;
 $ambassador-text-transparentize-amount: 0.2;
 $ambassador-avatar-size: 100px;
+$ambassador-bar-background-gradient: linear-gradient(to left, mix($color-black, $color-forever_valet, 10%), mix($color-black, $color-forever_services, 10%));
 
 .ambassador_banner {
   position: relative;
   display: block;
   text-decoration: none;
-  background-image: linear-gradient(to left, mix($color-black, $color-forever_valet, 10%), mix($color-black, $color-forever_services, 10%));
+  background-image: $ambassador-bar-background-gradient;
 }
 
 a.ambassador_banner-no_ambassador {
@@ -71,13 +72,19 @@ a.ambassador_banner-no_ambassador {
 }
 
 .ambassador_banner-ambassador_dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
   display: none;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background-image: $ambassador-bar-background-gradient;
+  border-top: 2px solid transparentize($color-white, 0.8);
+  z-index: $zindex-navbar-fixed + 1;
 
   &.open {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    border-top: 2px solid transparentize($color-white, 0.8);
   }
 }
 
@@ -106,6 +113,12 @@ a.ambassador_banner-no_ambassador {
 
 .ambassador_banner-ambassador_dropdown-info-main-location {
   color: transparentize($color-white, 0.2);
+}
+
+a.ambassador_banner-ambassador_dropdown-info-main-manage {
+  display: block;
+  color: $color-white;
+  margin-top: $padding-default-vertical;
 }
 
 a.ambassador_banner-ambassador_dropdown-info-secondary-link {
