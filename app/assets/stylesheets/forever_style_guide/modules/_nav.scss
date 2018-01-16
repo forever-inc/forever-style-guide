@@ -204,10 +204,6 @@ a.navigation-items-link-deals {
   position: relative;
   color: $color-warning;
 
-  &:hover {
-    color: mix($color-black, $color-warning, 20%);
-  }
-
   &::after {
     position: relative;
     top: $deals-icon-vertical-position;
@@ -256,10 +252,6 @@ a.navigation-items-link-deals {
 a.navigation-items-link-deals {
   position: relative;
   color: $color-warning;
-
-  &:hover {
-    color: mix($color-black, $color-warning, 20%);
-  }
 
   &::after {
     position: relative;
