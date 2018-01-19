@@ -21,9 +21,11 @@
   },
   "homepage": "https://github.com/forever-inc/forever-style-guide#readme",
   "dependencies": {
+    "autoprefixer": "^7.2.5",
     "bootstrap-sass": "^3.3.7",
     "copy": "^0.3.0",
     "font-awesome": "^4.7.0",
-    "node-sass": "^4.0.0"
+    "node-sass": "^4.0.0",
+    "postcss": "^6.0.16"
   }
 }
