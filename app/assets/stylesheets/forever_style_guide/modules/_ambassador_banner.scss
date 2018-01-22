@@ -3,6 +3,7 @@ $ambassador-scrim-opacity: 0.1;
 $ambassador-text-transparentize-amount: 0.2;
 $ambassador-avatar-size: 130px;
 $ambassador-bar-background-gradient: linear-gradient(to left, mix($color-black, $color-forever_valet, 10%), mix($color-black, $color-forever_services, 10%));
+$ambassador-bar-unassigned-bg-color: #d4edf7;
 
 
 .ambassador_banner {
@@ -14,7 +15,7 @@ $ambassador-bar-background-gradient: linear-gradient(to left, mix($color-black, 
 
 a.ambassador_banner-no_ambassador {
   background-image: none;
-  background-color: $color-gray-300;
+  background-color: $ambassador-bar-unassigned-bg-color;
 
   &:hover {
     text-decoration: none;
@@ -24,9 +25,6 @@ a.ambassador_banner-no_ambassador {
     }
   }
 
-  .ambassador_banner-text {
-    color: $color-gray-600;
-  }
 }
 
 .ambassador_banner-text {
