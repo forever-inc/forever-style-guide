@@ -27,9 +27,11 @@ $cart-count-vertical-position: -5px;
     @if $orientation == horizontal {
       height: $hover-border-size;
       width: 100%;
+      transform-origin: center;
     } @else if $orientation == vertical {
       height: 100%;
       width: $hover-border-size;
+      transform-origin: left;
     }
 
     background-color: $color-secondary;
@@ -41,7 +43,11 @@ $cart-count-vertical-position: -5px;
   &:hover {
     &::before {
       transform: scaleX(1);
-      @include transition(transform 0.25s cubic-bezier(.7,-0.07,.41,1.3));
+      @if $orientation == horizontal {
+        @include transition(transform 0.25s cubic-bezier(.7,-0.07,.41,1.3));
+      } @else if $orientation == vertical {
+        @include transition(transform 0.25s ease-in-out);
+      }
     }
   }
 }
@@ -50,9 +56,14 @@ $cart-count-vertical-position: -5px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
   height: $navigation-height;
   padding: 0 $padding-large-horizontal;
   box-shadow: $navigation-shadow;
+
+  &.open {
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+  }
 }
 
 .navigation-toggle_button {
@@ -63,6 +74,7 @@ $cart-count-vertical-position: -5px;
   background: transparent;
   border: none;
   line-height: 0;
+  outline: none;
 
   @media screen and (min-width: $screen-md) {
     display: none;
@@ -75,6 +87,7 @@ $cart-count-vertical-position: -5px;
   width: $hamburger-patty-width;
   height: $hamburger-patty-height;
   background: $color-gray-500;
+  transition: transform 0.3s cubic-bezier(0.41, -0.4, 0.53, 1.34);
 
   &::before,
   &::after {
@@ -86,10 +99,23 @@ $cart-count-vertical-position: -5px;
     height: 100%;
     background: $color-gray-500;
     content: "";
+    transition: transform 0.3s cubic-bezier(0.41, -0.4, 0.53, 1.34);
   }
 
   &::after {
     top: $hamburger-bun-gap;
+  }
+
+  &.open {
+    transform: rotate(45deg);
+
+    &::before {
+      transform: translateY($hamburger-bun-gap) rotate(90deg);
+    }
+
+    &::after {
+      transform: translateY(-$hamburger-bun-gap) rotate(90deg);
+    }
   }
 }
 
@@ -102,38 +128,62 @@ $cart-count-vertical-position: -5px;
   }
 }
 
-a.navigation-cart_icon {
-  color: $color-gray-500;
+.navigation-mobile_icons {
+  display: flex;
+  align-items: center;
+  height: $navigation-height;
+
+  @media screen and (min-width: $screen-md) {
+    display: none;
+  }
 }
 
 .navigation-menu {
-  position: absolute;
   top: 100%;
   left: 0;
-  display: none;
+  order: 3;
   width: 100%;
   background-color: $color-gray-200;
-  padding: $padding-large-vertical $padding-large-horizontal;
-  z-index: -1;
+  padding-top: $padding-default-vertical;
+  padding-bottom: $padding-default-vertical;
   box-shadow: $navigation-shadow;
+  width: 99.99vw;
+  margin-left: -$padding-large-horizontal;
+  margin-right: -$padding-large-horizontal;
+  border-top: 2px solid $color-gray-300;
+  transform: translateY(-20px);
+  opacity: 0;
+  z-index: -1;
+  transition: transform 0.2s cubic-bezier(.97,.28,.42,.87), opacity 0.2s cubic-bezier(.97,.28,.42,.87);
+  transition-delay: 0.16s;
 
   @media screen and (min-width: $screen-md) {
     position: static;
     top: 0;
     display: flex;
     align-items: center;
+    order: 2;
     width: auto;
     height: 100%;
     padding: 0;
     background: transparent;
     box-shadow: none;
+    border-top: 0;
     z-index: 100;
+  }
+
+  &.open {
+    transform: translateY(0);
+    opacity: 1;
   }
 }
 
 .navigation-menu-list {
   height: 100%;
-  overflow: hidden;
+
+  @media screen and (min-width: $screen-md) {
+    overflow: hidden;
+  }
 }
 
 .navigation-menu-list_item {
@@ -142,14 +192,6 @@ a.navigation-cart_icon {
     display: inline-flex;
     align-items: center;
     height: 100%;
-  }
-
-  &:not(:last-of-type) {
-    border-bottom: 1px solid $color-gray-300;
-
-    @media screen and (min-width: $screen-md) {
-      border-bottom: 0;
-    }
   }
 }
 
@@ -165,14 +207,17 @@ a.navigation-cart_icon {
 }
 
 a.navigation-items-link {
+  position: relative;
   display: block;
-  padding-top: $padding-default-vertical;
-  padding-bottom: $padding-default-vertical;
+  padding: $padding-small-vertical $padding-large-horizontal;
   color: $color-gray-600;
   text-transform: uppercase;
+  @include transition($navigation-link-hover-transition);
+  @include nav_hover_border(vertical);
+  text-decoration: none;
+  letter-spacing: $letter-spacing-large;
 
   @media screen and (min-width: $screen-md) {
-    position: relative;
     display: inline-flex;
     align-items: center;
     height: 100%;
@@ -181,10 +226,7 @@ a.navigation-items-link {
     padding-left: 4px;
     padding-right: 4px;
     font-size: $font-size-100;
-    letter-spacing: $letter-spacing-large;
-    text-decoration: none;
-    @include transition($navigation-link-hover-transition);
-    @include nav_hover_border(horizontal)
+    @include nav_hover_border(horizontal);
   }
 
   @media screen and (min-width: $screen-lg) {
@@ -194,9 +236,7 @@ a.navigation-items-link {
   }
 
   &:hover {
-    @media screen and (min-width: $screen-md) {
-      color: $color-secondary;
-    }
+    color: $color-secondary;
   }
 }
 
@@ -220,66 +260,48 @@ a.navigation-items-link-deals {
 
 .navigation-user_info {
   display: flex;
-  align-items: center;
-  height: 100%;
-}
+  width: 99.99vw;
+  margin-left: -$padding-large-horizontal;
+  margin-right: -$padding-large-horizontal;
+  padding-right: $padding-large-horizontal;
+  padding-left: $padding-large-horizontal;
+  padding-top: $padding-large-vertical;
+  z-index: -1;
+  transform: translateY(-20px);
+  opacity: 0;
+  transition: transform 0.2s cubic-bezier(.97,.28,.42,.87), opacity 0.2s cubic-bezier(.97,.28,.42,.87);
 
-.navigation-user_info-help {
-  @media screen and (min-width: $screen-md) {
-    height: 100%;
-  }
-
-  @media screen and (min-width: $screen-lg) {
-    font-size: $font-size-200;
-  }
-}
-
-.navigation-user_info-help_link {
   @media screen and (min-width: $screen-md) {
     display: flex;
     align-items: center;
     height: 100%;
-    padding-left: $padding-small-horizontal;
-    padding-right: $padding-small-horizontal;
-    text-decoration: none;
+    width: auto;
+    padding: 0;
+    margin: 0;
+    z-index: auto;
+    order: 3;
   }
 
-  &:hover {
-    text-decoration: none;
+  &.open {
+    transform: translateY(0);
+    opacity: 1;
+  }
 
-    .navigation-user_info-help_icon {
-      color: $color-secondary;
+  .navigation-cart {
+    display: none;
+
+    @media screen and (min-width: $screen-md) {
+      display: block;
     }
   }
 }
 
-a.navigation-items-link-deals {
-  position: relative;
-  color: $color-warning;
-
-  &:hover {
-    color: mix($color-black, $color-warning, 20%);
-  }
-
-  &::after {
-    position: relative;
-    top: $deals-icon-vertical-position;
-    right: $deals-icon-horizontal-position;
-    font-family: 'FontAwesome';
-    font-size: $font-size-000;
-    content: "\f005"; // Star
-  }
-}
-
-.navigation-user_info {
-  display: flex;
-  align-items: center;
-  height: 100%;
-}
-
 .navigation-user_info-help {
+  display: none;
+
   @media screen and (min-width: $screen-md) {
     height: 100%;
+    display: block;
   }
 
   @media screen and (min-width: $screen-lg) {
@@ -296,12 +318,27 @@ a.navigation-items-link-deals {
   align-items: center;
 }
 
-.navigation-user_info-cart {
+.navigation-cart {
+  margin-right: $padding-large-horizontal * 1.5;
+  font-size: 20px; // Retain similar visual weight with menu icon
+
   @media screen and (min-width: $screen-md) {
     position: relative;
+    display: block;
     padding-right: $padding-small-horizontal;
     padding-left: $padding-small-horizontal;
+    margin-right: 0;
     @include transition($navigation-link-hover-transition);
+  }
+}
+
+.navigation-mobile_icons {
+  .navigation-cart {
+    display: block;
+
+    @media screen and (min-width: $screen-md) {
+      display: none;
+    }
   }
 }
 
@@ -312,6 +349,7 @@ a.navigation-items-link-deals {
     height: 100%;
     padding-left: $padding-small-horizontal;
     padding-right: $padding-small-horizontal;
+    font-size: 20px; // Retain similar visual weight with menu icon
     text-decoration: none;
   }
 
@@ -324,23 +362,28 @@ a.navigation-items-link-deals {
   }
 }
 
-.navigation-user_info-cart_icon {
+.navigation-cart_icon {
+  color: $color-gray-500;
   @include transition($navigation-link-hover-transition);
 }
 
-.navigation-user_info-cart-with_count {
+.navigation-cart-with_count {
+  position: relative;
   margin-right: $padding-large-horizontal * 1.5;
 }
 
-.navigation-user_info-cart-count {
+.navigation-cart-count {
   position: absolute;
   top: $cart-count-vertical-position;
   right: $cart-count-horizontal-position;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0 7px 0 6px; // To make it look like a circle with 1 item in cart
+  min-width: 19px;
+  height: 19px;
+  padding: 0 4px;
   border-radius: 50px; // To get it looking like a pill when more items are added
+  background-color: $color-forever_services;
 }
 
 a.navigation-user_info-logged_out-log_in_link {
@@ -383,18 +426,27 @@ a.navigation-user_info-logged_out-log_in_link {
 }
 
 .navigation-user_info-logged_in {
-  height: 100%;
-  margin-left: $padding-default-horizontal;
+  width: 100%;
+
+  @media screen and (min-width: $screen-md) {
+    height: 100%;
+    width: auto;
+    margin-left: $padding-default-horizontal;
+  }
 }
 
 .user_info-logged_in-account_dropdown_trigger {
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-  position: relative;
-  height: 100%;
-  overflow-y: hidden;
-  transition: opacity 0.15s ease-in-out;
+  display: none;
+
+  @media screen and (min-width: $screen-md) {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+    height: 100%;
+    overflow-y: hidden;
+    transition: opacity 0.15s ease-in-out;
+  }
 
   &:hover {
     opacity: 0.7;
@@ -422,6 +474,11 @@ a.navigation-user_info-logged_out-log_in_link {
   white-space: nowrap;
   overflow: hidden;
   max-width: 100px;
+  font-size: $font-size-100;
+
+  @media screen and (min-width: $screen-lg) {
+    font-size: $font-size-200;
+  }
 }
 
 .user_info-logged_in-account_dropdown_trigger-icon {
@@ -429,45 +486,54 @@ a.navigation-user_info-logged_out-log_in_link {
 }
 
 .user_info-logged_in-account_dropdown {
-  display: none;
-  position: absolute;
-  background: $color-white;
-  box-shadow: 0 5px 20px rgba(0,0,0,.1);
-  top: calc(100% + 20px);
-  right: 10px;
-  padding: $padding-large-vertical $padding-large-horizontal;
-  padding-bottom: 0;
-  width: 300px;
+  @media screen and (min-width: $screen-md) {
+    display: none;
+    position: absolute;
+    background: $color-white;
+    box-shadow: 0 5px 20px rgba(0,0,0,.1);
+    top: calc(100% + 20px);
+    right: 10px;
+    padding: $padding-large-vertical $padding-large-horizontal;
+    padding-bottom: 0;
+    width: 300px;
+  }
 
   &::before {
-    content: "";
-    position: absolute;
-    top: -10px;
-    right: 10px;
-    width: 0;
-    height: 0;
-    border-left: 10px solid transparent;
-    border-right: 10px solid transparent;
-
-    border-bottom: 10px solid $color-white;
+    @media screen and (min-width: $screen-md) {
+      content: "";
+      position: absolute;
+      top: -10px;
+      right: 10px;
+      width: 0;
+      height: 0;
+      border-left: 10px solid transparent;
+      border-right: 10px solid transparent;
+      border-bottom: 10px solid $color-white;
+    }
   }
 
   &.open {
-    display: block;
+    @media screen and (min-width: $screen-md) {
+      display: block;
+    }
   }
 }
 
 .user_info-logged_in-account_dropdown-overview {
+  position: relative;
   display: flex;
   align-items: center;
   padding-bottom: $padding-large-vertical;
-  border-bottom: 2px solid $color-gray-200;
+}
+
+.user_info-logged_in-account_dropdown-overview-trigger_icon {
+  margin-left: $padding-large-horizontal;
 }
 
 .user_info-logged_in-account_dropdown-avatar {
+  width: 55px;
+  height: 55px;
   margin: 0;
-  box-shadow: 0 5px 15px rgba(0,0,0,.2);
-  border: none;
   padding: 0;
   margin-right: $padding-large-horizontal;
   align-self: flex-start;
@@ -492,8 +558,20 @@ a.navigation-user_info-logged_out-log_in_link {
   height: 100%;
 }
 
-.user_info-logged_in-account_dropdown-menu-list {
+.user_info-logged_in-account_dropdown-menu {
+  display: none;
+  border-top: 2px solid $color-gray-200;
 
+  @media screen and (min-width: $screen-md) {
+    display: block;
+  }
+
+  &.open {
+    display: block;
+  }
+}
+
+.user_info-logged_in-account_dropdown-menu-list {
   padding-top: $padding-small-vertical;
   padding-bottom: $padding-small-vertical;
   margin-bottom: 0;
@@ -514,105 +592,23 @@ a.user_info-logged_in-account_dropdown-menu-list-link  {
   padding-left: $padding-large-horizontal;
   padding-right: $padding-large-horizontal;
   text-decoration: none;
-
-  &::before {
-    @media screen and (min-width: $screen-md) {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      height: 100%;
-      width: 4px;
-      background-color: $color-secondary;
-      content: "";
-      transform: scaleX(0);
-      transition: transform 0.15s ease-in-out;
-      transform-origin: left;
-    }
-  }
+  @include nav_hover_border(vertical);
 
   &:hover {
-    color: $color-black;
-    @media screen and (min-width: $screen-md) {
-      color: $color-black;
-    }
-
-    &::before {
-      @media screen and (min-width: $screen-md) {
-        transform: scaleX(1);
-        transition: transform 0.25s ease-in-out;
-      }
-    }
+    color: $color-secondary;
   }
 }
 
-a.navigation-user_info-cart {
+a.navigation-cart {
   &:hover {
-    .navigation-user_info-cart_icon {
+    .navigation-cart_icon {
       color: $color-secondary;
     }
   }
 }
 
-.navigation-user_info-cart_icon {
-  @include transition($navigation-link-hover-transition);
-}
-
-.navigation-user_info-cart-with_count {
-  margin-right: $padding-large-horizontal * 1.5;
-}
-
-.navigation-user_info-cart-count {
-  position: absolute;
-  top: $cart-count-vertical-position;
-  right: $cart-count-horizontal-position;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0 7px 0 6px; // To make it look like a circle with 1 item in cart
-  border-radius: 50px; // To get it looking like a pill when more items are added
-}
-
-a.navigation-user_info-logged_out-log_in_link {
-  text-transform: uppercase;
-  color: $color-gray-600;
-  text-decoration: none;
-  @include transition(color 0.15s ease-in-out);
-
-  @media screen and (min-width: $screen-md) {
-    margin-left: $padding-small-horizontal;
-    font-size: $font-size-100;
-    letter-spacing: $letter-spacing-large;
-  }
-
-  @media screen and (min-width: $screen-lg) {
-    font-size: $font-size-200;
-    letter-spacing: 0;
-  }
-
-  &:hover {
-    color: $color-secondary;
-    text-decoration: none;
-  }
-}
-
-// Overriding button styles to make it look good with smaller font size
-.navigation-user_info-logged_out-sign_up_btn {
-  margin-left: $padding-small-horizontal;
-  height: auto !important;
-
-  @media screen and (min-width: $screen-md) {
-    font-size: $font-size-100 !important;
-    letter-spacing: $letter-spacing-large;
-  }
-
-  @media screen and (min-width: $screen-lg) {
-    margin-left: $padding-large-horizontal;
-    font-size: $font-size-200 !important;
-  }
-}
-
-.user_info-logged_in-account_dropdown-menu-list-sign_out {
-  color: $color-danger !important;
+a.user_info-logged_in-account_dropdown-menu-list-sign_out {
+  color: $color-danger;
 }
 
 .letter-spacing-small {
