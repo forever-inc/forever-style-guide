@@ -70,8 +70,8 @@ module ForeverStyleGuide
     end
 
     #active state nav
-    def is_active?(controller_name)
-      return true if [controller.controller_name, controller.action_name].include? controller_name
+    def is_active?(page_name, product_types = nil)
+      controller.controller_name.include?(page_name) || controller.action_name.include?(page_name) || (@product != nil && product_types !=nil && product_types.split(',').include?(@product.product_type) && !@product.name.include?('Historian'))
     end
 
     #User storage methds as seen in web app user.rb
