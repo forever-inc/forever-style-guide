@@ -202,7 +202,7 @@ a.navigation-items-link {
 
 a.navigation-items-link-deals {
   position: relative;
-  color: $color-warning;
+  color: $color-danger;
 
   &::after {
     position: relative;
@@ -289,11 +289,27 @@ a.navigation-items-link-deals {
 }
 
 .navigation-user_info-cart {
+  position: absolute;
+  background-color: #999;
+  visibility: hidden;
+  padding-right: $padding-small-horizontal;
+  padding-left: $padding-small-horizontal;
+  @include transition($navigation-link-hover-transition);
+  color: red !important;
+
   @media screen and (min-width: $screen-md) {
-    position: relative;
+    position: absolute;
+    background-color: #999;
+    visibility: hidden;
     padding-right: $padding-small-horizontal;
     padding-left: $padding-small-horizontal;
     @include transition($navigation-link-hover-transition);
+    color: red !important;
+  }
+
+  @media (max-width: $screen-sm) {
+    padding-right: $padding-small-horizontal;
+    padding-left: $padding-small-horizontal;
   }
 }
 
