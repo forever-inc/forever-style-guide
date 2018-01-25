@@ -7,7 +7,7 @@ $hamburger-patty-height: 2px;
 $hamburger-patty-width: 20px;
 $hamburger-bun-gap: 6px;
 
-$logo-height-small: 20px;
+$logo-height-small: 25px;
 $logo-height-large: 28px;
 
 $hover-border-size: 4px;
@@ -47,12 +47,10 @@ $cart-count-vertical-position: -5px;
 }
 
 .navigation {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: $navigation-height;
-  padding: 0 $padding-large-horizontal;
-  box-shadow: $navigation-shadow;
+  height: 55px;
+  padding: 0 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  border-bottom: solid 1px $color-gray-200;
 }
 
 .navigation-toggle_button {
@@ -93,12 +91,47 @@ $cart-count-vertical-position: -5px;
   }
 }
 
+.nav-icons {
+  padding-top: 10px;
+}
+
+.nav-text_center {
+  display: inline-block;
+  float: none;
+  vertical-align: top;
+  text-align: center;
+
+  @media (max-width: $screen-md) {
+    text-align: left;
+    width: 100%;
+  }
+}
+
+.nav.navbar-nav.navbar-right {
+  max-height: 53px;
+}
+
+.navbar-toggle {
+  margin-right: 0;
+}
+
+.navbar-nav > li.navigation-user_info-logged_out {
+  float: right;
+  padding-top: 8px;
+  padding-bottom: 5px;
+}
+
 .navigation-logo_image,
 .navigation-logo {
   height: $logo-height-small;
+  margin-top: 5px;
 
   @media screen and (min-width: $screen-lg) {
     height: $logo-height-large;
+  }
+
+  @media (max-width: $screen-sm) {
+    padding-left: $padding-small-horizontal;
   }
 }
 
@@ -136,12 +169,24 @@ a.navigation-cart_icon {
   overflow: hidden;
 }
 
+.navigation-menu-list .navbar-nav > li > a {
+  letter-spacing: .3px;
+  padding-left: 10px;
+  padding-right: 10px;
+
+  &:hover {
+    color: $color-secondary;
+    background-color: inherit;
+  }
+}
+
 .navigation-menu-list_item {
   @media screen and (min-width: $screen-md) {
     position: relative;
     display: inline-flex;
     align-items: center;
     height: 100%;
+    letter-spacing: .3px;
   }
 
   &:not(:last-of-type) {
@@ -289,25 +334,15 @@ a.navigation-items-link-deals {
 }
 
 .navigation-user_info-cart {
-  position: absolute;
-  background-color: #999;
-  visibility: hidden;
-  padding-right: $padding-small-horizontal;
-  padding-left: $padding-small-horizontal;
-  @include transition($navigation-link-hover-transition);
-  color: red !important;
 
   @media screen and (min-width: $screen-md) {
-    position: absolute;
-    background-color: #999;
-    visibility: hidden;
+    position: relative;
     padding-right: $padding-small-horizontal;
     padding-left: $padding-small-horizontal;
     @include transition($navigation-link-hover-transition);
-    color: red !important;
   }
 
-  @media (max-width: $screen-sm) {
+  @media (max-width: $screen-md) {
     padding-right: $padding-small-horizontal;
     padding-left: $padding-small-horizontal;
   }
@@ -378,6 +413,7 @@ a.navigation-user_info-logged_out-log_in_link {
 .navigation-user_info-logged_out-sign_up_btn {
   margin-left: $padding-small-horizontal;
   height: auto !important;
+  display: -webkit-box;
 
   @media screen and (min-width: $screen-md) {
     font-size: $font-size-100 !important;
@@ -623,10 +659,6 @@ a.navigation-user_info-logged_out-log_in_link {
   color: $color-danger !important;
 }
 
-.letter-spacing-small {
-  letter-spacing: 0.3px;
-}
-
-.letter-spacing-large {
-  letter-spacing: 0.5px;
+.navbar-toggle .icon-bar {
+  background-color: #666666;
 }
