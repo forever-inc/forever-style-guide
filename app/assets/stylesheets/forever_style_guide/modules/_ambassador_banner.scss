@@ -65,10 +65,14 @@ a.ambassador_banner-no_ambassador {
   }
 }
 
-.ambassador_banner-text-name {
+.ambassador_banner-text-content {
   display: inline-block;
+  vertical-align: middle;
+}
+
+.ambassador_banner-text-name {
   max-width: 70%; // magic number that fits current copy
-  vertical-align: -5px;  // magic number that visually aligns name with surrounding text
+  vertical-align: middle;
 }
 
 .ambassador_banner-dropdown {
