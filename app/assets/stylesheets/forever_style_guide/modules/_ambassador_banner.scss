@@ -24,7 +24,6 @@ a.ambassador_banner-no_ambassador {
       opacity: $ambassador-scrim-opacity;
     }
   }
-
 }
 
 .ambassador_banner-text {
@@ -60,11 +59,12 @@ a.ambassador_banner-no_ambassador {
     }
   }
 
-  &.open {
-    border-bottom: 2px solid transparentize($color-white, 0.8);
-    & .fa-chevron-down {
-      @include transform(rotate(180deg));
-    }
+  &.open .fa-chevron-down {
+    @include transform(rotate(180deg));
+  }
+
+  & .fa-chevron-down {
+    transition: all 0.3s linear;
   }
 }
 
@@ -88,8 +88,6 @@ a.ambassador_banner-no_ambassador {
   }
 }
 
-
-
 .ambassador_banner-dropdown-avatar {
   width: $ambassador-avatar-size;
   height: $ambassador-avatar-size;
@@ -99,7 +97,7 @@ a.ambassador_banner-no_ambassador {
   padding: 0;
   border-radius: 50%;
   border: 4px solid $color-gray-100;
-  box-shadow: 0 5px 20px rgba(0,0,0,.2);
+  box-shadow: 1px 1px 1px rgba(0,0,0,0.2);
 }
 
 .ambassador_banner-dropdown-info {
