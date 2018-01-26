@@ -33,10 +33,7 @@ a.ambassador_banner-no_ambassador {
   padding-bottom: $ambassador-bar-vertical-padding;
   cursor: pointer;
   z-index: $zindex-navbar - 2;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
-
+  
   &::after {
     position: absolute;
     top: 0;
@@ -66,6 +63,12 @@ a.ambassador_banner-no_ambassador {
   & .fa-chevron-down {
     transition: all 0.3s linear;
   }
+}
+
+.ambassador_banner-text-name {
+  display: inline-block;
+  max-width: 70%; // magic number that fits current copy
+  vertical-align: -5px;  // magic number that visually aligns name with surrounding text
 }
 
 .ambassador_banner-dropdown {
@@ -102,12 +105,6 @@ a.ambassador_banner-no_ambassador {
 
 .ambassador_banner-dropdown-info {
   max-width: 100%;
-  overflow: hidden;
-}
-
-.ambassador_banner-dropdown-info-main-name {
-  margin: 0;
-  text-overflow: ellipsis;
   overflow: hidden;
 }
 
