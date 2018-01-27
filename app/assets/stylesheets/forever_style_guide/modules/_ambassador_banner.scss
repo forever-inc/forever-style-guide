@@ -17,11 +17,11 @@ $banner-hover-effect-speed: 0.15s;
 $chevron-rotate-effect-speed: 0.25s;
 $dropdown-entrance-and-exit-effect-speed: 0.22s;
 
-a.ambassador_banner-no_ambassador {
-  background-image: none;
-  background-color: $banner-unassigned-bg-color;
-
-  &:hover {
+a.ambassador_banner {
+  &:hover,
+  &:focus,
+  &:active,
+  &:active:focus {
     text-decoration: none;
   }
 }
@@ -54,8 +54,6 @@ a.ambassador_banner-no_ambassador {
   }
 
   &:hover {
-    text-decoration: none;
-
     &::after {
       opacity: $banner-background-visible;
     }
@@ -72,6 +70,11 @@ a.ambassador_banner-no_ambassador {
 
   .fa-chevron-down {
     @include transition(all $chevron-rotate-effect-speed linear);
+  }
+
+  &.ambassador_banner-text-no_ambassador {
+    background-image: none;
+    background-color: $banner-unassigned-bg-color;
   }
 }
 
