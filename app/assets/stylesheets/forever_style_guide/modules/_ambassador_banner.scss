@@ -18,6 +18,7 @@ $chevron-rotate-effect-speed: 0.25s;
 $dropdown-entrance-and-exit-effect-speed: 0.22s;
 
 a.ambassador_banner {
+  display: block;
   &:hover,
   &:focus,
   &:active,
