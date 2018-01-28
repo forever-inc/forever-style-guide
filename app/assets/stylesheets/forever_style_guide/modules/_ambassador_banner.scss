@@ -1,39 +1,45 @@
-$ambassador-bar-vertical-padding: 6px;
-$ambassador-scrim-opacity: 0.1;
-$ambassador-text-transparentize-amount: 0.2;
+$banner-text-height: 32px;
+$banner-vertical-padding: 6px;
+$banner-text-max-width: 70%;
+
+$banner-unassigned-bg-color: #d4edf7;
+$banner-background-gradient: linear-gradient(to left, mix($color-black, $color-forever_valet, 10%), mix($color-black, $color-forever_services, 10%));
+$banner-background-visible: 0.1;
+$banner-text-color: transparentize($color-white, 0.2);
+
 $ambassador-avatar-size: 130px;
-$ambassador-bar-background-gradient: linear-gradient(to left, mix($color-black, $color-forever_valet, 10%), mix($color-black, $color-forever_services, 10%));
-$ambassador-bar-unassigned-bg-color: #d4edf7;
 
+$behind-primary-nav: $zindex-navbar-fixed - 1;
+$in-front-of-primary-nav: $zindex-navbar-fixed + 2;
+$in-front-of-primary-nav-but-behind-banner: $zindex-navbar-fixed + 1;
 
-.ambassador_banner {
-  position: relative;
+$banner-hover-effect-speed: 0.15s;
+$chevron-rotate-effect-speed: 0.25s;
+$dropdown-entrance-and-exit-effect-speed: 0.22s;
+
+a.ambassador_banner {
   display: block;
-  text-decoration: none;
-  background-image: $ambassador-bar-background-gradient;
-}
-
-a.ambassador_banner-no_ambassador {
-  background-image: none;
-  background-color: $ambassador-bar-unassigned-bg-color;
-
-  &:hover {
+  &:hover,
+  &:focus,
+  &:active,
+  &:active:focus {
     text-decoration: none;
-
-    &::after {
-      opacity: $ambassador-scrim-opacity;
-    }
   }
 }
 
 .ambassador_banner-text {
   position: relative;
-  color: transparentize($color-white, $ambassador-text-transparentize-amount);
-  padding-top: $ambassador-bar-vertical-padding;
-  padding-bottom: $ambassador-bar-vertical-padding;
+  padding-top: $banner-vertical-padding;
+  padding-bottom: $banner-vertical-padding;
+  color: $banner-text-color;
+  background-image: $banner-background-gradient;
   cursor: pointer;
-  z-index: $zindex-navbar - 2;
-  
+  z-index: $in-front-of-primary-nav;
+
+  &.is-behind_fixed-nav {
+    z-index: $behind-primary-nav;
+  }
+
   &::after {
     position: absolute;
     top: 0;
@@ -42,26 +48,34 @@ a.ambassador_banner-no_ambassador {
     height: 100%;
     background-color: $color-black;
     opacity: 0;
-    @include transition(opacity 0.15s ease-in-out);
+    @include transition(opacity $banner-hover-effect-speed ease-in-out);
     z-index: $zindex-navbar - 1;
     content: "";
     pointer-events: none;
   }
 
   &:hover {
-    text-decoration: none;
-
     &::after {
-      opacity: $ambassador-scrim-opacity;
+      opacity: $banner-background-visible;
     }
   }
 
-  &.open .fa-chevron-down {
-    @include transform(rotate(180deg));
+  &.open { 
+    .fa-chevron-down {
+      @include transform(rotate(180deg));
+    }
+    &::after {
+      opacity: $banner-background-visible;
+    }
   }
 
-  & .fa-chevron-down {
-    transition: all 0.3s linear;
+  .fa-chevron-down {
+    @include transition(all $chevron-rotate-effect-speed linear);
+  }
+
+  &.ambassador_banner-text-no_ambassador {
+    background-image: none;
+    background-color: $banner-unassigned-bg-color;
   }
 }
 
@@ -71,28 +85,35 @@ a.ambassador_banner-no_ambassador {
 }
 
 .ambassador_banner-text-name {
-  max-width: 70%; // magic number that fits current copy
+  max-width: $banner-text-max-width;
   vertical-align: middle;
 }
 
-.ambassador_banner-dropdown {
+.ambassador_banner-dropdown_container {
   position: absolute;
-  top: 100%;
+  top: $banner-text-height;
   left: 0;
-  display: none;
-  align-items: center;
-  justify-content: center;
   width: 100%;
-  background-image: $ambassador-bar-background-gradient;
-  border-top: 2px solid transparentize($color-white, 0.8);
-  z-index: $zindex-navbar-fixed + 1;
+  transform: translateY(-100%);
+  @include transition(all $dropdown-entrance-and-exit-effect-speed ease-in);
+  z-index: $in-front-of-primary-nav-but-behind-banner;
+  pointer-events: none;
 
   &.open {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap; 
+    transform: translateY(0%);
+    pointer-events: auto;
   }
+}
+
+.ambassador_banner-dropdown {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  background-image: $banner-background-gradient;
+  border-top: 2px solid transparentize($color-white, 0.9);
 }
 
 .ambassador_banner-dropdown-avatar {
