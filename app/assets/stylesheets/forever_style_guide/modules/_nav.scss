@@ -5,6 +5,8 @@ $letter-spacing-large: 0.5px;
 $padding-small-horizontal: 3px;
 
 $logo-height-large: 28px;
+$logo-height-small: 18px;
+
 
 $hover-border-size: 4px;
 
@@ -13,6 +15,9 @@ $deals-icon-vertical-position: -5px;
 
 $cart-count-horizontal-position: -15px;
 $cart-count-vertical-position: -5px;
+
+$screen-md_to_lg_custom: 1110px;
+$screen-sm_to_md_custom: 1018px;
 
 @mixin nav_hover_border($orientation) {
   &::before {
@@ -47,25 +52,10 @@ $cart-count-vertical-position: -5px;
   border-bottom: solid 1px $color-gray-200;
 }
 
-.nav-icons {
-  @media (min-width: $screen-md) {
-    padding-top: 15px;
-  }
-  padding-top: 10px;
-}
-
 .nav-text_center {
   display: inline-block;
-
-  @media (min-width: $screen-md) {
-    float: none;
-    text-align: center;
-  }
-
-  @media (max-width: $screen-md) {
-    text-align: left;
-    width: 100%;
-  }
+  float: none;
+  text-align: center;
 }
 
 .navbar-toggle {
@@ -89,8 +79,13 @@ $cart-count-vertical-position: -5px;
   height: $logo-height-large;
   margin-top: 5px;
 
+  @media (max-width: $screen-sm_to_md_custom) {
+    height: $logo-height-small;
+    margin-top: 8px;
+  }
   @media (max-width: $screen-sm) {
     padding-left: $padding-small-horizontal;
+    display: inline-block;
   }
   @media (max-width: $screen-xs) {
     padding-left: 10px;
@@ -98,7 +93,7 @@ $cart-count-vertical-position: -5px;
 }
 
 .navigation-menu-list {
-  @media screen and (min-width: $screen-md) {
+  @media screen and (min-width: $screen-sm) {
     height: 50px;
   }
 
@@ -106,20 +101,10 @@ $cart-count-vertical-position: -5px;
   overflow: hidden;
 }
 
-.navigation-menu-list .navbar-nav > li > a {
-  letter-spacing: .4px;
-  padding-left: 10px;
-  padding-right: 10px;
-
-  &:hover {
-    color: $color-secondary;
-    background-color: inherit;
-  }
-}
 
 .navigation-menu-list_item {
-  @media screen and (min-width: $screen-md) {
-    letter-spacing: .3px;
+  @media screen and (min-width: $screen-xs) {
+    letter-spacing: .4px;
   }
 
   &:not(:last-of-type) {
@@ -144,7 +129,7 @@ a.navigation-items-link {
   color: $color-gray-600;
   text-transform: uppercase;
 
-  @media screen and (min-width: $screen-md) {
+  @media screen and (min-width: $screen-sm) {
     align-items: center;
     height: 100%;
     text-decoration: none;
@@ -157,7 +142,7 @@ a.navigation-items-link {
   }
 
   &:hover {
-    @media screen and (min-width: $screen-md) {
+    @media screen and (min-width: $screen-sm) {
       color: $color-secondary;
     }
   }
@@ -165,7 +150,7 @@ a.navigation-items-link {
 
 a.navigation-items-link-deals {
   position: relative;
-  color: $color-danger;
+  color: $color-warning;
 
   &::after {
     position: relative;
@@ -174,6 +159,18 @@ a.navigation-items-link-deals {
     font-family: 'FontAwesome';
     font-size: $font-size-000;
     content: "\f005"; // Star
+  }
+
+  @media (max-width: $screen-md_to_lg) {
+    &::after {
+    font-size: $font-size-100 - 1;
+    }
+  }
+
+  @media (max-width: $screen-sm) {
+    &::after {
+    content: none;
+    }
   }
 }
 
@@ -197,22 +194,42 @@ a.navigation-items-link-deals {
   }
 }
 
-a.navigation-items-link-deals {
-  position: relative;
-  color: $color-warning;
+.navigation-menu-list .navbar-nav > li > a {
+  letter-spacing: .6px;
+  padding-left: 10px;
+  padding-right: 10px;
 
-  &::after {
-    position: relative;
-    font-family: 'FontAwesome';
-    font-size: $font-size-000;
-    content: "\f005"; // Star
+  &:hover {
+    color: $color-secondary;
+    background-color: inherit;
+  }
+
+  @media (max-width: $screen-lg) {
+    padding-left: 7px;
+    padding-right: 7px;
+    font-size: $font-size-200;
+  }
+
+  @media (max-width: $screen-md_to_lg_custom) {
+    padding-left: 5px;
+    padding-right: 5px;
+    letter-spacing: .5px;
+  }
+
+  @media (max-width: $screen-md_to_lg) {
+    font-size: $font-size-200 - 1;
   }
 }
 
-.navigation-user_info-help_icon, .navigation-user_info-cart {
+.navigation-menu-list .navbar-nav > li > a.navigation-user_info-cart,
+.navigation-menu-list .navbar-nav > li > a .navigation-user_info-help_icon {
   @include transition($navigation-link-hover-transition);
-  padding-left: $padding-small-horizontal * 1.5;
-  padding-right: $padding-small-horizontal * 1.5;
+  padding-left: $padding-small-horizontal;
+  padding-right: $padding-small-horizontal;
+
+  @media (max-width: $screen-lg) {
+    font-size: $font-size-400;
+  }
 }
 
 .navigation-user_info-help_link {
@@ -422,7 +439,7 @@ a.user_info-logged_in-account_dropdown-menu-list-link  {
   text-decoration: none;
 
   &::before {
-    @media screen and (min-width: $screen-md) {
+    @media screen and (min-width: $screen-xs) {
       position: absolute;
       bottom: 0;
       left: 0;
@@ -439,12 +456,12 @@ a.user_info-logged_in-account_dropdown-menu-list-link  {
   &:hover {
     color: $color-black;
 
-    @media screen and (min-width: $screen-md) {
+    @media screen and (min-width: $screen-xs) {
       color: $color-black;
     }
 
     &::before {
-      @media screen and (min-width: $screen-md) {
+      @media screen and (min-width: $screen-xs) {
         transform: scaleX(1);
         transition: transform 0.25s ease-in-out;
       }
@@ -527,33 +544,33 @@ a.navigation-user_info-logged_out-log_in_link {
   background-color: #666666;
 }
 
+/*
 .navbar-nav .open .dropdown-menu {
   float: left;
 }
-
- @media screen and (max-width: 768px)
-    {
-        .collapsing
-        {
-            position: absolute !important;
-            z-index: 20;
-            width: 100%;
-            top: 50px;
-            background: white;
-        }
-        .collapse.in {
-            display: block;
-            position: absolute;
-            z-index: 20;
-            width: 100%;
-            top: 50px;
-            background: white;
-        }
-        .navbar-collapse
-        {
-            max-height: none !important;
-        }
-    }
+*/
+ @media screen and (max-width: 768px) {
+  .collapsing
+  {
+      position: absolute !important;
+      z-index: 20;
+      width: 100%;
+      top: 50px;
+      background: white;
+  }
+  .collapse.in {
+      display: block;
+      position: absolute;
+      z-index: 20;
+      width: 100%;
+      top: 50px;
+      background: white;
+  }
+  .navbar-collapse
+  {
+      max-height: none !important;
+  }
+}
 
 
 .navigation-menu-list_item:not(:last-of-type) {
@@ -561,7 +578,7 @@ a.navigation-user_info-logged_out-log_in_link {
 }
 
 .navbar-nav > li.navigation-user_info-logged_out.navigation-log_in {
-  padding-top: 1px;
+  padding-top: 0;
 }
 
 .navigation-menu-list .navbar-nav > li > a.navigation-user_info-logged_out-sign_up_btn:hover {
@@ -570,12 +587,12 @@ a.navigation-user_info-logged_out-log_in_link {
 
 
 .nav-sign_in-sign_up {
-  @media (max-width: $screen-sm) {
+  @media (max-width: $screen-xs) {
     float: left !important;
   }
 }
 
-.collapse2 {
+.nav-mobile-menu {
   @media (max-width: $screen-sm) {
     width: 0;
     height: 100%;
@@ -585,17 +602,19 @@ a.navigation-user_info-logged_out-log_in_link {
     transition: 0.4s;
     right: 0;
     border-left: solid 1px $color-gray-200;
+    opacity: 0.5;
   }
 }
 
-.collapse2.in {  
+.nav-mobile-menu.in {  
   height: 100%;
   width: 100%;
   z-index: 1; /* Sit on top */
   right: 0;
   overflow-x: hidden; /* Disable horizontal scroll */
   overflow-y: hidden;
-  transition: 1s;
+  transition: 0.5s;
+  opacity: 1;
 }
 
 .navigation-menu-list_item {
@@ -608,6 +627,8 @@ a.navigation-user_info-logged_out-log_in_link {
     margin-left: 10px;
   }
 }
+
+// mobile hamburger
 
 .navbar-toggle.open {
   border: none;
@@ -637,11 +658,28 @@ a.navigation-user_info-logged_out-log_in_link {
 .navbar-toggle {
   .top-bar {
     transform: rotate(0);
+    transition: all 0.2s;
   }
   .middle-bar {
     opacity: 1;
+    transition: all 0.2s;
   }
   .bottom-bar {
     transform: rotate(0);
+    transition: all 0.2s;
+  }
+}
+
+.navbar-right-icons-container,
+.nav > li.navbar-right-icons,
+.navbar-mobile-menu {
+  @media (max-width: $screen-sm) {
+    display: inline-block;
+  }
+}
+
+.navbar-right-icons {
+  @media (min-width: $screen-lg) {
+    margin-top: -4px;
   }
 }
