@@ -60,7 +60,7 @@ $screen-sm_to_md_custom: 1018px;
 
 .navbar-toggle {
   margin-right: 4px;
-  
+
   @media (max-width: $screen-xs) {
     margin-right: -10px;
   }
@@ -606,7 +606,7 @@ a.navigation-user_info-logged_out-log_in_link {
 }
 
 .nav-mobile-menu {
-  @media (max-width: $screen-sm) {
+  @media (max-width: 959px) {
     width: 0;
     height: 100%;
     background-color: $color-white; /* Black fallback color */
@@ -616,6 +616,21 @@ a.navigation-user_info-logged_out-log_in_link {
     right: 0;
     border-left: solid 1px $color-gray-200;
     opacity: 0.5;
+    top: 80px;
+    max-width: 320px;
+  }
+
+  @media (max-width: $screen-xs) {
+    width: 0;
+    height: 100%;
+    background-color: $color-white; /* Black fallback color */
+    overflow: hidden;
+    position: fixed; /* Stay in place */
+    transition: 0.4s;
+    right: 0;
+    border-left: solid 1px $color-gray-200;
+    opacity: 0.5;
+    max-width: 100%;
   }
 }
 
@@ -633,6 +648,10 @@ a.navigation-user_info-logged_out-log_in_link {
 .navigation-menu-list_item {
   &:active {
     background: inherit;
+  }
+
+  @media (max-width: 959px) {
+    text-align: left;
   }
 
   @media (max-width: $screen-sm) {
@@ -714,5 +733,15 @@ a.navigation-user_info-logged_out-log_in_link {
   @media (max-width: $screen-sm) {
     margin: 3.5px 0;
     float: right !important; //aligns mobile menu
+  }
+}
+
+
+
+.navbar-nav.nav-text_center {
+  @media (max-width: 959px) {
+    float: left !important;
+    margin: 7.5px 0;
+    padding-left: 25px;
   }
 }
