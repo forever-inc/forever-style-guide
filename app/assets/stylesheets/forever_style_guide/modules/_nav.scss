@@ -72,6 +72,7 @@ $cart-count-vertical-position: 9px;
     width: 100%;
     padding-bottom: $padding-10;
     border-bottom: solid 1px $color-gray-300;
+    margin-bottom: $padding-10 * 5 !important; // for scrolling to bottom
   }
 
   @media (max-width: $screen-sm) {
@@ -717,6 +718,9 @@ a.navigation-user_info-logged_out-sign_up_btn {
 
 .nav-mobile-menu.top-offset {
   top: 80px;
+  @media (max-width: $screen-xs) {
+    top: 119px;
+  }
 }
 
 .nav-mobile-menu.in {  
@@ -795,4 +799,12 @@ a.navigation-user_info-logged_out-sign_up_btn {
   @media (max-width: $screen-mobile-menu) {
     display: block;
   }
+}
+
+.nav-mobile-menu-account {
+  padding-left: 25px;
+  padding-right: 25px;
+  float: left;
+  width: 100%;
+  background-color: $color-white;
 }
