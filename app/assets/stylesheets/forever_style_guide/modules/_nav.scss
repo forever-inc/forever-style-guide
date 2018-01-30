@@ -1,23 +1,34 @@
+// main nav
+$navigation-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+
+// custom padding
+$padding-10: 10px;
+
+// animation varibales
+$hover-border-size: 4px;
+
+// custom breakpoints to accomodate tight
+// spacing and extended desktop view
+$screen-md_to_lg_custom: 1110px;
+$screen-sm_to_md_custom: 1018px;
+$screen-mobile-menu: 959px;
+
+// logo resize for responsiveness
+$logo-height-large: 28px;
+$logo-height-small: 18px;
+
+// not yet verified
 $navigation-height: 55px;
-$navigation-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
 $navigation-link-hover-transition: color 0.15s ease-in-out;
 $letter-spacing-large: 0.5px;
 $padding-small-horizontal: 3px;
 
-$logo-height-large: 28px;
-$logo-height-small: 18px;
-
-
-$hover-border-size: 4px;
 
 $deals-icon-horizontal-position: -3px;
 $deals-icon-vertical-position: -5px;
 
-$cart-count-horizontal-position: -15px;
-$cart-count-vertical-position: -5px;
-
-$screen-md_to_lg_custom: 1110px;
-$screen-sm_to_md_custom: 1018px;
+$cart-count-horizontal-position: -11px;
+$cart-count-vertical-position: 9px;
 
 @mixin nav_hover_border($orientation) {
   &::before {
@@ -48,27 +59,88 @@ $screen-sm_to_md_custom: 1018px;
 }
 
 .navigation {
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-  border-bottom: solid 1px $color-gray-200;
+  box-shadow: $navigation-shadow;
+  border-bottom: solid 1px $color-gray-300;
 }
 
 .nav-text_center {
   display: inline-block;
   float: none;
-  text-align: center;
+
+  @media (max-width: $screen-mobile-menu) {
+    padding-left: $padding-10 * 2;
+    width: 100%;
+    padding-bottom: $padding-10;
+    border-bottom: solid 1px $color-gray-300;
+  }
+
+  @media (max-width: $screen-sm) {
+    padding-left: $padding-10;
+  }
 }
+
+
+// mobile toggle styling
 
 .navbar-toggle {
   margin-right: 4px;
 
-  @media (max-width: $screen-xs) {
+  @media (max-width: $screen-md) {
     margin-right: -10px;
   }
 }
 
+.navbar-toggle .icon-bar {
+  background-color: $color-gray-600;
+}
+
+// mobile hamburger custom styling for animation
+
+.navbar-toggle.open {
+  border: none;
+  background: transparent;
+
+  &:hover {
+    background: transparent;
+  }
+
+  .icon-bar {
+    width: 22px;
+    transition: all 0.2s;
+  }
+  .top-bar {
+    transform: rotate(45deg);
+    transform-origin: 10% 10%;
+  }
+  .middle-bar {
+    opacity: 0;
+  }
+  .bottom-bar {
+    transform: rotate(-45deg);
+    transform-origin: 10% 90%;
+  }
+}
+
+.navbar-toggle {
+  .top-bar {
+    transform: rotate(0);
+    transition: all 0.2s;
+  }
+  .middle-bar {
+    opacity: 1;
+    transition: all 0.2s;
+  }
+  .bottom-bar {
+    transform: rotate(0);
+    transition: all 0.2s;
+  }
+}
+
+// cart stytling
+
 .nav-cart {
   @media (min-width: $screen-md) {
-    padding-top: 11px;
+    padding-top: $padding-10 + 1;
   }
 }
 
@@ -76,6 +148,30 @@ $screen-sm_to_md_custom: 1018px;
   float: right;
   padding-top: 6px;
   padding-bottom: 5px;
+
+  @media (max-width: $screen-mobile-menu) {
+    display: none;
+  }
+}
+
+//overriding some bootstrap padding on
+.navbar-nav > li.navigation-user_info-logged_out-mobile > a {
+  @media (max-width: $screen-mobile-menu) {
+    padding-top: 10px;
+  }
+}
+
+.navbar-nav > li.navigation-user_info-logged_out-mobile {
+  display: none;
+
+  @media (max-width: $screen-mobile-menu) {
+    display: block;
+    padding: 5px 20px;
+  }
+}
+
+.navbar-right {
+  max-height: 50px;
 }
 
 .navigation-logo_image,
@@ -87,7 +183,7 @@ $screen-sm_to_md_custom: 1018px;
     height: $logo-height-small;
     margin-top: 8px;
   }
-  @media (max-width: 959px) {
+  @media (max-width: $screen-mobile-menu) {
     display: inline-block;
     height: 23px; // mobile height
     margin-bottom: 13px;
@@ -105,9 +201,7 @@ $screen-sm_to_md_custom: 1018px;
   }
 
   height: 100%;
-  overflow: hidden;
 }
-
 
 .navigation-menu-list_item {
   @media screen and (min-width: $screen-xs) {
@@ -147,6 +241,19 @@ a.navigation-items-link {
   @media screen and (min-width: $screen-lg) {
     font-size: $font-size-200;
   }
+
+  @media (max-width: 959px) {
+    align-items: center;
+    height: 100%;
+    text-decoration: none;
+    @include transition($navigation-link-hover-transition);
+    @include nav_hover_border(vertical)
+
+    &:before {
+      left: -20px;
+    }
+  }
+
 
   &:hover {
     @media screen and (min-width: $screen-sm) {
@@ -205,6 +312,7 @@ a.navigation-items-link-deals {
   letter-spacing: .6px;
   padding-left: 10px;
   padding-right: 10px;
+  max-height: 50px;
 
   &:hover {
     color: $color-secondary;
@@ -238,7 +346,7 @@ a.navigation-items-link-deals {
     font-size: $font-size-400;
   }
 
-  @media (max-width: 959px) {
+  @media (max-width: $screen-mobile-menu) {
     font-size: 21px;
     padding-left: 10px;
     padding-right: 0px;
@@ -274,7 +382,7 @@ a.navigation-items-link-deals {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0 7px 0 6px; // To make it look like a circle with 1 item in cart
+  padding: 0 6px 0 7px; // To make it look like a circle with 1 item in cart
   border-radius: 50px; // To get it looking like a pill when more items are added
 }
 
@@ -300,27 +408,18 @@ a.navigation-user_info-logged_out-log_in_link {
   }
 }
 
-// Overriding button styles to make it look good with smaller font size
-a.navigation-user_info-logged_out-sign_up_btn {
-  display: -webkit-box;
-  margin-left: 4px;
-  margin-right: 10px;
-
-  @media screen and (min-width: $screen-md) {
-    font-size: $font-size-100 !important;
-    margin-left: 3px;
-  }
-
-  @media screen and (min-width: $screen-lg) {
-    font-size: $font-size-200 !important;
-    margin-left: 3px;
-  }
-}
-
 .navigation-user_info-logged_in {
   height: 100%;
-  margin-left: $padding-default-horizontal;
+  margin-top: 7px;
+  margin-right: 15px;
+
+  &.open {
+    .user_info-logged_in-account_dropdown_trigger-icon {
+      transform: rotate(180deg);
+    }
+  }
 }
+
 
 .user_info-logged_in-account_dropdown_trigger {
   display: flex;
@@ -333,12 +432,6 @@ a.navigation-user_info-logged_out-sign_up_btn {
 
   &:hover {
     opacity: 0.7;
-  }
-
-  &.open {
-    .user_info-logged_in-account_dropdown_trigger-icon {
-      transform: rotate(180deg);
-    }
   }
 }
 
@@ -364,7 +457,6 @@ a.navigation-user_info-logged_out-sign_up_btn {
 }
 
 .user_info-logged_in-account_dropdown {
-  display: none;
   position: absolute;
   background: $color-white;
   box-shadow: 0 5px 20px rgba(0,0,0,.1);
@@ -383,7 +475,6 @@ a.navigation-user_info-logged_out-sign_up_btn {
     height: 0;
     border-left: 10px solid transparent;
     border-right: 10px solid transparent;
-
     border-bottom: 10px solid $color-white;
   }
 
@@ -464,13 +555,16 @@ a.user_info-logged_in-account_dropdown-menu-list-link  {
       transition: transform 0.15s ease-in-out;
       transform-origin: left;
     }
+    @media (max-width: $screen-mobile-menu) {
+      left: -20px;
+    }
   }
 
   &:hover {
-    color: $color-black;
+    color: $color-secondary;
 
     @media screen and (min-width: $screen-xs) {
-      color: $color-black;
+      color: $color-secondary;
     }
 
     &::before {
@@ -534,34 +628,31 @@ a.navigation-user_info-logged_out-log_in_link {
 }
 
 // Overriding button styles to make it look good with smaller font size
-.navigation-user_info-logged_out-sign_up_btn {
-  margin-left: $padding-small-horizontal;
-  height: auto !important;
+a.navigation-user_info-logged_out-sign_up_btn {
+  @media screen and (max-width: $screen-mobile-menu) {
+    width: 120px;
+  }
+  
+  display: -webkit-box;
+  margin-left: 4px;
+  margin-right: 10px;
 
   @media screen and (min-width: $screen-md) {
     font-size: $font-size-100 !important;
-    letter-spacing: $letter-spacing-large;
+    margin-left: 3px;
   }
 
   @media screen and (min-width: $screen-lg) {
-    margin-left: $padding-large-horizontal;
     font-size: $font-size-200 !important;
+    margin-left: 3px;
   }
 }
+
 
 .user_info-logged_in-account_dropdown-menu-list-sign_out {
   color: $color-danger !important;
 }
 
-.navbar-toggle .icon-bar {
-  background-color: #666666;
-}
-
-/*
-.navbar-nav .open .dropdown-menu {
-  float: left;
-}
-*/
  @media screen and (max-width: 768px) {
   .collapsing
   {
@@ -581,7 +672,7 @@ a.navigation-user_info-logged_out-log_in_link {
   }
   .navbar-collapse
   {
-      max-height: none !important;
+    max-height: none !important;
   }
 }
 
@@ -606,43 +697,39 @@ a.navigation-user_info-logged_out-log_in_link {
 }
 
 .nav-mobile-menu {
-  @media (max-width: 959px) {
+  @media (max-width: $screen-mobile-menu) {
     width: 0;
     height: 100%;
-    background-color: $color-white; /* Black fallback color */
+    background-color: $color-gray-100; /* Black fallback color */
     overflow: hidden;
     position: fixed; /* Stay in place */
     transition: 0.4s;
     right: 0;
     border-left: solid 1px $color-gray-200;
     opacity: 0.5;
-    top: 80px;
     max-width: 320px;
   }
 
   @media (max-width: $screen-xs) {
-    width: 0;
-    height: 100%;
-    background-color: $color-white; /* Black fallback color */
-    overflow: hidden;
-    position: fixed; /* Stay in place */
-    transition: 0.4s;
-    right: 0;
-    border-left: solid 1px $color-gray-200;
-    opacity: 0.5;
     max-width: 100%;
   }
+}
+
+.nav-mobile-menu.top-offset {
+  top: 80px;
 }
 
 .nav-mobile-menu.in {  
   height: 100%;
   width: 100%;
-  z-index: 1; /* Sit on top */
+  z-index: $zindex-tooltip; /* Sit on top */
   right: 0;
   overflow-x: hidden; /* Disable horizontal scroll */
-  overflow-y: hidden;
+  overflow-y: auto;
   transition: 0.5s;
   opacity: 1;
+  border-left: solid 1px $color-gray-200;
+  box-shadow: $navigation-shadow;
 }
 
 .navigation-menu-list_item {
@@ -650,7 +737,7 @@ a.navigation-user_info-logged_out-log_in_link {
     background: inherit;
   }
 
-  @media (max-width: 959px) {
+  @media (max-width: $screen-mobile-menu) {
     text-align: left;
   }
 
@@ -660,52 +747,10 @@ a.navigation-user_info-logged_out-log_in_link {
   }
 }
 
-// mobile hamburger
-
-.navbar-toggle.open {
-  border: none;
-  background: transparent !important;
-
-  &:hover {
-    background: transparent !important;
-  }
-
-  .icon-bar {
-    width: 22px;
-    transition: all 0.2s;
-  }
-  .top-bar {
-    transform: rotate(45deg);
-    transform-origin: 10% 10%;
-  }
-  .middle-bar {
-    opacity: 0;
-  }
-  .bottom-bar {
-    transform: rotate(-45deg);
-    transform-origin: 10% 90%;
-  }
-}
-
-.navbar-toggle {
-  .top-bar {
-    transform: rotate(0);
-    transition: all 0.2s;
-  }
-  .middle-bar {
-    opacity: 1;
-    transition: all 0.2s;
-  }
-  .bottom-bar {
-    transform: rotate(0);
-    transition: all 0.2s;
-  }
-}
-
 .navbar-right-icons-container,
 .nav > li.navbar-right-icons,
 .navbar-mobile-menu {
-  @media (max-width: 959px) {
+  @media (max-width: $screen-mobile-menu) {
     display: inline-block;
     float: right; //aligns mobile menu
   }
@@ -718,13 +763,21 @@ a.navigation-user_info-logged_out-log_in_link {
 }
 
 .visible-mobile {
-  @media (max-width: 959px) {
+  display: none !important;
+
+  @media (max-width: $screen-mobile-menu) {
     display: inline-block !important;
   }
 }
 
+.hidden-mobile {
+  @media (max-width: $screen-mobile-menu) {
+    display: none !important;
+  }
+}
+
 .navbar-nav.navbar-right.navbar-right-icons-container {
-  @media (max-width: 959px) {
+  @media (max-width: $screen-mobile-menu) {
     float: right !important;
     margin: auto;
   }
@@ -734,10 +787,12 @@ a.navigation-user_info-logged_out-log_in_link {
   }
 }
 
-.navbar-nav.nav-text_center {
-  @media (max-width: 959px) {
-    float: left !important;
-    margin: 7.5px 0;
-    padding-left: 25px;
+.navigation-list-container {
+  height: 50px;
+}
+
+.navigation-user_info-logged_out-container {
+  @media (max-width: $screen-mobile-menu) {
+    display: block;
   }
 }
