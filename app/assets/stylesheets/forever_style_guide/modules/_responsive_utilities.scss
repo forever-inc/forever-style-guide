@@ -51,3 +51,19 @@
     float: left !important;
   }
 }
+
+
+// Utilities for new nav w/ custom breakpoint
+.visible-mobile {
+  display: none !important;
+
+  @media (max-width: $screen-mobile-menu) {
+    display: inline-block !important; // required to override shame.scss
+  }
+}
+
+.hidden-mobile {
+  @media (max-width: $screen-mobile-menu) {
+    display: none !important; // hides duplicated cart and help on collapse
+  }
+}

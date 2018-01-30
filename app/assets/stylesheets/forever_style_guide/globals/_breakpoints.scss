@@ -52,3 +52,8 @@ $grid-float-breakpoint-max: ($grid-float-breakpoint - 1) !global;
 // Assign a minimum body width for the application
 $minimum-application-width: 320px;
 $minimum-application-width-xs-max: ($minimum-application-width - 1) !global;
+
+
+// This is the new nav mobile brekapoint which
+// TODO - makes the grid float breakpoint obsolete (assuming nothing else is using it :( )
+$screen-mobile-menu: 959px;

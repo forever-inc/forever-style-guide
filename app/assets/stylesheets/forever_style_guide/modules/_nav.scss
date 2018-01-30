@@ -13,7 +13,6 @@ $navigation-link-hover-transition: color 0.15s ease-in-out;
 // spacing and extended desktop view
 $screen-md_to_lg_custom: 1110px;
 $screen-sm_to_md_custom: 1018px;
-$screen-mobile-menu: 959px; // when nav converts to colappsed menu
 
 // logo resize for responsiveness
 $logo-height-large: 28px;
@@ -621,8 +620,7 @@ a.navigation-user_info-logged_out-sign_up_btn {
       top: 50px;
       background: white;
   }
-  .navbar-collapse
-  {
+  .navbar-collapse {
     max-height: none !important;
   }
 }
@@ -645,28 +643,38 @@ a.navigation-user_info-logged_out-sign_up_btn {
   }
 }
 
+// TODO - this classname is CRAZY MISLEADING as it is the container for basically the entire nav
 .nav-mobile-menu {
+  &.affix {
+    position: relative; // we only want the affix behavior in the mobile views
+  }
+
   @media (max-width: $screen-mobile-menu) {
-    width: 0;
-    height: 100%;
-    background-color: $color-gray-100; /* Black fallback color */
-    overflow: hidden;
-    position: fixed; /* Stay in place */
-    transition: 0.4s;
+    position: absolute;
     right: 0;
+    width: $minimum-application-width;
+    opacity: 0.8;
     border-left: solid 1px $color-gray-200;
-    opacity: 0.5;
-    max-width: 320px;
+    background-color: $color-white;
+    transform: translateX(100%);
+    transition: opacity 0.2s ease-in-out, transform 0.3s ease-in-out;
+    z-index: $zindex-tooltip; /* Sit on top */
+
+    &.affix {
+      position: fixed;
+      top: $nav-height;
+      bottom: 0;
+      overflow-y: scroll;
+    }
   }
 
   @media (max-width: $screen-xs) {
-    max-width: 100%;
+    width: 100%;
   }
-}
 
-.nav-mobile-menu.top-offset {
-  @media (max-width: $screen-mobile-menu) {
-    top: 80px;
+  &.in {
+    opacity: 1;
+    transform: translateX(0%);
   }
 }
 
@@ -676,23 +684,6 @@ a.navigation-user_info-logged_out-sign_up_btn {
   }
 }
 
-.nav-mobile-menu.in {  
-  height: 100%;
-  width: 100%;
-  z-index: $zindex-tooltip; /* Sit on top */
-  right: 0;
-  overflow-x: hidden; /* Disable horizontal scroll */
-  overflow-y: auto;
-  transition: 0.5s;
-  opacity: 1;
-  border-left: solid 1px $color-gray-200;
-  box-shadow: $navigation-shadow;
-
-  @media (max-width: $screen-mobile-menu) {
-    padding-top: 15px;
-    background: $color-white;
-  }
-}
 
 .navigation-menu-list_item {
   &:active {
@@ -724,20 +715,6 @@ a.navigation-user_info-logged_out-sign_up_btn {
   }
 }
 
-.visible-mobile {
-  display: none !important;
-
-  @media (max-width: $screen-mobile-menu) {
-    display: inline-block !important; // required to override shame.scss
-  }
-}
-
-.hidden-mobile {
-  @media (max-width: $screen-mobile-menu) {
-    display: none !important; // hides duplicated cart and help on collapse
-  }
-}
-
 .navbar-nav.navbar-right.navbar-right-icons-container {
   @media (max-width: $screen-mobile-menu) {
     float: right !important;
@@ -756,6 +733,7 @@ a.navigation-user_info-logged_out-sign_up_btn {
 }
 
 .nav-mobile-menu-account {
+  padding-top: 10px;
   padding-left: 25px;
   padding-right: 25px;
   float: left;
