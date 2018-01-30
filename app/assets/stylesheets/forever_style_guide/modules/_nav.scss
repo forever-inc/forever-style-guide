@@ -1,11 +1,13 @@
 // main nav
 $navigation-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+$nav-height: 50px;
 
 // custom padding
 $padding-10: 10px;
 
-// animation varibales
+// animation
 $hover-border-size: 4px;
+$navigation-link-hover-transition: color 0.15s ease-in-out;
 
 // custom breakpoints to accomodate tight
 // spacing and extended desktop view
@@ -18,9 +20,9 @@ $logo-height-large: 28px;
 $logo-height-small: 18px;
 
 // not yet verified
-$navigation-height: 55px;
-$navigation-link-hover-transition: color 0.15s ease-in-out;
+$letter-spacing-xlarge: 0.6px;
 $letter-spacing-large: 0.5px;
+$letter-spacing-medium: 0.4px;
 $padding-small-horizontal: 3px;
 
 
@@ -172,7 +174,7 @@ $cart-count-vertical-position: 9px;
 }
 
 .navbar-right {
-  max-height: 50px;
+  max-height: $nav-height;
 }
 
 .navigation-logo_image,
@@ -198,7 +200,7 @@ $cart-count-vertical-position: 9px;
 
 .navigation-menu-list {
   @media screen and (min-width: $screen-sm) {
-    height: 50px;
+    height: $nav-height;
   }
 
   height: 100%;
@@ -206,7 +208,7 @@ $cart-count-vertical-position: 9px;
 
 .navigation-menu-list_item {
   @media screen and (min-width: $screen-xs) {
-    letter-spacing: .4px;
+    letter-spacing: $letter-spacing-medium;
   }
 
   &:not(:last-of-type) {
@@ -310,10 +312,10 @@ a.navigation-items-link-deals {
 }
 
 .navigation-menu-list .navbar-nav > li > a {
-  letter-spacing: .6px;
-  padding-left: 10px;
-  padding-right: 10px;
-  max-height: 50px;
+  letter-spacing: $letter-spacing-xlarge;
+  padding-left: $padding-10;
+  padding-right: $padding-10;
+  max-height: $nav-height;
 
   &:hover {
     color: $color-secondary;
@@ -321,15 +323,15 @@ a.navigation-items-link-deals {
   }
 
   @media (max-width: $screen-lg) {
-    padding-left: 7px;
-    padding-right: 7px;
+    padding-left: $padding-10 - 3;
+    padding-right: $padding-10 - 3;
     font-size: $font-size-200;
   }
 
   @media (max-width: $screen-md_to_lg_custom) {
     padding-left: 5px;
     padding-right: 5px;
-    letter-spacing: .5px;
+    letter-spacing: $letter-spacing-medium;
   }
 
   @media (max-width: $screen-md_to_lg) {
@@ -502,6 +504,7 @@ a.navigation-user_info-logged_out-log_in_link {
 
 .user_info-logged_in-account_dropdown-storage {
   width: 100%;
+  text-align: left;
 }
 
 .user_info-logged_in-account_dropdown-storage_percentage {
@@ -649,7 +652,6 @@ a.navigation-user_info-logged_out-sign_up_btn {
   }
 }
 
-
 .user_info-logged_in-account_dropdown-menu-list-sign_out {
   color: $color-danger !important;
 }
@@ -677,7 +679,6 @@ a.navigation-user_info-logged_out-sign_up_btn {
   }
 }
 
-
 .navigation-menu-list_item:not(:last-of-type) {
   border-bottom: none;
 }
@@ -689,7 +690,6 @@ a.navigation-user_info-logged_out-sign_up_btn {
 .navigation-menu-list .navbar-nav > li > a.navigation-user_info-logged_out-sign_up_btn:hover {
     color: $color-primary;
 }
-
 
 .nav-sign_in-sign_up {
   @media (max-width: $screen-xs) {
@@ -718,6 +718,9 @@ a.navigation-user_info-logged_out-sign_up_btn {
 
 .nav-mobile-menu.top-offset {
   top: 80px;
+}
+
+.nav-mobile-menu-account.visible-mobile {
   @media (max-width: $screen-xs) {
     top: 119px;
   }
