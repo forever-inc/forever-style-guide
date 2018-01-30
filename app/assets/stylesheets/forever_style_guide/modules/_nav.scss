@@ -13,7 +13,7 @@ $navigation-link-hover-transition: color 0.15s ease-in-out;
 // spacing and extended desktop view
 $screen-md_to_lg_custom: 1110px;
 $screen-sm_to_md_custom: 1018px;
-$screen-mobile-menu: 959px;
+$screen-mobile-menu: 959px; // when nav converts to colappsed menu
 
 // logo resize for responsiveness
 $logo-height-large: 28px;
@@ -31,6 +31,8 @@ $deals-icon-vertical-position: -5px;
 
 $cart-count-horizontal-position: -11px;
 $cart-count-vertical-position: 9px;
+
+// animation on hover
 
 @mixin nav_hover_border($orientation) {
   &::before {
@@ -70,8 +72,8 @@ $cart-count-vertical-position: 9px;
   float: none;
 
   @media (max-width: $screen-mobile-menu) {
-    padding-left: $padding-10 * 2;
     width: 100%;
+    padding-left: $padding-10 * 2;
     padding-bottom: $padding-10;
     border-bottom: solid 1px $color-gray-300;
     margin-bottom: $padding-10 * 5 !important; // for scrolling to bottom
@@ -79,63 +81,6 @@ $cart-count-vertical-position: 9px;
 
   @media (max-width: $screen-sm) {
     padding-left: $padding-10;
-  }
-}
-
-
-// mobile toggle styling
-
-.navbar-toggle {
-  margin-right: 4px;
-
-  @media (max-width: $screen-md) {
-    margin-right: -10px;
-  }
-}
-
-.navbar-toggle .icon-bar {
-  background-color: $color-gray-600;
-}
-
-// mobile hamburger custom styling for animation
-
-.navbar-toggle.open {
-  border: none;
-  background: transparent;
-
-  &:hover {
-    background: transparent;
-  }
-
-  .icon-bar {
-    width: 22px;
-    transition: all 0.2s;
-  }
-  .top-bar {
-    transform: rotate(45deg);
-    transform-origin: 10% 10%;
-  }
-  .middle-bar {
-    opacity: 0;
-  }
-  .bottom-bar {
-    transform: rotate(-45deg);
-    transform-origin: 10% 90%;
-  }
-}
-
-.navbar-toggle {
-  .top-bar {
-    transform: rotate(0);
-    transition: all 0.2s;
-  }
-  .middle-bar {
-    opacity: 1;
-    transition: all 0.2s;
-  }
-  .bottom-bar {
-    transform: rotate(0);
-    transition: all 0.2s;
   }
 }
 
@@ -160,7 +105,7 @@ $cart-count-vertical-position: 9px;
 //overriding some bootstrap padding on
 .navbar-nav > li.navigation-user_info-logged_out-mobile > a {
   @media (max-width: $screen-mobile-menu) {
-    padding-top: 10px;
+    padding-top: $padding-10;
   }
 }
 
@@ -180,21 +125,21 @@ $cart-count-vertical-position: 9px;
 .navigation-logo_image,
 .navigation-logo {
   height: $logo-height-large;
-  margin-top: 5px;
+  margin-top: $padding-10 / 2;
 
   @media (max-width: $screen-sm_to_md_custom) {
     height: $logo-height-small;
-    margin-top: 8px;
+    margin-top: 8px; // vertical align logo on shrink
   }
   @media (max-width: $screen-mobile-menu) {
     display: inline-block;
-    height: 23px; // mobile height
-    margin-bottom: 13px;
-    margin-top: 7px;
+    height: $logo-height-large; // mobile height
+    margin-top: $padding-10 / 2;
   }
   @media (max-width: $screen-sm) {
-    padding-left: 10px;
-    margin-bottom: 5px;
+    height: $logo-height-small;
+    margin-top: 8px; // vertical align logo on shrink
+    margin-left: $padding-10;
   }
 }
 
@@ -245,7 +190,7 @@ a.navigation-items-link {
     font-size: $font-size-200;
   }
 
-  @media (max-width: 959px) {
+  @media (max-width: $screen-mobile-menu) {
     align-items: center;
     height: 100%;
     text-decoration: none;
@@ -351,7 +296,7 @@ a.navigation-items-link-deals {
 
   @media (max-width: $screen-mobile-menu) {
     font-size: 21px;
-    padding-left: 10px;
+    padding-left: $padding-10;
     padding-right: 0px;
   }
 }
@@ -421,6 +366,10 @@ a.navigation-user_info-logged_out-log_in_link {
       transform: rotate(180deg);
     }
   }
+
+  @media (max-width: $screen-mobile-menu) {
+    display: none; // hides dropdown on mobile
+  }
 }
 
 
@@ -464,7 +413,7 @@ a.navigation-user_info-logged_out-log_in_link {
   background: $color-white;
   box-shadow: 0 5px 20px rgba(0,0,0,.1);
   top: calc(100% + 20px);
-  right: 10px;
+  right: $padding-10;
   padding: $padding-large-vertical $padding-large-horizontal;
   padding-bottom: 0;
   width: 300px;
@@ -639,7 +588,7 @@ a.navigation-user_info-logged_out-sign_up_btn {
   
   display: -webkit-box;
   margin-left: 4px;
-  margin-right: 10px;
+  margin-right: $padding-10;
 
   @media screen and (min-width: $screen-md) {
     font-size: $font-size-100 !important;
@@ -717,7 +666,13 @@ a.navigation-user_info-logged_out-sign_up_btn {
 }
 
 .nav-mobile-menu.top-offset {
-  top: 80px;
+  @media (max-width: $screen-mobile-menu) {
+    top: 80px;
+  }
+
+  @media (max-width: $screen-xs) {
+    top: 121px;
+  }
 }
 
 .nav-mobile-menu-account.visible-mobile {
@@ -737,6 +692,11 @@ a.navigation-user_info-logged_out-sign_up_btn {
   opacity: 1;
   border-left: solid 1px $color-gray-200;
   box-shadow: $navigation-shadow;
+
+  @media (max-width: $screen-mobile-menu) {
+    padding-top: 15px;
+    background: $color-white;
+  }
 }
 
 .navigation-menu-list_item {
@@ -750,7 +710,7 @@ a.navigation-user_info-logged_out-sign_up_btn {
 
   @media (max-width: $screen-sm) {
     min-width: 300px;
-    margin-left: 10px;
+    margin-left: $padding-10;
   }
 }
 
@@ -765,7 +725,7 @@ a.navigation-user_info-logged_out-sign_up_btn {
 
 .navbar-right-icons {
   @media (min-width: $screen-lg) {
-    margin-top: -4px;
+    margin-top: -4px; // vertically aligns custom sizes icons on desktop
   }
 }
 
@@ -773,13 +733,13 @@ a.navigation-user_info-logged_out-sign_up_btn {
   display: none !important;
 
   @media (max-width: $screen-mobile-menu) {
-    display: inline-block !important;
+    display: inline-block !important; // required to override shame.scss
   }
 }
 
 .hidden-mobile {
   @media (max-width: $screen-mobile-menu) {
-    display: none !important;
+    display: none !important; // hides duplicated cart and help on collapse
   }
 }
 
@@ -794,10 +754,6 @@ a.navigation-user_info-logged_out-sign_up_btn {
   }
 }
 
-.navigation-list-container {
-  height: 50px;
-}
-
 .navigation-user_info-logged_out-container {
   @media (max-width: $screen-mobile-menu) {
     display: block;
@@ -810,4 +766,66 @@ a.navigation-user_info-logged_out-sign_up_btn {
   float: left;
   width: 100%;
   background-color: $color-white;
+}
+
+// mobile toggle styling
+// customer hamburger
+
+$padding-10: 10px;
+$nav-icon_bar-width: 22px;
+
+.navbar-toggle {
+  @media (max-width: $screen-md) {
+    margin-right: -10px; // equalize padding between right-side icons
+    margin-left: $padding-10;
+  }
+  @media (max-width: $screen-xs) {
+    margin-left: 0;
+  }
+}
+
+.navbar-toggle .icon-bar {
+  background-color: $color-gray-600; // specificity required to override
+}
+
+// mobile hamburger custom styling for animation
+
+.navbar-toggle.open {
+  border: none;
+  background: transparent;
+
+  &:hover {
+    background: transparent;
+  }
+
+  .icon-bar {
+    width: $nav-icon_bar-width;
+    transition: all 0.2s;
+  }
+  .top-bar {
+    transform: rotate(45deg);
+    transform-origin: 10% 10%;
+  }
+  .middle-bar {
+    opacity: 0;
+  }
+  .bottom-bar {
+    transform: rotate(-45deg);
+    transform-origin: 10% 90%;
+  }
+}
+
+.navbar-toggle {
+  .top-bar {
+    transform: rotate(0);
+    transition: all 0.2s;
+  }
+  .middle-bar {
+    opacity: 1;
+    transition: all 0.2s;
+  }
+  .bottom-bar {
+    transform: rotate(0);
+    transition: all 0.2s;
+  }
 }
