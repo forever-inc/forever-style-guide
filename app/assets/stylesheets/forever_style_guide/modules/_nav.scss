@@ -113,6 +113,7 @@ li.navbar-user_info-logged_out {
 .btn.btn-sm.navbar-sign_up_btn {
   margin-top: 7px; // vertical align custom sized button
   margin-right: $padding-default-vertical;
+  font-size: $font-size-200;
 }
 
 .navigation-menu-list {
@@ -122,10 +123,6 @@ li.navbar-user_info-logged_out {
 }
 
 .navigation-menu-list_item {
-  @media screen and (min-width: $screen-xs) {
-    letter-spacing: $letter-spacing-medium;
-  }
-
   &:not(:last-of-type) {
     border-bottom: 1px solid $color-gray-300;
   }
