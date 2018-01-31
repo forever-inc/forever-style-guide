@@ -2,6 +2,10 @@
 $navigation-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
 $nav-height: 50px;
 
+// logo
+$lg-logo-vertical-align: 5px;
+$sm-logo-vertical-align: 8px;
+
 // custom padding
 $padding-10: 10px;
 
@@ -61,11 +65,28 @@ $deals-icon-vertical-position: -5px;
   border-bottom: solid 1px $color-gray-300;
 }
 
-.navbar-right {
-  max-height: $nav-height;
+.navbar-logo_image,
+.navbar-logo {
+  height: $logo-height-large;
+  margin-top: $lg-logo-vertical-align;
+
+  @media (max-width: $screen-sm_to_md_custom) {
+    height: $logo-height-small;
+    margin-top: $sm-logo-vertical-align;
+  }
+  @media (max-width: $screen-mobile-menu) {
+    display: inline-block;
+    height: $logo-height-large;
+    margin-top: $lg-logo-vertical-align;
+  }
+  @media (max-width: $screen-sm) {
+    height: $logo-height-small;
+    margin-top: $sm-logo-vertical-align;
+    margin-left: $padding-10;
+  }
 }
 
-.nav-text_center {
+.navbar-text_center {
   display: inline-block;
   float: none;
 
@@ -81,43 +102,23 @@ $deals-icon-vertical-position: -5px;
   }
 }
 
-.navbar-nav > li.navigation-user_info-logged_out {
+li.navbar-user_info-logged_out {
   float: right;
-  padding-top: 6px;
-  padding-bottom: 5px;
 
   @media (max-width: $screen-mobile-menu) {
     display: none;
   }
 }
 
-.navigation-logo_image,
-.navigation-logo {
-  height: $logo-height-large;
-  margin-top: $padding-10 / 2;
-
-  @media (max-width: $screen-sm_to_md_custom) {
-    height: $logo-height-small;
-    margin-top: 8px; // vertical align logo on shrink
-  }
-  @media (max-width: $screen-mobile-menu) {
-    display: inline-block;
-    height: $logo-height-large; // mobile height
-    margin-top: $padding-10 / 2;
-  }
-  @media (max-width: $screen-sm) {
-    height: $logo-height-small;
-    margin-top: 8px; // vertical align logo on shrink
-    margin-left: $padding-10;
-  }
+.btn.btn-sm.navbar-sign_up_btn {
+  margin-top: 7px; // vertical align custom sized button
+  margin-right: $padding-default-vertical;
 }
 
 .navigation-menu-list {
   @media screen and (min-width: $screen-sm) {
     height: $nav-height;
   }
-
-  height: 100%;
 }
 
 .navigation-menu-list_item {
@@ -220,7 +221,7 @@ a.navigation-items-link-deals {
 }
 
 // main nav link styling
-.navigation-menu-list .navbar-nav.navbar-links > li > a {
+.navigation-menu-list .navbar-nav > li > a {
   letter-spacing: $letter-spacing-xlarge;
   padding-left: $padding-10;
   padding-right: $padding-10;
@@ -254,11 +255,14 @@ a.navigation-items-link-deals {
   }
 }
 
+.navbar-nav.navbar-right {
+  max-height: $nav-height;
+}
+
 .navbar-nav.navbar-right.navbar-right-icons-container {
   @media (max-width: $screen-mobile-menu) {
     float: right !important;
     margin: auto;
-    max-height: $nav-height;
   }
   @media (max-width: $screen-sm) {
     margin: 3.5px 0;
