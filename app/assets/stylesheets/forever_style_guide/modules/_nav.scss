@@ -303,11 +303,17 @@ a.navigation-items-link-deals {
   }
 }
 
-a.navigation-user_info-logged_out-log_in_link {
+.nav > li > a.navigation-user_info-logged_out-log_in_link {
   text-transform: uppercase;
   color: $color-gray-600;
   text-decoration: none;
   @include transition(color 0.15s ease-in-out);
+
+  &:hover {
+    color: $color-secondary;
+    text-decoration: none;
+    background-color: inherit;
+  }
 
   @media screen and (min-width: $screen-md) {
     margin-left: $padding-small-horizontal;
@@ -319,11 +325,6 @@ a.navigation-user_info-logged_out-log_in_link {
     font-size: $font-size-200;
     letter-spacing: 0;
     margin-left: 0;
-  }
-
-  &:hover {
-    color: $color-secondary;
-    text-decoration: none;
   }
 }
 
