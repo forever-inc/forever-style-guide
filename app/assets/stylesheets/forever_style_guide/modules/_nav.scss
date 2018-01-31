@@ -65,6 +65,10 @@ $cart-count-vertical-position: 9px;
   border-bottom: solid 1px $color-gray-300;
 }
 
+.navbar-right {
+  max-height: $nav-height;
+}
+
 .nav-text_center {
   display: inline-block;
   float: none;
@@ -74,7 +78,6 @@ $cart-count-vertical-position: 9px;
     padding-left: $padding-10 * 2;
     padding-bottom: $padding-10;
     border-bottom: solid 1px $color-gray-300;
-    margin-bottom: $padding-10 * 5 !important; // for scrolling to bottom
   }
 
   @media (max-width: $screen-sm) {
@@ -90,10 +93,6 @@ $cart-count-vertical-position: 9px;
   @media (max-width: $screen-mobile-menu) {
     display: none;
   }
-}
-
-.navbar-right {
-  max-height: $nav-height;
 }
 
 .navigation-logo_image,
@@ -248,8 +247,8 @@ a.navigation-items-link-deals {
   }
 
   @media (max-width: $screen-md_to_lg_custom) {
-    padding-left: 5px;
-    padding-right: 5px;
+    padding-left: 4px;
+    padding-right: 4px;
     letter-spacing: $letter-spacing-medium;
   }
 
@@ -326,6 +325,7 @@ a.navigation-user_info-cart {
   @media (max-width: $screen-mobile-menu) {
     float: right !important;
     margin: auto;
+    max-height: $nav-height;
   }
   @media (max-width: $screen-sm) {
     margin: 3.5px 0;
@@ -333,14 +333,16 @@ a.navigation-user_info-cart {
   }
 }
 
-.navigation-menu-list .navbar-nav > li > a.navigation-user_info-cart,
-.navigation-menu-list .navbar-nav > li > a .navigation-user_info-help_icon {
+.navbar-nav > li > a.navigation-user_info-cart,
+.navbar-nav > li > a.navigation-user_info-help_link {
   @include transition($navigation-link-hover-transition);
-  padding-left: $padding-small-horizontal;
-  padding-right: $padding-small-horizontal;
+  padding-left: $padding-small-horizontal * 2;
+  padding-right: $padding-small-horizontal * 2;
 
   @media (max-width: $screen-lg) {
     font-size: $font-size-400;
+    padding-left: $padding-small-horizontal;
+    padding-right: $padding-small-horizontal;
   }
 
   @media (max-width: $screen-mobile-menu) {
