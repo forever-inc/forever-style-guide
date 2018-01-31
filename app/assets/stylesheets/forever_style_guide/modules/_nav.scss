@@ -248,7 +248,6 @@ a.navigation-items-link-deals {
 }
 
 // right side icon styling
-
 .navbar-right-icons {
   @media (min-width: $screen-lg) {
     margin-top: -4px; // vertically aligns custom sizes icons on desktop
@@ -279,9 +278,9 @@ a.navigation-items-link-deals {
   }
 
   @media (max-width: $screen-mobile-menu) {
-    font-size: 21px;
+    font-size: $font-size-400;
     padding-left: $padding-10;
-    padding-right: 0px;
+    padding-right: 0;
   }
 }
 
@@ -330,41 +329,6 @@ a.navigation-user_info-logged_out-log_in_link {
 .nav-sign_in-sign_up {
   @media (max-width: $screen-xs) {
     float: left !important;
-  }
-}
-
-// TODO - this classname is CRAZY MISLEADING as it is the container for basically the entire nav
-.nav-mobile-menu {
-  &.affix {
-    position: relative; // we only want the affix behavior in the mobile views
-  }
-
-  @media (max-width: $screen-mobile-menu) {
-    position: absolute;
-    right: 0;
-    width: $minimum-application-width;
-    opacity: 0.8;
-    border-left: solid 1px $color-gray-200;
-    background-color: $color-white;
-    transform: translateX(100%);
-    transition: opacity 0.2s ease-in-out, transform 0.3s ease-in-out;
-    z-index: $zindex-tooltip; /* Sit on top */
-
-    &.affix {
-      position: fixed;
-      top: $nav-height;
-      bottom: 0;
-      overflow-y: scroll;
-    }
-  }
-
-  @media (max-width: $screen-xs) {
-    width: 100%;
-  }
-
-  &.in {
-    opacity: 1;
-    transform: translateX(0%);
   }
 }
 
