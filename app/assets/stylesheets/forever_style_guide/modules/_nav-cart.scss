@@ -1,5 +1,7 @@
 
-// cart styling
+// navigation cart styling
+$cart-count-horizontal-position: -11px;
+$cart-count-vertical-position: 9px;
 
 .nav-cart {
   @media (min-width: $screen-md) {
@@ -53,4 +55,20 @@ a.navigation-user_info-cart {
   border-radius: 50px; // To get it looking like a pill when more items are added
 }
 
-// end cart styling
+.navbar-nav > li > a.navigation-user_info-cart {
+  @include transition($navigation-link-hover-transition);
+  padding-left: $padding-small-horizontal * 2;
+  padding-right: $padding-small-horizontal * 2;
+
+  @media (max-width: $screen-lg) {
+    font-size: $font-size-400;
+    padding-left: $padding-small-horizontal;
+    padding-right: $padding-small-horizontal;
+  }
+
+  @media (max-width: $screen-mobile-menu) {
+    font-size: 21px;
+    padding-left: $padding-10;
+    padding-right: 0;
+  }
+}
