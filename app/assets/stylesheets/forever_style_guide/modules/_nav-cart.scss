@@ -1,4 +1,3 @@
-
 // navigation cart styling
 $cart-count-horizontal-position: -11px;
 $cart-count-vertical-position: 9px;
@@ -28,16 +27,18 @@ $cart-count-vertical-position: 9px;
   border-radius: 50px; // To get it looking like a pill when more items are added
 }
 
-a.navigation-user_info-cart {
+.navbar-nav > li > .navigation-user_info-cart {
   &:hover {
-    .navigation-user_info-cart_icon {
-      color: $color-secondary;
-    }
+    background-color: inherit;
   }
 }
 
 .navigation-user_info-cart_icon {
   @include transition($navigation-link-hover-transition);
+  
+  &:hover {
+    color: $color-secondary;
+  }
 }
 
 .navigation-user_info-cart-with_count {

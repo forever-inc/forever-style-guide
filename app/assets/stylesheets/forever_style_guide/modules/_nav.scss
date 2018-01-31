@@ -168,10 +168,9 @@ a.navigation-items-link {
     @include nav_hover_border(vertical)
 
     &:before {
-      left: -20px;
+      left: -21px;
     }
   }
-
 
   &:hover {
     @media screen and (min-width: $screen-sm) {
@@ -221,7 +220,7 @@ a.navigation-items-link-deals {
 }
 
 // main nav link styling
-.navigation-menu-list .navbar-nav > li > a {
+.navigation-menu-list .navbar-nav.navbar-text_center > li > a {
   letter-spacing: $letter-spacing-xlarge;
   padding-left: $padding-10;
   padding-right: $padding-10;
@@ -275,6 +274,10 @@ a.navigation-items-link-deals {
   padding-left: $padding-small-horizontal * 2;
   padding-right: $padding-small-horizontal * 2;
 
+  &:hover {
+    background-color: inherit;
+  }
+
   @media (max-width: $screen-lg) {
     font-size: $font-size-400;
     padding-left: $padding-small-horizontal;
@@ -282,9 +285,7 @@ a.navigation-items-link-deals {
   }
 
   @media (max-width: $screen-mobile-menu) {
-    font-size: $font-size-400;
-    padding-left: $padding-10;
-    padding-right: 0;
+    font-size: 21px;
   }
 }
 
