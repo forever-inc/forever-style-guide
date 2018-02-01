@@ -101,8 +101,6 @@ $nav-icon_bar-width: 22px;
 }
 
 .nav-mobile-menu {
-  padding-bottom: 100%; // TO DO gives menu full height - temp solution
-
   &.affix {
     position: relative; // we only want the affix behavior in the mobile views
   }
