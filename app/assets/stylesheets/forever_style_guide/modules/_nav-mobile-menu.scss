@@ -64,6 +64,12 @@ $nav-icon_bar-width: 22px;
   }
 }
 
+.navigation-user_info-logged_out-mobile > a.btn {
+  @media (max-width: $screen-mobile-menu) {
+    padding-top: 10px; // custom pad req. to override BS to fix btn align bug
+  }
+}
+
 // mobile menu button styling
 
 .nav-mobile-menu-account {
@@ -79,7 +85,7 @@ $nav-icon_bar-width: 22px;
   z-index: 20;
   width: 100%;
   top: 50px;
-  background: white;
+  background-color: $color-white;
 }
 
 .collapse.in {
@@ -87,7 +93,7 @@ $nav-icon_bar-width: 22px;
   z-index: 20;
   width: 100%;
   top: 50px;
-  background: $color-white;
+  background-color: $color-white;
 }
 
 .navbar-collapse {
