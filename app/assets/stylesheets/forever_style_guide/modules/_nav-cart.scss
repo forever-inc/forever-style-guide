@@ -17,7 +17,7 @@ $mobile-icon-size: 21px;
       font-size: $font-size-400;
     }
 
-    @media (max-width: $screen-mobile-menu) {
+    @media (max-width: $grid-float-breakpoint) {
       font-size: $mobile-icon-size;
       padding-left: $nav-horizontal-spacing;
       padding-right: 0;

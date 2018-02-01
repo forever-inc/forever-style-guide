@@ -68,7 +68,7 @@ $deals-icon-vertical-position: -5px;
     height: $logo-height-small;
     margin-top: $sm-logo-vertical-align;
   }
-  @media (max-width: $screen-mobile-menu) {
+  @media (max-width: $grid-float-breakpoint) {
     display: inline-block;
     height: $logo-height-large;
     margin-top: $lg-logo-vertical-align;
@@ -82,7 +82,7 @@ $deals-icon-vertical-position: -5px;
   display: inline-block;
   float: none;
 
-  @media (max-width: $screen-mobile-menu) {
+  @media (max-width: $grid-float-breakpoint) {
     width: 100%;
     padding-left: $nav-horizontal-spacing * 2;
     padding-bottom: $nav-horizontal-spacing;
@@ -97,7 +97,7 @@ $deals-icon-vertical-position: -5px;
 li.navbar-user_info-logged_out {
   float: right;
 
-  @media (max-width: $screen-mobile-menu) {
+  @media (max-width: $grid-float-breakpoint) {
     display: none;
   }
 }
@@ -143,7 +143,7 @@ a.navigation-items-link {
     font-size: $font-size-200;
   }
 
-  @media (max-width: $screen-mobile-menu) {
+  @media (max-width: $grid-float-breakpoint) {
     align-items: center;
     height: 100%;
     @include transition($navigation-link-hover-transition);
@@ -223,13 +223,12 @@ a.navigation-items-link-deals {
 }
 
 .navbar-nav.navbar-right.navbar-right-icons-container {
-  @media (max-width: $screen-mobile-menu) {
+  @media (max-width: $grid-float-breakpoint) {
     float: right !important;
     margin: auto;
   }
   @media (max-width: $screen-sm) {
     margin: 3.5px 0;
-    float: right !important; //aligns mobile menu
   }
 }
 
@@ -242,7 +241,6 @@ a.navigation-items-link-deals {
   &:hover {
     color: $color-secondary;
     text-decoration: none;
-    background-color: inherit;
   }
 
   @media screen and (min-width: $screen-md) {
@@ -269,11 +267,7 @@ a.navigation-items-link-deals {
 }
 
 .navigation-menu-list_item {
-  &:active {
-    background: inherit;
-  }
-
-  @media (max-width: $screen-mobile-menu) {
+  @media (max-width: $grid-float-breakpoint) {
     text-align: left;
   }
 
@@ -286,23 +280,22 @@ a.navigation-items-link-deals {
 .navbar-right-icons-container,
 .nav > li.navbar-right-icons,
 .navbar-mobile-menu {
-  @media (max-width: $screen-mobile-menu) {
+  @media (max-width: $grid-float-breakpoint) {
     display: inline-block;
     float: right; //aligns mobile menu
   }
 }
 
 .navigation-user_info-logged_out-container {
-  @media (max-width: $screen-mobile-menu) {
+  @media (max-width: $grid-float-breakpoint) {
     display: block;
   }
 }
 
-
-// All-purpose bootstrap override
+// All-purpose bootstrap override for background-color of links
 .nav > li > a {
   &:hover,
   &:focus {
-    background-color: inherit;
+    background-color: inherit !important;
   }
 }

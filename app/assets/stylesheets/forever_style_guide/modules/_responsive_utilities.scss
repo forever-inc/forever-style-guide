@@ -57,13 +57,13 @@
 .visible-mobile {
   display: none !important;
 
-  @media (max-width: $screen-mobile-menu) {
-    display: inline-block !important; // required to override shame.scss
+  @media (max-width: $grid-float-breakpoint) {
+    display: inline-block !important;
   }
 }
 
 .hidden-mobile {
-  @media (max-width: $screen-mobile-menu) {
-    display: none !important; // hides duplicated cart and help on collapse
+  @media (max-width: $grid-float-breakpoint) {
+    display: none !important;
   }
 }

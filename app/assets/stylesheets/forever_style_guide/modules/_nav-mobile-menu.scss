@@ -1,71 +1,67 @@
 $nav-icon_bar-width: 22px;
 
-// mobile menu sign in / up button styling
+.navbar-header {
+  @media (max-width: $grid-float-breakpoint) {
+    float: none;
+  }
+}
 
 .navbar-toggle {
+  @media (max-width: $grid-float-breakpoint) {
+    display: block;
+  }
   @media (max-width: $screen-md) {
     margin-right: -10px; // equalize padding between right-side icons
   }
-
   @media (max-width: $screen-xs) {
     margin-left: 5px;
   }
-}
 
-.navbar-toggle .icon-bar {
-  background-color: $color-gray-600; // specificity required to override
-}
-
-// mobile hamburger custom styling for animation
-
-.navbar-toggle.open {
-  &:hover {
-    background: transparent;
-  }
-
+  // begin Hamburger + animation
   .icon-bar {
-    width: $nav-icon_bar-width;
-    transition: all 0.2s;
-  }
-  .top-bar {
-    transform: rotate(45deg);
-    transform-origin: 10% 10%;
-  }
-  .middle-bar {
-    opacity: 0;
-  }
-  .bottom-bar {
-    transform: rotate(-45deg);
-    transform-origin: 10% 90%;
-  }
-}
-
-.navbar-toggle {
-  .top-bar {
-    transform: rotate(0);
+    background-color: $color-gray-600;
     transition: all 0.2s;
   }
   .middle-bar {
     opacity: 1;
-    transition: all 0.2s;
   }
-  .bottom-bar {
-    transform: rotate(0);
-    transition: all 0.2s;
+
+  &.open {
+    .icon-bar {
+      width: $nav-icon_bar-width;
+    }
+    .top-bar {
+      transform: rotate(45deg);
+      transform-origin: 10% 10%;
+    }
+    .middle-bar {
+      opacity: 0;
+    }
+    .bottom-bar {
+      transform: rotate(-45deg);
+      transform-origin: 10% 90%;
+    }
   }
 }
 
-.navbar-nav > li.navigation-user_info-logged_out-mobile {
-  display: none;
 
-  @media (max-width: $screen-mobile-menu) {
-    display: block;
-    padding: 5px 20px;
+.navbar-nav > li {
+  @media (max-width: $grid-float-breakpoint) {
+    float: none;
+  }
+
+  &.navigation-user_info-logged_out-mobile {
+    display: none;
+
+    @media (max-width: $grid-float-breakpoint) {
+      display: block;
+      padding: 5px 20px;
+    }
   }
 }
 
 .navigation-user_info-logged_out-mobile > a.btn {
-  @media (max-width: $screen-mobile-menu) {
+  @media (max-width: $grid-float-breakpoint) {
     padding-top: 10px; // custom pad req. to override BS to fix btn align bug
   }
 }
@@ -79,32 +75,13 @@ $nav-icon_bar-width: 22px;
   background-color: $color-white;
 }
 
-.collapsing {
-  position: absolute !important;
-  z-index: 20;
-  width: 100%;
-  top: 50px;
-  background-color: $color-white;
-}
-
-.collapse.in {
-  position: absolute;
-  z-index: 20;
-  width: 100%;
-  top: 50px;
-  background-color: $color-white;
-}
-
-.navbar-collapse {
-  max-height: none !important;
-}
 
 .nav-mobile-menu {
   &.affix {
     position: relative; // we only want the affix behavior in the mobile views
   }
 
-  @media (max-width: $screen-mobile-menu) {
+  @media (max-width: $grid-float-breakpoint) {
     position: absolute;
     right: 0;
     width: $minimum-application-width;

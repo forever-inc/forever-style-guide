@@ -15,7 +15,7 @@ $avatar-dropdown-max_width: 100px;
     }
   }
 
-  @media (max-width: $screen-mobile-menu) {
+  @media (max-width: $grid-float-breakpoint) {
     display: none; // hides dropdown on mobile
   }
 }
@@ -155,7 +155,7 @@ a.navigation-account_dropdown-list-item  {
       transition: transform 0.15s ease-in-out;
       transform-origin: left;
     }
-    @media (max-width: $screen-mobile-menu) {
+    @media (max-width: $grid-float-breakpoint) {
       left: -20px;
     }
   }
