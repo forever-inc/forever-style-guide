@@ -2,12 +2,6 @@
 $cart-count-horizontal-position: -11px;
 $cart-count-vertical-position: 9px;
 
-.nav-cart {
-  @media (min-width: $screen-md) {
-    padding-top: $padding-10 + 1;
-  }
-}
-
 .navigation-user_info-cart_icon {
   @include transition($navigation-link-hover-transition);
 }

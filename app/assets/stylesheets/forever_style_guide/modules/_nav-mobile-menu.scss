@@ -12,7 +12,7 @@ $nav-icon_bar-width: 22px;
   }
 }
 
-.navbar-toggle .icon-bar {
+.navbar-toggle .navbar-toggle-icon_bar {
   background-color: $color-gray-600; // specificity required to override
 }
 
@@ -23,33 +23,33 @@ $nav-icon_bar-width: 22px;
     background: transparent;
   }
 
-  .icon-bar {
+  .navbar-toggle-icon_bar {
     width: $nav-icon_bar-width;
     transition: all 0.2s;
   }
-  .top-bar {
+  .navbar-toggle-top_bar {
     transform: rotate(45deg);
     transform-origin: 10% 10%;
   }
-  .middle-bar {
+  .navbar-toggle-middle_bar {
     opacity: 0;
   }
-  .bottom-bar {
+  .navbar-toggle-bottom_bar {
     transform: rotate(-45deg);
     transform-origin: 10% 90%;
   }
 }
 
 .navbar-toggle {
-  .top-bar {
+  .navbar-toggle-top_bar {
     transform: rotate(0);
     transition: all 0.2s;
   }
-  .middle-bar {
+  .navbar-toggle-middle_bar {
     opacity: 1;
     transition: all 0.2s;
   }
-  .bottom-bar {
+  .navbar-toggle-bottom_bar {
     transform: rotate(0);
     transition: all 0.2s;
   }
