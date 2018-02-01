@@ -1,5 +1,7 @@
 // desktop authenticated account dropdown styling
 $padding-small-horizontal: 3px;
+$avatar-dropdown-height: 35px;
+$avatar-dropdown-width: 35px;
 
 .navigation-user_info-logged_in {
   height: 100%;
@@ -33,8 +35,8 @@ $padding-small-horizontal: 3px;
 
 .user_info-logged_in-account_dropdown_trigger-avatar {
   border: none;
-  height: 35px;
-  width: 35px;
+  height: $avatar-dropdown-height;
+  width: $avatar-dropdown-width;
   box-shadow: none;
   margin-right: $padding-default-horizontal;
 }
