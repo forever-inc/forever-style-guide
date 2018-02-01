@@ -68,7 +68,7 @@ $cart-count-vertical-position: 9px;
   }
 
   @media (max-width: $screen-mobile-menu) {
-    font-size: 21px;
+    font-size: 21px; // custom px for preffered icon size
     padding-left: $padding-10;
     padding-right: 0;
   }
