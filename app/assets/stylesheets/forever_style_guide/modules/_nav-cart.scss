@@ -1,38 +1,8 @@
-// navigation cart styling
-$cart-count-horizontal-position: -11px;
-$cart-count-vertical-position: 9px;
+$cart-count-horizontal-position: -3px;
+$cart-count-vertical-position: -8px;
 $mobile-icon-size: 21px;
 
-.navigation-user_info-cart-with_count {
-  margin-right: $padding-large-horizontal * 1.5;
-}
-
-.navigation-user_info-cart-count {
-  position: absolute;
-  top: $cart-count-vertical-position;
-  right: $cart-count-horizontal-position;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0 6px 0 7px; // To make it look like a circle with 1 item in cart
-  border-radius: 50px; // To get it looking like a pill when more items are added
-}
-
-.navigation-user_info-cart-with_count {
-  margin-right: $padding-large-horizontal * 1.5;
-}
-
-.navigation-user_info-cart-count {
-  position: absolute;
-  top: $cart-count-vertical-position;
-  right: $cart-count-horizontal-position;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0 7px 0 6px; // To make it look like a circle with 1 item in cart
-  border-radius: 50px; // To get it looking like a pill when more items are added
-}
-
+//style the cart and help icon the same + override bootstrap
 .navbar-nav > li > a {
   &.navigation-user_info-cart,
   &.navigation-user_info-help_link {
@@ -58,4 +28,16 @@ $mobile-icon-size: 21px;
       @include transition($navigation-link-hover-transition);
     }
   }
+}
+
+.navigation-user_info-cart-count {
+  display: block;
+  float: right;
+  text-align: center;
+  margin-top: $cart-count-vertical-position;
+  margin-left: $cart-count-horizontal-position;
+  padding-top: 1px; // shim for alignment
+  width: $mobile-icon-size;
+  height: $mobile-icon-size;
+  border-radius: 50%;
 }

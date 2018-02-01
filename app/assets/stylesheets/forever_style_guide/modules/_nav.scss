@@ -194,13 +194,6 @@ a.navigation-items-link-deals {
   padding-right: $nav-horizontal-spacing;
   max-height: $nav-height;
 
-  &:hover,
-  &:focus,
-  &:active,
-  &:active:focus {
-    background-color: inherit;
-  }
-
   @media (max-width: $screen-lg) {
     padding-left: $nav-horizontal-spacing - 3;
     padding-right: $nav-horizontal-spacing - 3;
@@ -302,5 +295,14 @@ a.navigation-items-link-deals {
 .navigation-user_info-logged_out-container {
   @media (max-width: $screen-mobile-menu) {
     display: block;
+  }
+}
+
+
+// All-purpose bootstrap override
+.nav > li > a {
+  &:hover,
+  &:focus {
+    background-color: inherit;
   }
 }
