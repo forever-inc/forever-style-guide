@@ -1,10 +1,7 @@
 // navigation cart styling
 $cart-count-horizontal-position: -11px;
 $cart-count-vertical-position: 9px;
-
-.navigation-user_info-cart_icon {
-  @include transition($navigation-link-hover-transition);
-}
+$mobile-icon-size: 21px;
 
 .navigation-user_info-cart-with_count {
   margin-right: $padding-large-horizontal * 1.5;
@@ -19,20 +16,6 @@ $cart-count-vertical-position: 9px;
   justify-content: center;
   padding: 0 6px 0 7px; // To make it look like a circle with 1 item in cart
   border-radius: 50px; // To get it looking like a pill when more items are added
-}
-
-.navbar-nav > li > .navigation-user_info-cart {
-  &:hover {
-    background-color: inherit;
-  }
-}
-
-.navigation-user_info-cart_icon {
-  @include transition($navigation-link-hover-transition);
-  
-  &:hover {
-    color: $color-secondary;
-  }
 }
 
 .navigation-user_info-cart-with_count {
@@ -50,20 +33,29 @@ $cart-count-vertical-position: 9px;
   border-radius: 50px; // To get it looking like a pill when more items are added
 }
 
-.navbar-nav > li > a.navigation-user_info-cart {
-  @include transition($navigation-link-hover-transition);
-  padding-left: $padding-small-horizontal * 2;
-  padding-right: $padding-small-horizontal * 2;
+.navbar-nav > li > a {
+  &.navigation-user_info-cart,
+  &.navigation-user_info-help_link {
+    padding-left: $padding-small-horizontal * 2;
+    padding-right: $padding-small-horizontal * 2;
+    background-color: inherit;
+    @include transition($navigation-link-hover-transition);
 
-  @media (max-width: $screen-lg) {
-    font-size: $font-size-400;
-    padding-left: $padding-small-horizontal;
-    padding-right: $padding-small-horizontal;
-  }
+    @media (max-width: $screen-lg) {
+      padding-left: $padding-small-horizontal;
+      padding-right: $padding-small-horizontal;
+      font-size: $font-size-400;
+    }
 
-  @media (max-width: $screen-mobile-menu) {
-    font-size: 21px; // custom px for preffered icon size
-    padding-left: $padding-10;
-    padding-right: 0;
+    @media (max-width: $screen-mobile-menu) {
+      font-size: $mobile-icon-size;
+      padding-left: $nav-horizontal-spacing;
+      padding-right: 0;
+    }
+
+    &:hover .fa {
+      color: $color-secondary;
+      @include transition($navigation-link-hover-transition);
+    }
   }
 }

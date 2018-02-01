@@ -71,7 +71,6 @@ $nav-icon_bar-width: 22px;
 }
 
 // mobile menu button styling
-
 .nav-mobile-menu-account {
   padding-top: 10px;
   padding-left: 25px;
@@ -101,8 +100,6 @@ $nav-icon_bar-width: 22px;
 }
 
 .nav-mobile-menu {
-  padding-bottom: 100%; // TO DO gives menu full height - temp solution
-
   &.affix {
     position: relative; // we only want the affix behavior in the mobile views
   }
@@ -131,6 +128,7 @@ $nav-icon_bar-width: 22px;
 
   &.in {
     opacity: 1;
+    padding-bottom: 100%;
     transform: translateX(0%);
   }
 }
