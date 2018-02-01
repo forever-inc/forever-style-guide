@@ -2,6 +2,7 @@
 $padding-small-horizontal: 3px;
 $avatar-dropdown-height: 35px;
 $avatar-dropdown-width: 35px;
+$avatar-dropdown-max_width: 100px;
 
 .navigation-user_info-logged_in {
   height: 100%;
@@ -47,7 +48,7 @@ $avatar-dropdown-width: 35px;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
-  max-width: 100px;
+  max-width: $avatar-dropdown-max_width;
 }
 
 .user_info-logged_in-account_dropdown_trigger-icon {
@@ -56,7 +57,7 @@ $avatar-dropdown-width: 35px;
 
 .user_info-logged_in-account_dropdown {
   position: absolute;
-  background: $color-white;
+  background-color: $color-white;
   box-shadow: 0 5px 20px rgba(0,0,0,.1);
   top: calc(100% + 20px);
   right: $padding-10;
