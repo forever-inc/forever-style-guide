@@ -163,10 +163,8 @@ a.navigation-account_dropdown-list-item  {
     color: $color-secondary;
 
     &::before {
-      @media screen {
-        transform: scaleX(1);
-        transition: transform 0.25s ease-in-out;
-      }
+      transform: scaleX(1);
+      transition: transform 0.25s ease-in-out;
     }
   }
 }
