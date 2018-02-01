@@ -1,0 +1,185 @@
+// desktop authenticated account dropdown styling
+$padding-small-horizontal: 3px;
+$avatar-dropdown-height: 35px;
+$avatar-dropdown-width: 35px;
+$avatar-dropdown-max_width: 100px;
+
+.navigation-user_info {
+  height: 100%;
+  margin-top: 7px;
+  margin-right: 15px;
+
+  &.open {
+    .navigation-user_info-icon {
+      transform: rotate(180deg);
+    }
+  }
+
+  @media (max-width: $screen-mobile-menu) {
+    display: none; // hides dropdown on mobile
+  }
+}
+
+.navigation-user_info-icon {
+  margin-top: -3px; // magic number to vertical align
+}
+
+.navigation-user_info-avatar { // avatar in nav
+  border: none;
+  height: $avatar-dropdown-height;
+  width: $avatar-dropdown-width;
+  box-shadow: none;
+  margin-right: $padding-default-horizontal;
+}
+
+.navigation-user_info-user_name {
+  margin-right: $padding-small-horizontal;
+  transition: transform 0.15s ease-in-out;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: $avatar-dropdown-max_width;
+}
+
+.navigation-account_dropdown-trigger {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+  height: 100%;
+  overflow-y: hidden;
+  transition: opacity 0.15s ease-in-out;
+
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
+.navigation-account_dropdown-avatar { // avatar inside dropdown
+  margin: 0;
+  box-shadow: 0 5px 15px rgba(0,0,0,.2);
+  border: none;
+  padding: 0;
+  margin-right: $padding-large-horizontal;
+  align-self: flex-start;
+}
+
+.navigation-account_dropdown {
+  position: absolute;
+  background-color: $color-white;
+  box-shadow: 0 5px 20px rgba(0,0,0,.1);
+  top: calc(100% + 20px);
+  right: $padding-10;
+  padding: $padding-large-vertical $padding-large-horizontal;
+  padding-bottom: 0;
+  width: 300px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    right: 10px;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid $color-white;
+  }
+
+  &.open {
+    display: block;
+  }
+}
+
+.navigation-account_dropdown-user_info {
+  display: flex;
+  align-items: center;
+  padding-bottom: $padding-large-vertical;
+  border-bottom: 2px solid $color-gray-200;
+}
+
+.user_info-logged_in-account_dropdown-storage {
+  width: 100%;
+  text-align: left;
+}
+
+.navigation-account_dropdown-storage_bar {
+  height: 10px;
+  border-radius: 50px;
+  background: $color-gray-300;
+  margin-top: $padding-xs-vertical;
+  margin-bottom: $padding-small-vertical;
+  width: 100%;
+}
+
+.navigation-account_dropdown-storage_bar-percent_used {
+  border-radius: 50px;
+  background: $color-forever_services;
+  height: 100%;
+}
+
+.navigation-account_dropdown-list {
+
+  padding-top: $padding-small-vertical;
+  padding-bottom: $padding-small-vertical;
+  margin-bottom: 0;
+  text-align: left;
+
+  &:not(:last-of-type) {
+    border-bottom: 2px solid $color-gray-200;
+  }
+}
+
+a.navigation-account_dropdown-list-item  {
+  color: $color-gray-600;
+  display: block;
+  padding-top: $padding-small-vertical;
+  padding-bottom: $padding-small-vertical;
+  position: relative;
+  margin-left: -$padding-large-horizontal;
+  margin-right: -$padding-large-horizontal;
+  padding-left: $padding-large-horizontal;
+  padding-right: $padding-large-horizontal;
+  text-decoration: none;
+
+  &::before {
+    @media screen and (min-width: $screen-xs) {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 100%;
+      width: 4px;
+      background-color: $color-secondary;
+      content: "";
+      transform: scaleX(0);
+      transition: transform 0.15s ease-in-out;
+      transform-origin: left;
+    }
+    @media (max-width: $screen-mobile-menu) {
+      left: -20px;
+    }
+  }
+
+  &:hover {
+    color: $color-secondary;
+
+    @media screen and (min-width: $screen-xs) {
+      color: $color-secondary;
+    }
+
+    &::before {
+      @media screen and (min-width: $screen-xs) {
+        transform: scaleX(1);
+        transition: transform 0.25s ease-in-out;
+      }
+    }
+  }
+}
+
+.navigation-account_dropdown-list-item-sign_out {
+  color: $color-danger !important;
+}
+
+.navigation-account_dropdown-list-item:not(:last-of-type) {
+  border-bottom: none;
+}

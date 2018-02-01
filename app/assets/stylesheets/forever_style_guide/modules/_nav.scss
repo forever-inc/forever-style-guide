@@ -1,22 +1,36 @@
-$navigation-height: 55px;
-$navigation-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-$navigation-link-hover-transition: color 0.15s ease-in-out;
-$letter-spacing-large: 0.5px;
+// main nav
+$navigation-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+$nav-height: 50px;
 
-$hamburger-patty-height: 2px;
-$hamburger-patty-width: 20px;
-$hamburger-bun-gap: 6px;
+// logo
+$lg-logo-vertical-align: 5px;
+$sm-logo-vertical-align: 8px;
 
-$logo-height-small: 20px;
-$logo-height-large: 28px;
+// custom padding
+$padding-10: 10px;
 
+// animation
 $hover-border-size: 4px;
+$navigation-link-hover-transition: color 0.15s ease-in-out;
+
+// custom breakpoints to accomodate tight
+// spacing and extended desktop view
+$screen-md_to_lg_custom: 1113px;
+$screen-sm_to_md_custom: 1018px;
+
+// logo resize for responsiveness
+$logo-height-large: 28px;
+$logo-height-small: 18px;
+
+$letter-spacing-xlarge: 0.6px;
+$letter-spacing-large: 0.5px;
+$letter-spacing-medium: 0.4px;
+$padding-small-horizontal: 3px;
 
 $deals-icon-horizontal-position: -3px;
 $deals-icon-vertical-position: -5px;
 
-$cart-count-horizontal-position: -15px;
-$cart-count-vertical-position: -5px;
+// animation on hover
 
 @mixin nav_hover_border($orientation) {
   &::before {
@@ -47,109 +61,68 @@ $cart-count-vertical-position: -5px;
 }
 
 .navigation {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: $navigation-height;
-  padding: 0 $padding-large-horizontal;
   box-shadow: $navigation-shadow;
+  border-bottom: solid 1px $color-gray-300;
 }
 
-.navigation-toggle_button {
-  height: 30px;
-  padding: 0;
-  font-family: inherit;
-  font-size: inherit;
-  background: transparent;
-  border: none;
-  line-height: 0;
+.navbar-logo_image,
+.navbar-logo {
+  height: $logo-height-large;
+  margin-top: $lg-logo-vertical-align;
 
-  @media screen and (min-width: $screen-md) {
+  @media (max-width: $screen-sm_to_md_custom) {
+    height: $logo-height-small;
+    margin-top: $sm-logo-vertical-align;
+  }
+  @media (max-width: $screen-mobile-menu) {
+    display: inline-block;
+    height: $logo-height-large;
+    margin-top: $lg-logo-vertical-align;
+  }
+  @media (max-width: $screen-sm) {
+    margin-left: $padding-10;
+  }
+}
+
+.navbar-text_center {
+  display: inline-block;
+  float: none;
+
+  @media (max-width: $screen-mobile-menu) {
+    width: 100%;
+    padding-left: $padding-10 * 2;
+    padding-bottom: $padding-10;
+    border-bottom: solid 1px $color-gray-300;
+  }
+
+  @media (max-width: $screen-sm) {
+    padding-left: $padding-10;
+  }
+}
+
+li.navbar-user_info-logged_out {
+  float: right;
+
+  @media (max-width: $screen-mobile-menu) {
     display: none;
   }
 }
 
-.navigation-toggle_button-hamburger {
-  position: relative;
-  display: inline-block;
-  width: $hamburger-patty-width;
-  height: $hamburger-patty-height;
-  background: $color-gray-500;
-
-  &::before,
-  &::after {
-    position: absolute;
-    top: -$hamburger-bun-gap;
-    left: 0;
-    display: inline-block;
-    width: 100%;
-    height: 100%;
-    background: $color-gray-500;
-    content: "";
-  }
-
-  &::after {
-    top: $hamburger-bun-gap;
-  }
-}
-
-.navigation-logo_image,
-.navigation-logo {
-  height: $logo-height-small;
-
-  @media screen and (min-width: $screen-lg) {
-    height: $logo-height-large;
-  }
-}
-
-a.navigation-cart_icon {
-  color: $color-gray-500;
-}
-
-.navigation-menu {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  display: none;
-  width: 100%;
-  background-color: $color-gray-200;
-  padding: $padding-large-vertical $padding-large-horizontal;
-  z-index: -1;
-  box-shadow: $navigation-shadow;
-
-  @media screen and (min-width: $screen-md) {
-    position: static;
-    top: 0;
-    display: flex;
-    align-items: center;
-    width: auto;
-    height: 100%;
-    padding: 0;
-    background: transparent;
-    box-shadow: none;
-    z-index: 100;
-  }
+.btn.btn-sm.navbar-sign_up_btn {
+  margin-top: 7px; // vertical align custom sized button
+  margin-right: $padding-default-vertical;
+  font-size: $font-size-200;
 }
 
 .navigation-menu-list {
-  height: 100%;
-  overflow: hidden;
+  @media screen and (min-width: $screen-sm) {
+    height: $nav-height;
+  }
 }
 
 .navigation-menu-list_item {
-  @media screen and (min-width: $screen-md) {
-    position: relative;
-    display: inline-flex;
-    align-items: center;
-    height: 100%;
-  }
-
   &:not(:last-of-type) {
     border-bottom: 1px solid $color-gray-300;
-
-    @media screen and (min-width: $screen-md) {
-      border-bottom: 0;
-    }
   }
 }
 
@@ -165,23 +138,14 @@ a.navigation-cart_icon {
 }
 
 a.navigation-items-link {
-  display: block;
   padding-top: $padding-default-vertical;
   padding-bottom: $padding-default-vertical;
   color: $color-gray-600;
   text-transform: uppercase;
 
-  @media screen and (min-width: $screen-md) {
-    position: relative;
-    display: inline-flex;
+  @media screen and (min-width: $screen-sm) {
     align-items: center;
     height: 100%;
-    padding-top: 0;
-    padding-bottom: 0;
-    padding-left: 4px;
-    padding-right: 4px;
-    font-size: $font-size-100;
-    letter-spacing: $letter-spacing-large;
     text-decoration: none;
     @include transition($navigation-link-hover-transition);
     @include nav_hover_border(horizontal)
@@ -189,121 +153,55 @@ a.navigation-items-link {
 
   @media screen and (min-width: $screen-lg) {
     font-size: $font-size-200;
-    padding-left: $padding-default-horizontal;
-    padding-right: $padding-default-horizontal;
   }
 
-  &:hover {
-    @media screen and (min-width: $screen-md) {
-      color: $color-secondary;
-    }
-  }
-}
-
-a.navigation-items-link-deals {
-  position: relative;
-  color: $color-warning;
-
-  &::after {
-    position: relative;
-    top: $deals-icon-vertical-position;
-    right: $deals-icon-horizontal-position;
-    font-family: 'FontAwesome';
-    font-size: $font-size-000;
-    content: "\f005"; // Star
-  }
-}
-
-.navigation-user_info {
-  display: flex;
-  align-items: center;
-  height: 100%;
-}
-
-.navigation-user_info-help {
-  @media screen and (min-width: $screen-md) {
-    height: 100%;
-  }
-
-  @media screen and (min-width: $screen-lg) {
-    font-size: $font-size-200;
-  }
-}
-
-.navigation-user_info-help_link {
-  @media screen and (min-width: $screen-md) {
-    display: flex;
+  @media (max-width: $screen-mobile-menu) {
     align-items: center;
     height: 100%;
-    padding-left: $padding-small-horizontal;
-    padding-right: $padding-small-horizontal;
     text-decoration: none;
-  }
-
-  &:hover {
-    text-decoration: none;
-
-    .navigation-user_info-help_icon {
-      color: $color-secondary;
-    }
-  }
-}
-
-a.navigation-items-link-deals {
-  position: relative;
-  color: $color-warning;
-
-  &::after {
-    position: relative;
-    top: $deals-icon-vertical-position;
-    right: $deals-icon-horizontal-position;
-    font-family: 'FontAwesome';
-    font-size: $font-size-000;
-    content: "\f005"; // Star
-  }
-}
-
-.navigation-user_info {
-  display: flex;
-  align-items: center;
-  height: 100%;
-}
-
-.navigation-user_info-help {
-  @media screen and (min-width: $screen-md) {
-    height: 100%;
-  }
-
-  @media screen and (min-width: $screen-lg) {
-    font-size: $font-size-200;
-  }
-}
-
-.navigation-user_info-help_icon {
-  @include transition($navigation-link-hover-transition);
-}
-
-.navigation-user_info-logged_out {
-  display: flex;
-  align-items: center;
-}
-
-.navigation-user_info-cart {
-  @media screen and (min-width: $screen-md) {
-    position: relative;
-    padding-right: $padding-small-horizontal;
-    padding-left: $padding-small-horizontal;
     @include transition($navigation-link-hover-transition);
+    @include nav_hover_border(vertical)
+
+    &:before {
+      left: -21px;
+    }
+  }
+
+  &:hover {
+    @media screen and (min-width: $screen-sm) {
+      color: $color-secondary;
+    }
+  }
+}
+
+a.navigation-items-link-deals {
+  position: relative;
+  color: $color-warning;
+
+  &::after {
+    position: relative;
+    top: $deals-icon-vertical-position;
+    right: $deals-icon-horizontal-position;
+    font-family: 'FontAwesome';
+    font-size: $font-size-000;
+    content: "\f005"; // Star
+  }
+
+  @media (max-width: $screen-md_to_lg) {
+    &::after {
+    font-size: $font-size-100 - 1;
+    }
+  }
+
+  @media (max-width: $screen-sm) {
+    &::after {
+    content: none;
+    }
   }
 }
 
 .navigation-user_info-help_link {
   @media screen and (min-width: $screen-md) {
-    display: flex;
-    align-items: center;
-    height: 100%;
-    padding-left: $padding-small-horizontal;
-    padding-right: $padding-small-horizontal;
     text-decoration: none;
   }
 
@@ -316,30 +214,101 @@ a.navigation-items-link-deals {
   }
 }
 
-.navigation-user_info-cart_icon {
+// main nav link styling
+.navigation-menu-list .navbar-nav.navbar-text_center > li > a {
+  letter-spacing: $letter-spacing-xlarge;
+  padding-left: $padding-10;
+  padding-right: $padding-10;
+  max-height: $nav-height;
+
+  &:hover {
+    background-color: inherit;  
+  }
+
+  @media (max-width: $screen-lg) {
+    padding-left: $padding-10 - 3;
+    padding-right: $padding-10 - 3;
+    font-size: $font-size-200;
+  }
+
+  @media (max-width: $screen-md_to_lg_custom) {
+    padding-left: 4px;
+    padding-right: 4px;
+    letter-spacing: $letter-spacing-medium;
+  }
+
+  @media (max-width: $screen-md_to_lg) {
+    font-size: $font-size-200 - 1;
+  }
+}
+
+// right side icon styling
+.navbar-right-icons {
+  @media (min-width: $screen-lg) {
+    margin-top: -4px; // vertically aligns custom sizes icons on desktop
+  }
+}
+
+.navbar-nav.navbar-right {
+  max-height: $nav-height;
+}
+
+.navbar-nav.navbar-right.navbar-right-icons-container {
+  @media (max-width: $screen-mobile-menu) {
+    float: right !important;
+    margin: auto;
+  }
+  @media (max-width: $screen-sm) {
+    margin: 3.5px 0;
+    float: right !important; //aligns mobile menu
+  }
+}
+
+.navbar-nav > li > a.navigation-user_info-help_link {
   @include transition($navigation-link-hover-transition);
+  padding-left: $padding-small-horizontal * 2;
+  padding-right: $padding-small-horizontal * 2;
+
+  &:hover {
+    background-color: inherit;
+  }
+
+  @media (max-width: $screen-lg) {
+    font-size: $font-size-400;
+    padding-left: $padding-small-horizontal;
+    padding-right: $padding-small-horizontal;
+  }
+
+  @media (max-width: $screen-mobile-menu) {
+    font-size: 21px; // custom font size required for icon sizing
+  }
 }
 
-.navigation-user_info-cart-with_count {
-  margin-right: $padding-large-horizontal * 1.5;
+.navigation-user_info-help_link {
+  @media screen and (min-width: $screen-md) {
+    text-decoration: none;
+  }
+
+  &:hover {
+    text-decoration: none;
+
+    .navigation-user_info-help_icon {
+      color: $color-secondary;
+    }
+  }
 }
 
-.navigation-user_info-cart-count {
-  position: absolute;
-  top: $cart-count-vertical-position;
-  right: $cart-count-horizontal-position;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0 7px 0 6px; // To make it look like a circle with 1 item in cart
-  border-radius: 50px; // To get it looking like a pill when more items are added
-}
-
-a.navigation-user_info-logged_out-log_in_link {
+.nav > li > a.navigation-user_info-logged_out-log_in_link {
   text-transform: uppercase;
   color: $color-gray-600;
   text-decoration: none;
   @include transition(color 0.15s ease-in-out);
+
+  &:hover {
+    color: $color-secondary;
+    text-decoration: none;
+    background-color: inherit;
+  }
 
   @media screen and (min-width: $screen-md) {
     margin-left: $padding-small-horizontal;
@@ -350,267 +319,46 @@ a.navigation-user_info-logged_out-log_in_link {
   @media screen and (min-width: $screen-lg) {
     font-size: $font-size-200;
     letter-spacing: 0;
-  }
-
-  &:hover {
-    color: $color-secondary;
-    text-decoration: none;
+    margin-left: 0;
   }
 }
 
-// Overriding button styles to make it look good with smaller font size
-.navigation-user_info-logged_out-sign_up_btn {
-  margin-left: $padding-small-horizontal;
-  height: auto !important;
+.navbar-nav > li.navigation-user_info-logged_out.navigation-log_in {
+  padding-top: 0;
+} 
 
-  @media screen and (min-width: $screen-md) {
-    font-size: $font-size-100 !important;
-    letter-spacing: $letter-spacing-large;
-  }
-
-  @media screen and (min-width: $screen-lg) {
-    margin-left: $padding-large-horizontal;
-    font-size: $font-size-200 !important;
+.nav-sign_in-sign_up {
+  @media (max-width: $screen-xs) {
+    float: left !important;
   }
 }
 
-.navigation-user_info-logged_in {
-  height: 100%;
-  margin-left: $padding-default-horizontal;
-}
-
-.user_info-logged_in-account_dropdown_trigger {
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-  position: relative;
-  height: 100%;
-  overflow-y: hidden;
-  transition: opacity 0.15s ease-in-out;
-
-  &:hover {
-    opacity: 0.7;
+.navigation-menu-list_item {
+  &:active {
+    background: inherit;
   }
 
-  &.open {
-    .user_info-logged_in-account_dropdown_trigger-icon {
-      transform: rotate(180deg);
-    }
+  @media (max-width: $screen-mobile-menu) {
+    text-align: left;
+  }
+
+  @media (max-width: $screen-sm) {
+    min-width: 300px;
+    margin-left: $padding-10;
   }
 }
 
-.user_info-logged_in-account_dropdown_trigger-avatar {
-  border: none;
-  height: 35px;
-  width: 35px;
-  box-shadow: none;
-  margin-right: $padding-default-horizontal;
-}
-
-.user_info-logged_in-account_dropdown_trigger-name {
-  margin-right: $padding-small-horizontal;
-  transition: transform 0.15s ease-in-out;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
-  max-width: 100px;
-}
-
-.user_info-logged_in-account_dropdown_trigger-icon {
-  margin-top: -3px;
-}
-
-.user_info-logged_in-account_dropdown {
-  display: none;
-  position: absolute;
-  background: $color-white;
-  box-shadow: 0 5px 20px rgba(0,0,0,.1);
-  top: calc(100% + 20px);
-  right: 10px;
-  padding: $padding-large-vertical $padding-large-horizontal;
-  padding-bottom: 0;
-  width: 300px;
-
-  &::before {
-    content: "";
-    position: absolute;
-    top: -10px;
-    right: 10px;
-    width: 0;
-    height: 0;
-    border-left: 10px solid transparent;
-    border-right: 10px solid transparent;
-
-    border-bottom: 10px solid $color-white;
+.navbar-right-icons-container,
+.nav > li.navbar-right-icons,
+.navbar-mobile-menu {
+  @media (max-width: $screen-mobile-menu) {
+    display: inline-block;
+    float: right; //aligns mobile menu
   }
+}
 
-  &.open {
+.navigation-user_info-logged_out-container {
+  @media (max-width: $screen-mobile-menu) {
     display: block;
   }
-}
-
-.user_info-logged_in-account_dropdown-overview {
-  display: flex;
-  align-items: center;
-  padding-bottom: $padding-large-vertical;
-  border-bottom: 2px solid $color-gray-200;
-}
-
-.user_info-logged_in-account_dropdown-avatar {
-  margin: 0;
-  box-shadow: 0 5px 15px rgba(0,0,0,.2);
-  border: none;
-  padding: 0;
-  margin-right: $padding-large-horizontal;
-  align-self: flex-start;
-}
-
-.user_info-logged_in-account_dropdown-storage {
-  width: 100%;
-}
-
-.user_info-logged_in-account_dropdown-storage_percentage {
-  height: 10px;
-  border-radius: 50px;
-  background: $color-gray-300;
-  margin-top: $padding-xs-vertical;
-  margin-bottom: $padding-small-vertical;
-  width: 100%;
-}
-
-.user_info-logged_in-account_dropdown-storage_percentage-inner {
-  border-radius: 50px;
-  background: $color-forever_services;
-  height: 100%;
-}
-
-.user_info-logged_in-account_dropdown-menu-list {
-
-  padding-top: $padding-small-vertical;
-  padding-bottom: $padding-small-vertical;
-  margin-bottom: 0;
-
-  &:not(:last-of-type) {
-    border-bottom: 2px solid $color-gray-200;
-  }
-}
-
-a.user_info-logged_in-account_dropdown-menu-list-link  {
-  color: $color-gray-600;
-  display: block;
-  padding-top: $padding-small-vertical;
-  padding-bottom: $padding-small-vertical;
-  position: relative;
-  margin-left: -$padding-large-horizontal;
-  margin-right: -$padding-large-horizontal;
-  padding-left: $padding-large-horizontal;
-  padding-right: $padding-large-horizontal;
-  text-decoration: none;
-
-  &::before {
-    @media screen and (min-width: $screen-md) {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      height: 100%;
-      width: 4px;
-      background-color: $color-secondary;
-      content: "";
-      transform: scaleX(0);
-      transition: transform 0.15s ease-in-out;
-      transform-origin: left;
-    }
-  }
-
-  &:hover {
-    color: $color-black;
-    @media screen and (min-width: $screen-md) {
-      color: $color-black;
-    }
-
-    &::before {
-      @media screen and (min-width: $screen-md) {
-        transform: scaleX(1);
-        transition: transform 0.25s ease-in-out;
-      }
-    }
-  }
-}
-
-a.navigation-user_info-cart {
-  &:hover {
-    .navigation-user_info-cart_icon {
-      color: $color-secondary;
-    }
-  }
-}
-
-.navigation-user_info-cart_icon {
-  @include transition($navigation-link-hover-transition);
-}
-
-.navigation-user_info-cart-with_count {
-  margin-right: $padding-large-horizontal * 1.5;
-}
-
-.navigation-user_info-cart-count {
-  position: absolute;
-  top: $cart-count-vertical-position;
-  right: $cart-count-horizontal-position;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0 7px 0 6px; // To make it look like a circle with 1 item in cart
-  border-radius: 50px; // To get it looking like a pill when more items are added
-}
-
-a.navigation-user_info-logged_out-log_in_link {
-  text-transform: uppercase;
-  color: $color-gray-600;
-  text-decoration: none;
-  @include transition(color 0.15s ease-in-out);
-
-  @media screen and (min-width: $screen-md) {
-    margin-left: $padding-small-horizontal;
-    font-size: $font-size-100;
-    letter-spacing: $letter-spacing-large;
-  }
-
-  @media screen and (min-width: $screen-lg) {
-    font-size: $font-size-200;
-    letter-spacing: 0;
-  }
-
-  &:hover {
-    color: $color-secondary;
-    text-decoration: none;
-  }
-}
-
-// Overriding button styles to make it look good with smaller font size
-.navigation-user_info-logged_out-sign_up_btn {
-  margin-left: $padding-small-horizontal;
-  height: auto !important;
-
-  @media screen and (min-width: $screen-md) {
-    font-size: $font-size-100 !important;
-    letter-spacing: $letter-spacing-large;
-  }
-
-  @media screen and (min-width: $screen-lg) {
-    margin-left: $padding-large-horizontal;
-    font-size: $font-size-200 !important;
-  }
-}
-
-.user_info-logged_in-account_dropdown-menu-list-sign_out {
-  color: $color-danger !important;
-}
-
-.letter-spacing-small {
-  letter-spacing: 0.3px;
-}
-
-.letter-spacing-large {
-  letter-spacing: 0.5px;
 }
