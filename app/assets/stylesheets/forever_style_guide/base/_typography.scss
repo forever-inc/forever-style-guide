@@ -101,6 +101,12 @@ a {
   }
 }
 
+.ellipsis_overflow {  // from mars_ui
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 /*
   mixin for multiline ellipsization
   http://hackingui.com/front-end/a-pure-css-solution-for-multiline-text-truncation/

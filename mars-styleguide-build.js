@@ -2,6 +2,8 @@ const path = require('path');
 const fs = require('fs');
 const cp = require('child_process');
 const sass = require('node-sass');
+const postcss = require('postcss');
+const autoprefixer = require('autoprefixer');
 const copy = require('copy');
 
 class MarsStyleGuideBuild {
@@ -9,7 +11,6 @@ class MarsStyleGuideBuild {
   constructor() {
     this.outputFolder = path.resolve(__dirname, './dist');
     this.srcFolder = path.resolve(__dirname, './app/assets/');
-    
   }
 
   log(...args) {
@@ -77,8 +78,9 @@ class MarsStyleGuideBuild {
     this.log('sass: starting render');
     const result = sass.render(options, (err, result) => {
       if (!err) {
+        const processedOutput = postcss([autoprefixer({browsers: ['last 2 versions']})]).process(result.css);
         cp.execSync(`mkdir -p ${path.resolve(__dirname, this.outputFolder, 'css')}`);
-        fs.writeFileSync(outputFile, result.css);
+        fs.writeFileSync(outputFile, processedOutput.css);
         fs.writeFileSync(path.resolve(__dirname, this.outputFolder, 'css/styleguide.css.map'), result.map);
         this.log('sass: css rendered successfully');
       } else {
