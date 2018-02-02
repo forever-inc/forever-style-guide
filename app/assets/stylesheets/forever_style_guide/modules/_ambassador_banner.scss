@@ -9,10 +9,6 @@ $banner-text-color: transparentize($color-white, 0.2);
 
 $ambassador-avatar-size: 130px;
 
-$behind-primary-nav: $zindex-navbar-fixed - 1;
-$in-front-of-primary-nav: $zindex-navbar-fixed + 2;
-$in-front-of-primary-nav-but-behind-banner: $zindex-navbar-fixed + 1;
-
 $banner-hover-effect-speed: 0.15s;
 $chevron-rotate-effect-speed: 0.25s;
 $dropdown-entrance-and-exit-effect-speed: 0.22s;
@@ -28,7 +24,8 @@ a.ambassador_banner {
 }
 
 .ambassador_banner-text {
-  position: relative;
+  position: static;
+  height: $banner-text-height;
   padding-top: $banner-vertical-padding;
   padding-bottom: $banner-vertical-padding;
   color: $banner-text-color;
@@ -42,10 +39,10 @@ a.ambassador_banner {
 
   &::after {
     position: absolute;
+    height: 32px;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
     background-color: $color-black;
     opacity: 0;
     @include transition(opacity $banner-hover-effect-speed ease-in-out);
@@ -93,6 +90,7 @@ a.ambassador_banner {
   position: absolute;
   top: $banner-text-height;
   left: 0;
+  visibility: hidden;
   width: 100%;
   transform: translateY(-100%);
   @include transition(all $dropdown-entrance-and-exit-effect-speed ease-in);
@@ -100,8 +98,10 @@ a.ambassador_banner {
   pointer-events: none;
 
   &.open {
+    opacity: 1;
     transform: translateY(0%);
     pointer-events: auto;
+    visibility: visible;
   }
 }
 

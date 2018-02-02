@@ -28,15 +28,8 @@ $deals-icon-vertical-position: -5px;
     position: absolute;
     bottom: 0;
     left: 0;
-
-    @if $orientation == horizontal {
-      height: $hover-border-size;
-      width: 100%;
-    } @else if $orientation == vertical {
-      height: 100%;
-      width: $hover-border-size;
-    }
-
+    height: $hover-border-size;
+    width: 100%;
     background-color: $color-secondary;
     content: "";
     transform: scaleX(0);
@@ -145,26 +138,16 @@ a.navigation-items-link {
   text-transform: uppercase;
   text-decoration: none;
 
-  @media screen and (min-width: $screen-sm) {
+  @media screen and (min-width: $grid-float-breakpoint) {
     align-items: center;
     height: 100%;
     @include transition($navigation-link-hover-transition);
-    @include nav_hover_border(horizontal)
-  }
-
-  @media screen and (min-width: $screen-lg) {
-    font-size: $font-size-200;
+    @include nav_hover_border(horizontal);
   }
 
   @media (max-width: $grid-float-breakpoint) {
     align-items: center;
     height: 100%;
-    @include transition($navigation-link-hover-transition);
-    @include nav_hover_border(vertical)
-
-    &:before {
-      left: -21px;
-    }
   }
 
   &:hover {

@@ -63,3 +63,10 @@ $zindex-navbar-fixed:      1030;
 $zindex-navbar-menu:       1020;
 $zindex-modal-background:  1040;
 $zindex-modal:             1050;
+
+
+/*  Fixed Nav Implementation Specific Z-indexing */
+$behind-primary-nav: $zindex-navbar-fixed - 1;
+$in-front-of-primary-nav-but-behind-banner: $zindex-navbar-fixed + 1;
+$in-front-of-primary-nav: $zindex-navbar-fixed + 2;
+$in-front-of-primary-and-banner: $zindex-navbar-fixed + 3;
