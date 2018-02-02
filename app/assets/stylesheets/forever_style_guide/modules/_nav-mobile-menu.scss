@@ -74,7 +74,6 @@ $nav-icon_bar-width: 22px;
   background-color: $color-white;
 }
 
-
 .nav-mobile-menu {
   &.affix {
     position: relative; // we only want the affix behavior in the mobile views
@@ -97,6 +96,10 @@ $nav-icon_bar-width: 22px;
       overflow-y: scroll;
       overflow-y: overlay; // better for webkit browsers
       overflow-x: hidden;
+    }
+
+    &:not(.affix) {
+      padding-bottom: 100%;
     }
   }
 
