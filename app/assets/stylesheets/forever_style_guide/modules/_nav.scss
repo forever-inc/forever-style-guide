@@ -5,6 +5,8 @@ $lg-logo-vertical-align: 5px;
 $sm-logo-vertical-align: 8px;
 $logo-height-large: 28px;
 $logo-height-small: 18px;
+$logo-max-width: 175px;
+$logo-max-width-small: 113px;
 
 $nav-horizontal-spacing: 10px;
 $nav-horizontal-spacing-small: 3px;
@@ -62,15 +64,18 @@ $deals-icon-vertical-position: -5px;
 .navbar-logo_image,
 .navbar-logo {
   height: $logo-height-large;
+  max-width: $logo-max-width;
   margin-top: $lg-logo-vertical-align;
 
   @media (max-width: $screen-md_to_lg-plus) {
     height: $logo-height-small;
+    max-width: $logo-max-width-small;
     margin-top: $sm-logo-vertical-align;
   }
   @media (max-width: $grid-float-breakpoint) {
     display: inline-block;
     height: $logo-height-large;
+    max-width: $logo-max-width;
     margin-top: $lg-logo-vertical-align;
   }
   @media (max-width: $screen-sm) {
