@@ -1,37 +1,26 @@
-// main nav
 $navigation-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
 $nav-height: 50px;
 
-// logo
 $lg-logo-vertical-align: 5px;
 $sm-logo-vertical-align: 8px;
-
-// custom padding
-$padding-10: 10px;
-
-// animation
-$hover-border-size: 4px;
-$navigation-link-hover-transition: color 0.15s ease-in-out;
-
-// custom breakpoints to accomodate tight
-// spacing and extended desktop view
-$screen-md_to_lg_custom: 1113px;
-$screen-sm_to_md_custom: 1018px;
-
-// logo resize for responsiveness
 $logo-height-large: 28px;
 $logo-height-small: 18px;
 
+$nav-horizontal-spacing: 10px;
+$nav-horizontal-spacing-small: 3px;
+
+$hover-border-size: 4px;
+$navigation-link-hover-transition: color 0.15s ease-in-out;
+
 $letter-spacing-xlarge: 0.6px;
 $letter-spacing-large: 0.5px;
-$letter-spacing-medium: 0.4px;
-$padding-small-horizontal: 3px;
+$letter-spacing-medium: 0;
+$font-size-150: 13px;
 
 $deals-icon-horizontal-position: -3px;
 $deals-icon-vertical-position: -5px;
 
 // animation on hover
-
 @mixin nav_hover_border($orientation) {
   &::before {
     position: absolute;
@@ -55,14 +44,19 @@ $deals-icon-vertical-position: -5px;
   &:hover {
     &::before {
       transform: scaleX(1);
-      @include transition(transform 0.25s cubic-bezier(.7,-0.07,.41,1.3));
     }
   }
 }
 
 .navigation {
   box-shadow: $navigation-shadow;
-  border-bottom: solid 1px $color-gray-300;
+
+  .container-fluid > .navbar-header {
+    @media (min-width: $grid-float-breakpoint) and (max-width: $screen-md) {
+      margin-right: -10px;
+      margin-left: -10px;
+    }
+  }
 }
 
 .navbar-logo_image,
@@ -70,17 +64,39 @@ $deals-icon-vertical-position: -5px;
   height: $logo-height-large;
   margin-top: $lg-logo-vertical-align;
 
-  @media (max-width: $screen-sm_to_md_custom) {
+  @media (max-width: $screen-md_to_lg-plus) {
     height: $logo-height-small;
     margin-top: $sm-logo-vertical-align;
   }
-  @media (max-width: $screen-mobile-menu) {
+  @media (max-width: $grid-float-breakpoint) {
     display: inline-block;
     height: $logo-height-large;
     margin-top: $lg-logo-vertical-align;
   }
   @media (max-width: $screen-sm) {
-    margin-left: $padding-10;
+    margin-left: $nav-horizontal-spacing;
+  }
+}
+
+// main product nav links
+.navigation-menu-list {
+  height: $nav-height; // TODO - this hsould probably be the $header-height variable, pending further confirmation
+
+  .navbar-nav.navbar-text_center > li > a {
+    letter-spacing: $letter-spacing-xlarge;
+    padding-left: $nav-horizontal-spacing;
+    padding-right: $nav-horizontal-spacing;
+    max-height: $nav-height;
+
+    @media (max-width: $screen-lg-plus) {
+      padding-left: 4px;
+      padding-right: 4px;
+      letter-spacing: $letter-spacing-medium;
+    }
+
+    @media (min-width: $grid-float-breakpoint) and (max-width: $screen-md_to_lg-plus) {
+      font-size: $font-size-150;
+    }
   }
 }
 
@@ -88,41 +104,20 @@ $deals-icon-vertical-position: -5px;
   display: inline-block;
   float: none;
 
-  @media (max-width: $screen-mobile-menu) {
+  @media (min-width: $grid-float-breakpoint) and (max-width: $screen-md) {
+    margin-right: -10px;
+    margin-left: -10px;
+  }
+
+  @media (max-width: $grid-float-breakpoint) {
     width: 100%;
-    padding-left: $padding-10 * 2;
-    padding-bottom: $padding-10;
+    padding-left: $nav-horizontal-spacing * 2;
+    padding-bottom: $nav-horizontal-spacing;
     border-bottom: solid 1px $color-gray-300;
   }
 
   @media (max-width: $screen-sm) {
-    padding-left: $padding-10;
-  }
-}
-
-li.navbar-user_info-logged_out {
-  float: right;
-
-  @media (max-width: $screen-mobile-menu) {
-    display: none;
-  }
-}
-
-.btn.btn-sm.navbar-sign_up_btn {
-  margin-top: 7px; // vertical align custom sized button
-  margin-right: $padding-default-vertical;
-  font-size: $font-size-200;
-}
-
-.navigation-menu-list {
-  @media screen and (min-width: $screen-sm) {
-    height: $nav-height;
-  }
-}
-
-.navigation-menu-list_item {
-  &:not(:last-of-type) {
-    border-bottom: 1px solid $color-gray-300;
+    padding-left: $nav-horizontal-spacing;
   }
 }
 
@@ -142,11 +137,11 @@ a.navigation-items-link {
   padding-bottom: $padding-default-vertical;
   color: $color-gray-600;
   text-transform: uppercase;
+  text-decoration: none;
 
   @media screen and (min-width: $screen-sm) {
     align-items: center;
     height: 100%;
-    text-decoration: none;
     @include transition($navigation-link-hover-transition);
     @include nav_hover_border(horizontal)
   }
@@ -155,10 +150,9 @@ a.navigation-items-link {
     font-size: $font-size-200;
   }
 
-  @media (max-width: $screen-mobile-menu) {
+  @media (max-width: $grid-float-breakpoint) {
     align-items: center;
     height: 100%;
-    text-decoration: none;
     @include transition($navigation-link-hover-transition);
     @include nav_hover_border(vertical)
 
@@ -185,113 +179,31 @@ a.navigation-items-link-deals {
     content: "\f005"; // Star
   }
 
-  @media (max-width: $screen-md_to_lg) {
+  @media (max-width: $screen-lg-plus) {
     &::after {
-    font-size: $font-size-100 - 1;
+      font-size: $font-size-100 - 1;
     }
   }
 
   @media (max-width: $screen-sm) {
     &::after {
-    content: none;
+      content: none;
     }
   }
 }
 
-.navigation-user_info-help_link {
-  @media screen and (min-width: $screen-md) {
-    text-decoration: none;
-  }
+.navbar-nav {
+  &.navbar-right {
+    max-height: $nav-height;
 
-  &:hover {
-    text-decoration: none;
-
-    .navigation-user_info-help_icon {
-      color: $color-secondary;
-    }
-  }
-}
-
-// main nav link styling
-.navigation-menu-list .navbar-nav.navbar-text_center > li > a {
-  letter-spacing: $letter-spacing-xlarge;
-  padding-left: $padding-10;
-  padding-right: $padding-10;
-  max-height: $nav-height;
-
-  &:hover {
-    background-color: inherit;  
-  }
-
-  @media (max-width: $screen-lg) {
-    padding-left: $padding-10 - 3;
-    padding-right: $padding-10 - 3;
-    font-size: $font-size-200;
-  }
-
-  @media (max-width: $screen-md_to_lg_custom) {
-    padding-left: 4px;
-    padding-right: 4px;
-    letter-spacing: $letter-spacing-medium;
-  }
-
-  @media (max-width: $screen-md_to_lg) {
-    font-size: $font-size-200 - 1;
-  }
-}
-
-// right side icon styling
-.navbar-right-icons {
-  @media (min-width: $screen-lg) {
-    margin-top: -4px; // vertically aligns custom sizes icons on desktop
-  }
-}
-
-.navbar-nav.navbar-right {
-  max-height: $nav-height;
-}
-
-.navbar-nav.navbar-right.navbar-right-icons-container {
-  @media (max-width: $screen-mobile-menu) {
-    float: right !important;
-    margin: auto;
-  }
-  @media (max-width: $screen-sm) {
-    margin: 3.5px 0;
-    float: right !important; //aligns mobile menu
-  }
-}
-
-.navbar-nav > li > a.navigation-user_info-help_link {
-  @include transition($navigation-link-hover-transition);
-  padding-left: $padding-small-horizontal * 2;
-  padding-right: $padding-small-horizontal * 2;
-
-  &:hover {
-    background-color: inherit;
-  }
-
-  @media (max-width: $screen-lg) {
-    font-size: $font-size-400;
-    padding-left: $padding-small-horizontal;
-    padding-right: $padding-small-horizontal;
-  }
-
-  @media (max-width: $screen-mobile-menu) {
-    font-size: 21px; // custom font size required for icon sizing
-  }
-}
-
-.navigation-user_info-help_link {
-  @media screen and (min-width: $screen-md) {
-    text-decoration: none;
-  }
-
-  &:hover {
-    text-decoration: none;
-
-    .navigation-user_info-help_icon {
-      color: $color-secondary;
+    &.navbar-right-icons-container {
+      @media (max-width: $grid-float-breakpoint) {
+        float: right !important;
+        margin: auto;
+      }
+      @media (max-width: $screen-sm) {
+        margin: 3.5px 0;
+      }
     }
   }
 }
@@ -305,12 +217,16 @@ a.navigation-items-link-deals {
   &:hover {
     color: $color-secondary;
     text-decoration: none;
-    background-color: inherit;
+  }
+
+  @media (min-width: $grid-float-breakpoint) and (max-width: $screen-md_to_lg-plus) {
+    padding-left: 5px;
+    padding-right: 8px; // visual alignment
+    font-size: $font-size-100;
   }
 
   @media screen and (min-width: $screen-md) {
-    margin-left: $padding-small-horizontal;
-    font-size: $font-size-100;
+    margin-left: $nav-horizontal-spacing-small;
     letter-spacing: $letter-spacing-large;
   }
 
@@ -321,10 +237,6 @@ a.navigation-items-link-deals {
   }
 }
 
-.navbar-nav > li.navigation-user_info-logged_out.navigation-log_in {
-  padding-top: 0;
-} 
-
 .nav-sign_in-sign_up {
   @media (max-width: $screen-xs) {
     float: left !important;
@@ -332,31 +244,54 @@ a.navigation-items-link-deals {
 }
 
 .navigation-menu-list_item {
-  &:active {
-    background: inherit;
-  }
-
-  @media (max-width: $screen-mobile-menu) {
+  @media (max-width: $grid-float-breakpoint) {
     text-align: left;
   }
 
   @media (max-width: $screen-sm) {
     min-width: 300px;
-    margin-left: $padding-10;
+    margin-left: $nav-horizontal-spacing;
   }
 }
 
 .navbar-right-icons-container,
 .nav > li.navbar-right-icons,
 .navbar-mobile-menu {
-  @media (max-width: $screen-mobile-menu) {
+  @media (max-width: $grid-float-breakpoint) {
     display: inline-block;
     float: right; //aligns mobile menu
   }
 }
 
+.navbar-nav > li.navigation-user_info-logged_out.navigation-log_in {
+  padding-top: 0;
+} 
+
 .navigation-user_info-logged_out-container {
-  @media (max-width: $screen-mobile-menu) {
+  @media (max-width: $grid-float-breakpoint) {
     display: block;
+  }
+}
+
+li.navbar-user_info-logged_out {
+  float: right;
+
+  @media (max-width: $grid-float-breakpoint) {
+    display: none;
+  }
+}
+
+.btn.btn-sm.navbar-sign_up_btn {
+  margin-top: 7px; // vertical align custom sized button
+  margin-right: $padding-default-vertical;
+  font-size: $font-size-200;
+}
+
+
+// All-purpose bootstrap override for background-color of links that are not styled as buttons
+.nav > li > a:not(.btn) {
+  &:hover,
+  &:focus {
+    background-color: inherit !important;
   }
 }
