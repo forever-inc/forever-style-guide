@@ -74,7 +74,6 @@ $nav-icon_bar-width: 22px;
   background-color: $color-white;
 }
 
-
 .nav-mobile-menu {
   &.affix {
     position: relative; // we only want the affix behavior in the mobile views
@@ -87,7 +86,7 @@ $nav-icon_bar-width: 22px;
     border-left: solid 1px $color-gray-200;
     background-color: $color-white;
     transform: translateX(100%);
-    transition: opacity 0.2s ease-in-out, transform 0.3s ease-in-out;
+    transition: opacity 0.2s ease-in-out, transform 0.3s ease-in-out, width 0.2s ease-in-out;
     z-index: $zindex-tooltip; /* Sit on top */
 
     &.affix {
@@ -95,6 +94,18 @@ $nav-icon_bar-width: 22px;
       top: $nav-height;
       bottom: 0;
       overflow-y: scroll;
+      overflow-y: overlay; // better for webkit browsers
+      overflow-x: hidden;
+    }
+
+    &:not(.affix) {
+      padding-bottom: 100%;
+    }
+  }
+
+  @media (min-width: $screen-xs) and (max-width: $grid-float-breakpoint) {
+    &.affix.in {
+      direction: rtl; // puts scrollbar to lefthand side
     }
   }
 
@@ -103,9 +114,7 @@ $nav-icon_bar-width: 22px;
   }
 
   &.in {
-    padding-bottom: 100%; // gives off-canvas menu full height
     opacity: 1;
-    padding-bottom: 100%;
     transform: translateX(0%);
   }
 }

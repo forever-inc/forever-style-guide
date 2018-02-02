@@ -106,6 +106,7 @@ $padding-small-horizontal: 3px;
 }
 
 .navigation-account_dropdown-user_info {
+  direction: ltr; // corrects orientation against nav-mobile-menu scrollbar behavior
   display: flex;
   align-items: center;
   padding-bottom: $padding-large-vertical;
