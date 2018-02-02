@@ -168,9 +168,7 @@ a.navigation-items-link {
   }
 
   &:hover {
-    @media screen and (min-width: $screen-sm) {
-      color: $color-secondary;
-    }
+    color: $color-secondary;
   }
 }
 
