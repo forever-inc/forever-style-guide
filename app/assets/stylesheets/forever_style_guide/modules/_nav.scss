@@ -186,6 +186,10 @@ a.navigation-items-link-deals {
     max-height: $nav-height;
     direction: ltr; // corrects orientation against nav-mobile-menu scrollbar behavior ** mainly fixing safari here
 
+    @media (max-width: $grid-float-breakpoint) {
+      float: none !important; // overriding bootstrap so non-signed in btn-blocks display as expected TODO: further refactor markup to avoid this
+    }
+
     &.navbar-right-icons-container {
       @media (max-width: $grid-float-breakpoint) {
         float: right !important;
