@@ -1,10 +1,12 @@
 // desktop authenticated account dropdown styling
-$padding-small-horizontal: 3px;
 $avatar-height: 35px;
 $avatar-width: 35px;
 $user_info-max_width: 100px;
 $user_info-max_width-sm: 70px;
 $user_info-max_width-xs: 50px;
+
+$mobile-menu-active-bar-offset: -11px;
+$padding-small-horizontal: 3px;
 
 .navigation-user_info {
   height: 100%;
@@ -142,16 +144,16 @@ $user_info-max_width-xs: 50px;
   }
 }
 
-a.navigation-account_dropdown-list-item  {
-  color: $color-gray-600;
+a.navigation-account_dropdown-list-item {
   display: block;
+  position: relative;
   padding-top: $padding-small-vertical;
   padding-bottom: $padding-small-vertical;
-  position: relative;
   margin-left: -$padding-large-horizontal;
   margin-right: -$padding-large-horizontal;
   padding-left: $padding-large-horizontal;
   padding-right: $padding-large-horizontal;
+  color: $color-gray-600;
   text-decoration: none;
 
   &::before {
@@ -167,23 +169,17 @@ a.navigation-account_dropdown-list-item  {
       transition: transform 0.15s ease-in-out;
       transform-origin: left;
     }
-    @media (max-width: $grid-float-breakpoint) {
-      left: -20px;
+    @media screen and (max-width: $grid-float-breakpoint) {
+      left: $mobile-menu-active-bar-offset;
     }
   }
 
   &:hover {
     color: $color-secondary;
 
-    @media screen and (min-width: $screen-xs) {
-      color: $color-secondary;
-    }
-
     &::before {
-      @media screen and (min-width: $screen-xs) {
-        transform: scaleX(1);
-        transition: transform 0.25s ease-in-out;
-      }
+      transform: scaleX(1);
+      transition: transform 0.25s ease-in-out;
     }
   }
 }

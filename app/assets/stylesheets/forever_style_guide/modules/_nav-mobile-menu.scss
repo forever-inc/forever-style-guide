@@ -103,6 +103,7 @@ $nav-icon_bar-width: 22px;
   }
 
   &.in {
+    padding-bottom: 100%; // gives off-canvas menu full height
     opacity: 1;
     padding-bottom: 100%;
     transform: translateX(0%);
