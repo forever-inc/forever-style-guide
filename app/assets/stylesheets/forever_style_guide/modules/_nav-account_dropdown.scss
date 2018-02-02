@@ -3,6 +3,7 @@ $padding-small-horizontal: 3px;
 $avatar-dropdown-height: 35px;
 $avatar-dropdown-width: 35px;
 $avatar-dropdown-max_width: 100px;
+$mobile-menu-active-bar-offset: -11px;
 
 .navigation-user_info {
   height: 100%;
@@ -143,19 +144,19 @@ a.navigation-account_dropdown-list-item  {
   text-decoration: none;
 
   &::before {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      height: 100%;
-      width: 4px;
-      background-color: $color-secondary;
-      content: "";
-      transform: scaleX(0);
-      transition: transform 0.15s ease-in-out;
-      transform-origin: left;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    width: 4px;
+    background-color: $color-secondary;
+    content: "";
+    transform: scaleX(0);
+    transition: transform 0.15s ease-in-out;
+    transform-origin: left;
 
     @media (max-width: $screen-mobile-menu) {
-      left: -11px;
+      left: $mobile-menu-active-bar-offset;
     }
   }
 
