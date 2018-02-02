@@ -1,3 +1,4 @@
+$icon-to-text-alignment: -3px;
 $cart-count-horizontal-position: -3px;
 $cart-count-vertical-position: -8px;
 $mobile-icon-size: 21px;
@@ -6,26 +7,21 @@ $mobile-icon-size: 21px;
 .navbar-nav > li > a {
   &.navigation-user_info-cart,
   &.navigation-user_info-help_link {
+    margin-top: $icon-to-text-alignment;
     padding-left: $padding-small-horizontal * 2;
     padding-right: $padding-small-horizontal * 2;
     background-color: inherit;
     @include transition($navigation-link-hover-transition);
 
-    @media (max-width: $screen-lg) {
-      padding-left: $padding-small-horizontal;
-      padding-right: $padding-small-horizontal;
-      font-size: $font-size-400;
-    }
-
-    @media (max-width: $grid-float-breakpoint) {
-      font-size: $mobile-icon-size;
-      padding-left: $nav-horizontal-spacing;
-      padding-right: 0;
-    }
-
     &:hover .fa {
       color: $color-secondary;
       @include transition($navigation-link-hover-transition);
+    }
+
+    &.navigation-user_info-cart-with_count {
+      @media (max-width: $grid-float-breakpoint) {
+        padding-right: 0;
+      }
     }
   }
 }
