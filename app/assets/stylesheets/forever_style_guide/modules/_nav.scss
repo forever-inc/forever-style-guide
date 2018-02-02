@@ -288,8 +288,8 @@ li.navbar-user_info-logged_out {
 }
 
 
-// All-purpose bootstrap override for background-color of links
-.nav > li > a {
+// All-purpose bootstrap override for background-color of links that are not styled as buttons
+.nav > li > a:not(.btn) {
   &:hover,
   &:focus {
     background-color: inherit !important;
