@@ -51,3 +51,19 @@
     float: left !important;
   }
 }
+
+
+// Utilities for new nav w/ custom breakpoint
+.visible-mobile {
+  display: none !important;
+
+  @media (max-width: $grid-float-breakpoint) {
+    display: inline-block !important;
+  }
+}
+
+.hidden-mobile {
+  @media (max-width: $grid-float-breakpoint) {
+    display: none !important;
+  }
+}

@@ -70,34 +70,8 @@ module ForeverStyleGuide
     end
 
     #active state nav
-    def is_active?
-      return true if @pages.any?{ |matches| [controller.controller_name, controller.action_name].include? matches }
-    end
-
-    def is_in_product_dropdown?
-      @pages = [
-        'guaranteed_storage', 'add_storage', 'services', 'historian', 'downloads',
-        'artisan', 'digital_art', 'digital_art_library', 'forever_print_library' 'p2p',
-        'forever_print', 'print', 'prints', 'print_quality',
-        'gifts', 'shipping', 'bulk_orders', 'returns',
-        'products'
-      ]
-      is_active?
-    end
-
-    def is_in_my_forever_dropdown?
-      @pages = ['guarantee', 'about', 'team', 'beliefs']
-      is_active?
-    end
-
-    def is_in_community_dropdown?
-      @pages = ['opportunity', 'find_ambassadors', 'commitments', 'retreats']
-      is_active?
-    end
-
-    def is_in_deals_dropdown?
-      @pages = ['promotions', 'deals']
-      is_active?
+    def is_active?(page_name, product_types = nil)
+      controller.controller_name.include?(page_name) || controller.action_name.include?(page_name) || (@product != nil && product_types !=nil && product_types.split(',').include?(@product.product_type) && !@product.name.include?('Historian'))
     end
 
     #User storage methds as seen in web app user.rb

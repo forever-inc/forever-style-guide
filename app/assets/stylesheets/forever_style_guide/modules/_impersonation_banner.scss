@@ -1,25 +1,34 @@
+$in-front-of-primary-nav-and-ambassador-banner: $zindex-navbar-fixed + 3;
+$impersonation-banner-height: 20px;
+
 .impersonation_banner {
-  overflow: hidden;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: $impersonation-banner-height;
   min-width: $minimum-application-width;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  font-size: $font-size-200;
+  padding-top: 1px; // shimming visual alignment
+  font-size: $font-size-100;
+  z-index: $in-front-of-primary-nav-and-ambassador-banner;
+}
+
+.has-impersonation_banner {
+  .ambassador_banner,
+  #header-is_fixed.affix {
+    margin-top: $impersonation-banner-height;
+  }
 }
 
 .btn.btn-cancel_impersonation {
   height: auto;
+  float: right;
+  margin-top: -3px; //account for fa-close icon throwing off vertical alignment
   color: $color-white;
-  font-size: $font-size-200;
+  font-size: $font-size-100;
   text-decoration: none;
 
-  @media (min-width: $screen-sm-min) {
-    float: right;
-    margin-top: -3px; //account for fa-close icon throwing off vertical alignment
-  }
-  @media (max-width: $screen-xs-max) {
-    display: block;
-    clear: both;
-    text-align: left;
+  .fa {
+    font-size: $font-size-100;
   }
 
   &:link,
