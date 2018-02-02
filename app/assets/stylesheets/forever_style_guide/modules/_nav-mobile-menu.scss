@@ -1,4 +1,6 @@
 $nav-icon_bar-width: 22px;
+$close-icon-offset: -5px;
+$mobile-menu-close-btn-height: 40px;
 
 .navbar-header {
   @media (max-width: $grid-float-breakpoint) {
@@ -17,16 +19,26 @@ $nav-icon_bar-width: 22px;
     margin-left: 5px;
   }
 
+  &:hover {
+    .icon-bar {
+      background-color: $color-secondary;
+    }
+  }
+
   // begin Hamburger + animation
   .icon-bar {
     background-color: $color-gray-600;
     transition: all 0.2s;
+    width: $nav-icon_bar-width;
   }
 
-  &.open {
-    .icon-bar {
-      width: $nav-icon_bar-width;
-    }
+  .icon-bar-back_slash {
+    margin-bottom: $close-icon-offset;
+    transform: rotate(-45deg);
+  }
+
+  .icon-bar-forward_slash {
+    transform: rotate(45deg);
   }
 }
 
@@ -49,15 +61,6 @@ $nav-icon_bar-width: 22px;
   @media (max-width: $grid-float-breakpoint) {
     padding-top: 10px; // custom pad req. to override BS to fix btn align bug
   }
-}
-
-// mobile menu button styling
-.nav-mobile-menu-account {
-  padding-top: 10px;
-  padding-left: 25px;
-  padding-right: 25px;
-  width: 100%;
-  background-color: $color-white;
 }
 
 .nav-mobile-menu {
@@ -85,5 +88,27 @@ $nav-icon_bar-width: 22px;
     @media (max-width: $screen-xs) {
       width: 100%;
     }
+
+    .nav-mobile-menu-close {
+      display: block;
+    }
   }
+}
+
+.nav-mobile-menu-close {
+  display: none;
+  height: $mobile-menu-close-btn-height;
+
+  .navbar-toggle {
+    margin-right: 0;
+  }
+}
+
+// mobile menu button styling
+.nav-mobile-menu-account {
+  padding-top: 10px;
+  padding-left: 25px;
+  padding-right: 25px;
+  width: 100%;
+  background-color: $color-white;
 }
