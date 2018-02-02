@@ -75,22 +75,22 @@ $mobile-menu-close-btn-height: 40px;
     transition: opacity 0.2s ease-in-out, transform 0.3s ease-in-out;
     z-index: $zindex-tooltip; /* Sit on top */
     overflow: hidden;
-  }
 
-  &.in {
-    opacity: 1;
-    transform: translateX(0%);
-    direction: rtl; // puts scrollbar to lefthand side
-    overflow-y: scroll;
-    width: $minimum-application-width;
-    z-index: $in-front-of-primary-and-banner;
+    &.in {
+      opacity: 1;
+      transform: translateX(0%);
+      direction: rtl; // puts scrollbar to lefthand side
+      overflow-y: scroll;
+      width: $minimum-application-width;
+      z-index: $in-front-of-primary-and-banner;
 
-    @media (max-width: $screen-xs) {
-      width: 100%;
-    }
+      @media (max-width: $screen-xs) {
+        width: 100%;
+      }
 
-    .nav-mobile-menu-close {
-      display: block;
+      .nav-mobile-menu-close {
+        display: block;
+      }
     }
   }
 }
