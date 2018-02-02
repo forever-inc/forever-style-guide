@@ -110,6 +110,7 @@ $deals-icon-vertical-position: -5px;
   }
 
   @media (max-width: $grid-float-breakpoint) {
+    direction: ltr; // corrects orientation against nav-mobile-menu scrollbar behavior ** mainly fixing safari here
     width: 100%;
     padding-left: $nav-horizontal-spacing * 2;
     padding-bottom: $nav-horizontal-spacing;
@@ -195,6 +196,7 @@ a.navigation-items-link-deals {
 .navbar-nav {
   &.navbar-right {
     max-height: $nav-height;
+    direction: ltr; // corrects orientation against nav-mobile-menu scrollbar behavior ** mainly fixing safari here
 
     &.navbar-right-icons-container {
       @media (max-width: $grid-float-breakpoint) {
