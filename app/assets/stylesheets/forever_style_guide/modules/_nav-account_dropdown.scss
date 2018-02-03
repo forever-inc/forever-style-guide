@@ -68,7 +68,7 @@ $padding-small-horizontal: 3px;
   overflow-y: hidden;
   transition: opacity 0.15s ease-in-out;
 
-  @media(max-width: $grid-float-breakpoint) {
+  @media (max-width: $grid-float-breakpoint) {
     display: none;
   }
 

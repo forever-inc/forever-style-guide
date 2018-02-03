@@ -42,8 +42,7 @@ $color-nav-hover: color('secondary');
   border-#{$direction}: $header_active_border_height solid $color;
 }
 
-
-// Shared nav mixin for offcanvas mobile nav or desktop user ingo
+// Shared nav mixin for offcanvas mobile nav and desktop user info
 @mixin off-canvas-style {
   position: fixed;
   top: 0;
