@@ -194,7 +194,6 @@ a.navigation-items-link-deals {
     @media (max-width: $grid-float-breakpoint) {
       float: none !important; // overriding bootstrap so non-signed in btn-blocks display as expected TODO: further refactor markup to avoid this
     }
-
     &.navbar-right-icons-container {
       @media (max-width: $grid-float-breakpoint) {
         float: right !important;
