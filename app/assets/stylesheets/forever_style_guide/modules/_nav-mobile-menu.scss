@@ -82,7 +82,7 @@ $mobile-menu-close-btn-height: 40px;
       direction: rtl; // puts scrollbar to lefthand side
       overflow-y: scroll;
       width: $minimum-application-width;
-      z-index: $in-front-of-primary-and-banner;
+      z-index: $in-front-of-primary-and-banner-and-impersonation;
 
       @media (max-width: $screen-xs) {
         width: 100%;

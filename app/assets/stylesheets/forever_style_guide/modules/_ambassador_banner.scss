@@ -1,4 +1,3 @@
-$banner-text-height: 32px;
 $banner-vertical-padding: 6px;
 $banner-text-max-width: 70%;
 
@@ -25,7 +24,7 @@ a.ambassador_banner {
 
 .ambassador_banner-text {
   position: static;
-  height: $banner-text-height;
+  height: $ambassador-banner-text-height;
   padding-top: $banner-vertical-padding;
   padding-bottom: $banner-vertical-padding;
   color: $banner-text-color;
@@ -39,7 +38,7 @@ a.ambassador_banner {
 
   &::after {
     position: absolute;
-    height: 32px;
+    height: $ambassador-banner-text-height;
     top: 0;
     left: 0;
     width: 100%;
@@ -88,7 +87,7 @@ a.ambassador_banner {
 
 .ambassador_banner-dropdown_container {
   position: absolute;
-  top: $banner-text-height;
+  top: $ambassador-banner-text-height;
   left: 0;
   visibility: hidden;
   width: 100%;
