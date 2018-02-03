@@ -118,10 +118,6 @@ $deals-icon-vertical-position: -5px;
     order: 3; // .nav-mobile-menu-close: 1, .navbar-user_info: 2, .navbar-text_center: 3
     border-bottom: solid 1px $color-gray-300;
   }
-
-  @media (max-width: $screen-sm) {
-    padding-left: $nav-horizontal-spacing;
-  }
 }
 
 .navigation-menu-list_item-active {
@@ -186,6 +182,11 @@ a.navigation-items-link-deals {
 }
 
 .navbar-nav {
+
+  @media (max-width: $grid-float-breakpoint) {
+    margin: 0; // overriding bootstrap so non-signed in btn-blocks display as expected TODO: further refactor markup to avoid this
+  }
+
   &.navbar-right {
     max-height: $nav-height;
     direction: ltr; // corrects orientation against nav-mobile-menu scrollbar behavior ** mainly fixing safari here
@@ -213,7 +214,6 @@ a.navigation-items-link-deals {
 
   @media (max-width: $screen-sm) {
     min-width: 300px;
-    margin-left: $nav-horizontal-spacing;
   }
 }
 
