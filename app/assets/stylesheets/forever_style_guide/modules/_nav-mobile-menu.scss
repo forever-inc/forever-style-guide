@@ -67,18 +67,7 @@ $mobile-menu-close-btn-height: 40px;
       }
     }
 
-    .btn.btn-login {
-      @media(min-width: $grid-float-breakpoint) {
-        color: $color-gray-600;
-        background-color: transparent;
-        border-color: white;
-
-        &:hover {
-          color: $color-secondary;
-        }
-      }
-    }
-
+    //customize both buttons to account for overall nav spacing
     a.btn {
       @media (min-width: $grid-float-breakpoint) {
         margin-top: 3px;
@@ -91,6 +80,29 @@ $mobile-menu-close-btn-height: 40px;
       @media (max-width: $grid-float-breakpoint) {
         display: block;
         padding-top: 10px;
+      }
+    }
+
+    .btn.btn-login {
+      @media(min-width: $grid-float-breakpoint) {
+        color: $color-gray-600;
+        background-color: transparent;
+        border-color: white;
+
+        &:hover,
+        &:focus,
+        &:active,
+        &:active:focus {
+          color: $color-secondary;
+          box-shadow: none;
+        }
+      }
+    }
+
+    .btn.btn-signup {
+      &:focus {
+        background-color: color('primary-dark');
+        border-color: color('primary-dark');
       }
     }
   }
