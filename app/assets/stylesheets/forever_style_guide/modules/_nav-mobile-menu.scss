@@ -1,4 +1,6 @@
 $nav-icon_bar-width: 22px;
+$close-icon-offset: -5px;
+$mobile-menu-close-btn-height: 40px;
 
 .navbar-header {
   @media (max-width: $grid-float-breakpoint) {
@@ -17,30 +19,26 @@ $nav-icon_bar-width: 22px;
     margin-left: 5px;
   }
 
+  &:hover {
+    .icon-bar {
+      background-color: $color-secondary;
+    }
+  }
+
   // begin Hamburger + animation
   .icon-bar {
     background-color: $color-gray-600;
     transition: all 0.2s;
-  }
-  .middle-bar {
-    opacity: 1;
+    width: $nav-icon_bar-width;
   }
 
-  &.open {
-    .icon-bar {
-      width: $nav-icon_bar-width;
-    }
-    .top-bar {
-      transform: rotate(45deg);
-      transform-origin: 10% 10%;
-    }
-    .middle-bar {
-      opacity: 0;
-    }
-    .bottom-bar {
-      transform: rotate(-45deg);
-      transform-origin: 10% 90%;
-    }
+  .icon-bar-back_slash {
+    margin-bottom: $close-icon-offset;
+    transform: rotate(-45deg);
+  }
+
+  .icon-bar-forward_slash {
+    transform: rotate(45deg);
   }
 }
 
@@ -65,6 +63,47 @@ $nav-icon_bar-width: 22px;
   }
 }
 
+.nav-mobile-menu {
+  @media (max-width: $grid-float-breakpoint) {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 0;
+    background-color: $color-white;
+    transform: translateX(100%);
+    transition: opacity 0.2s ease-in-out, transform 0.3s ease-in-out; // TODO - animate out
+    z-index: $zindex-tooltip;
+    overflow: hidden;
+
+    &.in {
+      opacity: 1;
+      transform: translateX(0%);
+      direction: rtl; // puts scrollbar to lefthand side
+      overflow-y: scroll;
+      width: $minimum-application-width;
+      z-index: $in-front-of-primary-and-banner-and-impersonation;
+
+      @media (max-width: $screen-xs) {
+        width: 100%;
+      }
+
+      .nav-mobile-menu-close {
+        display: block;
+      }
+    }
+  }
+}
+
+.nav-mobile-menu-close {
+  display: none;
+  height: $mobile-menu-close-btn-height;
+
+  .navbar-toggle {
+    margin-right: 0;
+  }
+}
+
 // mobile menu button styling
 .nav-mobile-menu-account {
   padding-top: 10px;
@@ -72,49 +111,4 @@ $nav-icon_bar-width: 22px;
   padding-right: 25px;
   width: 100%;
   background-color: $color-white;
-}
-
-.nav-mobile-menu {
-  &.affix {
-    position: relative; // we only want the affix behavior in the mobile views
-  }
-
-  @media (max-width: $grid-float-breakpoint) {
-    position: absolute;
-    right: 0;
-    width: $minimum-application-width;
-    border-left: solid 1px $color-gray-200;
-    background-color: $color-white;
-    transform: translateX(100%);
-    transition: opacity 0.2s ease-in-out, transform 0.3s ease-in-out, width 0.2s ease-in-out;
-    z-index: $zindex-tooltip; /* Sit on top */
-
-    &.affix {
-      position: fixed;
-      top: $nav-height;
-      bottom: 0;
-      overflow-y: scroll;
-      overflow-y: overlay; // better for webkit browsers
-      overflow-x: hidden;
-    }
-
-    &:not(.affix) {
-      padding-bottom: 100%;
-    }
-  }
-
-  @media (min-width: $screen-xs) and (max-width: $grid-float-breakpoint) {
-    &.affix.in {
-      direction: rtl; // puts scrollbar to lefthand side
-    }
-  }
-
-  @media (max-width: $screen-xs) {
-    width: 100%;
-  }
-
-  &.in {
-    opacity: 1;
-    transform: translateX(0%);
-  }
 }

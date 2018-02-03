@@ -1,6 +1,3 @@
-$in-front-of-primary-nav-and-ambassador-banner: $zindex-navbar-fixed + 3;
-$impersonation-banner-height: 20px;
-
 .impersonation_banner {
   position: fixed;
   top: 0;
@@ -9,13 +6,24 @@ $impersonation-banner-height: 20px;
   min-width: $minimum-application-width;
   padding-top: 1px; // shimming visual alignment
   font-size: $font-size-100;
-  z-index: $in-front-of-primary-nav-and-ambassador-banner;
+  z-index: $in-front-of-primary-and-banner;
 }
 
 .has-impersonation_banner {
   .ambassador_banner,
   #header-is_fixed.affix {
     margin-top: $impersonation-banner-height;
+  }
+  .ambassador_banner-dropdown_container.open {
+    top: $ambassador-banner-text-height + $impersonation-banner-height;
+  }
+  .ambassador_banner-text:after {
+    top: $impersonation-banner-height;
+  }
+  .nav-mobile-menu.in {
+    @media(max-width: $grid-float-breakpoint) {
+      top: $impersonation-banner-height;
+    }
   }
 }
 
