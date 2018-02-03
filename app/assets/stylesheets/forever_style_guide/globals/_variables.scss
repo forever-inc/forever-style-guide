@@ -21,7 +21,7 @@ $padding-xs-horizontal:       6px !global;
 
 /* =variables
 ---------------------------------------------------------------------------- */
-$header-height: 55px;
+$header-height: 55px; // TODO - where is this being used?
 
 $footer-height: 486px;
 $footer-height-sm: 365px;
@@ -63,3 +63,14 @@ $zindex-navbar-fixed:      1030;
 $zindex-navbar-menu:       1020;
 $zindex-modal-background:  1040;
 $zindex-modal:             1050;
+
+
+/*  Fixed (New) Nav Implementation  */
+$behind-primary-nav: $zindex-navbar-fixed - 1;
+$in-front-of-primary-nav-but-behind-banner: $zindex-navbar-fixed + 1;
+$in-front-of-primary-nav: $zindex-navbar-fixed + 2;
+$in-front-of-primary-and-banner: $zindex-navbar-fixed + 3;
+$in-front-of-primary-and-banner-and-impersonation: $zindex-navbar-fixed + 4;
+
+$ambassador-banner-text-height: 32px;
+$impersonation-banner-height: 20px;

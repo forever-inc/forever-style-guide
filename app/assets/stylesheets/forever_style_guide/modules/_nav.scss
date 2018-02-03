@@ -28,15 +28,8 @@ $deals-icon-vertical-position: -5px;
     position: absolute;
     bottom: 0;
     left: 0;
-
-    @if $orientation == horizontal {
-      height: $hover-border-size;
-      width: 100%;
-    } @else if $orientation == vertical {
-      height: 100%;
-      width: $hover-border-size;
-    }
-
+    height: $hover-border-size;
+    width: 100%;
     background-color: $color-secondary;
     content: "";
     transform: scaleX(0);
@@ -99,6 +92,10 @@ $deals-icon-vertical-position: -5px;
       letter-spacing: $letter-spacing-medium;
     }
 
+    @media (max-width: $grid-float-breakpoint) {
+      padding-left: 0;
+    }
+
     @media (min-width: $grid-float-breakpoint) and (max-width: $screen-md_to_lg-plus) {
       font-size: $font-size-150;
     }
@@ -117,13 +114,9 @@ $deals-icon-vertical-position: -5px;
   @media (max-width: $grid-float-breakpoint) {
     direction: ltr; // corrects orientation against nav-mobile-menu scrollbar behavior ** mainly fixing safari here
     width: 100%;
-    padding-left: $nav-horizontal-spacing * 2;
     padding-bottom: $nav-horizontal-spacing;
+    order: 3; // .nav-mobile-menu-close: 1, .navbar-user_info: 2, .navbar-text_center: 3
     border-bottom: solid 1px $color-gray-300;
-  }
-
-  @media (max-width: $screen-sm) {
-    padding-left: $nav-horizontal-spacing;
   }
 }
 
@@ -145,26 +138,16 @@ a.navigation-items-link {
   text-transform: uppercase;
   text-decoration: none;
 
-  @media screen and (min-width: $screen-sm) {
+  @media screen and (min-width: $grid-float-breakpoint) {
     align-items: center;
     height: 100%;
     @include transition($navigation-link-hover-transition);
-    @include nav_hover_border(horizontal)
-  }
-
-  @media screen and (min-width: $screen-lg) {
-    font-size: $font-size-200;
+    @include nav_hover_border(horizontal);
   }
 
   @media (max-width: $grid-float-breakpoint) {
     align-items: center;
     height: 100%;
-    @include transition($navigation-link-hover-transition);
-    @include nav_hover_border(vertical)
-
-    &:before {
-      left: -21px;
-    }
   }
 
   &:hover {
@@ -199,10 +182,18 @@ a.navigation-items-link-deals {
 }
 
 .navbar-nav {
+
+  @media (max-width: $grid-float-breakpoint) {
+    margin: 0; // overriding bootstrap so non-signed in btn-blocks display as expected TODO: further refactor markup to avoid this
+  }
+
   &.navbar-right {
     max-height: $nav-height;
     direction: ltr; // corrects orientation against nav-mobile-menu scrollbar behavior ** mainly fixing safari here
 
+    @media (max-width: $grid-float-breakpoint) {
+      float: none !important; // overriding bootstrap so non-signed in btn-blocks display as expected TODO: further refactor markup to avoid this
+    }
     &.navbar-right-icons-container {
       @media (max-width: $grid-float-breakpoint) {
         float: right !important;
@@ -215,41 +206,6 @@ a.navigation-items-link-deals {
   }
 }
 
-.nav > li > a.navigation-user_info-logged_out-log_in_link {
-  text-transform: uppercase;
-  color: $color-gray-600;
-  text-decoration: none;
-  @include transition(color 0.15s ease-in-out);
-
-  &:hover {
-    color: $color-secondary;
-    text-decoration: none;
-  }
-
-  @media (min-width: $grid-float-breakpoint) and (max-width: $screen-md_to_lg-plus) {
-    padding-left: 5px;
-    padding-right: 8px; // visual alignment
-    font-size: $font-size-100;
-  }
-
-  @media screen and (min-width: $screen-md) {
-    margin-left: $nav-horizontal-spacing-small;
-    letter-spacing: $letter-spacing-large;
-  }
-
-  @media screen and (min-width: $screen-lg) {
-    font-size: $font-size-200;
-    letter-spacing: 0;
-    margin-left: 0;
-  }
-}
-
-.nav-sign_in-sign_up {
-  @media (max-width: $screen-xs) {
-    float: left !important;
-  }
-}
-
 .navigation-menu-list_item {
   @media (max-width: $grid-float-breakpoint) {
     text-align: left;
@@ -257,7 +213,6 @@ a.navigation-items-link-deals {
 
   @media (max-width: $screen-sm) {
     min-width: 300px;
-    margin-left: $nav-horizontal-spacing;
   }
 }
 
@@ -269,31 +224,6 @@ a.navigation-items-link-deals {
     float: right; //aligns mobile menu
   }
 }
-
-.navbar-nav > li.navigation-user_info-logged_out.navigation-log_in {
-  padding-top: 0;
-} 
-
-.navigation-user_info-logged_out-container {
-  @media (max-width: $grid-float-breakpoint) {
-    display: block;
-  }
-}
-
-li.navbar-user_info-logged_out {
-  float: right;
-
-  @media (max-width: $grid-float-breakpoint) {
-    display: none;
-  }
-}
-
-.btn.btn-sm.navbar-sign_up_btn {
-  margin-top: 7px; // vertical align custom sized button
-  margin-right: $padding-default-vertical;
-  font-size: $font-size-200;
-}
-
 
 // All-purpose bootstrap override for background-color of links that are not styled as buttons
 .nav > li > a:not(.btn) {
