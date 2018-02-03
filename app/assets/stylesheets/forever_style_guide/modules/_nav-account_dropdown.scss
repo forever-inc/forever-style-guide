@@ -12,12 +12,6 @@ $padding-small-horizontal: 3px;
   height: 100%;
   margin-top: 7px;
 
-  &.open {
-    .navigation-user_info-icon {
-      transform: rotate(180deg);
-    }
-  }
-
   @media (max-width: $grid-float-breakpoint) {
     display: none; // hides dropdown on mobile
   }
@@ -70,30 +64,49 @@ $padding-small-horizontal: 3px;
   }
 }
 
+// .navigation-account_dropdown {
+//   position: absolute;
+//   background-color: $color-white;
+//   box-shadow: 0 5px 20px rgba(0,0,0,.1);
+//   top: calc(100% + 20px);
+//   right: $nav-horizontal-spacing;
+//   padding: $padding-large-vertical $padding-large-horizontal;
+//   padding-bottom: 0;
+//   width: 300px;
+// }
+
 .navigation-account_dropdown {
-  position: absolute;
-  background-color: $color-white;
-  box-shadow: 0 5px 20px rgba(0,0,0,.1);
-  top: calc(100% + 20px);
-  right: $nav-horizontal-spacing;
-  padding: $padding-large-vertical $padding-large-horizontal;
-  padding-bottom: 0;
-  width: 300px;
-
-  &::before {
-    content: "";
-    position: absolute;
-    top: -10px;
-    right: 10px;
+  @media (min-width: $grid-float-breakpoint) {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
     width: 0;
-    height: 0;
-    border-left: 10px solid transparent;
-    border-right: 10px solid transparent;
-    border-bottom: 10px solid $color-white;
-  }
+    background-color: $color-white;
+    transform: translateX(100%);
+    transition: opacity 0.2s ease-in-out, transform 0.3s ease-in-out; // TODO - animate out
+    z-index: $zindex-tooltip;
+    overflow: hidden;
 
-  &.open {
-    display: block;
+    &.in {
+      opacity: 1;
+      transform: translateX(0%);
+      direction: rtl; // puts scrollbar to lefthand side
+      overflow-y: scroll;
+      width: $minimum-application-width;
+      z-index: $in-front-of-primary-and-banner-and-impersonation;
+
+      @media (max-width: $screen-xs) {
+        width: 100%;
+      }
+
+      .nav-mobile-menu-close {
+        display: block;
+      }
+      .navbar-toggle {
+        display: block;
+      }
+    }
   }
 }
 
