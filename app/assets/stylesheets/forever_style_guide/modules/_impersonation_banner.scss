@@ -25,6 +25,11 @@
       top: $impersonation-banner-height;
     }
   }
+  .navigation-account_dropdown.in {
+    @media(min-width: $grid-float-breakpoint) {
+      top: $impersonation-banner-height;
+    }
+  }
 }
 
 .btn.btn-cancel_impersonation {

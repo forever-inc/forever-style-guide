@@ -2,6 +2,30 @@ $nav-icon_bar-width: 22px;
 $close-icon-offset: -5px;
 $mobile-menu-close-btn-height: 40px;
 
+.nav-mobile-menu {
+  @media (max-width: $grid-float-breakpoint) {
+    @include off-canvas-style;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.navbar-user_info {
+  @media (max-width: $grid-float-breakpoint) {
+    max-height: none !important; // important overrides navbar bootstrap stuff
+    order: 2; // .nav-mobile-menu-close: 1, .navbar-user_info: 2, .navbar-text_center: 3
+  }
+}
+
+.nav-mobile-menu-close {
+  display: none;
+  height: $mobile-menu-close-btn-height;
+
+  .navbar-toggle {
+    margin-right: 0;
+  }
+}
+
 .navbar-header {
   @media (max-width: $grid-float-breakpoint) {
     float: none;
@@ -25,7 +49,7 @@ $mobile-menu-close-btn-height: 40px;
     }
   }
 
-  // begin Hamburger + animation
+  // begin Hamburger
   .icon-bar {
     background-color: $color-gray-600;
     transition: all 0.2s;
@@ -42,73 +66,67 @@ $mobile-menu-close-btn-height: 40px;
   }
 }
 
+// Log In & Sign Up Buttons
 .navbar-nav > li {
   @media (max-width: $grid-float-breakpoint) {
     float: none;
   }
 
-  &.navigation-user_info-logged_out-mobile {
-    display: none;
-
+  &.nav-mobile-menu-btns {
     @media (max-width: $grid-float-breakpoint) {
-      display: block;
-      padding: 5px 20px;
+      padding-right: 20px;
+      padding-top: 10px;
     }
-  }
-}
 
-.navigation-user_info-logged_out-mobile > a.btn {
-  @media (max-width: $grid-float-breakpoint) {
-    padding-top: 10px; // custom pad req. to override BS to fix btn align bug
-  }
-}
+    &.nav-mobile-menu-signup {
+      @media (min-width: $grid-float-breakpoint) {
+        float: right!important; //put sign up out to right on desktop
+      }
+      @media (min-width: $grid-float-breakpoint) and (max-width: $screen-md) {
+        padding-right: 5px;
+      }
+      @media (min-width: $screen-md) {
+        padding-right: 15px;
+      }
+    }
 
-.nav-mobile-menu {
-  @media (max-width: $grid-float-breakpoint) {
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    width: 0;
-    background-color: $color-white;
-    transform: translateX(100%);
-    transition: opacity 0.2s ease-in-out, transform 0.3s ease-in-out; // TODO - animate out
-    z-index: $zindex-tooltip;
-    overflow: hidden;
-
-    &.in {
-      opacity: 1;
-      transform: translateX(0%);
-      direction: rtl; // puts scrollbar to lefthand side
-      overflow-y: scroll;
-      width: $minimum-application-width;
-      z-index: $in-front-of-primary-and-banner-and-impersonation;
-
-      @media (max-width: $screen-xs) {
-        width: 100%;
+    //customize both buttons to account for overall nav spacing
+    a.btn {
+      @media (min-width: $grid-float-breakpoint) {
+        margin-top: 3px;
+        padding-left: 5px;
+        padding-right: 5px;
+        font-size: $font-size-100;
+        line-height: 1;
       }
 
-      .nav-mobile-menu-close {
+      @media (max-width: $grid-float-breakpoint) {
         display: block;
+        padding-top: 10px;
+      }
+    }
+
+    .btn.btn-login {
+      @media(min-width: $grid-float-breakpoint) {
+        color: $color-gray-600;
+        background-color: transparent;
+        border-color: white;
+
+        &:hover,
+        &:focus,
+        &:active,
+        &:active:focus {
+          color: $color-secondary;
+          box-shadow: none;
+        }
+      }
+    }
+
+    .btn.btn-signup {
+      &:focus {
+        background-color: color('primary-dark');
+        border-color: color('primary-dark');
       }
     }
   }
-}
-
-.nav-mobile-menu-close {
-  display: none;
-  height: $mobile-menu-close-btn-height;
-
-  .navbar-toggle {
-    margin-right: 0;
-  }
-}
-
-// mobile menu button styling
-.nav-mobile-menu-account {
-  padding-top: 10px;
-  padding-left: 25px;
-  padding-right: 25px;
-  width: 100%;
-  background-color: $color-white;
 }

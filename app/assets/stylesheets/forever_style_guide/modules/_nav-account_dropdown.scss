@@ -12,18 +12,21 @@ $padding-small-horizontal: 3px;
   height: 100%;
   margin-top: 7px;
 
-  &.open {
-    .navigation-user_info-icon {
-      transform: rotate(180deg);
-    }
-  }
-
-  @media (max-width: $grid-float-breakpoint) {
-    display: none; // hides dropdown on mobile
-  }
-
   @media (min-width: $screen-md) {
     margin-right: 15px;
+  }
+}
+
+// Dont show user info close btn when in mobile offcanvas
+.nav-mobile-menu.in .nav-mobile-menu-close {
+  @media (max-width: $grid-float-breakpoint) {
+    order: 1;// .nav-mobile-menu-close: 1, .navbar-user_info: 2, .navbar-text_center: 3
+  }
+
+  &.nav-user_info-close {
+    @media (max-width: $grid-float-breakpoint) {
+      display: none;
+    }
   }
 }
 
@@ -31,7 +34,7 @@ $padding-small-horizontal: 3px;
   margin-top: -3px; // magic number to vertical align
 }
 
-.navigation-user_info-avatar { // avatar in nav
+.navigation-user_info-avatar {
   height: $avatar-height;
   width: $avatar-width;
   margin-right: $padding-default-horizontal;
@@ -65,35 +68,18 @@ $padding-small-horizontal: 3px;
   overflow-y: hidden;
   transition: opacity 0.15s ease-in-out;
 
+  @media (max-width: $grid-float-breakpoint) {
+    display: none;
+  }
+
   &:hover {
     opacity: 0.7;
   }
 }
 
 .navigation-account_dropdown {
-  position: absolute;
-  background-color: $color-white;
-  box-shadow: 0 5px 20px rgba(0,0,0,.1);
-  top: calc(100% + 20px);
-  right: $nav-horizontal-spacing;
-  padding: $padding-large-vertical $padding-large-horizontal;
-  padding-bottom: 0;
-  width: 300px;
-
-  &::before {
-    content: "";
-    position: absolute;
-    top: -10px;
-    right: 10px;
-    width: 0;
-    height: 0;
-    border-left: 10px solid transparent;
-    border-right: 10px solid transparent;
-    border-bottom: 10px solid $color-white;
-  }
-
-  &.open {
-    display: block;
+  @media (min-width: $grid-float-breakpoint) {
+    @include off-canvas-style;
   }
 }
 
@@ -156,28 +142,8 @@ a.navigation-account_dropdown-list-item {
   color: $color-gray-600;
   text-decoration: none;
 
-  &::before {
-    @media screen and (min-width: $grid-float-breakpoint) {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      height: 100%;
-      width: 4px;
-      background-color: $color-secondary;
-      content: "";
-      transform: scaleX(0);
-      @include transition($navigation-link-hover-transition);
-      @include nav_hover_border(horizontal);
-    }
-  }
-
   &:hover {
     color: $color-secondary;
-
-    &::before {
-      transform: scaleX(1);
-      transition: transform 0.25s ease-in-out;
-    }
   }
 }
 
