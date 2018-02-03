@@ -104,6 +104,12 @@ $padding-small-horizontal: 3px;
   text-align: left;
 }
 
+.user_info-logged_in-account_dropdown-storage-name {
+  display: inline-block;
+  max-width: 200px; // Req for Safari
+  word-wrap: break-word;
+}
+
 .navigation-account_dropdown-storage_bar {
   height: 10px;
   border-radius: 50px;
