@@ -64,17 +64,6 @@ $padding-small-horizontal: 3px;
   }
 }
 
-// .navigation-account_dropdown {
-//   position: absolute;
-//   background-color: $color-white;
-//   box-shadow: 0 5px 20px rgba(0,0,0,.1);
-//   top: calc(100% + 20px);
-//   right: $nav-horizontal-spacing;
-//   padding: $padding-large-vertical $padding-large-horizontal;
-//   padding-bottom: 0;
-//   width: 300px;
-// }
-
 .navigation-account_dropdown {
   @media (min-width: $grid-float-breakpoint) {
     position: fixed;

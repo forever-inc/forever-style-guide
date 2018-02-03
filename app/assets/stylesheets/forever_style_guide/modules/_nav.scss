@@ -202,41 +202,6 @@ a.navigation-items-link-deals {
   }
 }
 
-.nav > li > a.navigation-user_info-logged_out-log_in_link {
-  text-transform: uppercase;
-  color: $color-gray-600;
-  text-decoration: none;
-  @include transition(color 0.15s ease-in-out);
-
-  &:hover {
-    color: $color-secondary;
-    text-decoration: none;
-  }
-
-  @media (min-width: $grid-float-breakpoint) and (max-width: $screen-md_to_lg-plus) {
-    padding-left: 5px;
-    padding-right: 8px; // visual alignment
-    font-size: $font-size-100;
-  }
-
-  @media screen and (min-width: $screen-md) {
-    margin-left: $nav-horizontal-spacing-small;
-    letter-spacing: $letter-spacing-large;
-  }
-
-  @media screen and (min-width: $screen-lg) {
-    font-size: $font-size-200;
-    letter-spacing: 0;
-    margin-left: 0;
-  }
-}
-
-.nav-sign_in-sign_up {
-  @media (max-width: $screen-xs) {
-    float: left !important;
-  }
-}
-
 .navigation-menu-list_item {
   @media (max-width: $grid-float-breakpoint) {
     text-align: left;
@@ -256,31 +221,6 @@ a.navigation-items-link-deals {
     float: right; //aligns mobile menu
   }
 }
-
-.navbar-nav > li.navigation-user_info-logged_out.navigation-log_in {
-  padding-top: 0;
-} 
-
-.navigation-user_info-logged_out-container {
-  @media (max-width: $grid-float-breakpoint) {
-    display: block;
-  }
-}
-
-li.navbar-user_info-logged_out {
-  float: right;
-
-  @media (max-width: $grid-float-breakpoint) {
-    display: none;
-  }
-}
-
-.btn.btn-sm.navbar-sign_up_btn {
-  margin-top: 7px; // vertical align custom sized button
-  margin-right: $padding-default-vertical;
-  font-size: $font-size-200;
-}
-
 
 // All-purpose bootstrap override for background-color of links that are not styled as buttons
 .nav > li > a:not(.btn) {
