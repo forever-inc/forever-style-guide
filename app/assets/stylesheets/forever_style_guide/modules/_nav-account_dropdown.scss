@@ -13,7 +13,7 @@ $padding-small-horizontal: 3px;
   margin-top: 7px;
 
   @media (max-width: $grid-float-breakpoint) {
-    display: none; // hides dropdown on mobile
+    // display: none; // hides dropdown on mobile
   }
 
   @media (min-width: $screen-md) {
@@ -21,11 +21,20 @@ $padding-small-horizontal: 3px;
   }
 }
 
+// Dont show user info close btn when in mobile offcanvas
+.nav-mobile-menu.in .nav-mobile-menu-close {
+  &.nav-user_info-close {
+    @media (max-width: $grid-float-breakpoint) {
+      display: none;
+    }
+  }
+}
+
 .navigation-user_info-icon {
   margin-top: -3px; // magic number to vertical align
 }
 
-.navigation-user_info-avatar { // avatar in nav
+.navigation-user_info-avatar {
   height: $avatar-height;
   width: $avatar-width;
   margin-right: $padding-default-horizontal;
@@ -59,6 +68,10 @@ $padding-small-horizontal: 3px;
   overflow-y: hidden;
   transition: opacity 0.15s ease-in-out;
 
+  @media(max-width: $grid-float-breakpoint) {
+    display: none;
+  }
+
   &:hover {
     opacity: 0.7;
   }
@@ -67,11 +80,6 @@ $padding-small-horizontal: 3px;
 .navigation-account_dropdown {
   @media (min-width: $grid-float-breakpoint) {
     @include off-canvas-style;
-    &.in {
-      .navbar-toggle {
-        display: block;
-      }
-    }
   }
 }
 
