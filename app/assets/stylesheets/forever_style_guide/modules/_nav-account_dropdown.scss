@@ -12,10 +12,6 @@ $padding-small-horizontal: 3px;
   height: 100%;
   margin-top: 7px;
 
-  @media (max-width: $grid-float-breakpoint) {
-    // display: none; // hides dropdown on mobile
-  }
-
   @media (min-width: $screen-md) {
     margin-right: 15px;
   }
@@ -23,6 +19,10 @@ $padding-small-horizontal: 3px;
 
 // Dont show user info close btn when in mobile offcanvas
 .nav-mobile-menu.in .nav-mobile-menu-close {
+  @media (max-width: $grid-float-breakpoint) {
+    order: 1;// .nav-mobile-menu-close: 1, .navbar-user_info: 2, .navbar-text_center: 3
+  }
+
   &.nav-user_info-close {
     @media (max-width: $grid-float-breakpoint) {
       display: none;

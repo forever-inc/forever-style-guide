@@ -111,6 +111,7 @@ $deals-icon-vertical-position: -5px;
     direction: ltr; // corrects orientation against nav-mobile-menu scrollbar behavior ** mainly fixing safari here
     width: 100%;
     padding-bottom: $nav-horizontal-spacing;
+    order: 3; // .nav-mobile-menu-close: 1, .navbar-user_info: 2, .navbar-text_center: 3
     border-bottom: solid 1px $color-gray-300;
   }
 

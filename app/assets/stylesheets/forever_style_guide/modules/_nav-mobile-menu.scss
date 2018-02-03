@@ -5,6 +5,15 @@ $mobile-menu-close-btn-height: 40px;
 .nav-mobile-menu {
   @media (max-width: $grid-float-breakpoint) {
     @include off-canvas-style;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.navbar-user_info {
+  @media (max-width: $grid-float-breakpoint) {
+    max-height: none !important; // important overrids nested navbar bootstrap stuff
+    order: 2; // .nav-mobile-menu-close: 1, .navbar-user_info: 2, .navbar-text_center: 3
   }
 }
 
