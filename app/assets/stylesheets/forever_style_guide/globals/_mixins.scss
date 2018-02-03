@@ -41,3 +41,41 @@ $color-nav-hover: color('secondary');
   border: 0;
   border-#{$direction}: $header_active_border_height solid $color;
 }
+
+
+// Shared nav mixin for offcanvas mobile nav or desktop user ingo
+@mixin off-canvas-style {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 0;
+  background-color: $color-white;
+  transform: translateX(100%);
+  transition: opacity 0.2s ease-in-out, transform 0.3s ease-in-out; // TODO - animate out
+  z-index: $zindex-tooltip;
+  overflow: hidden;
+
+  &.in {
+    padding-left: 20px;
+    padding-right: 20px;
+    opacity: 1;
+    transform: translateX(0%);
+    direction: rtl; // puts scrollbar to lefthand side
+    overflow-y: scroll;
+    width: $minimum-application-width;
+    z-index: $in-front-of-primary-and-banner-and-impersonation;
+
+    @media (max-width: $screen-xs) {
+      width: 100%;
+    }
+
+    .nav-mobile-menu-close {
+      display: block;
+    }
+    .navbar-toggle {
+      display: block;
+      padding-right: 0;
+    }
+  }
+}

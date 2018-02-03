@@ -66,32 +66,8 @@ $padding-small-horizontal: 3px;
 
 .navigation-account_dropdown {
   @media (min-width: $grid-float-breakpoint) {
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    width: 0;
-    background-color: $color-white;
-    transform: translateX(100%);
-    transition: opacity 0.2s ease-in-out, transform 0.3s ease-in-out; // TODO - animate out
-    z-index: $zindex-tooltip;
-    overflow: hidden;
-
+    @include off-canvas-style;
     &.in {
-      opacity: 1;
-      transform: translateX(0%);
-      direction: rtl; // puts scrollbar to lefthand side
-      overflow-y: scroll;
-      width: $minimum-application-width;
-      z-index: $in-front-of-primary-and-banner-and-impersonation;
-
-      @media (max-width: $screen-xs) {
-        width: 100%;
-      }
-
-      .nav-mobile-menu-close {
-        display: block;
-      }
       .navbar-toggle {
         display: block;
       }
