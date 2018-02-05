@@ -8,6 +8,7 @@ $user_info-max_width-xs: 50px;
 $mobile-menu-active-bar-offset: -11px;
 $padding-small-horizontal: 3px;
 
+$logged_in-name-max_width: 200px;
 $user-info-toggle-hover-transition: color 0.15s ease-in-out;
 
 .navigation-user_info {
@@ -104,9 +105,15 @@ $user-info-toggle-hover-transition: color 0.15s ease-in-out;
   border-bottom: 2px solid $color-gray-200;
 }
 
-.user_info-logged_in-account_dropdown-storage {
+.navigation-account_dropdown-user_info-logged_in {
   width: 100%;
   text-align: left;
+}
+
+.navigation-account_dropdown-user_info-logged_in-name {
+  display: inline-block;
+  max-width: $logged_in-name-max_width;
+  word-wrap: break-word;
 }
 
 .navigation-account_dropdown-storage_bar {
