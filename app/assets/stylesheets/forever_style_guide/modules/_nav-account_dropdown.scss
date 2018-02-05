@@ -8,6 +8,8 @@ $user_info-max_width-xs: 50px;
 $mobile-menu-active-bar-offset: -11px;
 $padding-small-horizontal: 3px;
 
+$user-info-toggle-hover-transition: color 0.15s ease-in-out;
+
 .navigation-user_info {
   height: 100%;
   margin-top: 7px;
@@ -32,6 +34,7 @@ $padding-small-horizontal: 3px;
 
 .navigation-user_info-icon {
   margin-top: -3px; // magic number to vertical align
+  transition: $user-info-toggle-hover-transition;
 }
 
 .navigation-user_info-avatar {
@@ -48,7 +51,7 @@ $padding-small-horizontal: 3px;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
-  transition: transform 0.15s ease-in-out;
+  transition: $user-info-toggle-hover-transition;
 
   @media (min-width: $grid-float-breakpoint) and (max-width: $screen-md_to_lg-plus) {
     max-width: $user_info-max_width-xs;
@@ -66,14 +69,16 @@ $padding-small-horizontal: 3px;
   position: relative;
   height: 100%;
   overflow-y: hidden;
-  transition: opacity 0.15s ease-in-out;
 
   @media (max-width: $grid-float-breakpoint) {
     display: none;
   }
 
   &:hover {
-    opacity: 0.7;
+    .navigation-user_info-user_name,
+    .navigation-user_info-icon {
+      color: $color-secondary;
+    }
   }
 }
 
