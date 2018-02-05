@@ -10,6 +10,7 @@ $padding-small-horizontal: 3px;
 
 $logged_in-name-max_width: 200px;
 $user-info-toggle-hover-transition: color 0.15s ease-in-out;
+$chevron-icon-vertical-alignment-shim: -2px;
 
 .navigation-user_info {
   height: 100%;
@@ -34,7 +35,7 @@ $user-info-toggle-hover-transition: color 0.15s ease-in-out;
 }
 
 .navigation-user_info-icon {
-  margin-top: -3px; // magic number to vertical align
+  margin-top: $chevron-icon-vertical-alignment-shim;
   transition: $user-info-toggle-hover-transition;
 }
 
