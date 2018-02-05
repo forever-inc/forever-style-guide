@@ -5,6 +5,8 @@ $mobile-menu-close-btn-height: 40px;
 .nav-mobile-menu {
   @media (max-width: $grid-float-breakpoint) {
     @include off-canvas-style;
+    border-left: solid 1px $color-gray-200;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
   }
