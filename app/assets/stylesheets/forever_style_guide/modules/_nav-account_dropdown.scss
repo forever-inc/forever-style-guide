@@ -119,7 +119,7 @@ $padding-small-horizontal: 3px;
 .navigation-account_dropdown-storage_bar {
   height: 10px;
   border-radius: 50px;
-  background: $color-gray-300;
+  background-color: $color-gray-300;
   margin-top: $padding-xs-vertical;
   margin-bottom: $padding-small-vertical;
   width: 100%;
@@ -127,7 +127,6 @@ $padding-small-horizontal: 3px;
 
 .navigation-account_dropdown-storage_bar-percent_used {
   border-radius: 50px;
-  background: $color-forever_services;
   height: 100%;
 }
 

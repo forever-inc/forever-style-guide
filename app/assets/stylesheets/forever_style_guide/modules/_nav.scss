@@ -94,6 +94,8 @@ $deals-icon-vertical-position: -5px;
     }
 
     @media (max-width: $grid-float-breakpoint) {
+      padding-top: $padding-small-vertical;
+      padding-bottom: $padding-small-vertical;
       padding-left: 0;
     }
 
