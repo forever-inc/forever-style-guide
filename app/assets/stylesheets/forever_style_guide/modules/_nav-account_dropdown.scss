@@ -75,10 +75,6 @@ $padding-small-horizontal: 3px;
     display: none;
   }
 
-  @media (max-width: $grid-float-breakpoint) {
-    display: none;
-  }
-
   &:hover {
     .navigation-user_info-user_name,
     .navigation-user_info-icon {
