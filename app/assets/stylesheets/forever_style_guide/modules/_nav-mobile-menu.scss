@@ -15,7 +15,7 @@ $mobile-menu-close-btn-height: 40px;
     max-height: none !important; // important overrides navbar bootstrap stuff
     order: 2; // .nav-mobile-menu-close: 1, .navbar-user_info: 2, .navbar-text_center: 3
     
-    &.navbar-user_info-align-bottom {
+    &.navbar-user_info-logged_out {
       order: 4;
     }
   }

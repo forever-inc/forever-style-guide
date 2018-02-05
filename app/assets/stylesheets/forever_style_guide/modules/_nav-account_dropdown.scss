@@ -8,6 +8,8 @@ $user_info-max_width-xs: 50px;
 $mobile-menu-active-bar-offset: -11px;
 $padding-small-horizontal: 3px;
 
+$storage-name-max_width: 200px;
+
 .navigation-user_info {
   height: 100%;
   margin-top: 7px;
@@ -99,14 +101,14 @@ $padding-small-horizontal: 3px;
   border-bottom: 2px solid $color-gray-200;
 }
 
-.user_info-logged_in-account_dropdown-storage {
+.navigation-user_info-logged_in-account_dropdown-storage {
   width: 100%;
   text-align: left;
 }
 
-.user_info-logged_in-account_dropdown-storage-name {
+.navigation-user_info-logged_in-account_dropdown-storage-name {
   display: inline-block;
-  max-width: 200px; // Req for Safari
+  max-width: $storage-name-max_width;
   word-wrap: break-word;
 }
 
