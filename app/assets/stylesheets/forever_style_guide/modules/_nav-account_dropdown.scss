@@ -1,11 +1,14 @@
 // desktop authenticated account dropdown styling
 $avatar-height: 35px;
 $avatar-width: 35px;
+
 $user_info-max_width: 100px;
 $user_info-max_width-sm: 70px;
 $user_info-max_width-xs: 50px;
+$user_info-name-max_width: 200px;
+$user_info-icon-vertical_alignment: -2px;
+$user_info-toggle-hover_transition: color 0.15s ease-in-out;
 
-$mobile-menu-active-bar-offset: -11px;
 $padding-small-horizontal: 3px;
 
 .navigation-user_info {
@@ -31,7 +34,8 @@ $padding-small-horizontal: 3px;
 }
 
 .navigation-user_info-icon {
-  margin-top: -3px; // magic number to vertical align
+  margin-top: $user_info-icon-vertical_alignment;
+  transition: $user_info-toggle-hover_transition;
 }
 
 .navigation-user_info-avatar {
@@ -48,7 +52,7 @@ $padding-small-horizontal: 3px;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
-  transition: transform 0.15s ease-in-out;
+  transition: $user_info-toggle-hover_transition;
 
   @media (min-width: $grid-float-breakpoint) and (max-width: $screen-md_to_lg-plus) {
     max-width: $user_info-max_width-xs;
@@ -66,14 +70,16 @@ $padding-small-horizontal: 3px;
   position: relative;
   height: 100%;
   overflow-y: hidden;
-  transition: opacity 0.15s ease-in-out;
 
   @media (max-width: $grid-float-breakpoint) {
     display: none;
   }
 
   &:hover {
-    opacity: 0.7;
+    .navigation-user_info-user_name,
+    .navigation-user_info-icon {
+      color: $color-secondary;
+    }
   }
 }
 
@@ -99,9 +105,15 @@ $padding-small-horizontal: 3px;
   border-bottom: 2px solid $color-gray-200;
 }
 
-.user_info-logged_in-account_dropdown-storage {
+.navigation-account_dropdown-user_info-logged_in {
   width: 100%;
   text-align: left;
+}
+
+.navigation-account_dropdown-user_info-logged_in-name {
+  display: inline-block;
+  max-width: $user_info-name-max_width;
+  word-wrap: break-word;
 }
 
 .navigation-account_dropdown-storage_bar {

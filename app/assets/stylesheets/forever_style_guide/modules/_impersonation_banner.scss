@@ -17,9 +17,6 @@
   .ambassador_banner-dropdown_container.open {
     top: $ambassador-banner-text-height + $impersonation-banner-height;
   }
-  .ambassador_banner-text:after {
-    top: $impersonation-banner-height;
-  }
   .nav-mobile-menu.in {
     @media(max-width: $grid-float-breakpoint) {
       top: $impersonation-banner-height;
