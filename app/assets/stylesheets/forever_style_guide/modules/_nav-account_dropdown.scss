@@ -1,16 +1,15 @@
 // desktop authenticated account dropdown styling
 $avatar-height: 35px;
 $avatar-width: 35px;
+
 $user_info-max_width: 100px;
 $user_info-max_width-sm: 70px;
 $user_info-max_width-xs: 50px;
+$user_info-name-max_width: 200px;
+$user_info-icon-vertical_alignment: -2px;
+$user_info-toggle-hover_transition: color 0.15s ease-in-out;
 
-$mobile-menu-active-bar-offset: -11px;
 $padding-small-horizontal: 3px;
-
-$logged_in-name-max_width: 200px;
-$user-info-toggle-hover-transition: color 0.15s ease-in-out;
-$chevron-icon-vertical-alignment-shim: -2px;
 
 .navigation-user_info {
   height: 100%;
@@ -35,8 +34,8 @@ $chevron-icon-vertical-alignment-shim: -2px;
 }
 
 .navigation-user_info-icon {
-  margin-top: $chevron-icon-vertical-alignment-shim;
-  transition: $user-info-toggle-hover-transition;
+  margin-top: $user_info-icon-vertical_alignment;
+  transition: $user_info-toggle-hover_transition;
 }
 
 .navigation-user_info-avatar {
@@ -53,7 +52,7 @@ $chevron-icon-vertical-alignment-shim: -2px;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
-  transition: $user-info-toggle-hover-transition;
+  transition: $user_info-toggle-hover_transition;
 
   @media (min-width: $grid-float-breakpoint) and (max-width: $screen-md_to_lg-plus) {
     max-width: $user_info-max_width-xs;
@@ -113,7 +112,7 @@ $chevron-icon-vertical-alignment-shim: -2px;
 
 .navigation-account_dropdown-user_info-logged_in-name {
   display: inline-block;
-  max-width: $logged_in-name-max_width;
+  max-width: $user_info-name-max_width;
   word-wrap: break-word;
 }
 
