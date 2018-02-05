@@ -80,13 +80,7 @@ $padding-small-horizontal: 3px;
 .navigation-account_dropdown {
   @media (min-width: $grid-float-breakpoint) {
     @include off-canvas-style;
-    border-left: solid 1px $color-gray-200;
-    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
   }
-}
-
-.navigation-account_dropdown.in {
-  overflow-y: auto;
 }
 
 .navigation-account_dropdown-avatar {
