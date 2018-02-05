@@ -44,6 +44,7 @@ $deals-icon-vertical-position: -5px;
 }
 
 .navigation {
+  position: relative;
   box-shadow: $navigation-shadow;
 
   .container-fluid > .navbar-header {
