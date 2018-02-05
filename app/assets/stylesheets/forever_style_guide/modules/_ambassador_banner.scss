@@ -23,7 +23,7 @@ a.ambassador_banner {
 }
 
 .ambassador_banner-text {
-  position: static;
+  position: relative;
   height: $ambassador-banner-text-height;
   padding-top: $banner-vertical-padding;
   padding-bottom: $banner-vertical-padding;
