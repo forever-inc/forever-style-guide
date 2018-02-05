@@ -50,6 +50,8 @@ $color-nav-hover: color('secondary');
   bottom: 0;
   width: 0;
   background-color: $color-white;
+  border-left: solid 1px $color-gray-200;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
   transform: translateX(100%);
   transition: opacity 0.2s ease-in-out, transform 0.3s ease-in-out; // TODO - animate out
   z-index: $zindex-tooltip;
@@ -61,7 +63,7 @@ $color-nav-hover: color('secondary');
     opacity: 1;
     transform: translateX(0%);
     direction: rtl; // puts scrollbar to lefthand side
-    overflow-y: scroll;
+    overflow-y: auto;
     width: $minimum-application-width;
     z-index: $in-front-of-primary-and-banner-and-impersonation;
 
