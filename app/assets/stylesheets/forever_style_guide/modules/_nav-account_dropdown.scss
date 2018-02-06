@@ -1,6 +1,7 @@
 // desktop authenticated account dropdown styling
 $avatar-height: 35px;
 $avatar-width: 35px;
+$avatar-sm-width: 70px;
 
 $user_info-max_width: 100px;
 $user_info-max_width-sm: 70px;
@@ -90,6 +91,7 @@ $padding-small-horizontal: 3px;
 }
 
 .navigation-account_dropdown-avatar {
+  min-width: $avatar-sm-width; // fixes an ie 11 flexbug
   margin: 0;
   margin-right: $padding-large-horizontal;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
@@ -108,18 +110,20 @@ $padding-small-horizontal: 3px;
 .navigation-account_dropdown-user_info-logged_in {
   width: 100%;
   text-align: left;
+  flex: 1 1 auto; //ensures consistent display in ie 10
 }
 
 .navigation-account_dropdown-user_info-logged_in-name {
   display: inline-block;
   max-width: $user_info-name-max_width;
+  line-height: 1.1; // just a little tighter for multi line names
   word-wrap: break-word;
 }
 
 .navigation-account_dropdown-storage_bar {
   height: 10px;
   border-radius: 50px;
-  background: $color-gray-300;
+  background-color: $color-gray-300;
   margin-top: $padding-xs-vertical;
   margin-bottom: $padding-small-vertical;
   width: 100%;
@@ -127,7 +131,6 @@ $padding-small-horizontal: 3px;
 
 .navigation-account_dropdown-storage_bar-percent_used {
   border-radius: 50px;
-  background: $color-forever_services;
   height: 100%;
 }
 
