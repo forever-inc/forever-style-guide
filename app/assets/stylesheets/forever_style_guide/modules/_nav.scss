@@ -22,6 +22,8 @@ $font-size-150: 13px;
 $deals-icon-horizontal-position: -3px;
 $deals-icon-vertical-position: -5px;
 
+$nav-height-screen-sm: 40px;
+
 // animation on hover
 @mixin nav_hover_border($orientation) {
   &::before {
@@ -204,6 +206,7 @@ a.navigation-items-link-deals {
       }
       @media (max-width: $screen-sm) {
         margin: 3.5px 0;
+        max-height: $nav-height-screen-sm;
       }
     }
   }
