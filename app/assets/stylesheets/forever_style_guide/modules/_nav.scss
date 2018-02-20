@@ -1,5 +1,6 @@
 $navigation-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
 $nav-height: 50px;
+$nav-height-screen-sm: 40px;
 
 $lg-logo-vertical-align: 5px;
 $sm-logo-vertical-align: 8px;
@@ -21,8 +22,6 @@ $font-size-150: 13px;
 
 $deals-icon-horizontal-position: -3px;
 $deals-icon-vertical-position: -5px;
-
-$nav-height-screen-sm: 40px;
 
 // animation on hover
 @mixin nav_hover_border($orientation) {
