@@ -1,5 +1,6 @@
 $navigation-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
 $nav-height: 50px;
+$nav-height-screen-sm: 40px;
 
 $lg-logo-vertical-align: 5px;
 $sm-logo-vertical-align: 8px;
@@ -204,6 +205,7 @@ a.navigation-items-link-deals {
       }
       @media (max-width: $screen-sm) {
         margin: 3.5px 0;
+        max-height: $nav-height-screen-sm;
       }
     }
   }
