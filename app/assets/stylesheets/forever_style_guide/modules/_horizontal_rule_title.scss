@@ -1,0 +1,34 @@
+.horizontal_rule_title-header {
+  display: flex;
+  justify-content: flex-start;
+
+  @media screen and (min-width: $screen-sm) {
+    justify-content: center;
+  }
+}
+  
+.horizontal_rule_title-header-inner {
+  display: inline-flex;
+  align-items: flex-start;
+  flex-flow: column wrap;
+
+  @media screen and (min-width: $screen-sm) {
+    position: relative;
+    flex-direction: row;
+    align-items: center;
+    margin-top: -$padding-large-vertical * 1.5;
+    z-index: $zindex-navbar - 1;
+  }
+
+  &::after {
+    @media screen and (min-width: $screen-sm) {
+      position: absolute;
+      left: -$padding-large-horizontal;
+      width: calc(100% + #{$padding-large-horizontal} * 2);
+      height: 100%;
+      background-color: $color-white;
+      content: '';
+      z-index: -1;
+    }
+  }
+}
