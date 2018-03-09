@@ -67,6 +67,9 @@ $hero_simple-sm-height-md: 260px;
   @media (min-width: $screen-xxl) {
     padding: 50px;
   }
+  @media (max-width: $screen-xs) {
+    padding: 25px 20px;
+  }
 }
 .hero_simple-block-cta {
   margin-top: 5px;
