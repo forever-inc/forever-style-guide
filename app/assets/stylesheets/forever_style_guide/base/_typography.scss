@@ -91,6 +91,18 @@ strong {
   font-family: $font-face-gotham;
   font-weight: 100;
 }
+.title-extra_thin {
+  font-family: $font-face-gotham;
+  font-weight: 300;
+}
+.title-thin {
+  font-family: $font-face-gotham;
+  font-weight: 400;
+}
+.title-bold {
+  font-family: $font-face-gotham;
+  font-weight: 700;
+}
 a {
   color: color('secondary');
   &:link,
