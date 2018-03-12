@@ -1,0 +1,12 @@
+@mixin message_box($base-color) {
+  background-color: transparentize($base-color, 0.95);
+  border: 1px solid transparentize($base-color, 0.6);
+  border-radius: $border-radius-xl;
+}
+
+// creates a message_box class for each color in color dictionary
+@each $id, $color in $colors {
+  .message_box-#{$id} {
+    @include message_box(color('#{$id}'));
+  }
+}
