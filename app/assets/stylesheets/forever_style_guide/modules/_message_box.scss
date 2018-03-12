@@ -4,8 +4,8 @@
   border-radius: $border-radius-xl;
 }
 
-// creates a message_box class for each color in core color dictionary
-@each $id, $color in $core_colors {
+// creates a message_box class for each color in color dictionary
+@each $id, $color in $colors {
   .message_box-#{$id} {
     @include message_box(color('#{$id}'));
   }
