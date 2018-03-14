@@ -263,6 +263,10 @@
   width: 100%;
 }
 
+.btn-block {
+  @include btn-block();
+}
+
 .btn-block-xs {
   @media (max-width: $screen-xs-max) {
     @include btn-block();
