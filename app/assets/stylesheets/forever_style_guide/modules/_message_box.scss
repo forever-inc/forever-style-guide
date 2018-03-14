@@ -22,8 +22,13 @@
 
 .message_box-dismiss {
   position: absolute;
-  right: 10px;
-  top: 6px;
-  cursor: pointer;
+  /**
+   * since the content in a message_box can be basically anything entered, the below numbers are an arbitrary offset
+   * so a font awesome icon can be placed at the top right of the message box with ample spacing.
+   */
+  right: 8px;
+  top: 8px;
+  line-height: 1;
   font-size: $font-size-400;
+  cursor: pointer;
 }
