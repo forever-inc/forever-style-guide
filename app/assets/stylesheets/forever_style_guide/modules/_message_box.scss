@@ -4,9 +4,26 @@
   border-radius: $border-radius-xl;
 }
 
+@mixin message_box_dismiss($base-color) {
+  color: darken($base-color, 10%);
+}
+
 // creates a message_box class for each color in color dictionary
 @each $id, $color in $colors {
   .message_box-#{$id} {
+    position: relative;
     @include message_box(color('#{$id}'));
+
+    .message_box-dismiss {
+      @include message_box_dismiss(color('#{$id}'));
+    }
   }
+}
+
+.message_box-dismiss {
+  position: absolute;
+  right: 10px;
+  top: 6px;
+  cursor: pointer;
+  font-size: $font-size-400;
 }
