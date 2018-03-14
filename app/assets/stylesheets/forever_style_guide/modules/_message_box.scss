@@ -4,9 +4,31 @@
   border-radius: $border-radius-xl;
 }
 
+@mixin message_box_dismiss($base-color) {
+  color: darken($base-color, 10%);
+}
+
 // creates a message_box class for each color in color dictionary
 @each $id, $color in $colors {
   .message_box-#{$id} {
+    position: relative;
     @include message_box(color('#{$id}'));
+
+    .message_box-dismiss {
+      @include message_box_dismiss(color('#{$id}'));
+    }
   }
+}
+
+.message_box-dismiss {
+  position: absolute;
+  /**
+   * since the content in a message_box can be basically anything entered, the below numbers are an arbitrary offset
+   * so a font awesome icon can be placed at the top right of the message box with ample spacing.
+   */
+  right: 8px;
+  top: 8px;
+  line-height: 1;
+  font-size: $font-size-400;
+  cursor: pointer;
 }
