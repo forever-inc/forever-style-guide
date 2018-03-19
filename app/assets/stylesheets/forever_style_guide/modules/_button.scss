@@ -7,7 +7,7 @@
     &:hover,
     &:active,
     &:active:focus {
-      color: darken(color('#{$color}'), 10%);;
+      color: darken(color('#{$color}'), 10%);
       background-color: color('white');
       text-decoration: underline;
     }
