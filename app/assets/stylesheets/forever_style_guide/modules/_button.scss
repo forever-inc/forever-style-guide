@@ -7,7 +7,7 @@
     &:hover,
     &:active,
     &:active:focus {
-      color: color('#{$color}-dark');
+      color: darken('#{$color}', 10%);;
       background-color: color('white');
       text-decoration: underline;
     }
@@ -19,8 +19,8 @@
     &:hover,
     &:active,
     &:active:focus {
-      background-color: color('#{$color}-dark');
-      border-color: color('#{$color}-dark');
+      background-color: darken('#{$color}', 10%);
+      border-color: darken('#{$color}', 10%);
       text-decoration: none;
     }
   }
@@ -57,7 +57,7 @@
   }
 
   // creates a button style for each color in core color dictionary
-  @each $id, $color in $core_colors {
+  @each $id, $color in $colors {
     @at-root #{&}.btn-#{$id} {
       @include btn-color(#{$id});
 
