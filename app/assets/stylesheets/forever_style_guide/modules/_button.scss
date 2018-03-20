@@ -69,7 +69,7 @@
         }
       }
     }
-    @error "Invalid color name: `#{$color}`.";
+    @debug "Color: `#{$color}`.";
   }
 
   &.btn-link {
