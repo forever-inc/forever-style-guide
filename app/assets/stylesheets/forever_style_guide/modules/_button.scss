@@ -60,6 +60,7 @@
   @each $id, $color in $colors {
     @at-root #{&}.btn-#{$id} {
       @debug "Color: `#{$color}`.";
+      @debug "ID: `#{$id}`.";
       @include btn-color(#{$id});
 
       &.btn-inverse {
