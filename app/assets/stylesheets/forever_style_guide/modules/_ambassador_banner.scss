@@ -2,7 +2,7 @@ $banner-vertical-padding: 6px;
 $banner-text-max-width: 70%;
 
 $banner-unassigned-bg-color: #d4edf7;
-$banner-background-gradient: linear-gradient(to left, mix($color-black, $color-forever_valet, 10%), mix($color-black, $color-forever_services, 10%));
+$banner-background-gradient: linear-gradient(to left, mix($color-blackt, $color-forever_valet, 10%), mix($color-blackt, $color-forever_services, 10%));
 $banner-background-visible: 0.1;
 $banner-text-color: transparentize($color-whitet, 0.2);
 
@@ -42,7 +42,7 @@ a.ambassador_banner {
     top: 0;
     left: 0;
     width: 100%;
-    background-color: $color-black;
+    background-color: $color-blackt;
     opacity: 0;
     @include transition(opacity $banner-hover-effect-speed ease-in-out);
     z-index: $zindex-navbar - 1;
