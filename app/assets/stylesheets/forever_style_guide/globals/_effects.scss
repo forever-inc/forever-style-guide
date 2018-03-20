@@ -41,7 +41,7 @@
 }
 
 $shadow-color: rgba(color('gray-500'), 0.6);
-$color-card-bg: color('white');
+$color-card-bg: color('whitet');
 
 %no-shadow {
   @include box-shadow(transparent, 0, 0, 0, 0);

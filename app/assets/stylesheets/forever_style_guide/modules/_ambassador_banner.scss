@@ -4,7 +4,7 @@ $banner-text-max-width: 70%;
 $banner-unassigned-bg-color: #d4edf7;
 $banner-background-gradient: linear-gradient(to left, mix($color-black, $color-forever_valet, 10%), mix($color-black, $color-forever_services, 10%));
 $banner-background-visible: 0.1;
-$banner-text-color: transparentize($color-white, 0.2);
+$banner-text-color: transparentize($color-whitet, 0.2);
 
 $ambassador-avatar-size: 130px;
 
@@ -112,7 +112,7 @@ a.ambassador_banner {
   align-items: center;
   justify-content: center;
   background-image: $banner-background-gradient;
-  border-top: 2px solid transparentize($color-white, 0.9);
+  border-top: 2px solid transparentize($color-whitet, 0.9);
 }
 
 .ambassador_banner-dropdown-avatar {
@@ -137,19 +137,19 @@ a.ambassador_banner {
 }
 
 .ambassador_banner-dropdown-info-main-rank {
-  color: transparentize($color-white, 0.3);
+  color: transparentize($color-whitet, 0.3);
 }
 
 .ambassador_banner-dropdown-info-main-location {
-  color: transparentize($color-white, 0.2);
+  color: transparentize($color-whitet, 0.2);
 }
 
 .ambassador_banner-dropdown-info .ambassador_banner-dropdown-info-link { // specificity needed to override style guide link styles
   display: inline-block;
   max-width: 100%;
-  color: $color-white;
+  color: $color-whitet;
   text-overflow: ellipsis;
-  white-space: nowrap;
+  whitet-space: nowrap;
   overflow: hidden;
 }
 

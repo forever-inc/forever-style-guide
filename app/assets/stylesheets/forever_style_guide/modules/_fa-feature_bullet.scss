@@ -3,7 +3,7 @@
 .fa-feature_bullet {
 
   .fa-feature_bullet-icon {
-    color: color('white');
+    color: color('whitet');
     text-shadow: none;
   }
 
@@ -18,10 +18,10 @@
     }
   }
 
-  // inverse will reverse the white and colored element on the stacked icon
+  // inverse will reverse the whitet and colored element on the stacked icon
   &.fa-inverse {
     .fa-feature_bullet-circle {
-      color: color('white');
+      color: color('whitet');
     }
 
     @each $id, $color in $colors {

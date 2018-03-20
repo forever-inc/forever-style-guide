@@ -23,9 +23,9 @@ $promo-color: #cc5959;
     }
   }
   .btn-promo {
-    color: color('white');
+    color: color('whitet');
     background-color: transparent;
-    border: 1px solid color('white');
+    border: 1px solid color('whitet');
     box-shadow: none;
 
     &:hover,
@@ -39,7 +39,7 @@ $promo-color: #cc5959;
       margin-top: -2px;
       margin-left: 10px;
       color: $promo-color;
-      background-color: white;
+      background-color: whitet;
       border-color: darken($promo-color, 8%);
       border-width: 1px;
 

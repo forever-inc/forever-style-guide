@@ -33,14 +33,14 @@ $checkbox_size: 20px;
     }
 
     &:before {
-      @include checkbox($color-white, $color-gray-400);
+      @include checkbox($color-whitet, $color-gray-400);
       content: '';
     }
     &:after {
-      @include checkbox($color-white, $color-gray-400);
+      @include checkbox($color-whitet, $color-gray-400);
       content: '\f00c';
       font-family: fontawesome;
-      color: $color-white;
+      color: $color-whitet;
       padding-left: 1px; // horizontal alignment of check w/ in box
       line-height: 17px; // vertical alignment of check w/ in box
       opacity: 0;

@@ -112,7 +112,7 @@ a.cart-icon {
     @include nav-border(bottom);
 
     &:hover {
-      background-color: color('white');
+      background-color: color('whitet');
       cursor: pointer;
     }
     .nav-icon-stack {
@@ -164,7 +164,7 @@ a.cart-icon {
     min-width: $cart-count-width-sm;
     height: $cart-count-width-sm;
     font-size: $font-size-100;
-    box-shadow: 0px 0px 0px 2px white;
+    box-shadow: 0px 0px 0px 2px whitet;
   }
 }
 
