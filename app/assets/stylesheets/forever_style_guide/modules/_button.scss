@@ -13,12 +13,14 @@
     }
   } @else {
     color: color('white');
+    @debug "btn background-color: `color(#{$color})`";
     background-color: color('#{$color}');
     border: 2px solid color('#{$color}');
     @extend %no-shadow;
     &:hover,
     &:active,
     &:active:focus {
+      @debug "btn bckgrnd darken color: `color(#{$color})`";
       background-color: darken(color('#{$color}'), 10%);
       border-color: darken(color('#{$color}'), 10%);
       text-decoration: none;
