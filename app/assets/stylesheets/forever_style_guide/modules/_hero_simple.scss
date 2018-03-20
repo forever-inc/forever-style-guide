@@ -64,9 +64,6 @@ $hero_simple-sm-height-md: 260px;
   bottom: 0;
   padding: 30px;
 
-  @media (min-width: $screen-xxl) {
-    padding: 50px;
-  }
   @media (max-width: $screen-xs) {
     padding: 25px 20px;
   }
