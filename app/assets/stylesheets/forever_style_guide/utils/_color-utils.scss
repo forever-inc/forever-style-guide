@@ -1,7 +1,9 @@
 /* =colors-utils
 
+
 Sass functions and color related variables beyond standard color declarations
 ---------------------------------------------------------------------------- */
+$darken-color-percentage: 10%;
 
 // map for all color declarations
 $colors: () !default;
@@ -17,7 +19,7 @@ $variations: (
   ),
   dark: (
     function: darken,
-    parameters: 10%
+    parameters: $darken-color-percentage
   )
 );
 

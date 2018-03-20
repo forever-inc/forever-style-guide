@@ -8,8 +8,8 @@
     &:hover,
     &:active,
     &:active:focus {
-      color: darken($colorified-color, 10%);
-      border-color: darken($colorified-color, 10%);
+      color: darken($colorified-color, $darken-color-percentage);
+      border-color: darken($colorified-color, $darken-color-percentage);
       background-color: lighten($colorified-color, 40%);
       text-decoration: none;
     }
@@ -21,8 +21,8 @@
     &:hover,
     &:active,
     &:active:focus {
-      background-color: darken($colorified-color, 10%);
-      border-color: darken($colorified-color, 10%);
+      background-color: darken($colorified-color, $darken-color-percentage);
+      border-color: darken($colorified-color, $darken-color-percentage);
       text-decoration: none;
     }
   }
