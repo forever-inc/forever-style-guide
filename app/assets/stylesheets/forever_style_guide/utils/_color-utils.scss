@@ -34,7 +34,9 @@ $variations: (
 
 // retrieves a color from the master color list
 @function get_color($key) {
+  @debug "get_color key: `#{$key}`";
   @if map-has-key($colors, $key) {
+    @debug "map-get with colors key: `#{map-get($colors, $key)}`";
     @return map-get($colors, $key);
   }
   @warn "Unknown `#{$key}` in $colors.";
