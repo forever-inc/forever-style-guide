@@ -59,8 +59,6 @@
   // creates a button style for each color in core color dictionary
   @each $id, $color in $colors {
     @at-root #{&}.btn-#{$id} {
-      @debug "Color: `#{$color}`.";
-      @debug "ID: `#{$id}`.";
       @include btn-color(#{$id});
 
       &.btn-inverse {
