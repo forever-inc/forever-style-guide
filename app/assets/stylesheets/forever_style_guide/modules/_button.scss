@@ -1,26 +1,28 @@
 @mixin btn-color($color, $inverse: false) {
+  $colorified-color: color('#{$color}'); // set local variable to avoid compilation problems with 'black' and 'white' in Mars UI
   @if ($inverse) {
-    color: color('#{$color}');
+    color: $colorified-color;
     background-color: color('white');
-    border: 2px solid color('#{$color}');
+    border: 2px solid $colorified-color;
     @extend %no-shadow;
     &:hover,
     &:active,
     &:active:focus {
-      color: color('#{$color}-dark');
-      background-color: color('white');
-      text-decoration: underline;
+      color: darken($colorified-color, $darken-color-percentage);
+      border-color: darken($colorified-color, $darken-color-percentage);
+      background-color: lighten($colorified-color, 40%);
+      text-decoration: none;
     }
   } @else {
     color: color('white');
-    background-color: color('#{$color}');
-    border: 2px solid color('#{$color}');
+    background-color: $colorified-color;
+    border: 2px solid $colorified-color;
     @extend %no-shadow;
     &:hover,
     &:active,
     &:active:focus {
-      background-color: color('#{$color}-dark');
-      border-color: color('#{$color}-dark');
+      background-color: darken($colorified-color, $darken-color-percentage);
+      border-color: darken($colorified-color, $darken-color-percentage);
       text-decoration: none;
     }
   }
@@ -56,8 +58,8 @@
     }
   }
 
-  // creates a button style for each color in core color dictionary
-  @each $id, $color in $core_colors {
+  // creates a button style for each color in color dictionary
+  @each $id, $color in $colors {
     @at-root #{&}.btn-#{$id} {
       @include btn-color(#{$id});
 

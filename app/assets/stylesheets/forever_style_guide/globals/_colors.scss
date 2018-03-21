@@ -21,7 +21,6 @@ $color-forever_silver:      set_color('silver', #f6f7fb) !default;
 
 // Deprecated brand color declarations, colors that should eventually be removed
 $color-forever_purple:      colorify('purple', #731472) !default;
-$color-forever_beige:       set_color('beige', #ebeae6) !default;
 
 // B&W, these colors just get registered they don't have dark/light variations
 $color-white:               set_color('white', #fff) !default;
@@ -34,6 +33,10 @@ $color-gray-600:            set_color('gray-600', #666) !default;
 $color-gray-700:            set_color('gray-700', #333) !default;
 $color-gray-800:            set_color('gray-800', #222) !default;
 $color-black:               set_color('black', #000) !default;
+$color-forever_beige:       set_color('beige', #ebeae6) !default;
+$color-background:          set_color('background', $color-forever_beige) !default;
+$color-text:                set_color('text', $color-forever_gray) !default;
+
 
 // Semantic color usages, list of aliases for declared colors.
 $color-primary:             colorify('primary', $color-forever_green) !default;
@@ -41,8 +44,6 @@ $color-secondary:           colorify('secondary', $color-forever_blue) !default;
 $color-accent:              colorify('accent', $color-forever_valet) !default;
 $color-warning:             colorify('warning', $color-forever_orange) !default;
 $color-danger:              colorify('danger', $color-forever_red) !default;
-$color-background:          set_color('background', $color-forever_beige) !default;
-$color-text:                set_color('text', $color-forever_gray) !default;
 
 // Forever LIVE! 2016 brand colors
 $color-live16-green:        colorify('live16-green', #367860) !default;
