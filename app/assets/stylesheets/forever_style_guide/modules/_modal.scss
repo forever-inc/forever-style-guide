@@ -4,6 +4,8 @@ $modal-product-suggestion-sm: 170px;
 $modal-promo-height: 475px;
 $modal-xl-screen-md-width: 900px;
 $modal-xl-screen-lg-width: 1170px;
+$modal-margin-top-sm: 45px;
+$modal-margin-top-md: 80px;
 
 .modal-content {
   border: none;
@@ -82,13 +84,13 @@ $modal-xl-screen-lg-width: 1170px;
 
 .modal-dialog {
   @media (min-width: $screen-xs-min) {
-    margin: ($header-height + 5) 10px 0;
+    margin: $modal-margin-top-sm 10px 0;
   }
   @media (min-width: $screen-sm-min) {
-    margin: ($header-height + 5) auto 0;
+    margin: $modal-margin-top-sm auto 0;
   }
   @media (min-width: $screen-md-min) {
-    margin-top: $header-height * 2;
+    margin-top: $modal-margin-top-md;
    }
  }
 
