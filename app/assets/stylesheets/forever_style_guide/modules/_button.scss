@@ -32,8 +32,6 @@
 .btn {
   @extend %btn-style;
   padding: $btn-padding-default-vertical $btn-padding-default-horizontal;
-  border-radius: $border-radius-large;
-
 
   &:hover,
   &:active {

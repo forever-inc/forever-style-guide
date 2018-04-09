@@ -1,10 +1,11 @@
 /* =bootstrap variables
 variables placed here will be overridden and reloaded in bootstrap
 ---------------------------------------------------------------------------- */
-$border-radius-xl:            35px !global;
-$border-radius-large:         35px !global;
-$border-radius-small:         35px !global;
+$border-radius-xl:            4px !global;
+$border-radius-large:         2px !global;
+$border-radius-small:         1px !global;
 $border-radius-default:       $border-radius-small !default;
+$border-radius-button:        35px;
 
 $padding-default-vertical:    10px !default;
 $padding-default-horizontal:  8px !default;
