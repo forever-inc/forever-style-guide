@@ -3,6 +3,7 @@ $radio-offset: 10px;
 .input-group {
   .form-control {
     font-size: $font-size-default;
+    border-radius: $border-radius-large;
   }
 
   input {

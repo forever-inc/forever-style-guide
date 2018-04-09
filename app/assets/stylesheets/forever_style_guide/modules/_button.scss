@@ -18,6 +18,7 @@
     background-color: $colorified-color;
     border: 2px solid $colorified-color;
     @extend %no-shadow;
+    @include box_shadow_base();
     &:hover,
     &:active,
     &:active:focus {
@@ -31,6 +32,8 @@
 .btn {
   @extend %btn-style;
   padding: $btn-padding-default-vertical $btn-padding-default-horizontal;
+  border-radius: $border-radius-large;
+
 
   &:hover,
   &:active {
