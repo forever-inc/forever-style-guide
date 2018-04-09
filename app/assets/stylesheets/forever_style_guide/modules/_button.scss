@@ -135,7 +135,6 @@
     height: $btn-lg-size;
     font-size: $font-size-400;
     padding: $btn-padding-large-vertical $btn-padding-large-horizontal;
-    border-radius: $border-radius-large;
     line-height: 1.8;
 
     .fa {
@@ -151,7 +150,6 @@
     height: $btn-sm-size;
     padding: $btn-padding-small-vertical $btn-padding-small-horizontal;
     line-height: 1.6;
-    border-radius: $border-radius-small;
 
     .fa {
       font-size: $icon-sm-size;
