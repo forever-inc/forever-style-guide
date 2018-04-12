@@ -14,6 +14,10 @@
   }
 }
 
+@mixin box_shadow_base() {
+  box-shadow: 0 1px 2px 0 transparentize($color-gray-500, 0.6);
+}
+
 @mixin transition($transition-properties...) {
   -webkit-transition: $transition-properties;
   -moz-transition: $transition-properties;
@@ -99,6 +103,7 @@ $color-card-bg: color('white');
   text-align: center;
   font-size: $font-size-300;
   border: 2px solid color('gray-100');
+  border-radius: $border-radius-button;
 
   @include transition(background-color 0.3s ease, border 0.3s ease);
 

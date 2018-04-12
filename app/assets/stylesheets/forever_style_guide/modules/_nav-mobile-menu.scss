@@ -1,6 +1,9 @@
 $nav-icon_bar-width: 22px;
 $close-icon-offset: -5px;
 $mobile-menu-close-btn-height: 40px;
+$sign-up-btn-height: 30px;
+$sign-up-btn-top-margin: 10px;
+$sign-up-btn-top-padding: 8px;
 
 .nav-mobile-menu {
   @media (max-width: $grid-float-breakpoint) {
@@ -14,7 +17,7 @@ $mobile-menu-close-btn-height: 40px;
   @media (max-width: $grid-float-breakpoint) {
     max-height: none !important; // important overrides navbar bootstrap stuff
     order: 2; // .nav-mobile-menu-close: 1, .navbar-user_info: 2, .navbar-text_center: 3
-    
+
     &.navbar-user_info-logged_out {
       order: 4;
     }
@@ -98,8 +101,8 @@ $mobile-menu-close-btn-height: 40px;
     a.btn {
       @media (min-width: $grid-float-breakpoint) {
         margin-top: 3px;
-        padding-left: 5px;
-        padding-right: 5px;
+        padding-left: 7px;
+        padding-right: 7px;
         font-size: $font-size-100;
         line-height: 1;
       }
@@ -115,18 +118,23 @@ $mobile-menu-close-btn-height: 40px;
         color: $color-gray-600;
         background-color: transparent;
         border-color: white;
+        box-shadow: none;
 
         &:hover,
         &:focus,
         &:active,
         &:active:focus {
           color: $color-secondary;
-          box-shadow: none;
         }
       }
     }
 
     .btn.btn-signup {
+      @media(min-width: $grid-float-breakpoint) {
+        height: $sign-up-btn-height;
+        margin-top: $sign-up-btn-top-margin;
+        padding-top: $sign-up-btn-top-padding;
+      }
       &:focus {
         background-color: color('primary-dark');
         border-color: color('primary-dark');
