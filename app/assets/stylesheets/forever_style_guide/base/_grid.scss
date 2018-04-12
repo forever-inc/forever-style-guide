@@ -1,0 +1,136 @@
+$f-grid-default-padding: 2px;
+$f-grid-bootstrap-padding: 15px;
+$f-grid-col-count: 24;
+
+@mixin f-grid-make-column($size, $columns: $f-grid-col-count) {
+  max-width: percentage($size / $columns);
+  flex: 0 0 percentage($size / $columns);
+}
+
+@mixin f-grid-make-column-offset($size, $columns: $f-grid-col-count) {
+  margin-left: percentage($size / $columns);
+}
+
+@mixin f-grid-make-columns-for-breakpoint($bp, $columns: $f-grid-col-count) {
+  @for $i from 1 through $f-grid-col-count {
+    .f-col-#{$bp}-#{$i} {
+      @include f-grid-make-column($i, $f-grid-col-count);
+    }
+
+    .f-col-#{$bp}-offset-#{$i} {
+      @include f-grid-make-column-offset($i, $f-grid-col-count)
+    }
+  }
+
+  //no flex inside column
+  .f-col-#{$bp}-none {
+    max-width: none;
+    flex: none;
+  }
+
+  //auto-width
+  .f-col-#{$bp} {
+    flex-grow: 1;
+    flex-basis: 0;
+  }
+
+}
+
+.f-grid {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  margin-left: -$f-grid-default-padding;
+  margin-right: -$f-grid-default-padding;
+}
+
+[class*="f-col"] {
+  flex-basis: 100%;
+  min-height: 1px;
+  align-items: stretch;
+  padding: $f-grid-default-padding;
+}
+
+/* RESPONSIVE */
+@include f-grid-make-columns-for-breakpoint('xxs');
+
+@media screen and (min-width: $screen-xs-min) {
+  @include f-grid-make-columns-for-breakpoint('xs');
+}
+
+@media screen and (min-width: $screen-sm-min) {
+  @include f-grid-make-columns-for-breakpoint('sm');
+}
+
+@media screen and (min-width: $screen-md-min) {
+  @include f-grid-make-columns-for-breakpoint('md');
+}
+
+@media screen and (min-width: $screen-lg-min) {
+  @include f-grid-make-columns-for-breakpoint('lg');
+}
+
+/* MODIFIERS */
+
+/* auto child height makes immediate children of columns fill all available height. */
+.f-grid-auto_child_height [class*="f-col"] {
+  display: flex; //add flex to all columns
+  min-width: 1px;
+
+  > * {
+    flex-grow: 1; //set immediate child to grow
+    min-width: 1px;
+  }
+}
+
+/* justify center columns */
+.f-grid-center {
+  justify-content: center;
+}
+
+.f-grid-align-right {
+  justify-content: flex-end;
+}
+
+.f-grid-valign-top {
+  align-items: flex-start;
+}
+
+.f-grid-valign-middle {
+  align-items: center;
+}
+
+.f-grid-valign-bottom {
+  align-items: flex-end;
+}
+
+.f-grid-reverse {
+  flex-direction: row-reverse;
+}
+
+.f-grid-around {
+  justify-content: space-around;
+}
+
+.f-grid-between {
+  justify-content: space-between;
+}
+
+.f-grid-no_padding {
+  margin-left: 0;
+  margin-right: 0;
+
+  [class*="f-col"] {
+    padding: 0;
+  }
+}
+
+.f-grid-bs_padding {
+  margin-left: -$f-grid-bootstrap-padding;
+  margin-right: -$f-grid-bootstrap-padding;
+
+  [class*="f-col"] {
+    padding: 0 $f-grid-bootstrap-padding;
+  }
+}
