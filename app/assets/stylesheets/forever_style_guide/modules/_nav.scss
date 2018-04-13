@@ -76,6 +76,9 @@ $deals-icon-vertical-position: -5px;
   @media (max-width: $screen-sm) {
     margin-left: $nav-horizontal-spacing;
   }
+  @media (max-width: $minimum-application-width) {
+    max-width: $logo-max-width-small;
+  }
 }
 
 // main product nav links
