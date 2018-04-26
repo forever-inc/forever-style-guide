@@ -5,6 +5,12 @@ $avatar-sm: 70px;
 $avatar-xs: 40px;
 $avatar-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 
+@mixin avatar_size($size) {
+  height: $size;
+  width: $size;
+  min-width: $size; // dont' squish my flex, man
+}
+
 .avatar {
   position: relative;
   padding: 0;
@@ -16,8 +22,7 @@ $avatar-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
   border: 4px solid color('gray-100');
 
   @at-root #{&}-xl {
-    height: $avatar-xl;
-    width: $avatar-xl;
+    @include avatar_size($avatar-xl);
 
     .avatar-initials {
       font-size: $font-size-600;
@@ -25,8 +30,7 @@ $avatar-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
   }
 
   @at-root #{&}-lg {
-    height: $avatar-lg;
-    width: $avatar-lg;
+    @include avatar_size($avatar-lg);
 
     .avatar-initials {
       font-size: $font-size-600;
@@ -34,8 +38,7 @@ $avatar-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
   }
 
   @at-root #{&}-md {
-    height: $avatar-md;
-    width: $avatar-md;
+    @include avatar_size($avatar-md);
 
     .avatar-initials {
       font-size: $font-size-500;
@@ -43,8 +46,7 @@ $avatar-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
   }
 
   @at-root #{&}-sm {
-    height: $avatar-sm;
-    width: $avatar-sm;
+    @include avatar_size($avatar-sm);
 
     .avatar-initials {
       font-size: $font-size-400;
@@ -52,8 +54,7 @@ $avatar-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
   }
 
   @at-root #{&}-xs {
-    height: $avatar-xs;
-    width: $avatar-xs;
+    @include avatar_size($avatar-sm);
     border-width: 2px;
 
     .avatar-initials {
