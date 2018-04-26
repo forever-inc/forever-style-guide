@@ -40,11 +40,13 @@ $padding-small-horizontal: 3px;
 }
 
 .navigation-user_info-avatar {
-  height: $avatar-height;
-  width: $avatar-width;
   margin-right: $padding-default-horizontal;
-  box-shadow: none;
   border: none;
+
+  .avatar {
+    height: $avatar-height;
+    width: $avatar-height;
+  }
 }
 
 .navigation-user_info-user_name {
@@ -94,7 +96,6 @@ $padding-small-horizontal: 3px;
   min-width: $avatar-sm-width; // fixes an ie 11 flexbug
   margin: 0;
   margin-right: $padding-large-horizontal;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
   border: none;
   padding: 0;
 }

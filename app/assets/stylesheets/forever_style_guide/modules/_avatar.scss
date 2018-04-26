@@ -1,35 +1,79 @@
+$avatar-xl: 210px;
+$avatar-lg: 150px;
+$avatar-md: 100px;
+$avatar-sm: 70px;
+$avatar-xs: 40px;
+$avatar-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+
 .avatar {
-  padding: 1px;
+  position: relative;
+  padding: 0;
   margin-right: 3px;
-  color: color('white');
+  overflow: hidden;
+  background-color: $color-gray-100;
+  box-shadow: none;
   border-radius: 50%;
   border: 4px solid color('gray-100');
-  @extend %item-shadow;
 
   @at-root #{&}-xl {
-    height: 210px;
-    width: 210px;
+    height: $avatar-xl;
+    width: $avatar-xl;
+
+    .avatar-initials {
+      font-size: $font-size-600;
+    }
   }
+
   @at-root #{&}-lg {
-    height: 150px;
-    width: 150px;
+    height: $avatar-lg;
+    width: $avatar-lg;
+
+    .avatar-initials {
+      font-size: $font-size-600;
+    }
   }
+
   @at-root #{&}-md {
-    height: 100px;
-    width: 100px;
+    height: $avatar-md;
+    width: $avatar-md;
+
+    .avatar-initials {
+      font-size: $font-size-500;
+    }
   }
+
   @at-root #{&}-sm {
-    height: 70px;
-    width: 70px;
+    height: $avatar-sm;
+    width: $avatar-sm;
+
+    .avatar-initials {
+      font-size: $font-size-400;
+    }
   }
+
   @at-root #{&}-xs {
-    height: 40px;
-    width: 40px;
-    border: 2px;
+    height: $avatar-xs;
+    width: $avatar-xs;
+    border-width: 2px;
+
+    .avatar-initials {
+      font-size: $font-size-300;
+    }
   }
-  @at-root #{&}-icon {
-    height: 25px;
-    width: 25px;
-    border: 0;
-  }
+}
+
+.avatar-with_shadow {
+  box-shadow: $avatar-shadow;
+}
+
+.avatar-initials {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $color-white;
 }
