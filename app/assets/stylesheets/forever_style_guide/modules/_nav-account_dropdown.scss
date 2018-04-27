@@ -1,6 +1,5 @@
 // desktop authenticated account dropdown styling
-$avatar-height: 35px;
-$avatar-width: 35px;
+$avatar-size: 35px;
 $avatar-sm-width: 70px;
 
 $user_info-max_width: 100px;
@@ -40,11 +39,14 @@ $padding-small-horizontal: 3px;
 }
 
 .navigation-user_info-avatar {
-  height: $avatar-height;
-  width: $avatar-width;
   margin-right: $padding-default-horizontal;
-  box-shadow: none;
   border: none;
+
+  .avatar {
+    height: $avatar-size;
+    width: $avatar-size;
+    min-width: $avatar-size;
+  }
 }
 
 .navigation-user_info-user_name {
