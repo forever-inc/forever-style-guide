@@ -23,6 +23,8 @@ $font-size-150: 13px;
 $deals-icon-horizontal-position: -3px;
 $deals-icon-vertical-position: -5px;
 
+$nav-icon-padding: 4px;
+
 // animation on hover
 @mixin nav_hover_border($orientation) {
   &::before {
@@ -239,4 +241,9 @@ a.navigation-items-link-deals {
   &:focus {
     background-color: inherit !important;
   }
+}
+
+.navbar-nav > li > a, .navbar-nav > li > a.nav-icon-padding {
+  padding-left: $nav-icon-padding;
+  padding-right: $nav-icon-padding;
 }
