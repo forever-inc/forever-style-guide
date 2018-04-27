@@ -9,8 +9,6 @@ $mobile-icon-size: 21px;
   &.navigation-user_info-help_link {
     float: left; // ensures proper cart with count display in IE
     margin-top: $icon-to-text-alignment;
-    padding-left: $padding-small-horizontal * 2;
-    padding-right: $padding-small-horizontal * 2;
     background-color: inherit;
     @include transition($navigation-link-hover-transition);
 
