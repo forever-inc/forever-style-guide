@@ -7,7 +7,7 @@ $sm-logo-vertical-align: 8px;
 $logo-height-large: 28px;
 $logo-height-small: 18px;
 $logo-max-width: 175px;
-$logo-max-width-small: 113px;
+$logo-max-width-small: 140px;
 
 $nav-horizontal-spacing: 10px;
 $nav-horizontal-spacing-small: 3px;
@@ -22,6 +22,8 @@ $font-size-150: 13px;
 
 $deals-icon-horizontal-position: -3px;
 $deals-icon-vertical-position: -5px;
+
+$nav-icon-padding: 4px;
 
 // animation on hover
 @mixin nav_hover_border($orientation) {
@@ -75,6 +77,9 @@ $deals-icon-vertical-position: -5px;
   }
   @media (max-width: $screen-sm) {
     margin-left: $nav-horizontal-spacing;
+  }
+  @media (min-width: $minimum-application-width) and (max-width: $screen-xs) {
+    max-width: $logo-max-width-small;
   }
 }
 
@@ -236,4 +241,9 @@ a.navigation-items-link-deals {
   &:focus {
     background-color: inherit !important;
   }
+}
+
+.navbar-nav > li > a, .navbar-nav > li > a.nav-icon-padding {
+  padding-left: $nav-icon-padding;
+  padding-right: $nav-icon-padding;
 }
