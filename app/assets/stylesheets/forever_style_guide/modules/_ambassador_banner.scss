@@ -6,8 +6,6 @@ $banner-background-gradient: linear-gradient(to left, mix($color-black, $color-f
 $banner-background-visible: 0.1;
 $banner-text-color: transparentize($color-white, 0.2);
 
-$ambassador-avatar-size: 130px;
-
 $banner-hover-effect-speed: 0.15s;
 $chevron-rotate-effect-speed: 0.25s;
 $dropdown-entrance-and-exit-effect-speed: 0.22s;
@@ -116,15 +114,9 @@ a.ambassador_banner {
 }
 
 .ambassador_banner-dropdown-avatar {
-  width: $ambassador-avatar-size;
-  height: $ambassador-avatar-size;
   align-self: flex-start;
   margin: 0;
   margin-right: $padding-large-horizontal * 2;
-  padding: 0;
-  border-radius: 50%;
-  border: 4px solid $color-gray-100;
-  box-shadow: 1px 1px 1px rgba(0,0,0,0.2);
 }
 
 .ambassador_banner-dropdown-info {
