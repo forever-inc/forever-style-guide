@@ -144,7 +144,7 @@ a.navigation-items-link {
   padding-top: $padding-default-vertical;
   padding-bottom: $padding-default-vertical;
   color: $color-gray-600;
-  text-transform: uppercase;
+  text-transform: capitalize;
   text-decoration: none;
 
   @media screen and (min-width: $grid-float-breakpoint) {
