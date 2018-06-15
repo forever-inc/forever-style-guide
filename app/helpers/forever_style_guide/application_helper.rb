@@ -17,7 +17,7 @@ module ForeverStyleGuide
            "Forever Media Conversion", "Forever Mobile", "Forever Owner", "Forever Vault", "Forever Print Shop", "Forever Services",
            "Forever Software", "Forever Store"
         copy[0..6].upcase + "™" + copy[7..copy.length-1]
-      when "Forever Artisan", "Forever Storage"
+      when "Forever Artisan", "Forever Storage", "Forever Premium Video Plan", "Forever Club"
         copy[0..6].upcase + copy[7..copy.length-1] + "®"
       when "Artisan", "Panstoria"
         copy + "®"
