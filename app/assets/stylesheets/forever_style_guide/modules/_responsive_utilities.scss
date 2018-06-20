@@ -54,13 +54,13 @@
 
 // Utilities for new nav w/ custom breakpoint
 .visible-mobile {
-  @media (min-width: $grid-float-breakpoint + 1) {
+  @media (min-width: $grid-float-breakpoint) {
     display: none !important;
   }
 }
 
 .hidden-mobile {
-  @media (max-width: $grid-float-breakpoint) {
+  @media (max-width: $grid-float-breakpoint-max) {
     display: none !important;
   }
 }

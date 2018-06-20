@@ -45,7 +45,7 @@ $nav-icon-padding: 4px;
   box-shadow: $navigation-shadow;
 
   .container-fluid > .navbar-header {
-    @media (min-width: $grid-float-breakpoint + 1) and (max-width: $screen-md) {
+    @media (min-width: $grid-float-breakpoint) and (max-width: $screen-md) {
       margin-right: -10px;
       margin-left: -10px;
     }
@@ -63,7 +63,7 @@ $nav-icon-padding: 4px;
     max-width: $logo-max-width-small;
     margin-top: $sm-logo-vertical-align;
   }
-  @media (max-width: $grid-float-breakpoint) {
+  @media (max-width: $grid-float-breakpoint-max) {
     display: inline-block;
     height: $logo-height-large;
     max-width: $logo-max-width;
@@ -91,7 +91,7 @@ $nav-icon-padding: 4px;
       padding-right: $nav-horizontal-spacing / 2;
     }
 
-    @media (max-width: $grid-float-breakpoint) {
+    @media (max-width: $grid-float-breakpoint-max) {
       padding-top: $padding-small-vertical;
       padding-bottom: $padding-small-vertical;
       padding-left: 0;
@@ -109,12 +109,12 @@ $nav-icon-padding: 4px;
   display: inline-block;
   float: none;
 
-  @media (min-width: $grid-float-breakpoint + 1) and (max-width: $screen-md) {
+  @media (min-width: $grid-float-breakpoint) and (max-width: $screen-md) {
     margin-right: -10px;
     margin-left: -10px;
   }
 
-  @media (max-width: $grid-float-breakpoint) {
+  @media (max-width: $grid-float-breakpoint-max) {
     direction: ltr; // corrects orientation against nav-mobile-menu scrollbar behavior ** mainly fixing safari here
     width: 100%;
     padding-bottom: $nav-horizontal-spacing;
@@ -124,7 +124,7 @@ $nav-icon-padding: 4px;
 }
 
 .navigation-menu-list_item {
-  @media (max-width: $grid-float-breakpoint) {
+  @media (max-width: $grid-float-breakpoint-max) {
     text-align: left;
   }
 
@@ -150,7 +150,7 @@ a.navigation-items-link {
   color: $color-gray-600;
   text-decoration: none;
 
-  @media screen and (min-width: $grid-float-breakpoint + 1) {
+  @media screen and (min-width: $grid-float-breakpoint) {
     align-items: center;
     height: 100%;
     @include transition($navigation-link-hover-transition);
@@ -194,7 +194,7 @@ a.navigation-items-link-deals {
 }
 
 .navbar-nav {
-  @media (max-width: $grid-float-breakpoint) {
+  @media (max-width: $grid-float-breakpoint-max) {
     margin: 0; // overriding bootstrap so non-signed in btn-blocks display as expected TODO: further refactor markup to avoid this
   }
 
@@ -202,18 +202,18 @@ a.navigation-items-link-deals {
     max-height: $nav-height;
     direction: ltr; // corrects orientation against nav-mobile-menu scrollbar behavior ** mainly fixing safari here
 
-    @media (max-width: $grid-float-breakpoint) {
+    @media (max-width: $grid-float-breakpoint-max) {
       float: none !important; // overriding bootstrap so non-signed in btn-blocks display as expected TODO: further refactor markup to avoid this
     }
 
     .navbar-right-icons {
-      @media (max-width: $grid-float-breakpoint) {
+      @media (max-width: $grid-float-breakpoint-max) {
         float: right;
       }
     }
 
     &.navbar-right-icons-container {
-      @media (max-width: $grid-float-breakpoint) {
+      @media (max-width: $grid-float-breakpoint-max) {
         float: right !important;
         margin: auto;
       }
@@ -228,7 +228,7 @@ a.navigation-items-link-deals {
 .navbar-right-icons-container,
 .nav > li.navbar-right-icons,
 .navbar-mobile-menu {
-  @media (max-width: $grid-float-breakpoint) {
+  @media (max-width: $grid-float-breakpoint-max) {
     display: inline-block;
     float: right; //aligns mobile menu
   }
