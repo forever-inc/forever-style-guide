@@ -39,7 +39,7 @@ $padding-small-horizontal: 3px;
 }
 
 .navigation-user_info-avatar {
-  margin-right: $padding-default-horizontal;
+  margin-right: $padding-default-horizontal / 2;
   border: none;
 
   .avatar {

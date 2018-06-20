@@ -10,15 +10,9 @@ $logo-max-width: 175px;
 $logo-max-width-small: 140px;
 
 $nav-horizontal-spacing: 8px;
-$nav-horizontal-spacing-small: 3px;
 
 $hover-border-size: 4px;
 $navigation-link-hover-transition: color 0.15s ease-in-out;
-
-$letter-spacing-xlarge: 0.6px;
-$letter-spacing-large: 0.5px;
-$letter-spacing-medium: 0;
-$font-size-150: 13px;
 
 $deals-icon-horizontal-position: -3px;
 $deals-icon-vertical-position: -5px;
@@ -88,15 +82,13 @@ $nav-icon-padding: 4px;
   height: $nav-height; // TODO - this hsould probably be the $header-height variable, pending further confirmation
 
   .navbar-nav.navbar-text_center > li > a {
-    letter-spacing: $letter-spacing-xlarge;
     padding-left: $nav-horizontal-spacing;
     padding-right: $nav-horizontal-spacing;
     max-height: $nav-height;
 
     @media (max-width: $screen-lg-plus) {
-      padding-left: 4px;
-      padding-right: 4px;
-      letter-spacing: $letter-spacing-medium;
+      padding-left: $nav-horizontal-spacing / 2;
+      padding-right: $nav-horizontal-spacing / 2;
     }
 
     @media (max-width: $grid-float-breakpoint) {
@@ -106,7 +98,7 @@ $nav-icon-padding: 4px;
     }
 
     @media (min-width: $grid-float-breakpoint) and (max-width: $screen-md_to_lg-plus) {
-      font-size: $font-size-150;
+      font-size: $font-size-200;
     }
   }
 }
@@ -144,7 +136,6 @@ a.navigation-items-link {
   padding-top: $padding-default-vertical;
   padding-bottom: $padding-default-vertical;
   color: $color-gray-600;
-  text-transform: uppercase;
   text-decoration: none;
 
   @media screen and (min-width: $grid-float-breakpoint) {
@@ -191,7 +182,6 @@ a.navigation-items-link-deals {
 }
 
 .navbar-nav {
-
   @media (max-width: $grid-float-breakpoint) {
     margin: 0; // overriding bootstrap so non-signed in btn-blocks display as expected TODO: further refactor markup to avoid this
   }

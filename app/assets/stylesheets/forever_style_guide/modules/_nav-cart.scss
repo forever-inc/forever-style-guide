@@ -1,16 +1,24 @@
 $icon-to-text-alignment: -3px;
+$icon-to-text-alignment-alt: -2px;
 $cart-count-horizontal-position: -3px;
 $cart-count-vertical-position: -8px;
-$mobile-icon-size: 21px;
+$cart-count-size: 21px;
+$icon-size-break_to_md: 21px;
 
 //style the cart and help icon the same + override bootstrap
 .navbar-nav > li > a {
-  &.navigation-user_info-cart,
-  &.navigation-user_info-help_link {
+  &.navigation-user_info-icon {
     float: left; // ensures proper cart with count display in IE
     margin-top: $icon-to-text-alignment;
     background-color: inherit;
     @include transition($navigation-link-hover-transition);
+
+    @media (min-width: $grid-float-breakpoint) and (max-width: $screen-md-max) {
+      padding-right: 2px;
+      padding-left: 2px;
+      margin-top: $icon-to-text-alignment-alt;
+      font-size: $icon-size-break_to_md;
+    }
 
     &:hover .fa {
       color: $color-secondary;
@@ -23,6 +31,11 @@ $mobile-icon-size: 21px;
       }
     }
   }
+  &.navigation-user_info-cart {
+    @media (min-width: $grid-float-breakpoint) and (max-width: $screen-md-max) {
+      margin-right: $cart-count-horizontal-position;
+    }
+  }
 }
 
 .navigation-user_info-cart-count {
@@ -32,7 +45,7 @@ $mobile-icon-size: 21px;
   margin-top: $cart-count-vertical-position;
   margin-left: $cart-count-horizontal-position;
   padding-top: 1px; // shim for alignment
-  width: $mobile-icon-size;
-  height: $mobile-icon-size;
+  width: $cart-count-size;
+  height: $cart-count-size;
   border-radius: 50%;
 }

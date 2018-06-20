@@ -115,6 +115,7 @@ $sign-up-btn-top-padding: 8px;
 
     .btn.btn-login {
       @media(min-width: $grid-float-breakpoint) {
+        padding-left: 0;
         color: $color-gray-600;
         background-color: transparent;
         border-color: white;
