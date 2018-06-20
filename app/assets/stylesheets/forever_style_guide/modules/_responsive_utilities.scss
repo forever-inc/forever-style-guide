@@ -52,13 +52,10 @@
   }
 }
 
-
 // Utilities for new nav w/ custom breakpoint
 .visible-mobile {
-  display: none !important;
-
-  @media (max-width: $grid-float-breakpoint) {
-    display: inline-block !important;
+  @media (min-width: $grid-float-breakpoint + 1) {
+    display: none !important;
   }
 }
 

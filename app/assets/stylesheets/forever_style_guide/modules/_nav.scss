@@ -20,7 +20,7 @@ $deals-icon-vertical-position: -5px;
 $nav-icon-padding: 4px;
 
 // animation on hover
-@mixin nav_hover_border($orientation) {
+@mixin nav_hover_border() {
   &::before {
     position: absolute;
     bottom: 0;
@@ -45,7 +45,7 @@ $nav-icon-padding: 4px;
   box-shadow: $navigation-shadow;
 
   .container-fluid > .navbar-header {
-    @media (min-width: $grid-float-breakpoint) and (max-width: $screen-md) {
+    @media (min-width: $grid-float-breakpoint + 1) and (max-width: $screen-md) {
       margin-right: -10px;
       margin-left: -10px;
     }
@@ -95,6 +95,8 @@ $nav-icon-padding: 4px;
       padding-top: $padding-small-vertical;
       padding-bottom: $padding-small-vertical;
       padding-left: 0;
+      text-transform: uppercase;
+      font-size: $font-size-200;
     }
 
     @media (min-width: $grid-float-breakpoint) and (max-width: $screen-md_to_lg-plus) {
@@ -107,7 +109,7 @@ $nav-icon-padding: 4px;
   display: inline-block;
   float: none;
 
-  @media (min-width: $grid-float-breakpoint) and (max-width: $screen-md) {
+  @media (min-width: $grid-float-breakpoint + 1) and (max-width: $screen-md) {
     margin-right: -10px;
     margin-left: -10px;
   }
@@ -118,6 +120,16 @@ $nav-icon-padding: 4px;
     padding-bottom: $nav-horizontal-spacing;
     order: 3; // .nav-mobile-menu-close: 1, .navbar-user_info: 2, .navbar-text_center: 3
     border-bottom: solid 1px $color-gray-300;
+  }
+}
+
+.navigation-menu-list_item {
+  @media (max-width: $grid-float-breakpoint) {
+    text-align: left;
+  }
+
+  @media (max-width: $screen-sm) {
+    min-width: 300px;
   }
 }
 
@@ -138,11 +150,11 @@ a.navigation-items-link {
   color: $color-gray-600;
   text-decoration: none;
 
-  @media screen and (min-width: $grid-float-breakpoint) {
+  @media screen and (min-width: $grid-float-breakpoint + 1) {
     align-items: center;
     height: 100%;
     @include transition($navigation-link-hover-transition);
-    @include nav_hover_border(horizontal);
+    @include nav_hover_border();
   }
 
   @media (max-width: $grid-float-breakpoint) {
@@ -193,6 +205,13 @@ a.navigation-items-link-deals {
     @media (max-width: $grid-float-breakpoint) {
       float: none !important; // overriding bootstrap so non-signed in btn-blocks display as expected TODO: further refactor markup to avoid this
     }
+
+    .navbar-right-icons {
+      @media (max-width: $grid-float-breakpoint) {
+        float: right;
+      }
+    }
+
     &.navbar-right-icons-container {
       @media (max-width: $grid-float-breakpoint) {
         float: right !important;
@@ -203,16 +222,6 @@ a.navigation-items-link-deals {
         max-height: $nav-height-screen-sm;
       }
     }
-  }
-}
-
-.navigation-menu-list_item {
-  @media (max-width: $grid-float-breakpoint) {
-    text-align: left;
-  }
-
-  @media (max-width: $screen-sm) {
-    min-width: 300px;
   }
 }
 

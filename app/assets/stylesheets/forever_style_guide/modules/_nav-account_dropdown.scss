@@ -49,22 +49,6 @@ $padding-small-horizontal: 3px;
   }
 }
 
-.navigation-user_info-user_name {
-  margin-right: $padding-small-horizontal;
-  max-width: $user_info-max_width;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
-  transition: $user_info-toggle-hover_transition;
-
-  @media (min-width: $grid-float-breakpoint) and (max-width: $screen-md_to_lg-plus) {
-    max-width: $user_info-max_width-xs;
-  }
-  @media (min-width: $screen-md_to_lg-plus) and (max-width: $screen-lg-plus) {
-    max-width: $user_info-max_width-sm;
-  }
-}
-
 // Account Dropdown / Popover
 .navigation-account_dropdown-trigger {
   display: flex;
@@ -87,7 +71,7 @@ $padding-small-horizontal: 3px;
 }
 
 .navigation-account_dropdown {
-  @media (min-width: $grid-float-breakpoint) {
+  @media (min-width: $grid-float-breakpoint + 1) {
     @include off-canvas-style;
   }
 }
