@@ -1,20 +1,20 @@
 $navigation-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
 $nav-height: 50px;
+$nav-horizontal-spacing: 8px;
+$nav-icon-padding: 4px;
 
 $logo-height-large: 28px;
 $logo-height-small: 22px;
+$logo-max-width: 175px;
+$logo-max-width-small: 138px;
 $logo-vertical-align-lg: 5px;
 $logo-vertical-align-sm: 6px;
-
-$nav-horizontal-spacing: 8px;
 
 $hover-border-size: 4px;
 $navigation-link-hover-transition: color 0.15s ease-in-out;
 
 $deals-icon-horizontal-position: -3px;
 $deals-icon-vertical-position: -5px;
-
-$nav-icon-padding: 4px;
 
 // animation on hover
 @mixin nav_hover_border() {
@@ -56,15 +56,19 @@ $nav-icon-padding: 4px;
 .navbar-logo {
   height: $logo-height-large;
   margin-top: $logo-vertical-align-lg;
+  max-width: $logo-max-width; // you need to constrain your svg for IE
 
   @media (max-width: $screen-md_to_lg-plus) {
     height: $logo-height-small;
+    max-width: $logo-max-width-small;
     margin-top: $logo-vertical-align-sm;
   }
+
   @media (max-width: $grid-float-breakpoint-max) {
     display: inline-block;
     height: $logo-height-large;
     margin-top: $logo-vertical-align-lg;
+    max-width: $logo-max-width; // you need to constrain your svg for IE
   }
 }
 
