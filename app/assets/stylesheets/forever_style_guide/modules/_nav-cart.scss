@@ -1,6 +1,7 @@
 $icon-to-text-alignment: -3px;
 $icon-to-text-alignment-alt: -2px;
 $cart-count-horizontal-position: -3px;
+$cart-count-horizontal-position-alt: -10px;
 $cart-count-vertical-position: -8px;
 $cart-count-size: 21px;
 $icon-size-break_to_md: 21px;
@@ -36,7 +37,14 @@ $icon-size-break_to_md: 21px;
       margin-right: $cart-count-horizontal-position;
     }
   }
+  &.navigation-user_info-cart-with_count {
+    @media (min-width: $grid-float-breakpoint) and (max-width: $screen-md-max) {
+      margin-right: $cart-count-horizontal-position-alt;
+    }
+  }
 }
+
+
 
 .navigation-user_info-cart-count {
   display: block;

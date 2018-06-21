@@ -11,6 +11,8 @@ $user_info-toggle-hover_transition: color 0.15s ease-in-out;
 
 $padding-small-horizontal: 3px;
 
+$cart-with-count-offset: 10px; //offsets .navigation-user_info-cart-with_count when there is a signed in user
+
 .navigation-user_info {
   height: 100%;
   margin-top: 7px;
@@ -41,6 +43,10 @@ $padding-small-horizontal: 3px;
 .navigation-user_info-avatar {
   margin-right: $padding-default-horizontal / 2;
   border: none;
+
+  @media (min-width: $grid-float-breakpoint) and (max-width: $screen-md-max) {
+    padding-left: $cart-with-count-offset;
+  }
 
   .avatar {
     height: $avatar-size;
