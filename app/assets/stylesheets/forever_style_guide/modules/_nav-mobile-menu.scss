@@ -46,9 +46,6 @@ $sign-up-btn-top-padding: 8px;
   @media (max-width: $screen-md) {
     margin-right: -10px; // equalize padding between right-side icons
   }
-  @media (max-width: $screen-xs) {
-    margin-left: 5px;
-  }
 
   &:hover {
     .icon-bar {
@@ -88,12 +85,6 @@ $sign-up-btn-top-padding: 8px;
     &.nav-mobile-menu-signup {
       @media (min-width: $grid-float-breakpoint) {
         float: right!important; //put sign up out to right on desktop
-      }
-      @media (min-width: $grid-float-breakpoint) and (max-width: $screen-md) {
-        padding-right: 5px;
-      }
-      @media (min-width: $screen-md) {
-        padding-right: 15px;
       }
     }
 

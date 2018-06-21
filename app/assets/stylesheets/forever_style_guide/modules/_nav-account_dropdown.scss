@@ -16,10 +16,6 @@ $cart-with-count-offset: 10px; //offsets .navigation-user_info-cart-with_count w
 .navigation-user_info {
   height: 100%;
   margin-top: 7px;
-
-  @media (min-width: $screen-md) {
-    margin-right: 15px;
-  }
 }
 
 // Dont show user info close btn when in mobile offcanvas
