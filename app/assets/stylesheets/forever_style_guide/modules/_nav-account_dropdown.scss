@@ -23,9 +23,20 @@ $cart-with-count-offset: 10px; //offsets .navigation-user_info-cart-with_count w
   @media (max-width: $grid-float-breakpoint-max) {
     order: 1;// .nav-mobile-menu-close: 1, .navbar-user_info: 2, .navbar-text_center: 3
   }
+
   &.nav-user_info-close {
+    @media (min-width: $grid-float-breakpoint) {
+      display: block;
+    }
+
     @media (max-width: $grid-float-breakpoint-max) {
-      display: none !important;
+      display: none;
+    }
+
+    .navbar-toggle {
+      @media (min-width: $grid-float-breakpoint) {
+        display: block;
+      }
     }
   }
 }

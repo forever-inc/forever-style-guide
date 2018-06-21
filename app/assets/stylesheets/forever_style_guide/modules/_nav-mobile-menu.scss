@@ -25,8 +25,11 @@ $sign-up-btn-top-padding: 8px;
 }
 
 .nav-mobile-menu-close {
-  display: none;
   height: $mobile-menu-close-btn-height;
+
+  @media (min-width: $grid-float-breakpoint) {
+    display: none;
+  }
 
   .navbar-toggle {
     margin-right: 0;

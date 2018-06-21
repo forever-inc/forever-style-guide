@@ -57,25 +57,24 @@ $color-nav-hover: color('secondary');
   transition: all 0.3s ease-in-out; // TODO - animate out
   z-index: $zindex-tooltip;
   overflow: hidden;
+  direction: rtl; // puts scrollbar to lefthand side
 
   .nav-mobile-menu-close {
     display: block;
   }
 
+  .navbar-toggle {
+    padding-right: 0;
+  }
+
   &.in {
     opacity: 1;
-    direction: rtl; // puts scrollbar to lefthand side
     right: 0;
     overflow-y: auto;
     z-index: $in-front-of-primary-and-banner-and-impersonation;
 
     @media (max-width: $screen-xs) {
       width: 100%;
-    }
-
-    .navbar-toggle {
-      display: block;
-      padding-right: 0;
     }
   }
 }
