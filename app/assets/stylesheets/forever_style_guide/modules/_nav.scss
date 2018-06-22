@@ -1,32 +1,23 @@
 $navigation-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
 $nav-height: 50px;
-$nav-height-screen-sm: 40px;
-
-$lg-logo-vertical-align: 5px;
-$sm-logo-vertical-align: 8px;
-$logo-height-large: 28px;
-$logo-height-small: 18px;
-$logo-max-width: 175px;
-$logo-max-width-small: 140px;
-
 $nav-horizontal-spacing: 8px;
-$nav-horizontal-spacing-small: 3px;
+$nav-icon-padding: 4px;
+
+$logo-height-large: 28px;
+$logo-height-small: 22px;
+$logo-max-width: 175px;
+$logo-max-width-small: 138px;
+$logo-vertical-align-lg: 5px;
+$logo-vertical-align-sm: 6px;
 
 $hover-border-size: 4px;
 $navigation-link-hover-transition: color 0.15s ease-in-out;
 
-$letter-spacing-xlarge: 0.6px;
-$letter-spacing-large: 0.5px;
-$letter-spacing-medium: 0;
-$font-size-150: 13px;
-
 $deals-icon-horizontal-position: -3px;
 $deals-icon-vertical-position: -5px;
 
-$nav-icon-padding: 4px;
-
 // animation on hover
-@mixin nav_hover_border($orientation) {
+@mixin nav_hover_border() {
   &::before {
     position: absolute;
     bottom: 0;
@@ -50,10 +41,13 @@ $nav-icon-padding: 4px;
   position: relative;
   box-shadow: $navigation-shadow;
 
-  .container-fluid > .navbar-header {
+  .container-fluid {
     @media (min-width: $grid-float-breakpoint) and (max-width: $screen-md) {
-      margin-right: -10px;
-      margin-left: -10px;
+      padding-right: 8px;
+      padding-left: 8px;
+    }
+    > .navbar-header {
+      margin-left: 0;
     }
   }
 }
@@ -61,25 +55,20 @@ $nav-icon-padding: 4px;
 .navbar-logo_image,
 .navbar-logo {
   height: $logo-height-large;
-  max-width: $logo-max-width;
-  margin-top: $lg-logo-vertical-align;
+  margin-top: $logo-vertical-align-lg;
+  max-width: $logo-max-width; // you need to constrain your svg for IE
 
   @media (max-width: $screen-md_to_lg-plus) {
     height: $logo-height-small;
     max-width: $logo-max-width-small;
-    margin-top: $sm-logo-vertical-align;
+    margin-top: $logo-vertical-align-sm;
   }
-  @media (max-width: $grid-float-breakpoint) {
+
+  @media (max-width: $grid-float-breakpoint-max) {
     display: inline-block;
     height: $logo-height-large;
-    max-width: $logo-max-width;
-    margin-top: $lg-logo-vertical-align;
-  }
-  @media (max-width: $screen-sm) {
-    margin-left: $nav-horizontal-spacing;
-  }
-  @media (min-width: $minimum-application-width) and (max-width: $screen-xs) {
-    max-width: $logo-max-width-small;
+    margin-top: $logo-vertical-align-lg;
+    max-width: $logo-max-width; // you need to constrain your svg for IE
   }
 }
 
@@ -88,25 +77,25 @@ $nav-icon-padding: 4px;
   height: $nav-height; // TODO - this hsould probably be the $header-height variable, pending further confirmation
 
   .navbar-nav.navbar-text_center > li > a {
-    letter-spacing: $letter-spacing-xlarge;
     padding-left: $nav-horizontal-spacing;
     padding-right: $nav-horizontal-spacing;
     max-height: $nav-height;
 
     @media (max-width: $screen-lg-plus) {
-      padding-left: 4px;
-      padding-right: 4px;
-      letter-spacing: $letter-spacing-medium;
+      padding-left: $nav-horizontal-spacing / 2;
+      padding-right: $nav-horizontal-spacing / 2;
     }
 
-    @media (max-width: $grid-float-breakpoint) {
+    @media (max-width: $grid-float-breakpoint-max) {
       padding-top: $padding-small-vertical;
       padding-bottom: $padding-small-vertical;
       padding-left: 0;
+      text-transform: uppercase;
+      font-size: $font-size-200;
     }
 
     @media (min-width: $grid-float-breakpoint) and (max-width: $screen-md_to_lg-plus) {
-      font-size: $font-size-150;
+      font-size: $font-size-200;
     }
   }
 }
@@ -120,12 +109,22 @@ $nav-icon-padding: 4px;
     margin-left: -10px;
   }
 
-  @media (max-width: $grid-float-breakpoint) {
+  @media (max-width: $grid-float-breakpoint-max) {
     direction: ltr; // corrects orientation against nav-mobile-menu scrollbar behavior ** mainly fixing safari here
     width: 100%;
     padding-bottom: $nav-horizontal-spacing;
     order: 3; // .nav-mobile-menu-close: 1, .navbar-user_info: 2, .navbar-text_center: 3
     border-bottom: solid 1px $color-gray-300;
+  }
+}
+
+.navigation-menu-list_item {
+  @media (max-width: $grid-float-breakpoint-max) {
+    text-align: left;
+  }
+
+  @media (max-width: $screen-sm) {
+    min-width: 300px;
   }
 }
 
@@ -144,14 +143,13 @@ a.navigation-items-link {
   padding-top: $padding-default-vertical;
   padding-bottom: $padding-default-vertical;
   color: $color-gray-600;
-  text-transform: uppercase;
   text-decoration: none;
 
   @media screen and (min-width: $grid-float-breakpoint) {
     align-items: center;
     height: 100%;
     @include transition($navigation-link-hover-transition);
-    @include nav_hover_border(horizontal);
+    @include nav_hover_border();
   }
 
   @media (max-width: $grid-float-breakpoint) {
@@ -191,45 +189,41 @@ a.navigation-items-link-deals {
 }
 
 .navbar-nav {
-
-  @media (max-width: $grid-float-breakpoint) {
+  @media (max-width: $grid-float-breakpoint-max) {
     margin: 0; // overriding bootstrap so non-signed in btn-blocks display as expected TODO: further refactor markup to avoid this
   }
 
   &.navbar-right {
+    margin-right: 0;
     max-height: $nav-height;
     direction: ltr; // corrects orientation against nav-mobile-menu scrollbar behavior ** mainly fixing safari here
 
-    @media (max-width: $grid-float-breakpoint) {
+    @media (max-width: $grid-float-breakpoint-max) {
       float: none !important; // overriding bootstrap so non-signed in btn-blocks display as expected TODO: further refactor markup to avoid this
     }
+
+    .navbar-right-icons {
+      @media (max-width: $grid-float-breakpoint-max) {
+        float: right;
+      }
+    }
+
     &.navbar-right-icons-container {
-      @media (max-width: $grid-float-breakpoint) {
+      @media (max-width: $grid-float-breakpoint-max) {
         float: right !important;
         margin: auto;
       }
-      @media (max-width: $screen-sm) {
-        margin: 3.5px 0;
-        max-height: $nav-height-screen-sm;
+      @media (max-width: $screen-xs-max) {
+        margin: 5px 0 0; // compensating for change in padding on .navbar-nav > li > a
       }
     }
-  }
-}
-
-.navigation-menu-list_item {
-  @media (max-width: $grid-float-breakpoint) {
-    text-align: left;
-  }
-
-  @media (max-width: $screen-sm) {
-    min-width: 300px;
   }
 }
 
 .navbar-right-icons-container,
 .nav > li.navbar-right-icons,
 .navbar-mobile-menu {
-  @media (max-width: $grid-float-breakpoint) {
+  @media (max-width: $grid-float-breakpoint-max) {
     display: inline-block;
     float: right; //aligns mobile menu
   }

@@ -47,7 +47,7 @@ $screen-md_to_lg-plus:       1080px !global;
 $screen-lg-plus:             1220px !global;
 
 //** Point at which the navbar becomes uncollapsed.
-$grid-float-breakpoint: 959px!global;
+$grid-float-breakpoint: 960px!global;
 //** Point at which the navbar begins collapsing.
 $grid-float-breakpoint-max: ($grid-float-breakpoint - 1) !global;
 

@@ -11,24 +11,32 @@ $user_info-toggle-hover_transition: color 0.15s ease-in-out;
 
 $padding-small-horizontal: 3px;
 
+$cart-with-count-offset: 10px; //offsets .navigation-user_info-cart-with_count when there is a signed in user
+
 .navigation-user_info {
   height: 100%;
   margin-top: 7px;
-
-  @media (min-width: $screen-md) {
-    margin-right: 15px;
-  }
 }
 
 // Dont show user info close btn when in mobile offcanvas
-.nav-mobile-menu.in .nav-mobile-menu-close {
-  @media (max-width: $grid-float-breakpoint) {
+.nav-mobile-menu .nav-mobile-menu-close {
+  @media (max-width: $grid-float-breakpoint-max) {
     order: 1;// .nav-mobile-menu-close: 1, .navbar-user_info: 2, .navbar-text_center: 3
   }
 
   &.nav-user_info-close {
-    @media (max-width: $grid-float-breakpoint) {
+    @media (min-width: $grid-float-breakpoint) {
+      display: block;
+    }
+
+    @media (max-width: $grid-float-breakpoint-max) {
       display: none;
+    }
+
+    .navbar-toggle {
+      @media (min-width: $grid-float-breakpoint) {
+        display: block;
+      }
     }
   }
 }
@@ -39,29 +47,17 @@ $padding-small-horizontal: 3px;
 }
 
 .navigation-user_info-avatar {
-  margin-right: $padding-default-horizontal;
+  margin-right: $padding-default-horizontal / 2;
   border: none;
+
+  @media (min-width: $grid-float-breakpoint) and (max-width: $screen-md-max) {
+    padding-left: $cart-with-count-offset;
+  }
 
   .avatar {
     height: $avatar-size;
     width: $avatar-size;
     min-width: $avatar-size;
-  }
-}
-
-.navigation-user_info-user_name {
-  margin-right: $padding-small-horizontal;
-  max-width: $user_info-max_width;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
-  transition: $user_info-toggle-hover_transition;
-
-  @media (min-width: $grid-float-breakpoint) and (max-width: $screen-md_to_lg-plus) {
-    max-width: $user_info-max_width-xs;
-  }
-  @media (min-width: $screen-md_to_lg-plus) and (max-width: $screen-lg-plus) {
-    max-width: $user_info-max_width-sm;
   }
 }
 
@@ -74,7 +70,7 @@ $padding-small-horizontal: 3px;
   height: 100%;
   overflow-y: hidden;
 
-  @media (max-width: $grid-float-breakpoint) {
+  @media (max-width: $grid-float-breakpoint-max) {
     display: none;
   }
 
