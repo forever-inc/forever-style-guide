@@ -3,12 +3,17 @@ $nav-height: 50px;
 $nav-horizontal-spacing: 8px;
 $nav-icon-padding: 4px;
 
-$logo-height-large: 28px;
-$logo-height-small: 22px;
-$logo-max-width: 175px;
-$logo-max-width-small: 138px;
+$logo-height-lg: 28px;
+$logo-max-width-lg: 175px;
 $logo-vertical-align-lg: 5px;
+
+$logo-height-sm: 22px;
+$logo-max-width-sm: 138px;
 $logo-vertical-align-sm: 6px;
+
+$logo-height-xs: 26px;
+$logo-max-width-xs: 162px;
+$logo-vertical-align-xs: 6px;
 
 $hover-border-size: 4px;
 $navigation-link-hover-transition: color 0.15s ease-in-out;
@@ -42,9 +47,14 @@ $deals-icon-vertical-position: -5px;
   box-shadow: $navigation-shadow;
 
   .container-fluid {
+    @media (max-width: $screen-xs-max) {
+      padding-right: $nav-horizontal-spacing;
+      padding-left: $nav-horizontal-spacing;
+    }
+
     @media (min-width: $grid-float-breakpoint) and (max-width: $screen-md) {
-      padding-right: 8px;
-      padding-left: 8px;
+      padding-right: $nav-horizontal-spacing;
+      padding-left: $nav-horizontal-spacing;
     }
     > .navbar-header {
       margin-left: 0;
@@ -54,21 +64,21 @@ $deals-icon-vertical-position: -5px;
 
 .navbar-logo_image,
 .navbar-logo {
-  height: $logo-height-large;
+  display: inline-block;
+  height: $logo-height-lg;
   margin-top: $logo-vertical-align-lg;
-  max-width: $logo-max-width; // you need to constrain your svg for IE
+  max-width: $logo-max-width-lg; // you need to constrain your svg for IE
 
-  @media (max-width: $screen-md_to_lg-plus) {
-    height: $logo-height-small;
-    max-width: $logo-max-width-small;
-    margin-top: $logo-vertical-align-sm;
+  @media (max-width: $screen-xs-max) {
+    height: $logo-height-xs;
+    max-width: $logo-max-width-xs;
+    margin-top: $logo-vertical-align-xs;
   }
 
-  @media (max-width: $grid-float-breakpoint-max) {
-    display: inline-block;
-    height: $logo-height-large;
-    margin-top: $logo-vertical-align-lg;
-    max-width: $logo-max-width; // you need to constrain your svg for IE
+  @media (min-width: $grid-float-breakpoint) and (max-width: $screen-md_to_lg-plus) {
+    height: $logo-height-sm;
+    max-width: $logo-max-width-sm;
+    margin-top: $logo-vertical-align-sm;
   }
 }
 

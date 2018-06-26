@@ -50,6 +50,11 @@ $sign-up-btn-top-padding: 8px;
     margin-right: -10px; // equalize padding between right-side icons
   }
 
+  @media (max-width: $screen-xs-max) {
+    margin-right: -12px;
+    margin-left: -4px;
+  }
+
   &:hover {
     .icon-bar {
       background-color: $color-secondary;
