@@ -69,14 +69,22 @@ a.ambassador_banner {
 .ambassador_banner-text-assigned {
   @include ambassador_banner-text;
   height: $ambassador-banner-text-height-assigned;
+
+    &::after {
+      height: $ambassador-banner-text-height-assigned; //needed for hover effect
+    }
   }
 
 .ambassador_banner-text-unassigned {
   @include ambassador_banner-text;
-  height: $ambassador-banner-text-height-unassgined;
+  height: $ambassador-banner-text-height-unassigned;
   background-image: $banner-unassigned-bg-color;
   padding-top: $banner-vertical-padding-unassigned;
   padding-bottom: $banner-vertical-padding-unassigned;
+
+  &::after {
+    height: $ambassador-banner-text-height-unassigned; //needed for hover effect
+  }
 
   &.is-behind_fixed-nav {
     z-index: $behind-primary-nav;
