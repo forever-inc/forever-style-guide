@@ -23,6 +23,7 @@ $dropdown-entrance-and-exit-effect-speed: 0.22s;
 
   &.is-behind_fixed-nav {
     z-index: $behind-primary-nav;
+    height: $ambassador-banner-text-height-assigned;
   }
 
   &::after {
@@ -76,7 +77,16 @@ a.ambassador_banner {
   background-image: $banner-unassigned-bg-color;
   padding-top: $banner-vertical-padding-unassigned;
   padding-bottom: $banner-vertical-padding-unassigned;
+
+  &.is-behind_fixed-nav {
+    z-index: $behind-primary-nav;
+    height: $ambassador-banner-text-height-assigned;
+    .ambassador_banner-btn {
+      display: none;
+    }
   }
+
+}
 
 .ambassador_banner-btn {
   margin-left: 20px;
