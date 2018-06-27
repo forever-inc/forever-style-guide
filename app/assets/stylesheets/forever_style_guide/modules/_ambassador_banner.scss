@@ -1,4 +1,5 @@
-$banner-vertical-padding: 10px;
+$banner-vertical-padding-assigned: 6px;
+$banner-vertical-padding-unassigned: 10px;
 $banner-text-max-width: 70%;
 
 $banner-unassigned-bg-color: linear-gradient(to left, mix($color-black, $color-forever_purple, 10%), mix($color-black, $color-forever_ambassador, 10%));
@@ -10,28 +11,11 @@ $banner-hover-effect-speed: 0.15s;
 $chevron-rotate-effect-speed: 0.25s;
 $dropdown-entrance-and-exit-effect-speed: 0.22s;
 
-a.ambassador_banner {
-  display: block;
-  &:hover,
-  &:focus,
-  &:active,
-  &:active:focus {
-    text-decoration: none;
-  }
-}
-
-.ambassador_banner-btn {
-  margin-left: 20px;
-  font-size: $font-size-200;
-  padding-top: 4px;
-  height: 30px;
-}
-
-.ambassador_banner-text {
+@mixin ambassador_banner-text {
   position: relative;
-  height: $ambassador-banner-text-height;
-  padding-top: $banner-vertical-padding;
-  padding-bottom: $banner-vertical-padding;
+  //height: $ambassador-banner-text-height;
+  padding-top: $banner-vertical-padding-assigned;
+  padding-bottom: $banner-vertical-padding-assigned;
   color: $banner-text-color;
   background-image: $banner-background-gradient;
   cursor: pointer;
@@ -43,7 +27,7 @@ a.ambassador_banner {
 
   &::after {
     position: absolute;
-    height: $ambassador-banner-text-height;
+    //height: $ambassador-banner-text-height;
     top: 0;
     left: 0;
     width: 100%;
@@ -69,17 +53,93 @@ a.ambassador_banner {
       opacity: $banner-background-visible;
     }
   }
+}
 
-  .fa-chevron-down {
-    @include transition(all $chevron-rotate-effect-speed linear);
-  }
-
-  &.ambassador_banner-text-no_ambassador {
-    background-image: none;
-    background-image: $banner-unassigned-bg-color;
+a.ambassador_banner {
+  display: block;
+  &:hover,
+  &:focus,
+  &:active,
+  &:active:focus {
+    text-decoration: none;
   }
 }
 
+.ambassador_banner-text-assigned {
+  @include ambassador_banner-text;
+  height: $ambassador-banner-text-height-assigned;
+  }
+
+.ambassador_banner-text-unassigned {
+  @include ambassador_banner-text;
+  height: $ambassador-banner-text-height-unassgined;
+  background-image: $banner-unassigned-bg-color;
+  padding-top: $banner-vertical-padding-unassigned;
+  padding-bottom: $banner-vertical-padding-unassigned;
+  }
+
+.ambassador_banner-btn {
+  margin-left: 20px;
+  font-size: $font-size-200;
+  padding-top: 4px;
+  height: 30px;
+}
+
+
+
+// .ambassador_banner-text {
+//   position: relative;
+//   height: $ambassador-banner-text-height;
+//   padding-top: $banner-vertical-padding;
+//   padding-bottom: $banner-vertical-padding;
+//   color: $banner-text-color;
+//   background-image: $banner-background-gradient;
+//   cursor: pointer;
+//   z-index: $in-front-of-primary-nav;
+//
+//   &.is-behind_fixed-nav {
+//     z-index: $behind-primary-nav;
+//   }
+//
+//   &::after {
+//     position: absolute;
+//     height: $ambassador-banner-text-height;
+//     top: 0;
+//     left: 0;
+//     width: 100%;
+//     background-color: $color-black;
+//     opacity: 0;
+//     @include transition(opacity $banner-hover-effect-speed ease-in-out);
+//     z-index: $zindex-navbar - 1;
+//     content: "";
+//     pointer-events: none;
+//   }
+//
+//   &:hover {
+//     &::after {
+//       opacity: $banner-background-visible;
+//     }
+//   }
+//
+//   &.open {
+//     .fa-chevron-down {
+//       @include transform(rotate(180deg));
+//     }
+//     &::after {
+//       opacity: $banner-background-visible;
+//     }
+//   }
+//
+//   .fa-chevron-down {
+//     @include transition(all $chevron-rotate-effect-speed linear);
+//   }
+//
+//   &.ambassador_banner-text-no_ambassador {
+//     background-image: none;
+//     background-image: $banner-unassigned-bg-color;
+//   }
+// }
+//
 .ambassador_banner-text-content {
   display: inline-block;
   vertical-align: middle;
@@ -92,7 +152,7 @@ a.ambassador_banner {
 
 .ambassador_banner-dropdown_container {
   position: absolute;
-  top: $ambassador-banner-text-height;
+  top: $ambassador-banner-text-height-assigned;
   left: 0;
   visibility: hidden;
   width: 100%;
