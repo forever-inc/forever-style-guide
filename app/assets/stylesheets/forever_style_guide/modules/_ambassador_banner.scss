@@ -13,7 +13,6 @@ $dropdown-entrance-and-exit-effect-speed: 0.22s;
 
 @mixin ambassador_banner-text {
   position: relative;
-  //height: $ambassador-banner-text-height;
   padding-top: $banner-vertical-padding-assigned;
   padding-bottom: $banner-vertical-padding-assigned;
   color: $banner-text-color;
@@ -28,7 +27,6 @@ $dropdown-entrance-and-exit-effect-speed: 0.22s;
 
   &::after {
     position: absolute;
-    //height: $ambassador-banner-text-height;
     top: 0;
     left: 0;
     width: 100%;
@@ -77,87 +75,32 @@ a.ambassador_banner {
 
 .ambassador_banner-text-unassigned {
   @include ambassador_banner-text;
-  height: $ambassador-banner-text-height-unassigned;
-  background-image: $banner-unassigned-bg-color;
   padding-top: $banner-vertical-padding-unassigned;
   padding-bottom: $banner-vertical-padding-unassigned;
+  height: $ambassador-banner-text-height-unassigned;
+  background-image: $banner-unassigned-bg-color;
 
   &::after {
     height: $ambassador-banner-text-height-unassigned; //needed for hover effect
   }
 
   &.is-behind_fixed-nav {
-    z-index: $behind-primary-nav;
     height: $ambassador-banner-text-height-assigned;
+    z-index: $behind-primary-nav;
+
     .ambassador_banner-btn {
       display: none;
     }
   }
-
 }
 
 .ambassador_banner-btn {
-  margin-left: 20px;
-  font-size: $font-size-200;
   padding-top: 4px;
+  margin-left: 20px;
   height: 30px;
+  font-size: $font-size-200;
 }
 
-
-
-// .ambassador_banner-text {
-//   position: relative;
-//   height: $ambassador-banner-text-height;
-//   padding-top: $banner-vertical-padding;
-//   padding-bottom: $banner-vertical-padding;
-//   color: $banner-text-color;
-//   background-image: $banner-background-gradient;
-//   cursor: pointer;
-//   z-index: $in-front-of-primary-nav;
-//
-//   &.is-behind_fixed-nav {
-//     z-index: $behind-primary-nav;
-//   }
-//
-//   &::after {
-//     position: absolute;
-//     height: $ambassador-banner-text-height;
-//     top: 0;
-//     left: 0;
-//     width: 100%;
-//     background-color: $color-black;
-//     opacity: 0;
-//     @include transition(opacity $banner-hover-effect-speed ease-in-out);
-//     z-index: $zindex-navbar - 1;
-//     content: "";
-//     pointer-events: none;
-//   }
-//
-//   &:hover {
-//     &::after {
-//       opacity: $banner-background-visible;
-//     }
-//   }
-//
-//   &.open {
-//     .fa-chevron-down {
-//       @include transform(rotate(180deg));
-//     }
-//     &::after {
-//       opacity: $banner-background-visible;
-//     }
-//   }
-//
-//   .fa-chevron-down {
-//     @include transition(all $chevron-rotate-effect-speed linear);
-//   }
-//
-//   &.ambassador_banner-text-no_ambassador {
-//     background-image: none;
-//     background-image: $banner-unassigned-bg-color;
-//   }
-// }
-//
 .ambassador_banner-text-content {
   display: inline-block;
   vertical-align: middle;
