@@ -46,37 +46,35 @@ $color-nav-hover: color('secondary');
 @mixin off-canvas-style {
   position: fixed;
   top: 0;
-  right: 0;
+  right: -$minimum-application-width;
   bottom: 0;
-  width: 0;
+  width: $minimum-application-width;
+  padding-left: 20px;
+  padding-right: 20px;
   background-color: $color-white;
   border-left: solid 1px $color-gray-200;
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
-  transform: translateX(100%);
-  transition: opacity 0.2s ease-in-out, transform 0.3s ease-in-out; // TODO - animate out
+  transition: all 0.3s ease-in-out; // TODO - animate out
   z-index: $zindex-tooltip;
   overflow: hidden;
+  direction: rtl; // puts scrollbar to lefthand side
+
+  .nav-mobile-menu-close {
+    display: block;
+  }
+
+  .navbar-toggle {
+    padding-right: 0;
+  }
 
   &.in {
-    padding-left: 20px;
-    padding-right: 20px;
     opacity: 1;
-    transform: translateX(0%);
-    direction: rtl; // puts scrollbar to lefthand side
+    right: 0;
     overflow-y: auto;
-    width: $minimum-application-width;
     z-index: $in-front-of-primary-and-banner-and-impersonation;
 
     @media (max-width: $screen-xs) {
       width: 100%;
-    }
-
-    .nav-mobile-menu-close {
-      display: block;
-    }
-    .navbar-toggle {
-      display: block;
-      padding-right: 0;
     }
   }
 }
