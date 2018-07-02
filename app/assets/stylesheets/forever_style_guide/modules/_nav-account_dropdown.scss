@@ -13,6 +13,9 @@ $padding-small-horizontal: 3px;
 
 $cart-with-count-offset: 10px; //offsets .navigation-user_info-cart-with_count when there is a signed in user
 
+$forever-club-badge-size: 50px;
+$forever-club-badge-position: -30px;
+
 .navigation-user_info {
   height: 100%;
   margin-top: 7px;
@@ -92,20 +95,39 @@ $cart-with-count-offset: 10px; //offsets .navigation-user_info-cart-with_count w
   min-width: $avatar-sm-width; // fixes an ie 11 flexbug
   margin: 0;
   margin-right: $padding-large-horizontal;
-  border: none;
   padding: 0;
+  flex-shrink: 0;
+
+  .avatar-sm {
+    width: 80px;
+    height: 80px;
+  }
 }
 
-.navigation-account_dropdown-user_info {
+.navigation-account_dropdown-user {
   direction: ltr; // corrects orientation against nav-mobile-menu scrollbar behavior
-  display: flex;
-  align-items: center;
-  padding-bottom: $padding-large-vertical;
+  padding-bottom: $padding-large-vertical - 5;
   border-bottom: 2px solid $color-gray-200;
 }
 
+.navigation-account_dropdown-user_info {
+  display: flex;
+  align-items: center;
+}
+
+.navigation-account_dropdown-user_info-club-image {
+  position: absolute;
+  max-width: $forever-club-badge-size;
+  height: $forever-club-badge-size;
+  margin-top: $forever-club-badge-position;
+}
+
+.navigation-account_dropdown-user-club_status {
+  margin-top: 30px;
+  line-height: 1;
+}
+
 .navigation-account_dropdown-user_info-logged_in {
-  width: 100%;
   text-align: left;
   flex: 1 1 auto; //ensures consistent display in ie 10
 }
