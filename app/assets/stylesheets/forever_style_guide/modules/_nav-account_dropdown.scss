@@ -1,11 +1,12 @@
 // desktop authenticated account dropdown styling
-$avatar-size: 35px;
-$avatar-sm-width: 70px;
+$avatar-size-nav: 35px;
+$avatar-size-offcanvas: 80px;
+$avatar-offcanvas-visual-alignment: -10px;
 
 $user_info-max_width: 100px;
 $user_info-max_width-sm: 70px;
 $user_info-max_width-xs: 50px;
-$user_info-name-max_width: 200px;
+$user_info-name-max_width: 180px;
 $user_info-icon-vertical_alignment: -2px;
 $user_info-toggle-hover_transition: color 0.15s ease-in-out;
 
@@ -58,9 +59,9 @@ $forever-club-badge-position: -30px;
   }
 
   .avatar {
-    height: $avatar-size;
-    width: $avatar-size;
-    min-width: $avatar-size;
+    height: $avatar-size-nav;
+    width: $avatar-size-nav;
+    min-width: $avatar-size-nav;
   }
 }
 
@@ -92,15 +93,16 @@ $forever-club-badge-position: -30px;
 }
 
 .navigation-account_dropdown-avatar {
-  min-width: $avatar-sm-width; // fixes an ie 11 flexbug
+  min-width: $avatar-size-offcanvas; // fixes an ie 11 flexbug
   margin: 0;
+  margin-left: $avatar-offcanvas-visual-alignment;
   margin-right: $padding-large-horizontal;
   padding: 0;
   flex-shrink: 0;
 
-  .avatar-sm {
-    width: 80px;
-    height: 80px;
+  .avatar {
+    width: $avatar-size-offcanvas;
+    height: $avatar-size-offcanvas;
   }
 }
 
