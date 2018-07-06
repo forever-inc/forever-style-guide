@@ -15,7 +15,8 @@ $padding-small-horizontal: 3px;
 $cart-with-count-offset: 10px; //offsets .navigation-user_info-cart-with_count when there is a signed in user
 
 $forever-club-badge-size: 50px;
-$forever-club-badge-position: -30px;
+$forever-club-badge-position-top: 50px;
+$forever-club-badge-position-left: 45px;
 
 .navigation-user_info {
   height: 100%;
@@ -99,6 +100,7 @@ $forever-club-badge-position: -30px;
   margin-right: $padding-large-horizontal;
   padding: 0;
   flex-shrink: 0;
+  position: relative;
 
   .avatar {
     width: $avatar-size-offcanvas;
@@ -121,7 +123,8 @@ $forever-club-badge-position: -30px;
   position: absolute;
   max-width: $forever-club-badge-size;
   height: $forever-club-badge-size;
-  margin-top: $forever-club-badge-position;
+  top: $forever-club-badge-position-top;
+  left: $forever-club-badge-position-left;
 }
 
 .navigation-account_dropdown-user-club_status {
