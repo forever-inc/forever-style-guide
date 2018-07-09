@@ -7,7 +7,7 @@ module ForeverStyleGuide
       case copy
       when "Forever"
         copy.upcase + "®"
-      when "pixels2Pages", "Historian", "ClickCollage", "It's like insurance for your photos", "Paper Tray Studio", "p2P", "StoryBook Legacy", "Templates & Co", "Valet", "Forever Live!"
+      when "pixels2Pages", "Historian", "ClickCollage", "It's like insurance for your photos", "Paper Tray Studio", "p2P", "StoryBook Legacy", "Templates & Co", "Valet"
         copy + "™"
       when "Forever Account", "Forever Guarantee", "Forever Guarantee Fund", "Forever Membership", "Forever Retreats",
            "Forever Retreat", "Forever Ambassador", "Forever Ambassadors", "Forever Deal of the Day", "Forever App", "Forever Digital Art",
@@ -19,6 +19,8 @@ module ForeverStyleGuide
         copy[0..6].upcase + copy[7..copy.length-1] + "®"
       when "Artisan", "Panstoria"
         copy + "®"
+      when  "Forever Live!"
+        copy[0..6].upcase + copy[7..copy.length-1] + "™"
       else
         copy
       end
