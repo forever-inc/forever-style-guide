@@ -15,7 +15,7 @@
     margin-top: $impersonation-banner-height;
   }
   .ambassador_banner-dropdown_container.open {
-    top: $ambassador-banner-text-height-assigned + $impersonation-banner-height;
+    top: $ambassador-banner-height-assigned + $impersonation-banner-height;
   }
   .nav-mobile-menu.in {
     @media (max-width: $grid-float-breakpoint-max) {
