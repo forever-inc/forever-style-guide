@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    forever_style_guide (3.4.9)
+    forever_style_guide (3.4.15)
       bootstrap-sass
       font-awesome-rails
       jquery-rails
@@ -54,7 +54,7 @@ GEM
       minitest (~> 5.1)
       tzinfo (~> 1.1)
     arel (9.0.0)
-    autoprefixer-rails (8.6.3)
+    autoprefixer-rails (9.0.0)
       execjs
     bootstrap-sass (3.3.7)
       autoprefixer-rails (>= 5.2.1)
@@ -120,7 +120,7 @@ GEM
     multi_json (1.13.1)
     nenv (0.3.0)
     nio4r (2.3.1)
-    nokogiri (1.8.3)
+    nokogiri (1.8.4)
       mini_portile2 (~> 2.3.0)
     notiffany (0.1.1)
       nenv (~> 0.1)
