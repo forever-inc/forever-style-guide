@@ -1,17 +1,24 @@
 // desktop authenticated account dropdown styling
-$avatar-size: 35px;
-$avatar-sm-width: 70px;
+$avatar-size-nav: 35px;
+$avatar-size-offcanvas: 80px;
+$avatar-offcanvas-visual-alignment: -10px;
 
 $user_info-max_width: 100px;
 $user_info-max_width-sm: 70px;
 $user_info-max_width-xs: 50px;
-$user_info-name-max_width: 200px;
+$user_info-name-max_width: 180px;
 $user_info-icon-vertical_alignment: -2px;
 $user_info-toggle-hover_transition: color 0.15s ease-in-out;
 
 $padding-small-horizontal: 3px;
 
 $cart-with-count-offset: 10px; //offsets .navigation-user_info-cart-with_count when there is a signed in user
+
+$forever-club-badge-size: 50px;
+
+$forever-club-badge-position-top: 48px;
+$forever-club-badge-position-left: 43px;
+
 
 .navigation-user_info {
   height: 100%;
@@ -55,9 +62,9 @@ $cart-with-count-offset: 10px; //offsets .navigation-user_info-cart-with_count w
   }
 
   .avatar {
-    height: $avatar-size;
-    width: $avatar-size;
-    min-width: $avatar-size;
+    height: $avatar-size-nav;
+    width: $avatar-size-nav;
+    min-width: $avatar-size-nav;
   }
 }
 
@@ -89,23 +96,45 @@ $cart-with-count-offset: 10px; //offsets .navigation-user_info-cart-with_count w
 }
 
 .navigation-account_dropdown-avatar {
-  min-width: $avatar-sm-width; // fixes an ie 11 flexbug
+  min-width: $avatar-size-offcanvas; // fixes an ie 11 flexbug
   margin: 0;
+  margin-left: $avatar-offcanvas-visual-alignment;
   margin-right: $padding-large-horizontal;
-  border: none;
   padding: 0;
+  flex-shrink: 0;
+  position: relative;
+
+  .avatar {
+    width: $avatar-size-offcanvas;
+    height: $avatar-size-offcanvas;
+  }
 }
 
-.navigation-account_dropdown-user_info {
+.navigation-account_dropdown-user {
   direction: ltr; // corrects orientation against nav-mobile-menu scrollbar behavior
-  display: flex;
-  align-items: center;
-  padding-bottom: $padding-large-vertical;
+  padding-bottom: $padding-large-vertical - 5;
   border-bottom: 2px solid $color-gray-200;
 }
 
+.navigation-account_dropdown-user_info {
+  display: flex;
+  align-items: center;
+}
+
+.navigation-account_dropdown-user_info-club-image {
+  position: absolute;
+  max-width: $forever-club-badge-size;
+  height: $forever-club-badge-size;
+  top: $forever-club-badge-position-top;
+  left: $forever-club-badge-position-left;
+}
+
+.navigation-account_dropdown-user-club_status {
+  margin-top: 30px;
+  line-height: 1;
+}
+
 .navigation-account_dropdown-user_info-logged_in {
-  width: 100%;
   text-align: left;
   flex: 1 1 auto; //ensures consistent display in ie 10
 }
