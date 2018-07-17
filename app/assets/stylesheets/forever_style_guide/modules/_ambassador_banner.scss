@@ -41,15 +41,6 @@ $dropdown-entrance-and-exit-effect-speed: 0.22s;
       opacity: $banner-background-visible;
     }
   }
-
-  &.open {
-    .fa-chevron-down {
-      @include transform(rotate(180deg));
-    }
-    &::after {
-      opacity: $banner-background-visible;
-    }
-  }
 }
 
 a.ambassador_banner {
@@ -71,6 +62,16 @@ a.ambassador_banner {
 
   &::after {
     height: $ambassador-banner-height-assigned;
+  }
+
+  &.open {
+    .fa-chevron-down {
+      @include transform(rotate(180deg));
+    }
+  }
+
+  .fa-chevron-down {
+    @include transition(all $chevron-rotate-effect-speed linear);
   }
 }
 
