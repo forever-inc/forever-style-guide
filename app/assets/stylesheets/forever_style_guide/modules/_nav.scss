@@ -85,6 +85,7 @@ $deals-icon-vertical-position: -5px;
 // main product nav links
 .navigation-menu-list {
   height: $nav-height; // TODO - this hsould probably be the $header-height variable, pending further confirmation
+  overflow: hidden; //make sure the navigation inner elements do not overflow their main container.
 
   .navbar-nav.navbar-text_center > li > a {
     padding-left: $nav-horizontal-spacing;
