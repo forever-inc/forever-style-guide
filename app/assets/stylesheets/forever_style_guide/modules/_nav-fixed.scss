@@ -5,7 +5,7 @@
   left: 0;
   z-index: $zindex-navbar-fixed;
 
-  .affix {
-    position: relative;
+  &:not(.affix) {
+    position: static; // respect the z-index of all the nav stuff + don't break small heroes like on the /find_ambassador page
   }
 }
