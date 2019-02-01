@@ -1,0 +1,434 @@
+
+$f-pnav__main--zindex: 1030;
+$f-pnav__side--width: 320px;
+$f-pnav__side--zindex: 1032;
+
+@mixin deals_link_base() {
+  color: $color-forever_orange;
+
+  &:hover {
+    color: $color-forever_blue;
+  }
+
+  &::after {
+    position: relative;
+    top: -5px;
+    right: -2px;
+    font-family: FontAwesome;
+    font-size: 10px;
+    content: '\f005';
+  }
+}
+
+.f-pnav {
+  width: 100%;
+  padding: 0 10px;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+  background-color: $color-white;
+
+  /* nested to give more specificity and override the base styleguide link styles */
+  .f-pnav__link-base {
+    text-decoration: none;
+    color: $color-gray-600;
+    @include transition_fast(color);
+
+    &:hover {
+      color: $color-forever_blue;
+    }
+  }
+}
+
+.f-pnav__main {
+  display: flex;
+  min-height: 50px;
+  position: relative;
+  z-index: $f-pnav__main--zindex;
+}
+
+.f-pnav__logo-link {
+  display: flex;
+  align-items: center;
+}
+
+.f-pnav__logo-image {
+  height: 22px;
+  max-width: 138px;
+  @include transition_fast(height, max-width);
+}
+
+.f-pnav__ecom-list {
+  display: flex;
+  flex: 1 0 auto;
+  justify-content: center;
+  align-items: stretch;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.f-pnav__ecom-item {
+  /* we want to ul to remain and grow, so just hide the items */
+  display: none;
+}
+
+.f-pnav__ecom-link {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding-right: 4px;
+  padding-left: 4px;
+  font-family: $font-face-semibold;
+  font-size: $font-size-200;
+
+  &.f-pnav__ecom-link-deals {
+    @include deals_link_base();
+  }
+
+  &::before {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 4px;
+    width: 100%;
+    background-color: $color-forever_blue;
+    content: '';
+    transform: scaleX(0);
+    @include transition_fast(transform);
+  }
+
+  &:hover {
+    &::before {
+      transform: scaleX(1);
+    }
+  }
+}
+
+.f-pnav__icon-list {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.f-pnav__icon-item {
+  padding: 0 6px;
+  font-size: 21px;
+
+  /* needed for notification dropdown icon */
+  .fa:hover {
+    @include transition_normal(color);
+    color: $color-forever_blue;
+  }
+
+}
+
+.f-pnav__icon-link-cart {
+  position: relative;
+
+  .f-pnav__icon-link-cart-count {
+    position: absolute;
+    top: 0;
+    right: -10px;
+    width: 18px;
+    height: 18px;
+    border-radius: 4px;
+    background-color: #e22626;
+    color: $color-white;
+    font-size: $font-size-000;
+    font-family: $font-face-semibold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+  }
+
+}
+
+.f-pnav__user-list {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  .f-pnav__user-link {
+    font-family: $font-face-semibold;
+    text-transform: uppercase;
+
+    &.btn {
+      padding: 7px;
+      font-size: 12px;
+      height: 30px;
+    }
+  }
+
+  .f-pnav__user-link-signup {
+    &.btn {
+      color: $color-white;
+    }
+  }
+
+  .f-pnav__user-link-signin {
+    &.btn {
+      color: $color-gray-600;
+
+      &:hover {
+        text-decoration: none;
+      }
+
+    }
+  }
+}
+
+.f-pnav__user-item-avatar {
+  padding-left: 10px;
+
+  /* use below instead of display to hide so we retain padding */
+  visibility: hidden;
+  width: 0;
+
+  .avatar {
+    padding: 0;
+    margin-right: 0;
+  }
+}
+
+.f-pnav__user-item-logged-out {
+  display: none;
+}
+
+.f-pnav__user-item-side-toggle {
+  cursor: pointer;
+  padding: 10px 10px 10px 5px;
+  margin-right: -10px;
+
+  .f-pnav__user-icon-bar {
+    background-color: $color-gray-600;
+    width: 20px;
+    display: block;
+    height: 2px;
+    border-radius: 1px;
+    @include transition_normal(background-color);
+  }
+
+  .f-pnav__user-icon-bar + .f-pnav__user-icon-bar {
+    margin-top: 4px;
+  }
+
+  &:hover {
+    .f-pnav__user-icon-bar {
+      background-color: $color_forever_blue;
+    }
+  }
+}
+
+.f-pnav__side {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  top: 0;
+  right: -($f-pnav__side--width);
+  bottom: 0;
+  z-index: $f-pnav__side--zindex;
+  width: $f-pnav__side--width;
+  margin: 0;
+  padding: 0 20px;
+  background-color: $color-white;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+  direction: rtl;
+  text-align: left;
+  @include transition_normal(right);
+
+  &.is-onscreen {
+    right: 0;
+    width: 100%;
+  }
+}
+
+.f-pnav__side-section {
+  padding: 8px 0;
+  margin: 0;
+  list-style: none;
+  border-bottom: 2px solid $color-gray-200;
+  direction: ltr;
+
+  &:last-child {
+    border: none;
+  }
+
+  .f-pnav__side-signout-link,
+  .f-pnav__side-signout-link:hover {
+    color: $color-forever_red;
+  }
+
+  .f-pnav__side-link-base {
+    text-transform: uppercase;
+    display: block;
+    font-family: $font-face-semibold;
+    font-size: $font-size-200;
+    padding: 8px 0;
+  }
+
+}
+
+.f-pnav__side-section-close {
+  position: relative;
+  width: 22px;
+  padding-top: 20px;
+  align-self: flex-start;
+  cursor: pointer;
+  border: none;
+  outline: none;
+
+  &::before,
+  &::after {
+    position: absolute;
+    right: 0;
+    width: 22px;
+    height: 2px;
+    content: ' ';
+    border-radius: 1px;
+    background-color: $color-gray-600;
+    @include transition_fast(background-color);
+  }
+
+  &::before { transform: rotate(45deg); }
+  &::after { transform: rotate(-45deg); }
+
+  &:hover {
+    &::before,
+    &::after { background-color: $color-forever_blue; }
+  }
+}
+
+.f-pnav__side-section-info {
+  padding-bottom: 15px;
+
+  /* avatar/badge and storage meter */
+  .f-pnav__side-info-avameter {
+    display: flex;
+    align-items: center;
+  }
+
+  .f-pnav__side-info-avatar {
+    position: relative;
+    flex: 0 1 auto;
+
+    /* necessary to dig into avatar and add custom size*/
+    .avatar {
+      width: 80px;
+      height: 80px;
+    }
+
+    img {
+      position: absolute;
+      height: 50px;
+      width: 50px;
+      top: 48px;
+      left: 43px;
+    }
+  }
+
+  .f-pnav__side-info-storage-meter {
+    flex: 1 0 auto;
+    padding-left: 15px;
+  }
+
+  .f-pnav__side-info-club {
+    margin-top: 30px;
+    line-height: 1;
+    text-align: center;
+  }
+
+}
+
+.f-pnav__side-section-ecom-list {
+  .f-pnav__side-ecom-deals-link {
+    @include deals_link_base();
+  }
+}
+
+.f-pnav__side-section-logged-out {
+  .f-pnav__side-logged-out-button {
+    margin-right: 20px;
+    margin-top: 10px;
+    display: block;
+  }
+}
+
+
+@media (min-width: $screen-xs) {
+
+  .f-pnav {
+    padding: 0 15px;
+  }
+
+  .f-pnav__logo-image {
+    height: 28px;
+    max-width: 175px;
+  }
+
+  .f-pnav__icon-item {
+    font-size: $font-size-500;
+  }
+
+  .f-pnav__user-item-avatar {
+    visibility: visible;
+    width: auto;
+  }
+
+  .f-pnav__side.is-onscreen {
+    width: $f-pnav__side--width;
+  }
+}
+
+@media (min-width: $screen-md) {
+
+  .f-pnav__ecom-item {
+    display: flex;
+  }
+
+  .f-pnav__user-item-logged-out {
+    display: flex;
+  }
+
+  .f-pnav__side-section-ecom-list {
+    display: none;
+  }
+
+  .f-pnav__user-item-side-toggle {
+    &.is-unauthenticated {
+      display: none;
+    }
+  }
+}
+
+@media (min-width: $screen-lg) {
+  .f-pnav__ecom-link {
+    padding-left: 8px;
+    padding-right: 8px;
+    font-size: $font-size-300;
+  }
+}
+
+@media (max-width: $screen-lg-max) and (min-width: $screen-md_to_lg) {
+  .f-pnav__ecom-link {
+    font-size: $font-size-250;
+  }
+}
+
+@media (max-width: $screen-md_to_lg) and (min-width: $screen-md) {
+  .f-pnav__logo-image {
+    height: 22px;
+    max-width: 138px;
+  }
+}
+
+@media (max-width: $screen-lg-max) and (min-width: $screen-md) {
+  .f-pnav__icon-item {
+    font-size: 21px;
+  }
+}
