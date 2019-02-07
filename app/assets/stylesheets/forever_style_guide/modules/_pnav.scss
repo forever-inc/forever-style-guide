@@ -26,6 +26,13 @@ $f-pnav__side--zindex: 1032;
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
   background-color: $color-white;
 
+  /*support store method of affixing*/
+  &.affix {
+    top: 0;
+    left: 0;
+    z-index: $f-pnav__side--zindex;
+  }
+
   /* nested to give more specificity and override the base styleguide link styles */
   .f-pnav__link-base {
     text-decoration: none;
