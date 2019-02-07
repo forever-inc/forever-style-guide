@@ -32,6 +32,7 @@ $f-pnav__side--zindex: 1032;
     color: $color-gray-600;
     @include transition_fast(color);
 
+    &.is-active,
     &:hover {
       color: $color-forever_blue;
     }
@@ -96,6 +97,7 @@ $f-pnav__side--zindex: 1032;
     @include transition_fast(transform);
   }
 
+  &.is-active,
   &:hover {
     &::before {
       transform: scaleX(1);
