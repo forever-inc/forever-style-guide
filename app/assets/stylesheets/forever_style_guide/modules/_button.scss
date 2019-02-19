@@ -102,6 +102,10 @@
         border: 2px solid color('white');
       }
     }
+    &.btn-default.disabled {
+      border-color: transparent;
+      background-color: transparent;
+    }
   }
   &.btn-sign_in,
   &.btn-plain {
