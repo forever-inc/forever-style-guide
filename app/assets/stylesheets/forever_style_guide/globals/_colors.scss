@@ -20,6 +20,9 @@ $color-forever_gray:        colorify('gray', #434445) !default;
 $color-forever_silver:      set_color('silver', #f6f7fb) !default;
 
 // Deprecated brand color declarations, colors that should eventually be removed
+// !IMPORTANT! When defining colors please follow the syntax pattern of $var_name: function_name('color_word', hex_value)
+// Forever store promotions depend on it.
+
 $color-forever_purple:      colorify('purple', #731472) !default;
 
 // B&W, these colors just get registered they don't have dark/light variations
