@@ -185,12 +185,17 @@ $f-primary-nav_icon-link-cart-count_background: #e22626;
 
   .f-primary-nav_user-link-signin {
     &.btn {
-      color: $color-gray-600;
-
-      &:hover {
+      &:link,
+      &:hover,
+      &:active,
+      &:visited {
+        color: $color-gray-600;
         text-decoration: none;
       }
 
+      &:hover {
+        color: $color-secondary;
+      }
     }
   }
 }
