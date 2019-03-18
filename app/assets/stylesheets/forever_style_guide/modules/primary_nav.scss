@@ -231,7 +231,7 @@ $f-primary-nav_icon-link-cart-count_background: #e22626;
     @include transition_fast(background-color, margin);
   }
 
-  .f-primary-nav_user-icon-bar + .f-primary-nav_user-icon-bar {
+  .f-primary-nav_user-icon-bar:not(:first-child) {
     margin-top: 4px;
   }
 
@@ -240,7 +240,7 @@ $f-primary-nav_icon-link-cart-count_background: #e22626;
       background-color: $color_forever_blue;
     }
 
-    .f-primary-nav_user-icon-bar + .f-primary-nav_user-icon-bar {
+    .f-primary-nav_user-icon-bar:not(:first-child) {
       margin-top: 6px;
     }
   }
