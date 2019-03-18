@@ -281,9 +281,13 @@ $f-primary-nav_icon-link-cart-count_background: #e22626;
     border: none;
   }
 
-  .f-primary-nav_side-signout-link,
-  .f-primary-nav_side-signout-link:hover {
-    color: $color-forever_red;
+  .f-primary-nav_side-signout-link {
+    &:link,
+    &:hover,
+    &:active,
+    &:visited {
+      color: $color-forever_red;
+    }
   }
 
   .f-primary-nav_side-link-base {
