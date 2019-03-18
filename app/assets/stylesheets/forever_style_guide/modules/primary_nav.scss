@@ -1,7 +1,11 @@
 
-$f-pnav__main--zindex: 1030;
-$f-pnav__side--width: 320px;
-$f-pnav__side--zindex: 1032;
+$f-primary-nav_shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+$f-primary-nav_main--zindex: $zindex-navbar-fixed;
+$f-primary-nav_main_min-height: 50px;
+$f-primary-nav_side--width: 320px;
+$f-primary-nav_side--zindex: 1032;
+$f-primary-nav_side-section-close_angle: 45deg;
+$f-primary-nav_icon-link-cart-count_background: #e22626;
 
 @mixin deals_link_base() {
   color: $color-forever_orange;
@@ -15,26 +19,26 @@ $f-pnav__side--zindex: 1032;
     top: -5px;
     right: -2px;
     font-family: FontAwesome;
-    font-size: 10px;
+    font-size: $font-size-000;
     content: '\f005';
   }
 }
 
-.f-pnav {
+.f-primary-nav {
   width: 100%;
   padding: 0 10px;
-  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: $f-primary-nav_shadow;
   background-color: $color-white;
 
   /*support store method of affixing*/
   &.affix {
     top: 0;
     left: 0;
-    z-index: $f-pnav__side--zindex;
+    z-index: $f-primary-nav_side--zindex;
   }
 
   /* nested to give more specificity and override the base styleguide link styles */
-  .f-pnav__link-base {
+  .f-primary-nav_link-base {
     text-decoration: none;
     color: $color-gray-600;
     @include transition_fast(color);
@@ -46,25 +50,25 @@ $f-pnav__side--zindex: 1032;
   }
 }
 
-.f-pnav__main {
+.f-primary-nav_main {
   display: flex;
-  min-height: 50px;
+  min-height: $f-primary-nav_main_min-height;
   position: relative;
-  z-index: $f-pnav__main--zindex;
+  z-index: $f-primary-nav_main--zindex;
 }
 
-.f-pnav__logo-link {
+.f-primary-nav_logo-link {
   display: flex;
   align-items: center;
 }
 
-.f-pnav__logo-image {
+.f-primary-nav_logo-image {
   height: 22px;
   max-width: 138px;
   @include transition_fast(height, max-width);
 }
 
-.f-pnav__ecom-list {
+.f-primary-nav_ecom-list {
   display: flex;
   flex: 1 0 auto;
   justify-content: center;
@@ -74,12 +78,12 @@ $f-pnav__side--zindex: 1032;
   list-style: none;
 }
 
-.f-pnav__ecom-item {
+.f-primary-nav_ecom-item {
   /* we want to ul to remain and grow, so just hide the items */
   display: none;
 }
 
-.f-pnav__ecom-link {
+.f-primary-nav_ecom-link {
   position: relative;
   display: flex;
   align-items: center;
@@ -88,7 +92,7 @@ $f-pnav__side--zindex: 1032;
   font-family: $font-face-semibold;
   font-size: $font-size-200;
 
-  &.f-pnav__ecom-link-deals {
+  &.f-primary-nav_ecom-link-deals {
     @include deals_link_base();
   }
 
@@ -112,7 +116,7 @@ $f-pnav__side--zindex: 1032;
   }
 }
 
-.f-pnav__icon-list {
+.f-primary-nav_icon-list {
   position: relative;
   display: flex;
   align-items: center;
@@ -121,7 +125,7 @@ $f-pnav__side--zindex: 1032;
   list-style: none;
 }
 
-.f-pnav__icon-item {
+.f-primary-nav_icon-item {
   padding: 0 6px;
   font-size: 21px;
 
@@ -133,17 +137,17 @@ $f-pnav__side--zindex: 1032;
 
 }
 
-.f-pnav__icon-link-cart {
+.f-primary-nav_icon-link-cart {
   position: relative;
 
-  .f-pnav__icon-link-cart-count {
+  .f-primary-nav_icon-link-cart-count {
     position: absolute;
     top: 0;
     right: -10px;
     width: 18px;
     height: 18px;
-    border-radius: 4px;
-    background-color: #e22626;
+    border-radius: $border-radius-xl;
+    background-color: $f-primary-nav_icon-link-cart-count_background;
     color: $color-white;
     font-size: $font-size-000;
     font-family: $font-face-semibold;
@@ -155,14 +159,14 @@ $f-pnav__side--zindex: 1032;
 
 }
 
-.f-pnav__user-list {
+.f-primary-nav_user-list {
   display: flex;
   align-items: center;
   margin: 0;
   padding: 0;
   list-style: none;
 
-  .f-pnav__user-link {
+  .f-primary-nav_user-link {
     font-family: $font-face-semibold;
     text-transform: uppercase;
 
@@ -173,13 +177,13 @@ $f-pnav__side--zindex: 1032;
     }
   }
 
-  .f-pnav__user-link-signup {
+  .f-primary-nav_user-link-signup {
     &.btn {
       color: $color-white;
     }
   }
 
-  .f-pnav__user-link-signin {
+  .f-primary-nav_user-link-signin {
     &.btn {
       color: $color-gray-600;
 
@@ -191,7 +195,7 @@ $f-pnav__side--zindex: 1032;
   }
 }
 
-.f-pnav__user-item-avatar {
+.f-primary-nav_user-item-avatar {
   padding-left: 10px;
 
   /* use below instead of display to hide so we retain padding */
@@ -204,16 +208,16 @@ $f-pnav__side--zindex: 1032;
   }
 }
 
-.f-pnav__user-item-logged-out {
+.f-primary-nav_user-item-logged-out {
   display: none;
 }
 
-.f-pnav__user-item-side-toggle {
+.f-primary-nav_user-item-side-toggle {
   cursor: pointer;
   padding: 10px 10px 10px 5px;
   margin-right: -10px;
 
-  .f-pnav__user-icon-bar {
+  .f-primary-nav_user-icon-bar {
     background-color: $color-gray-600;
     width: 20px;
     display: block;
@@ -222,35 +226,35 @@ $f-pnav__side--zindex: 1032;
     @include transition_fast(background-color, margin);
   }
 
-  .f-pnav__user-icon-bar + .f-pnav__user-icon-bar {
+  .f-primary-nav_user-icon-bar + .f-primary-nav_user-icon-bar {
     margin-top: 4px;
   }
 
   &:hover {
-    .f-pnav__user-icon-bar {
+    .f-primary-nav_user-icon-bar {
       background-color: $color_forever_blue;
     }
 
-    .f-pnav__user-icon-bar + .f-pnav__user-icon-bar {
+    .f-primary-nav_user-icon-bar + .f-primary-nav_user-icon-bar {
       margin-top: 6px;
     }
   }
 }
 
-.f-pnav__side {
+.f-primary-nav_side {
   position: fixed;
   display: flex;
   flex-direction: column;
   overflow: auto;
   top: 0;
-  right: -($f-pnav__side--width);
+  right: -($f-primary-nav_side--width);
   bottom: 0;
-  z-index: $f-pnav__side--zindex;
-  width: $f-pnav__side--width;
+  z-index: $f-primary-nav_side--zindex;
+  width: $f-primary-nav_side--width;
   margin: 0;
   padding: 0 20px;
   background-color: $color-white;
-  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: $f-primary-nav_shadow;
   direction: rtl;
   text-align: left;
   @include transition_normal(right);
@@ -261,7 +265,7 @@ $f-pnav__side--zindex: 1032;
   }
 }
 
-.f-pnav__side-section {
+.f-primary-nav_side-section {
   padding: 8px 0;
   margin: 0;
   list-style: none;
@@ -272,12 +276,12 @@ $f-pnav__side--zindex: 1032;
     border: none;
   }
 
-  .f-pnav__side-signout-link,
-  .f-pnav__side-signout-link:hover {
+  .f-primary-nav_side-signout-link,
+  .f-primary-nav_side-signout-link:hover {
     color: $color-forever_red;
   }
 
-  .f-pnav__side-link-base {
+  .f-primary-nav_side-link-base {
     text-transform: uppercase;
     display: block;
     font-family: $font-face-semibold;
@@ -287,7 +291,7 @@ $f-pnav__side--zindex: 1032;
 
 }
 
-.f-pnav__side-section-close {
+.f-primary-nav_side-section-close {
   position: relative;
   width: 22px;
   padding-top: 20px;
@@ -308,8 +312,8 @@ $f-pnav__side--zindex: 1032;
     @include transition_fast(background-color);
   }
 
-  &::before { transform: rotate(45deg); }
-  &::after { transform: rotate(-45deg); }
+  &::before { transform: rotate($f-primary-nav_side-section-close_angle); }
+  &::after { transform: rotate(-($f-primary-nav_side-section-close_angle)); }
 
   &:hover {
     &::before,
@@ -317,16 +321,16 @@ $f-pnav__side--zindex: 1032;
   }
 }
 
-.f-pnav__side-section-info {
+.f-primary-nav_side-section-info {
   padding-bottom: 15px;
 
   /* avatar/badge and storage meter */
-  .f-pnav__side-info-avameter {
+  .f-primary-nav_side-info-avameter {
     display: flex;
     align-items: center;
   }
 
-  .f-pnav__side-info-avatar {
+  .f-primary-nav_side-info-avatar {
     position: relative;
     flex: 0 1 auto;
 
@@ -345,12 +349,12 @@ $f-pnav__side--zindex: 1032;
     }
   }
 
-  .f-pnav__side-info-storage-meter {
+  .f-primary-nav_side-info-storage-meter {
     flex: 1 0 auto;
     padding-left: 15px;
 
     /*store only, mars has a component*/
-    .f-pnav__side-info-storage-meter-bg {
+    .f-primary-nav_side-info-storage-meter-bg {
       height: 10px;
       border-radius: 50px;
       background-color: $color-gray-300;
@@ -359,7 +363,7 @@ $f-pnav__side--zindex: 1032;
       width: 100%;
     }
 
-    .f-pnav__side-info-storage-meter-percent {
+    .f-primary-nav_side-info-storage-meter-percent {
       height: 100%;
       border-radius: 50px;
     }
@@ -367,7 +371,7 @@ $f-pnav__side--zindex: 1032;
 
   }
 
-  .f-pnav__side-info-club {
+  .f-primary-nav_side-info-club {
     margin-top: 30px;
     line-height: 1;
     text-align: center;
@@ -375,14 +379,14 @@ $f-pnav__side--zindex: 1032;
 
 }
 
-.f-pnav__side-section-ecom-list {
-  .f-pnav__side-ecom-deals-link {
+.f-primary-nav_side-section-ecom-list {
+  .f-primary-nav_side-ecom-deals-link {
     @include deals_link_base();
   }
 }
 
-.f-pnav__side-section-logged-out {
-  .f-pnav__side-logged-out-button {
+.f-primary-nav_side-section-logged-out {
+  .f-primary-nav_side-logged-out-button {
     margin-right: 20px;
     margin-top: 10px;
     display: block;
@@ -396,40 +400,40 @@ $f-pnav__side--zindex: 1032;
     padding: 0 15px;
   }
 
-  .f-pnav__logo-image {
+  .f-primary-nav_logo-image {
     height: 28px;
     max-width: 175px;
   }
 
-  .f-pnav__icon-item {
+  .f-primary-nav_icon-item {
     font-size: $font-size-500;
   }
 
-  .f-pnav__user-item-avatar {
+  .f-primary-nav_user-item-avatar {
     visibility: visible;
     width: auto;
   }
 
-  .f-pnav__side.is-onscreen {
-    width: $f-pnav__side--width;
+  .f-primary-nav_side.is-onscreen {
+    width: $f-primary-nav_side--width;
   }
 }
 
 @media (min-width: $screen-md) {
 
-  .f-pnav__ecom-item {
+  .f-primary-nav_ecom-item {
     display: flex;
   }
 
-  .f-pnav__user-item-logged-out {
+  .f-primary-nav_user-item-logged-out {
     display: flex;
   }
 
-  .f-pnav__side-section-ecom-list {
+  .f-primary-nav_side-section-ecom-list {
     display: none;
   }
 
-  .f-pnav__user-item-side-toggle {
+  .f-primary-nav_user-item-side-toggle {
     &.is-unauthenticated {
       display: none;
     }
@@ -437,7 +441,7 @@ $f-pnav__side--zindex: 1032;
 }
 
 @media (min-width: $screen-lg) {
-  .f-pnav__ecom-link {
+  .f-primary-nav_ecom-link {
     padding-left: 8px;
     padding-right: 8px;
     font-size: $font-size-300;
@@ -445,20 +449,20 @@ $f-pnav__side--zindex: 1032;
 }
 
 @media (max-width: $screen-lg-max) and (min-width: $screen-md_to_lg) {
-  .f-pnav__ecom-link {
+  .f-primary-nav_ecom-link {
     font-size: $font-size-250;
   }
 }
 
 @media (max-width: $screen-md_to_lg) and (min-width: $screen-md) {
-  .f-pnav__logo-image {
+  .f-primary-nav_logo-image {
     height: 22px;
     max-width: 138px;
   }
 }
 
 @media (max-width: $screen-lg-max) and (min-width: $screen-md) {
-  .f-pnav__icon-item {
+  .f-primary-nav_icon-item {
     font-size: 21px;
   }
 }
