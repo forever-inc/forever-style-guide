@@ -5,7 +5,6 @@ $f-primary_nav-main-minheight: 50px;
 $f-primary_nav-side-width: 320px;
 $f-primary_nav-side-zindex: 1032;
 $f-primary_nav-side_section-close_angle: 45deg;
-$f-primary_nav-icon_link-cart-count_background: #e22626;
 
 @mixin deals_link_base() {
   color: $color-forever_orange;
@@ -148,7 +147,7 @@ $f-primary_nav-icon_link-cart-count_background: #e22626;
     width: 18px;
     height: 18px;
     border-radius: $border-radius-xl;
-    background-color: $f-primary_nav-icon_link-cart-count_background;
+    background-color: $color-primary;
     color: $color-white;
     font-size: $font-size-000;
     font-family: $font-face-semibold;
