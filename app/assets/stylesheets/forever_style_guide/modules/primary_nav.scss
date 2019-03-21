@@ -5,6 +5,8 @@ $f-primary_nav-main-minheight: 50px;
 $f-primary_nav-side-width: 320px;
 $f-primary_nav-side-zindex: $zindex-modal;
 $f-primary_nav-side_section-close_angle: 45deg;
+$f-primary_nav-icon-count_badge-top: 5px;
+$f-primary_nav-icon-count_badge-right: -4px;
 
 @mixin deals_link_base() {
   color: $color-forever_orange;
@@ -119,19 +121,22 @@ $f-primary_nav-side_section-close_angle: 45deg;
 .f-primary_nav-icon_list {
   position: relative;
   display: flex;
-  align-items: center;
+  align-items: stretch;
   margin-bottom: 0;
   padding-left: 0;
   list-style: none;
 }
 
 .f-primary_nav-icon_item {
-  padding: 0 6px;
+  display: flex;
+  align-items: stretch;
   font-size: $font-size-450;
 
   //display flex here gets rid of extra vertical space with inline block
   .f-primary_nav-icon_link {
     display: flex;
+    align-items: center;
+    padding: 0 6px;
   }
 
   .f-primary_nav-icon_link > .f-icon {
@@ -145,8 +150,8 @@ $f-primary_nav-side_section-close_angle: 45deg;
 
   .f-primary_nav-icon_link-cart_count {
     position: absolute;
-    top: -7px;
-    right: -10px;
+    top: $f-primary_nav-icon-count_badge-top;
+    right: $f-primary_nav-icon-count_badge-right;
     width: 18px;
     height: 18px;
     border-radius: $border-radius-xl;
@@ -162,11 +167,35 @@ $f-primary_nav-side_section-close_angle: 45deg;
 
 }
 
+//this overrides notification dropdown styles and lets nav own these styles
+.f-notification_dropdown.f-primary_nav-icon_notification {
+  display: flex;
+  align-items: stretch;
+
+  .f-notification_dropdown-bell {
+    padding: 0 6px;
+    align-items: center;
+
+    .f-notification_dropdown-bell_count {
+      top: $f-primary_nav-icon-count_badge-top;
+      right: $f-primary_nav-icon-count_badge-right;
+    }
+  }
+}
+
+//this is a placeholder div in store that houses an icon for notifications while turbolinks is transitioning. Ensures there is no jumpiness
+#mars-notifications {
+  padding: 0 6px;
+  align-self: center;
+
+  .fa { display:flex; }
+}
+
 .f-primary_nav-user_list {
   display: flex;
   align-items: center;
   margin-bottom: 0;
-  padding-left: 0;
+  padding-left: 10px;
   list-style: none;
 
   .f-primary_nav-user_link {
@@ -204,7 +233,6 @@ $f-primary_nav-side_section-close_angle: 45deg;
 }
 
 .f-primary_nav-user_item-avatar {
-  padding-left: 10px;
 
   /* use below instead of display to hide so we retain padding */
   visibility: hidden;
