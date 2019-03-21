@@ -3,7 +3,7 @@ $f-primary_nav-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
 $f-primary_nav-main-zindex: $zindex-navbar-fixed;
 $f-primary_nav-main-minheight: 50px;
 $f-primary_nav-side-width: 320px;
-$f-primary_nav-side-zindex: 1032;
+$f-primary_nav-side-zindex: $zindex-modal;
 $f-primary_nav-side_section-close_angle: 45deg;
 
 @mixin deals_link_base() {
@@ -127,7 +127,7 @@ $f-primary_nav-side_section-close_angle: 45deg;
 
 .f-primary_nav-icon_item {
   padding: 0 6px;
-  font-size: 21px;
+  font-size: $font-size-450;
 
   //display flex here gets rid of extra vertical space with inline block
   .f-primary_nav-icon_link {
@@ -474,6 +474,6 @@ $f-primary_nav-side_section-close_angle: 45deg;
 
 @media (max-width: $screen-lg-max) and (min-width: $screen-md) {
   .f-primary_nav-icon_item {
-    font-size: 21px;
+    font-size: $font-size-450;
   }
 }
