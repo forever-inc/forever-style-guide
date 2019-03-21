@@ -129,10 +129,13 @@ $f-primary_nav-side_section-close_angle: 45deg;
   padding: 0 6px;
   font-size: 21px;
 
-  /* needed for notification dropdown icon */
-  .fa:hover {
-    @include transition_normal(color);
-    color: $color-forever_blue;
+  //display flex here gets rid of extra vertical space with inline block
+  .f-primary_nav-icon_link {
+    display: flex;
+  }
+
+  .f-primary_nav-icon_link > .f-icon {
+    display: flex;
   }
 
 }
@@ -142,7 +145,7 @@ $f-primary_nav-side_section-close_angle: 45deg;
 
   .f-primary_nav-icon_link-cart_count {
     position: absolute;
-    top: -4px;
+    top: -7px;
     right: -10px;
     width: 18px;
     height: 18px;
