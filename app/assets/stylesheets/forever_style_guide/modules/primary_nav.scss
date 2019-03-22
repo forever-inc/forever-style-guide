@@ -167,8 +167,8 @@ $f-primary_nav-icon-count_badge-right: -4px;
 
 }
 
-//this overrides notification dropdown styles and lets nav own these styles
-.f-notification_dropdown.f-primary_nav-icon_notification {
+//this overrides notification dropdown styles and lets nav own these styles, selectors and nesting is necessary for selector specificity
+.f-primary_nav-icon_notification.f-notification_dropdown {
   display: flex;
   align-items: stretch;
 
@@ -195,7 +195,7 @@ $f-primary_nav-icon-count_badge-right: -4px;
   display: flex;
   align-items: center;
   margin-bottom: 0;
-  padding-left: 10px;
+  padding-left: 5px;
   list-style: none;
 
   .f-primary_nav-user_link {
@@ -433,6 +433,7 @@ $f-primary_nav-icon-count_badge-right: -4px;
 }
 
 
+//everything above xs
 @media (min-width: $screen-xs) {
 
   .f-primary_nav {
@@ -442,6 +443,10 @@ $f-primary_nav-icon-count_badge-right: -4px;
   .f-primary_nav-logo_image {
     height: 28px;
     max-width: 175px;
+  }
+
+  .f-primary_nav-user_list {
+    padding-left: 10px;
   }
 
   .f-primary_nav-icon_item {
@@ -458,6 +463,7 @@ $f-primary_nav-icon-count_badge-right: -4px;
   }
 }
 
+//everything above medium
 @media (min-width: $screen-md) {
 
   .f-primary_nav-ecom_item {
@@ -479,6 +485,7 @@ $f-primary_nav-icon-count_badge-right: -4px;
   }
 }
 
+//everything above lg
 @media (min-width: $screen-lg) {
   .f-primary_nav-ecom_link {
     padding-left: 8px;
@@ -487,6 +494,7 @@ $f-primary_nav-icon-count_badge-right: -4px;
   }
 }
 
+//bet
 @media (max-width: $screen-lg-max) and (min-width: $screen-md_to_lg) {
   .f-primary_nav-ecom_link {
     font-size: $font-size-250;
