@@ -282,6 +282,8 @@ $f-primary_nav-icon-count_badge-right: -4px;
   display: flex;
   flex-direction: column;
   overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  height: 100%;
   top: 0;
   right: -($f-primary_nav-side-width);
   bottom: 0;
