@@ -1,0 +1,252 @@
+
+.f-primary_nav {
+  width: 100%;
+  padding-left: 10px;
+  padding-right: 10px;
+  box-shadow: $f-primary_nav-shadow;
+  background-color: $color-white;
+
+  /*support store method of affixing*/
+  &.affix {
+    top: 0;
+    left: 0;
+    z-index: $f-primary_nav-side-zindex;
+  }
+
+  /* nested to give more specificity and override the base styleguide link styles */
+  .f-primary_nav-link_base {
+    text-decoration: none;
+    color: $color-gray-600;
+    @include transition_fast(color);
+
+    &.is-active,
+    &:hover {
+      color: $color-forever_blue;
+    }
+  }
+}
+
+.f-primary_nav-main {
+  display: flex;
+  min-height: $f-primary_nav-main-minheight;
+  position: relative;
+  z-index: $f-primary_nav-main-zindex;
+}
+
+.f-primary_nav-logo_link {
+  display: flex;
+  align-items: center;
+}
+
+.f-primary_nav-logo_image {
+  height: 22px;
+  max-width: 138px;
+  @include transition_fast(height, max-width);
+}
+
+.f-primary_nav-ecom_list {
+  display: flex;
+  flex: 1 0 auto;
+  justify-content: center;
+  align-items: stretch;
+  margin-bottom: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+.f-primary_nav-ecom_item {
+  /* we want to ul to remain and grow, so just hide the items */
+  display: none;
+}
+
+.f-primary_nav-ecom_link {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding-right: 4px;
+  padding-left: 4px;
+  font-family: $font-face-semibold;
+  font-size: $font-size-200;
+
+  &.f-primary_nav-ecom_link-deals {
+    @include deals_link_base();
+  }
+
+  &::before {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 4px;
+    width: 100%;
+    background-color: $color-forever_blue;
+    content: '';
+    transform: scaleX(0);
+    @include transition_fast(transform);
+  }
+
+  &.is-active,
+  &:hover {
+    &::before {
+      transform: scaleX(1);
+    }
+  }
+}
+
+.f-primary_nav-icon_list {
+  position: relative;
+  display: flex;
+  align-items: stretch;
+  margin-bottom: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+.f-primary_nav-icon_item {
+  display: flex;
+  align-items: stretch;
+  font-size: $font-size-450;
+
+  //display flex here gets rid of extra vertical space with inline block
+  .f-primary_nav-icon_link {
+    display: flex;
+    align-items: center;
+    padding: 0 6px;
+  }
+
+  .f-primary_nav-icon_link > .f-icon {
+    display: flex;
+  }
+
+}
+
+.f-primary_nav-icon_link-cart {
+  position: relative;
+
+  .f-primary_nav-icon_link-cart_count {
+    position: absolute;
+    top: $f-primary_nav-icon-count_badge-top;
+    right: $f-primary_nav-icon-count_badge-right;
+    width: 18px;
+    height: 18px;
+    border-radius: $border-radius-xl;
+    background-color: $color-primary;
+    color: $color-white;
+    font-size: $font-size-000;
+    font-family: $font-face-semibold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+  }
+
+}
+
+//this overrides notification dropdown styles and lets nav own these styles, selectors and nesting is necessary for selector specificity
+.f-primary_nav-icon_notification.f-notification_dropdown {
+  display: flex;
+  align-items: stretch;
+
+  .f-notification_dropdown-bell {
+    padding: 0 6px;
+    align-items: center;
+
+    .f-notification_dropdown-bell_count {
+      top: $f-primary_nav-icon-count_badge-top;
+      right: $f-primary_nav-icon-count_badge-right;
+    }
+  }
+}
+
+//this is a placeholder div in store that houses an icon for notifications while turbolinks is transitioning. Ensures there is no jumpiness
+#mars-notifications {
+  padding: 0 6px;
+  align-self: center;
+
+  .fa { display:flex; }
+}
+
+.f-primary_nav-user_list {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0;
+  padding-left: 5px;
+  list-style: none;
+
+  .f-primary_nav-user_link {
+    font-family: $font-face-semibold;
+    text-transform: uppercase;
+
+    &.btn {
+      padding: 7px;
+      font-size: 12px;
+      height: 30px;
+    }
+  }
+
+  .f-primary_nav-user-link-signup {
+    &.btn {
+      color: $color-white;
+    }
+  }
+
+  .f-primary_nav-user-link-signin {
+    &.btn {
+      &:link,
+      &:hover,
+      &:active,
+      &:visited {
+        color: $color-gray-600;
+        text-decoration: none;
+      }
+
+      &:hover {
+        color: $color-secondary;
+      }
+    }
+  }
+}
+
+.f-primary_nav-user_item-avatar {
+
+  /* use below instead of display to hide so we retain padding */
+  visibility: hidden;
+  width: 0;
+
+  .avatar {
+    padding: 0;
+    margin-right: 0;
+  }
+}
+
+.f-primary_nav-user_item-logged_out {
+  display: none;
+}
+
+.f-primary_nav-user_item-side_toggle {
+  cursor: pointer;
+  padding: 10px 10px 10px 5px;
+  margin-right: -10px;
+
+  .f-primary_nav-user_icon_bar {
+    background-color: $color-gray-600;
+    width: 20px;
+    display: block;
+    height: 2px;
+    border-radius: 1px;
+    @include transition_fast(background-color, margin);
+  }
+
+  .f-primary_nav-user_icon_bar:not(:first-child) {
+    margin-top: 4px;
+  }
+
+  &:hover {
+    .f-primary_nav-user_icon_bar {
+      background-color: $color_forever_blue;
+    }
+
+    .f-primary_nav-user_icon_bar:not(:first-child) {
+      margin-top: 6px;
+    }
+  }
+}

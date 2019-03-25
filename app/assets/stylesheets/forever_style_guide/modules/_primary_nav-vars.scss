@@ -1,0 +1,27 @@
+
+$f-primary_nav-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+$f-primary_nav-main-zindex: $zindex-navbar-fixed;
+$f-primary_nav-main-minheight: 50px;
+$f-primary_nav-side-width: 320px;
+$f-primary_nav-side-zindex: $zindex-modal;
+$f-primary_nav-side_section-close_angle: 45deg;
+$f-primary_nav-icon-count_badge-top: 5px;
+$f-primary_nav-icon-count_badge-right: -4px;
+
+@mixin deals_link_base() {
+  color: $color-forever_orange;
+
+  &:hover {
+    color: $color-forever_blue;
+  }
+
+  &::after {
+    position: relative;
+    top: -5px;
+    right: -2px;
+    font-family: FontAwesome;
+    font-size: $font-size-000;
+    content: '\f005';
+  }
+}
+
