@@ -1,6 +1,9 @@
 $base-font-path: '../fonts';
-$fa-font-path: '../fonts';
+$fa-font-path: '../fonts/fontawesome';
 @import 'bootstrap-custom';
 @import "bootstrap/pagination";
-@import 'font-awesome';
+@import '@fortawesome/fontawesome-free/scss/fontawesome.scss';
+@import '@fortawesome/fontawesome-free/scss/v4-shims.scss';
+@import '@fortawesome/fontawesome-free/scss/regular.scss';
+@import '@fortawesome/fontawesome-free/scss/solid.scss';
 @import "forever_style_guide/mars_manifest";

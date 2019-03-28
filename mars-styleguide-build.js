@@ -32,7 +32,7 @@ class MarsStyleGuideBuild {
     copy(path.join(this.srcFolder, 'images/**/*'), path.join(this.outputFolder, 'images'), function () {});
 
     this.log('copy: copying font-awesome fonts');
-    copy(path.join(this.resolveNodeModuleFolder('font-awesome'), 'fonts/**/*'), path.join(this.outputFolder, 'fonts'), function () {});
+    copy(path.join(this.resolveNodeModuleFolder('@fortawesome/fontawesome-free'), 'webfonts/**/*'), path.join(this.outputFolder, 'fonts/fontawesome'), function () {});
     
     return this;
   }
@@ -46,7 +46,7 @@ class MarsStyleGuideBuild {
       sourceMap: true,
       outputStyle: 'compressed',
       importer: (url, prev, done) => {
-        
+
         //replace bootstrap imports
         if (url.startsWith('bootstrap')) {
           done({
@@ -55,11 +55,11 @@ class MarsStyleGuideBuild {
         } 
         
         //replace font-awesome imports
-        else if (url.startsWith('font-awesome')) {
+        else if (url.startsWith('@fortawesome')) {
           done({
-            file: url.replace('font-awesome', `${this.resolveNodeModuleFolder('font-awesome')}/scss/font-awesome`)
+            file: url.replace('@fortawesome', `${this.resolveNodeModuleFolder('@fortawesome')}`)
           });
-        } 
+        }
         
         //replace forever style guide imports
         else if (url.startsWith('forever_style_guide')) {

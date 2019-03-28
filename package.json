@@ -21,10 +21,10 @@
   },
   "homepage": "https://github.com/forever-inc/forever-style-guide#readme",
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.8.1",
     "autoprefixer": "9.4.7",
     "bootstrap-sass": "^3.3.7",
     "copy": "^0.3.0",
-    "font-awesome": "^4.7.0",
     "node-sass": "4.11.0",
     "postcss": "7.0.14"
   }
