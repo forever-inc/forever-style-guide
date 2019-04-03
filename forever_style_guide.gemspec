@@ -23,7 +23,7 @@ Gem::Specification.new do |s|
     "{app/helpers/forever_style_guide}/**/*"
     ]
 
-  s.add_dependency "rails", '~> 5.1'
+  s.add_dependency "rails", '~> 5.2'
   s.add_dependency "style-guide"
 
   s.add_dependency "sass-rails"
