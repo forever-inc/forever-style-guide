@@ -379,7 +379,7 @@ $f-primary_nav-icon-count_badge-right: -4px;
       height: 80px;
     }
 
-    img {
+    > img, > svg {
       position: absolute;
       height: 50px;
       width: 50px;
