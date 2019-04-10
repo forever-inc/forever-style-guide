@@ -61,7 +61,7 @@ $variations: (
         $args: join($args, map-get($this-variation, parameters));
       }
       //@return $args;
-      @return call($args...);
+      @return call(get-function($args...));
     }
   }
   // no $variation, just return $color
