@@ -379,7 +379,8 @@ $f-primary_nav-icon-count_badge-right: -4px;
       height: 80px;
     }
 
-    > img, > svg {
+    //this accounts for some markup differences between store and webapp, making sure we are only styleing the badge
+    > img:not(.avatar), > svg {
       position: absolute;
       height: 50px;
       width: 50px;
