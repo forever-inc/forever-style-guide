@@ -367,6 +367,7 @@ $f-primary_nav-icon-count_badge-right: -4px;
   .f-primary_nav-side_info-avameter {
     display: flex;
     align-items: center;
+    margin: 0 -6px;
   }
 
   .f-primary_nav-side_info-avatar {
@@ -390,7 +391,7 @@ $f-primary_nav-icon-count_badge-right: -4px;
   }
 
   .f-primary_nav-side_info-storage_meter {
-    flex: 1 0 auto;
+    flex: 1 0 0;
     padding-left: 15px;
 
     /*store only, mars has a component*/
