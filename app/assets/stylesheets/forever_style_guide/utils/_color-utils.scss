@@ -61,7 +61,9 @@ $variations: (
         $args: join($args, map-get($this-variation, parameters));
       }
       //@return $args;
-      @return call($args...);
+      $method: nth($args, 1);
+      $params: (nth($args, 2), nth($args, 3));
+      @return call(get-function($method), $params...);
     }
   }
   // no $variation, just return $color

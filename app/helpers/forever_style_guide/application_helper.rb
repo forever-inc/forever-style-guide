@@ -283,10 +283,6 @@ module ForeverStyleGuide
       www_url('/gifts')
     end
 
-    def find_ambassador_url
-      www_url('/find_ambassador')
-    end
-
     def ambassador_direct_url
       www_url('/ambassador-direct')
     end
