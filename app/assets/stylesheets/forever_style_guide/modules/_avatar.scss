@@ -2,8 +2,10 @@ $avatar-xl: 210px;
 $avatar-lg: 150px;
 $avatar-md: 100px;
 $avatar-sm: 70px;
-$avatar-xs: 40px;
+$avatar-xs: 54px;
+$avatar-xxs: 32px;
 $avatar-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+$avatar-shadow-xs: 0 2px 2px rgba(0, 0, 0, 0.1);
 
 @mixin avatar_size($size) {
   height: $size;
@@ -54,11 +56,28 @@ $avatar-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
   }
 
   @at-root #{&}-xs {
-    @include avatar_size($avatar-sm);
+    @include avatar_size($avatar-xs);
     border-width: 2px;
 
+    &.avatar-with_shadow {
+      box-shadow: $avatar-shadow-xs;
+    }
+
     .avatar-initials {
-      font-size: $font-size-300;
+      font-size: $font-size-400;
+    }
+  }
+
+  @at-root #{&}-xxs {
+    @include avatar_size($avatar-xxs);
+    border-width: 2px;
+
+    &.avatar-with_shadow {
+      box-shadow: $avatar-shadow-xs;
+    }
+
+    .avatar-initials {
+      font-size: $font-size-200;
     }
   }
 }
