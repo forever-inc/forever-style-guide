@@ -1,6 +1,6 @@
 {
   "name": "forever-style-guide",
-  "version": "3.4.18",
+  "version": "3.6.0",
   "description": "Built on top of https://github.com/pivotalexperimental/style-guide",
   "main": "index.js",
   "directories": {
