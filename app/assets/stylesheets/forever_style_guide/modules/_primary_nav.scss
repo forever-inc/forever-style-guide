@@ -1,0 +1,519 @@
+
+$f-primary_nav-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+$f-primary_nav-main-zindex: $zindex-navbar-fixed;
+$f-primary_nav-main-minheight: 50px;
+$f-primary_nav-side-width: 320px;
+$f-primary_nav-side-zindex: $zindex-modal;
+$f-primary_nav-side_section-close_angle: 45deg;
+$f-primary_nav-icon-count_badge-top: 5px;
+$f-primary_nav-icon-count_badge-right: -4px;
+
+@mixin deals_link_base() {
+  color: $color-forever_orange;
+
+  &:hover {
+    color: $color-forever_blue;
+  }
+
+  &::after {
+    position: relative;
+    top: -5px;
+    right: -2px;
+    font-family: FontAwesome;
+    font-size: $font-size-000;
+    content: '\f005';
+  }
+}
+
+.f-primary_nav {
+  width: 100%;
+  padding-left: 10px;
+  padding-right: 10px;
+  box-shadow: $f-primary_nav-shadow;
+  background-color: $color-white;
+
+  /*support store method of affixing*/
+  &.affix {
+    top: 0;
+    left: 0;
+    z-index: $f-primary_nav-side-zindex;
+  }
+
+  /* nested to give more specificity and override the base styleguide link styles */
+  .f-primary_nav-link_base {
+    text-decoration: none;
+    color: $color-gray-600;
+    @include transition_fast(color);
+
+    &.is-active,
+    &:hover {
+      color: $color-forever_blue;
+    }
+  }
+}
+
+.f-primary_nav-main {
+  display: flex;
+  height: $f-primary_nav-main-minheight;
+  min-height: $f-primary_nav-main-minheight;
+  position: relative;
+  z-index: $f-primary_nav-main-zindex;
+}
+
+.f-primary_nav-logo_link {
+  display: flex;
+  align-items: center;
+}
+
+.f-primary_nav-logo_image {
+  height: 22px;
+  width: 138px;
+  max-width: unset;
+  @include transition_fast(height, width);
+}
+
+.f-primary_nav-ecom_list {
+  display: flex;
+  flex: 1 0 auto;
+  justify-content: center;
+  align-items: stretch;
+  margin-bottom: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+.f-primary_nav-ecom_item {
+  /* we want to ul to remain and grow, so just hide the items */
+  display: none;
+}
+
+.f-primary_nav-ecom_link {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding-right: 4px;
+  padding-left: 4px;
+  font-family: $font-face-semibold;
+  font-size: $font-size-200;
+
+  &.f-primary_nav-ecom_link-deals {
+    @include deals_link_base();
+  }
+
+  &::before {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 4px;
+    width: 100%;
+    background-color: $color-forever_blue;
+    content: '';
+    transform: scaleX(0);
+    @include transition_fast(transform);
+  }
+
+  &.is-active,
+  &:hover {
+    &::before {
+      transform: scaleX(1);
+    }
+  }
+}
+
+.f-primary_nav-icon_list {
+  position: relative;
+  display: flex;
+  align-items: stretch;
+  margin-bottom: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+.f-primary_nav-icon_item {
+  display: flex;
+  align-items: stretch;
+  font-size: $font-size-450;
+
+  //display flex here gets rid of extra vertical space with inline block
+  .f-primary_nav-icon_link {
+    display: flex;
+    align-items: center;
+    padding: 0 6px;
+  }
+
+  .f-primary_nav-icon_link > .f-icon {
+    display: flex;
+  }
+
+}
+
+.f-primary_nav-icon_link-cart {
+  position: relative;
+
+  .f-primary_nav-icon_link-cart_count {
+    position: absolute;
+    top: $f-primary_nav-icon-count_badge-top;
+    right: $f-primary_nav-icon-count_badge-right;
+    width: 18px;
+    height: 18px;
+    border-radius: $border-radius-xl;
+    background-color: $color-primary;
+    color: $color-white;
+    font-size: $font-size-000;
+    font-family: $font-face-semibold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+  }
+
+}
+
+//this overrides notification dropdown styles and lets nav own these styles, selectors and nesting is necessary for selector specificity
+.f-primary_nav-icon_notification.f-notification_dropdown {
+  display: flex;
+  align-items: stretch;
+
+  .f-notification_dropdown-bell {
+    padding: 0 6px;
+    align-items: center;
+
+    .f-notification_dropdown-bell_count {
+      top: $f-primary_nav-icon-count_badge-top;
+      right: $f-primary_nav-icon-count_badge-right;
+    }
+  }
+}
+
+//this is a placeholder div in store that houses an icon for notifications while turbolinks is transitioning. Ensures there is no jumpiness
+#mars-notifications {
+  padding: 0 6px;
+  align-self: center;
+
+  .fa { display:flex; }
+}
+
+.f-primary_nav-user_list {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0;
+  padding-left: 5px;
+  list-style: none;
+
+  .f-primary_nav-user_link {
+    font-family: $font-face-semibold;
+    text-transform: uppercase;
+
+    &.btn {
+      padding: 7px;
+      font-size: 12px;
+      height: 30px;
+    }
+  }
+
+  .f-primary_nav-user-link-signup {
+    &.btn {
+      color: $color-white;
+    }
+  }
+
+  .f-primary_nav-user-link-signin {
+    &.btn {
+      &:link,
+      &:hover,
+      &:active,
+      &:visited {
+        color: $color-gray-600;
+        text-decoration: none;
+      }
+
+      &:hover {
+        color: $color-secondary;
+      }
+    }
+  }
+}
+
+.f-primary_nav-user_item-avatar {
+
+  /* use below instead of display to hide so we retain padding */
+  visibility: hidden;
+  width: 0;
+
+  .avatar {
+    padding: 0;
+    margin-right: 0;
+  }
+}
+
+.f-primary_nav-user_item-logged_out {
+  display: none;
+}
+
+.f-primary_nav-user_item-side_toggle {
+  cursor: pointer;
+  padding: 10px 10px 10px 5px;
+  margin-right: -10px;
+
+  .f-primary_nav-user_icon_bar {
+    background-color: $color-gray-600;
+    width: 20px;
+    display: block;
+    height: 2px;
+    border-radius: 1px;
+    @include transition_fast(background-color, margin);
+  }
+
+  .f-primary_nav-user_icon_bar:not(:first-child) {
+    margin-top: 4px;
+  }
+
+  &:hover {
+    .f-primary_nav-user_icon_bar {
+      background-color: $color_forever_blue;
+    }
+
+    .f-primary_nav-user_icon_bar:not(:first-child) {
+      margin-top: 6px;
+    }
+  }
+}
+
+.f-primary_nav-side {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  top: 0;
+  right: -($f-primary_nav-side-width);
+  bottom: 0;
+  z-index: $f-primary_nav-side-zindex;
+  width: $f-primary_nav-side-width;
+  padding: 0 20px;
+  background-color: $color-white;
+  box-shadow: $f-primary_nav-shadow;
+  direction: rtl;
+  text-align: left;
+  @include transition_normal(right);
+
+  &.is-onscreen {
+    right: 0;
+    width: 100%;
+  }
+}
+
+.f-primary_nav-side_section {
+  padding: 8px 0;
+  margin-bottom: 0;
+  list-style: none;
+  border-bottom: 2px solid $color-gray-200;
+  direction: ltr;
+
+  &:last-child {
+    border: none;
+  }
+
+  .f-primary_nav-side_signout_link {
+    &:link,
+    &:hover,
+    &:active,
+    &:visited {
+      color: $color-forever_red;
+    }
+  }
+
+  .f-primary_nav-side_link_base {
+    text-transform: uppercase;
+    display: block;
+    font-family: $font-face-semibold;
+    font-size: $font-size-200;
+    padding: 8px 0;
+  }
+
+}
+
+.f-primary_nav-side_section-close {
+  position: relative;
+  width: 22px;
+  padding-top: 20px;
+  align-self: flex-start;
+  cursor: pointer;
+  border: none;
+  outline: none;
+
+  &::before,
+  &::after {
+    position: absolute;
+    right: 0;
+    width: 22px;
+    height: 2px;
+    content: ' ';
+    border-radius: 1px;
+    background-color: $color-gray-600;
+    @include transition_fast(background-color);
+  }
+
+  &::before { transform: rotate($f-primary_nav-side_section-close_angle); }
+  &::after { transform: rotate(-($f-primary_nav-side_section-close_angle)); }
+
+  &:hover {
+    &::before,
+    &::after { background-color: $color-forever_blue; }
+  }
+}
+
+.f-primary_nav-side_section-info {
+  padding-bottom: 15px;
+
+  /* avatar/badge and storage meter */
+  .f-primary_nav-side_info-avameter {
+    display: flex;
+    align-items: center;
+    margin: 0 -6px;
+  }
+
+  .f-primary_nav-side_info-avatar {
+    position: relative;
+    flex: 0 1 auto;
+
+    /* necessary to dig into avatar and add custom size*/
+    .avatar {
+      width: 80px;
+      height: 80px;
+    }
+
+    //this accounts for some markup differences between store and webapp, making sure we are only styleing the badge
+    > img:not(.avatar), > svg {
+      position: absolute;
+      height: 50px;
+      width: 50px;
+      top: 48px;
+      left: 43px;
+    }
+  }
+
+  .f-primary_nav-side_info-storage_meter {
+    flex: 1 0 0;
+    padding-left: 15px;
+
+    /*store only, mars has a component*/
+    .f-primary_nav-side_info-storage_meter-bg {
+      height: 10px;
+      border-radius: 50px;
+      background-color: $color-gray-300;
+      margin-top: 4px;
+      margin-bottom: 8px;
+      width: 100%;
+    }
+
+    .f-primary_nav-side_info-storage_meter-percent {
+      height: 100%;
+      border-radius: 50px;
+    }
+    /* store only end*/
+
+  }
+
+  .f-primary_nav-side_info-club {
+    margin-top: 30px;
+    line-height: 1;
+    text-align: center;
+  }
+
+}
+
+.f-primary_nav-side_section-ecom_list {
+  .f-primary_nav-side_ecom-deals_link {
+    @include deals_link_base();
+  }
+}
+
+.f-primary_nav-side_section-logged_out {
+  .f-primary_nav-side_logged_out_button {
+    margin-right: 20px;
+    margin-top: 10px;
+    display: block;
+  }
+}
+
+
+//everything above xs
+@media (min-width: $screen-xs) {
+
+  .f-primary_nav {
+    padding: 0 15px;
+  }
+
+  .f-primary_nav-logo_image {
+    height: 28px;
+    width: 175px;
+  }
+
+  .f-primary_nav-user_list {
+    padding-left: 10px;
+  }
+
+  .f-primary_nav-icon_item {
+    font-size: $font-size-500;
+  }
+
+  .f-primary_nav-user_item-avatar {
+    visibility: visible;
+    width: auto;
+  }
+
+  .f-primary_nav-side.is-onscreen {
+    width: $f-primary_nav-side-width;
+  }
+}
+
+//everything above medium
+@media (min-width: $screen-md) {
+
+  .f-primary_nav-ecom_item {
+    display: flex;
+  }
+
+  .f-primary_nav-user_item-logged_out {
+    display: flex;
+  }
+
+  .f-primary_nav-side_section-ecom_list {
+    display: none;
+  }
+
+  .f-primary_nav-user_item-side_toggle {
+    &.is-unauthenticated {
+      display: none;
+    }
+  }
+}
+
+//everything above lg
+@media (min-width: $screen-lg) {
+  .f-primary_nav-ecom_link {
+    padding-left: 8px;
+    padding-right: 8px;
+    font-size: $font-size-300;
+  }
+}
+
+//bet
+@media (max-width: $screen-lg-max) and (min-width: $screen-md_to_lg) {
+  .f-primary_nav-ecom_link {
+    font-size: $font-size-250;
+  }
+}
+
+@media (max-width: $screen-md_to_lg) and (min-width: $screen-md) {
+  .f-primary_nav-logo_image {
+    height: 22px;
+    width: 138px;
+  }
+}
+
+@media (max-width: $screen-lg-max) and (min-width: $screen-md) {
+  .f-primary_nav-icon_item {
+    font-size: $font-size-450;
+  }
+}
