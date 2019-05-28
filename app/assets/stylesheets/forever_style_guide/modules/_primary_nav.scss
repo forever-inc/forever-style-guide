@@ -54,6 +54,7 @@ $f-primary_nav-icon-count_badge-right: -4px;
 
 .f-primary_nav-main {
   display: flex;
+  height: $f-primary_nav-main-minheight;
   min-height: $f-primary_nav-main-minheight;
   position: relative;
   z-index: $f-primary_nav-main-zindex;
@@ -66,8 +67,9 @@ $f-primary_nav-icon-count_badge-right: -4px;
 
 .f-primary_nav-logo_image {
   height: 22px;
-  max-width: 138px;
-  @include transition_fast(height, max-width);
+  width: 138px;
+  max-width: unset;
+  @include transition_fast(height, width);
 }
 
 .f-primary_nav-ecom_list {
@@ -444,7 +446,7 @@ $f-primary_nav-icon-count_badge-right: -4px;
 
   .f-primary_nav-logo_image {
     height: 28px;
-    max-width: 175px;
+    width: 175px;
   }
 
   .f-primary_nav-user_list {
@@ -506,7 +508,7 @@ $f-primary_nav-icon-count_badge-right: -4px;
 @media (max-width: $screen-md_to_lg) and (min-width: $screen-md) {
   .f-primary_nav-logo_image {
     height: 22px;
-    max-width: 138px;
+    width: 138px;
   }
 }
 
