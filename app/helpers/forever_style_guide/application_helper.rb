@@ -13,7 +13,7 @@ module ForeverStyleGuide
            "Forever Retreat", "Forever Ambassador", "Forever Ambassadors", "Forever Deal of the Day", "Forever App", "Forever Digital Art",
            "Forever Digital Art Store", "Forever Founder's Club", "Forever Gift Certificate", "Forever Gift Certificates", "Forever Intro Account", "Forever Library",
            "Forever Media Conversion", "Forever Mobile", "Forever Owner", "Forever Vault", "Forever Print Shop", "Forever Services",
-           "Forever Software", "Forever Store", "Forever Premium Video Plan", "Forever Club", "Forever Print", "Forever Historian", "Forever Valet", "Forever Live!"
+           "Forever Software", "Forever Store", "Forever Premium Video Plan", "Forever Club", "Forever Print", "Forever Design & Print", "Forever Historian", "Forever Valet", "Forever Live!"
         copy[0..6].upcase + "®" + copy[7..copy.length-1]
       when "Forever Artisan", "Forever Storage"
         copy[0..6].upcase + copy[7..copy.length-1] + "®"
