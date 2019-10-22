@@ -9,11 +9,10 @@ $banner-hover-effect-speed: 0.15s;
 $chevron-rotate-effect-speed: 0.25s;
 $dropdown-entrance-and-exit-effect-speed: 0.22s;
 
-@mixin ambassador_banner($banner-background-gradient, $height) {
+@mixin ambassador_banner($height) {
   position: relative;
   height: $height;
   color: $banner-color;
-  background-image: $banner-background-gradient;
   cursor: pointer;
   z-index: $in-front-of-primary-nav;
 
@@ -55,7 +54,8 @@ a.ambassador_banner {
 }
 
 .ambassador_banner-assigned {
-  @include ambassador_banner($gradient-ambassador, $ambassador-banner-height-assigned);
+  @include ambassador_banner($ambassador-banner-height-assigned);
+  background-image: $gradient-ambassador;
   padding-top: $banner-vertical-padding-assigned;
   padding-bottom: $banner-vertical-padding-assigned;
   height: $ambassador-banner-height-assigned;
@@ -76,7 +76,8 @@ a.ambassador_banner {
 }
 
 .ambassador_banner-unassigned {
-  @include ambassador_banner($gradient-ambassador-alt, $ambassador-banner-height-unassigned);
+  @include ambassador_banner($ambassador-banner-height-unassigned);
+  background: $color-forever_ambassador-unassigned;
   padding-top: $banner-vertical-padding-unassigned;
   padding-bottom: $banner-vertical-padding-unassigned;
 
