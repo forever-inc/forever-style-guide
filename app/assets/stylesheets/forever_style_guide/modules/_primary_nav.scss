@@ -27,9 +27,7 @@ $f-primary_nav-icon-count_badge-right: -4px;
 
 .f-primary_nav {
   width: 100%;
-  padding-left: 10px;
-  padding-right: 10px;
-  box-shadow: $f-primary_nav-shadow;
+
   background-color: $color-white;
 
   /*support store method of affixing*/
@@ -56,6 +54,9 @@ $f-primary_nav-icon-count_badge-right: -4px;
   display: flex;
   height: $f-primary_nav-main-minheight;
   min-height: $f-primary_nav-main-minheight;
+  box-shadow: $f-primary_nav-shadow;
+  padding-left: 10px;
+  padding-right: 10px;
   position: relative;
   z-index: $f-primary_nav-main-zindex;
 }
@@ -440,7 +441,7 @@ $f-primary_nav-icon-count_badge-right: -4px;
 //everything above xs
 @media (min-width: $screen-xs) {
 
-  .f-primary_nav {
+  .f-primary_nav-main {
     padding: 0 15px;
   }
 
