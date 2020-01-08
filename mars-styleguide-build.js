@@ -78,7 +78,7 @@ class MarsStyleGuideBuild {
     this.log('sass: starting render');
     const result = sass.render(options, (err, result) => {
       if (!err) {
-        const processedOutput = postcss([autoprefixer({browsers: ['last 2 versions']})]).process(result.css);
+        const processedOutput = postcss([autoprefixer()]).process(result.css);
         cp.execSync(`mkdir -p ${path.resolve(__dirname, this.outputFolder, 'css')}`);
         fs.writeFileSync(outputFile, processedOutput.css);
         fs.writeFileSync(path.resolve(__dirname, this.outputFolder, 'css/styleguide.css.map'), result.map);
