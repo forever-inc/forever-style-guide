@@ -75,11 +75,16 @@ a.ambassador_banner {
   }
 }
 
+@media (min-width: $screen-xs) {
+  .ambassador_banner-assigned { text-align: center; }
+}
+
 .ambassador_banner-unassigned {
   @include ambassador_banner($ambassador-banner-height-unassigned);
   background: $color-forever_ambassador-unassigned;
   padding-top: $banner-vertical-padding-unassigned;
   padding-bottom: $banner-vertical-padding-unassigned;
+  text-align: center;
 
   &.is-behind_fixed-nav {
     .ambassador_banner-btn {
@@ -145,8 +150,6 @@ a.ambassador_banner {
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
   background-image: $gradient-ambassador;
   border-top: 2px solid transparentize($color-white, 0.9);
 }
