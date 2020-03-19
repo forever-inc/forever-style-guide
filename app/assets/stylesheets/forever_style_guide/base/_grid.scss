@@ -84,53 +84,35 @@ $f-grid-col-count: 24;
   }
 }
 
-/* justify center columns */
-.f-grid-center {
-  justify-content: center;
+/* alignment and justification modifiers */
+.f-grid-center { justify-content: center; }
+.f-grid-align-right { justify-content: flex-end; }
+.f-grid-valign-top { align-items: flex-start; }
+.f-grid-valign-middle { align-items: center; }
+.f-grid-valign-bottom { align-items: flex-end; }
+.f-grid-reverse { flex-direction: row-reverse; }
+.f-grid-around { justify-content: space-around; }
+.f-grid-between { justify-content: space-between; }
+
+/* padding modifiers */
+.f-grid.f-grid-no_padding {
+  margin: 0;
+  [class*="f-col"] { padding: 0; }
 }
 
-.f-grid-align-right {
-  justify-content: flex-end;
-}
-
-.f-grid-valign-top {
-  align-items: flex-start;
-}
-
-.f-grid-valign-middle {
-  align-items: center;
-}
-
-.f-grid-valign-bottom {
-  align-items: flex-end;
-}
-
-.f-grid-reverse {
-  flex-direction: row-reverse;
-}
-
-.f-grid-around {
-  justify-content: space-around;
-}
-
-.f-grid-between {
-  justify-content: space-between;
-}
-
-.f-grid-no_padding {
-  margin-left: 0;
-  margin-right: 0;
-
-  [class*="f-col"] {
-    padding: 0;
-  }
-}
-
-.f-grid-bs_padding {
+.f-grid.f-grid-bs_padding {
   margin-left: -$f-grid-bootstrap-padding;
   margin-right: -$f-grid-bootstrap-padding;
+  [class*="f-col"] { padding: 0 $f-grid-bootstrap-padding; }
+}
 
-  [class*="f-col"] {
-    padding: 0 $f-grid-bootstrap-padding;
+
+$grid-gutter: 2;
+@while $grid-gutter < 30 {
+  .f-grid.f-grid-gutter-#{$grid-gutter} {
+    margin: -#{$grid-gutter / 2}px;
+    [class*="f-col"] { padding: #{$grid-gutter / 2}px; }
   }
+
+  $grid-gutter: $grid-gutter + 2;
 }
