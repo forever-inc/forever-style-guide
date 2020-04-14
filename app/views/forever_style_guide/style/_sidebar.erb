@@ -1,7 +1,0 @@
-<ul class="nav nav-pills nav-stacked style-guide-sidebar" data-spy="affix" data-offset-top="110" data-offset-bottom="200">
-  <% section.partials.each do |partial| %>
-  <li class="nav-item style-guide-sidebar-partial">
-    <%= link_to fa_icon("chevron-right", text: partial.title, class: "nav-item-icon"), "##{partial.id}", class: "nav-item-list" %>
-  </li>
-  <% end %>
-</ul>
