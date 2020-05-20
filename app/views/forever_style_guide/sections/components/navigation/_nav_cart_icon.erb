@@ -1,4 +1,0 @@
-<%= link_to cart_url, class: "cart-icon #{'with-count' if has_item_in_cart?}", title:'View Your Shopping Cart', id: 'mini-cart' do %>
-  <span class="color-white color_block-primary cart-icon-count <%= 'hidden' unless has_item_in_cart? %>"><%= defined?(current_order) ? current_order.product_count : 0 %></span>
-  <i class='fa fa-2x fa-shopping-cart'></i>
-<% end %>

@@ -15,24 +15,10 @@ Gem::Specification.new do |s|
   s.license     = "MIT"
 
   s.files = Dir[
-    "{config,db,lib}/**/*",
+    "lib/**/*",
     "{app/assets/fonts}/**/*",
     "{app/assets/images/forever_style_guide}/**/*",
     "{app/assets/javascripts/forever_style_guide}/**/*",
-    "{app/assets/stylesheets/forever_style_guide}/**/*",
-    "{app/helpers/forever_style_guide}/**/*"
-    ]
-
-  s.add_dependency "rails", '5.2.3'
-  s.add_dependency "style-guide"
-
-  s.add_dependency "sass-rails"
-  s.add_dependency "jquery-rails"
-  s.add_dependency "bootstrap-sass"
-  s.add_dependency "font-awesome-rails"
-
-  s.add_development_dependency "sqlite3"
-  s.add_development_dependency "guard-rails"
-  s.add_development_dependency "guard-livereload"
-  s.add_development_dependency "thor"
+    "{app/assets/stylesheets/forever_style_guide}/**/*"
+  ]
 end
