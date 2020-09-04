@@ -31,7 +31,7 @@
     "bootstrap-sass": "^3.4.1",
     "copy": "^0.3.0",
     "font-awesome": "^4.7.0",
-    "node-sass": "4.13.0",
+    "node-sass": "4.13.1",
     "postcss": "7.0.23"
   }
 }
