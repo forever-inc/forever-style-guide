@@ -1,20 +1,13 @@
-
 $f-primary_nav-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
 $f-primary_nav-main-zindex: $zindex-navbar-fixed;
 $f-primary_nav-main-minheight: 50px;
 $f-primary_nav-side-width: 320px;
 $f-primary_nav-side-zindex: $zindex-modal;
-$f-primary_nav-side_section-close_angle: 45deg;
 $f-primary_nav-icon-count_badge-top: 5px;
 $f-primary_nav-icon-count_badge-right: -4px;
 
 @mixin deals_link_base() {
   color: $color-forever_orange;
-
-  &:hover {
-    color: $color-forever_blue;
-  }
-
   &::after {
     position: relative;
     top: -5px;
@@ -27,26 +20,13 @@ $f-primary_nav-icon-count_badge-right: -4px;
 
 .f-primary_nav {
   width: 100%;
-
-  background-color: $color-white;
+  background-color: #fff;
 
   /*support store method of affixing*/
   &.affix {
     top: 0;
     left: 0;
     z-index: $f-primary_nav-side-zindex;
-  }
-
-  /* nested to give more specificity and override the base styleguide link styles */
-  .f-primary_nav-link_base {
-    text-decoration: none;
-    color: $color-gray-600;
-    @include transition_fast(color);
-
-    &.is-active,
-    &:hover {
-      color: $color-forever_blue;
-    }
   }
 }
 
@@ -64,13 +44,13 @@ $f-primary_nav-icon-count_badge-right: -4px;
 .f-primary_nav-logo_link {
   display: flex;
   align-items: center;
-}
 
-.f-primary_nav-logo_image {
-  height: 22px;
-  width: 138px;
-  max-width: unset;
-  @include transition_fast(height, width);
+  > img {
+    height: 22px;
+    width: 138px;
+    max-width: unset;
+    @include transition_fast(height, width);
+  }
 }
 
 .f-primary_nav-ecom_list {
@@ -81,42 +61,47 @@ $f-primary_nav-icon-count_badge-right: -4px;
   margin-bottom: 0;
   padding-left: 0;
   list-style: none;
-}
 
-.f-primary_nav-ecom_item {
-  /* we want to ul to remain and grow, so just hide the items */
-  display: none;
-}
+  /* we want to ul to remain and flex grow, so just hide the items */
+  > li {
+    display: none;
 
-.f-primary_nav-ecom_link {
-  position: relative;
-  display: flex;
-  align-items: center;
-  padding-right: 4px;
-  padding-left: 4px;
-  font-family: $font-face-semibold;
-  font-size: $font-size-200;
+    > a {
+      position: relative;
+      display: flex;
+      align-items: center;
+      padding-right: 8px;
+      padding-left: 8px;
+      font-family: $font-face-bold;
+      font-size: $font-size-200;
+      color: $color-gray-600;
+      text-decoration: none;
+      @include transition_fast(color);
 
-  &.f-primary_nav-ecom_link-deals {
-    @include deals_link_base();
-  }
+      &.is-active,
+      &:hover { color: $color-forever_blue; }
 
-  &::before {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    height: 4px;
-    width: 100%;
-    background-color: $color-forever_blue;
-    content: '';
-    transform: scaleX(0);
-    @include transition_fast(transform);
-  }
+      &.f-primary_nav-ecom_link-deals {
+        @include deals_link_base();
+        &:hover { color: $color-forever_blue; }
+      }
 
-  &.is-active,
-  &:hover {
-    &::before {
-      transform: scaleX(1);
+      &::before {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 4px;
+        width: 100%;
+        background-color: $color-forever_blue;
+        content: '';
+        transform: scaleX(0);
+        @include transition_fast(transform);
+      }
+
+      &.is-active,
+      &:hover {
+        &::before { transform: scaleX(1); }
+      }
     }
   }
 }
@@ -128,70 +113,69 @@ $f-primary_nav-icon-count_badge-right: -4px;
   margin-bottom: 0;
   padding-left: 0;
   list-style: none;
-}
 
-.f-primary_nav-icon_item {
-  display: flex;
-  align-items: stretch;
-  font-size: $font-size-450;
-
-  //display flex here gets rid of extra vertical space with inline block
-  .f-primary_nav-icon_link {
+  > li {
     display: flex;
-    align-items: center;
-    padding: 0 6px;
-  }
+    align-items: stretch;
+    font-size: $font-size-450;
 
-  .f-primary_nav-icon_link > .f-icon {
-    display: flex;
-  }
+    > a {
+      display: flex;
+      align-items: center;
+      padding: 0 6px;
+      color: $color-gray-600;
+      text-decoration: none;
+      @include transition_fast(color);
+      &:hover { color: $color-forever_blue; }
 
-}
+      > .f-icon { display: flex; }
 
-.f-primary_nav-icon_link-cart {
-  position: relative;
+      &.f-primary_nav-icon_link-cart {
+        position: relative;
 
-  .f-primary_nav-icon_link-cart_count {
-    position: absolute;
-    top: $f-primary_nav-icon-count_badge-top;
-    right: $f-primary_nav-icon-count_badge-right;
-    width: 18px;
-    height: 18px;
-    border-radius: $border-radius-xl;
-    background-color: $color-primary;
-    color: $color-white;
-    font-size: $font-size-000;
-    font-family: $font-face-semibold;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    pointer-events: none;
-  }
+        .f-primary_nav-icon_link-cart_count {
+          position: absolute;
+          top: $f-primary_nav-icon-count_badge-top;
+          right: $f-primary_nav-icon-count_badge-right;
+          width: 18px;
+          height: 18px;
+          border-radius: $border-radius-xl;
+          background-color: $color-primary;
+          color: #fff;
+          font-size: $font-size-000;
+          font-family: $font-face-semibold;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          pointer-events: none;
+        }
+      }
+    }
 
-}
+    //this overrides notification dropdown styles and lets nav own these styles, selectors and nesting is necessary for selector specificity
+    .f-primary_nav-icon_notification.f-notification_dropdown {
+      display: flex;
+      align-items: stretch;
 
-//this overrides notification dropdown styles and lets nav own these styles, selectors and nesting is necessary for selector specificity
-.f-primary_nav-icon_notification.f-notification_dropdown {
-  display: flex;
-  align-items: stretch;
+      .f-notification_dropdown-bell {
+        padding: 0 6px;
+        align-items: center;
 
-  .f-notification_dropdown-bell {
-    padding: 0 6px;
-    align-items: center;
+        .f-notification_dropdown-bell_count {
+          top: $f-primary_nav-icon-count_badge-top;
+          right: $f-primary_nav-icon-count_badge-right;
+        }
+      }
+    }
 
-    .f-notification_dropdown-bell_count {
-      top: $f-primary_nav-icon-count_badge-top;
-      right: $f-primary_nav-icon-count_badge-right;
+    //this is a placeholder div in store that houses an icon for notifications while turbolinks is transitioning. Ensures there is no jumpiness
+    #mars-notifications {
+      padding: 0 6px;
+      align-self: center;
+
+      .fa { display:flex; }
     }
   }
-}
-
-//this is a placeholder div in store that houses an icon for notifications while turbolinks is transitioning. Ensures there is no jumpiness
-#mars-notifications {
-  padding: 0 6px;
-  align-self: center;
-
-  .fa { display:flex; }
 }
 
 .f-primary_nav-user_list {
@@ -212,13 +196,11 @@ $f-primary_nav-icon-count_badge-right: -4px;
     }
   }
 
-  .f-primary_nav-user-link-signup {
-    &.btn {
-      color: $color-white;
-    }
+  .f-primary_nav-user_link-signup {
+    &.btn { color: #fff; }
   }
 
-  .f-primary_nav-user-link-signin {
+  .f-primary_nav-user_link-signin {
     &.btn {
       &:link,
       &:hover,
@@ -230,9 +212,11 @@ $f-primary_nav-icon-count_badge-right: -4px;
 
       &:hover {
         color: $color-secondary;
+        text-decoration: underline;
       }
     }
   }
+
 }
 
 .f-primary_nav-user_item-avatar {
@@ -247,16 +231,14 @@ $f-primary_nav-icon-count_badge-right: -4px;
   }
 }
 
-.f-primary_nav-user_item-logged_out {
-  display: none;
-}
+.f-primary_nav-user_item-logged_out { display: none; }
 
 .f-primary_nav-user_item-side_toggle {
   cursor: pointer;
   padding: 10px 10px 10px 5px;
   margin-right: -10px;
 
-  .f-primary_nav-user_icon_bar {
+  span {
     background-color: $color-gray-600;
     width: 20px;
     display: block;
@@ -265,18 +247,11 @@ $f-primary_nav-icon-count_badge-right: -4px;
     @include transition_fast(background-color, margin);
   }
 
-  .f-primary_nav-user_icon_bar:not(:first-child) {
-    margin-top: 4px;
-  }
+  span:not(:first-child) { margin-top: 4px; }
 
   &:hover {
-    .f-primary_nav-user_icon_bar {
-      background-color: $color_forever_blue;
-    }
-
-    .f-primary_nav-user_icon_bar:not(:first-child) {
-      margin-top: 6px;
-    }
+    span { background-color: $color_forever_blue; }
+    span:not(:first-child) { margin-top: 6px; }
   }
 }
 
@@ -290,8 +265,7 @@ $f-primary_nav-icon-count_badge-right: -4px;
   bottom: 0;
   z-index: $f-primary_nav-side-zindex;
   width: $f-primary_nav-side-width;
-  padding: 0 20px;
-  background-color: $color-white;
+  background-color: #fff;
   box-shadow: $f-primary_nav-shadow;
   direction: rtl;
   text-align: left;
@@ -304,33 +278,33 @@ $f-primary_nav-icon-count_badge-right: -4px;
 }
 
 .f-primary_nav-side_section {
-  padding: 8px 0;
+  padding: 8px 20px;
   margin-bottom: 0;
   list-style: none;
-  border-bottom: 2px solid $color-gray-200;
+  border-bottom: 1px solid $color-gray-300;
   direction: ltr;
-
-  &:last-child {
-    border: none;
-  }
-
-  .f-primary_nav-side_signout_link {
-    &:link,
-    &:hover,
-    &:active,
-    &:visited {
-      color: $color-forever_red;
-    }
-  }
+  &:last-child { border: none; }
 
   .f-primary_nav-side_link_base {
-    text-transform: uppercase;
     display: block;
     font-family: $font-face-semibold;
-    font-size: $font-size-200;
-    padding: 8px 0;
+    font-size: $font-size-300;
+    padding: 6px 0;
+    color: $color-forever_blue;
+    text-decoration: none;
+    @include transition_fast(color);
+    &:hover { color: $color-gray-600;  }
   }
 
+  &.is-color-block {
+    border-bottom: none;
+    padding: 4px 20px;
+
+    .f-primary_nav-side_link_base {
+      color: #fff;
+      &:hover { color: #fff; }
+    }
+  }
 }
 
 .f-primary_nav-side_section-close {
@@ -354,8 +328,8 @@ $f-primary_nav-icon-count_badge-right: -4px;
     @include transition_fast(background-color);
   }
 
-  &::before { transform: rotate($f-primary_nav-side_section-close_angle); }
-  &::after { transform: rotate(-($f-primary_nav-side_section-close_angle)); }
+  &::before { transform: rotate(45deg); }
+  &::after { transform: rotate(-45deg); }
 
   &:hover {
     &::before,
@@ -424,9 +398,7 @@ $f-primary_nav-icon-count_badge-right: -4px;
 }
 
 .f-primary_nav-side_section-ecom_list {
-  .f-primary_nav-side_ecom-deals_link {
-    @include deals_link_base();
-  }
+  .f-primary_nav-side_ecom-deals_link { @include deals_link_base(); }
 }
 
 .f-primary_nav-side_section-logged_out {
@@ -440,81 +412,46 @@ $f-primary_nav-icon-count_badge-right: -4px;
 
 //everything above xs
 @media (min-width: $screen-xs) {
+  .f-primary_nav-main { padding: 0 15px; }
 
-  .f-primary_nav-main {
-    padding: 0 15px;
-  }
-
-  .f-primary_nav-logo_image {
-    height: 28px;
-    width: 175px;
-  }
-
-  .f-primary_nav-user_list {
-    padding-left: 10px;
-  }
-
-  .f-primary_nav-icon_item {
-    font-size: $font-size-500;
-  }
+  .f-primary_nav-user_list { padding-left: 10px; }
 
   .f-primary_nav-user_item-avatar {
     visibility: visible;
     width: auto;
   }
+}
 
-  .f-primary_nav-side.is-onscreen {
-    width: $f-primary_nav-side-width;
+//everything above sm
+@media (min-width: $screen-sm) {
+  .f-primary_nav-ecom_list {
+    li { display: flex; }
   }
+
+  .f-primary_nav-side.is-onscreen { width: $f-primary_nav-side-width; }
 }
 
 //everything above medium
 @media (min-width: $screen-md) {
+  .f-primary_nav-user_item-logged_out { display: flex; }
 
-  .f-primary_nav-ecom_item {
-    display: flex;
-  }
-
-  .f-primary_nav-user_item-logged_out {
-    display: flex;
-  }
-
-  .f-primary_nav-side_section-ecom_list {
-    display: none;
-  }
+  .f-primary_nav-side_section-ecom_list { display: none; }
 
   .f-primary_nav-user_item-side_toggle {
-    &.is-unauthenticated {
-      display: none;
-    }
+    &.is-unauthenticated { display: none; }
   }
 }
 
 //everything above lg
 @media (min-width: $screen-lg) {
-  .f-primary_nav-ecom_link {
-    padding-left: 8px;
-    padding-right: 8px;
-    font-size: $font-size-300;
+  .f-primary_nav-ecom_list {
+    > li > a { font-size: $font-size-300; }
   }
 }
 
 //bet
 @media (max-width: $screen-lg-max) and (min-width: $screen-md_to_lg) {
-  .f-primary_nav-ecom_link {
+  /*.f-primary_nav-ecom_link {
     font-size: $font-size-250;
-  }
-}
-
-@media (max-width: $screen-md_to_lg) and (min-width: $screen-md) {
-  .f-primary_nav-logo_image {
-    height: 22px;
-    width: 138px;
-  }
-}
-
-@media (max-width: $screen-lg-max) and (min-width: $screen-md) {
-  .f-primary_nav-icon_item {
-    font-size: $font-size-450;
-  }
+  }*/
 }
