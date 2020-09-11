@@ -85,9 +85,7 @@ a.ambassador_banner {
   padding-bottom: $banner-vertical-padding-unassigned;
 
   &.is-behind_fixed-nav {
-    .ambassador_banner-btn {
-      display: none;
-    }
+    .ambassador_banner-btn { display: none; }
   }
 }
 

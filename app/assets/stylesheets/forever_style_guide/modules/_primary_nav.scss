@@ -5,9 +5,11 @@ $f-primary_nav-side-width: 320px;
 $f-primary_nav-side-zindex: $zindex-modal;
 $f-primary_nav-icon-count_badge-top: 5px;
 $f-primary_nav-icon-count_badge-right: -4px;
+$f-nav-yellow: #EDC43A;
+$f-nav-hover-blue: #2273A5;
 
-@mixin deals_link_base() {
-  color: $color-forever_orange;
+@mixin deals_link_base($link_color: $color-forever_orange) {
+  color: $link_color;
   &::after {
     position: relative;
     top: -5px;
@@ -20,7 +22,7 @@ $f-primary_nav-icon-count_badge-right: -4px;
 
 .f-primary_nav {
   width: 100%;
-  background-color: #fff;
+  background-color: $color-forever_artisan;
 
   /*support store method of affixing*/
   &.affix {
@@ -74,32 +76,30 @@ $f-primary_nav-icon-count_badge-right: -4px;
       padding-left: 8px;
       font-family: $font-face-bold;
       font-size: $font-size-200;
-      color: $color-gray-600;
+      color: #fff;
       text-decoration: none;
-      @include transition_fast(color);
-
-      &.is-active,
-      &:hover { color: $color-forever_blue; }
+      @include transition_fast(color, background-color);
 
       &.f-primary_nav-ecom_link-deals {
-        @include deals_link_base();
-        &:hover { color: $color-forever_blue; }
+        @include deals_link_base($f-nav-yellow);
       }
 
       &::before {
         position: absolute;
+        z-index: -1;
         bottom: 0;
         left: 0;
         height: 4px;
         width: 100%;
-        background-color: $color-forever_blue;
+        background-color: $f-nav-hover-blue;
         content: '';
         transform: scaleX(0);
         @include transition_fast(transform);
       }
 
-      &.is-active,
-      &:hover {
+      &:hover { background-color: transparentize($f-nav-hover-blue, 0.6); }
+
+      &.is-active {
         &::before { transform: scaleX(1); }
       }
     }
@@ -123,11 +123,10 @@ $f-primary_nav-icon-count_badge-right: -4px;
       display: flex;
       align-items: center;
       padding: 0 6px;
-      color: $color-gray-600;
+      color: #fff;
       text-decoration: none;
       @include transition_fast(color);
-      &:hover { color: $color-forever_blue; }
-
+      &:hover { color: $f-nav-hover-blue; }
       > .f-icon { display: flex; }
 
       &.f-primary_nav-icon_link-cart {
@@ -140,8 +139,8 @@ $f-primary_nav-icon-count_badge-right: -4px;
           width: 18px;
           height: 18px;
           border-radius: $border-radius-xl;
-          background-color: $color-primary;
-          color: #fff;
+          background-color: $f-nav-yellow;
+          color: $color-gray-800;
           font-size: $font-size-000;
           font-family: $font-face-semibold;
           display: flex;
@@ -161,9 +160,17 @@ $f-primary_nav-icon-count_badge-right: -4px;
         padding: 0 6px;
         align-items: center;
 
+
+        .f-notification_dropdown-bell_icon { color: #fff; }
+        &:hover {
+          .f-notification_dropdown-bell_icon { color: $f-nav-hover-blue; }
+        }
+
         .f-notification_dropdown-bell_count {
           top: $f-primary_nav-icon-count_badge-top;
           right: $f-primary_nav-icon-count_badge-right;
+          background-color: $f-nav-yellow;
+          color: $color-gray-800;
         }
       }
     }
@@ -206,13 +213,8 @@ $f-primary_nav-icon-count_badge-right: -4px;
       &:hover,
       &:active,
       &:visited {
-        color: $color-gray-600;
+        color: #fff;
         text-decoration: none;
-      }
-
-      &:hover {
-        color: $color-secondary;
-        text-decoration: underline;
       }
     }
   }
@@ -228,6 +230,7 @@ $f-primary_nav-icon-count_badge-right: -4px;
   .avatar {
     padding: 0;
     margin-right: 0;
+    border-width: 0;
   }
 }
 
@@ -239,18 +242,18 @@ $f-primary_nav-icon-count_badge-right: -4px;
   margin-right: -10px;
 
   span {
-    background-color: $color-gray-600;
+    background-color: #fff;
     width: 20px;
     display: block;
     height: 2px;
     border-radius: 1px;
-    @include transition_fast(background-color, margin);
+    @include transition_normal(background-color, margin);
   }
 
   span:not(:first-child) { margin-top: 4px; }
 
   &:hover {
-    span { background-color: $color_forever_blue; }
+    span { background-color: $f-nav-hover-blue; }
     span:not(:first-child) { margin-top: 6px; }
   }
 }
@@ -319,7 +322,7 @@ $f-primary_nav-icon-count_badge-right: -4px;
   &::before,
   &::after {
     position: absolute;
-    right: 0;
+    right: 8px;
     width: 22px;
     height: 2px;
     content: ' ';
