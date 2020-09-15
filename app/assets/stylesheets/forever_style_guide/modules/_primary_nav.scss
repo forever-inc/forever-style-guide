@@ -412,7 +412,6 @@ $f-nav-hover-blue: #2273A5;
   }
 }
 
-
 //everything above xs
 @media (min-width: $screen-xs) {
   .f-primary_nav-main { padding: 0 15px; }
@@ -428,7 +427,7 @@ $f-nav-hover-blue: #2273A5;
 //everything above sm
 @media (min-width: $screen-sm) {
   .f-primary_nav-ecom_list {
-    li { display: flex; }
+    > li { display: flex; }
   }
 
   .f-primary_nav-side.is-onscreen { width: $f-primary_nav-side-width; }
