@@ -97,7 +97,8 @@ $f-nav-hover-blue: #2273A5;
         @include transition_fast(transform);
       }
 
-      &:hover { background-color: transparentize($f-nav-hover-blue, 0.6); }
+      &:hover,
+      &.is-meganav-open { background-color: transparentize($f-nav-hover-blue, 0.6); }
 
       &.is-active {
         &::before { transform: scaleX(1); }
@@ -449,11 +450,4 @@ $f-nav-hover-blue: #2273A5;
   .f-primary_nav-ecom_list {
     > li > a { font-size: $font-size-300; }
   }
-}
-
-//bet
-@media (max-width: $screen-lg-max) and (min-width: $screen-md_to_lg) {
-  /*.f-primary_nav-ecom_link {
-    font-size: $font-size-250;
-  }*/
 }
