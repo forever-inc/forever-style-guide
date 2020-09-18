@@ -1,5 +1,4 @@
 $f-primary_nav-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
-$f-primary_nav-main-zindex: $zindex-navbar-fixed;
 $f-primary_nav-main-minheight: 50px;
 $f-primary_nav-side-width: 320px;
 $f-primary_nav-side-zindex: $zindex-modal;
@@ -40,7 +39,7 @@ $f-nav-hover-blue: #2273A5;
   padding-left: 10px;
   padding-right: 10px;
   position: relative;
-  z-index: $f-primary_nav-main-zindex;
+  z-index: $zindex-navbar-fixed;
 }
 
 .f-primary_nav-logo_link {
@@ -51,7 +50,6 @@ $f-nav-hover-blue: #2273A5;
     height: 22px;
     width: 138px;
     max-width: unset;
-    @include transition_fast(height, width);
   }
 }
 
@@ -60,8 +58,8 @@ $f-nav-hover-blue: #2273A5;
   flex: 1 0 auto;
   justify-content: center;
   align-items: stretch;
-  margin-bottom: 0;
-  padding-left: 0;
+  margin: 0;
+  padding: 0;
   list-style: none;
 
   /* we want to ul to remain and flex grow, so just hide the items */
@@ -72,8 +70,7 @@ $f-nav-hover-blue: #2273A5;
       position: relative;
       display: flex;
       align-items: center;
-      padding-right: 8px;
-      padding-left: 8px;
+      padding: 0 8px;
       font-family: $font-face-bold;
       font-size: $font-size-200;
       color: #fff;
@@ -111,8 +108,8 @@ $f-nav-hover-blue: #2273A5;
   position: relative;
   display: flex;
   align-items: stretch;
-  margin-bottom: 0;
-  padding-left: 0;
+  margin: 0;
+  padding: 0;
   list-style: none;
 
   > li {
@@ -161,8 +158,8 @@ $f-nav-hover-blue: #2273A5;
         padding: 0 6px;
         align-items: center;
 
-
         .f-notification_dropdown-bell_icon { color: #fff; }
+
         &:hover {
           .f-notification_dropdown-bell_icon { color: $f-nav-hover-blue; }
         }
@@ -180,7 +177,6 @@ $f-nav-hover-blue: #2273A5;
     #mars-notifications {
       padding: 0 6px;
       align-self: center;
-
       .fa { display:flex; }
     }
   }
@@ -189,7 +185,7 @@ $f-nav-hover-blue: #2273A5;
 .f-primary_nav-user_list {
   display: flex;
   align-items: center;
-  margin-bottom: 0;
+  margin: 0;
   padding-left: 5px;
   list-style: none;
 
@@ -219,11 +215,9 @@ $f-nav-hover-blue: #2273A5;
       }
     }
   }
-
 }
 
 .f-primary_nav-user_item-avatar {
-
   /* use below instead of display to hide so we retain padding */
   visibility: hidden;
   width: 0;
@@ -398,7 +392,6 @@ $f-nav-hover-blue: #2273A5;
     line-height: 1;
     text-align: center;
   }
-
 }
 
 .f-primary_nav-side_section-ecom_list {
@@ -450,13 +443,9 @@ $f-nav-hover-blue: #2273A5;
       line-height: 1.4;
     }
 
-    > a {
-      font-size: 20px;
-    }
+    > a { font-size: 20px; }
 
-    > p {
-      font-size: $font-size-200;
-    }
+    > p { font-size: $font-size-200; }
 
     > ul {
       padding-top: 20px;
