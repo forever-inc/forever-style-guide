@@ -20,7 +20,7 @@ $dropdown-entrance-and-exit-effect-speed: 0.22s;
   font-family: $font-face-semibold;
 
   &.is-behind_fixed-nav {
-    z-index: $behind-primary-nav;
+    z-index: -1;
     height: $ambassador-banner-height-assigned;
   }
 
