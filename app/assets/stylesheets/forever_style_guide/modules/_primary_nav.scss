@@ -424,6 +424,9 @@ $f-nav-hover-blue: #2273A5;
 
   &.hidden {
     opacity: 0;
+    display: block !important;
+    visibility: none;
+    z-index: -5;
   }
 
   ul {
