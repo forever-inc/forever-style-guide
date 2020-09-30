@@ -419,6 +419,12 @@ $f-nav-hover-blue: #2273A5;
   margin: 0;
   padding: 0;
   list-style: none;
+  opacity: 1;
+  transition: opacity 0.15s ease-in-out;
+
+  &.hidden {
+    opacity: 0;
+  }
 
   ul {
     list-style: none;
