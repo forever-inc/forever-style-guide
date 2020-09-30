@@ -445,6 +445,13 @@ $f-nav-hover-blue: #2273A5;
 
     > a { font-size: 20px; }
 
+    .f-primary_nav_cpmeganav_title {
+      display: block;
+      font-family: $font-face-semibold;
+      line-height: 1;
+      font-size: 20px;
+    }
+
     > p { font-size: $font-size-200; }
 
     > ul {
