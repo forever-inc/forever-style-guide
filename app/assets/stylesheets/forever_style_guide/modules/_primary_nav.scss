@@ -273,6 +273,10 @@ $f-nav-hover-blue: #2273A5;
     right: 0;
     width: 100%;
   }
+
+  .f-primary_nav-side_icon{
+    margin-right: 0.5em;
+  }
 }
 
 .f-primary_nav-side_section {
@@ -421,12 +425,14 @@ $f-nav-hover-blue: #2273A5;
   list-style: none;
   opacity: 1;
   transition: opacity 0.15s ease-in-out;
+  z-index: inherit;
 
   &.hidden {
     opacity: 0;
-    display: block !important;
+    display: flex !important;
     visibility: none;
-    z-index: -5;
+    top: -9999px;
+    left:-9999px;
   }
 
   ul {

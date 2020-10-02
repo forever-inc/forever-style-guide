@@ -1,14 +1,27 @@
 .hero-subnav_spacer {
   padding-top: 47px;
   margin-top: -47px;
+
+  @media (max-width: 768px) {
+    padding-top: 0px;
+    margin-top: 0px;
+  }
 }
 
 .hero-subnav_offset {
   margin-top: -47px;
+
+  @media (max-width: 768px) {
+    margin-top: 0px;
+  }
 }
 
 .hero-subnav_padding {
   padding-top: 47px;
+
+  @media (max-width: 768px) {
+    padding-top: 0px;
+  }
 }
 
 .f-subnav-container {
