@@ -267,7 +267,7 @@ $f-nav-hover-blue: #2273A5;
   box-shadow: $f-primary_nav-shadow;
   direction: rtl;
   text-align: left;
-  @include transition_normal(right);
+  @include transition_fast(right);
 
   &.is-onscreen {
     right: 0;
