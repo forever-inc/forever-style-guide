@@ -126,43 +126,43 @@
   white-space: nowrap;
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px); 
-  
+
   & > a {
-      flex-basis: 100%;
-      text-align: center;
-      color: $color-gray-600;
-      white-space: nowrap;
-      margin-right: 10px;
+    flex-basis: 100%;
+    text-align: center;
+    color: $color-gray-600;
+    white-space: nowrap;
+    margin-right: 10px;
 
-      &:last-child{
-        margin-right: 20px;
-      }
-
+    &:last-child{
+      margin-right: 20px;
     }
 
-    & > a:hover, a:active, > a:focus {
-      text-decoration: none;
-    }
-
-    & > a:hover > span {
-      background: transparentize($color-black, 0.95);
-      color: $color-secondary;
-      border-radius: 32px;
-      padding: 4px 12px;
-    }
-
-    & > a > span {
-      padding: 4px 12px;
-      border-radius: 32px;
-      transition: color 0.3s ease, background 0.3s ease;
-    }
-
-    & > a > span.active {
-      background: transparentize($color-black, 0.95);
-      color: $color-secondary;
-      font-family: proxima_nova-semibold;
-      border-radius: 32px;
-      padding: 4px 12px;
-    }
   }
+
+  & > a:hover, a:active, > a:focus {
+    text-decoration: none;
+  }
+
+  & > a:hover > span {
+    background: transparentize($color-black, 0.95);
+    color: $color-secondary;
+    border-radius: 32px;
+    padding: 4px 12px;
+  }
+
+  & > a > span {
+    padding: 4px 12px;
+    border-radius: 32px;
+    transition: color 0.3s ease, background 0.3s ease;
+  }
+
+  & > a > span.active {
+    background: transparentize($color-black, 0.95);
+    color: $color-secondary;
+    font-family: proxima_nova-semibold;
+    border-radius: 32px;
+    padding: 4px 12px;
+  }
+  
 }
