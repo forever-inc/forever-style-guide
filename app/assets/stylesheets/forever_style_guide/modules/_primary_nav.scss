@@ -71,7 +71,7 @@ $f-nav-hover-blue: #2273A5;
       display: flex;
       align-items: center;
       padding: 0 8px;
-      font-family: $font-face-bold;
+      font-family: $font-face-semibold;
       font-size: $font-size-200;
       color: #fff;
       text-decoration: none;
@@ -475,13 +475,22 @@ $f-nav-hover-blue: #2273A5;
         }
 
         > ul {
-          margin: 8px 0 0 70px;
+          margin: 4px 0 0 70px;
 
           > li {
-            margin: 0 0 8px;
+            margin: 0 0 2px;
+
+            span.badge {
+              border-radius: 2px;
+              padding: 2px 4px;
+              color: #fff;
+              background-color: $color-forever_orange;
+              font-size: 10px;
+            }
 
             > a {
               font-size: 12px;
+              display: inline-block;
               font-family: $font-face-regular;
             }
           }
