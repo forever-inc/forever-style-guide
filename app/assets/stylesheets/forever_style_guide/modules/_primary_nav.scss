@@ -96,7 +96,8 @@ $f-nav-icon-hover: #bce5fd;
       }
 
       &:hover,
-      &.is-meganav-open { background-color: rgba(0, 0, 0, 0.08); }
+      &.is-active,
+      &.is-meganav-open { background-color: rgba(0, 0, 0, 0.1); }
 
       &.is-active {
         &::before { transform: scaleX(1); }
