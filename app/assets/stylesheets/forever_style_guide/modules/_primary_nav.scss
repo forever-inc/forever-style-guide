@@ -275,6 +275,10 @@ $f-nav-icon-hover: #bce5fd;
     right: 0;
     width: 100%;
   }
+
+  .f-primary_nav-side_icon{
+    margin-right: 0.5em;
+  }
 }
 
 .f-primary_nav-side_section {
@@ -421,6 +425,17 @@ $f-nav-icon-hover: #bce5fd;
   margin: 0;
   padding: 0;
   list-style: none;
+  opacity: 1;
+  transition: opacity 0.15s ease-in-out;
+  z-index: inherit;
+
+  &.hidden {
+    opacity: 0;
+    display: flex !important;
+    visibility: none;
+    top: -9999px;
+    left:-9999px;
+  }
 
   ul {
     list-style: none;
@@ -446,6 +461,13 @@ $f-nav-icon-hover: #bce5fd;
     }
 
     > a { font-size: 20px; }
+
+    .f-primary_nav_cpmeganav_title {
+      display: block;
+      font-family: $font-face-semibold;
+      line-height: 1;
+      font-size: 20px;
+    }
 
     > p { font-size: $font-size-200; }
 
