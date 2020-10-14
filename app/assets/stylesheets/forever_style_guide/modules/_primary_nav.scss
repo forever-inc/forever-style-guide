@@ -4,8 +4,8 @@ $f-primary_nav-side-width: 320px;
 $f-primary_nav-side-zindex: $zindex-modal;
 $f-primary_nav-icon-count_badge-top: 5px;
 $f-primary_nav-icon-count_badge-right: -4px;
-$f-nav-yellow: #EDC43A;
-$f-nav-hover-blue: #2273A5;
+$f-nav-yellow: #FFD452;
+$f-nav-icon-hover: #bce5fd;
 
 @mixin deals_link_base($link_color: $color-forever_orange) {
   color: $link_color;
@@ -21,7 +21,7 @@ $f-nav-hover-blue: #2273A5;
 
 .f-primary_nav {
   width: 100%;
-  background-color: $color-forever_artisan;
+  background-color: #2881B8;
 
   /*support store method of affixing*/
   &.affix {
@@ -79,6 +79,7 @@ $f-nav-hover-blue: #2273A5;
 
       &.f-primary_nav-ecom_link-deals {
         @include deals_link_base($f-nav-yellow);
+        text-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
       }
 
       &::before {
@@ -88,14 +89,14 @@ $f-nav-hover-blue: #2273A5;
         left: 0;
         height: 4px;
         width: 100%;
-        background-color: $f-nav-hover-blue;
+        background-color: rgba(0, 0, 0, 0.15);
         content: '';
         transform: scaleX(0);
         @include transition_fast(transform);
       }
 
       &:hover,
-      &.is-meganav-open { background-color: transparentize($f-nav-hover-blue, 0.6); }
+      &.is-meganav-open { background-color: rgba(0, 0, 0, 0.08); }
 
       &.is-active {
         &::before { transform: scaleX(1); }
@@ -124,7 +125,7 @@ $f-nav-hover-blue: #2273A5;
       color: #fff;
       text-decoration: none;
       @include transition_fast(color);
-      &:hover { color: $f-nav-hover-blue; }
+      &:hover { color: $f-nav-icon-hover; }
       > .f-icon { display: flex; }
 
       &.f-primary_nav-icon_link-cart {
@@ -161,7 +162,7 @@ $f-nav-hover-blue: #2273A5;
         .f-notification_dropdown-bell_icon { color: #fff; }
 
         &:hover {
-          .f-notification_dropdown-bell_icon { color: $f-nav-hover-blue; }
+          .f-notification_dropdown-bell_icon { color: $f-nav-icon-hover; }
         }
 
         .f-notification_dropdown-bell_count {
@@ -248,7 +249,7 @@ $f-nav-hover-blue: #2273A5;
   span:not(:first-child) { margin-top: 4px; }
 
   &:hover {
-    span { background-color: $f-nav-hover-blue; }
+    span { background-color: $f-nav-icon-hover; }
     span:not(:first-child) { margin-top: 6px; }
   }
 }
