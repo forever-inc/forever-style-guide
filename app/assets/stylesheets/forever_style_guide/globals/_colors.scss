@@ -66,7 +66,7 @@ $color-live18-orange:       colorify('live18-orange', #f57e25) !default;
 $color-live18-grey:         colorify('live18-grey', #a4abb6) !default;
 
 // Gradients
-$gradient-ambassador: linear-gradient(to left, mix($color-black, $color-forever_valet, 10%), mix($color-black, $color-forever_services, 10%));
+$gradient-ambassador: linear-gradient(to right, darken($color-forever_services, 5%), darken($color-forever_valet, 5%));
 
 @each $id, $color in $colors {
   .color-#{$id} {
