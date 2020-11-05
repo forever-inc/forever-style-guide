@@ -490,28 +490,34 @@ $f-nav-icon-hover: #bce5fd;
 
         > a {
           font-size: 16px;
-          margin-left: 70px;
+          margin-left: 10px;
+          display: inline-block;
         }
 
         > p {
           font-size: 12px;
-          margin: 8px 0 0 70px;
+          margin: 4px 0 0 70px;
+        }
+
+        span.badge {
+          border-radius: 2px;
+          padding: 2px 4px;
+          color: #fff;
+          background-color: $color-forever_orange;
+          font-size: 10px;
+          vertical-align: top;
+          margin-top: 2px;
+          display: inline-block;
+          font-weight: bold;
+          line-height: 1;
         }
 
         > ul {
-          margin: 4px 0 0 70px;
+          margin: 2px 0 0 70px;
 
           > li {
             margin: 0 0 2px;
             font-size: 12px;
-
-            span.badge {
-              border-radius: 2px;
-              padding: 2px 4px;
-              color: #fff;
-              background-color: $color-forever_orange;
-              font-size: 10px;
-            }
 
             > a {
               font-size: 12px;
