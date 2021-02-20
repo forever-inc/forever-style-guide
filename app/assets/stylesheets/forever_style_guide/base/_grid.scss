@@ -97,13 +97,13 @@ $f-grid-col-count: 24;
 /* padding modifiers */
 .f-grid.f-grid-no_padding {
   margin: 0;
-  [class*="f-col"] { padding: 0; }
+  > [class*="f-col"] { padding: 0; }
 }
 
 .f-grid.f-grid-bs_padding {
   margin-left: -$f-grid-bootstrap-padding;
   margin-right: -$f-grid-bootstrap-padding;
-  [class*="f-col"] { padding: 0 $f-grid-bootstrap-padding; }
+  > [class*="f-col"] { padding: 0 $f-grid-bootstrap-padding; }
 }
 
 
@@ -111,7 +111,7 @@ $grid-gutter: 2;
 @while $grid-gutter < 30 {
   .f-grid.f-grid-gutter-#{$grid-gutter} {
     margin: -#{$grid-gutter / 2}px;
-    [class*="f-col"] { padding: #{$grid-gutter / 2}px; }
+    > [class*="f-col"] { padding: #{$grid-gutter / 2}px; }
   }
 
   $grid-gutter: $grid-gutter + 2;
