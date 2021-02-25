@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    forever_style_guide (4.1.14)
+    forever_style_guide (4.1.15)
 
 GEM
   remote: https://rubygems.org/

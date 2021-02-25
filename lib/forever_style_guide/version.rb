@@ -1,3 +1,3 @@
 module ForeverStyleGuide
-  VERSION = "4.1.14"
+  VERSION = "4.1.15"
 end
