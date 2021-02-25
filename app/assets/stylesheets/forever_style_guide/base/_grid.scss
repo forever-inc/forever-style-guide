@@ -108,7 +108,7 @@ $f-grid-col-count: 24;
 
 
 $grid-gutter: 2;
-@while $grid-gutter < 30 {
+@while $grid-gutter < 31 {
   .f-grid.f-grid-gutter-#{$grid-gutter} {
     margin: -#{$grid-gutter / 2}px;
     > [class*="f-col"] { padding: #{$grid-gutter / 2}px; }
