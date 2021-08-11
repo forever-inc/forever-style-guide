@@ -1,0 +1,74 @@
+/* =bootstrap variables
+variables placed here will be overridden and reloaded in bootstrap
+---------------------------------------------------------------------------- */
+$border-radius-xl:            4px !global;
+$border-radius-large:         2px !global;
+$border-radius-small:         1px !global;
+$border-radius-default:       $border-radius-small !default;
+$border-radius-button:        35px;
+
+$padding-default-vertical:    10px !default;
+$padding-default-horizontal:  8px !default;
+
+$padding-large-vertical:      20px !global;
+$padding-large-horizontal:    15px !global;
+
+$padding-small-vertical:      8px !global;
+$padding-small-horizontal:    8px !global;
+
+$padding-xs-vertical:         4px !global;
+$padding-xs-horizontal:       6px !global;
+
+
+/* =variables
+---------------------------------------------------------------------------- */
+$header-height: 55px; // TODO - where is this being used?
+
+$btn-lg-size: 64px;
+$btn-size: 42px;
+$btn-sm-size: 35px;
+$btn-xs-size: 28px;
+
+$btn-padding-default-horizontal: $padding-default-horizontal * 1.5;
+$btn-padding-large-horizontal: $padding-large-horizontal * 1.5;
+$btn-padding-small-horizontal: $padding-small-horizontal * 1.5;
+$btn-padding-xs-horizontal: $padding-xs-horizontal * 1.5;
+
+$btn-padding-default-vertical : $padding-default-vertical - 2;
+$btn-padding-large-vertical : $padding-large-horizontal - 2;
+$btn-padding-small-vertical : $padding-small-vertical - 2;
+$btn-padding-xs-vertical : $padding-xs-vertical - 2;
+
+$icon-lg-size: $font-size-600;
+$icon-size: $font-size-400;
+$icon-sm-size: $font-size-300;
+$icon-xs-size: $font-size-200;
+
+
+/* =Z-Index
+Including these here for use as Sass variables. Natively in bootstrap you are cautioned as follows:
+
+Warning: Avoid customizing these values. They're used for a bird's eye view
+of components dependent on the z-axis and are designed to all work together.
+---------------------------------------------------------------------------- */
+
+$zindex-navbar:            1000;
+$zindex-dropdown:          1000;
+$zindex-popover:           1060;
+$zindex-tooltip:           1070;
+$zindex-navbar-fixed:      1030;
+$zindex-navbar-menu:       1020;
+$zindex-modal-background:  1040;
+$zindex-modal:             1050;
+
+
+/*  Fixed (New) Nav Implementation  */
+$behind-primary-nav: $zindex-navbar-fixed - 1;
+$in-front-of-primary-nav-but-behind-banner: $zindex-navbar-fixed + 1;
+$in-front-of-primary-nav: $zindex-navbar-fixed + 2;
+$in-front-of-primary-and-banner: $zindex-navbar-fixed + 3;
+$in-front-of-primary-and-banner-and-impersonation: $zindex-navbar-fixed + 4;
+
+$ambassador-banner-height-assigned: 32px;
+$ambassador-banner-height-unassigned: 50px;
+$impersonation-banner-height: 20px;

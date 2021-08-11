@@ -10,7 +10,8 @@ class MarsStyleGuideBuild {
   
   constructor() {
     this.outputFolder = path.resolve(__dirname, './dist');
-    this.srcFolder = path.resolve(__dirname, './app/assets/');
+    this.assetsFolder = path.resolve(__dirname, './assets');
+    this.srcFolder = path.resolve(__dirname, './');
   }
 
   log(...args) {
@@ -26,10 +27,10 @@ class MarsStyleGuideBuild {
 
   copyAssets() {
     this.log('copy: copying forever styleguide fonts');
-    copy(path.join(this.srcFolder, 'fonts/**/*'), path.join(this.outputFolder, 'fonts'), function () {});
+    copy(path.join(this.assetsFolder, 'fonts/**/*'), path.join(this.outputFolder, 'fonts'), function () {});
 
     this.log('copy: copying forever styleguide images');
-    copy(path.join(this.srcFolder, 'images/**/*'), path.join(this.outputFolder, 'images'), function () {});
+    copy(path.join(this.assetsFolder, 'images/**/*'), path.join(this.outputFolder, 'images'), function () {});
 
     this.log('copy: copying font-awesome fonts');
     copy(path.join(this.resolveNodeModuleFolder('font-awesome'), 'fonts/**/*'), path.join(this.outputFolder, 'fonts'), function () {});
@@ -64,7 +65,7 @@ class MarsStyleGuideBuild {
         //replace forever style guide imports
         else if (url.startsWith('forever_style_guide')) {
           done({
-            file: url.replace('forever_style_guide/', `${__dirname}/app/assets/stylesheets/forever_style_guide/`)
+            file: url.replace('forever_style_guide/', `${__dirname}/stylesheets/forever_style_guide/`)
           });
         } 
         
@@ -115,4 +116,4 @@ console.log('BEGIN: Mars Styleguide Build');
 new MarsStyleGuideBuild()
   .cleanDist()
   .copyAssets()
-  .sassBuild(`${__dirname}/app/assets/stylesheets/style_guide/application-mars.scss`);
+  .sassBuild(`${__dirname}/styles/application.scss`);

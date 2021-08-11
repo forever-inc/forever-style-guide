@@ -1,14 +1,15 @@
 {
   "name": "forever-style-guide",
-  "version": "4.1.15",
-  "description": "Built on top of https://github.com/pivotalexperimental/style-guide",
+  "version": "5.0.0",
+  "description": "",
   "main": "index.js",
   "directories": {
     "test": "test"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "node mars-styleguide-build.js"
+    "build": "node mars-styleguide-build.js",
+    "clean": "rm -rf ./dist"
   },
   "repository": {
     "type": "git",
