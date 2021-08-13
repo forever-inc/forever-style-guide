@@ -49,14 +49,14 @@ class MarsStyleGuideBuild {
       importer: (url, prev, done) => {
         
         //replace bootstrap imports
-        if (url.startsWith('bootstrap')) {
+       /* if (url.startsWith('bootstrap')) {
           done({
             file: url.replace('bootstrap/', `${this.resolveNodeModuleFolder('bootstrap-sass')}/assets/stylesheets/bootstrap/`)
           });
-        } 
+        } */
         
         //replace font-awesome imports
-        else if (url.startsWith('font-awesome')) {
+        if (url.startsWith('font-awesome')) {
           done({
             file: url.replace('font-awesome', `${this.resolveNodeModuleFolder('font-awesome')}/scss/font-awesome`)
           });
