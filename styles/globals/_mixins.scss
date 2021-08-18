@@ -1,5 +1,5 @@
 $header_active_border_height: 2px;
-$color-nav-hover: color('secondary');
+$color-nav-hover: $color-secondary;
 
 @mixin clearfix {
   zoom: 1;
@@ -16,24 +16,12 @@ $color-nav-hover: color('secondary');
 }
 
 @mixin transition($transition-property: all, $transition-time: 0.3s, $method: ease) {
-  -webkit-transition: $transition-property $transition-time $method;
-  -moz-transition: $transition-property $transition-time $method;
-  -ms-transition: $transition-property $transition-time $method;
-  -o-transition: $transition-property $transition-time $method;
   transition: $transition-property $transition-time $method;
 }
 
 @mixin center_with_flexbox ($flex-align, $justify-content) {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -moz-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-flex-align: $flex-align;
-  -ms-flex-align: $flex-align;
-  -webkit-align-items: $flex-align;
   align-items: $flex-align;
-  -webkit-justify-content: $justify-content;
   justify-content: $justify-content;
 }
 

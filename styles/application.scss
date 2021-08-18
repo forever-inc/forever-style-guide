@@ -1,9 +1,9 @@
-$base-font-path: '../fonts';
-$fa-font-path: '../fonts';
-@import 'bootstrap-custom';
-@import 'font-awesome';
+$fa-font-path: '~font-awesome/fonts';
+$base-font-path: '~forever-style-guide/assets/fonts';
 
+@import './bootstrap-custom';
+@import '../node_modules/font-awesome/scss/font-awesome';
 
-@import "globals/all";
-@import "base/all";
-@import "modules/all";
+@import "./globals/all";
+@import "./base/all";
+@import "./modules/all";
