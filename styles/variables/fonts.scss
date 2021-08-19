@@ -1,0 +1,52 @@
+@import "../utils/font-utils";
+
+/* =font faces
+   ---------------------------------------------------------------------------- */
+$font-face-light:           faceify('light', ('proxima_nova-light', Helvetica, Arial, sans-serif)) !default;
+$font-face-regular:         faceify('regular', ('proxima_nova-regular', Helvetica, Arial, sans-serif)) !default;
+$font-face-semibold:        faceify('semibold', ('proxima_nova-semibold', Helvetica, Arial, sans-serif)) !default;
+$font-face-bold:            faceify('bold', ('proxima_nova-bold', Helvetica, Arial, sans-serif)) !default;
+$font-face-regular_italic:  faceify('italic', ('proxima_nova-regular_italic', Helvetica, Arial, sans-serif)) !default;
+$font-face-bold_italic:     faceify('bold_italic', ('proxima_nova-bold_italic', Helvetica, Arial, sans-serif)) !default;
+$font-face-icon_font:        FontAwesome;
+
+/* =font sizes
+   ---------------------------------------------------------------------------- */
+$font-size-000: fontify('000', 10px) !default;
+$font-size-100: fontify('100', 12px) !default;
+$font-size-200: fontify('200', 14px) !default;
+$font-size-250: fontify('250', 15px) !default;
+$font-size-300: fontify('300', 16px) !default;
+$font-size-350: fontify('350', 16px) !default;
+$font-size-400: fontify('400', 18px) !default;
+$font-size-450: fontify('450', 21px) !default;
+$font-size-500: fontify('500', 24px) !default;
+$font-size-550: fontify('550', 32px) !default;
+$font-size-600: fontify('600', 36px) !default;
+$font-size-700: fontify('700', 48px) !default;
+$font-size-800: fontify('800', 64px) !default;
+
+/* !global to override bootstrap's $font-size-large and $font-size-small */
+$font-size-large:   fontify('lg', $font-size-400) !global;
+$font-size-default: fontify('default', $font-size-300) !default;
+$font-size-small:   fontify('sm', $font-size-100) !global;
+$font-size-xsmall:  fontify('xs', $font-size-000) !default;
+
+/* =font weights
+   ---------------------------------------------------------------------------- */
+$font-weight-100: weightify('100', 100) !default;
+$font-weight-200: weightify('200', 200) !default;
+$font-weight-300: weightify('300', 300) !default;
+$font-weight-400: weightify('400', 400) !default;
+$font-weight-500: weightify('500', 500) !default;
+$font-weight-600: weightify('600', 600) !default;
+$font-weight-700: weightify('700', 700) !default;
+$font-weight-800: weightify('800', 800) !default;
+$font-weight-900: weightify('900', 900) !default;
+
+$font-weight-normal:  weightify('normal', normal) !default;
+$font-weight-bold:    weightify('bold', bold) !default;
+$font-weight-bolder:  weightify('bolder', bolder) !default;
+$font-weight-lighter: weightify('lighter', lighter) !default;
+$font-weight-initial: weightify('initial', initial) !default;
+$font-weight-inherit: weightify('inherit', inherit) !default;

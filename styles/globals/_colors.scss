@@ -1,83 +1,10 @@
-@import "../utils/color-utils";
 
-/* =colors
----------------------------------------------------------------------------- */
-
-// Core color declarations, this list is intended to be a limited set of unique branded colors
-$color-forever_green:       colorify('green', #7dc142) !default;
-$color-forever_spare:       colorify('spare', #7ec24d) !default;
-$color-forever_historian:   colorify('historian', #67bd68) !default;
-$color-forever_valet:       colorify('valet', #50bd94) !default;
-$color-forever_services:    colorify('services', #39b3be) !default;
-$color-forever_artisan:     colorify('artisan', #28a6de) !default;
-$color-forever_blue:        colorify('blue', #2b91cf) !default;
-$color-forever_ambassador:  colorify('ambassador', #a4314c) !default;
-$color-forever_ambassador-unassigned: colorify('ambassador-unassigned', #2d8e97) !default;
-$color-forever_p2p:         colorify('p2p', #f89406) !default;
-
-$color-forever_orange:      colorify('orange', #ED773A) !default;
-$color-forever_red:         colorify('red', #bf3030) !default;
-$color-forever_gray:        colorify('gray', #434445) !default;
-$color-forever_silver:      set_color('silver', #f6f7fb) !default;
-
-// Deprecated brand color declarations, colors that should eventually be removed
-// !IMPORTANT! When defining colors please follow the syntax pattern of $var_name: function_name('color_word', hex_value)
-// Forever store promotions depend on it.
-
-$color-forever_purple:      colorify('purple', #731472) !default;
-
-// B&W, these colors just get registered they don't have dark/light variations
-$color-white:               set_color('white', #fff) !default;
-$color-gray-100:            set_color('gray-100', #fafafa) !default;
-$color-gray-200:            set_color('gray-200', #f6f6f6) !default;
-$color-gray-300:            set_color('gray-300', #e7e7e7) !default;
-$color-gray-400:            set_color('gray-400', #ccc) !default;
-$color-gray-500:            set_color('gray-500', #888) !default;
-$color-gray-600:            set_color('gray-600', #666) !default;
-$color-gray-700:            set_color('gray-700', #333) !default;
-$color-gray-800:            set_color('gray-800', #222) !default;
-$color-black:               set_color('black', #000) !default;
-$color-forever_beige:       set_color('beige', #ebeae6) !default;
-$color-background:          set_color('background', $color-forever_beige) !default;
-$color-text:                set_color('text', $color-forever_gray) !default;
-
-
-// Semantic color usages, list of aliases for declared colors.
-$color-primary:             colorify('primary', $color-forever_green) !default;
-$color-secondary:           colorify('secondary', $color-forever_blue) !default;
-$color-accent:              colorify('accent', $color-forever_valet) !default;
-$color-warning:             colorify('warning', $color-forever_orange) !default;
-$color-danger:              colorify('danger', $color-forever_red) !default;
-
-// Forever LIVE! 2016 brand colors
-$color-live16-green:        colorify('live16-green', #367860) !default;
-$color-live16-blue:         colorify('live16-blue', #014c5e) !default;
-$color-live16-dark_blue:    colorify('live16-dark_blue', #142f3d) !default;
-
-// Forever LIVE! 2017 brand colors
-$color-live17-orange:       colorify('live17-orange', #f6921e) !default;
-$color-live17-teal:         colorify('live17-teal', #37b2bc) !default;
-$color-live17-purple:       colorify('live17-purple', #902b89) !default;
-
-// Forever LIVE! 2018 brand colors
-$color-live18-yellow:       colorify('live18-yellow', #febe10) !default;
-$color-live18-blue:         colorify('live18-blue', #008ccf) !default;
-$color-live18-orange:       colorify('live18-orange', #f57e25) !default;
-$color-live18-grey:         colorify('live18-grey', #a4abb6) !default;
-
-// Gradients
-$gradient-ambassador: linear-gradient(to right, darken($color-forever_services, 5%), darken($color-forever_valet, 5%));
 
 @each $id, $color in $colors {
   .color-#{$id} {
     color: #{$color};
   }
-  .color_block-#{$id},
-  .card.color_block-#{$id} {
+  .color_block-#{$id} {
     background-color: #{$color};
-  }
-  .color_block-trans-#{$id} {
-    background-color: #{$color};
-    background-color: rgba($color, 0.9);
   }
 }

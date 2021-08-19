@@ -14,8 +14,8 @@ $modal-margin-top-md: 80px;
 
 .modal-header {
   border: none;
-  border-top-right-radius: inherit;
-  border-top-left-radius: inherit;
+  border-top-left-radius: $border-radius-xl;
+  border-top-right-radius: $border-radius-xl;
   padding: 10px;
 
   &.modal-header-promo {
@@ -153,7 +153,7 @@ $modal-margin-top-md: 80px;
 
   &.modal-dialog {
     @media (min-width: $screen-md-min) {
-      margin-top: $header-height + 5; // prefer to have more vertical real estate available for large modals
+      margin-top: 60px;
     }
   }
 }

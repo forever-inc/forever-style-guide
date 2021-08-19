@@ -1,29 +1,29 @@
 @mixin btn-color($color, $inverse: false) {
-  $colorified-color: color('#{$color}'); // set local variable to avoid compilation problems with 'black' and 'white' in Mars UI
+  //$colorified-color: color('#{$color}'); // set local variable to avoid compilation problems with 'black' and 'white' in Mars UI
   @if ($inverse) {
-    color: $colorified-color;
-    background-color: color('white');
-    border: 2px solid $colorified-color;
+    color: $color;
+    background-color: $color-white;
+    border: 2px solid $color;
     @extend %no-shadow;
     &:hover,
     &:active,
     &:active:focus {
-      color: darken($colorified-color, $darken-color-percentage);
-      border-color: darken($colorified-color, $darken-color-percentage);
-      background-color: lighten($colorified-color, 40%);
+      color: darken($color, $darken-color-percentage);
+      border-color: darken($color, $darken-color-percentage);
+      background-color: lighten($color, 40%);
       text-decoration: none;
     }
   } @else {
-    color: color('white');
-    background-color: $colorified-color;
-    border: 2px solid $colorified-color;
+    color: $color-white;
+    background-color: $color;
+    border: 2px solid $color;
     @extend %no-shadow;
     @include box_shadow_base();
     &:hover,
     &:active,
     &:active:focus {
-      background-color: darken($colorified-color, $darken-color-percentage);
-      border-color: darken($colorified-color, $darken-color-percentage);
+      background-color: darken($color, $darken-color-percentage);
+      border-color: darken($color, $darken-color-percentage);
       text-decoration: none;
     }
   }
@@ -35,47 +35,47 @@
 
   &:hover,
   &:active {
-    background-color: color('white');
+    background-color: $color-white;
   }
   &.btn-inverse {
-    @include btn-color('gray');
+    @include btn-color($color-forever_gray);
   }
 
   &.btn-default {
     color: $color-gray-600;
-    border: 2px solid color('white');
+    border: 2px solid $color-white;
     &:hover,
     &:active,
     &:focus {
-      background-color: color('white');
-      border: 2px solid color('white');
+      background-color: $color-white;
+      border: 2px solid $color-white;
     }
     &.disabled {
-      background-color: color('silver');
-      border: 2px solid color('silver');
+      background-color: $color-forever_silver;
+      border: 2px solid $color-forever_silver;
     }
     &.btn-inverse {
-      @include btn-color('gray');
+      @include btn-color($color-forever_gray);
     }
   }
 
   // creates a button style for each color in color dictionary
   @each $id, $color in $colors {
     @at-root #{&}.btn-#{$id} {
-      @include btn-color(#{$id});
+      @include btn-color(color($id));
 
       &.btn-inverse {
-        @include btn-color(#{$id}, true);
+        @include btn-color(color($id), true);
 
         &.btn-inverse-hero {
-          border-color: color('white');
+          border-color: $color-white;
         }
       }
     }
   }
 
   &.btn-link {
-    @include btn-color('secondary', true);
+    @include btn-color($color-secondary, true);
     background: none;
     border: 2px solid transparent; /* border needed to be consistent with btn pattern but must be transparent b/c link has no background */
     box-shadow: none;
@@ -92,14 +92,14 @@
       }
     }
     &.btn-inverse {
-      color: color('white');
-      border: 2px solid color('white');
+      color: $color-white;
+      border: 2px solid $color-white;
       &:hover,
       &:active,
       &:focus,
       &:active:focus {
-        color: color('white');
-        border: 2px solid color('white');
+        color: $color-white;
+        border: 2px solid $color-white;
       }
     }
     &.btn-default.disabled {
@@ -109,7 +109,7 @@
   }
   &.btn-sign_in,
   &.btn-plain {
-    color: color('gray-500');
+    color: $color-gray-500;
     background: none;
     border: 2px solid transparent; /* border needed to be consistent with btn pattern but must be transparent b/c link has no background */
     box-shadow: none;
@@ -128,9 +128,9 @@
     &:hover,
     &:active,
     &:focus {
-      color: color('secondary');
+      color: $color-secondary;
       &:focus {
-        color: color('secondary');
+        color: $color-secondary;
       }
     }
   }
@@ -295,8 +295,8 @@
     vertical-align: middle;
   }
   .btn:not(:first-child):not(:last-child):not(.dropdown-toggle) {
-    border-left: 1px solid color('gray-400');
-    border-right: 1px solid color('gray-400');
+    border-left: 1px solid $color-gray-400;
+    border-right: 1px solid $color-gray-400;
     // compensating for bootstraps -1px offset
     margin-right: 1px;
   }
@@ -311,5 +311,35 @@
   &:active {
     outline: none;
     cursor: default!important;
+  }
+}
+
+
+button.btn[disabled], //specificity override
+button.btn.disabled,
+button[disabled] {
+  color: $color-gray-400;
+  font-family: $font-face-regular_italic;
+
+  &:hover,
+  &:focus,
+  &:active,
+  &:active:focus {
+    color: $color-gray-400;
+    text-decoration: none;
+  }
+}
+
+button.btn.btn-link[disabled] {
+  background-color: transparent;
+  color: $color-gray-600;
+  border-color: transparent;
+
+  &:hover,
+  &:focus,
+  &:active,
+  &:active:focus {
+    color: $color-gray-600;
+    text-decoration: none;
   }
 }

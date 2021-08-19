@@ -1,0 +1,16 @@
+
+@mixin for-phone-only {
+  @media (max-width: $screen-xs) { @content; }
+}
+
+@mixin for-tablet-portrait-down {
+  @media (max-width: $screen-sm) { @content; }
+}
+
+@mixin for-tablet-portrait-up {
+  @media (min-width: $screen-sm) { @content; }
+}
+
+@mixin for-desktop-up {
+  @media (min-width: $screen-md) { @content; }
+}

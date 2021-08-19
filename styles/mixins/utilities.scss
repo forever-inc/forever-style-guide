@@ -1,0 +1,94 @@
+@mixin show_scrollbar_manually($is-dark: false) {
+  @if $is-dark {
+    &::-webkit-scrollbar { width: 8px; }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: #333;
+      border-radius: 8px;
+      box-shadow: inset 0 0 0 1px #777;
+    }
+  } @else {
+    &::-webkit-scrollbar { width: 8px; }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: lighten($color-secondary, 15%);
+      border-radius: 8px;
+      box-shadow: inset 0 0 0 1px $color-gray-200;
+    }
+  }
+}
+
+@mixin flex_center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin absolute_cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+@mixin fixed_cover {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+@mixin overlay_scrim($background-color: null) {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: $background-color;
+}
+
+
+@mixin price_slash($color: red) {
+  &::after {
+    content: ' ';
+    position: absolute;
+    height: 0.1em;
+    width: 100%;
+    background: $color;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%) rotate(-8deg);
+  }
+}
+
+@mixin hide_scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@mixin clearfix {
+  zoom: 1;
+  &:before,
+  &:after {
+    content: "\0020";
+    display: block;
+    height: 0;
+    overflow: hidden;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+@mixin center_with_flexbox ($flex-align, $justify-content) {
+  display: flex;
+  align-items: $flex-align;
+  justify-content: $justify-content;
+}
+

@@ -1,33 +1,6 @@
-$header_active_border_height: 2px;
-$color-nav-hover: $color-secondary;
-
-@mixin clearfix {
-  zoom: 1;
-  &:before,
-  &:after {
-    content: "\0020";
-    display: block;
-    height: 0;
-    overflow: hidden;
-  }
-  &:after {
-    clear: both;
-  }
-}
 
 @mixin transition($transition-property: all, $transition-time: 0.3s, $method: ease) {
   transition: $transition-property $transition-time $method;
-}
-
-@mixin center_with_flexbox ($flex-align, $justify-content) {
-  display: flex;
-  align-items: $flex-align;
-  justify-content: $justify-content;
-}
-
-@mixin border_highlight($direction, $color: $color-nav-hover) {
-  border: 0;
-  border-#{$direction}: $header_active_border_height solid $color;
 }
 
 @mixin transition_extra_fast($properties...) {

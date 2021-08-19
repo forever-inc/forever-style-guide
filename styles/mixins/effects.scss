@@ -1,0 +1,19 @@
+@mixin box-shadow($color, $top, $left, $blur, $spread, $inset: false) {
+  @if $inset {
+    box-shadow: inset $top $left $blur $spread $color;
+  } @else {
+    box-shadow: $top $left $blur $spread $color;
+  }
+}
+
+@mixin box_shadow_base($opacity: 0.6) {
+  box-shadow: 0 1px 2px 0 transparentize($color-gray-500, $opacity);
+}
+
+@mixin text_shadow_3d($shadow-base, $scale) {
+  text-shadow:
+          0 (1px * $scale) 0 darken($shadow-base, 2%),
+          0 (3px * $scale) 0 darken($shadow-base, 4%),
+          0 (3px * $scale) (5px * $scale) rgba(0, 0, 0, 0.15),
+          0 (8px * $scale) (8px * $scale) rgba(0, 0, 0, 0.15),
+}

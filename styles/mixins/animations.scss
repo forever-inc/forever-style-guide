@@ -1,0 +1,9 @@
+@mixin wiggle($amount, $duration) {
+  @keyframes wiggle {
+    0%,
+    100% { transform: rotate(-$amount); }
+    50% { transform: rotate($amount); }
+  }
+
+  animation: wiggle $duration infinite;
+}

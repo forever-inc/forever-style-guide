@@ -1,0 +1,58 @@
+@import "../utils/color-utils";
+
+$color-forever_green:       colorify('green', #7dc142) !default;
+$color-forever_spare:       colorify('spare', #7ec24d) !default;
+$color-forever_historian:   colorify('historian', #67bd68) !default;
+$color-forever_valet:       colorify('valet', #50bd94) !default;
+$color-forever_services:    colorify('services', #39b3be) !default;
+$color-forever_artisan:     colorify('artisan', #28a6de) !default;
+$color-forever_blue:        colorify('blue', #2b91cf) !default;
+$color-forever_ambassador:  colorify('ambassador', #a4314c) !default;
+$color-forever_ambassador-unassigned: colorify('ambassador-unassigned', #2d8e97) !default;
+$color-forever_p2p:         colorify('p2p', #f89406) !default;
+
+$color-forever_orange:      colorify('orange', #ED773A) !default;
+$color-forever_red:         colorify('red', #bf3030) !default;
+$color-forever_gray:        colorify('gray', #434445) !default;
+$color-forever_silver:      set_color('silver', #f6f7fb) !default;
+$color-forever_purple:      colorify('purple', #731472) !default;
+
+// B&W, these colors just get registered they don't have dark/light variations
+$color-white:               set_color('white', #fff) !default;
+$color-gray-100:            set_color('gray-100', #fafafa) !default;
+$color-gray-200:            set_color('gray-200', #f6f6f6) !default;
+$color-gray-300:            set_color('gray-300', #e7e7e7) !default;
+$color-gray-350:            set_color('gray-350', #ddd) !default;
+$color-gray-400:            set_color('gray-400', #ccc) !default;
+$color-gray-500:            set_color('gray-500', #888) !default;
+$color-gray-550:            set_color('gray-550', #777) !default;
+$color-gray-600:            set_color('gray-600', #666) !default;
+$color-gray-650:            set_color('gray-650', #444) !default;
+$color-gray-700:            set_color('gray-700', #333) !default;
+$color-gray-800:            set_color('gray-800', #222) !default;
+
+$color-black:               set_color('black', #000) !default;
+$color-forever_beige:       set_color('beige', #ebeae6) !default;
+$color-background:          set_color('background', $color-forever_beige) !default;
+$color-text:                set_color('text', $color-forever_gray) !default;
+
+// Semantic color usages, list of aliases for declared colors.
+$color-primary:             colorify('primary', $color-forever_green) !default;
+$color-secondary:           colorify('secondary', $color-forever_blue) !default;
+$color-accent:              colorify('accent', $color-forever_valet) !default;
+$color-warning:             colorify('warning', $color-forever_orange) !default;
+$color-danger:              colorify('danger', $color-forever_red) !default;
+
+// bastardization
+$color-forever_services-dark:       darken_color($color-forever_services);
+$color-forever_artisan-dark:        darken_color($color-forever_artisan);
+$color-secondary-dark:              darken_color($color-secondary);
+$color-secondary-light:             lighten_color($color-secondary);
+$color-primary-dark:                darken_color($color-primary);
+$color-primary-light:               lighten_color($color-primary);
+$color-accent-dark:                 darken_color($color-accent);
+$color-accent-light:                lighten_color($color-accent);
+$color-warning-dark:                darken_color($color-warning);
+$color-forever_services-light:      lighten_color($color-forever_services);
+$color-forever_beige-dark:          darken_color($color-forever_beige);
+$color-danger-light:                lighten_color($color-danger);

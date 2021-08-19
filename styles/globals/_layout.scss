@@ -61,12 +61,16 @@
   }
 }
 
-.l-section-last {
-  margin-bottom: 40px;
+
+.no-margin {
+  margin: 0;
 }
 
-// Layout utility for unpadded bootstrap columns ex. class="row no-gutter"
-.no-gutter > [class*='col-'] {
-  padding-right: 0;
-  padding-left: 0;
+.no-margin-bottom {
+  margin-bottom: 0;
+}
+
+
+.no-margin-top {
+  margin-top: 0;
 }

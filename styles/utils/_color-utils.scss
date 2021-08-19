@@ -4,6 +4,7 @@
 Sass functions and color related variables beyond standard color declarations
 ---------------------------------------------------------------------------- */
 $darken-color-percentage: 10%;
+$lighten-color-percentage: 15%;
 
 // map for all color declarations
 $colors: () !default;
@@ -15,7 +16,7 @@ $core_colors: () !default;
 $variations: (
   light: (
     function: lighten,
-    parameters: 15%
+    parameters: $lighten-color-percentage
   ),
   dark: (
     function: darken,
@@ -82,4 +83,12 @@ $variations: (
     $variant-color: set_color('#{$id}-#{$variation}', color-variation($id, $variation));
   }
   @return $base-color;
+}
+
+@function lighten_color($color) {
+  @return lighten($color, $lighten-color-percentage);
+}
+
+@function darken_color($color) {
+  @return darken($color, $darken-color-percentage);
 }

@@ -4,6 +4,11 @@ $base-font-path: '~forever-style-guide/assets/fonts';
 @import './bootstrap-custom';
 @import '../node_modules/font-awesome/scss/font-awesome';
 
-@import "./globals/all";
-@import "./base/all";
-@import "./modules/all";
+
+
+@import "./variables/index";
+@import "./mixins/index";
+
+@import "./globals/index";
+@import "./base/index";
+@import "./modules/index";
