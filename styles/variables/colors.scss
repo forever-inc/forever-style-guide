@@ -1,7 +1,6 @@
 @import "../utils/color-utils";
 
 $color-forever_green:       colorify('green', #7dc142) !default;
-$color-forever_spare:       colorify('spare', #7ec24d) !default;
 $color-forever_historian:   colorify('historian', #67bd68) !default;
 $color-forever_valet:       colorify('valet', #50bd94) !default;
 $color-forever_services:    colorify('services', #39b3be) !default;
@@ -22,16 +21,13 @@ $color-white:               set_color('white', #fff) !default;
 $color-gray-100:            set_color('gray-100', #fafafa) !default;
 $color-gray-200:            set_color('gray-200', #f6f6f6) !default;
 $color-gray-300:            set_color('gray-300', #e7e7e7) !default;
-$color-gray-350:            set_color('gray-350', #ddd) !default;
 $color-gray-400:            set_color('gray-400', #ccc) !default;
 $color-gray-500:            set_color('gray-500', #888) !default;
-$color-gray-550:            set_color('gray-550', #777) !default;
 $color-gray-600:            set_color('gray-600', #666) !default;
-$color-gray-650:            set_color('gray-650', #444) !default;
 $color-gray-700:            set_color('gray-700', #333) !default;
 $color-gray-800:            set_color('gray-800', #222) !default;
-
 $color-black:               set_color('black', #000) !default;
+
 $color-forever_beige:       set_color('beige', #ebeae6) !default;
 $color-background:          set_color('background', $color-forever_beige) !default;
 $color-text:                set_color('text', $color-forever_gray) !default;
