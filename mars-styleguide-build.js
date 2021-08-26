@@ -45,7 +45,28 @@ class MarsStyleGuideBuild {
       file: entryFile,
       outFile: outputFile,
       sourceMap: true,
-      outputStyle: 'compressed'
+      outputStyle: 'compressed',
+      importer: (url, prev, done) => {
+
+        //replace bootstrap imports
+        if (url.startsWith('~bootstrap-sass')) {
+          done({
+            file: url.replace('~bootstrap-sass', `${this.resolveNodeModuleFolder('bootstrap-sass')}`)
+          });
+        }
+
+        //replace font-awesome imports
+        else if (url.startsWith('~font-awesome')) {
+          done({
+            file: url.replace('~font-awesome', `${this.resolveNodeModuleFolder('font-awesome')}`)
+          });
+        }
+
+        //no replace
+        else {
+          done();
+        }
+      }
     };
 
     this.log('sass: starting render');
