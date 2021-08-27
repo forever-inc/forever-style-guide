@@ -2,9 +2,7 @@
   @font-face {
     font-family: $family;
     src: url('#{$base-font-path}/#{$src}.eot'); // IE9 compat
-    src: url('#{$base-font-path}/#{$src}.eot?#iefix') format('embedded-opentype'), // IE8 and below
-    url('#{$base-font-path}/#{$src}.woff') format('woff'), // standards
-    url('#{$base-font-path}/#{$src}.ttf') format('truetype'), // Safari, Android, iOS
-    url('#{$base-font-path}/#{$src}.svg##{$family}') format('svg'); // legacy iOS
+    src: url('#{$base-font-path}/#{$src}.woff') format('woff'), // standards
+    url('#{$base-font-path}/#{$src}.ttf') format('truetype'); // Safari, Android, iOS
   }
 }

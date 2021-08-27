@@ -1,6 +1,4 @@
-const colors = require('tailwindcss/colors');
 const defaultTheme = require('tailwindcss/defaultTheme')
-const plugin = require('tailwindcss/plugin');
 
 module.exports = {
   //mode: 'jit',
@@ -156,6 +154,13 @@ module.exports = {
       '2xl': '1536px',
       '3xl': '1750px'
     },
+
+    fontWeight: {
+      light: '300',
+      normal: '400',
+      semibold: '600',
+      bold: '700'
+    },
     fontFamily: {
       sans: ['ProximaNova', ...defaultTheme.fontFamily.sans],
     },
@@ -166,20 +171,5 @@ module.exports = {
   variants: {
     extend: {},
   },
-  plugins: [
-    plugin(({ addBase }) => {
-      const customFonts = [
-
-        {
-          '@font-face': {
-            fontFamily: 'ProximaNova',
-            fontDisplay: 'swap',
-            src: 'url(/assets/fonts/ProximaNova-Reg-webfont.woff) format(\'woff\')',
-          },
-        }
-
-      ];
-      return addBase(customFonts);
-    })
-  ],
+  plugins: [],
 }
