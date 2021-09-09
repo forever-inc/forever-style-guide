@@ -3,10 +3,7 @@ html, body {
   font-family: $font-face-regular;
   background-color: $color-background;
   overflow-y: auto;
-}
-
-html {
-  font-size: 16px !important; //base rem
+  font-size: 14px !important; //base rem
 }
 
 // make all images responsive by default
