@@ -3,6 +3,9 @@ html, body {
   font-family: $font-face-regular;
   background-color: $color-background;
   overflow-y: auto;
+}
+
+html {
   font-size: 16px !important; //base rem
 }
 
