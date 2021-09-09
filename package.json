@@ -23,8 +23,6 @@
   },
   "browserslist": [
     "last 2 versions",
-    "ie 10",
-    "ie 11",
     "safari >=4"
   ],
   "homepage": "https://github.com/forever-inc/forever-style-guide#readme",
