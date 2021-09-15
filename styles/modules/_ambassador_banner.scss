@@ -103,7 +103,7 @@ a.ambassador_banner {
 }
 
 .ambassador_banner-btn {
-  padding-top: 4px;
+  padding-top: 4px !important;//because this is easier than a day of fighting with legacy crap
   margin-left: 20px;
   height: 30px;
   font-size: $font-size-200;
