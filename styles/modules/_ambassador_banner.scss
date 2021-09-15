@@ -136,7 +136,7 @@ a.ambassador_banner {
   visibility: hidden;
   width: 100%;
   transform: translateY(-100%);
-  @include transition(all $dropdown-entrance-and-exit-effect-speed ease-in);
+  @include transition_fast(all);
   z-index: $in-front-of-primary-nav-but-behind-banner;
   pointer-events: none;
 
@@ -160,7 +160,7 @@ a.ambassador_banner {
 .ambassador_banner-dropdown-avatar {
   align-self: flex-start;
   margin: 0;
-  margin-right: $padding-large-horizontal * 2;
+  margin-right: $padding-large-horizontal * 2 !important;
 }
 
 .ambassador_banner-dropdown-info {
