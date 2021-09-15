@@ -22,8 +22,10 @@
     "url": "https://github.com/forever-inc/forever-style-guide/issues"
   },
   "browserslist": [
-    "last 2 versions",
-    "safari >=4"
+    "last 3 versions",
+    "chrome > 70",
+    "not dead",
+    "not ie <= 11"
   ],
   "homepage": "https://github.com/forever-inc/forever-style-guide#readme",
   "dependencies": {
