@@ -18,6 +18,7 @@ module.exports = {
       },
       blue: {
         DEFAULT: '#2b91cf',
+        50: '#eef6fb',
         100: '#daecf8',
         200: '#add5ee',
         300: '#83bfe4',
@@ -30,6 +31,7 @@ module.exports = {
       },
       artisan: {
         DEFAULT: '#28a6de',
+        50: '#edf7fc',
         100: '#d9effa',
         200: '#abdcf3',
         300: '#81cbec',
@@ -43,6 +45,7 @@ module.exports = {
       },
       services: {
         DEFAULT: '#39b3be',
+        50: '#eef9fa',
         100: '#daf2f4',
         200: '#b0e2e6',
         300: '#8ad3d9',
@@ -55,6 +58,7 @@ module.exports = {
       },
       print: {
         DEFAULT: '#50bd94',
+        50: '#f1f9f6',
         100: '#e1f3eb',
         200: '#bee6d6',
         300: '#99d8c0',
@@ -67,6 +71,7 @@ module.exports = {
       },
       historian: {
         DEFAULT: '#67bd68',
+        50: '#f3faf3',
         100: '#e6f4e5',
         200: '#c5e6c5',
         300: '#a7d9a7',
@@ -79,6 +84,7 @@ module.exports = {
       },
       green: {
         DEFAULT: '#7dc142',
+        50: '#f4faf0',
         100: '#e8f4de',
         200: '#cce7b5',
         300: '#b3db90',
@@ -91,6 +97,7 @@ module.exports = {
       },
       p2p: {
         DEFAULT: '#f89406',
+        50: '#fef6eb',
         100: '#feecd4',
         200: '#fdd7a3',
         300: '#fbc06d',
@@ -103,6 +110,7 @@ module.exports = {
       },
       orange: {
         DEFAULT: '#ed773a',
+        50: '#fdf5f1',
         100: '#fceae0',
         200: '#f8ccb5',
         300: '#f5b18d',
@@ -115,6 +123,7 @@ module.exports = {
       },
       red: {
         DEFAULT: '#bf3030',
+        50: '#faeded',
         100: '#f6d8d8',
         200: '#e8acac',
         300: '#db8484',
@@ -127,6 +136,7 @@ module.exports = {
       },
       ambassador: {
         DEFAULT: '#a4314c',
+        50: '#f9ebef',
         100: '#f3d4dc',
         200: '#dfaab7',
         300: '#cc8394',
@@ -137,12 +147,15 @@ module.exports = {
         800: '#87283f',
         900: '#7d253a'
       },
+      purple: {
+        DEFAULT: '#6f266d',
+        50: '#f5eff5'
+      },
       white: '#fff',
       black: '#000',
       text: '#434445',
       silver: '#f6f7f8',
-      beige: '#ebeae6',
-      purple: '#6f266d'
+      beige: '#ebeae6'
     },
     screens: {
       xs: '480px',
