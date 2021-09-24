@@ -177,8 +177,9 @@ module.exports = {
       sans: ['ProximaNova', ...defaultTheme.fontFamily.sans],
     },
     extend: {
-
-    },
+      ringWidth: ['hover'],
+      ringColor: ['hover']
+    }
   },
   variants: {
     extend: {},
