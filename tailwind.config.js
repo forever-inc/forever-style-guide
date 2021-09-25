@@ -175,14 +175,13 @@ module.exports = {
     },
     fontFamily: {
       sans: ['ProximaNova', ...defaultTheme.fontFamily.sans],
-    },
+    }
+  },
+  variants: {
     extend: {
       ringWidth: ['hover'],
       ringColor: ['hover']
     }
-  },
-  variants: {
-    extend: {},
   },
   plugins: [],
 }
