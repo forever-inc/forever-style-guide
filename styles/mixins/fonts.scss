@@ -4,5 +4,6 @@
     src: url('#{$base-font-path}/#{$src}.eot'); // IE9 compat
     src: url('#{$base-font-path}/#{$src}.woff') format('woff'), // standards
     url('#{$base-font-path}/#{$src}.ttf') format('truetype'); // Safari, Android, iOS
+    font-display: swap;
   }
 }
