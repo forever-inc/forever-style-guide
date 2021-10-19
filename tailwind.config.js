@@ -1,4 +1,5 @@
-const defaultTheme = require('tailwindcss/defaultTheme')
+const defaultTheme = require('tailwindcss/defaultTheme');
+const plugin = require('tailwindcss/plugin');
 
 module.exports = {
   darkMode: false, // or 'media' or 'class'
@@ -183,5 +184,16 @@ module.exports = {
       ringColor: ['hover']
     }
   },
-  plugins: [],
-}
+  plugins: [
+    plugin(function({ addBase, theme }) {
+      addBase({
+        'hr': {
+          marginTop: theme('spacing.5'),
+          marginBottom: theme('spacing.5'),
+          borderTopWidth: '1px',
+          borderTopColor: theme('colors.gray.300')
+        }
+      })
+    })
+  ],
+};
