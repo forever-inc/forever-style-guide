@@ -192,6 +192,18 @@ module.exports = {
           marginBottom: theme('spacing.5'),
           borderTopWidth: '1px',
           borderTopColor: theme('colors.gray.300')
+        },
+        'ul': {
+          marginTop: theme('spacing.5'),
+          marginBottom: theme('spacing.5'),
+          paddingLeft: theme('spacing.10'),
+          listStyle: 'disc'
+        },
+        'ol': {
+          marginTop: theme('spacing.5'),
+          marginBottom: theme('spacing.5'),
+          paddingLeft: theme('spacing.10'),
+          listStyle: 'decimal'
         }
       })
     })
