@@ -1,5 +1,4 @@
 // Layout utility for applying padding to containers
-// TODO extend these into more robust modules ex. l-padded l-padded-horizontal etc etc
 .l-padded {
   padding: 20px;
 
@@ -8,13 +7,6 @@
   }
 }
 
-.l-padded-thick {
-  padding: 40px;
-
-  @media (min-width: $screen-md-min) {
-    padding: 60px;
-  }
-}
 
 .l-padded-thin {
   padding: 10px;
@@ -59,18 +51,4 @@
   @media (max-width: $screen-xs-max) {
     margin-top: 20px;
   }
-}
-
-
-.no-margin {
-  margin: 0;
-}
-
-.no-margin-bottom {
-  margin-bottom: 0;
-}
-
-
-.no-margin-top {
-  margin-top: 0;
 }

@@ -167,7 +167,6 @@ module.exports = {
       //'2xl': '1536px',
       //'3xl': '1750px'
     },
-
     fontWeight: {
       light: '300',
       normal: '400',
@@ -181,19 +180,43 @@ module.exports = {
   variants: {
     extend: {
       ringWidth: ['hover'],
-      ringColor: ['hover']
+      ringColor: ['hover'],
+      backgroundColor: ['even', 'odd']
     }
   },
   plugins: [
-    plugin(function({ addBase, theme }) {
+    plugin(({ addBase, theme }) => {
       addBase({
         'hr': {
           marginTop: theme('spacing.5'),
           marginBottom: theme('spacing.5'),
           borderTopWidth: '1px',
           borderTopColor: theme('colors.gray.300')
+        },
+        'img': {
+          margin: '0 auto',
+          maxWidth: '100%'
+        },
+        'pre': {
+          overflow: 'auto'
+        }
+      })
+    }),
+    plugin(({ addUtilities }) => {
+      addUtilities({
+        '.ellipsis_overflow': {
+          whiteSpace: 'nowrap',
+          overflow: 'hidden',
+          textOverflow: 'ellipsis'
+        },
+        '.break_long_string': {
+          overflowWrap: 'break-word',
+          wordWrap: 'break-word',
+          wordBreak: 'break-word',
+          hyphens: 'auto'
         }
       })
     })
+
   ],
 };

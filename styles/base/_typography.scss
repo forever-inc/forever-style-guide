@@ -1,9 +1,5 @@
-* {
-  font-family: $font-face-regular;
-}
 
 /* Headers */
-
 h1,
 h2,
 h3,
@@ -13,8 +9,7 @@ h6,
 p {
   color: color('text');
 }
-h1,
-.heading-large {
+h1 {
   font-family: $font-face-semibold;
   font-weight: 500;
   font-size: $font-size-500;
@@ -27,8 +22,7 @@ h1,
     font-size: $font-size-700;
   }
 }
-h2,
-.heading-medium {
+h2 {
   font-family: $font-face-semibold;
   font-size: $font-size-400;
 
@@ -40,8 +34,7 @@ h2,
     font-size: $font-size-600;
   }
 }
-h3,
-.heading-small {
+h3 {
   font-family: $font-face-semibold;
   font-size: $font-size-300;
 
@@ -53,8 +46,7 @@ h3,
     font-size: $font-size-500;
   }
 }
-h4,
-.heading-extra_small {
+h4 {
   font-family: $font-face-semibold;
   font-size: $font-size-300;
 
@@ -76,17 +68,10 @@ p {
   font-size: $font-size-default;
   line-height: 1.6;
 }
-small {
-  font-family: $font-face-regular;
-  font-size: $font-size-100;
-  line-height: 1.2em;
-}
+
 b,
 strong {
   font-family: $font-face-bold;
-}
-.page-title {
-  margin-top: 0;
 }
 
 a {
@@ -103,28 +88,4 @@ a.disabled {
   color: $color-gray-600;
   text-decoration: none;
   cursor: text;
-}
-
-.ellipsis_overflow {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.pre-wrap {
-  white-space: pre-wrap;
-}
-
-
-.break_long_string {
-  overflow-wrap: break-word;
-  word-wrap: break-word;
-  word-break: break-word;
-  hyphens: auto;
-}
-
-
-.title-padding {
-  padding-right: 40px;
-  padding-left: 40px;
 }
