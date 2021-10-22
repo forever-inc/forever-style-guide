@@ -193,6 +193,18 @@ module.exports = {
           borderTopWidth: '1px',
           borderTopColor: theme('colors.gray.300')
         },
+        'ul': {
+          marginTop: theme('spacing.5'),
+          marginBottom: theme('spacing.5'),
+          paddingLeft: theme('spacing.10'),
+          listStyle: 'disc'
+        },
+        'ol': {
+          marginTop: theme('spacing.5'),
+          marginBottom: theme('spacing.5'),
+          paddingLeft: theme('spacing.10'),
+          listStyle: 'decimal'
+        },
         'img': {
           margin: '0 auto',
           maxWidth: '100%'
