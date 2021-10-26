@@ -18,11 +18,6 @@
     float: right !important;
   }
 }
-.pull-right-grid-float-breakpoint {
-  @media (min-width: $grid-float-breakpoint) {
-    float: right !important;
-  }
-}
 
 .pull-left-xs {
   @media (max-width: $screen-xs-max) {

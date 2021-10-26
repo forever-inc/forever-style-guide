@@ -154,18 +154,24 @@ module.exports = {
       },
       white: '#fff',
       black: '#000',
-      text: '#434445',
+      text: {
+        DEFAULT: '#434445',
+        muted: '#888'
+      },
       silver: '#f6f7f8',
-      beige: '#ebeae6'
+      beige: '#ebeae6',
+
+      //deprecated bootxstrap classes
+      danger: '#bf3030',
+      success: '#7dc142',
+      info: '#2b91cf',
+      warning: '#ed773a'
     },
     screens: {
       xs: '480px',
-      sm: '640px',
-      md: '768px',
-      lg: '1024px',
-      xl: '1280px',
-      //'2xl': '1536px',
-      //'3xl': '1750px'
+      sm: '768px',
+      md: '992px',
+      lg: '1200px'
     },
     fontWeight: {
       light: '300',
@@ -187,6 +193,82 @@ module.exports = {
   plugins: [
     plugin(({ addBase, theme }) => {
       addBase({
+        'html, body': {
+          width: '100%',
+          overflowY: 'auto',
+          fontSize: '14px !important', //base rem size
+          webkitTapHighlightColor: 'rgba(0, 0, 0, 0)',
+          backgroundColor: theme('colors.beige')
+        },
+        'body': {
+          color: theme('colors.text.DEFAULT')
+        },
+        'h1, h2, h3, h4, h5, h6': {
+          color: theme('colors.text.DEFAULT'),
+          fontWeight: theme('fontWeight.semibold'),
+          marginTop: theme('spacing.5'),
+          marginBottom: theme('spacing.5'),
+          lineHeight: 1.1
+        },
+        'h1': {
+          fontSize: theme('fontSize.6xl')
+        },
+        'h2': {
+          fontSize: theme('fontSize.5xl')
+        },
+        'h3': {
+          fontSize: theme('fontSize.4xl')
+        },
+        'h4': {
+          fontSize: theme('fontSize.3xl')
+        },
+        'h5': {
+          fontSize: theme('fontSize.2xl')
+        },
+        'h6': {
+          fontSize: theme('fontSize.xl')
+        },
+        'p': {
+          marginTop: theme('spacing.5'),
+          marginBottom: theme('spacing.5'),
+          color: theme('colors.text.DEFAULT'),
+          lineHeight: theme('lineHeight.normal'),
+          fontSize: theme('fontSize.lg'),
+        },
+        'a': {
+          color: theme('colors.blue.DEFAULT'),
+          textDecoration: 'none',
+
+          '&:visited, &:hover, &:active': {
+            color: theme('colors.blue.DEFAULT')
+          },
+
+          '&:active, &:hover': {
+            outline: 0
+          },
+
+          '&:hover, &:focus': {
+            textDecoration: 'underline'
+          },
+
+          '&:focus': {
+            outline: '5px auto -webkit-focus-ring-color'
+          },
+
+          '&:disabled': {
+            color: theme('colors.text.muted'),
+            textDecoration: 'none',
+            cursor: 'text'
+          }
+        },
+        'address': {
+          marginTop: theme('spacing.5'),
+          marginBottom: theme('spacing.5'),
+          fontStyle: 'normal'
+        },
+        'abbr[title]': {
+          cursor: 'help'
+        },
         'hr': {
           marginTop: theme('spacing.5'),
           marginBottom: theme('spacing.5'),
@@ -197,13 +279,19 @@ module.exports = {
           marginTop: theme('spacing.5'),
           marginBottom: theme('spacing.5'),
           paddingLeft: theme('spacing.10'),
-          listStyle: 'disc'
+          listStyle: 'disc',
+          'ul': {
+            marginBottom: 0
+          }
         },
         'ol': {
           marginTop: theme('spacing.5'),
           marginBottom: theme('spacing.5'),
           paddingLeft: theme('spacing.10'),
-          listStyle: 'decimal'
+          listStyle: 'decimal',
+          'ol': {
+            marginBottom: 0
+          }
         },
         'img': {
           margin: '0 auto',
@@ -211,23 +299,90 @@ module.exports = {
         },
         'pre': {
           overflow: 'auto'
+        },
+        'span': {
+          fontFamily: 'inherit'
+        },
+        'table': {
+          borderSpacing: 0
+        },
+        'tr, td': {
+          padding: 0
+        },
+        'dl': {
+          marginTop: theme('spacing.5'),
+          marginBottom: theme('spacing.5')
+        },
+        'dt': {
+          fontWeight: theme('fontWeight.semibold')
+        },
+        'dd': {
+          mrginLeft: 0
+        },
+        'b, strong': {
+          fontWeight: theme('fontWeight.bold')
         }
       })
     }),
-    plugin(({ addUtilities }) => {
+    plugin(({ addUtilities, theme }) => {
       addUtilities({
-        '.ellipsis_overflow': {
+        '.ellipsis-overflow': {
           whiteSpace: 'nowrap',
           overflow: 'hidden',
           textOverflow: 'ellipsis'
         },
-        '.break_long_string': {
+        '.break-long-string': {
           overflowWrap: 'break-word',
           wordWrap: 'break-word',
           wordBreak: 'break-word',
           hyphens: 'auto'
+        },
+        '.clearfix': {
+          '&:before, &:after': {
+            content: '',
+            display: 'table',
+            clear: 'both'
+          }
+        },
+        '.fixed-cover': {
+          position: 'fixed',
+          top: 0,
+          right: 0,
+          left: 0,
+          bottom: 0
+        },
+        '.absolute-cover': {
+          position: 'absolute',
+          top: 0,
+          right: 0,
+          left: 0,
+          bottom: 0
+        },
+        '.flex-center': {
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center'
+        },
+        '.hide-scrollbar': {
+          '-ms-overflow-style': 'none',
+          scrollbarWidth: 'none',
+          '&::-webkit-scrollbar': {
+            display: 'none'
+          }
+        },
+
+
+        //deprecated classes from bootstrap that need removed
+        '.small': {
+          fontSize: theme('fontSize.sm')
+        },
+        '.text-uppercase': {
+          textTransform: 'uppercase'
+        },
+        '.text-lowercase': {
+          textTransform: 'lowercase'
         }
-      })
+      }, ['responsive', 'hover'])
     })
 
   ],
