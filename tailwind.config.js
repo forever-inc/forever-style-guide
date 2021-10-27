@@ -206,8 +206,6 @@ module.exports = {
         'h1, h2, h3, h4, h5, h6': {
           color: theme('colors.text.DEFAULT'),
           fontWeight: theme('fontWeight.semibold'),
-          marginTop: theme('spacing.5'),
-          marginBottom: theme('spacing.5'),
           lineHeight: 1.1
         },
         'h1': {
@@ -229,8 +227,6 @@ module.exports = {
           fontSize: theme('fontSize.xl')
         },
         'p': {
-          marginTop: theme('spacing.5'),
-          marginBottom: theme('spacing.5'),
           color: theme('colors.text.DEFAULT'),
           lineHeight: theme('lineHeight.normal'),
           fontSize: theme('fontSize.lg'),
@@ -262,8 +258,6 @@ module.exports = {
           }
         },
         'address': {
-          marginTop: theme('spacing.5'),
-          marginBottom: theme('spacing.5'),
           fontStyle: 'normal'
         },
         'abbr[title]': {
@@ -276,22 +270,12 @@ module.exports = {
           borderTopColor: theme('colors.gray.300')
         },
         'ul': {
-          marginTop: theme('spacing.5'),
-          marginBottom: theme('spacing.5'),
           paddingLeft: theme('spacing.10'),
-          listStyle: 'disc',
-          'ul': {
-            marginBottom: 0
-          }
+          listStyle: 'disc'
         },
         'ol': {
-          marginTop: theme('spacing.5'),
-          marginBottom: theme('spacing.5'),
           paddingLeft: theme('spacing.10'),
           listStyle: 'decimal',
-          'ol': {
-            marginBottom: 0
-          }
         },
         'img': {
           margin: '0 auto',
