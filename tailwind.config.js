@@ -293,15 +293,11 @@ module.exports = {
         'tr, td': {
           padding: 0
         },
-        'dl': {
-          marginTop: theme('spacing.5'),
-          marginBottom: theme('spacing.5')
-        },
         'dt': {
           fontWeight: theme('fontWeight.semibold')
         },
         'dd': {
-          mrginLeft: 0
+          marginLeft: 0
         },
         'b, strong': {
           fontWeight: theme('fontWeight.bold')
@@ -366,7 +362,25 @@ module.exports = {
         '.text-lowercase': {
           textTransform: 'lowercase'
         }
-      }, ['responsive', 'hover'])
+      }, ['responsive', 'hover']);
+    }),
+
+    plugin(({ addComponents, theme }) => {
+
+      addComponents({
+        '.copy-block': {
+          'h1, h2, h3, h4, h5, h6, p, ul, ol, address, dl': {
+            marginTop: theme('spacing.5'),
+            marginBottom: theme('spacing.5')
+          },
+          'ul ul, ol ol, ol ul, ul ol': {
+            margin: 0
+          },
+          'a': {
+            textDecoration: 'underline'
+          }
+        }
+      });
     })
 
   ],
