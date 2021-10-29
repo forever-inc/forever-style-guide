@@ -23,28 +23,16 @@ $screen-lg:                  1200px !global;
 $screen-lg-min:              $screen-lg !global;
 $screen-lg-desktop:          $screen-lg-min !global;
 
-// Extra Large screen / high res desktop
-$screen-xl:                  1400px !global;
-$screen-xl-min:              $screen-xl !global;
-$screen-xl-desktop:          $screen-xl-min !global;
 
-// Extra Extra Large screen / Retina/Cinema display
-$screen-xxl:                  2000px !global;
-$screen-xxl-min:              $screen-xxl !global;
-$screen-xxl-desktop:          $screen-xxl-min !global;
 
 // So media queries don't overlap when required, provide a maximum
 $screen-xs-max:              ($screen-sm-min - 1) !global;
 $screen-sm-max:              ($screen-md-min - 1) !global;
 $screen-md-max:              ($screen-lg-min - 1) !global;
-$screen-lg-max:              ($screen-xl-min - 1) !global;
-$screen-xl-max:              ($screen-xxl-min - 1) !global;
 
 // Tweeners
 $screen-xs_to_sm:            580px !global;
-$screen-md_to_lg:            1060px !global;
 $screen-xxs-max:              $screen-xs - 1;
-
 
 //** Point at which the navbar becomes uncollapsed.
 $grid-float-breakpoint: 960px!global;
@@ -53,4 +41,3 @@ $grid-float-breakpoint-max: ($grid-float-breakpoint - 1) !global;
 
 // Assign a minimum body width for the application
 $minimum-application-width: 320px;
-$minimum-application-width-xs-max: ($minimum-application-width - 1) !global;

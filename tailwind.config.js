@@ -154,20 +154,25 @@ module.exports = {
       },
       white: '#fff',
       black: '#000',
-      text: '#434445',
+      text: {
+        DEFAULT: '#434445',
+        muted: '#888'
+      },
       silver: '#f6f7f8',
-      beige: '#ebeae6'
+      beige: '#ebeae6',
+
+      //deprecated bootxstrap classes
+      danger: '#bf3030',
+      success: '#7dc142',
+      info: '#2b91cf',
+      warning: '#ed773a'
     },
     screens: {
       xs: '480px',
-      sm: '640px',
-      md: '768px',
-      lg: '1024px',
-      xl: '1280px',
-      //'2xl': '1536px',
-      //'3xl': '1750px'
+      sm: '768px',
+      md: '992px',
+      lg: '1200px'
     },
-
     fontWeight: {
       light: '300',
       normal: '400',
@@ -176,17 +181,89 @@ module.exports = {
     },
     fontFamily: {
       sans: ['ProximaNova', ...defaultTheme.fontFamily.sans],
+      serif: defaultTheme.fontFamily.serif
     }
   },
   variants: {
     extend: {
       ringWidth: ['hover'],
-      ringColor: ['hover']
+      ringColor: ['hover'],
+      backgroundColor: ['even', 'odd']
     }
   },
   plugins: [
-    plugin(function({ addBase, theme }) {
+    plugin(({ addBase, theme }) => {
       addBase({
+        'html, body': {
+          width: '100%',
+          overflowY: 'auto',
+          fontSize: '14px !important', //base rem size
+          webkitTapHighlightColor: 'rgba(0, 0, 0, 0)',
+          backgroundColor: theme('colors.beige')
+        },
+        'body': {
+          color: theme('colors.text.DEFAULT')
+        },
+        'h1, h2, h3, h4, h5, h6': {
+          color: theme('colors.text.DEFAULT'),
+          fontWeight: theme('fontWeight.semibold'),
+          lineHeight: 1.1
+        },
+        'h1': {
+          fontSize: theme('fontSize.6xl')
+        },
+        'h2': {
+          fontSize: theme('fontSize.5xl')
+        },
+        'h3': {
+          fontSize: theme('fontSize.4xl')
+        },
+        'h4': {
+          fontSize: theme('fontSize.3xl')
+        },
+        'h5': {
+          fontSize: theme('fontSize.2xl')
+        },
+        'h6': {
+          fontSize: theme('fontSize.xl')
+        },
+        'p': {
+          color: theme('colors.text.DEFAULT'),
+          lineHeight: theme('lineHeight.normal'),
+          fontSize: theme('fontSize.lg'),
+        },
+        'a': {
+          color: theme('colors.blue.DEFAULT'),
+          textDecoration: 'none',
+
+          '&:visited, &:hover, &:active': {
+            color: theme('colors.blue.DEFAULT')
+          },
+
+          '&:active, &:hover': {
+            outline: 0
+          },
+
+          '&:hover, &:focus': {
+            textDecoration: 'underline'
+          },
+
+          '&:focus': {
+            outline: '5px auto -webkit-focus-ring-color'
+          },
+
+          '&:disabled': {
+            color: theme('colors.text.muted'),
+            textDecoration: 'none',
+            cursor: 'text'
+          }
+        },
+        'address': {
+          fontStyle: 'normal'
+        },
+        'abbr[title]': {
+          cursor: 'help'
+        },
         'hr': {
           marginTop: theme('spacing.5'),
           marginBottom: theme('spacing.5'),
@@ -194,18 +271,148 @@ module.exports = {
           borderTopColor: theme('colors.gray.300')
         },
         'ul': {
-          marginTop: theme('spacing.5'),
-          marginBottom: theme('spacing.5'),
           paddingLeft: theme('spacing.10'),
           listStyle: 'disc'
         },
         'ol': {
-          marginTop: theme('spacing.5'),
-          marginBottom: theme('spacing.5'),
           paddingLeft: theme('spacing.10'),
-          listStyle: 'decimal'
+          listStyle: 'decimal',
+        },
+        'img': {
+          margin: '0 auto',
+          maxWidth: '100%'
+        },
+        'pre': {
+          overflow: 'auto'
+        },
+        'span': {
+          fontFamily: 'inherit'
+        },
+        'table': {
+          borderSpacing: 0
+        },
+        'tr, td': {
+          padding: 0
+        },
+        'dt': {
+          fontWeight: theme('fontWeight.semibold')
+        },
+        'dd': {
+          marginLeft: 0
+        },
+        'b, strong': {
+          fontWeight: theme('fontWeight.bold')
         }
       })
+    }),
+    plugin(({ addUtilities, theme }) => {
+      addUtilities({
+        '.ellipsis-overflow': {
+          whiteSpace: 'nowrap',
+          overflow: 'hidden',
+          textOverflow: 'ellipsis'
+        },
+        '.break-long-string': {
+          overflowWrap: 'break-word',
+          wordWrap: 'break-word',
+          wordBreak: 'break-word',
+          hyphens: 'auto'
+        },
+        '.clearfix': {
+          '&:before, &:after': {
+            content: '',
+            display: 'table',
+            clear: 'both'
+          }
+        },
+        '.fixed-cover': {
+          position: 'fixed',
+          top: 0,
+          right: 0,
+          left: 0,
+          bottom: 0
+        },
+        '.absolute-cover': {
+          position: 'absolute',
+          top: 0,
+          right: 0,
+          left: 0,
+          bottom: 0
+        },
+        '.flex-center': {
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center'
+        },
+        '.hide-scrollbar': {
+          '-ms-overflow-style': 'none',
+          scrollbarWidth: 'none',
+          '&::-webkit-scrollbar': {
+            display: 'none'
+          }
+        },
+
+
+        //deprecated classes from bootstrap that need removed
+        '.small': {
+          fontSize: theme('fontSize.sm')
+        },
+        '.text-uppercase': {
+          textTransform: 'uppercase'
+        },
+        '.text-lowercase': {
+          textTransform: 'lowercase'
+        }
+      }, ['responsive', 'hover']);
+    }),
+
+    plugin(({ addComponents, theme }) => {
+
+      addComponents({
+        '.copy-block': {
+          'h1, h2, h3, h4, h5, h6, p, ul, ol, address, dl': {
+            marginTop: theme('spacing.5'),
+            marginBottom: theme('spacing.5')
+          },
+          'ul ul, ol ol, ol ul, ul ol': {
+            margin: 0
+          },
+          'a': {
+            textDecoration: 'underline'
+          }
+        },
+
+        '.container, .container-fluid, .container-fluid-xs, .container-fluid-sm, .container-fluid-md, .container-fluid-lg': {
+          paddingLeft: '15px',
+          paddingRight: '15px',
+          marginRight: 'auto',
+          marginLeft: 'auto',
+        },
+        '.container': {
+          [`@media (min-width: ${theme('screens.sm')})`]: {
+            width: theme('screens.sm')
+          },
+          [`@media (min-width: ${theme('screens.md')})`]: {
+            width: theme('screens.md')
+          },
+          [`@media (min-width: ${theme('screens.lg')})`]: {
+            width: theme('screens.lg')
+          }
+        },
+        '.container-fluid-xs': {
+          maxWidth: theme('screens.xs')
+        },
+        '.container-fluid-sm': {
+          maxWidth: theme('screens.sm')
+        },
+        '.container-fluid-md': {
+          maxWidth: theme('screens.md')
+        },
+        '.container-fluid-lg': {
+          maxWidth: theme('screens.lg')
+        }
+      });
     })
+
   ],
 };

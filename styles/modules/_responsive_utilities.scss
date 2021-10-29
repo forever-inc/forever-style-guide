@@ -1,5 +1,3 @@
-// TODO - this could be more dynamic w/ an @each, but I was having trouble w/ the syntax
-
 .pull-right-xs {
   @media (max-width: $screen-xs-max) {
     float: right !important;
@@ -17,11 +15,6 @@
 }
 .pull-right-lg {
   @media (min-width: $screen-lg-min) {
-    float: right !important;
-  }
-}
-.pull-right-grid-float-breakpoint {
-  @media (min-width: $grid-float-breakpoint) {
     float: right !important;
   }
 }

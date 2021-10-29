@@ -1,5 +1,6 @@
 .select {
-  @include center_with_flexbox(center, none);
+  display: flex;
+  align-items: center;
   overflow: hidden;
 
   &:after {

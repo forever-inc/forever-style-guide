@@ -82,11 +82,6 @@
   }
 }
 
-.list-roman {
-  list-style: lower-roman;
-  list-style-position: outside;
-}
-
 .panel {
   &.panel-settings {
     border: 0;
@@ -97,8 +92,4 @@
       background-color: $color-gray-100;
     }
   }
-}
-
-.panel-body-settings {
-  padding: 0;
 }
