@@ -181,6 +181,7 @@ module.exports = {
     },
     fontFamily: {
       sans: ['ProximaNova', ...defaultTheme.fontFamily.sans],
+      serif: defaultTheme.fontFamily.serif
     }
   },
   variants: {
