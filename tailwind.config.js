@@ -302,6 +302,9 @@ module.exports = {
         },
         'b, strong': {
           fontWeight: theme('fontWeight.bold')
+        },
+        '[disabled]': {
+          cursor: 'default'
         }
       })
     }),
@@ -352,7 +355,6 @@ module.exports = {
           }
         },
 
-
         //deprecated classes from bootstrap that need removed
         '.small': {
           fontSize: theme('fontSize.sm')
@@ -362,7 +364,26 @@ module.exports = {
         },
         '.text-lowercase': {
           textTransform: 'lowercase'
+        },
+
+        //classess that are not deprecated/are useful but are opinionated.
+        'list-unstyled': {
+          paddingLeft: 0,
+          listStyle: 'none'
+        },
+        'list-inline': {
+          paddingLeft: 0,
+          listStyle: 'none',
+          marginLeft: '-5px',
+          marginRight: '-5px',
+
+          '> li': {
+            display: 'inline-block',
+            paddingRight: '5px',
+            paddingLeft: '5px'
+          }
         }
+
       }, ['responsive', 'hover']);
     }),
 
