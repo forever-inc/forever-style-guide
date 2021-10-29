@@ -379,6 +379,36 @@ module.exports = {
           'a': {
             textDecoration: 'underline'
           }
+        },
+
+        '.container, .container-fluid, .container-fluid-xs, .container-fluid-sm, .container-fluid-md, .container-fluid-lg': {
+          paddingLeft: '15px',
+          paddingRight: '15px',
+          marginRight: 'auto',
+          marginLeft: 'auto',
+        },
+        '.container': {
+          [`@media (min-width: ${theme('screens.sm')})`]: {
+            width: theme('screens.sm')
+          },
+          [`@media (min-width: ${theme('screens.md')})`]: {
+            width: theme('screens.md')
+          },
+          [`@media (min-width: ${theme('screens.lg')})`]: {
+            width: theme('screens.lg')
+          }
+        },
+        '.container-fluid-xs': {
+          maxWidth: theme('screens.xs')
+        },
+        '.container-fluid-sm': {
+          maxWidth: theme('screens.sm')
+        },
+        '.container-fluid-md': {
+          maxWidth: theme('screens.md')
+        },
+        '.container-fluid-lg': {
+          maxWidth: theme('screens.lg')
         }
       });
     })
