@@ -11,7 +11,6 @@ class MarsStyleGuideBuild {
   constructor() {
     this.outputFolder = path.resolve(__dirname, './dist');
     this.assetsFolder = path.resolve(__dirname, './assets');
-    this.srcFolder = path.resolve(__dirname, './');
   }
 
   log(...args) {
