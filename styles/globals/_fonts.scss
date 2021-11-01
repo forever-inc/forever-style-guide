@@ -35,7 +35,6 @@
 
 @font-face {
   font-family: 'ProximaNova';
-  src: url('#{$base-font-path}/ProximaNova-Light-webfont.eot'); // IE9 compat
   src: url('#{$base-font-path}/ProximaNova-Light-webfont.woff') format('woff'), // standards
   url('#{$base-font-path}/ProximaNova-Light-webfont.ttf') format('truetype'); // Safari, Android, iOS
   font-weight: 300;
@@ -44,7 +43,6 @@
 
 @font-face {
   font-family: 'ProximaNova';
-  src: url('#{$base-font-path}/ProximaNova-Reg-webfont.eot'); // IE9 compat
   src: url('#{$base-font-path}/ProximaNova-Reg-webfont.woff') format('woff'), // standards
   url('#{$base-font-path}/ProximaNova-Reg-webfont.ttf') format('truetype'); // Safari, Android, iOS
   font-weight: 400;
@@ -53,7 +51,6 @@
 
 @font-face {
   font-family: 'ProximaNova';
-  src: url('#{$base-font-path}/ProximaNova-RegIt-webfont.eot'); // IE9 compat
   src: url('#{$base-font-path}/ProximaNova-RegIt-webfont.woff') format('woff'), // standards
   url('#{$base-font-path}/ProximaNova-RegIt-webfont.ttf') format('truetype'); // Safari, Android, iOS
   font-weight: 400;
@@ -63,7 +60,6 @@
 
 @font-face {
   font-family: 'ProximaNova';
-  src: url('#{$base-font-path}/ProximaNova-Sbold-webfont.eot'); // IE9 compat
   src: url('#{$base-font-path}/ProximaNova-Sbold-webfont.woff') format('woff'), // standards
   url('#{$base-font-path}/ProximaNova-Sbold-webfont.ttf') format('truetype'); // Safari, Android, iOS
   font-weight: 600;
@@ -72,7 +68,6 @@
 
 @font-face {
   font-family: 'ProximaNova';
-  src: url('#{$base-font-path}/ProximaNova-Bold-webfont.eot'); // IE9 compat
   src: url('#{$base-font-path}/ProximaNova-Bold-webfont.woff') format('woff'), // standards
   url('#{$base-font-path}/ProximaNova-Bold-webfont.ttf') format('truetype'); // Safari, Android, iOS
   font-weight: 700;
@@ -81,7 +76,6 @@
 
 @font-face {
   font-family: 'ProximaNova';
-  src: url('#{$base-font-path}/ProximaNova-BoldIt-webfont.eot'); // IE9 compat
   src: url('#{$base-font-path}/ProximaNova-BoldIt-webfont.woff') format('woff'), // standards
   url('#{$base-font-path}/ProximaNova-BoldIt-webfont.ttf') format('truetype'); // Safari, Android, iOS
   font-weight: 700;
