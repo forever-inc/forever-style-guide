@@ -367,11 +367,11 @@ module.exports = {
         },
 
         //classess that are not deprecated/are useful but are opinionated.
-        'list-unstyled': {
+        '.list-unstyled': {
           paddingLeft: 0,
           listStyle: 'none'
         },
-        'list-inline': {
+        '.list-inline': {
           paddingLeft: 0,
           listStyle: 'none',
           marginLeft: '-5px',
