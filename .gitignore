@@ -1,11 +1,8 @@
 /dist
 /node_modules
 
-
 /log/*
 /tmp/*
-
-
 
 .sass-cache
 
@@ -13,7 +10,6 @@
 .DS_Store
 
 .idea
-
 
 # Textmate project files
 /*.tmproj
@@ -24,4 +20,3 @@
 # Environment files that may contain sensitive data
 .env
 .powenv
-

@@ -25,14 +25,6 @@
   }
 }
 
-.font-semibold,
-.font-normal,
-.font-light,
-.font-bold {
-  font-family: 'ProximaNova', 'ui-sans-serif', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto',
-  'Helvetica Neue', 'Arial', 'Noto Sans', 'sans-serif', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-}
-
 @font-face {
   font-family: 'ProximaNova';
   src: url('#{$base-font-path}/proxima_nova-light.woff2') format('woff2'), // standards

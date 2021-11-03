@@ -404,20 +404,20 @@ module.exports = {
         },
 
         '.container, .container-fluid, .container-fluid-xs, .container-fluid-sm, .container-fluid-md, .container-fluid-lg': {
-          paddingLeft: '15px',
-          paddingRight: '15px',
+          paddingLeft: '25px', //these need to be set to the highest value that f-grid can have. gutter-50/2
+          paddingRight: '25px',
           marginRight: 'auto',
           marginLeft: 'auto',
         },
         '.container': {
           [`@media (min-width: ${theme('screens.sm')})`]: {
-            width: theme('screens.sm')
+            maxWidth: theme('screens.sm')
           },
           [`@media (min-width: ${theme('screens.md')})`]: {
-            width: theme('screens.md')
+            maxWidth: theme('screens.md')
           },
           [`@media (min-width: ${theme('screens.lg')})`]: {
-            width: theme('screens.lg')
+            maxWidth: theme('screens.lg')
           }
         },
         '.container-fluid-xs': {
