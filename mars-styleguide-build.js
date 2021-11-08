@@ -4,6 +4,8 @@ const cp = require('child_process');
 const sass = require('node-sass');
 const postcss = require('postcss');
 const autoprefixer = require('autoprefixer');
+const tailwindcss = require('tailwindcss');
+const cssnano = require('cssnano');
 const copy = require('copy');
 
 class MarsStyleGuideBuild {
@@ -37,14 +39,13 @@ class MarsStyleGuideBuild {
     return this;
   }
 
-  sassBuild(entryFile) {
+  async sassBuild(entryFile) {
     const outputFile = path.resolve(__dirname, this.outputFolder, 'css/styleguide.css');
 
     const options = {
       file: entryFile,
       outFile: outputFile,
       sourceMap: true,
-      outputStyle: 'compressed',
       importer: (url, prev, done) => {
 
         //replace bootstrap imports
@@ -69,19 +70,32 @@ class MarsStyleGuideBuild {
     };
 
     this.log('sass: starting render');
-    sass.render(options, (err, result) => {
-      if (!err) {
-        const processedOutput = postcss([autoprefixer()]).process(result.css);
-        cp.execSync(`mkdir -p ${path.resolve(__dirname, this.outputFolder, 'css')}`);
-        fs.writeFileSync(outputFile, processedOutput.css);
-        fs.writeFileSync(path.resolve(__dirname, this.outputFolder, 'css/styleguide.css.map'), result.map);
-        this.log('sass: css rendered successfully');
-      } else {
-        this.log('sass: something went wrong in render step', err);
-        process.exit(1);
-      }
-    });
 
+    const process = () => {
+      return new Promise((resolve, reject) => {
+        sass.render(options, async (err, result) => {
+          if (!err) {
+            const processedOutput = await postcss([
+              tailwindcss(),
+              autoprefixer(),
+              cssnano({preset: ['default', {discardComments: {removeAll: true}}]})
+            ]).process(result.css, {from: entryFile, to: outputFile});
+
+            cp.execSync(`mkdir -p ${path.resolve(__dirname, this.outputFolder, 'css')}`);
+            fs.writeFileSync(outputFile, processedOutput.css);
+            fs.writeFileSync(path.resolve(__dirname, this.outputFolder, 'css/styleguide.css.map'), processedOutput.map);
+            this.log('sass: css rendered successfully');
+            resolve();
+          } else {
+            this.log('sass: something went wrong in render step', err);
+            reject();
+            process.exit(1);
+          }
+        });
+      });
+    }
+
+    await process();
     return this;
   }
 
