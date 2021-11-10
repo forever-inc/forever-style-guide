@@ -302,6 +302,9 @@ module.exports = {
         },
         'b, strong': {
           fontWeight: theme('fontWeight.bold')
+        },
+        '[disabled]': {
+          cursor: 'default'
         }
       })
     }),
@@ -352,7 +355,6 @@ module.exports = {
           }
         },
 
-
         //deprecated classes from bootstrap that need removed
         '.small': {
           fontSize: theme('fontSize.sm')
@@ -362,7 +364,26 @@ module.exports = {
         },
         '.text-lowercase': {
           textTransform: 'lowercase'
+        },
+
+        //classess that are not deprecated/are useful but are opinionated.
+        '.list-unstyled': {
+          paddingLeft: 0,
+          listStyle: 'none'
+        },
+        '.list-inline': {
+          paddingLeft: 0,
+          listStyle: 'none',
+          marginLeft: '-5px',
+          marginRight: '-5px',
+
+          '> li': {
+            display: 'inline-block',
+            paddingRight: '5px',
+            paddingLeft: '5px'
+          }
         }
+
       }, ['responsive', 'hover']);
     }),
 
@@ -383,20 +404,20 @@ module.exports = {
         },
 
         '.container, .container-fluid, .container-fluid-xs, .container-fluid-sm, .container-fluid-md, .container-fluid-lg': {
-          paddingLeft: '15px',
-          paddingRight: '15px',
+          paddingLeft: '25px', //these need to be set to the highest value that f-grid can have. gutter-50/2
+          paddingRight: '25px',
           marginRight: 'auto',
           marginLeft: 'auto',
         },
         '.container': {
           [`@media (min-width: ${theme('screens.sm')})`]: {
-            width: theme('screens.sm')
+            maxWidth: theme('screens.sm')
           },
           [`@media (min-width: ${theme('screens.md')})`]: {
-            width: theme('screens.md')
+            maxWidth: theme('screens.md')
           },
           [`@media (min-width: ${theme('screens.lg')})`]: {
-            width: theme('screens.lg')
+            maxWidth: theme('screens.lg')
           }
         },
         '.container-fluid-xs': {

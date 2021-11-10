@@ -1,9 +1,8 @@
 @mixin fontFace($family, $src) {
   @font-face {
     font-family: $family;
-    src: url('#{$base-font-path}/#{$src}.eot'); // IE9 compat
-    src: url('#{$base-font-path}/#{$src}.woff') format('woff'), // standards
-    url('#{$base-font-path}/#{$src}.ttf') format('truetype'); // Safari, Android, iOS
+    src: url('#{$base-font-path}/#{$src}.woff2') format('woff2'), // standards
+    url('#{$base-font-path}/#{$src}.woff') format('woff');
     font-display: swap;
   }
 }

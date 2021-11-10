@@ -1,4 +1,7 @@
-
-@import "bootstrap_reset";
+@import "from_bootstrap";
 @import "forms";
 @import "grid";
+
+.testFOO {
+  color: theme('colors.green.DEFAULT')
+}

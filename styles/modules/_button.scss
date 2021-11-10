@@ -31,7 +31,7 @@
 
 .btn {
   @extend %btn-style;
-  padding: $btn-padding-default-vertical $btn-padding-default-horizontal;
+  //padding: $btn-padding-default-vertical $btn-padding-default-horizontal;
 
   &:hover,
   &:active {

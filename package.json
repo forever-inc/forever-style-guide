@@ -32,12 +32,13 @@
     "autoprefixer": "9.8.6",
     "bootstrap-sass": "^3.4.1",
     "copy": "^0.3.0",
+    "cssnano": "4.1.11",
     "font-awesome": "^4.7.0",
     "node-sass": "4.14.1",
     "postcss": "7.0.32"
   },
   "devDependencies": {
     "tailwind-config-viewer": "^1.6.2",
-    "tailwindcss": "^2.2.7"
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.7"
   }
 }
