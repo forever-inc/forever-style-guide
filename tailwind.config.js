@@ -355,7 +355,7 @@ module.exports = {
           }
         },
 
-        //deprecated classes from bootstrap that need removed
+        //deprecated classes from bootstrap that need removed.
         '.small': {
           fontSize: theme('fontSize.sm')
         },
@@ -365,6 +365,37 @@ module.exports = {
         '.text-lowercase': {
           textTransform: 'lowercase'
         },
+        '.l-padded': {
+          padding: '20px',
+          [`@media (min-width: ${theme('screens.md')})`]: {
+            padding: '40px'
+          },
+        },
+        '.l-padded-thin': {
+          padding: '10px',
+          [`@media (min-width: ${theme('screens.md')})`]: {
+            padding: '20px'
+          },
+        },
+        '.l-section': {
+          marginTop: '40px',
+          [`@media (min-width: ${theme('screens.md')})`]: {
+            padding: '20px'
+          },
+          [`@media (min-width: ${theme('screens.sm')})`]: {
+            padding: '10px'
+          }
+        },
+        '.l-section-far': {
+          marginTop: '60px',
+          [`@media (min-width: ${theme('screens.md')})`]: {
+            padding: '40px'
+          },
+          [`@media (min-width: ${theme('screens.sm')})`]: {
+            padding: '20px'
+          }
+        },
+
 
         //classess that are not deprecated/are useful but are opinionated.
         '.list-unstyled': {
@@ -435,5 +466,5 @@ module.exports = {
       });
     })
 
-  ],
+  ]
 };
