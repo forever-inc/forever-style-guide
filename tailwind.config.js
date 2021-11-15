@@ -182,6 +182,12 @@ module.exports = {
     fontFamily: {
       sans: ['ProximaNova', ...defaultTheme.fontFamily.sans],
       serif: defaultTheme.fontFamily.serif
+    },
+    extend: {
+      fontSize: {
+        '8xl': ['5.25rem', { lineHeight: '1' }],
+        '9xl': ['6rem', { lineHeight: '1' }]
+      }
     }
   },
   variants: {
