@@ -251,9 +251,9 @@ module.exports = {
           color: theme('colors.blue.DEFAULT'),
           textDecoration: 'none',
 
-          '&:visited, &:hover, &:active': {
+          /*'&:visited, &:hover, &:active': {
             color: theme('colors.blue.DEFAULT')
-          },
+          },*/
 
           '&:active, &:hover': {
             outline: 0
