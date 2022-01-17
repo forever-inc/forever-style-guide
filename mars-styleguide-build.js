@@ -79,11 +79,11 @@ class MarsStyleGuideBuild {
               tailwindcss(),
               autoprefixer(),
               cssnano({preset: ['default', {discardComments: {removeAll: true}}]})
-            ]).process(result.css, {from: entryFile, to: outputFile});
+            ]).process(result.css, {from: entryFile, to: outputFile, map: { inline: false }});
 
             cp.execSync(`mkdir -p ${path.resolve(__dirname, this.outputFolder, 'css')}`);
             fs.writeFileSync(outputFile, processedOutput.css);
-            fs.writeFileSync(path.resolve(__dirname, this.outputFolder, 'css/styleguide.css.map'), processedOutput.map);
+            fs.writeFileSync(path.resolve(__dirname, this.outputFolder, 'css/styleguide.css.map'), JSON.stringify(processedOutput.map));
             this.log('sass: css rendered successfully');
             resolve();
           } else {
