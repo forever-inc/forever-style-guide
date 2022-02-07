@@ -60,8 +60,7 @@ a.ambassador_banner {
 
 .ambassador_banner-assigned {
   @include ambassador_banner($color-forever_gray, $ambassador-banner-height-assigned);
-  padding-top: $banner-vertical-padding-assigned;
-  padding-bottom: $banner-vertical-padding-assigned;
+  padding: $banner-vertical-padding-assigned 10px;
   height: $ambassador-banner-height-assigned;
 
   &::after { height: $ambassador-banner-height-assigned; }
