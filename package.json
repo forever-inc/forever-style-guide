@@ -34,7 +34,7 @@
     "copy": "^0.3.0",
     "cssnano": "4.1.11",
     "font-awesome": "^4.7.0",
-    "node-sass": "4.14.1",
+    "node-sass": "7.0.0",
     "postcss": "7.0.32"
   },
   "devDependencies": {
