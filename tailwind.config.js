@@ -20,7 +20,7 @@ module.exports = {
     },
     fontFamily: {
       sans: ['ProximaNova', ...defaultTheme.fontFamily.sans],
-      serif: defaultTheme.fontFamily.serif
+      serif: ['Caladea', ...defaultTheme.fontFamily.serif]
     },
     extend: {
       fontSize: {
