@@ -1,4 +1,6 @@
 module.exports = {
+
+  //NEW BRANDING
   ice: {
     DEFAULT: '#D2EBF0',
     light: '#EDF7F9',
@@ -40,10 +42,10 @@ module.exports = {
     300: '#f4f1ec',
     400: '#f1ede6',
     500: '#EDE8E0',
-    600: '#d9cebd',
-    700: '#C19A6B',
-    800: '#ad9671',
-    900: '#9b825a',
+    600: '#ded5c6',
+    700: '#d0c3ae',
+    800: '#C19A6B',
+    900: '#a97d47',
   },
   salmon: {
     DEFAULT: '#D07063',
@@ -55,10 +57,10 @@ module.exports = {
     300: '#e3a9a1',
     400: '#d98d82',
     500: '#D07063',
-    600: '#cf6c5a',
-    700: '#A6594F',
-    800: '#955047',
-    900: '#85473f',
+    600: '#ca5f50',
+    700: '#c54d3d',
+    800: '#A6594F',
+    900: '#8d4c43',
   },
 
   charcoal: {
@@ -95,6 +97,8 @@ module.exports = {
 
 
   //LEGACY COLORS
+
+  //be careful when migrating these as the stops are not equivalent with charcoal above
   gray: {
     DEFAULT: '#888',
     100: '#fafafa',
@@ -254,8 +258,10 @@ module.exports = {
   white: '#fff',
   black: '#000',
   text: {
+    muted: '#7d7c7f',
+    light: '#646366',
     DEFAULT: '#434445',
-    muted: '#888'
+    dark: '#232324'
   },
   silver: '#f6f7f8',
   beige: '#ebeae6',
