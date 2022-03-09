@@ -167,7 +167,7 @@ module.exports = {
           hyphens: 'auto'
         },
         '.clearfix': {
-          '&:before, &:after': {
+          '&::before, &::after': {
             content: '',
             display: 'table',
             clear: 'both'
