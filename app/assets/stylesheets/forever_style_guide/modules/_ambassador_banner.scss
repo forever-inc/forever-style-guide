@@ -52,14 +52,20 @@ $dropdown-entrance-and-exit-effect-speed: 0.22s;
   }
 }
 
-.ambassador_banner-btn {
-  padding-top: 4px !important;//because this is easier than a day of fighting with legacy crap
-  height: 30px;
-  font-size: $font-size-200;
-  color: $color-white;
-  font-family: $font-face-semibold;
-  text-decoration: underline;
-  cursor: pointer;
+a.ambassador_banner-btn {
+  &,
+  &:link,
+  &:visited,
+  &:hover,
+  &:active {
+    padding-top: 4px !important;//because this is easier than a day of fighting with legacy crap
+    height: 30px;
+    font-size: $font-size-200;
+    color: $color-white;
+    font-family: $font-face-semibold;
+    text-decoration: underline;
+    cursor: pointer;
+  }
 }
 
 .ambassador_banner-content {
