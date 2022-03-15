@@ -40,6 +40,8 @@ $dropdown-entrance-and-exit-effect-speed: 0.22s;
     cursor: pointer;
     @include transition(transform $chevron-rotate-effect-speed linear);
   }
+
+  @media screen and (max-width: $screen-xs) { text-align: left; }
 }
 
 .ambassador_banner-unassigned {
