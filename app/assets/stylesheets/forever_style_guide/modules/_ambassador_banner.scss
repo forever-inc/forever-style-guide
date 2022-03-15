@@ -11,6 +11,7 @@ $dropdown-entrance-and-exit-effect-speed: 0.22s;
 @mixin ambassador_banner() {
   position: relative;
   height: $ambassador-banner-height;
+  padding: $banner-vertical-padding 10px;
   color: $banner-color;
   background-color: $color-forever_gray;
   z-index: $in-front-of-primary-nav;
@@ -21,14 +22,12 @@ $dropdown-entrance-and-exit-effect-speed: 0.22s;
     z-index: -1;
     height: $ambassador-banner-height;
   }
+
+  @media screen and (max-width: $screen-xs) { text-align: left; }
 }
 
 .ambassador_banner-assigned {
   @include ambassador_banner();
-  padding: $banner-vertical-padding 10px;
-  height: $ambassador-banner-height;
-
-  //&::after { height: $ambassador-banner-height; }
 
   &.open {
     .fa-chevron-down {
@@ -40,14 +39,10 @@ $dropdown-entrance-and-exit-effect-speed: 0.22s;
     cursor: pointer;
     @include transition(transform $chevron-rotate-effect-speed linear);
   }
-
-  @media screen and (max-width: $screen-xs) { text-align: left; }
 }
 
 .ambassador_banner-unassigned {
   @include ambassador_banner();
-  padding-top: $banner-vertical-padding;
-  padding-bottom: $banner-vertical-padding;
 
   &.is-behind_fixed-nav {
     .ambassador_banner-btn { display: none; }
