@@ -266,6 +266,9 @@ module.exports = {
   silver: '#f6f7f8',
   beige: '#ebeae6',
 
+  inherit: 'inherit',
+  transparent: 'transparent',
+
   //deprecated bootstrap classes
   danger: '#bf3030',
   success: '#7dc142',
