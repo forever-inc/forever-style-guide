@@ -7,6 +7,7 @@
 @include fontFace('proxima_nova-regular_italic', 'proxima_nova-regular_italic');
 @include fontFace('proxima_nova-bold_italic', 'proxima_nova-bold_italic');
 
+//todo: deprecate and remove these in favor of tailwind
 @each $id, $font-face in $font-faces {
   .font-face-#{$id} {
     font-family: #{$font-face};
@@ -75,3 +76,8 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: 'Caladea';
+  src: url('#{$base-font-path}/caladea-regular.woff2') format('woff2'), // standards
+  url('#{$base-font-path}/caladea-regular.woff') format('woff');
+}

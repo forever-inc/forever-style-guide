@@ -1,4 +1,104 @@
 module.exports = {
+
+  //NEW BRANDING
+  ice: {
+    DEFAULT: '#D2EBF0',
+    light: '#EDF7F9',
+    dark: '#7ec5d4',
+    50: '#f8fcfd',
+    100: '#EDF7F9',
+    200: '#e6f4f7',
+    300: '#dff1f4',
+    400: '#d9eef2',
+    500: '#D2EBF0',
+    600: '#a6d7e1',
+    700: '#7ec5d4',
+    800: '#52b2c5',
+    900: '#3896a9',
+  },
+  sage: {
+    DEFAULT: '#BCD8C7',
+    light: '#E4EFE8',
+    dark: '#7CB392',
+    50: '#eff5f1',
+    100: '#E4EFE8',
+    200: '#daeae0',
+    300: '#d0e4d8',
+    400: '#c6decf',
+    500: '#BCD8C7',
+    600: '#9bc5ab',
+    700: '#7CB392',
+    800: '#5ea178',
+    900: '#4a805f',
+  },
+
+  shell: {
+    DEFAULT: '#EDE8E0',
+    light: '#FBFAF8',
+    dark: '#C19A6B',
+    50: '#fcfcfb',
+    100: '#FBFAF8',
+    200: '#f8f6f3',
+    300: '#f4f1ec',
+    400: '#f1ede6',
+    500: '#EDE8E0',
+    600: '#ded5c6',
+    700: '#d0c3ae',
+    800: '#C19A6B',
+    900: '#a97d47',
+  },
+  salmon: {
+    DEFAULT: '#D07063',
+    light: '#F5E0DC',
+    dark: '#A6594F',
+    50: '#fbf3f1',
+    100: '#F5E0DC',
+    200: '#ecc6c1',
+    300: '#e3a9a1',
+    400: '#d98d82',
+    500: '#D07063',
+    600: '#ca5f50',
+    700: '#A6594F',
+    800: '#995249',
+    900: '#7b423a',
+  },
+
+  charcoal: {
+    DEFAULT: '#464547',
+    light: '#E6E6E7',
+    dark: '#232324',
+    50: '#f7f7f8',
+    100: '#f0f0f1',
+    200: '#E6E6E7',
+    300: '#b5b4b6',
+    400: '#7d7c7f',
+    500: '#464547',
+    600: '#3a393b',
+    700: '#232324',
+    800: '#1e1e1f',
+    900: '#161617',
+  },
+
+  heroblue: {
+    DEFAULT: '#007198',
+    light: '#94e3ff',
+    dark: '#00506c',
+    50: '#f1fbff',
+    100: '#dff7ff',
+    200: '#bbedff',
+    300: '#94e3ff',
+    400: '#00b4f1',
+    500: '#007198',
+    600: '#006183',
+    700: '#00506c',
+    800: '#004258',
+    900: '#003547'
+  },
+
+
+  //LEGACY COLORS
+
+  //be careful when migrating these as the stops are not equivalent with charcoal above
   gray: {
     DEFAULT: '#888',
     100: '#fafafa',
@@ -158,11 +258,16 @@ module.exports = {
   white: '#fff',
   black: '#000',
   text: {
+    muted: '#7d7c7f',
+    light: '#646366',
     DEFAULT: '#434445',
-    muted: '#888'
+    dark: '#232324'
   },
   silver: '#f6f7f8',
   beige: '#ebeae6',
+
+  inherit: 'inherit',
+  transparent: 'transparent',
 
   //deprecated bootstrap classes
   danger: '#bf3030',

@@ -20,7 +20,7 @@ module.exports = {
     },
     fontFamily: {
       sans: ['ProximaNova', ...defaultTheme.fontFamily.sans],
-      serif: defaultTheme.fontFamily.serif
+      serif: ['Caladea', ...defaultTheme.fontFamily.serif]
     },
     extend: {
       fontSize: {
@@ -198,6 +198,11 @@ module.exports = {
           '&::-webkit-scrollbar': {
             display: 'none'
           }
+        },
+        //make sure we only even have weight normal with serif font (this overrides default heading for now)
+        '.font-serif': {
+          fontWeight: 'normal',
+          letterSpacing: '0.035rem' //custom per design
         },
 
         //deprecated classes from bootstrap that need removed.
