@@ -199,9 +199,10 @@ module.exports = {
             display: 'none'
           }
         },
-        //make sure we only even have w4eight normal with serif font (this overrides default heading for now)
+        //make sure we only even have weight normal with serif font (this overrides default heading for now)
         '.font-serif': {
-          fontWeight: 'normal'
+          fontWeight: 'normal',
+          letterSpacing: '0.035rem' //custom per design
         },
 
         //deprecated classes from bootstrap that need removed.
