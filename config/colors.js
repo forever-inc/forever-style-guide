@@ -260,7 +260,7 @@ module.exports = {
   text: {
     muted: '#7d7c7f',
     light: '#646366',
-    DEFAULT: '#434445',
+    DEFAULT: '#464547',
     dark: '#232324'
   },
   silver: '#f6f7f8',
