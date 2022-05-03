@@ -43,11 +43,11 @@ module.exports = {
           width: '100%',
           overflowY: 'auto',
           fontSize: '14px !important', //base rem size
-          webkitTapHighlightColor: 'rgba(0, 0, 0, 0)',
           backgroundColor: theme('colors.beige')
         },
         'body': {
-          color: theme('colors.text.DEFAULT')
+          color: theme('colors.text.DEFAULT'),
+          '-webkit-font-smoothing': 'antialiased'
         },
         'h1, h2, h3, h4, h5, h6': {
           color: theme('colors.text.DEFAULT'),
@@ -122,6 +122,10 @@ module.exports = {
         'ol': {
           paddingLeft: theme('spacing.10'),
           listStyle: 'decimal',
+        },
+        'sup': {
+          fontSize: '60%',
+          letterSpacing: 'normal'
         },
         'img': {
           margin: '0 auto',
