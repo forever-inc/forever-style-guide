@@ -448,13 +448,14 @@ $f-nav-icon-hover: #bce5fd;
     &:nth-child(even) { background-color: $color-gray-200; }
 
     a {
+      color: #007198; // heroblue default
       display: block;
       font-family: $font-face-semibold;
       line-height: 1;
     }
 
     p {
-      margin: 0;
+      margin: 10px 0 10px 0;
       color: $color-forever_gray;
       font-family: $font-face-regular;
       line-height: 1.4;
@@ -462,26 +463,20 @@ $f-nav-icon-hover: #bce5fd;
 
     > a { font-size: 20px; }
 
-    .f-primary_nav_cpmeganav_title {
-      display: block;
-      font-family: $font-face-semibold;
-      line-height: 1;
-      font-size: 20px;
-    }
-
     > p { font-size: $font-size-200; }
 
-    > ul {
-      padding-top: 20px;
+    > .f-primary_nav_cpmeganav-categories {
+      margin: 20px -10px 0 -10px; // -10px offsets li padding within
       display: flex;
       flex-wrap: wrap;
       justify-content: flex-start;
 
       > li {
+        min-width: 115px;
         max-width: 140px;
         min-height: 60px;
         margin-bottom: 20px;
-        padding: 0 10px;
+        padding: 0;
 
         img {
           margin: 0 0 10px 10px;
@@ -514,7 +509,7 @@ $f-nav-icon-hover: #bce5fd;
           line-height: 1;
         }
 
-        > ul {
+        > .f-primary_nav_cpmeganav-products {
           margin: 2px 0 0 10px;
 
           > li {
@@ -531,10 +526,20 @@ $f-nav-icon-hover: #bce5fd;
       }
     }
 
-    &.f-primary_nav-scrapbooking {
+    &.f-primary_nav_cpmeganav-scrapbooking {
       > ul {
+        flex-wrap: unset;
+        justify-content: unset;
+        gap: 10px;
+
+        margin-right: 0;
+        margin-left: 0;
+
         > li {
+          padding: 0;
           max-width: 300px;
+
+          flex: 1;
 
           img {
             margin: 0;
@@ -586,23 +591,38 @@ $f-nav-icon-hover: #bce5fd;
     display: flex;
 
     > li {
-      > p { min-height: 42px; }
+      > p {
+        margin: 10px 0;
+        min-height: 42px;
+      }
 
-      &:first-child { width: 33%; }
+      &.f-primary_nav_cpmeganav-autoprint,
+      &.f-primary_nav_cpmeganav-design,
+      &.f-primary_nav_cpmeganav-scrapbooking {
+        width: 33%;
+      }
 
-      &:nth-child(2) {
-        width: 42%;
+      &.f-primary_nav_cpmeganav-design {
         background-color: transparent;
         border-style: solid;
         border-width: 0 1px;
         border-color: $color-gray-400;
       }
 
-      &:nth-child(3) { width: 25%; }
+      > .f-primary_nav_cpmeganav-categories > li {
+        min-width: 130px;
+        max-width: 300px;
+        flex: 1;
+      }
 
-      > ul > li {
-        padding: 0;
-        min-width: 125px;
+      &.f-primary_nav_cpmeganav-scrapbooking {
+        > ul {
+          flex-wrap: wrap;
+
+          > li {
+            flex: unset;
+          }
+        }
       }
     }
   }
@@ -616,12 +636,25 @@ $f-nav-icon-hover: #bce5fd;
 
   .f-primary_nav_cpmeganav {
     > li {
-      /*&:first-child { width: 33%; }
-      &:nth-child(2) { width: 42%; }
-      &:nth-child(3) { width: 25%; }*/
+      &.f-primary_nav_cpmeganav-autoprint { width: 32%; }
+      &.f-primary_nav_cpmeganav-design { width: 42%; }
+      &.f-primary_nav_cpmeganav-scrapbooking { width: 26%; }
 
-      > ul > li {
-        max-width: 300px;
+      > .f-primary_nav_cpmeganav-categories > li {
+        flex: unset;
+
+        &.f-primary_nav_cpmeganav-photo-prints {
+          width: 100%;
+          max-width: unset;
+
+          img {
+            margin-right: 10px;
+            float: left;
+          }
+
+          a { margin: 14px 0 0; }
+          p { margin-left: 0; }
+        }
       }
     }
   }
