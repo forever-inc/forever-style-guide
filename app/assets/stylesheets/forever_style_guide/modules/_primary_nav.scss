@@ -20,6 +20,20 @@ $f-nav-icon-hover: #bce5fd;
 }
 
 .f-primary_nav {
+  /* These rules are to bring the nav look closer to what mars/fui are displaying. They are not needed for mars/fui, as they are applied globally there */
+  -webkit-font-smoothing: antialiased;
+  @media screen and (-webkit-min-device-pixel-ratio: 0) and (min-resolution: .001dpcm) {
+    image-rendering: -webkit-optimize-contrast !important;
+  }
+
+  /* Unset for Safari 11+ */
+  @media not all and (min-resolution: .001dpcm) {
+    @supports (-webkit-appearance: none) and (stroke-color: transparent) {
+      image-rendering: unset !important;
+    }
+  }
+  /* end of specific rules */
+
   width: 100%;
   background-color: #007198;
 
