@@ -288,7 +288,7 @@ module.exports = {
           }
         },
 
-        '.container, .container-fluid, .container-fluid-xs, .container-fluid-sm, .container-fluid-md, .container-fluid-lg': {
+        '.container, .container-fluid, .container-fluid-xs, .container-fluid-sm, .container-fluid-md, .container-fluid-lg, .container-fluid-xl': {
           paddingLeft: '25px', //these need to be set to the highest value that f-grid can have. gutter-50/2
           paddingRight: '25px',
           marginRight: 'auto',
@@ -316,6 +316,9 @@ module.exports = {
         },
         '.container-fluid-lg': {
           maxWidth: theme('screens.lg')
+        },
+        '.container-fluid-xl': {
+          maxWidth: '100rem'
         }
       });
     })
