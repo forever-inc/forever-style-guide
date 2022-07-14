@@ -87,3 +87,19 @@ $font-weight-inherit: weightify('inherit', inherit) !default;
     font-weight: #{$font-weight};
   }
 }
+
+
+/*caladea serif font*/
+@font-face {
+  font-family: 'Caladea';
+  src: font-url('caladea-regular.woff2') format('woff2'),
+    font-url('caladea-regular.woff') format('woff');
+}
+
+.font-serif {
+  font-family: 'Caladea', serif;
+  font-weight: normal;
+  letter-spacing: 0.035rem;
+}
+
+$font-face-serif: 'Caladea, serif';
