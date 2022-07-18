@@ -27,20 +27,18 @@
 .f-subnav-container {
   display: block;
   visibility: visible;
-  position: sticky;
   height: 47px;
   padding-top: 6px;
   padding-bottom: 6px;
   padding-right: 15px;
   padding-left: 15px;
   background: transparentize($color-white, 0.15);
-  z-index: 1029;
   -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);  
+  backdrop-filter: blur(10px);
 }
 
 @media (max-width: 768px) {
-  .f-subnav-container{ 
+  .f-subnav-container{
     visibility: hidden;
     overflow: hidden;
     position: relative;
@@ -69,10 +67,10 @@
 
   & > * {
     font-size: 15px;
-    -webkit-user-select: none;  
+    -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
-    user-select: none; 
+    user-select: none;
   }
 
   & > .links {
@@ -148,12 +146,12 @@
     & :hover > span, :active > span, :focus > span {
       background: transparentize($color-black, 0.95);
       color: $color-secondary;
-      border-radius: 32px; 
+      border-radius: 32px;
     }
 }
 
 .f-subnav-dropdown {
-  
+
   display: flex;
   flex-direction: column;
   position: absolute;
@@ -161,7 +159,7 @@
   white-space: nowrap;
   transition: opacity 0.15s ease;
   -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);  
+  backdrop-filter: blur(10px);
   border-radius: 2px;
 	visibility: visible;
 	top:  28px;
@@ -201,8 +199,8 @@
   	transform: translateX(-50%);
   	content: ' ';
   	display: block;
-  	width: 0; 
-  	height: 0; 
+  	width: 0;
+  	height: 0;
   	border-left: 8px solid transparent;
   	border-right: 8px solid transparent;
   	border-bottom: 8px solid transparentize($color-white, 0.14);
