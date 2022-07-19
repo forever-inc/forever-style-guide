@@ -41,14 +41,6 @@ $dropdown-entrance-and-exit-effect-speed: 0.22s;
   }
 }
 
-.ambassador_banner-unassigned {
-  @include ambassador_banner();
-
-  &.is-behind_fixed-nav {
-    .ambassador_banner-btn { display: none; }
-  }
-}
-
 a.ambassador_banner-btn {
   &,
   &:link,
