@@ -29,16 +29,16 @@
   ],
   "homepage": "https://github.com/forever-inc/forever-style-guide#readme",
   "dependencies": {
-    "autoprefixer": "9.8.8",
+    "autoprefixer": "10.4.13",
     "bootstrap-sass": "3.4.1",
     "copy": "^0.3.0",
-    "cssnano": "4.1.11",
+    "cssnano": "5.1.14",
     "font-awesome": "^4.7.0",
-    "node-sass": "4.14.1",
-    "postcss": "7.0.32"
+    "node-sass": "7.0.3",
+    "postcss": "8.4.18"
   },
   "devDependencies": {
-    "tailwind-config-viewer": "^1.6.3",
+    "tailwind-config-viewer": "^1.7.2",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.7"
   }
 }
