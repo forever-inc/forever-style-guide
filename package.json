@@ -39,6 +39,6 @@
   },
   "devDependencies": {
     "tailwind-config-viewer": "^1.7.2",
-    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.7"
+    "tailwindcss": "2.2.19"
   }
 }
