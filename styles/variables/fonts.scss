@@ -24,9 +24,9 @@ $font-size-700: fontify('700', 48px) !default;
 $font-size-800: fontify('800', 64px) !default;
 
 /* !global to override bootstrap's $font-size-large and $font-size-small */
-$font-size-large:   fontify('lg', $font-size-400) !global;
+$font-size-large:   fontify('lg', $font-size-400);
 $font-size-default: fontify('default', $font-size-300) !default;
-$font-size-small:   fontify('sm', $font-size-100) !global;
+$font-size-small:   fontify('sm', $font-size-100);
 $font-size-xsmall:  fontify('xs', $font-size-000) !default;
 
 /* =font weights

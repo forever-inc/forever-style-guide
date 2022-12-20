@@ -1,23 +1,23 @@
 /* =bootstrap variables
 variables placed here will be overridden and reloaded in bootstrap
 ---------------------------------------------------------------------------- */
-$border-radius-xl:            4px !global;
-$border-radius-large:         2px !global;
-$border-radius-small:         1px !global;
+$border-radius-xl:            4px;
+$border-radius-large:         2px;
+$border-radius-small:         1px;
 $border-radius-default:       $border-radius-small !default;
 $border-radius-button:        35px;
 
 $padding-default-vertical:    10px !default;
 $padding-default-horizontal:  8px !default;
 
-$padding-large-vertical:      20px !global;
-$padding-large-horizontal:    15px !global;
+$padding-large-vertical:      20px;
+$padding-large-horizontal:    15px;
 
-$padding-small-vertical:      8px !global;
-$padding-small-horizontal:    8px !global;
+$padding-small-vertical:      8px;
+$padding-small-horizontal:    8px;
 
-$padding-xs-vertical:         4px !global;
-$padding-xs-horizontal:       6px !global;
+$padding-xs-vertical:         4px;
+$padding-xs-horizontal:       6px;
 
 
 /* =variables
