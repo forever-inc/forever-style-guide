@@ -78,7 +78,7 @@ module.exports = {
           fontSize: theme('fontSize.lg'),
         },
         'a': {
-          color: theme('colors.blue.DEFAULT'),
+          color: theme('colors.heroblue.DEFAULT'),
           textDecoration: 'none',
 
           /*'&:visited, &:hover, &:active': {
