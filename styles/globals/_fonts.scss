@@ -7,25 +7,6 @@
 @include fontFace('proxima_nova-regular_italic', 'proxima_nova-regular_italic');
 @include fontFace('proxima_nova-bold_italic', 'proxima_nova-bold_italic');
 
-//todo: deprecate and remove these in favor of tailwind
-@each $id, $font-face in $font-faces {
-  .font-face-#{$id} {
-    font-family: #{$font-face};
-  }
-}
-
-@each $id, $font-size in $font-sizes {
-  .font-size-#{$id} {
-    font-size: #{$font-size};
-  }
-}
-
-@each $id, $font-weight in $font-weights {
-  .font-weight-#{$id} {
-    font-weight: #{$font-weight};
-  }
-}
-
 @font-face {
   font-family: 'ProximaNova';
   src: url('#{$base-font-path}/proxima_nova-light.woff2') format('woff2'), // standards

@@ -1,9 +1,4 @@
-
-
 @each $id, $color in $colors {
-  .color-#{$id} {
-    color: #{$color};
-  }
   .color_block-#{$id} {
     background-color: #{$color};
   }
