@@ -217,7 +217,7 @@
 
     .btn-action-label {
       margin: 0;
-      padding-top: 0px;
+      padding-top: 0;
       vertical-align: top;
       &:hover {
         cursor: pointer;
@@ -316,8 +316,7 @@
 
 
 button.btn[disabled], //specificity override
-button.btn.disabled,
-button[disabled] {
+button.btn.disabled {
   color: $color-gray-400;
   font-family: $font-face-regular_italic;
 
