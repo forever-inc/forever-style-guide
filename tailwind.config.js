@@ -221,8 +221,7 @@ module.exports = {
             width: '8px'
           },
           '&::-webkit-scrollbar-thumb': {
-            background: theme(colors.charcoal['400']),
-            opacity: 0.2
+            background: 'rgba(125, 125, 125, 0.2)'
           },
         },
 
