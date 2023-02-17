@@ -18,10 +18,6 @@ $modal-margin-top-md: 80px;
   border-top-right-radius: $border-radius-xl;
   padding: 10px;
 
-  &.modal-header-promo {
-    background-color: transparent;
-  }
-
   .close {
     margin-top: 1px; // visual alignment
     color: $color-gray-700;
@@ -60,20 +56,6 @@ $modal-margin-top-md: 80px;
   padding: 30px;
 }
 
-.modal-product-name-sm {
-  margin: 10px auto 0;
-  max-width: $modal-product-suggestion-sm;
-  color: $color-gray-600;
-  font-family: $font-face-bold;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
-}
-
-.modal-footer-products {
-  padding: $modal-padding-footer;
-}
-
 .product-preview:hover .modal-product-name-sm {
   color: $color-secondary;
 }
@@ -108,38 +90,6 @@ $modal-margin-top-md: 80px;
 .modal-media-text {
   padding: 0 40px;
   margin-top: $modal-padding-footer;
-}
-
-.modal-content.modal-promo {
-  background-size: cover;
-  height: $modal-promo-height;
-}
-
-.modal-promo-kit {
-  background-position: 50%;
-  image-rendering: -webkit-optimize-contrast; // fixes text-in-image fuzziness in Chrome
-}
-
-.modal-promo-content {
-  color: $color-gray-600;
-  font-size: $font-size-500;
-  text-align: center;
-  margin-top: 165px;
-  padding: 0 50px;
-}
-
-.modal-promo-form {
-  width: $modal-form-width-lg;
-  margin : 0 auto;
-  text-align: center;
-}
-
-.promo-btn {
-  width: $modal-form-width-lg;
-  position: relative;
-  display: block;
-  margin: 0 auto;
-  margin-top: 10px;
 }
 
 .modal-xl {
