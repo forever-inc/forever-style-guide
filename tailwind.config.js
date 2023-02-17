@@ -212,6 +212,20 @@ module.exports = {
             display: 'none'
           }
         },
+
+        '.scrollbar-light': {
+          '&::-webkit-scrollbar': {
+            width: '8px'
+          },
+          '&::-webkit-scrollbar:horizontal': {
+            width: '8px'
+          },
+          '&::-webkit-scrollbar-thumb': {
+            background: theme(colors.charcoal['400']),
+            opacity: 0.2
+          },
+        },
+
         //make sure we only even have weight normal with serif font (this overrides default heading for now)
         '.font-serif': {
           fontWeight: 'normal',
