@@ -5,6 +5,9 @@ const colors = require('./config/colors');
 module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
+    configViewer: {
+      baseFontSize: 14
+    },
     colors,
     screens: {
       xs: '480px',
@@ -190,6 +193,12 @@ module.exports = {
           right: 0,
           left: 0,
           bottom: 0
+        },
+        '.absolute-center': {
+          position: 'absolute',
+          top: '50%',
+          left: '50%',
+          transform: 'translate(-50%, -50%)'
         },
         '.flex-center': {
           display: 'flex',
