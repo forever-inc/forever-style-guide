@@ -218,7 +218,7 @@ module.exports = {
             width: '8px'
           },
           '&::-webkit-scrollbar:horizontal': {
-            width: '8px'
+            height: '8px'
           },
           '&::-webkit-scrollbar-thumb': {
             background: 'rgba(125, 125, 125, 0.2)'
