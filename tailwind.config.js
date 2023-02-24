@@ -13,7 +13,8 @@ module.exports = {
       xs: '480px',
       sm: '768px',
       md: '992px',
-      lg: '1200px'
+      lg: '1200px',
+      xl: '1400px'
     },
     fontWeight: {
       light: '300',
@@ -29,6 +30,12 @@ module.exports = {
       fontSize: {
         '8xl': ['5.25rem', { lineHeight: '1' }],
         '9xl': ['6rem', { lineHeight: '1' }]
+      },
+      spacing: {
+        '104': '26rem',
+        '110': '28rem',
+        '116': '30rem',
+        '124': '32rem'
       }
     }
   },
@@ -348,7 +355,7 @@ module.exports = {
           maxWidth: theme('screens.lg')
         },
         '.container-fluid-xl': {
-          maxWidth: '100rem'
+          maxWidth: theme('screens.xl')
         }
       });
     })
