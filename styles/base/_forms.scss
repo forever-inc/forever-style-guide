@@ -2,28 +2,6 @@
   margin-bottom: 15px;
 }
 
-.input-lg,
-.input-lg.form-control {
-  height: $btn-lg-size;
-  border-radius: $border-radius-large;
-  font-family: $font-face-light;
-  font-size: $font-size-large;
-}
-
-.input-sm,
-.input-sm.form-control {
-  height: $btn-sm-size;
-  border-radius: $border-radius-small;
-  font-size: $font-size-small;
-}
-
-.input-xs,
-.input-xs.form-control {
-  height: $btn-xs-size;
-  border-radius: $border-radius-small;
-  font-size: $font-size-small;
-}
-
 label {
   color: theme('colors.gray.600');
   font-size: theme('fontSize.base');

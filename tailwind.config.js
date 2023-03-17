@@ -237,17 +237,7 @@ module.exports = {
           fontWeight: 'normal',
           letterSpacing: '0.035rem' //custom per design
         },
-
         //deprecated classes from bootstrap that need removed.
-        '.small': {
-          fontSize: theme('fontSize.sm')
-        },
-        '.text-uppercase': {
-          textTransform: 'uppercase'
-        },
-        '.text-lowercase': {
-          textTransform: 'lowercase'
-        },
         '.l-padded': {
           padding: '20px',
           [`@media (min-width: ${theme('screens.md')})`]: {
@@ -278,7 +268,9 @@ module.exports = {
             padding: '20px'
           }
         },
-
+        '.form-group': {
+          marginBottom: '15px'
+        },
 
         //classess that are not deprecated/are useful but are opinionated.
         '.list-unstyled': {
