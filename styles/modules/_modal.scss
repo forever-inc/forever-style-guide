@@ -56,14 +56,6 @@ $modal-margin-top-md: 80px;
   padding: 30px;
 }
 
-.product-preview:hover .modal-product-name-sm {
-  color: $color-secondary;
-}
-
-.product-preview-link:hover {
-  text-decoration: none;
-}
-
 .modal-dialog {
   @media (min-width: $screen-xs-min) {
     margin: $modal-margin-top-sm 10px 0;
