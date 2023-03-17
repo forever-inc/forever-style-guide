@@ -58,28 +58,6 @@
     border-bottom-right-radius: $border-radius-large;
     border-bottom-left-radius: $border-radius-large;
   }
-
-  @at-root #{&}.list-group-item-success {
-    color: color('secondary');
-  }
-  @at-root #{&}.list-group-item-primary {
-    color: color('secondary');
-  }
-  @at-root #{&}.list-group-item-secondary {
-    color: color('secondary');
-  }
-  @at-root #{&}.list-group-item-info {
-    color: color('secondary');
-  }
-  @at-root #{&}.list-group-item-accent {
-    color: color('accent');
-  }
-  @at-root #{&}.list-group-item-warning {
-    color: color('warning');
-  }
-  @at-root #{&}.list-group-item-danger {
-    color: color('danger');
-  }
 }
 
 .panel {
