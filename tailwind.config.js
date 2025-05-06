@@ -4,6 +4,9 @@ const colors = require('./config/colors');
 
 module.exports = {
   theme: {
+    configViewer: {
+      baseFontSize: 14
+    },
     colors,
     screens: {
       xs: '480px',
@@ -34,9 +37,6 @@ module.exports = {
         '124': '32rem'
       }
     }
-  },
-  configViewer: {
-    baseFontSize: 14
   },
   plugins: [
     plugin(({ addBase, theme }) => {
