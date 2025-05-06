@@ -3,11 +3,7 @@ const plugin = require('tailwindcss/plugin');
 const colors = require('./config/colors');
 
 module.exports = {
-  darkMode: false, // or 'media' or 'class'
   theme: {
-    configViewer: {
-      baseFontSize: 14
-    },
     colors,
     screens: {
       xs: '480px',
@@ -39,12 +35,8 @@ module.exports = {
       }
     }
   },
-  variants: {
-    extend: {
-      ringWidth: ['hover'],
-      ringColor: ['hover'],
-      backgroundColor: ['even', 'odd']
-    }
+  configViewer: {
+    baseFontSize: 14
   },
   plugins: [
     plugin(({ addBase, theme }) => {
@@ -292,9 +284,7 @@ module.exports = {
 
       }, ['responsive', 'hover']);
     }),
-
     plugin(({ addComponents, theme }) => {
-
       addComponents({
         '.copy-block': {
           'h1, h2, h3, h4, h5, h6, p, ul, ol, address, dl': {
@@ -351,6 +341,5 @@ module.exports = {
         }
       });
     })
-
   ]
 };
