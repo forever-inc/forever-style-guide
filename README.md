@@ -3,8 +3,7 @@
 This style guide exists for the following reasons.
 
 1. To own branding colors/gradients
-2. To own the base Tailwind configuration.
-3. To (eventually) own core level components.
+2. To (eventually) own core level components.
 
 ## Legacy StyleGuide (current master)
 

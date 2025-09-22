@@ -2,12 +2,12 @@
 
 /* =font faces
    ---------------------------------------------------------------------------- */
-$font-face-light:           faceify('light', ('proxima_nova-light', Helvetica, Arial, sans-serif)) !default;
-$font-face-regular:         faceify('regular', ('proxima_nova-regular', Helvetica, Arial, sans-serif)) !default;
-$font-face-semibold:        faceify('semibold', ('proxima_nova-semibold', Helvetica, Arial, sans-serif)) !default;
-$font-face-bold:            faceify('bold', ('proxima_nova-bold', Helvetica, Arial, sans-serif)) !default;
-$font-face-regular_italic:  faceify('italic', ('proxima_nova-regular_italic', Helvetica, Arial, sans-serif)) !default;
-$font-face-bold_italic:     faceify('bold_italic', ('proxima_nova-bold_italic', Helvetica, Arial, sans-serif)) !default;
+$font-face-light:           faceify('light', (Helvetica, Arial, sans-serif)) !default;
+$font-face-regular:         faceify('regular', (Helvetica, Arial, sans-serif)) !default;
+$font-face-semibold:        faceify('semibold', (Helvetica, Arial, sans-serif)) !default;
+$font-face-bold:            faceify('bold', (Helvetica, Arial, sans-serif)) !default;
+$font-face-regular_italic:  faceify('italic', (Helvetica, Arial, sans-serif)) !default;
+$font-face-bold_italic:     faceify('bold_italic', (Helvetica, Arial, sans-serif)) !default;
 $font-face-icon_font:        FontAwesome;
 
 /* =font sizes

@@ -4,7 +4,6 @@ const cp = require('child_process');
 const sass = require('node-sass');
 const postcss = require('postcss');
 const autoprefixer = require('autoprefixer');
-const tailwindcss = require('tailwindcss');
 const cssnano = require('cssnano');
 const copy = require('copy');
 
@@ -76,7 +75,6 @@ class MarsStyleGuideBuild {
         sass.render(options, async (err, result) => {
           if (!err) {
             const processedOutput = await postcss([
-              tailwindcss(),
               autoprefixer(),
               cssnano({preset: ['default', {discardComments: {removeAll: true}}]})
             ]).process(result.css, {from: entryFile, to: outputFile, map: { inline: false }});

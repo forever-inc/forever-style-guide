@@ -9,8 +9,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "node mars-styleguide-build.js",
-    "clean": "rm -rf ./dist",
-    "tailwind": "tailwind-config-viewer -o"
+    "clean": "rm -rf ./dist"
   },
   "repository": {
     "type": "git",
@@ -36,9 +35,5 @@
     "font-awesome": "^4.7.0",
     "node-sass": "8.0.0",
     "postcss": "8.4.19"
-  },
-  "devDependencies": {
-    "tailwind-config-viewer": "^1.7.2",
-    "tailwindcss": "2.2.19"
   }
 }
