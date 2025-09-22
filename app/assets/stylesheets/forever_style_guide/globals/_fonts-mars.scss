@@ -30,7 +30,7 @@ $font-face-bold:            faceify('bold', ('proxima_nova-bold', Helvetica, Ari
 $font-face-regular_italic:  faceify('italic', ('proxima_nova-regular_italic', Helvetica, Arial, sans-serif)) !default;
 $font-face-bold_italic:     faceify('bold_italic', ('proxima_nova-bold_italic', Helvetica, Arial, sans-serif)) !default;
 
-$font-face-gotham:          faceify('gotham', ('Gotham A', 'Gotham B', Helvetica, Arial, sans-serif)) !default;
+$font-face-gotham:          faceify('gotham', (Helvetica, Arial, sans-serif)) !default;
 
 @each $id, $font-face in $font-faces {
   .font-face-#{$id} {

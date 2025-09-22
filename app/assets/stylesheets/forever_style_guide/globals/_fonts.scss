@@ -5,31 +5,26 @@
 @mixin fontFace($family, $src) {
   @font-face {
     font-family: $family;
-    src: font-url('#{$src}.eot'); // IE9 compat
-    src: font-url('#{$src}.eot?#iefix') format('embedded-opentype'), // IE8 and below
-      font-url('#{$src}.woff') format('woff'), // standards
-      font-url('#{$src}.ttf') format('truetype'), // Safari, Android, iOS
-      font-url('#{$src}.svg##{$family}') format('svg'); // legacy iOS
+    src: font-url('#{$src}.woff2') format('woff2');
   }
 }
 
-@include fontFace('proxima_nova-light', 'ProximaNova-Light-webfont');
-@include fontFace('proxima_nova-regular', 'ProximaNova-Reg-webfont');
-@include fontFace('proxima_nova-semibold', 'ProximaNova-Sbold-webfont');
-@include fontFace('proxima_nova-bold', 'ProximaNova-Bold-webfont');
-@include fontFace('proxima_nova-regular_italic', 'ProximaNova-RegIt-webfont');
-@include fontFace('proxima_nova-bold_italic', 'ProximaNova-BoldIt-webfont');
+@include fontFace('nunito_sans-light', 'nunito-sans-300'); //300
+@include fontFace('nunito_sans-regular', 'nunito-sans-400'); //400
+@include fontFace('nunito_sans-semibold', 'nunito-sans-600'); //600
+@include fontFace('nunito_sans-bold', 'nunito-sans-700'); //700
+@include fontFace('nunito_sans-regular_italic', 'nunito-sans-400-italic'); //400 italic
+@include fontFace('nunito_sans-bold_italic', 'nunito-sans-700-italic'); //700 italic
 
 /* =font faces
    ---------------------------------------------------------------------------- */
-$font-face-light:           faceify('light', ('proxima_nova-light', Helvetica, Arial, sans-serif)) !default;
-$font-face-regular:         faceify('regular', ('proxima_nova-regular', Helvetica, Arial, sans-serif)) !default;
-$font-face-semibold:        faceify('semibold', ('proxima_nova-semibold', Helvetica, Arial, sans-serif)) !default;
-$font-face-bold:            faceify('bold', ('proxima_nova-bold', Helvetica, Arial, sans-serif)) !default;
-$font-face-regular_italic:  faceify('italic', ('proxima_nova-regular_italic', Helvetica, Arial, sans-serif)) !default;
-$font-face-bold_italic:     faceify('bold_italic', ('proxima_nova-bold_italic', Helvetica, Arial, sans-serif)) !default;
-
-$font-face-gotham:          faceify('gotham', ('Gotham A', 'Gotham B', Helvetica, Arial, sans-serif)) !default;
+$font-face-light:           faceify('light', ('nunito_sans-light', Helvetica, Arial, sans-serif)) !default;
+$font-face-regular:         faceify('regular', ('nunito_sans-regular', Helvetica, Arial, sans-serif)) !default;
+$font-face-semibold:        faceify('semibold', ('nunito_sans-semibold', Helvetica, Arial, sans-serif)) !default;
+$font-face-bold:            faceify('bold', ('nunito_sans-bold', Helvetica, Arial, sans-serif)) !default;
+$font-face-regular_italic:  faceify('italic', ('nunito_sans-regular_italic', Helvetica, Arial, sans-serif)) !default;
+$font-face-bold_italic:     faceify('bold_italic', ('nunito_sans-bold_italic', Helvetica, Arial, sans-serif)) !default;
+$font-face-gotham:          faceify('bold', ('nunito_sans-bold', Helvetica, Arial, sans-serif)) !default; //just replace with bold for now
 
 @each $id, $font-face in $font-faces {
   .font-face-#{$id} {
@@ -92,8 +87,7 @@ $font-weight-inherit: weightify('inherit', inherit) !default;
 /*caladea serif font*/
 @font-face {
   font-family: 'Caladea';
-  src: font-url('caladea-regular.woff2') format('woff2'),
-    font-url('caladea-regular.woff') format('woff');
+  src: font-url('caladea-regular.woff2') format('woff2');
 }
 
 .font-serif {
